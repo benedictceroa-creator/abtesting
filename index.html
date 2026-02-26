@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ISBN Price Finder | Bible Store</title>
+  <title>Ceroa</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy:     #1a3557;
+      --black:    #111111;
       --gold:     #c9a84c;
       --gold-d:   #a8872e;
       --bg:       #f5f2ec;
@@ -24,33 +24,149 @@
 
     body {
       font-family: Georgia, 'Times New Roman', serif;
-      background: var(--bg);
+      background: var(--card);
       color: var(--text);
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
 
-    /* ── Header ── */
-    header {
-      background: var(--navy);
-      color: #fff;
-      padding: 18px 32px;
+    /* ════════════════════════════════════════════════
+       HOME PAGE
+    ════════════════════════════════════════════════ */
+    #homePage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: #ffffff;
+      padding: 40px 20px 80px;
+    }
+
+    .home-logo {
+      width: min(340px, 72vw);
+      margin-bottom: 52px;
+    }
+
+    .tool-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: min(320px, 90vw);
+    }
+
+    .tool-btn {
       display: flex;
       align-items: center;
       gap: 14px;
-      box-shadow: 0 2px 10px rgba(0,0,0,.25);
+      background: #ffffff;
+      border: 1.5px solid #e0ddd7;
+      border-radius: 12px;
+      padding: 16px 20px;
+      cursor: pointer;
+      text-align: left;
+      transition: box-shadow .18s, border-color .18s, transform .12s;
+      text-decoration: none;
+      color: var(--text);
     }
-    .logo-icon { font-size: 2rem; line-height: 1; color: var(--gold); }
-    header h1  { font-size: 1.45rem; font-weight: normal; letter-spacing: .3px; }
-    header p   { font-size: .82rem; opacity: .7; font-style: italic; margin-top: 2px; }
+    .tool-btn:hover {
+      box-shadow: 0 4px 18px rgba(0,0,0,.10);
+      border-color: var(--gold);
+      transform: translateY(-1px);
+    }
+    .tool-btn:active { transform: translateY(0); }
+
+    .tool-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--black);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      color: var(--gold);
+    }
+
+    .tool-label { font-size: 1rem; font-weight: bold; color: var(--black); }
+    .tool-sub   { font-size: .78rem; color: var(--muted); margin-top: 2px; font-style: italic; }
+
+    .home-footer {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      text-align: center;
+      padding: 14px;
+      font-size: .75rem;
+      color: #bbb;
+      background: #fff;
+      border-top: 1px solid #f0ede8;
+    }
+
+    /* ════════════════════════════════════════════════
+       TOOL PAGE
+    ════════════════════════════════════════════════ */
+    #toolPage {
+      display: none;
+      flex-direction: column;
+      min-height: 100vh;
+      background: var(--bg);
+    }
+    #toolPage.active { display: flex; }
+
+    /* ── Header ── */
+    header {
+      background: var(--black);
+      color: #fff;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.3);
+    }
+
+    .back-btn {
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,.25);
+      color: #fff;
+      border-radius: 8px;
+      padding: 7px 13px;
+      font-family: Georgia, serif;
+      font-size: .82rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: background .15s, border-color .15s;
+      flex-shrink: 0;
+    }
+    .back-btn:hover { background: rgba(255,255,255,.10); border-color: var(--gold); }
+
+    .header-logo {
+      height: 28px;
+      filter: brightness(0) invert(1);
+    }
+
+    .header-divider {
+      width: 1px;
+      height: 22px;
+      background: rgba(255,255,255,.2);
+      flex-shrink: 0;
+    }
+
+    .header-tool-name {
+      font-size: 1rem;
+      font-weight: normal;
+      color: rgba(255,255,255,.85);
+      letter-spacing: .3px;
+    }
+    .header-tool-name span { color: var(--gold); }
 
     /* ── Main ── */
     main {
       flex: 1;
       max-width: 820px;
       width: 100%;
-      margin: 36px auto;
+      margin: 32px auto;
       padding: 0 20px;
     }
 
@@ -63,7 +179,7 @@
       padding: 32px 36px;
       margin-bottom: 20px;
     }
-    .card h2  { color: var(--navy); font-size: 1.25rem; margin-bottom: 6px; }
+    .card h2  { color: var(--black); font-size: 1.25rem; margin-bottom: 6px; }
     .card > p { color: var(--muted); font-size: .9rem; margin-bottom: 22px; line-height: 1.5; }
 
     .isbn-row { display: flex; gap: 10px; }
@@ -80,12 +196,12 @@
       color: var(--text);
       transition: border-color .2s;
     }
-    #isbnInput:focus        { outline: none; border-color: var(--navy); }
+    #isbnInput:focus        { outline: none; border-color: var(--black); }
     #isbnInput::placeholder { letter-spacing: 1px; color: #b0a898; font-style: italic; }
 
     .btn-scan {
       padding: 12px 15px;
-      background: var(--navy);
+      background: var(--black);
       color: #fff;
       font-family: Georgia, serif;
       font-size: .9rem;
@@ -99,13 +215,13 @@
       gap: 5px;
       transition: background .18s, transform .1s;
     }
-    .btn-scan:hover  { background: #253f6a; }
+    .btn-scan:hover  { background: #333; }
     .btn-scan:active { transform: scale(.97); }
 
     .btn-search {
       padding: 12px 26px;
       background: var(--gold);
-      color: var(--navy);
+      color: var(--black);
       font-family: Georgia, serif;
       font-size: .98rem;
       font-weight: bold;
@@ -186,7 +302,7 @@
 
     .scanner-status {
       padding: 11px 16px;
-      background: #0d1a2b; color: #cfc8b4;
+      background: #0d1117; color: #cfc8b4;
       font-size: .8rem; font-family: 'Courier New', monospace;
       text-align: center; min-height: 40px;
       display: flex; align-items: center; justify-content: center; gap: 8px;
@@ -229,41 +345,26 @@
     }
 
     .book-cover {
-      width: 80px;
-      min-width: 80px;
-      height: 110px;
-      object-fit: cover;
-      border-radius: 4px;
+      width: 80px; min-width: 80px; height: 110px;
+      object-fit: cover; border-radius: 4px;
       box-shadow: 2px 3px 10px rgba(0,0,0,.2);
       background: var(--bg);
     }
-
     .book-cover-placeholder {
-      width: 80px;
-      min-width: 80px;
-      height: 110px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      color: var(--border);
+      width: 80px; min-width: 80px; height: 110px;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 4px; display: flex; align-items: center;
+      justify-content: center; font-size: 2rem; color: var(--border);
     }
 
     .book-info { flex: 1; }
-    .book-info h3 { color: var(--navy); font-size: 1.1rem; margin-bottom: 4px; line-height: 1.35; }
+    .book-info h3 { color: var(--black); font-size: 1.1rem; margin-bottom: 4px; line-height: 1.35; }
     .book-meta { font-size: .84rem; color: var(--muted); margin-bottom: 4px; }
     .book-isbn { font-size: .78rem; color: var(--muted); font-family: 'Courier New', monospace; margin-top: 8px; }
     .book-unknown { color: var(--muted); font-style: italic; font-size: .9rem; }
 
-    /* ── Price comparison grid ── */
-    .section-heading {
-      color: var(--navy);
-      font-size: 1.05rem;
-      margin-bottom: 14px;
-    }
+    /* ── Price grid ── */
+    .section-heading { color: var(--black); font-size: 1.05rem; margin-bottom: 14px; }
 
     .store-grid {
       display: grid;
@@ -279,26 +380,19 @@
       padding: 16px;
       text-decoration: none;
       color: var(--text);
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
+      display: flex; flex-direction: column; gap: 5px;
       transition: box-shadow .18s, transform .15s;
     }
     .store-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.12); transform: translateY(-2px); }
 
     .store-icon  { font-size: 1.4rem; line-height: 1; }
-    .store-name  { font-size: .9rem; font-weight: bold; color: var(--navy); }
+    .store-name  { font-size: .9rem; font-weight: bold; color: var(--black); }
     .store-desc  { font-size: .76rem; color: var(--muted); line-height: 1.4; }
     .store-arrow { font-size: .78rem; color: var(--gold-d); margin-top: auto; padding-top: 6px; }
 
     .store-price {
-      font-size: 1rem;
-      font-weight: bold;
-      color: var(--green);
-      min-height: 1.4em;
-      display: flex;
-      align-items: center;
-      gap: 4px;
+      font-size: 1rem; font-weight: bold; color: var(--green);
+      min-height: 1.4em; display: flex; align-items: center; gap: 4px;
     }
     .store-price.found { color: var(--green); }
     .price-dot {
@@ -311,7 +405,7 @@
 
     /* ── Loading / notices ── */
     .loading-box { text-align: center; padding: 40px 20px; color: var(--muted); }
-    .spinner { width: 38px; height: 38px; border: 3px solid var(--border); border-top-color: var(--navy); border-radius: 50%; animation: spin .75s linear infinite; margin: 0 auto 14px; }
+    .spinner { width: 38px; height: 38px; border: 3px solid var(--border); border-top-color: var(--black); border-radius: 50%; animation: spin .75s linear infinite; margin: 0 auto 14px; }
     @keyframes spin { to { transform: rotate(360deg); } }
 
     .notice { border-radius: 8px; padding: 14px 18px; font-size: .9rem; line-height: 1.5; margin-bottom: 12px; }
@@ -326,8 +420,7 @@
       .card { padding: 22px 18px; }
       .isbn-row { flex-direction: column; }
       .btn-scan, .btn-search { width: 100%; justify-content: center; }
-      header { padding: 14px 16px; }
-      header h1 { font-size: 1.15rem; }
+      header { padding: 12px 14px; }
       .store-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
       .book-panel { flex-direction: column; align-items: center; text-align: center; }
     }
@@ -335,68 +428,112 @@
 </head>
 <body>
 
-<header>
-  <div class="logo-icon">&#9768;</div>
-  <div>
-    <h1>Bible Store &mdash; ISBN Price Finder</h1>
-    <p>Compare prices across the web for any book</p>
-  </div>
-</header>
+<!-- ════════════════════════════════════════════════
+     HOME PAGE
+════════════════════════════════════════════════ -->
+<div id="homePage">
 
-<!-- ── Scanner modal ── -->
-<div id="scannerModal" role="dialog" aria-modal="true" aria-label="Barcode scanner">
-  <div class="scanner-panel">
-    <button class="btn-close-scanner" onclick="closeScanner()" title="Close">&times;</button>
-    <video id="scannerVideo" playsinline muted></video>
-    <div class="vf-overlay">
-      <div class="dim dim-top"></div>
-      <div class="dim dim-bottom"></div>
-      <div class="dim dim-left"></div>
-      <div class="dim dim-right"></div>
-      <div class="corner c-tl"></div>
-      <div class="corner c-tr"></div>
-      <div class="corner c-bl"></div>
-      <div class="corner c-br"></div>
-      <div class="scan-line"></div>
-      <div class="scan-flash" id="scanFlash"></div>
-    </div>
-    <div class="scanner-status" id="scannerStatus">
-      <span class="scan-dot"></span>
-      <span>Point camera at the barcode on the back of the book&hellip;</span>
-    </div>
+  <img src="images/Ceroa Logo.png" alt="Ceroa" class="home-logo" />
+
+  <div class="tool-list">
+    <button class="tool-btn" onclick="showTool()">
+      <div class="tool-icon">&#128717;</div>
+      <div>
+        <div class="tool-label">AB Price Tool</div>
+        <div class="tool-sub">Compare book prices across the web</div>
+      </div>
+    </button>
   </div>
-  <div class="scanner-meta" id="cameraMeta" style="display:none">
-    <label for="cameraSelect">Camera:</label>
-    <select id="cameraSelect" onchange="switchCamera()"></select>
+
+  <div class="home-footer">
+    &copy; Ceroa
   </div>
+
 </div>
 
-<main>
-  <div class="card">
-    <h2>Find the Best Price</h2>
-    <p>Scan the barcode on the back of the book or type an ISBN. We'll confirm the book details and open price comparison links across the web &mdash; no account or API key needed.</p>
 
-    <div class="isbn-row">
-      <input id="isbnInput" type="text" placeholder="e.g. 978-0-310-44885-4" maxlength="20" autocomplete="off" />
-      <button class="btn-scan" onclick="openScanner()">&#128247; Scan</button>
-      <button class="btn-search" id="searchBtn" onclick="runSearch()">Find Prices</button>
+<!-- ════════════════════════════════════════════════
+     TOOL PAGE
+════════════════════════════════════════════════ -->
+<div id="toolPage">
+
+  <header>
+    <button class="back-btn" onclick="showHome()">&#8592; Home</button>
+    <div class="header-divider"></div>
+    <img src="images/Ceroa Logo.png" alt="Ceroa" class="header-logo" />
+    <div class="header-divider"></div>
+    <div class="header-tool-name"><span>AB</span> Price Tool</div>
+  </header>
+
+  <!-- Scanner modal -->
+  <div id="scannerModal" role="dialog" aria-modal="true" aria-label="Barcode scanner">
+    <div class="scanner-panel">
+      <button class="btn-close-scanner" onclick="closeScanner()" title="Close">&times;</button>
+      <video id="scannerVideo" playsinline muted></video>
+      <div class="vf-overlay">
+        <div class="dim dim-top"></div>
+        <div class="dim dim-bottom"></div>
+        <div class="dim dim-left"></div>
+        <div class="dim dim-right"></div>
+        <div class="corner c-tl"></div>
+        <div class="corner c-tr"></div>
+        <div class="corner c-bl"></div>
+        <div class="corner c-br"></div>
+        <div class="scan-line"></div>
+        <div class="scan-flash" id="scanFlash"></div>
+      </div>
+      <div class="scanner-status" id="scannerStatus">
+        <span class="scan-dot"></span>
+        <span>Point camera at the barcode on the back of the book&hellip;</span>
+      </div>
+    </div>
+    <div class="scanner-meta" id="cameraMeta" style="display:none">
+      <label for="cameraSelect">Camera:</label>
+      <select id="cameraSelect" onchange="switchCamera()"></select>
     </div>
   </div>
 
-  <div id="results"></div>
-</main>
+  <main>
+    <div class="card">
+      <h2>Find the Best Price</h2>
+      <p>Scan the barcode on the back of the book or type an ISBN. We&rsquo;ll confirm the book details and open price comparison links across the web &mdash; no account or API key needed.</p>
+      <div class="isbn-row">
+        <input id="isbnInput" type="text" placeholder="e.g. 978-0-310-44885-4" maxlength="20" autocomplete="off" />
+        <button class="btn-scan" onclick="openScanner()">&#128247; Scan</button>
+        <button class="btn-search" id="searchBtn" onclick="runSearch()">Find Prices</button>
+      </div>
+    </div>
+    <div id="results"></div>
+  </main>
 
-<footer>Bible Store Price Finder &mdash; Book data from Open Library (openlibrary.org) &mdash; No API key required.</footer>
+  <footer>Ceroa &mdash; AB Price Tool &mdash; Book data from Open Library &mdash; No API key required.</footer>
+
+</div>
+
 
 <script>
   const $ = id => document.getElementById(id);
 
+  // ── Page navigation ───────────────────────────────────────────────────────
+  function showTool() {
+    $('homePage').style.display  = 'none';
+    $('toolPage').classList.add('active');
+    document.title = 'AB Price Tool | Ceroa';
+  }
+
+  function showHome() {
+    closeScanner();
+    $('toolPage').classList.remove('active');
+    $('homePage').style.display  = 'flex';
+    document.title = 'Ceroa';
+  }
+
+  // ── Tool init ─────────────────────────────────────────────────────────────
   document.addEventListener('DOMContentLoaded', () => {
     $('isbnInput').addEventListener('keydown', e => { if (e.key === 'Enter') runSearch(); });
   });
 
-  // ── Price comparison stores ───────────────────────────────────────────────────
-  // Each entry: { name, icon, desc, url(isbn) }
+  // ── Price comparison stores ───────────────────────────────────────────────
   const STORES = [
     {
       name: 'Amazon India',
@@ -446,45 +583,37 @@
     }
   ];
 
-  // ── Main search ───────────────────────────────────────────────────────────────
+  // ── Main search ───────────────────────────────────────────────────────────
   async function runSearch() {
     const isbn = $('isbnInput').value.trim().replace(/[-\s]/g, '');
-
     if (!isbn) { showError('Please enter or scan an ISBN number.'); return; }
     if (!/^\d{10}(\d{3})?$/.test(isbn)) {
       showError(`"${isbn}" doesn't look like a valid ISBN-10 or ISBN-13. Please check the number.`);
       return;
     }
-
     showLoading();
     $('searchBtn').disabled = true;
-
     try {
       const bookData = await fetchBookData(isbn);
       renderResults(isbn, bookData);
     } catch (_) {
-      // If Open Library fails, still show the store links
       renderResults(isbn, null);
     } finally {
       $('searchBtn').disabled = false;
     }
   }
 
-  // ── Open Library lookup ───────────────────────────────────────────────────────
+  // ── Open Library lookup ───────────────────────────────────────────────────
   async function fetchBookData(isbn) {
-    const url = `https://openlibrary.org/api/books?bibkeys=ISBN:${isbn}&format=json&jscmd=data`;
+    const url  = `https://openlibrary.org/api/books?bibkeys=ISBN:${isbn}&format=json&jscmd=data`;
     const res  = await fetch(url);
     const data = await res.json();
-    const key  = `ISBN:${isbn}`;
-    return data[key] || null;
+    return data[`ISBN:${isbn}`] || null;
   }
 
-  // ── Render ────────────────────────────────────────────────────────────────────
+  // ── Render results ────────────────────────────────────────────────────────
   function renderResults(isbn, book) {
-    let html = '';
-
-    // Book info panel
-    html += `<div class="book-panel">`;
+    let html = '<div class="book-panel">';
 
     if (book) {
       const title     = book.title || 'Unknown Title';
@@ -492,7 +621,6 @@
       const publisher = (book.publishers || [])[0]?.name || '';
       const year      = book.publish_date || '';
       const coverUrl  = `https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`;
-
       html += `
         <img class="book-cover" src="${coverUrl}" alt="Cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="book-cover-placeholder" style="display:none">&#128218;</div>
@@ -512,11 +640,9 @@
         </div>`;
     }
 
-    html += `</div>`;
-
-    // Store links
-    html += `<p class="section-heading">&#128722; Compare Prices Across the Web</p>`;
-    html += `<div class="store-grid">`;
+    html += '</div>';
+    html += '<p class="section-heading">&#128722; Compare Prices Across the Web</p>';
+    html += '<div class="store-grid">';
 
     STORES.forEach(store => {
       const priceSlot = store.fetchPrice
@@ -524,8 +650,7 @@
              <span class="price-dot"></span>
              <span class="price-dot"></span>
              <span class="price-dot"></span>
-           </div>`
-        : '';
+           </div>` : '';
 
       html += `
         <a class="store-card" href="${store.url(isbn)}" target="_blank" rel="noopener noreferrer">
@@ -537,28 +662,22 @@
         </a>`;
     });
 
-    html += `</div>`;
+    html += '</div>';
     $('results').innerHTML = html;
 
-    // Fetch live prices for Christian stores in the background
     STORES.filter(s => s.fetchPrice).forEach(store => {
       const elId = `sp-${store.name.replace(/\W+/g, '-')}`;
       fetchStorePrice(store.url(isbn)).then(price => {
         const el = document.getElementById(elId);
         if (!el) return;
-        if (price) {
-          el.textContent = price;
-          el.classList.add('found');
-        } else {
-          el.textContent = '';
-        }
+        el.textContent = price || '';
+        if (price) el.classList.add('found');
       });
     });
   }
 
-  // ── Fetch price from a store via CORS proxy ───────────────────────────────────
+  // ── Fetch live price via CORS proxy ──────────────────────────────────────
   async function fetchStorePrice(searchUrl) {
-    // Selectors tried in order — covers WooCommerce and Shopify themes
     const SELECTORS = [
       '.woocommerce-Price-amount bdi',
       '.woocommerce-Price-amount',
@@ -573,7 +692,6 @@
       '.product-price',
       '.regular-price',
     ];
-
     const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(searchUrl)}`;
     try {
       const controller = new AbortController();
@@ -582,9 +700,7 @@
       clearTimeout(timer);
       const data = await res.json();
       if (!data.contents) return null;
-
       const doc = new DOMParser().parseFromString(data.contents, 'text/html');
-
       for (const sel of SELECTORS) {
         const el = doc.querySelector(sel);
         if (el) {
@@ -593,12 +709,10 @@
         }
       }
       return null;
-    } catch (_) {
-      return null;
-    }
+    } catch (_) { return null; }
   }
 
-  // ── UI helpers ────────────────────────────────────────────────────────────────
+  // ── UI helpers ────────────────────────────────────────────────────────────
   function showLoading() {
     $('results').innerHTML = `
       <div class="loading-box">
@@ -616,7 +730,7 @@
       ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   }
 
-  // ── Scanner ───────────────────────────────────────────────────────────────────
+  // ── Scanner ───────────────────────────────────────────────────────────────
   let scanStream  = null;
   let scanRaf     = null;
   let zxingReader = null;
@@ -746,8 +860,8 @@
 
   function beep() {
     try {
-      const ctx = new (window.AudioContext || window.webkitAudioContext)();
-      const osc = ctx.createOscillator();
+      const ctx  = new (window.AudioContext || window.webkitAudioContext)();
+      const osc  = ctx.createOscillator();
       const gain = ctx.createGain();
       osc.connect(gain); gain.connect(ctx.destination);
       osc.frequency.value = 1760;
