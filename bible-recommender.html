@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Find Your Bible</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --red:       #D42535;
+      --red-dark:  #b01e2b;
+      --red-light: #fff0f1;
+      --red-tint:  #fce8ea;
+      --black:     #1c1c1c;
+      --gray:      #555;
+      --border:    #e2e2e2;
+      --bg:        #f4f4f4;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      background: var(--bg);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 28px rgba(0,0,0,0.1);
+      max-width: 600px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      padding: 20px 28px 0;
+    }
+    .header-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding-bottom: 16px;
+    }
+    .header-logo {
+      height: 48px;
+      width: auto;
+      flex-shrink: 0;
+    }
+    .header-text h1 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.2;
+    }
+    .header-text p {
+      font-size: 0.78rem;
+      color: #999;
+      margin-top: 2px;
+    }
+
+    /* ── Progress bar ── */
+    .progress-wrap {
+      background: #eee;
+      height: 4px;
+    }
+    .progress-bar {
+      background: var(--red);
+      height: 4px;
+      transition: width 0.4s ease;
+    }
+    .progress-label {
+      font-size: 0.72rem;
+      color: #aaa;
+      padding: 6px 0 0;
+      text-align: right;
+      padding-right: 2px;
+      height: 22px;
+    }
+
+    /* ── Quiz body ── */
+    .quiz-body { padding: 28px 32px 32px; }
+
+    .question-text {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .options { display: grid; gap: 10px; }
+
+    .option-btn {
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      padding: 11px 16px;
+      text-align: left;
+      background: white;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      transition: all 0.15s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .option-btn:hover {
+      border-color: var(--red);
+      background: var(--red-light);
+    }
+    .option-btn.selected {
+      border-color: var(--red);
+      background: var(--red-light);
+      font-weight: 600;
+      color: var(--red-dark);
+    }
+    .option-btn .emoji { font-size: 1.15rem; width: 24px; text-align: center; }
+
+    /* ── Navigation ── */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
+    }
+    .btn-back {
+      background: none;
+      border: none;
+      color: #aaa;
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-family: 'Poppins', sans-serif;
+      padding: 8px 0;
+    }
+    .btn-back:hover { color: var(--black); }
+    .btn-next {
+      background: var(--red);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 11px 28px;
+      font-size: 0.92rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn-next:hover    { background: var(--red-dark); }
+    .btn-next:disabled { background: #ccc; cursor: not-allowed; }
+
+    /* ── Welcome screen ── */
+    #welcome { padding: 32px; text-align: center; }
+    #welcome h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 10px;
+    }
+    #welcome p { color: #666; line-height: 1.65; margin-bottom: 24px; font-size: 0.93rem; }
+    .btn-start {
+      background: var(--red);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 13px 40px;
+      font-size: 0.95rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn-start:hover { background: var(--red-dark); }
+
+    /* ── Results ── */
+    #results { padding: 28px 32px 32px; display: none; }
+    #results h2 { font-size: 1.2rem; font-weight: 700; color: var(--black); margin-bottom: 4px; }
+    #results .subtitle { color: #999; font-size: 0.85rem; margin-bottom: 22px; }
+
+    .product-card {
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .product-card.top-pick {
+      border-color: var(--red);
+      background: var(--red-light);
+    }
+    .badge {
+      position: absolute;
+      top: -10px;
+      left: 16px;
+      background: var(--red);
+      color: white;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+    .product-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 3px;
+    }
+    .product-price {
+      color: var(--red);
+      font-weight: 700;
+      font-size: 0.92rem;
+      margin-bottom: 8px;
+    }
+    .product-why {
+      font-size: 0.82rem;
+      color: #666;
+      line-height: 1.55;
+      margin-bottom: 12px;
+    }
+    .product-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+    .tag {
+      background: var(--red-tint);
+      color: var(--red-dark);
+      font-size: 0.72rem;
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+    .btn-view {
+      background: var(--red);
+      color: white;
+      border: none;
+      border-radius: 7px;
+      padding: 10px 20px;
+      font-size: 0.88rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.15s;
+    }
+    .btn-view:hover { background: var(--red-dark); }
+
+    .btn-retake {
+      display: block;
+      text-align: center;
+      margin-top: 18px;
+      color: #aaa;
+      font-size: 0.85rem;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      background: none;
+      border: none;
+      width: 100%;
+    }
+    .btn-retake:hover { color: var(--red); }
+
+    /* Match score bar */
+    .score-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .score-label { font-size: 0.76rem; color: #aaa; white-space: nowrap; }
+    .score-track {
+      flex: 1;
+      height: 5px;
+      background: var(--red-tint);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .score-fill {
+      height: 5px;
+      background: var(--red);
+      border-radius: 4px;
+    }
+    .score-pct { font-size: 0.76rem; font-weight: 700; color: var(--red); white-space: nowrap; }
+
+    /* hide/show helpers */
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <div class="header-top">
+      <img class="header-logo"
+           src="images/a7f24b73-470a-4ae3-a9c2-3ff82fcf576b (2).JPG"
+           alt="Asha Books" />
+      <div class="header-text">
+        <h1>Find Your Perfect Bible</h1>
+        <p>Answer 6 quick questions — we'll match you to the right one.</p>
+      </div>
+    </div>
+    <div class="progress-wrap">
+      <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+    </div>
+    <div class="progress-label" id="progressLabel"></div>
+  </div>
+
+  <!-- Welcome -->
+  <div id="welcome">
+    <h2>Let's find your Bible</h2>
+    <p>
+      We'll ask you 6 quick questions about language, purpose, and reading style.
+      Then we'll recommend the best Bible from our collection — just for you.
+    </p>
+    <button class="btn-start" onclick="startQuiz()">Get Started →</button>
+  </div>
+
+  <!-- Quiz -->
+  <div id="quiz" class="quiz-body hidden">
+    <div class="question-text" id="questionText"></div>
+    <div class="options" id="optionsContainer"></div>
+    <div class="nav">
+      <button class="btn-back" id="btnBack" onclick="goBack()">← Back</button>
+      <button class="btn-next" id="btnNext" onclick="goNext()" disabled>Next →</button>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div id="results">
+    <h2>Your Recommendations</h2>
+    <p class="subtitle" id="resultsSubtitle"></p>
+    <div id="productList"></div>
+    <button class="btn-retake" onclick="restart()">↩ Retake the quiz</button>
+  </div>
+</div>
+
+<script>
+// Products are loaded live from Google Sheets — see GSHEET_URL below
+const PRODUCTS_PLACEHOLDER = [
+  {
+    id: 1,
+    name: "Tamil Holy Bible (New Living Translation)",
+    price: "₹450",
+    description: "Easy-to-read NLT in Tamil — ideal for daily reading and new believers.",
+    tags: {
+      language: ["tamil"],
+      purpose: ["devotion", "gift"],
+      level: ["new", "casual"],
+      denomination: ["protestant", "nondenominational"],
+      format: ["compact"],
+      budget: ["low", "medium"],
+    },
+    popularityScore: 0.92,
+    coBoughtWith: [3, 7],
+    shopifyUrl: "#"  // replace with real URL
+  },
+  {
+    id: 2,
+    name: "Hindi Holy Bible (Good News Translation)",
+    price: "₹380",
+    description: "Clear, contemporary Hindi — great for new readers and gifting.",
+    tags: {
+      language: ["hindi"],
+      purpose: ["devotion", "gift"],
+      level: ["new", "casual"],
+      denomination: ["protestant", "nondenominational"],
+      format: ["compact"],
+      budget: ["low"],
+    },
+    popularityScore: 0.88,
+    coBoughtWith: [6, 7],
+    shopifyUrl: "#"
+  },
+  {
+    id: 3,
+    name: "Telugu Study Bible (NIV)",
+    price: "₹1,100",
+    description: "In-depth NIV study notes in Telugu for serious students and leaders.",
+    tags: {
+      language: ["telugu"],
+      purpose: ["study", "devotion"],
+      level: ["advanced", "casual"],
+      denomination: ["protestant"],
+      format: ["study"],
+      budget: ["medium", "high"],
+    },
+    popularityScore: 0.75,
+    coBoughtWith: [1, 5],
+    shopifyUrl: "#"
+  },
+  {
+    id: 4,
+    name: "Malayalam Catholic Bible (Jerusalem Bible)",
+    price: "₹650",
+    description: "Jerusalem Bible in Malayalam with all deuterocanonical books.",
+    tags: {
+      language: ["malayalam"],
+      purpose: ["devotion", "study"],
+      level: ["casual", "advanced"],
+      denomination: ["catholic"],
+      format: ["standard"],
+      budget: ["medium"],
+    },
+    popularityScore: 0.80,
+    coBoughtWith: [8],
+    shopifyUrl: "#"
+  },
+  {
+    id: 5,
+    name: "English NIV Study Bible (Premium Leather)",
+    price: "₹2,800",
+    description: "The gold standard study Bible — 20,000+ notes, maps, concordance.",
+    tags: {
+      language: ["english"],
+      purpose: ["study"],
+      level: ["advanced"],
+      denomination: ["protestant", "nondenominational"],
+      format: ["study"],
+      budget: ["high"],
+    },
+    popularityScore: 0.70,
+    coBoughtWith: [3, 6],
+    shopifyUrl: "#"
+  },
+  {
+    id: 6,
+    name: "English KJV Compact Bible",
+    price: "₹320",
+    description: "Classic King James Version in a pocket-friendly compact size.",
+    tags: {
+      language: ["english"],
+      purpose: ["devotion", "gift"],
+      level: ["casual", "advanced"],
+      denomination: ["protestant"],
+      format: ["compact"],
+      budget: ["low"],
+    },
+    popularityScore: 0.78,
+    coBoughtWith: [2, 5],
+    shopifyUrl: "#"
+  },
+  {
+    id: 7,
+    name: "Illustrated Children's Bible (English/Tamil bilingual)",
+    price: "₹550",
+    description: "Colourful illustrated stories in English and Tamil — perfect for children.",
+    tags: {
+      language: ["english", "tamil"],
+      purpose: ["children", "gift"],
+      level: ["new"],
+      denomination: ["protestant", "catholic", "nondenominational"],
+      format: ["illustrated"],
+      budget: ["low", "medium"],
+    },
+    popularityScore: 0.85,
+    coBoughtWith: [1, 2],
+    shopifyUrl: "#"
+  },
+  {
+    id: 8,
+    name: "Large Print Malayalam Bible (NLT)",
+    price: "₹780",
+    description: "Generous large-print NLT in Malayalam — great for seniors and gifting elders.",
+    tags: {
+      language: ["malayalam"],
+      purpose: ["devotion", "gift"],
+      level: ["new", "casual"],
+      denomination: ["protestant", "nondenominational"],
+      format: ["largeprint"],
+      budget: ["medium"],
+    },
+    popularityScore: 0.72,
+    coBoughtWith: [4],
+    shopifyUrl: "#"
+  },
+  {
+    id: 9,
+    name: "Kannada Holy Bible (New Indian Version)",
+    price: "₹420",
+    description: "Idiomatic Kannada translation — clear and culturally resonant.",
+    tags: {
+      language: ["kannada"],
+      purpose: ["devotion", "gift"],
+      level: ["new", "casual"],
+      denomination: ["protestant", "nondenominational"],
+      format: ["compact"],
+      budget: ["low", "medium"],
+    },
+    popularityScore: 0.68,
+    coBoughtWith: [2],
+    shopifyUrl: "#"
+  },
+  {
+    id: 10,
+    name: "Pentecostal Spirit-Filled Bible (English)",
+    price: "₹1,450",
+    description: "Charismatic study notes on the gifts and work of the Holy Spirit.",
+    tags: {
+      language: ["english"],
+      purpose: ["study", "devotion"],
+      level: ["casual", "advanced"],
+      denomination: ["pentecostal"],
+      format: ["study"],
+      budget: ["medium", "high"],
+    },
+    popularityScore: 0.65,
+    coBoughtWith: [5],
+    shopifyUrl: "#"
+  },
+  // ── New products added from customer insight data ──
+  {
+    id: 11,
+    name: "Maxwell Leadership Bible (English, NIV)",
+    price: "₹1,850",
+    description: "John Maxwell's leadership principles woven through every chapter — built for business minds and entrepreneurs.",
+    tags: {
+      language: ["english"],
+      purpose: ["study", "devotion"],
+      level: ["casual", "advanced"],
+      denomination: ["protestant", "nondenominational"],
+      format: ["leadership"],
+      budget: ["medium", "high"],
+    },
+    popularityScore: 0.70,
+    coBoughtWith: [5, 10],
+    shopifyUrl: "#"
+  },
+  {
+    id: 12,
+    name: "ESV Journaling Bible (English)",
+    price: "₹1,200",
+    description: "Single-column ESV with 2-inch ruled margins — designed for notes, prayers, and daily reflections.",
+    tags: {
+      language: ["english"],
+      purpose: ["devotion", "study"],
+      level: ["casual", "advanced"],
+      denomination: ["protestant", "nondenominational"],
+      format: ["journaling"],
+      budget: ["medium", "high"],
+    },
+    popularityScore: 0.73,
+    coBoughtWith: [5, 6],
+    shopifyUrl: "#"
+  },
+  {
+    id: 13,
+    name: "Tamil Journaling Bible (NLT)",
+    price: "₹950",
+    description: "NLT in Tamil with generous ruled margins on every page for personal notes and reflections.",
+    tags: {
+      language: ["tamil"],
+      purpose: ["devotion"],
+      level: ["casual", "advanced"],
+      denomination: ["protestant", "nondenominational"],
+      format: ["journaling"],
+      budget: ["medium"],
+    },
+    popularityScore: 0.62,
+    coBoughtWith: [1, 12],
+    shopifyUrl: "#"
+  },
+  {
+    id: 14,
+    name: "Tamil Compact Checkbook Bible (KJV)",
+    price: "₹350",
+    description: "Slim checkbook-sized KJV in Tamil — fits in a shirt pocket or handbag, made for weekly church-goers.",
+    tags: {
+      language: ["tamil"],
+      purpose: ["devotion", "gift"],
+      level: ["new", "casual"],
+      denomination: ["protestant", "nondenominational"],
+      format: ["compact"],
+      budget: ["low"],
+    },
+    popularityScore: 0.80,
+    coBoughtWith: [1, 6],
+    shopifyUrl: "#"
+  },
+  {
+    id: 15,
+    name: "Large Print Hindi Bible (Good News Translation)",
+    price: "₹680",
+    description: "Good News Translation in Hindi with large, clear text — ideal for seniors or anyone with vision difficulty.",
+    tags: {
+      language: ["hindi"],
+      purpose: ["devotion", "gift"],
+      level: ["new", "casual"],
+      denomination: ["protestant", "nondenominational"],
+      format: ["largeprint"],
+      budget: ["medium"],
+    },
+    popularityScore: 0.65,
+    coBoughtWith: [2, 8],
+    shopifyUrl: "#"
+  },
+];
+
+// ─────────────────────────────────────────────────────────────────────────────
+//  CONFIGURATION  ← only update these two lines
+// ─────────────────────────────────────────────────────────────────────────────
+
+const STORE_URL  = "https://www.ashabooks.com";
+const GSHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQj-T9GxoQKroHddPcyXoP2A-cw-yiszqv_RIhGPQ8ZrIJOBjXtCMauBGywC_Uaf7syGCGFOP1lJ3CY/pub?output=csv";
+
+// ── Google Sheets CSV integration ────────────────────────────────────────────
+
+// Minimal CSV parser that handles quoted fields containing commas
+function parseCSV(text) {
+  const lines = text.trim().split(/\r?\n/);
+  const headers = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g, ''));
+
+  return lines.slice(1).map(line => {
+    const values = [];
+    let current = '';
+    let inQuotes = false;
+    for (let i = 0; i < line.length; i++) {
+      if (line[i] === '"') {
+        inQuotes = !inQuotes;
+      } else if (line[i] === ',' && !inQuotes) {
+        values.push(current.trim());
+        current = '';
+      } else {
+        current += line[i];
+      }
+    }
+    values.push(current.trim());
+
+    const row = {};
+    headers.forEach((h, i) => { row[h] = (values[i] || '').replace(/^"|"$/g, ''); });
+    return row;
+  }).filter(row => row["Title"]); // skip blank rows
+}
+
+// Auto-infer recommendation tags from the product title and price.
+// This means your Google Sheet only needs: Title, Price (INR), Handle.
+function inferTags(title, price) {
+  const t = title.toLowerCase();
+
+  // Language — look for Indian language names in the title; default to English
+  const LANGS = ["telugu","tamil","hindi","malayalam","kannada","bengali","assamese","nepali","marathi","punjabi","odia"];
+  const language = LANGS.find(l => t.includes(l)) || "english";
+
+  // Format
+  let format = "standard";
+  if (/large.?print|large.?type|\blp\b/.test(t))                         format = "largeprint";
+  else if (/pocket|compact|thinline|slimline|economy|personal.?size/.test(t)) format = "compact";
+  else if (/journal|filament/.test(t))                                    format = "journaling";
+  else if (/leadership|leader/.test(t))                                   format = "leadership";
+  else if (/study.?bible|study.?bib|backgrounds|reference/.test(t))      format = "study";
+
+  // Purpose
+  const purpose = [];
+  if (/recover|devotion|prayer|celebrat|rainbow/.test(t)) purpose.push("devotion");
+  if (/study|backgrounds|reference|justice/.test(t))      purpose.push("study");
+  if (/outreach/.test(t))                                 purpose.push("gift");
+  if (/boys|girls|youth|children|kids|student/.test(t))  purpose.push("children");
+  if (purpose.length === 0) purpose.push("devotion");
+
+  // Level
+  let level = "casual";
+  if (/study|backgrounds|reference|cultural/.test(t)) level = "advanced";
+  else if (/youth|economy|outreach|boys|story/.test(t)) level = "new";
+
+  // Budget from price
+  const budget = price >= 1000 ? "high" : price >= 500 ? "medium" : "low";
+
+  // Denomination — NIV/NLT/KJV/NKJV/ESV/Message are broadly non-denominational
+  const denomination = ["protestant", "nondenominational"];
+  if (/catholic/.test(t))          denomination.splice(0, 2, "catholic");
+  else if (/pentecostal|spirit/.test(t)) denomination.splice(0, 2, "pentecostal");
+
+  return { language: [language], format: [format], purpose, level: [level], budget: [budget], denomination };
+}
+
+// Convert one Google Sheet row into a product object.
+// Expected columns: Title | ISBN | Price (INR) | Handle
+function rowToProduct(row) {
+  const name   = row["Title"]         || "";
+  const price  = parseInt(row["Price (INR)"] || "0") || 0;
+  const handle = row["Handle"]        || "";
+  return {
+    id:             handle || name,
+    name,
+    price:          `₹${price.toLocaleString("en-IN")}`,
+    description:    "",
+    tags:           inferTags(name, price),
+    popularityScore: 0.7,
+    coBoughtWith:   [],
+    shopifyUrl:     handle ? `${STORE_URL}/products/${handle}` : `${STORE_URL}/collections/all`,
+  };
+}
+
+async function fetchGoogleSheetProducts() {
+  const res = await fetch(GSHEET_URL);
+  if (!res.ok) throw new Error(`Sheet fetch failed: ${res.status}`);
+  const text = await res.text();
+  return parseCSV(text).map(rowToProduct);
+}
+
+// Product list — populated from Google Sheet on page load
+let ACTIVE_PRODUCTS = [];
+
+async function init() {
+  try {
+    ACTIVE_PRODUCTS = await fetchGoogleSheetProducts();
+  } catch (err) {
+    console.error("Could not load products from Google Sheet:", err);
+    document.getElementById("welcome").innerHTML = `
+      <h2 style="color:var(--red)">Could not load products</h2>
+      <p style="color:#666;margin-top:8px">Please refresh the page and try again.</p>
+    `;
+  }
+}
+init();
+
+// ─────────────────────────────────────────────────────────────────────────────
+//  QUIZ QUESTIONS
+//  Each question maps to a tag category in PRODUCTS.tags
+//  value: the tag string(s) it matches in the product catalog
+// ─────────────────────────────────────────────────────────────────────────────
+const QUESTIONS = [
+  {
+    id: "language",
+    text: "What language do you prefer to read in?",
+    options: [
+      { emoji: "🗣️", label: "Tamil",    value: "tamil" },
+      { emoji: "🗣️", label: "Hindi",    value: "hindi" },
+      { emoji: "🗣️", label: "Telugu",   value: "telugu" },
+      { emoji: "🗣️", label: "Malayalam",value: "malayalam" },
+      { emoji: "🗣️", label: "Kannada",  value: "kannada" },
+      { emoji: "🗣️", label: "English",  value: "english" },
+    ],
+  },
+  {
+    id: "purpose",
+    text: "What will you mainly use this Bible for?",
+    options: [
+      { emoji: "🙏", label: "Daily devotion / prayer",         value: "devotion" },
+      { emoji: "📖", label: "In-depth study & research",       value: "study" },
+      { emoji: "🎁", label: "Gifting someone",                 value: "gift" },
+      { emoji: "👶", label: "For a child",                     value: "children" },
+    ],
+  },
+  {
+    id: "format",
+    text: "Which of these best describes you as a reader?",
+    options: [
+      { emoji: "⛪", label: "I carry my Bible to church every week",      value: "compact" },
+      { emoji: "👁️", label: "I prefer large, easy-to-read text",          value: "largeprint" },
+      { emoji: "💼", label: "I'm in business / entrepreneurship",          value: "leadership" },
+      { emoji: "✏️", label: "I love writing notes & journaling",           value: "journaling" },
+      { emoji: "🏠", label: "I read at home — no special requirements",    value: "standard" },
+    ],
+  },
+  {
+    id: "level",
+    text: "How would you describe your Bible reading experience?",
+    options: [
+      { emoji: "🌱", label: "New believer / just starting",  value: "new" },
+      { emoji: "📚", label: "Regular reader",                value: "casual" },
+      { emoji: "🎓", label: "Serious student / leader",      value: "advanced" },
+    ],
+  },
+  {
+    id: "denomination",
+    text: "Which church tradition do you come from?",
+    options: [
+      { emoji: "✝️", label: "Catholic",              value: "catholic" },
+      { emoji: "✝️", label: "Protestant (CSI, CNI…)", value: "protestant" },
+      { emoji: "🔥", label: "Pentecostal / Charismatic", value: "pentecostal" },
+      { emoji: "🌐", label: "Non-denominational",    value: "nondenominational" },
+    ],
+  },
+  {
+    id: "budget",
+    text: "What's your budget for this Bible?",
+    options: [
+      { emoji: "💰", label: "Under ₹500",         value: "low" },
+      { emoji: "💰", label: "₹500 – ₹1,000",      value: "medium" },
+      { emoji: "💰", label: "₹1,000 and above",   value: "high" },
+    ],
+  },
+];
+
+// ─────────────────────────────────────────────────────────────────────────────
+//  SCORING ENGINE
+// ─────────────────────────────────────────────────────────────────────────────
+
+// Weight given to each tag match (tune these based on what drives conversions)
+const TAG_WEIGHTS = {
+  language:     5,   // highest — wrong language = wrong product
+  purpose:      3,
+  format:       4,   // high — now directly asked; compact/largeprint/leadership/journaling are decisive
+  denomination: 2,
+  level:        2,
+  budget:       3,
+};
+
+// How much the collaborative signal can boost a product (0–1 scale)
+const COLLAB_BOOST_MAX = 0.15;
+
+/**
+ * Content-based score: how well does a product's tags match the quiz answers?
+ * Returns a raw score (higher is better).
+ */
+function contentScore(product, answers) {
+  let score = 0;
+  for (const [dimension, weight] of Object.entries(TAG_WEIGHTS)) {
+    const answer = answers[dimension];
+    if (!answer) continue;
+    const productTags = product.tags[dimension] || [];
+    if (productTags.includes(answer)) {
+      score += weight;
+    }
+  }
+  return score;
+}
+
+/**
+ * Collaborative boost: if highly-scoring products are often co-bought with
+ * this product, give it a small extra push.
+ *
+ * In production, replace `product.coBoughtWith` with real co-purchase counts
+ * from your Shopify order history.
+ */
+function collaborativeBoost(product, topProductIds) {
+  const overlaps = product.coBoughtWith.filter(id => topProductIds.includes(id));
+  // Scale: 1 overlap = half boost, 2+ = full boost
+  const ratio = Math.min(overlaps.length / 2, 1);
+  return ratio * COLLAB_BOOST_MAX;
+}
+
+/**
+ * Main recommendation function.
+ * Returns top N products with their final scores and explanations.
+ */
+function recommend(answers, topN = 3) {
+  const maxPossibleContent = Object.values(TAG_WEIGHTS).reduce((a, b) => a + b, 0);
+
+  // Step 1: content-based scores
+  const scored = ACTIVE_PRODUCTS.map(p => ({
+    product: p,
+    rawContent: contentScore(p, answers),
+  }));
+
+  // Step 2: identify top content matches (for collaborative signal)
+  const sortedByContent = [...scored].sort((a, b) => b.rawContent - a.rawContent);
+  const top3Ids = sortedByContent.slice(0, 3).map(s => s.product.id);
+
+  // Step 3: final score = normalised content + popularity + collaborative boost
+  const finalScored = scored.map(({ product, rawContent }) => {
+    const normContent   = rawContent / maxPossibleContent;          // 0–1
+    const collab        = collaborativeBoost(product, top3Ids);    // 0–0.15
+    const popularity    = product.popularityScore * 0.1;           // 0–0.1 (gentle nudge)
+    const finalScore    = normContent * 0.75 + popularity + collab;
+
+    return { product, finalScore, normContent };
+  });
+
+  finalScored.sort((a, b) => b.finalScore - a.finalScore);
+  return finalScored.slice(0, topN);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+//  QUIZ STATE
+// ─────────────────────────────────────────────────────────────────────────────
+let currentStep = 0;
+let answers = {};
+
+function startQuiz() {
+  document.getElementById("welcome").classList.add("hidden");
+  document.getElementById("quiz").classList.remove("hidden");
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const q = QUESTIONS[currentStep];
+  const total = QUESTIONS.length;
+
+  // Progress
+  const pct = Math.round(((currentStep) / total) * 100);
+  document.getElementById("progressBar").style.width = pct + "%";
+  document.getElementById("progressLabel").textContent =
+    `Question ${currentStep + 1} of ${total}`;
+
+  // Question
+  document.getElementById("questionText").textContent = q.text;
+
+  // Options
+  const container = document.getElementById("optionsContainer");
+  container.innerHTML = "";
+  q.options.forEach(opt => {
+    const btn = document.createElement("button");
+    btn.className = "option-btn" + (answers[q.id] === opt.value ? " selected" : "");
+    btn.innerHTML = `<span class="emoji">${opt.emoji}</span> ${opt.label}`;
+    btn.onclick = () => selectOption(opt.value, btn);
+    container.appendChild(btn);
+  });
+
+  // Nav buttons
+  document.getElementById("btnBack").style.visibility = currentStep === 0 ? "hidden" : "visible";
+  document.getElementById("btnNext").disabled = !answers[q.id];
+  document.getElementById("btnNext").textContent =
+    currentStep === total - 1 ? "See Recommendations →" : "Next →";
+}
+
+function selectOption(value, clickedBtn) {
+  const q = QUESTIONS[currentStep];
+  answers[q.id] = value;
+  document.querySelectorAll(".option-btn").forEach(b => b.classList.remove("selected"));
+  clickedBtn.classList.add("selected");
+  document.getElementById("btnNext").disabled = false;
+}
+
+function goNext() {
+  if (currentStep < QUESTIONS.length - 1) {
+    currentStep++;
+    renderQuestion();
+  } else {
+    showResults();
+  }
+}
+
+function goBack() {
+  if (currentStep > 0) {
+    currentStep--;
+    renderQuestion();
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+//  RESULTS
+// ─────────────────────────────────────────────────────────────────────────────
+function whyText(product, answers) {
+  const reasons = [];
+  if (product.tags.language?.includes(answers.language)) {
+    reasons.push(`Available in ${capitalise(answers.language)}`);
+  }
+  if (product.tags.purpose?.includes(answers.purpose)) {
+    const purposeLabel = { devotion: "daily devotion", study: "study", gift: "gifting", children: "children" };
+    reasons.push(`Suited for ${purposeLabel[answers.purpose] || answers.purpose}`);
+  }
+  if (product.tags.format?.includes(answers.format)) {
+    const formatLabel = {
+      compact:    "slim & easy to carry to church",
+      largeprint: "large print — easy on the eyes",
+      leadership: "leadership insights for business life",
+      journaling: "wide margins for notes & journaling",
+      study:      "in-depth study notes",
+      standard:   "standard home reading",
+      illustrated:"illustrated for children",
+    };
+    reasons.push(formatLabel[answers.format] || capitalise(answers.format));
+  }
+  if (product.tags.denomination?.includes(answers.denomination)) {
+    reasons.push(`Fits ${capitalise(answers.denomination)} tradition`);
+  }
+  if (product.tags.budget?.includes(answers.budget)) {
+    reasons.push("Within your budget");
+  }
+  return reasons.length ? reasons.join(" · ") : product.description;
+}
+
+function capitalise(s) {
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
+function showResults() {
+  document.getElementById("quiz").classList.add("hidden");
+  document.getElementById("progressBar").style.width = "100%";
+  document.getElementById("progressLabel").textContent = "Complete!";
+
+  const results = recommend(answers);
+  const el = document.getElementById("results");
+  const list = document.getElementById("productList");
+  list.innerHTML = "";
+
+  document.getElementById("resultsSubtitle").textContent =
+    `Based on your answers, here are the Bibles we recommend for you.`;
+
+  results.forEach((r, i) => {
+    const p = r.product;
+    const pct = Math.round(r.finalScore * 100);
+    const card = document.createElement("div");
+    card.className = "product-card" + (i === 0 ? " top-pick" : "");
+
+    const tagList = [
+      answers.language && capitalise(answers.language),
+      answers.purpose  && { devotion: "Devotion", study: "Study", gift: "Gift", children: "Children's" }[answers.purpose],
+      answers.format   && { compact: "Compact", largeprint: "Large Print", leadership: "Leadership", journaling: "Journaling", standard: "Standard" }[answers.format],
+      answers.denomination && capitalise(answers.denomination),
+    ].filter(Boolean);
+
+    card.innerHTML = `
+      ${i === 0 ? '<span class="badge">Best Match</span>' : ""}
+      <div class="product-name">${p.name}</div>
+      <div class="product-price">${p.price}</div>
+      <div class="score-row">
+        <span class="score-label">Match</span>
+        <div class="score-track"><div class="score-fill" style="width:${pct}%"></div></div>
+        <span class="score-pct">${pct}%</span>
+      </div>
+      <div class="product-why">${whyText(p, answers)}</div>
+      <div class="product-tags">${tagList.map(t => `<span class="tag">${t}</span>`).join("")}</div>
+      <button class="btn-view" onclick="window.open('${p.shopifyUrl}', '_blank')">
+        View Product →
+      </button>
+    `;
+    list.appendChild(card);
+  });
+
+  el.style.display = "block";
+}
+
+function restart() {
+  currentStep = 0;
+  answers = {};
+  document.getElementById("results").style.display = "none";
+  document.getElementById("progressBar").style.width = "0%";
+  document.getElementById("progressLabel").textContent = "";
+  document.getElementById("welcome").classList.remove("hidden");
+}
+</script>
+</body>
+</html>
