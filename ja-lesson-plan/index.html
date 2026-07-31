@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Johns Academy – Activity Planner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── VIEW 1: LOGIN ── -->
+  <div id="view-login" class="view active">
+    <div class="login-card">
+      <img src="logo.jpg" alt="John's Academy Logo" class="login-logo" />
+      <p class="subtitle">Teacher Activity Planner</p>
+      <form id="login-form">
+        <label for="password">Teacher Password</label>
+        <input type="password" id="password" placeholder="Enter password" required />
+        <p id="login-error" class="error hidden">Incorrect password. Please try again.</p>
+        <button type="submit" class="btn-primary">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ── VIEW 2: SELECT SUBJECT & GRADE ── -->
+  <div id="view-select" class="view hidden">
+    <header class="top-bar">
+      <div class="top-bar-left">
+        <img src="logo.jpg" alt="John's Academy" class="topbar-logo" />
+      </div>
+      <button class="btn-logout" id="logout-btn">Logout</button>
+    </header>
+    <main class="select-main">
+      <h2>Select Subject &amp; Grade</h2>
+      <p>Choose a subject and grade to view or create weekly plans.</p>
+      <div class="select-form">
+        <div class="field-group">
+          <label for="subject-select">Subject</label>
+          <select id="subject-select">
+            <option value="">-- Select Subject --</option>
+            <option value="Math">Math</option>
+            <option value="English">English</option>
+            <option value="Social Studies">Social Studies</option>
+            <option value="Science">Science</option>
+            <option value="EVS">EVS</option>
+            <option value="Telugu">Telugu</option>
+            <option value="Hindi">Hindi</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label for="grade-select">Grade</label>
+          <select id="grade-select">
+            <option value="">-- Select Grade --</option>
+            <option value="1">Grade 1</option>
+            <option value="2">Grade 2</option>
+            <option value="3">Grade 3</option>
+            <option value="4">Grade 4</option>
+            <option value="5">Grade 5</option>
+          </select>
+        </div>
+        <button class="btn-primary" id="go-btn">View Planner →</button>
+        <p id="select-error" class="error hidden">Please select both a subject and a grade.</p>
+      </div>
+    </main>
+  </div>
+
+  <!-- ── VIEW 3: WEEKLY PLANNER ── -->
+  <div id="view-planner" class="view hidden">
+    <header class="top-bar">
+      <div class="top-bar-left">
+        <button class="btn-back" id="back-btn">← Back</button>
+        <img src="logo.jpg" alt="John's Academy" class="topbar-logo" />
+        <span id="planner-title" class="planner-title-text"></span>
+      </div>
+      <button class="btn-logout" id="logout-btn-2">Logout</button>
+    </header>
+
+    <main class="planner-main">
+      <div class="planner-panels">
+
+        <!-- ── LEFT: BUILD PANEL ── -->
+        <section class="panel panel-left">
+          <div class="panel-heading">
+            <h3>Build Lesson Plan</h3>
+          </div>
+          <div class="panel-body">
+            <form id="add-form">
+
+              <div class="field-group">
+                <label>Week Starting</label>
+                <input type="date" id="f-date" />
+              </div>
+
+              <div class="field-group">
+                <label>Lesson</label>
+                <select id="f-lesson">
+                  <option value="">-- Select Lesson --</option>
+                </select>
+              </div>
+
+              <div class="field-group">
+                <label>Topic</label>
+                <select id="f-topic" disabled>
+                  <option value="">-- Select Lesson first --</option>
+                </select>
+              </div>
+
+              <button type="button" id="holiday-btn" class="btn-holiday" onclick="toggleHoliday()">Mark Day as Holiday</button>
+
+              <!-- Activity Picker: appears after Topic is chosen -->
+              <div id="active-day-bar" class="active-day-bar hidden">
+                <span id="active-day-text">Click a day row in the plan to select it</span>
+              </div>
+
+              <div class="activity-picker hidden" id="activity-picker">
+                <p class="activity-picker-hint">Select one activity:</p>
+                <div class="activity-cards">
+                  <button type="button" class="activity-card" id="activity-card-1" onclick="selectActivity(1)">
+                    <span class="activity-label">Activity 1</span>
+                    <span class="activity-text" id="activity-text-1"></span>
+                  </button>
+                  <button type="button" class="activity-card" id="activity-card-2" onclick="selectActivity(2)">
+                    <span class="activity-label">Activity 2</span>
+                    <span class="activity-text" id="activity-text-2"></span>
+                  </button>
+                  <button type="button" class="activity-card" id="activity-card-3" onclick="selectActivity(3)">
+                    <span class="activity-label">Activity 3</span>
+                    <span class="activity-text" id="activity-text-3"></span>
+                  </button>
+                </div>
+              </div>
+              <input type="hidden" id="f-activities" />
+
+              <!-- Assessment Picker: appears after Topic is chosen -->
+              <div class="activity-picker hidden" id="assessment-picker">
+                <p class="activity-picker-hint">Select one assessment:</p>
+                <div class="activity-cards">
+                  <button type="button" class="activity-card" id="assessment-card-1" onclick="selectAssessment(1)">
+                    <span class="activity-label">Option 1</span>
+                    <span class="activity-text" id="assessment-text-1"></span>
+                  </button>
+                  <button type="button" class="activity-card" id="assessment-card-2" onclick="selectAssessment(2)">
+                    <span class="activity-label">Option 2</span>
+                    <span class="activity-text" id="assessment-text-2"></span>
+                  </button>
+                  <button type="button" class="activity-card" id="assessment-card-3" onclick="selectAssessment(3)">
+                    <span class="activity-label">Option 3</span>
+                    <span class="activity-text" id="assessment-text-3"></span>
+                  </button>
+                </div>
+              </div>
+              <input type="hidden" id="f-assessments" />
+              <!-- Real World Picker: appears after Topic is chosen -->
+              <div class="activity-picker hidden" id="realworld-picker">
+                <p class="activity-picker-hint">Select one real world connection:</p>
+                <div class="activity-cards">
+                  <button type="button" class="activity-card" id="realworld-card-1" onclick="selectRealworld(1)">
+                    <span class="activity-label">Option 1</span>
+                    <span class="activity-text" id="realworld-text-1"></span>
+                  </button>
+                  <button type="button" class="activity-card" id="realworld-card-2" onclick="selectRealworld(2)">
+                    <span class="activity-label">Option 2</span>
+                    <span class="activity-text" id="realworld-text-2"></span>
+                  </button>
+                  <button type="button" class="activity-card" id="realworld-card-3" onclick="selectRealworld(3)">
+                    <span class="activity-label">Option 3</span>
+                    <span class="activity-text" id="realworld-text-3"></span>
+                  </button>
+                </div>
+              </div>
+              <input type="hidden" id="f-realworld" />
+
+              <div class="form-actions">
+                <button type="submit" class="btn-primary" id="save-btn">Save Plan</button>
+                <p class="save-status hidden" id="save-status"></p>
+              </div>
+
+            </form>
+          </div>
+        </section>
+
+        <!-- ── RIGHT: PREVIEW PANEL ── -->
+        <section class="panel panel-right">
+          <div class="panel-heading">
+            <h3>Weekly Lesson Plan Preview</h3>
+            <button class="btn-download" onclick="downloadPDF()">⬇ Download as PDF</button>
+          </div>
+          <div class="panel-body">
+            <div class="preview-card">
+              <div class="preview-header">
+                <img src="logo.jpg" alt="John's Academy" class="preview-logo" />
+                <div class="preview-header-text">
+                  <div class="preview-school">John's Academy School</div>
+                  <div class="preview-tagline">Educate | Empower | Transform</div>
+                </div>
+              </div>
+              <div class="preview-subject-bar">
+                <span id="preview-subject-label"></span>
+              </div>
+
+              <!-- Header meta: Week Starting, Lesson, Objective -->
+              <div class="preview-meta-section">
+                <div class="preview-meta-item">
+                  <span class="preview-meta-label">Week Starting</span>
+                  <span class="preview-meta-value empty" id="preview-date">Not entered</span>
+                </div>
+                <div class="preview-meta-item">
+                  <span class="preview-meta-label">Lesson</span>
+                  <span class="preview-meta-value empty" id="preview-lesson">Not selected</span>
+                </div>
+                <div class="preview-meta-item">
+                  <span class="preview-meta-label">Objective</span>
+                  <span class="preview-meta-value editable-cell" id="preview-objective" contenteditable="true" data-placeholder="Click to enter objective"></span>
+                </div>
+              </div>
+
+              <!-- Weekly table: Day × Topic / Activity / Material -->
+              <div class="weekly-table-wrap">
+                <table class="weekly-table">
+                  <thead>
+                    <tr>
+                      <th class="col-day">Day (Date)</th>
+                      <th class="col-topic">Topic</th>
+                      <th class="col-activity">Activity</th>
+                      <th class="col-assessment">Assessment</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr id="row-mon" class="plan-row" onclick="setActiveDay('mon')">
+                      <td class="day-cell" id="preview-day-mon">Monday</td>
+                      <td class="weekly-cell editable-cell" id="preview-topic-mon" contenteditable="true" data-placeholder="—"></td>
+                      <td class="weekly-cell editable-cell" id="preview-activity-mon" contenteditable="true" data-placeholder="—"></td>
+                      <td class="weekly-cell editable-cell" id="preview-assessment-mon" contenteditable="true" data-placeholder="—"></td>
+                    </tr>
+                    <tr id="row-tue" class="plan-row" onclick="setActiveDay('tue')">
+                      <td class="day-cell" id="preview-day-tue">Tuesday</td>
+                      <td class="weekly-cell editable-cell" id="preview-topic-tue" contenteditable="true" data-placeholder="—"></td>
+                      <td class="weekly-cell editable-cell" id="preview-activity-tue" contenteditable="true" data-placeholder="—"></td>
+                      <td class="weekly-cell editable-cell" id="preview-assessment-tue" contenteditable="true" data-placeholder="—"></td>
+                    </tr>
+                    <tr id="row-wed" class="plan-row" onclick="setActiveDay('wed')">
+                      <td class="day-cell" id="preview-day-wed">Wednesday</td>
+                      <td class="weekly-cell editable-cell" id="preview-topic-wed" contenteditable="true" data-placeholder="—"></td>
+                      <td class="weekly-cell editable-cell" id="preview-activity-wed" contenteditable="true" data-placeholder="—"></td>
+                      <td class="weekly-cell editable-cell" id="preview-assessment-wed" contenteditable="true" data-placeholder="—"></td>
+                    </tr>
+                    <tr id="row-thu" class="plan-row" onclick="setActiveDay('thu')">
+                      <td class="day-cell" id="preview-day-thu">Thursday</td>
+                      <td class="weekly-cell editable-cell" id="preview-topic-thu" contenteditable="true" data-placeholder="—"></td>
+                      <td class="weekly-cell editable-cell" id="preview-activity-thu" contenteditable="true" data-placeholder="—"></td>
+                      <td class="weekly-cell editable-cell" id="preview-assessment-thu" contenteditable="true" data-placeholder="—"></td>
+                    </tr>
+                    <tr id="row-fri" class="plan-row" onclick="setActiveDay('fri')">
+                      <td class="day-cell" id="preview-day-fri">Friday</td>
+                      <td class="weekly-cell editable-cell" id="preview-topic-fri" contenteditable="true" data-placeholder="—"></td>
+                      <td class="weekly-cell editable-cell" id="preview-activity-fri" contenteditable="true" data-placeholder="—"></td>
+                      <td class="weekly-cell editable-cell" id="preview-assessment-fri" contenteditable="true" data-placeholder="—"></td>
+                    </tr>
+                    <tr id="row-sat" class="plan-row" onclick="setActiveDay('sat')">
+                      <td class="day-cell" id="preview-day-sat">Saturday</td>
+                      <td class="weekly-cell editable-cell" id="preview-topic-sat" contenteditable="true" data-placeholder="—"></td>
+                      <td class="weekly-cell editable-cell" id="preview-activity-sat" contenteditable="true" data-placeholder="—"></td>
+                      <td class="weekly-cell editable-cell" id="preview-assessment-sat" contenteditable="true" data-placeholder="—"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Footer rows -->
+              <div class="preview-row">
+                <div class="preview-label">Material</div>
+                <div class="preview-value editable-cell" id="preview-material" contenteditable="true" data-placeholder="Click to enter materials"></div>
+              </div>
+              <div class="preview-row">
+                <div class="preview-label">Real World Connection</div>
+                <div class="preview-value editable-cell" id="preview-realworld" contenteditable="true" data-placeholder="Click to enter or select from left panel"></div>
+              </div>
+              <div class="preview-row">
+                <div class="preview-label">Prepared By</div>
+                <div class="preview-value editable-cell" id="preview-preparedby" contenteditable="true" data-placeholder="Click to enter teacher's name"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
