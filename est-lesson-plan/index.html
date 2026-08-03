@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asha Jyothi EST – Lesson Planner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── VIEW 1: LOGIN ── -->
+  <div id="view-login" class="view active">
+    <div class="login-card">
+      <img src="AJ LOGO2  copy.jpg" alt="Asha Jyothi" class="login-logo" />
+      <p class="login-org">Employable Skill Training Centre</p>
+      <p class="login-sub">Lesson Plan Manager</p>
+      <form id="login-form">
+        <label for="password">Teacher Password</label>
+        <input type="password" id="password" placeholder="Enter password" required />
+        <p id="login-error" class="error hidden">Incorrect password. Please try again.</p>
+        <button type="submit" class="btn-primary">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ── VIEW 2: COURSE SELECT ── -->
+  <div id="view-select" class="view hidden">
+    <header class="top-bar">
+      <div class="top-bar-left">
+        <img src="AJ LOGO2  copy.jpg" alt="Asha Jyothi" class="topbar-logo" />
+        <span class="topbar-org">Asha Jyothi EST</span>
+      </div>
+      <button class="btn-logout" id="logout-btn">Logout</button>
+    </header>
+    <main class="select-main">
+      <h2 class="select-heading">Select a Course</h2>
+      <p class="select-sub">Choose a course to start planning lessons on the calendar.</p>
+      <div class="course-grid">
+        <button class="course-card" onclick="selectCourse('Computer – MS-Office')">
+          <span class="course-icon">📊</span>
+          <span class="course-name">Computer<span class="course-level">MS-Office</span></span>
+        </button>
+        <button class="course-card" onclick="selectCourse('Computer – Desktop Publishing')">
+          <span class="course-icon">🎨</span>
+          <span class="course-name">Computer<span class="course-level">Desktop Publishing</span></span>
+        </button>
+        <button class="course-card" onclick="selectCourse('Computer – Tally')">
+          <span class="course-icon">🧾</span>
+          <span class="course-name">Computer<span class="course-level">Tally</span></span>
+        </button>
+        <button class="course-card" onclick="selectCourse('Computer – Data Entry')">
+          <span class="course-icon">⌨️</span>
+          <span class="course-name">Computer<span class="course-level">Data Entry</span></span>
+        </button>
+        <button class="course-card" onclick="selectCourse('Electrical')">
+          <span class="course-icon">⚡</span>
+          <span class="course-name">Electrical</span>
+        </button>
+        <button class="course-card" onclick="selectCourse('Refrigeration &amp; AC Technician')">
+          <span class="course-icon">❄️</span>
+          <span class="course-name">Refrigeration<span class="course-level">&amp; AC Technician</span></span>
+        </button>
+        <button class="course-card" onclick="selectCourse('Spoken English Level 1')">
+          <span class="course-icon">🗣️</span>
+          <span class="course-name">Spoken English<span class="course-level">Level 1</span></span>
+        </button>
+        <button class="course-card" onclick="selectCourse('Spoken English Level 2')">
+          <span class="course-icon">🗣️</span>
+          <span class="course-name">Spoken English<span class="course-level">Level 2</span></span>
+        </button>
+      </div>
+    </main>
+  </div>
+
+  <!-- ── VIEW 2b: MODE SELECT ── -->
+  <div id="view-mode" class="view hidden">
+    <header class="top-bar">
+      <div class="top-bar-left">
+        <button class="btn-back" id="mode-back-btn">← Back</button>
+        <img src="AJ LOGO2  copy.jpg" alt="Asha Jyothi" class="topbar-logo" />
+        <span class="topbar-org" id="mode-course-label"></span>
+      </div>
+      <button class="btn-logout" id="logout-btn-3">Logout</button>
+    </header>
+    <main class="mode-main">
+      <h2 class="mode-heading">What would you like to do?</h2>
+      <p class="select-sub">Choose an option for <strong id="mode-course-sub"></strong></p>
+      <div class="mode-grid">
+        <button class="mode-card" onclick="selectMode('outline')">
+          <span class="mode-icon">📋</span>
+          <span class="mode-title">Create / Update<br>Course Outline</span>
+          <span class="mode-desc">View and edit the full module and topic structure</span>
+        </button>
+        <button class="mode-card" onclick="selectMode('plan')">
+          <span class="mode-icon">📝</span>
+          <span class="mode-title">Create / Update<br>Lesson Plan</span>
+          <span class="mode-desc">Write theory, practicals and assessments per topic</span>
+        </button>
+        <button class="mode-card" onclick="selectMode('calendar')">
+          <span class="mode-icon">📅</span>
+          <span class="mode-title">Current Batch<br>Plan</span>
+          <span class="mode-desc">Schedule topics on the monthly calendar</span>
+        </button>
+      </div>
+    </main>
+  </div>
+
+  <!-- ── VIEW 2b-ii: COURSE OUTLINE ── -->
+  <div id="view-course-outline" class="view hidden">
+    <header class="top-bar">
+      <div class="top-bar-left">
+        <button class="btn-back" id="co-back-btn">← Back</button>
+        <img src="AJ LOGO2  copy.jpg" alt="Asha Jyothi" class="topbar-logo" />
+        <span class="planner-course-badge" id="co-course-badge"></span>
+        <span class="topbar-org" style="font-size:0.78rem;color:#b8c8f8;margin-left:4px;">Course Outline</span>
+      </div>
+      <div class="co-toolbar-right">
+        <span class="co-hint">Click any text to edit</span>
+        <button class="btn-co-reset" id="co-reset-btn">Reset to Default</button>
+        <button class="btn-logout" id="logout-btn-5">Logout</button>
+      </div>
+    </header>
+    <div class="co-body" id="co-body">
+      <!-- modules rendered by JS -->
+    </div>
+  </div>
+
+  <!-- ── VIEW 2c: LESSON PLAN EDITOR ── -->
+  <div id="view-lesson-plan" class="view hidden">
+    <header class="top-bar">
+      <div class="top-bar-left">
+        <button class="btn-back" id="lp-back-btn">← Back</button>
+        <img src="AJ LOGO2  copy.jpg" alt="Asha Jyothi" class="topbar-logo" />
+        <span class="planner-course-badge" id="lp-course-badge"></span>
+        <span class="topbar-org" style="font-size:0.78rem;color:#b8c8f8;margin-left:4px;">Lesson Plans</span>
+      </div>
+      <button class="btn-logout" id="logout-btn-4">Logout</button>
+    </header>
+
+    <div class="lp-body">
+      <!-- Left sidebar -->
+      <aside class="lp-sidebar">
+        <div class="lp-sidebar-top">
+          <h3 class="sidebar-title">Select Lesson</h3>
+          <div class="lp-select-group">
+            <label class="lp-label">Module</label>
+            <select id="lp-module-select" class="lp-select">
+              <option value="">— Choose module —</option>
+            </select>
+          </div>
+          <div class="lp-select-group">
+            <label class="lp-label">Topic</label>
+            <select id="lp-topic-select" class="lp-select">
+              <option value="">— Choose topic —</option>
+            </select>
+          </div>
+        </div>
+        <div class="lp-plans-section">
+          <h4 class="lp-plans-title">Saved Plans</h4>
+          <div id="lp-plans-list" class="lp-plans-list">
+            <p class="loading-text">No saved plans yet.</p>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Right editor -->
+      <section class="lp-editor">
+        <div id="lp-placeholder" class="lp-placeholder">
+          <span class="lp-placeholder-icon">📋</span>
+          <p>Select a module and topic<br>to start writing a lesson plan</p>
+        </div>
+        <div id="lp-form" class="lp-form hidden">
+          <div class="lp-form-header">
+            <div class="lp-breadcrumb" id="lp-breadcrumb"></div>
+            <button class="btn-lp-save" id="lp-save-btn">Save Plan</button>
+          </div>
+          <div class="lp-sections">
+            <div class="lp-section">
+              <div class="lp-section-label">
+                <span>📖</span> Theory
+              </div>
+              <textarea id="lp-theory" class="lp-textarea"
+                placeholder="Key concepts, explanations, background knowledge…"></textarea>
+            </div>
+            <div class="lp-section">
+              <div class="lp-section-label">
+                <span>🔧</span> Practicals
+              </div>
+              <textarea id="lp-practicals" class="lp-textarea"
+                placeholder="Hands-on exercises, lab activities, demonstrations…"></textarea>
+            </div>
+            <div class="lp-section">
+              <div class="lp-section-label">
+                <span>📝</span> Assessments
+              </div>
+              <textarea id="lp-assessments" class="lp-textarea"
+                placeholder="Questions, tasks, rubrics, expected outcomes…"></textarea>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- ── VIEW 3: PLANNER ── -->
+  <div id="view-planner" class="view hidden">
+    <header class="top-bar">
+      <div class="top-bar-left">
+        <button class="btn-back" id="back-btn">← Back</button>
+        <img src="AJ LOGO2  copy.jpg" alt="Asha Jyothi" class="topbar-logo" />
+        <span class="planner-course-badge" id="planner-course-badge"></span>
+      </div>
+      <button class="btn-logout" id="logout-btn-2">Logout</button>
+    </header>
+
+    <div class="planner-body">
+
+      <!-- ── LEFT: CURRICULUM SIDEBAR ── -->
+      <aside class="sidebar">
+        <div class="sidebar-top">
+          <h3 class="sidebar-title">Curriculum</h3>
+          <p class="sidebar-hint">Drag a module name or topic onto the calendar</p>
+        </div>
+        <div id="curriculum-list" class="curriculum-list">
+          <p class="loading-text">Loading…</p>
+        </div>
+      </aside>
+
+      <!-- ── RIGHT: CALENDAR ── -->
+      <section class="cal-section">
+        <div class="cal-nav-bar">
+          <button class="cal-nav-btn" id="prev-month">&#8249;</button>
+          <span class="cal-month-label" id="cal-month-label"></span>
+          <button class="cal-nav-btn" id="next-month">&#8250;</button>
+          <button class="cal-today-btn" id="today-btn">Today</button>
+        </div>
+        <div class="cal-day-headers">
+          <div>Sun</div>
+          <div>Mon</div>
+          <div>Tue</div>
+          <div>Wed</div>
+          <div>Thu</div>
+          <div>Fri</div>
+          <div>Sat</div>
+        </div>
+        <div class="cal-grid" id="cal-grid"></div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- ── DAY DETAIL MODAL ── -->
+  <div id="day-modal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-header-info">
+          <span class="modal-date-label" id="modal-date-label"></span>
+          <span class="modal-course-badge" id="modal-course-badge"></span>
+        </div>
+        <button class="modal-close" id="modal-close">×</button>
+      </div>
+
+      <div class="modal-existing" id="modal-existing"></div>
+
+      <div class="modal-panels">
+        <div class="modal-panel">
+          <div class="modal-panel-title"><span>✏️</span> Written Feedback</div>
+          <textarea id="modal-feedback-text" class="modal-textarea"
+            placeholder="Enter notes or observations for this day… (Ctrl+Enter to save)"></textarea>
+          <button class="btn-modal-action" id="modal-submit-text">Add Feedback</button>
+        </div>
+
+        <div class="modal-panel">
+          <div class="modal-panel-title"><span>📷</span> Upload Photo</div>
+          <label class="modal-file-label" for="modal-photo-input">
+            <span id="modal-file-name">Choose a photo…</span>
+          </label>
+          <input type="file" id="modal-photo-input" accept="image/*" class="modal-file-input" />
+          <div class="modal-photo-preview hidden" id="modal-photo-preview">
+            <img id="modal-preview-img" src="" alt="Preview" />
+          </div>
+          <button class="btn-modal-action" id="modal-submit-photo" disabled>Upload Photo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

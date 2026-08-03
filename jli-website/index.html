@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>John's Leadership Institute – Hyderabad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Open+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --navy: #1a2744;
+      --navy-light: #243159;
+      --gold: #c9a84c;
+      --gold-light: #e2c070;
+      --white: #ffffff;
+      --off-white: #f7f4ef;
+      --gray: #6b7280;
+      --light-gray: #f3f4f6;
+      --text: #1f2937;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Merriweather', serif;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 64px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .nav-brand img {
+      height: 40px;
+      width: auto;
+    }
+
+    .nav-brand span {
+      color: var(--gold);
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      line-height: 1.2;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, rgba(26,39,68,0.91) 0%, rgba(36,49,89,0.86) 60%, rgba(45,63,110,0.82) 100%), url('Images/Campus1.jpg') center/cover no-repeat;
+      color: var(--white);
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-logo {
+      width: 120px;
+      height: auto;
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.4));
+    }
+
+    .hero-accreditation {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 1rem;
+      border-radius: 2rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.6);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-tagline {
+      font-family: 'Merriweather', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--gold-light);
+      margin-bottom: 2rem;
+    }
+
+    .hero-tagline span {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.2s;
+      letter-spacing: 0.03em;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      color: var(--white);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold-light);
+    }
+
+    /* ── SECTION SHARED ── */
+    section {
+      padding: 5rem 2rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.25rem);
+      color: var(--navy);
+      margin-bottom: 1rem;
+      line-height: 1.25;
+    }
+
+    .section-divider {
+      width: 50px;
+      height: 3px;
+      background: var(--gold);
+      margin-bottom: 2rem;
+    }
+
+    .section-divider.centered {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-intro {
+      font-size: 1.05rem;
+      color: var(--gray);
+      line-height: 1.8;
+      max-width: 700px;
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      background: var(--off-white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .message-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+      border-left: 4px solid var(--gold);
+    }
+
+    .message-card blockquote {
+      font-style: italic;
+      color: var(--gray);
+      line-height: 1.8;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .message-author strong {
+      display: block;
+      font-family: 'Merriweather', serif;
+      color: var(--navy);
+      font-size: 0.95rem;
+    }
+
+    .message-author span {
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+
+    /* ── VISION MISSION ── */
+    #vision {
+      background: var(--white);
+    }
+
+    .vm-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .vm-card {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 8px;
+      padding: 2.5rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vm-card::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      width: 100px;
+      height: 100px;
+      background: rgba(201, 168, 76, 0.12);
+      border-radius: 50%;
+    }
+
+    .vm-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .vm-card h3 {
+      color: var(--gold);
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .vm-card p {
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.95rem;
+    }
+
+    /* ── COURSES ── */
+    #courses {
+      background: var(--off-white);
+    }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .course-card {
+      background: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .course-card-header {
+      background: var(--navy);
+      padding: 1.5rem;
+      color: var(--white);
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .course-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 2rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: auto;
+      align-self: flex-start;
+    }
+
+    .course-card-header h3 {
+      font-size: 1.15rem;
+      color: var(--white);
+      margin-bottom: 0.25rem;
+    }
+
+    .course-card-header .abbr {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .course-card-body {
+      padding: 1.5rem;
+      flex: 1;
+    }
+
+    .course-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--gray);
+    }
+
+    .meta-icon {
+      color: var(--gold);
+      font-size: 1rem;
+    }
+
+    .course-desc {
+      font-size: 0.875rem;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    /* ── CURRICULUM ── */
+    #curriculum {
+      background: var(--white);
+    }
+
+    .curriculum-tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    .tab-btn {
+      padding: 0.75rem 1.5rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: var(--gray);
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.2s;
+    }
+
+    .tab-btn.active {
+      color: var(--navy);
+      border-bottom-color: var(--gold);
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    .semester-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .semester-card {
+      background: var(--light-gray);
+      border-radius: 8px;
+      padding: 1.25rem;
+      border-top: 3px solid var(--gold);
+    }
+
+    .semester-card h4 {
+      font-size: 0.85rem;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 700;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+
+    .semester-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .semester-card ul li {
+      font-size: 0.82rem;
+      color: var(--gray);
+      padding-left: 1rem;
+      position: relative;
+      line-height: 1.4;
+    }
+
+    .semester-card ul li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    /* ── EST ── */
+    #skills {
+      background: var(--navy);
+      padding: 5rem 2rem;
+    }
+
+    #skills .section-title {
+      color: var(--white);
+    }
+
+    .est-intro {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 700px;
+      margin-bottom: 2.5rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-pill {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: background 0.2s;
+    }
+
+    .skill-pill:hover {
+      background: rgba(201, 168, 76, 0.12);
+    }
+
+    .skill-pill .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* ── FACULTY ── */
+    #faculty {
+      background: var(--white);
+    }
+
+    .faculty-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .faculty-card {
+      background: var(--off-white);
+      border-radius: 8px;
+      padding: 1.5rem;
+      border-top: 3px solid var(--navy);
+    }
+
+    .faculty-avatar {
+      width: 52px;
+      height: 52px;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .faculty-card h4 {
+      font-size: 0.95rem;
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+    }
+
+    .faculty-role {
+      font-size: 0.78rem;
+      color: var(--gold);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .faculty-qual {
+      font-size: 0.8rem;
+      color: var(--gray);
+      margin-bottom: 0.25rem;
+    }
+
+    .faculty-exp {
+      font-size: 0.78rem;
+      color: var(--gray);
+    }
+
+    /* ── CAMPUS ── */
+    #campus {
+      background: var(--off-white);
+    }
+
+    .campus-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .campus-photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+
+    .campus-photo {
+      border-radius: 6px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+
+    .campus-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .graduation-gallery {
+      margin-top: 3rem;
+    }
+
+    .graduation-gallery h3 {
+      font-size: 1rem;
+      color: var(--navy);
+      margin-bottom: 1.25rem;
+    }
+
+    .graduation-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+    }
+
+    .graduation-photo {
+      border-radius: 6px;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+    }
+
+    .graduation-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .facility-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .facility-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .facility-list li::before {
+      content: '✓';
+      width: 22px;
+      height: 22px;
+      background: var(--gold);
+      color: var(--navy);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ── LIBRARY ── */
+    #library {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    #library .section-title {
+      color: var(--white);
+    }
+
+    .library-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .library-text p {
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.8;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .library-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .lib-stat {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      border-radius: 8px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+
+    .lib-stat .num {
+      font-family: 'Merriweather', serif;
+      font-size: 1.75rem;
+      font-weight: 900;
+      color: var(--gold);
+      display: block;
+    }
+
+    .lib-stat .lbl {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.55);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── ADMISSIONS ── */
+    #admissions {
+      background: var(--off-white);
+    }
+
+    .admissions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+
+    .admit-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .admit-card h3 {
+      font-size: 1rem;
+      color: var(--navy);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .faith-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .faith-list li {
+      font-size: 0.875rem;
+      color: var(--gray);
+      line-height: 1.7;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+
+    .faith-list li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .faith-list li strong {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    #contact .section-title {
+      color: var(--white);
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .contact-icon {
+      font-size: 1.5rem;
+      color: var(--gold);
+    }
+
+    .contact-item strong {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+    }
+
+    .contact-item p {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .contact-item a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      color: var(--gold-light);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0f1829;
+      color: rgba(255, 255, 255, 0.4);
+      text-align: center;
+      padding: 1.25rem 2rem;
+      font-size: 0.8rem;
+    }
+
+    footer span {
+      color: var(--gold);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .about-grid,
+      .vm-grid,
+      .campus-grid,
+      .library-grid,
+      .admissions-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .courses-grid,
+      .graduation-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-brand">
+      <img src="JLI Logo.png" alt="JLI Logo" />
+      <span>John's Leadership<br>Institute</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#curriculum">Curriculum</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#faculty">Faculty</a></li>
+      <li><a href="#campus">Campus</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <img src="JLI Logo.png" alt="JLI Logo" class="hero-logo" />
+      <div class="hero-accreditation">Accredited by Asia Theological Association (ATA)</div>
+      <h1>John's Leadership Institute</h1>
+      <p class="hero-subtitle">Hyderabad, Telangana</p>
+      <p class="hero-tagline">
+        "Train Disciples to Make Disciples"
+        <span>&nbsp;— Matthew 28:19–20</span>
+      </p>
+      <div class="hero-cta">
+        <a href="#admissions" class="btn btn-gold">Apply for Admissions</a>
+        <a href="#courses" class="btn btn-outline">Explore Courses</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <p class="section-label">Our Story</p>
+      <h2 class="section-title">Rooted in Faith,<br>Built for Ministry</h2>
+      <div class="section-divider"></div>
+
+      <div class="about-grid">
+        <div>
+          <p style="color:var(--gray);line-height:1.9;font-size:0.95rem;margin-bottom:1.5rem;">
+            John's Leadership Institute (JLI) was born out of a simple act of obedience. In 2011, a young post-graduate
+            student — a recent convert from a non-Christian background — walked into our founder's office with nothing but a
+            desire to study the Bible and plant a church in his community. With no existing Bible college, Dr. Saji K.
+            John took a step of faith and began the Asha Church Planters Training Program with just 12 students.
+          </p>
+          <p style="color:var(--gray);line-height:1.9;font-size:0.95rem;margin-bottom:1.5rem;">
+            Over the years, the institute grew into Asha Bible College and then into John's Leadership Institute —
+            earning full ATA accreditation in 2025. Today, JLI trains 35–50 students every year, combining rigorous
+            academics with practical ministry, mentoring, and government-certified employable skills.
+          </p>
+          <p style="color:var(--gray);line-height:1.9;font-size:0.95rem;">
+            JLI is part of <strong>John Foundation</strong>, which runs 31 children's homes, 2 schools, 3 technical
+            institutes, and more — serving thousands across Hyderabad.
+          </p>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:1.25rem;">
+          <div class="message-card">
+            <blockquote>
+              "We invite you to come and be part of JLI, where your calling is affirmed, and you are equipped to advance
+              His Kingdom."
+            </blockquote>
+            <div class="message-author">
+              <strong>Dr. Saji K. John &amp; Mrs. Cynthia John</strong>
+              <span>Founder &amp; Co-Founder, John's Leadership Institute</span>
+            </div>
+          </div>
+          <div class="message-card">
+            <blockquote>
+              "We equip students who are passionate about church planting with strong biblical foundations, practical
+              ministry training, and employable skills that help them build community relationships and sustain
+              themselves financially."
+            </blockquote>
+            <div class="message-author">
+              <strong>Rev. Dr. Karra Nehemiah</strong>
+              <span>Principal, John's Leadership Institute</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION & MISSION -->
+  <section id="vision">
+    <div class="container">
+      <p class="section-label">Who We Are</p>
+      <h2 class="section-title">Vision &amp; Mission</h2>
+      <div class="section-divider"></div>
+
+      <div class="vm-grid">
+        <div class="vm-card">
+          <div class="vm-icon">🎯</div>
+          <h3>Vision Statement</h3>
+          <p>To train young men and women to plant churches that are biblically sound, growing and sustainable,
+            especially among unreached communities.</p>
+        </div>
+        <div class="vm-card">
+          <div class="vm-icon">🌱</div>
+          <h3>Mission Statement</h3>
+          <p>To train young men and women who are passionate about church planting and empower them with employable
+            skills that will help build community relationships and help sustain themselves financially.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSES -->
+  <section id="courses">
+    <div class="container">
+      <p class="section-label">Academic Programs</p>
+      <h2 class="section-title">Courses Offered</h2>
+      <div class="section-divider"></div>
+      <p class="section-intro" style="margin-bottom:2.5rem;">
+        JLI offers ATA-accredited residential theological programs designed to equip students for church planting and
+        ministry — all with accommodation provided on campus.
+      </p>
+
+      <div class="courses-grid">
+        <div class="course-card">
+          <div class="course-card-header" style="background: linear-gradient(rgba(26,39,68,0.78), rgba(26,39,68,0.78)), url('Images/Classroom.jpg') center/cover no-repeat;">
+            <div class="course-badge">ATA Accredited</div>
+            <h3>Bachelor of Theology</h3>
+            <div class="abbr">B.Th Program</div>
+          </div>
+          <div class="course-card-body">
+            <div class="course-meta">
+              <div class="meta-item"><span class="meta-icon">📅</span> 3 Years</div>
+              <div class="meta-item"><span class="meta-icon">🗣️</span> English Medium</div>
+              <div class="meta-item"><span class="meta-icon">🎓</span> 12th Pass / Intermediate / Any Diploma</div>
+            </div>
+            <p class="course-desc">A comprehensive three-year program grounded in biblical studies, theology, and
+              practical ministry. Provisional admission available for students awaiting 12th results.</p>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <div class="course-card-header" style="background: linear-gradient(rgba(26,39,68,0.78), rgba(26,39,68,0.78)), url('Images/Classrooms.jpg') center/cover no-repeat;">
+            <div class="course-badge">ATA Accredited</div>
+            <h3>Diploma in Theology</h3>
+            <div class="abbr">Dip.Th Program</div>
+          </div>
+          <div class="course-card-body">
+            <div class="course-meta">
+              <div class="meta-item"><span class="meta-icon">📅</span> 2 Years</div>
+              <div class="meta-item"><span class="meta-icon">🗣️</span> Telugu Medium</div>
+              <div class="meta-item"><span class="meta-icon">🎓</span> 10th Pass / SSC / SSLC</div>
+            </div>
+            <p class="course-desc">A two-year diploma in Telugu medium, accessible to students from all backgrounds who
+              have completed 10th standard. Provisional admission available for those awaiting results.</p>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <div class="course-card-header" style="background: linear-gradient(rgba(26,39,68,0.78), rgba(26,39,68,0.78)), url('Images/Classroom Book.jpg') center/cover no-repeat;">
+            <h3>Certificate in Theology</h3>
+            <div class="abbr">C.Th Program</div>
+          </div>
+          <div class="course-card-body">
+            <div class="course-meta">
+              <div class="meta-item"><span class="meta-icon">📅</span> 1 Year</div>
+              <div class="meta-item"><span class="meta-icon">🗣️</span> Telugu Medium</div>
+              <div class="meta-item"><span class="meta-icon">🎓</span> 10th Studied or Below</div>
+            </div>
+            <p class="course-desc">A one-year foundational program in Telugu, open to all students regardless of prior
+              academic qualifications — ensuring no one is turned away from learning God's Word.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURRICULUM -->
+  <section id="curriculum">
+    <div class="container">
+      <p class="section-label">Academic Structure</p>
+      <h2 class="section-title">Curriculum</h2>
+      <div class="section-divider"></div>
+
+      <div class="curriculum-tabs">
+        <button class="tab-btn active" onclick="switchTab('bth')">B.Th (3 Years)</button>
+        <button class="tab-btn" onclick="switchTab('dth')">Dip.Th (2 Years)</button>
+      </div>
+
+      <div id="bth" class="tab-panel active">
+        <div class="semester-grid">
+          <div class="semester-card">
+            <h4>Semester 1 — Year 1</h4>
+            <ul>
+              <li>OT Survey</li>
+              <li>Study Methods</li>
+              <li>Life and Ministry of Jesus</li>
+              <li>Basic Spirituality</li>
+              <li>Discipleship</li>
+              <li>English – I</li>
+            </ul>
+          </div>
+          <div class="semester-card">
+            <h4>Semester 2 — Year 1</h4>
+            <ul>
+              <li>Introduction to the Bible</li>
+              <li>World Church History</li>
+              <li>Theology – I</li>
+              <li>NT Survey</li>
+              <li>Evangelism</li>
+              <li>English – II</li>
+            </ul>
+          </div>
+          <div class="semester-card">
+            <h4>Semester 3 — Year 2</h4>
+            <ul>
+              <li>History of Israel</li>
+              <li>Indian Church History</li>
+              <li>Major Religions in India</li>
+              <li>Pastoral Epistles</li>
+              <li>Hermeneutics</li>
+              <li>Theology – II</li>
+            </ul>
+          </div>
+          <div class="semester-card">
+            <h4>Semester 4 — Year 2</h4>
+            <ul>
+              <li>I &amp; II Corinthians</li>
+              <li>Pentateuch</li>
+              <li>Homiletics</li>
+              <li>Preliminary Greek</li>
+              <li>Missionary Biographies</li>
+              <li>Theology – III</li>
+            </ul>
+          </div>
+          <div class="semester-card">
+            <h4>Semester 5 — Year 3</h4>
+            <ul>
+              <li>Romans &amp; Galatians</li>
+              <li>Cults &amp; Heresies</li>
+              <li>Christian Ethics</li>
+              <li>Pastoral Care &amp; Counselling</li>
+              <li>Apocalyptic Literature</li>
+              <li>Intertestamental Period</li>
+            </ul>
+          </div>
+          <div class="semester-card">
+            <h4>Semester 6 — Year 3</h4>
+            <ul>
+              <li>Hebrews &amp; General Epistles</li>
+              <li>Wisdom Literature</li>
+              <li>Church Planting &amp; Growth</li>
+              <li>Christian Marriage &amp; Family</li>
+              <li>MRSM</li>
+              <li>Church Administration &amp; Leadership</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="dth" class="tab-panel">
+        <div class="semester-grid">
+          <div class="semester-card">
+            <h4>Semester 1 — Year 1</h4>
+            <ul>
+              <li>OT Survey</li>
+              <li>Study Methods</li>
+              <li>Life and Ministry of Jesus</li>
+              <li>Basic Spirituality</li>
+              <li>Discipleship</li>
+              <li>English – I</li>
+            </ul>
+          </div>
+          <div class="semester-card">
+            <h4>Semester 2 — Year 1</h4>
+            <ul>
+              <li>Introduction to the Bible</li>
+              <li>World Church History</li>
+              <li>Theology – I</li>
+              <li>NT Survey</li>
+              <li>Evangelism</li>
+              <li>English – II</li>
+            </ul>
+          </div>
+          <div class="semester-card">
+            <h4>Semester 3 — Year 2</h4>
+            <ul>
+              <li>History of Israel</li>
+              <li>Indian Church History</li>
+              <li>Major Religions in India</li>
+              <li>Pastoral Epistles</li>
+              <li>Hermeneutics</li>
+              <li>Theology – II</li>
+            </ul>
+          </div>
+          <div class="semester-card">
+            <h4>Semester 4 — Year 2</h4>
+            <ul>
+              <li>I &amp; II Corinthians</li>
+              <li>Pentateuch</li>
+              <li>Homiletics</li>
+              <li>Preliminary Greek</li>
+              <li>Missionary Biographies</li>
+              <li>Theology – III</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-top:2.5rem;">
+          <h3 style="font-size:1rem;color:var(--navy);margin-bottom:1rem;">Grading System</h3>
+          <div
+            style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:0.75rem;max-width:700px;">
+            <div style="background:var(--light-gray);border-radius:6px;padding:0.75rem;font-size:0.8rem;">
+              <strong style="color:var(--navy);">A+</strong> <span style="color:var(--gray);">80% and above — First
+                Class</span>
+            </div>
+            <div style="background:var(--light-gray);border-radius:6px;padding:0.75rem;font-size:0.8rem;">
+              <strong style="color:var(--navy);">A / A–</strong> <span style="color:var(--gray);">70–79%</span>
+            </div>
+            <div style="background:var(--light-gray);border-radius:6px;padding:0.75rem;font-size:0.8rem;">
+              <strong style="color:var(--navy);">B+/B/B–</strong> <span style="color:var(--gray);">55–69% — Second
+                Class</span>
+            </div>
+            <div style="background:var(--light-gray);border-radius:6px;padding:0.75rem;font-size:0.8rem;">
+              <strong style="color:var(--navy);">C+/C/C–</strong> <span style="color:var(--gray);">40–54% — Third
+                Class</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <p class="section-label" style="color:var(--gold);">Vocational Training</p>
+      <h2 class="section-title">Employable Skill Training</h2>
+      <div class="section-divider"></div>
+      <p class="est-intro">
+        In addition to theological training, JLI offers Government-Certified Employable Skill Training (EST) in 20
+        disciplines. These courses help students connect meaningfully with local communities and sustain themselves
+        financially in long-term ministry.
+      </p>
+
+      <div class="skills-grid">
+        <div class="skill-pill"><span class="dot"></span>Computer Courses</div>
+        <div class="skill-pill"><span class="dot"></span>Tailoring Courses</div>
+        <div class="skill-pill"><span class="dot"></span>Media Courses</div>
+        <div class="skill-pill"><span class="dot"></span>Paramedics Courses</div>
+        <div class="skill-pill"><span class="dot"></span>Office Management</div>
+        <div class="skill-pill"><span class="dot"></span>Beautician Courses</div>
+        <div class="skill-pill"><span class="dot"></span>Spoken English Courses</div>
+        <div class="skill-pill"><span class="dot"></span>Basic Electricals</div>
+        <div class="skill-pill"><span class="dot"></span>Electronics &amp; Home Appliance Repair</div>
+        <div class="skill-pill"><span class="dot"></span>20+ Government-Certified Disciplines</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-top:2.5rem;">
+        <div style="border-radius:8px;overflow:hidden;height:200px;">
+          <img src="Images/Skill Training.jpg" alt="Skill Training" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        </div>
+        <div style="border-radius:8px;overflow:hidden;height:200px;">
+          <img src="Images/Skill Training 2.jpg" alt="Skill Training" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        </div>
+        <div style="border-radius:8px;overflow:hidden;height:200px;">
+          <img src="Images/Skill training 3.jpg" alt="Skill Training" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACULTY -->
+  <section id="faculty">
+    <div class="container">
+      <p class="section-label">Our Team</p>
+      <h2 class="section-title">Administrative Board &amp; Faculty</h2>
+      <div class="section-divider"></div>
+
+      <div class="faculty-grid">
+        <div class="faculty-card">
+          <div class="faculty-avatar">SJ</div>
+          <h4>Dr. Saji K. John</h4>
+          <div class="faculty-role">Founder, JF &amp; Chairman, JLI</div>
+          <div class="faculty-qual">M.A, D.Min.</div>
+          <div class="faculty-exp">Ministry since 1983 · Leader, Preacher, Visionary</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">CJ</div>
+          <h4>Mrs. Cynthia John</h4>
+          <div class="faculty-role">Co-Founder &amp; Faculty</div>
+          <div class="faculty-qual">B.A, B.Min.</div>
+          <div class="faculty-exp">Ministry since 1982 · Teacher, Preacher, Counselor</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">BJ</div>
+          <h4>Mr. Benedict John</h4>
+          <div class="faculty-role">CEO, JF &amp; JLI</div>
+          <div class="faculty-qual">B.Tech CSE, MSc Management</div>
+          <div class="faculty-exp">Ministry since 2019 · Leader, Preacher, Visionary</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">KN</div>
+          <h4>Rev. Dr. Karra Nehemiah</h4>
+          <div class="faculty-role">Principal &amp; Faculty</div>
+          <div class="faculty-qual">B.Th, M.A, M.Div, Ph.D</div>
+          <div class="faculty-exp">Ministry since 1999 · Pastor, Teacher</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">PM</div>
+          <h4>Rev. Prabhakar Malladi</h4>
+          <div class="faculty-role">Academic Dean &amp; Faculty</div>
+          <div class="faculty-qual">B.Th, M.A, M.Div, M.Th</div>
+          <div class="faculty-exp">Ministry since 1997 · Pastor, Teacher</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">LB</div>
+          <h4>Rev. L. Bharath</h4>
+          <div class="faculty-role">Student Dean &amp; Faculty</div>
+          <div class="faculty-qual">B.Th, M.Div</div>
+          <div class="faculty-exp">Ministry since 2016 · Pastor, Teacher</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">VG</div>
+          <h4>Rev. M. Venu Gopal</h4>
+          <div class="faculty-role">Faculty</div>
+          <div class="faculty-qual">B.Th, M.Div</div>
+          <div class="faculty-exp">Ministry since 1992 · Teacher, Pastor</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">DP</div>
+          <h4>Pr. S. Deva Prakash</h4>
+          <div class="faculty-role">Registrar &amp; Faculty</div>
+          <div class="faculty-qual">G.Th, B.Sc, M.Div</div>
+          <div class="faculty-exp">Ministry since 2010 · Pastor, Teacher</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">BP</div>
+          <h4>Pr. B. Paul Prabhakar</h4>
+          <div class="faculty-role">Chaplain &amp; Faculty</div>
+          <div class="faculty-qual">B.Th, M.A, M.Div, M.Th (NT)</div>
+          <div class="faculty-exp">Ministry since 2019 · Pastor, Teacher, Counsellor</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">RP</div>
+          <h4>Rev. T. Rajendra Prasad</h4>
+          <div class="faculty-role">Adjunct Faculty</div>
+          <div class="faculty-qual">B.Sc, M.Div</div>
+          <div class="faculty-exp">Ministry since 1992 · Pastor, Teacher</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">BM</div>
+          <h4>Rev. Dr. B. Mark</h4>
+          <div class="faculty-role">Adjunct Faculty</div>
+          <div class="faculty-qual">B.Th, M.Div, M.Th, Th.D</div>
+          <div class="faculty-exp">Ministry since 1990 · Pastor, Teacher</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">WC</div>
+          <h4>Rev. Dr. M. William Carey</h4>
+          <div class="faculty-role">Adjunct Faculty</div>
+          <div class="faculty-qual">B.D, M.A, M.Div, D.Min.</div>
+          <div class="faculty-exp">Ministry since 1997 · Pastor, Teacher</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAMPUS LIFE -->
+  <section id="campus">
+    <div class="container">
+      <p class="section-label">Student Life</p>
+      <h2 class="section-title">Campus &amp; Life</h2>
+      <div class="section-divider"></div>
+
+      <div class="campus-grid">
+        <div>
+          <h3 style="font-size:1rem;color:var(--navy);margin-bottom:1.25rem;">Accommodation &amp; Facilities</h3>
+          <ul class="facility-list">
+            <li>Spacious, well-ventilated rooms with separate hostels for boys and girls</li>
+            <li>24/7 water and electricity supply</li>
+            <li>Study tables and storage cupboards in every room</li>
+            <li>Hygienic dining hall with nutritious food</li>
+            <li>Security staff and CCTV surveillance</li>
+            <li>Medical assistance on campus</li>
+            <li>Spacious grounds for games and sports</li>
+            <li>Logos Library — digitally computerized with internet access</li>
+            <li>Digital classrooms and music team facilities</li>
+          </ul>
+
+          <h3 style="font-size:1rem;color:var(--navy);margin-top:2rem;margin-bottom:1rem;">Practical Ministry</h3>
+          <p style="color:var(--gray);font-size:0.9rem;line-height:1.8;">
+            Practical ministry is a compulsory part of the program. Students participate in approved local church
+            ministries, outreach, and mentoring groups under the guidance of experienced pastors. Sunday is dedicated to
+            Worship &amp; Outreach.
+          </p>
+        </div>
+
+        <div class="campus-photos">
+          <div class="campus-photo">
+            <img src="Images/Campus Life.jpeg" alt="Campus Life" />
+          </div>
+          <div class="campus-photo">
+            <img src="Images/Hostels.jpg" alt="Student Hostel" />
+          </div>
+          <div class="campus-photo">
+            <img src="Images/Devotion hall.jpg" alt="Devotion Hall" />
+          </div>
+          <div class="campus-photo">
+            <img src="Images/Campus Life 2.jpeg" alt="Campus Life" />
+          </div>
+        </div>
+      </div>
+
+      <div class="graduation-gallery">
+        <h3>Graduation Ceremonies</h3>
+        <div class="graduation-grid">
+          <div class="graduation-photo">
+            <img src="Images/Graduation.jpg" alt="Graduation Ceremony" />
+          </div>
+          <div class="graduation-photo">
+            <img src="Images/Graduation 2.jpg" alt="Graduation Ceremony" />
+          </div>
+          <div class="graduation-photo">
+            <img src="Images/Graduation 3.jpg" alt="Graduation Ceremony" />
+          </div>
+          <div class="graduation-photo">
+            <img src="Images/Graduation 4.jpg" alt="Graduation Ceremony" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIBRARY -->
+  <section id="library">
+    <div class="container">
+      <p class="section-label" style="color:var(--gold);">Resources</p>
+      <h2 class="section-title">JLI Library</h2>
+      <div class="section-divider"></div>
+
+      <div class="library-grid">
+        <div class="library-text">
+          <p>
+            The JLI Library is the backbone of the educational system — the place where students deepen their knowledge
+            through reading and research. It houses one of the most comprehensive theological collections in the region.
+          </p>
+          <p>
+            The library's digital system — <strong style="color:var(--gold);">Logos Library</strong> — is a computerized
+            lab with internet connectivity. The <strong style="color:var(--gold);">Koha software</strong> provides a
+            keyword-focused catalogue search for easy access to any research material.
+          </p>
+          <p>
+            Strong base in Theology, Biblical Studies, Religion, Church History, Counselling, Mission, and more.
+          </p>
+        </div>
+
+        <div class="library-stats">
+          <div class="lib-stat">
+            <span class="num">11,000+</span>
+            <span class="lbl">Theological Volumes</span>
+          </div>
+          <div class="lib-stat">
+            <span class="num">35,000+</span>
+            <span class="lbl">Total Books</span>
+          </div>
+          <div class="lib-stat">
+            <span class="num">Digital</span>
+            <span class="lbl">E-Library Access</span>
+          </div>
+          <div class="lib-stat">
+            <span class="num">Koha</span>
+            <span class="lbl">Catalogue System</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:2.5rem;border-radius:10px;overflow:hidden;height:300px;">
+        <img src="Images/Library.jpg" alt="JLI Library" style="width:100%;height:100%;object-fit:cover;display:block;" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ADMISSIONS / FAITH -->
+  <section id="admissions">
+    <div class="container">
+      <p class="section-label">Join JLI</p>
+      <h2 class="section-title">Admissions &amp; Statement of Faith</h2>
+      <div class="section-divider"></div>
+
+      <div class="admissions-grid">
+        <div class="admit-card">
+          <h3>Statement of Faith</h3>
+          <ul class="faith-list">
+            <li><strong>Bible:</strong> The sixty-six canonical books as verbally and plenary inspired, infallible Words
+              of God.</li>
+            <li><strong>God:</strong> One personal God eternally existent in a trinity of persons — Father, Son, and
+              Holy Spirit — active in creation, providence, and redemption.</li>
+            <li><strong>Jesus Christ:</strong> Fully God and fully human, born of the Virgin Mary, died as a
+              substitutionary sacrifice, rose from the dead, and will return in power and glory.</li>
+            <li><strong>Holy Spirit:</strong> God who convicts, regenerates, and indwells believers, enabling holy
+              living, witness, and service. We believe in the Gifts and Fruit of the Holy Spirit.</li>
+            <li><strong>Man:</strong> Created in God's image; fallen through transgression. Salvation comes only through
+              belief in the death of Jesus Christ.</li>
+          </ul>
+        </div>
+
+        <div class="admit-card">
+          <h3>How to Apply</h3>
+          <p style="color:var(--gray);font-size:0.9rem;line-height:1.8;margin-bottom:1.5rem;">
+            We welcome applicants who are passionate about church planting and serving God's Kingdom. Provisional
+            admission is available for students awaiting results.
+          </p>
+
+          <div style="display:flex;flex-direction:column;gap:0.75rem;margin-bottom:1.5rem;">
+            <div style="display:flex;gap:0.75rem;align-items:flex-start;font-size:0.875rem;">
+              <span style="color:var(--gold);font-weight:700;min-width:24px;">01</span>
+              <span style="color:var(--gray);">Contact JLI via phone or visit the campus</span>
+            </div>
+            <div style="display:flex;gap:0.75rem;align-items:flex-start;font-size:0.875rem;">
+              <span style="color:var(--gold);font-weight:700;min-width:24px;">02</span>
+              <span style="color:var(--gray);">Submit your academic certificates and a personal testimony</span>
+            </div>
+            <div style="display:flex;gap:0.75rem;align-items:flex-start;font-size:0.875rem;">
+              <span style="color:var(--gold);font-weight:700;min-width:24px;">03</span>
+              <span style="color:var(--gray);">Confirm your course selection (B.Th / Dip.Th / C.Th)</span>
+            </div>
+            <div style="display:flex;gap:0.75rem;align-items:flex-start;font-size:0.875rem;">
+              <span style="color:var(--gold);font-weight:700;min-width:24px;">04</span>
+              <span style="color:var(--gray);">Pay the admission fee and move into campus accommodation</span>
+            </div>
+          </div>
+
+          <a href="#contact" class="btn btn-gold" style="display:inline-block;">Contact for Admissions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <p class="section-label" style="color:var(--gold);text-align:center;">Get in Touch</p>
+      <h2 class="section-title">Contact Us</h2>
+      <div class="section-divider centered"></div>
+
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <strong>Address</strong>
+          <p>
+            Near Shantha Biotechnics Ltd,<br>
+            Opposite Vignan School, Athvelly,<br>
+            Medchal (Dist), Hyderabad,<br>
+            Telangana – 501401
+          </p>
+        </div>
+
+        <div class="contact-item">
+          <span class="contact-icon">📞</span>
+          <strong>Phone</strong>
+          <p>
+            <a href="tel:9000776457">+91 90007 76457</a><br>
+            <a href="tel:7799103050">+91 77991 03050</a>
+          </p>
+        </div>
+
+        <div class="contact-item">
+          <span class="contact-icon">🎓</span>
+          <strong>Accreditation</strong>
+          <p>
+            Asia Theological Association (ATA)<br>
+            Member in Good Standing
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 John's Leadership Institute, Hyderabad · Part of <span>John Foundation</span> · Accredited by <span>Asia
+        Theological Association</span></p>
+  </footer>
+
+  <script>
+    function switchTab(id) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      event.currentTarget.classList.add('active');
+    }
+  </script>
+
+</body>
+
+</html>

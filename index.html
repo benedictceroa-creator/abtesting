@@ -49,7 +49,7 @@
       transition: box-shadow .18s, border-color .18s, transform .12s;
       text-decoration: none;
       color: var(--text);
-      width: min(320px, 90vw);
+      width: 100%;
     }
     .tool-btn:hover {
       box-shadow: 0 4px 18px rgba(0,0,0,.10);
@@ -91,6 +91,8 @@
 <div id="homePage">
   <img src="Ceroa Logo.png" alt="Ceroa" class="home-logo" />
 
+  <div style="display:flex;flex-direction:column;gap:12px;width:min(320px,90vw);">
+
   <a class="tool-btn" href="ab-price-tool.html">
     <div class="tool-icon">&#128717;</div>
     <div>
@@ -106,6 +108,24 @@
       <div class="tool-sub">Teacher activity planner for John's Academy</div>
     </div>
   </a>
+
+  <a class="tool-btn" href="est-lesson-plan/index.html">
+    <div class="tool-icon">&#128203;</div>
+    <div>
+      <div class="tool-label">EST Lesson Planner</div>
+      <div class="tool-sub">Asha Jyothi Employable Skill Training Centre</div>
+    </div>
+  </a>
+
+  <a class="tool-btn" href="jli-website/index.html">
+    <div class="tool-icon">&#127979;</div>
+    <div>
+      <div class="tool-label">JLI Website</div>
+      <div class="tool-sub">John's Leadership Institute, Hyderabad</div>
+    </div>
+  </a>
+
+  </div>
 
   <div class="home-footer">&copy; Ceroa</div>
 </div>

@@ -1,0 +1,1691 @@
+// ── CONFIGURATION ─────────────────────────────────────────────────
+const SCRIPT_URL = ''; // Paste your deployed Apps Script URL here
+
+const TEACHER_PASSWORD = 'AshaJyothi2025';
+
+// ── STATE ──────────────────────────────────────────────────────────
+let currentCourse = '';
+let viewYear  = new Date().getFullYear();
+let viewMonth = new Date().getMonth(); // 0-indexed
+
+// { 'YYYY-MM-DD': [{ id, lesson, topic }] }
+let schedule = {};
+
+// [{ id, lesson, startDate, endDate }]  — multi-day module bars
+let spans = [];
+
+// { 'YYYY-MM-DD': [{ id, type: 'text'|'photo', content, timestamp }] }
+let feedback = {};
+
+let dragData = null;
+let modalDate = null;
+let pendingPhoto = null; // { base64, mimeType } waiting to be saved
+
+// ── LESSON COLORS ──────────────────────────────────────────────────
+const PALETTE = ['#0ea5e9','#8b5cf6','#10b981','#f59e0b','#ef4444','#6366f1','#14b8a6'];
+const lessonColorMap = {};
+let colorIndex = 0;
+
+function colorFor(lesson) {
+  if (!lessonColorMap[lesson]) {
+    lessonColorMap[lesson] = PALETTE[colorIndex % PALETTE.length];
+    colorIndex++;
+  }
+  return lessonColorMap[lesson];
+}
+
+// ── VIEW HELPERS ───────────────────────────────────────────────────
+function showView(id) {
+  document.querySelectorAll('.view').forEach(v => {
+    v.classList.add('hidden');
+    v.classList.remove('active');
+  });
+  const target = document.getElementById(id);
+  target.classList.remove('hidden');
+  target.classList.add('active');
+}
+
+// ── LOGIN ──────────────────────────────────────────────────────────
+document.getElementById('login-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const pwd = document.getElementById('password').value;
+  const err = document.getElementById('login-error');
+  if (pwd === TEACHER_PASSWORD) {
+    err.classList.add('hidden');
+    sessionStorage.setItem('authenticated', 'true');
+    showView('view-select');
+  } else {
+    err.classList.remove('hidden');
+    document.getElementById('password').value = '';
+  }
+});
+
+// ── LOGOUT ─────────────────────────────────────────────────────────
+function logout() {
+  sessionStorage.removeItem('authenticated');
+  currentCourse = '';
+  document.getElementById('password').value = '';
+  showView('view-login');
+}
+
+document.getElementById('logout-btn').addEventListener('click', logout);
+document.getElementById('logout-btn-2').addEventListener('click', logout);
+
+// ── LESSON PLAN STATE ──────────────────────────────────────────────
+// [{ id, course, module, topic, theory, practicals, assessments, updatedAt }]
+let lessonPlans = [];
+let editingPlanId = null;
+
+// ── COURSE OUTLINE STATE ───────────────────────────────────────────
+let courseOutline = {};
+
+// ── COURSE SELECTION → mode screen ─────────────────────────────────
+function selectCourse(course) {
+  currentCourse = course;
+
+  schedule     = {};
+  spans        = loadSpansLocally(course);
+  feedback     = loadFeedbackLocally(course);
+  lessonPlans  = loadPlansLocally(course);
+  courseOutline = loadOutlineLocally(course);
+  colorIndex   = 0;
+  Object.keys(lessonColorMap).forEach(k => delete lessonColorMap[k]);
+
+  document.getElementById('mode-course-label').textContent = course;
+  document.getElementById('mode-course-sub').textContent   = course;
+  showView('view-mode');
+}
+
+function selectMode(mode) {
+  if (mode === 'outline') {
+    document.getElementById('co-course-badge').textContent = currentCourse;
+    showView('view-course-outline');
+    initCourseOutlineView();
+  } else if (mode === 'plan') {
+    document.getElementById('lp-course-badge').textContent = currentCourse;
+    showView('view-lesson-plan');
+    initLessonPlanView();
+  } else {
+    document.getElementById('planner-course-badge').textContent = currentCourse;
+    const now = new Date();
+    viewYear  = now.getFullYear();
+    viewMonth = now.getMonth();
+    showView('view-planner');
+    loadCurriculum();
+    renderCalendar();
+    loadSchedule();
+  }
+}
+
+document.getElementById('mode-back-btn').addEventListener('click', () => showView('view-select'));
+document.getElementById('logout-btn-3').addEventListener('click', logout);
+
+document.getElementById('co-back-btn').addEventListener('click', () => showView('view-mode'));
+document.getElementById('logout-btn-5').addEventListener('click', logout);
+
+document.getElementById('back-btn').addEventListener('click', () => showView('view-mode'));
+document.getElementById('lp-back-btn').addEventListener('click', () => showView('view-mode'));
+document.getElementById('logout-btn-4').addEventListener('click', logout);
+
+// ── FULL COURSE OUTLINES (source of truth for Course Outline view) ─
+const FULL_COURSE_OUTLINES = {
+  'Spoken English Level 1': {
+    meta: { title: '12-Week Spoken English Lesson Plan (Level 1)', duration: '12 Weeks', daysPerWeek: '5 Days', approach: 'Integrated Learning (Grammar + Vocabulary + Speaking + Activities)' },
+    objective: "To develop learners' ability to communicate effectively in basic English by integrating grammar, vocabulary, and speaking skills, enabling them to confidently participate in everyday conversations, express ideas clearly, and handle simple real-life situations.",
+    dailyFlow: ['Day 1: Concept Introduction', 'Day 2: Practice & Vocabulary', 'Day 3: Guided Speaking', 'Day 4: Application (Role Play / Conversation)', 'Day 5: Review + Weekly Speaking Task'],
+    modules: [
+      { name: 'Module 1 – Introduction & Basic Communication', objective: 'To build confidence and enable students to introduce themselves using simple sentences.', days: ['Importance of English communication, greetings', 'Self-introduction, basic sentence structures (I am…, My name is…)', 'Helping verbs (is, am, are) + personal vocabulary', 'Pair conversation (introductions)', 'Practice + speaking task'], weeklyTask: '"My Introduction"' },
+      { name: 'Module 2 – Talking About Daily Life', objective: 'To enable students to talk about their daily routine using simple present tense.', days: ['Simple Present Tense (basic usage)', 'Daily routine vocabulary', 'WH questions (What, When, Where)', 'Pair conversation (daily routine)', 'Review + speaking'], weeklyTask: '"My Daily Routine"' },
+      { name: 'Module 3 – Describing People & Things', objective: 'To develop the ability to describe people and objects using appropriate vocabulary.', days: ['Adjectives + descriptive vocabulary', 'Articles (a, an, the) + singular/plural', 'Sentence formation practice', 'Picture description activity', 'Speaking practice'], weeklyTask: '"Describe My Family / Friend"' },
+      { name: 'Module 4 – Past & Future Communication', objective: 'To help students speak about past events and future plans.', days: ['Simple Past Tense (basic verbs)', 'Future expressions (will / going to)', 'Time expressions (yesterday, tomorrow) + connectors', 'Storytelling activity', 'Review + speaking'], weeklyTask: '"My Last Day / Future Plan"' },
+      { name: 'Module 5 – Everyday Situations', objective: 'To enable students to communicate in basic real-life situations.', days: ['Prepositions (in, on, at) + polite expressions', 'Shopping and travel vocabulary', 'Pronunciation practice', 'Role play (market, asking directions)', 'Practice + speaking'], weeklyTask: '"At the Market / Asking for Help"' },
+      { name: 'Module 6 – Fluency Development & Assessment', objective: 'To improve speaking confidence and assess progress.', days: ['Revision (grammar + vocabulary)', 'JAM (Just a Minute)', 'Picture-based speaking', 'Group discussion', 'Assessment'], weeklyTask: '', assessment: '3–5 minute speaking + role play' },
+      { name: 'Module 7 – Vocabulary & Sentence Development', objective: 'To enhance vocabulary and improve sentence formation skills.', days: ['Daily-use vocabulary expansion', 'Synonyms & antonyms', 'Sentence building using new words', 'Pair conversation practice', 'Review + speaking'], weeklyTask: '"Use New Words in Sentences"' },
+      { name: 'Module 8 – Pronunciation & Clarity', objective: 'To improve pronunciation and speaking clarity.', days: ['Basic pronunciation rules', 'Reading aloud practice', 'Speaking with pauses and clarity', 'Listening & repetition exercises', 'Practice + speaking'], weeklyTask: '"Read and Explain a Passage"' },
+      { name: 'Module 9 – Question & Answer Communication', objective: 'To develop the ability to ask and answer questions confidently.', days: ['Question words and structure', 'Forming questions', 'Answering clearly', 'Pair Q&A activity', 'Review + speaking'], weeklyTask: '"Ask & Answer Questions"' },
+      { name: 'Module 10 – Conversation Practice', objective: 'To build confidence in everyday conversations.', days: ['Conversation starters', 'Pair conversations', 'Group discussions', 'Role play activities', 'Practice + speaking'], weeklyTask: '"Talk on a Simple Topic"' },
+      { name: 'Module 11 – Practical Communication', objective: 'To apply English in real-life situations effectively.', days: ['Asking for help and giving directions', 'Telephone conversation basics', 'Shopping & customer interaction', 'Situational role plays', 'Review + speaking'], weeklyTask: '"Handle a Real-Life Situation"' },
+      { name: 'Module 12 – Final Fluency & Assessment', objective: 'To evaluate overall communication skills and fluency.', days: ['Revision (grammar + vocabulary)', 'Fluency activities (JAM, rapid speaking)', 'Group discussion', 'Final presentations', 'Assessment'], weeklyTask: '', assessment: '3–5 minute speaking + role play + situational conversation' },
+    ],
+    outcomes: ['Communicate confidently in everyday situations', 'Use basic grammar accurately in speech', 'Participate in simple conversations and discussions', 'Demonstrate improved fluency and pronunciation'],
+  },
+
+  'Spoken English Level 2': {
+    meta: { title: '12-Week Spoken English Lesson Plan (Level 2)', duration: '12 Weeks', daysPerWeek: '5 Days', approach: 'Integrated Learning (Grammar + Vocabulary + Speaking + Activities)' },
+    objective: "To strengthen learners' communication skills by improving grammar application, enhancing speaking confidence, and developing workplace communication abilities for effective use of English in professional and real-life situations.",
+    dailyFlow: ['Day 1: Concept Introduction', 'Day 2: Practice & Vocabulary', 'Day 3: Guided Speaking', 'Day 4: Application (Role Play / Discussion)', 'Day 5: Review + Weekly Speaking Task'],
+    modules: [
+      { name: 'Module 1 – Advanced Communication Basics', objective: 'To develop confidence in introductions and basic conversation building.', days: ['Effective self-introduction and conversation starters', 'Vocabulary for expressing ideas', 'Asking and answering confidently', 'Pair conversation practice', 'Review and speaking'], weeklyTask: '"Professional Self-Introduction"' },
+      { name: 'Module 2 – Expressing Opinions & Ideas', objective: 'To enable learners to express opinions clearly and confidently.', days: ['Sentence structures for opinions', 'Opinion-based vocabulary', 'Speaking practice (agree/disagree)', 'Group discussion activity', 'Review and speaking'], weeklyTask: '"Express My Opinion on a Topic"' },
+      { name: 'Module 3 – Advanced Grammar in Speaking', objective: 'To apply advanced grammar structures in spoken communication.', days: ['Advanced sentence formation', 'Question tags and question formation', 'Irregular verbs in communication', 'Role play using grammar structures', 'Review and speaking'], weeklyTask: '"Use Grammar in Conversation"' },
+      { name: 'Module 4 – Sentence Expansion & Connectors', objective: 'To improve fluency using connectors and complex sentences.', days: ['Sentence connectors (and, but, because, although)', 'Complex sentence construction', 'Sentence expansion exercises', 'Speaking activity using connectors', 'Review and speaking'], weeklyTask: '"Expand and Connect Ideas"' },
+      { name: 'Module 5 – Vocabulary & Expression Skills', objective: 'To enhance vocabulary and expressive communication.', days: ['Advanced everyday vocabulary', 'Synonyms and antonyms', 'Idioms and expressions', 'Conversation using new vocabulary', 'Review and speaking'], weeklyTask: '"Use New Expressions in Speech"' },
+      { name: 'Module 6 – Pronunciation & Fluency', objective: 'To improve pronunciation, clarity, and speech flow.', days: ['Pronunciation correction exercises', 'Voice clarity and stress patterns', 'Reading with expression', 'Listening and repetition practice', 'Review and speaking'], weeklyTask: '"Read and Present a Passage"' },
+      { name: 'Module 7 – Practical Speaking Development', objective: 'To develop confidence in real-life speaking situations.', days: ['Speaking on everyday situations', 'Asking and giving explanations', 'Pair conversation practice', 'Situational role play', 'Review and speaking'], weeklyTask: '"Handle a Daily Situation in English"' },
+      { name: 'Module 8 – Interactive Communication Activities', objective: 'To improve spontaneous speaking and thinking skills.', days: ['JAM (Just A Minute) practice', 'Picture and story description', 'Storytelling activity', 'Debate and discussion', 'Review and speaking'], weeklyTask: '"Speak Instantly on a Topic"' },
+      { name: 'Module 9 – Workplace Communication Skills', objective: 'To develop communication skills required in workplace settings.', days: ['Formal communication basics', 'Telephone conversation practice', 'Customer interaction', 'Team communication role play', 'Review and speaking'], weeklyTask: '"Workplace Conversation Practice"' },
+      { name: 'Module 10 – Professional English Usage', objective: 'To apply English in professional and formal situations.', days: ['Email drafting basics', 'Asking for information professionally', 'Giving instructions clearly', 'Role play (office situations)', 'Review and speaking'], weeklyTask: '"Write & Speak Professionally"' },
+      { name: 'Module 11 – Interview & Career Communication', objective: 'To prepare learners for interviews and career communication.', days: ['Interview question practice', 'Professional self-introduction', 'Answering confidently', 'Mock interview activity', 'Review and speaking'], weeklyTask: '"Mock Interview Performance"' },
+      { name: 'Module 12 – Fluency & Final Assessment', objective: 'To evaluate overall fluency, confidence, and communication skills.', days: ['Revision (grammar + vocabulary)', 'Fluency activities (JAM, rapid speaking)', 'Group discussion', 'Final presentations', 'Assessment'], weeklyTask: '', assessment: '5-minute speaking + role play + workplace scenario' },
+    ],
+    outcomes: ['Communicate confidently in professional and real-life situations', 'Use advanced grammar effectively in speech', 'Participate in discussions, debates, and workplace conversations', 'Demonstrate improved fluency, pronunciation, and confidence', 'Handle interviews and professional communication effectively'],
+  },
+
+  'Electrical': {
+    meta: { title: 'Electrical Technician', institution: 'Asha Jyothi Employable Skills – Medchal Branch', creditHours: '240 Hours' },
+    description: 'This course provides learners with the essential knowledge and practical skills required to perform basic electrical installation, maintenance, testing, troubleshooting, and repair of domestic electrical systems safely and effectively. Students will learn electrical fundamentals, workplace safety, wiring methods, tools and measuring instruments, earthing systems, domestic wiring installation, testing procedures, diagnosis of electrical faults, repair techniques, and professional finishing practices. Through classroom instruction and hands-on practical sessions, students will develop competency to install, inspect, maintain, troubleshoot, and repair residential electrical installations while following applicable safety standards and electrical codes.',
+    courseObjectives: [
+      'Explain the basic principles and fundamentals of electricity.',
+      'Apply electrical safety practices and use appropriate Personal Protective Equipment (PPE).',
+      'Identify and correctly use electrical tools and measuring instruments.',
+      'Interpret basic electrical symbols, wiring diagrams, and circuit layouts.',
+      'Perform domestic wiring installations using standard wiring methods.',
+      'Install electrical fixtures, switches, sockets, lighting, and protective devices.',
+      'Explain the purpose and methods of earthing and grounding systems.',
+      'Conduct testing and inspection of electrical installations.',
+      'Demonstrate proper finishing techniques for quality electrical work.',
+      'Diagnose electrical faults using systematic troubleshooting methods.',
+      'Perform maintenance and repair of domestic electrical installations.',
+      'Identify root causes of electrical problems and recommend effective corrective actions.',
+      'Prepare for practical examinations and demonstrate competency through project work.',
+    ],
+    modules: [
+      { name: 'Module 1 – Electrical Safety', week: 'Week 1 (Sep 21st – Sep 25th)', days: ['Introduction, Safety Practice, Safety Precaution of our Area', 'Fire – Types & Extinguishers', 'Rescue operations – First aid treatment – Artificial respiration, PPE', 'Guidelines for cleanliness of workshop and maintenance', 'Slip test & PPE & first aid demo'] },
+      { name: 'Module 2 – Fundamentals of Electricity', week: 'Week 2 (Sep 29th – Oct 2nd)', days: ['Define basic electrical quantities (current, voltage, resistance, work, power, energy); electrical circuits, conductors, insulators and semiconductors', "Ohm's law, simple electrical circuit and problems, parallel circuits and problems", 'AC & DC', 'Slip test & Activity – Wire & Cable Identification'] },
+      { name: 'Module 3 – Electrical Tools and Instruments', week: 'Weeks 3–4 (Oct 5th – Oct 16th)', days: ['Fitting tools – marking tools – specification – grades – uses', 'Combination plier, long nose plier, side cutting plier etc.', 'Marking tools – steel rule – punches – calipers – try square – gauges; safe handling & maintenance', 'Activity – JAM Session on tools', 'Voltmeter, ammeter and clamp meter; speed meter, megger, frequency meter; cos Q meter, multi meter, watt meter; earth tester', 'Activity – Debate on Tools & Instruments'] },
+      { name: 'Module 4 – Domestic Wiring Installation', week: 'Week 5 (Oct 19th – Oct 23rd)', days: ['Electrical wiring accessories', 'Wiring diagrams & house wiring components', 'Junction boxes, conduit installation & distribution boards', 'MCB, ELCB, cable routing & fuses', 'Activity – Debate on Tools & Instruments'] },
+      { name: 'Module 5 – Wiring Types', week: 'Week 6 (Oct 26th – Oct 30th)', days: ['Cleat wiring, casing & capping wiring', 'Batten wiring', 'Conduit wiring & concealed wiring', 'Surface & flexible wiring', 'Slip test & Activity – Recognizing the wiring materials'] },
+      { name: 'Module 6 – Electrical Fixtures and Fittings', week: 'Week 7 (Nov 2nd – Nov 6th)', days: ['Switches & socket outlets', 'Lamp holders & ceiling roses', 'LED lights & fans; costing, estimation of buildings', 'Regulators, bell circuits & distribution boards', 'Activity – Group Discussion'] },
+      { name: 'Module 7 – Earthing', week: 'Week 8 (Nov 9th – Nov 13th)', days: ['Purpose of earthing', 'Types of earthing', 'Earth resistance', 'Earthing installation & testing earthing systems', 'Slip test'] },
+      { name: 'Module 8 – Testing and Inspection', week: 'Week 9 (Nov 16th – Nov 20th)', days: ['Continuity, polarity testing', 'Insulation resistance', 'Earth continuity', 'Functional testing & documentation', 'Activity, Demo'] },
+      { name: 'Module 9 – Proper Finishing', week: 'Week 10 (Nov 23rd – Nov 27th)', days: ['Cable dressing', 'Labelling & panel organization', 'Workmanship standards', 'Housekeeping & quality inspection', 'Slip test'] },
+      { name: 'Module 10 – Domestic Electrical Repair and Maintenance', week: 'Week 11 (Nov 30th – Dec 4th)', days: ['Preventive & corrective maintenance', 'Replacing switches & sockets', 'Lighting repair', 'Fan servicing', 'Distribution board maintenance'] },
+      { name: 'Module 11 – Fault Diagnosis and Troubleshooting', week: 'Week 12 (Dec 7th – Dec 11th)', days: ['Problem identification & root cause analysis', 'Troubleshooting process & circuit tracing', 'Testing procedures & fault isolation', 'Assignments on above topics', 'Complete house wiring project'] },
+    ],
+    extraWeeks: [
+      { label: 'Week 13 (Dec 14th – Dec 18th)', items: ['Complete house wiring project', 'Installation testing', 'Fault diagnosis exercises', 'Viva preparation', 'Practical assessment'] },
+      { label: 'Week 14 (Dec 22nd – Dec 30th)', items: ['Fault diagnosis exercises', 'Repairs', 'Board repairs', 'Analyzing the tools', 'Record writing & preparing for Final Exam'] },
+    ],
+    teachingMethods: ['Interactive lectures', 'Demonstrations', 'Hands-on laboratory practice', 'Group discussions', 'Case studies', 'Problem-based learning', 'Troubleshooting exercises', 'Workplace simulations', 'Project-based learning'],
+    assessmentPlan: [
+      { item: 'Weekly Activities', weight: '10%' },
+      { item: 'Practical Laboratory Exercises', weight: '40%' },
+      { item: 'Assignments', weight: '10%' },
+      { item: 'Troubleshooting & Maintenance Project', weight: '15%' },
+      { item: 'Final Written Examination', weight: '25%' },
+    ],
+    outcomes: [
+      'Work safely with electrical systems using appropriate PPE and procedures.',
+      'Explain and apply basic electrical principles.',
+      'Use electrical tools and test instruments accurately.',
+      'Install domestic wiring systems according to standards.',
+      'Install and test electrical fixtures, fittings, and protective devices.',
+      'Perform earthing installation and verify its effectiveness.',
+      'Conduct electrical testing and inspection to ensure safety and compliance.',
+      'Maintain high standards of workmanship and finishing.',
+      'Perform preventive and corrective maintenance on domestic electrical installations.',
+      'Diagnose electrical faults using systematic troubleshooting techniques.',
+      'Determine the root cause of electrical problems and implement effective solutions.',
+      'Successfully complete practical assessments and demonstrate competency in domestic electrical installation, repair, and maintenance.',
+    ],
+  },
+
+  'Computer – MS-Office': {
+    meta: { title: 'Computer – MS-Office', duration: '5 Weeks', daysPerWeek: '5 Days', approach: 'Hands-on application learning with guided practice' },
+    objective: 'To equip learners with practical skills in Microsoft Office applications — Word, Excel, PowerPoint, and Outlook — enabling them to perform everyday office and workplace tasks confidently.',
+    dailyFlow: ['Day 1: Concept Introduction', 'Day 2: Guided Practice', 'Day 3: Hands-on Lab', 'Day 4: Application Exercise', 'Day 5: Review & Assessment'],
+    modules: [
+      { name: 'Module 1 – Introduction to MS-Office', objective: 'Familiarise learners with the MS-Office suite and computer basics.', days: ['MS-Office Suite overview and applications', 'Computer basics – Windows, taskbar, file management', 'Creating, saving and organising files and folders', 'Keyboard shortcuts and navigation tips', 'Review & hands-on exercise'], weeklyTask: 'Set up a folder structure and save practice files' },
+      { name: 'Module 2 – MS Word', objective: 'Create, format and manage professional documents.', days: ['Creating documents – interface, typing, saving', 'Formatting text – fonts, bold, italic, alignment, spacing', 'Tables, images and bullet lists', 'Headers, footers, page layout and margins', 'Practice: formal letter / notice'], weeklyTask: 'Create a formatted one-page document' },
+      { name: 'Module 3 – MS Excel', objective: 'Use spreadsheets for data, calculations and charts.', days: ['Cells, rows, columns and data entry', 'Formulas and functions – SUM, AVERAGE, COUNT, IF', 'Charts and graphs – creating and formatting', 'Data sorting, filtering and conditional formatting', 'Practice: budget or attendance sheet'], weeklyTask: 'Build a spreadsheet with formulas and a chart' },
+      { name: 'Module 4 – MS PowerPoint', objective: 'Design and deliver effective presentations.', days: ['Creating slides – interface, themes and layouts', 'Text, images, icons and SmartArt', 'Animations and slide transitions', 'Presenter view and slide show delivery', 'Practice: 5-slide topic presentation'], weeklyTask: 'Create and present a 5-slide presentation' },
+      { name: 'Module 5 – MS Outlook & Cloud Tools', objective: 'Manage email, calendar and cloud-based file sharing.', days: ['Email composition, reply, forward and folders', 'Calendar – scheduling events and reminders', 'OneDrive – uploading, sharing and syncing files', 'Microsoft Teams basics – chat and meetings', 'Review & final assessment'], weeklyTask: 'Send a professional email with an attachment' },
+    ],
+    outcomes: ['Use MS Word to create and format professional documents', 'Build spreadsheets with formulas and charts in MS Excel', 'Design and deliver presentations using MS PowerPoint', 'Manage email and calendar using MS Outlook', 'Share and collaborate using OneDrive and Teams'],
+  },
+
+  'Computer – Desktop Publishing': {
+    meta: { title: 'Computer – Desktop Publishing', duration: '5 Weeks', daysPerWeek: '5 Days', approach: 'Creative and practical design-focused learning' },
+    objective: 'To develop skills in desktop publishing, page layout, typography and basic image editing so learners can create professional print and digital publications.',
+    dailyFlow: ['Day 1: Concept & Theory', 'Day 2: Guided Design Practice', 'Day 3: Hands-on Lab', 'Day 4: Creative Exercise', 'Day 5: Review & Critique'],
+    modules: [
+      { name: 'Module 1 – Introduction to DTP', objective: 'Understand what DTP is, its uses, and the software used.', days: ['What is Desktop Publishing? Applications and careers', 'Computer basics for DTP – hardware and software setup', 'Overview of DTP software (Publisher, CorelDraw, Canva)', 'Design principles – balance, contrast, alignment, repetition', 'Review & terminology exercise'], weeklyTask: 'Identify good and poor design examples' },
+      { name: 'Module 2 – Page Layout & Publisher', objective: 'Create and structure page layouts using DTP software.', days: ['Interface and navigation – menus, toolbars, panels', 'Page setup – size, margins, columns and grids', 'Text frames – inserting, linking and formatting', 'Image frames – placing, resizing and wrapping text', 'Practice: simple newsletter layout'], weeklyTask: 'Create a one-page newsletter layout' },
+      { name: 'Module 3 – Typography & Colour', objective: 'Apply professional typography and colour principles.', days: ['Font types – serif, sans-serif, decorative and their use cases', 'Font size, leading, tracking and kerning', 'Paragraph styles, alignment and hierarchy', 'Colour theory – primary, complementary and brand colours', 'Practice: typographic poster'], weeklyTask: 'Design a poster using typography rules' },
+      { name: 'Module 4 – Image Editing Basics', objective: 'Edit and prepare images for use in publications.', days: ['Introduction to image editing – Photoshop / GIMP basics', 'Cropping, resizing and resolution for print vs web', 'Brightness, contrast, colour balance adjustments', 'Layers, selections and simple retouching', 'Practice: edit and place images in a layout'], weeklyTask: 'Edit a photo and place it in a publication' },
+      { name: 'Module 5 – Print Design & Output', objective: 'Prepare publications for print and digital output.', days: ['Bleeds, crop marks, margins and print-safe zones', 'Creating a flyer – layout, images and text together', 'Creating a brochure – multi-page design', 'Exporting PDF and print-ready file formats', 'Final project: print-ready flyer or brochure'], weeklyTask: 'Submit a print-ready flyer or brochure' },
+    ],
+    outcomes: ['Create professional page layouts using DTP software', 'Apply typography and colour principles effectively', 'Edit images for use in print and digital publications', 'Produce print-ready files in the correct format', 'Design flyers, brochures and newsletters independently'],
+  },
+
+  'Computer – Tally': {
+    meta: { title: 'Computer – Tally', duration: '5 Weeks', daysPerWeek: '5 Days', approach: 'Practical accounting and software-based learning' },
+    objective: 'To develop proficiency in Tally for business accounting, voucher entry, GST compliance and financial reporting, enabling learners to handle day-to-day accounts in a workplace.',
+    dailyFlow: ['Day 1: Concept Introduction', 'Day 2: Guided Practice in Tally', 'Day 3: Hands-on Entry Exercise', 'Day 4: Application Scenario', 'Day 5: Review & Test'],
+    modules: [
+      { name: 'Module 1 – Introduction to Tally & Accounting', objective: 'Understand basic accounting concepts and navigate Tally.', days: ['Accounting basics – assets, liabilities, income, expense', 'Double-entry bookkeeping and accounting equation', 'Installing Tally and interface navigation', 'Company creation and configuration settings', 'Review & hands-on navigation exercise'], weeklyTask: 'Create a company and explore the Tally interface' },
+      { name: 'Module 2 – Masters: Ledgers & Groups', objective: 'Create and manage ledgers, groups and stock items.', days: ['Understanding groups and chart of accounts', 'Creating and editing ledgers', 'Stock items, units of measure and stock groups', 'Setting opening balances for ledgers', 'Practice: set up a company with sample masters'], weeklyTask: 'Set up ledgers and opening balances for a sample company' },
+      { name: 'Module 3 – Voucher Entry & Transactions', objective: 'Record business transactions using Tally vouchers.', days: ['Payment and receipt vouchers', 'Sales and purchase vouchers', 'Contra entries and bank transactions', 'Debit notes, credit notes and journal entries', 'Practice: enter a full month of transactions'], weeklyTask: 'Enter a complete set of vouchers for a sample business' },
+      { name: 'Module 4 – GST in Tally', objective: 'Configure GST and record GST-compliant transactions.', days: ['GST basics – CGST, SGST, IGST and rates', 'GST configuration in Tally – company and ledger setup', 'GST sales and purchase entry', 'HSN/SAC codes and tax ledgers', 'GSTR-1 and GSTR-3B reports in Tally'], weeklyTask: 'Enter GST transactions and view GSTR report' },
+      { name: 'Module 5 – Reports & Final Accounts', objective: 'Generate and interpret key financial reports.', days: ['Trial Balance and Day Book', 'Profit & Loss Account', 'Balance Sheet', 'Stock Summary and inventory reports', 'Printing reports & final assessment'], weeklyTask: 'Generate and print all final account reports' },
+    ],
+    outcomes: ['Create and manage company accounts in Tally', 'Enter all types of vouchers and business transactions', 'Configure GST and file GST-compliant entries', 'Generate Trial Balance, P&L and Balance Sheet reports', 'Handle day-to-day accounts independently using Tally'],
+  },
+
+  'Computer – Data Entry': {
+    meta: { title: 'Computer – Data Entry', duration: '5 Weeks', daysPerWeek: '5 Days', approach: 'Speed and accuracy-focused practical training' },
+    objective: 'To develop fast, accurate data entry skills using keyboard mastery, Excel, online portals and quality checking techniques, preparing learners for data entry roles in offices and businesses.',
+    dailyFlow: ['Day 1: Concept & Technique', 'Day 2: Timed Practice', 'Day 3: Hands-on Lab', 'Day 4: Accuracy Exercise', 'Day 5: Speed Test & Review'],
+    modules: [
+      { name: 'Module 1 – Typing & Keyboard Mastery', objective: 'Develop touch-typing skill and keyboard fluency.', days: ['Keyboard layout – rows, zones and finger placement', 'Touch typing technique – home row and posture', 'Alphabetic key drills and common word practice', 'Number row, symbols and special keys', 'Speed test: baseline WPM measurement'], weeklyTask: 'Achieve a target speed of 20+ WPM with accuracy' },
+      { name: 'Module 2 – Data Entry Fundamentals', objective: 'Understand types of data entry and practice core techniques.', days: ['Types of data entry – numeric, alpha, alphanumeric', 'Copy typing from printed documents', 'Form filling – paper forms and digital forms', 'Transcription – audio and handwritten sources', 'Accuracy check and error correction techniques'], weeklyTask: 'Complete a timed form-filling and copy-typing task' },
+      { name: 'Module 3 – Excel for Data Entry', objective: 'Use Excel efficiently for large-scale data entry tasks.', days: ['Navigating large spreadsheets – freeze panes, go to, name box', 'Data validation – dropdown lists and restricted input', 'Auto-fill, flash fill and custom lists', 'Find, replace, sort and filter for data management', 'Practice: enter and manage a 200-row dataset'], weeklyTask: 'Enter, validate and clean a sample dataset in Excel' },
+      { name: 'Module 4 – Accuracy & Quality Control', objective: 'Apply quality checking techniques to ensure error-free data.', days: ['Proofreading methods – visual and comparison checking', 'Double-entry and verification techniques', 'Common data entry errors and prevention strategies', 'Working with databases – MS Access / Google Sheets basics', 'Quality control exercise on a sample dataset'], weeklyTask: 'Proofread and correct errors in a provided dataset' },
+      { name: 'Module 5 – Speed, Assessment & Online Tools', objective: 'Achieve target speed and demonstrate work-ready data entry skills.', days: ['Advanced timed drills – speed and accuracy targets', 'Online data entry tools and portals – overview', 'Working with scanned documents and PDFs', 'Final timed speed and accuracy assessment', 'Review, feedback and certification readiness'], weeklyTask: 'Complete final assessment: 30+ WPM at 95%+ accuracy' },
+    ],
+    outcomes: ['Type accurately at 30+ words per minute', 'Complete data entry tasks from various sources with high accuracy', 'Use Excel features for efficient large-scale data entry', 'Apply proofreading and verification to ensure data quality', 'Work with online entry tools and portals confidently'],
+  },
+
+  'Refrigeration & AC Technician': {
+    meta: { title: 'Refrigeration & Air Conditioning Technician', institution: 'Asha Jyothi Employable Skills – Medchal Branch', creditHours: '240 Hours' },
+    description: 'This course equips learners with the knowledge and practical skills required to safely install, maintain, diagnose, troubleshoot, and repair Refrigeration and Air Conditioning systems. The course covers the fundamentals of electrical safety, electronic components, measuring instruments, refrigerators, air conditioners, compressors, and refrigerants. Students will learn systematic fault diagnosis, root cause analysis, preventive maintenance, customer service, and professional repair practices through theory and extensive hands-on laboratory activities. Upon completion, learners will be prepared for entry-level employment or self-employment in Refrigeration & Air Conditioning.',
+    courseObjectives: [
+      'Explain the fundamentals of Refrigeration & Air Conditioner operation.',
+      'Follow electrical and electronic safety procedures while servicing appliances.',
+      'Identify electronic components and explain their functions.',
+      'Safely use electrical and electronic tools and measuring instruments.',
+      'Read basic wiring diagrams and electronic circuit diagrams.',
+      'Service and repair refrigerators.',
+      'Service and repair air conditioners.',
+      'Perform basic maintenance of refrigerators.',
+      'Perform basic maintenance of air conditioners.',
+      'Diagnose appliance faults using systematic troubleshooting techniques.',
+      'Identify the root cause of appliance failures.',
+      'Recommend and implement suitable repair solutions.',
+      'Perform preventive maintenance to improve appliance life.',
+      'Demonstrate professionalism, customer communication, and documentation skills.',
+    ],
+    modules: [
+      { name: 'Module 1 – Safety Precautions', week: 'Week 1 (Sep 21st – Sep 25th)', days: ['Electronic Hazards (explosion risk, radiation exposure)', 'Personal Protective Equipment (PPE)', 'Fire Safety, First Aid for Electric Shock', 'Safe Handling of Appliances, Safe Use of Test Equipment', 'Activity – Safety Inspection / Quiz'] },
+      { name: 'Module 2 – Fundamentals of Electronics', week: 'Week 2 (Sep 29th – Oct 2nd)', days: ['Electricity Review – Voltage, Current, Resistance', "Ohm's Law", 'Power Calculations, PCB Basics', 'AC and DC, Electronic Components'] },
+      { name: 'Module 3 – Tools and Measuring Instruments', week: 'Week 3 (Oct 5th – Oct 9th)', days: ['Introduction to Hand Tools, Wire Preparation Tools', 'Soldering Techniques, Insulation Testing, Circuit Testing', 'Electrical, Temperature & Current Measures', 'Measure AC/DC Current Safely – Hands-on Practice', 'Activity – Wiring, Testing, Soldering & Measurement'] },
+      { name: 'Module 4 – Refrigerator', week: 'Weeks 4–5 (Oct 12th – Oct 23rd)', days: ['Introduction to Refrigeration Systems & Classification', 'Types of Refrigerators and Their Applications', 'Domestic Refrigeration Technology', 'Commercial Refrigeration Systems', 'Activity – Identification of Different Refrigerators', 'Cold Room and Cooling Chamber Refrigeration', 'Cold Storage Refrigeration Systems', 'Automotive and Mobile Refrigeration Systems', 'Industrial Refrigeration Applications', 'Group Presentation & Comparison Chart'] },
+      { name: 'Module 5 – Compressor', week: 'Weeks 6–8 (Oct 26th – Nov 13th)', days: ['Introduction to Compressors & Working Principle', 'Hermetic Compressors – Construction & Applications', 'Semi-Hermetic Compressors – Construction & Applications', 'Open-Type Compressors – Working Principle & Applications', 'Activity – Videos & Comparison of Compressor Types', 'Rotary Compressors – Principle & Advantages', 'Reciprocating Compressors – Operation & Limitations', 'BLDC Compressors – Technology & Energy Efficiency', 'Inverter Compressors – Technology & Benefits', 'Activity – Compare BLDC with Conventional Compressors', 'Comparison of All Compressor Types', 'Practical Demonstration & Review', 'Practical and Viva Assessment'] },
+      { name: 'Module 6 – Refrigerants (Gases)', week: 'Week 9 (Nov 16th – Nov 20th)', days: ['Introduction to Refrigerants, R-12 (CFC Refrigerant)', 'R-22 (HCFC), R-32 (HFC)', 'R-134a (HFC), R-290 (Propane)', 'R-600a (Isobutane), R-190 (Ethane)', 'Case Study on Different Refrigerants'] },
+      { name: 'Module 7 – Air Conditioners', week: 'Weeks 10–12 (Nov 23rd – Dec 11th)', days: ['Definition, Components & Diagram of Air Conditioning', 'Compressor Types, Condenser, Evaporator, Expansion Valve', 'Study AC Parts & Components – Demo Practical', 'Types of AC and Applications', 'Dismantle/Reassemble Portable, Split, Window AC', 'Advanced AC Types & Testing Tools', 'Dismantle/Reassemble Floor, Smart, Hybrid AC', 'Activity – Identify AC Types, Use Tools Safely', 'Component Testing, Refrigerant Charging, Leak Detection', 'Tube Bending, Bracing & Pinching', 'Perform Testing Procedures on Components', 'Activity – Diagnose Compressor Faults & Service Project'] },
+      { name: 'Module 8 – Repair and Maintenance', week: 'Week 13 (Dec 14th – Dec 18th)', days: ['General Problems – Compressor Faults & Remedies', 'Identify & Rectify No Air Flow / Compressor Run Issues', 'Compressor Will Not Start but Condenser Fan Runs', 'Practice of Bending a Refrigerant Flow Tube', 'Repair and Document Faults'] },
+      { name: 'Module 9 – Fault Diagnosis and Troubleshooting', week: 'Week 14 (Dec 22nd – Dec 30th)', days: ['Refrigerant Leak Detection & Prevention Methods', 'Fault Diagnosis Exercises', 'Troubleshoot & Testing of Evaporator', 'Practical Assessment', 'Record Writing & Preparing for Final Exam'] },
+    ],
+    teachingMethods: ['Interactive lectures', 'Demonstrations', 'Hands-on laboratory practice', 'Appliance disassembly and reassembly', 'Troubleshooting workshops', 'Case studies', 'Group discussions', 'Project-based learning', 'Industry guest lectures (optional)'],
+    assessmentPlan: [
+      { item: 'Weekly Activities', weight: '10%' },
+      { item: 'Practical Laboratory Exercises', weight: '40%' },
+      { item: 'Assignments', weight: '10%' },
+      { item: 'Troubleshooting & Maintenance Project', weight: '15%' },
+      { item: 'Final Written Examination', weight: '25%' },
+    ],
+    outcomes: [
+      'Apply workplace safety standards.',
+      'Identify electronic components and appliance parts.',
+      'Use diagnostic tools correctly.',
+      'Replace defective components safely.',
+      'Interpret service manuals and wiring diagrams.',
+      'Troubleshoot electrical and electronic faults.',
+      'Perform preventive maintenance.',
+      'Document repair procedures.',
+      'Demonstrate professional service skills.',
+    ],
+  },
+};
+
+// ── COURSE OUTLINE VIEW ────────────────────────────────────────────
+function loadOutlineLocally(course) {
+  try {
+    const stored = JSON.parse(localStorage.getItem(`aj-outline-${course}`));
+    // Accept only the new rich-object format; discard legacy flat arrays
+    if (stored && !Array.isArray(stored) && (stored.meta || stored.modules)) return stored;
+    return JSON.parse(JSON.stringify(FULL_COURSE_OUTLINES[course] || {}));
+  } catch {
+    return JSON.parse(JSON.stringify(FULL_COURSE_OUTLINES[course] || {}));
+  }
+}
+
+function saveOutlineLocally() {
+  localStorage.setItem(`aj-outline-${currentCourse}`, JSON.stringify(courseOutline));
+}
+
+function initCourseOutlineView() {
+  renderOutline();
+}
+
+function renderOutline() {
+  const body = document.getElementById('co-body');
+  body.innerHTML = '';
+  const d = courseOutline;
+
+  body.appendChild(coHeaderCard(d));
+  if (d.objective)        body.appendChild(coTextCard('Course Objective', d.objective,        v => { d.objective = v; saveOutlineLocally(); }));
+  if (d.description)      body.appendChild(coTextCard('Course Description', d.description,    v => { d.description = v; saveOutlineLocally(); }));
+  if (d.courseObjectives) body.appendChild(coListCard('Course Objectives', d.courseObjectives, (i,v) => { d.courseObjectives[i] = v; saveOutlineLocally(); }));
+  if (d.dailyFlow)        body.appendChild(coListCard('Daily Flow', d.dailyFlow,               (i,v) => { d.dailyFlow[i] = v; saveOutlineLocally(); }));
+
+  if (d.modules) {
+    const grp = coGroupWrap('Course Modules');
+    d.modules.forEach((mod, mi) => grp.appendChild(coModuleCard(mod, mi)));
+    body.appendChild(grp);
+  }
+
+  if (d.extraWeeks) {
+    const grp = coGroupWrap('Additional Weeks');
+    d.extraWeeks.forEach(wk => grp.appendChild(coExtraWeekCard(wk)));
+    body.appendChild(grp);
+  }
+
+  if (d.teachingMethods) body.appendChild(coListCard('Teaching Methods', d.teachingMethods, (i,v) => { d.teachingMethods[i] = v; saveOutlineLocally(); }));
+  if (d.assessmentPlan)  body.appendChild(coAssessmentCard(d));
+  if (d.outcomes)        body.appendChild(coListCard('Program Outcomes', d.outcomes,          (i,v) => { d.outcomes[i] = v; saveOutlineLocally(); }));
+}
+
+// ── Outline card helpers ───────────────────────────────────────────
+
+function coGroupWrap(title) {
+  const wrap = document.createElement('div');
+  wrap.className = 'co-section-group';
+  const hd = document.createElement('div');
+  hd.className = 'co-section-group-title';
+  hd.textContent = title;
+  wrap.appendChild(hd);
+  return wrap;
+}
+
+function coHeaderCard(d) {
+  const card = document.createElement('div');
+  card.className = 'co-card co-header-card';
+
+  const titleEl = document.createElement('div');
+  titleEl.className   = 'co-card-title co-editable';
+  titleEl.textContent = d.meta.title || '';
+  makeInlineEditable(titleEl, v => { d.meta.title = v; saveOutlineLocally(); });
+  card.appendChild(titleEl);
+
+  const grid = document.createElement('div');
+  grid.className = 'co-meta-grid';
+  Object.entries(d.meta).filter(([k]) => k !== 'title').forEach(([key, val]) => {
+    const row = document.createElement('div');
+    row.className = 'co-meta-row';
+    const lbl = document.createElement('span');
+    lbl.className   = 'co-meta-key';
+    lbl.textContent = key.replace(/([A-Z])/g, ' $1').replace(/^./, s => s.toUpperCase());
+    const valEl = document.createElement('span');
+    valEl.className   = 'co-editable co-meta-val';
+    valEl.textContent = val;
+    makeInlineEditable(valEl, v => { d.meta[key] = v; saveOutlineLocally(); });
+    row.appendChild(lbl);
+    row.appendChild(valEl);
+    grid.appendChild(row);
+  });
+  card.appendChild(grid);
+  return card;
+}
+
+function coTextCard(label, text, onSave) {
+  const card = document.createElement('div');
+  card.className = 'co-card';
+  const lbl = document.createElement('div');
+  lbl.className   = 'co-card-label';
+  lbl.textContent = label;
+  const el = document.createElement('div');
+  el.className   = 'co-editable co-paragraph';
+  el.textContent = text;
+  makeBlockEditable(el, onSave);
+  card.appendChild(lbl);
+  card.appendChild(el);
+  return card;
+}
+
+function coListCard(label, items, onSave) {
+  const card = document.createElement('div');
+  card.className = 'co-card';
+  const lbl = document.createElement('div');
+  lbl.className   = 'co-card-label';
+  lbl.textContent = label;
+  const list = document.createElement('div');
+  list.className = 'co-list';
+  items.forEach((item, i) => {
+    const row = document.createElement('div');
+    row.className = 'co-list-row';
+    const bullet = document.createElement('span');
+    bullet.className   = 'co-list-bullet';
+    bullet.textContent = '•';
+    const el = document.createElement('span');
+    el.className   = 'co-editable co-list-text';
+    el.textContent = item;
+    makeInlineEditable(el, v => onSave(i, v));
+    row.appendChild(bullet);
+    row.appendChild(el);
+    list.appendChild(row);
+  });
+  card.appendChild(lbl);
+  card.appendChild(list);
+  return card;
+}
+
+function coModuleCard(mod, mi) {
+  const color = PALETTE[mi % PALETTE.length];
+  const card  = document.createElement('div');
+  card.className = 'co-module';
+
+  // Header
+  const header = document.createElement('div');
+  header.className = 'co-module-header';
+  header.style.setProperty('--module-color', color);
+
+  const num = document.createElement('span');
+  num.className   = 'co-module-num';
+  num.textContent = `M${mi + 1}`;
+
+  const nameEl = document.createElement('span');
+  nameEl.className   = 'co-editable';
+  nameEl.textContent = mod.name;
+  makeInlineEditable(nameEl, v => { mod.name = v; saveOutlineLocally(); });
+
+  header.appendChild(num);
+  header.appendChild(nameEl);
+
+  if (mod.week !== undefined) {
+    const weekEl = document.createElement('span');
+    weekEl.className   = 'co-module-week co-editable';
+    weekEl.textContent = mod.week;
+    makeInlineEditable(weekEl, v => { mod.week = v; saveOutlineLocally(); });
+    header.appendChild(weekEl);
+  }
+  card.appendChild(header);
+
+  // Body
+  const body = document.createElement('div');
+  body.className = 'co-module-body';
+
+  if (mod.objective !== undefined) {
+    body.appendChild(coModuleField('Objective', mod.objective, false, v => { mod.objective = v; saveOutlineLocally(); }));
+  }
+
+  // Day rows
+  const daysDiv = document.createElement('div');
+  daysDiv.className = 'co-topics';
+  mod.days.forEach((day, di) => {
+    const row = document.createElement('div');
+    row.className = 'co-topic-row';
+    const lbl = document.createElement('span');
+    lbl.className   = 'co-day-label';
+    lbl.textContent = `Day ${di + 1}`;
+    const el = document.createElement('span');
+    el.className   = 'co-editable';
+    el.textContent = day;
+    makeInlineEditable(el, v => { mod.days[di] = v; saveOutlineLocally(); });
+    row.appendChild(lbl);
+    row.appendChild(el);
+    daysDiv.appendChild(row);
+  });
+  body.appendChild(daysDiv);
+
+  if (mod.weeklyTask !== undefined) {
+    body.appendChild(coModuleField('Weekly Task', mod.weeklyTask || '—', 'task', v => { mod.weeklyTask = v; saveOutlineLocally(); }));
+  }
+  if (mod.assessment !== undefined) {
+    body.appendChild(coModuleField('Assessment', mod.assessment, 'assessment', v => { mod.assessment = v; saveOutlineLocally(); }));
+  }
+
+  card.appendChild(body);
+  return card;
+}
+
+function coModuleField(labelText, value, variant, onSave) {
+  const row = document.createElement('div');
+  row.className = 'co-module-field' + (variant ? ` co-module-${variant}` : '');
+  const lbl = document.createElement('span');
+  lbl.className   = 'co-field-label';
+  lbl.textContent = labelText;
+  const el = document.createElement('span');
+  el.className   = 'co-editable co-field-text';
+  el.textContent = value;
+  makeInlineEditable(el, onSave);
+  row.appendChild(lbl);
+  row.appendChild(el);
+  return row;
+}
+
+function coExtraWeekCard(wk) {
+  const card = document.createElement('div');
+  card.className = 'co-module';
+  const header = document.createElement('div');
+  header.className = 'co-module-header';
+  header.style.setProperty('--module-color', '#78716c');
+  const lbl = document.createElement('span');
+  lbl.className   = 'co-editable';
+  lbl.style.padding = '12px 14px';
+  lbl.textContent = wk.label;
+  makeInlineEditable(lbl, v => { wk.label = v; saveOutlineLocally(); });
+  header.appendChild(lbl);
+  card.appendChild(header);
+  const daysDiv = document.createElement('div');
+  daysDiv.className = 'co-topics';
+  wk.items.forEach((item, i) => {
+    const row = document.createElement('div');
+    row.className = 'co-topic-row';
+    const dl = document.createElement('span');
+    dl.className = 'co-day-label';
+    dl.textContent = `Day ${i + 1}`;
+    const el = document.createElement('span');
+    el.className   = 'co-editable';
+    el.textContent = item;
+    makeInlineEditable(el, v => { wk.items[i] = v; saveOutlineLocally(); });
+    row.appendChild(dl);
+    row.appendChild(el);
+    daysDiv.appendChild(row);
+  });
+  card.appendChild(daysDiv);
+  return card;
+}
+
+function coAssessmentCard(d) {
+  const card = document.createElement('div');
+  card.className = 'co-card';
+  const lbl = document.createElement('div');
+  lbl.className   = 'co-card-label';
+  lbl.textContent = 'Assessment Plan';
+  const table = document.createElement('div');
+  table.className = 'co-assessment-table';
+  d.assessmentPlan.forEach(row => {
+    const rowEl = document.createElement('div');
+    rowEl.className = 'co-assessment-row';
+    const itemEl = document.createElement('span');
+    itemEl.className   = 'co-editable co-assessment-item';
+    itemEl.textContent = row.item;
+    makeInlineEditable(itemEl, v => { row.item = v; saveOutlineLocally(); });
+    const wtEl = document.createElement('span');
+    wtEl.className   = 'co-editable co-assessment-weight';
+    wtEl.textContent = row.weight;
+    makeInlineEditable(wtEl, v => { row.weight = v; saveOutlineLocally(); });
+    rowEl.appendChild(itemEl);
+    rowEl.appendChild(wtEl);
+    table.appendChild(rowEl);
+  });
+  card.appendChild(lbl);
+  card.appendChild(table);
+  return card;
+}
+
+// ── Inline (single-line) editing ──────────────────────────────────
+function makeInlineEditable(el, onSave) {
+  el.addEventListener('click', () => {
+    if (el.dataset.editing === 'true') return;
+    el.dataset.editing = 'true';
+
+    const original = el.textContent;
+    const input    = document.createElement('input');
+    input.type      = 'text';
+    input.value     = original;
+    input.className = 'co-edit-input';
+
+    el.textContent = '';
+    el.appendChild(input);
+    input.focus();
+    input.select();
+
+    const commit = () => {
+      const val = input.value.trim() || original;
+      el.dataset.editing = '';
+      el.textContent = val;
+      if (val !== original) onSave(val);
+    };
+
+    input.addEventListener('blur', commit);
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter')  { e.preventDefault(); commit(); }
+      if (e.key === 'Escape') { el.dataset.editing = ''; el.textContent = original; }
+    });
+  });
+}
+
+// ── Block (multi-line) editing ────────────────────────────────────
+function makeBlockEditable(el, onSave) {
+  el.addEventListener('click', () => {
+    if (el.dataset.editing === 'true') return;
+    el.dataset.editing = 'true';
+
+    const original = el.textContent.trim();
+    const ta = document.createElement('textarea');
+    ta.value     = original;
+    ta.className = 'co-edit-textarea';
+    el.textContent = '';
+    el.appendChild(ta);
+    ta.style.height = Math.max(80, ta.scrollHeight) + 'px';
+    ta.focus();
+
+    const commit = () => {
+      const val = ta.value.trim() || original;
+      el.dataset.editing = '';
+      el.textContent = val;
+      if (val !== original) onSave(val);
+    };
+
+    ta.addEventListener('blur', commit);
+    ta.addEventListener('input', () => { ta.style.height = 'auto'; ta.style.height = ta.scrollHeight + 'px'; });
+    ta.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) { e.preventDefault(); commit(); }
+      if (e.key === 'Escape') { el.dataset.editing = ''; el.textContent = original; }
+    });
+  });
+}
+
+document.getElementById('co-reset-btn').addEventListener('click', () => {
+  if (!confirm(`Reset the "${currentCourse}" outline to the original document content? All edits will be lost.`)) return;
+  courseOutline = JSON.parse(JSON.stringify(FULL_COURSE_OUTLINES[currentCourse] || {}));
+  saveOutlineLocally();
+  renderOutline();
+});
+
+// ── LESSON PLAN VIEW ───────────────────────────────────────────────
+function initLessonPlanView() {
+  editingPlanId = null;
+
+  const modules = FALLBACK_CURRICULUM[currentCourse] || [];
+  const sel = document.getElementById('lp-module-select');
+  sel.innerHTML = '<option value="">— Choose module —</option>';
+  modules.forEach(({ lesson }) => {
+    const opt = document.createElement('option');
+    opt.value = lesson;
+    opt.textContent = lesson;
+    sel.appendChild(opt);
+  });
+
+  document.getElementById('lp-topic-select').innerHTML = '<option value="">— Choose topic —</option>';
+  document.getElementById('lp-placeholder').classList.remove('hidden');
+  document.getElementById('lp-form').classList.add('hidden');
+  renderPlansList();
+}
+
+document.getElementById('lp-module-select').addEventListener('change', () => {
+  const lesson = document.getElementById('lp-module-select').value;
+  const topSel = document.getElementById('lp-topic-select');
+  topSel.innerHTML = '<option value="">— Choose topic —</option>';
+
+  if (lesson) {
+    const mod = (FALLBACK_CURRICULUM[currentCourse] || []).find(m => m.lesson === lesson);
+    (mod?.topics || []).forEach(t => {
+      const opt = document.createElement('option');
+      opt.value = t; opt.textContent = t;
+      topSel.appendChild(opt);
+    });
+  }
+
+  document.getElementById('lp-placeholder').classList.remove('hidden');
+  document.getElementById('lp-form').classList.add('hidden');
+});
+
+document.getElementById('lp-topic-select').addEventListener('change', () => {
+  const module = document.getElementById('lp-module-select').value;
+  const topic  = document.getElementById('lp-topic-select').value;
+  if (module && topic) openLessonPlanEditor(module, topic);
+});
+
+function openLessonPlanEditor(module, topic) {
+  const existing = lessonPlans.find(p => p.module === module && p.topic === topic && p.course === currentCourse);
+  editingPlanId  = existing ? existing.id : null;
+
+  document.getElementById('lp-breadcrumb').textContent = `${module}  ›  ${topic}`;
+  document.getElementById('lp-theory').value       = existing?.theory       || '';
+  document.getElementById('lp-practicals').value   = existing?.practicals   || '';
+  document.getElementById('lp-assessments').value  = existing?.assessments  || '';
+
+  document.getElementById('lp-placeholder').classList.add('hidden');
+  document.getElementById('lp-form').classList.remove('hidden');
+
+  // Highlight active plan in sidebar
+  document.querySelectorAll('.lp-plan-item').forEach(el => {
+    el.classList.toggle('active', el.dataset.id === editingPlanId);
+  });
+}
+
+document.getElementById('lp-save-btn').addEventListener('click', () => {
+  const module      = document.getElementById('lp-module-select').value;
+  const topic       = document.getElementById('lp-topic-select').value;
+  const theory      = document.getElementById('lp-theory').value.trim();
+  const practicals  = document.getElementById('lp-practicals').value.trim();
+  const assessments = document.getElementById('lp-assessments').value.trim();
+  if (!module || !topic) return;
+
+  const existing = lessonPlans.find(p => p.id === editingPlanId ||
+    (p.module === module && p.topic === topic && p.course === currentCourse));
+
+  if (existing) {
+    existing.theory       = theory;
+    existing.practicals   = practicals;
+    existing.assessments  = assessments;
+    existing.updatedAt    = Date.now();
+    editingPlanId = existing.id;
+  } else {
+    const plan = { id: makeId(), course: currentCourse, module, topic, theory, practicals, assessments, updatedAt: Date.now() };
+    lessonPlans.push(plan);
+    editingPlanId = plan.id;
+  }
+
+  savePlansLocally();
+  renderPlansList();
+
+  const btn = document.getElementById('lp-save-btn');
+  btn.textContent = 'Saved ✓';
+  btn.style.background = '#10b981';
+  setTimeout(() => { btn.textContent = 'Save Plan'; btn.style.background = ''; }, 2000);
+
+  if (SCRIPT_URL) {
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify({ action: 'saveLessonPlan', id: editingPlanId,
+        course: currentCourse, module, topic, theory, practicals, assessments }),
+    }).catch(console.warn);
+  }
+});
+
+function renderPlansList() {
+  const list  = document.getElementById('lp-plans-list');
+  const plans = lessonPlans.filter(p => p.course === currentCourse);
+
+  if (!plans.length) {
+    list.innerHTML = '<p class="loading-text">No saved plans yet.</p>';
+    return;
+  }
+
+  // Group by module
+  const byModule = {};
+  plans.forEach(p => {
+    if (!byModule[p.module]) byModule[p.module] = [];
+    byModule[p.module].push(p);
+  });
+
+  list.innerHTML = '';
+  Object.entries(byModule).forEach(([module, mPlans]) => {
+    const group = document.createElement('div');
+    group.className = 'lp-plan-group';
+
+    const header = document.createElement('div');
+    header.className   = 'lp-plan-group-header';
+    header.textContent = module;
+    group.appendChild(header);
+
+    mPlans.forEach(plan => {
+      const item  = document.createElement('div');
+      item.className  = 'lp-plan-item';
+      item.dataset.id = plan.id;
+      if (plan.id === editingPlanId) item.classList.add('active');
+
+      const label = document.createElement('span');
+      label.className   = 'lp-plan-item-label';
+      label.textContent = plan.topic;
+
+      const del = document.createElement('button');
+      del.className   = 'lp-plan-item-del';
+      del.textContent = '×';
+      del.title       = 'Delete plan';
+      del.addEventListener('click', e => { e.stopPropagation(); deleteLessonPlan(plan.id); });
+
+      item.appendChild(label);
+      item.appendChild(del);
+      item.addEventListener('click', () => {
+        // Set dropdowns to match this plan
+        const modSel = document.getElementById('lp-module-select');
+        modSel.value = plan.module;
+        modSel.dispatchEvent(new Event('change'));
+        // Topic select is populated async by the change handler — set after microtask
+        setTimeout(() => {
+          document.getElementById('lp-topic-select').value = plan.topic;
+          openLessonPlanEditor(plan.module, plan.topic);
+        }, 0);
+      });
+
+      group.appendChild(item);
+    });
+
+    list.appendChild(group);
+  });
+}
+
+function deleteLessonPlan(id) {
+  lessonPlans = lessonPlans.filter(p => p.id !== id);
+  savePlansLocally();
+  renderPlansList();
+  if (editingPlanId === id) {
+    editingPlanId = null;
+    document.getElementById('lp-placeholder').classList.remove('hidden');
+    document.getElementById('lp-form').classList.add('hidden');
+  }
+  if (SCRIPT_URL) {
+    fetch(SCRIPT_URL, { method: 'POST',
+      body: JSON.stringify({ action: 'deleteLessonPlan', id, course: currentCourse }),
+    }).catch(console.warn);
+  }
+}
+
+function savePlansLocally() {
+  localStorage.setItem(`aj-plans-${currentCourse}`, JSON.stringify(lessonPlans));
+}
+
+function loadPlansLocally(course) {
+  try { return JSON.parse(localStorage.getItem(`aj-plans-${course}`)) || []; }
+  catch { return []; }
+}
+
+// ── CURRICULUM (left sidebar) ───────────────────────────────────────
+const FALLBACK_CURRICULUM = {
+  'Computer – MS-Office': [
+    { lesson: 'Introduction to MS-Office',  topics: ['MS-Office Suite Overview', 'Computer & Windows Basics', 'File Management & Saving'] },
+    { lesson: 'MS Word',                    topics: ['Creating & Formatting Documents', 'Tables, Images & Lists', 'Headers, Footers & Page Layout', 'Mail Merge Basics', 'Practice Document'] },
+    { lesson: 'MS Excel',                   topics: ['Cells, Rows & Columns', 'Formulas & Functions (SUM, AVG)', 'Charts & Graphs', 'Data Sorting & Filtering', 'Practice Spreadsheet'] },
+    { lesson: 'MS PowerPoint',              topics: ['Creating Presentations', 'Slide Design & Layouts', 'Animations & Transitions', 'Images, Charts & SmartArt', 'Practice Presentation'] },
+    { lesson: 'MS Outlook & Cloud Tools',   topics: ['Email Composition & Management', 'Calendar & Scheduling', 'OneDrive & File Sharing', 'Teams Basics', 'Review & Assessment'] },
+  ],
+  'Computer – Desktop Publishing': [
+    { lesson: 'Introduction to DTP',        topics: ['What is Desktop Publishing?', 'Computer Basics & Software Overview', 'Design Principles & Terminology'] },
+    { lesson: 'MS Publisher / PageMaker',   topics: ['Interface & Navigation', 'Page Setup & Templates', 'Text Frames & Formatting', 'Image Placement & Wrapping', 'Practice Publication'] },
+    { lesson: 'Typography & Layout',        topics: ['Font Types & Usage', 'Paragraph & Spacing Rules', 'Grid & Alignment', 'Colour Theory Basics', 'Layout Exercise'] },
+    { lesson: 'Image Editing Basics',       topics: ['Introduction to Photoshop / GIMP', 'Cropping & Resizing Images', 'Brightness, Contrast & Colour', 'Layers & Simple Edits', 'Practice Edit'] },
+    { lesson: 'Print Design & Output',      topics: ['Preparing Files for Print', 'Bleeds, Margins & Resolution', 'Creating a Flyer / Brochure', 'Exporting PDF & Print-Ready Files', 'Final Project'] },
+  ],
+  'Computer – Tally': [
+    { lesson: 'Introduction to Tally',      topics: ['Accounting Concepts & Basics', 'Installing & Navigating Tally', 'Company Creation & Configuration'] },
+    { lesson: 'Masters & Ledgers',          topics: ['Groups & Ledger Creation', 'Stock Items & Units', 'Opening Balances', 'Editing & Deleting Masters', 'Practice Exercise'] },
+    { lesson: 'Voucher Entry',              topics: ['Payment & Receipt Vouchers', 'Sales & Purchase Vouchers', 'Contra & Journal Entries', 'Debit & Credit Notes', 'Practice Entries'] },
+    { lesson: 'GST in Tally',              topics: ['GST Basics & Configuration', 'GST Sales & Purchase Entry', 'GSTR Reports', 'Tax Ledgers & HSN Codes', 'Practice GST Exercise'] },
+    { lesson: 'Reports & Final Accounts',   topics: ['Balance Sheet & P&L', 'Trial Balance & Day Book', 'Stock Summary & Inventory Reports', 'Printing Reports', 'Assessment'] },
+  ],
+  'Computer – Data Entry': [
+    { lesson: 'Typing & Keyboard Skills',   topics: ['Keyboard Layout & Finger Placement', 'Touch Typing Practice', 'Speed & Accuracy Drills', 'Number & Symbol Keys', 'Speed Test'] },
+    { lesson: 'Data Entry Fundamentals',    topics: ['Types of Data Entry', 'Forms & Online Entry Portals', 'Copy Typing & Transcription', 'Error Checking & Correction', 'Practice Exercise'] },
+    { lesson: 'Excel for Data Entry',       topics: ['Navigating Large Spreadsheets', 'Data Validation & Drop-downs', 'Freeze Panes & Filters', 'Find, Replace & Go To', 'Data Entry Practice'] },
+    { lesson: 'Accuracy & Quality',         topics: ['Proofreading Techniques', 'Double-entry Verification', 'Common Errors & How to Avoid Them', 'Working with Databases', 'Accuracy Test'] },
+    { lesson: 'Speed & Assessment',         topics: ['Timed Data Entry Test', 'Feedback & Improvement', 'Online Entry Tools & Portals', 'Final Speed & Accuracy Assessment', 'Review'] },
+  ],
+  'Spoken English Level 1': [
+    { lesson: 'Module 1: Introduction & Basic Communication',
+      topics: ['Greetings & Communication Importance', 'Self-Introduction & Sentence Structures', 'Helping Verbs (is, am, are)', 'Pair Conversation – Introductions', 'Practice & Speaking Task'] },
+    { lesson: 'Module 2: Talking About Daily Life',
+      topics: ['Simple Present Tense', 'Daily Routine Vocabulary', 'WH Questions (What, When, Where)', 'Pair Conversation – Daily Routine', 'Review & Speaking'] },
+    { lesson: 'Module 3: Describing People & Things',
+      topics: ['Adjectives & Descriptive Vocabulary', 'Articles (a, an, the) & Singular/Plural', 'Sentence Formation Practice', 'Picture Description Activity', 'Speaking Practice'] },
+    { lesson: 'Module 4: Past & Future Communication',
+      topics: ['Simple Past Tense', 'Future Expressions (will / going to)', 'Time Expressions & Connectors', 'Storytelling Activity', 'Review & Speaking'] },
+    { lesson: 'Module 5: Everyday Situations',
+      topics: ['Prepositions & Polite Expressions', 'Shopping & Travel Vocabulary', 'Pronunciation Practice', 'Role Play (Market & Directions)', 'Practice & Speaking'] },
+    { lesson: 'Module 6: Fluency Development & Assessment',
+      topics: ['Revision (Grammar & Vocabulary)', 'JAM Session', 'Group Conversation Activity', 'Speaking Test', 'Feedback & Improvement'] },
+    { lesson: 'Module 7: Vocabulary & Sentence Development',
+      topics: ['Daily-use Vocabulary Expansion', 'Synonyms & Antonyms', 'Sentence Building with New Words', 'Pair Conversation Practice', 'Review & Speaking'] },
+    { lesson: 'Module 8: Pronunciation & Clarity',
+      topics: ['Basic Pronunciation Rules', 'Reading Aloud Practice', 'Speaking with Pauses & Clarity', 'Listening & Repetition Exercises', 'Practice & Speaking'] },
+    { lesson: 'Module 9: Question & Answer Communication',
+      topics: ['Question Words & Structure', 'Forming Questions', 'Answering Clearly & Confidently', 'Pair Q&A Activity', 'Review & Speaking'] },
+    { lesson: 'Module 10: Conversation Practice',
+      topics: ['Conversation Starters', 'Pair Conversations', 'Group Discussions', 'Role Play Activities', 'Practice & Speaking'] },
+    { lesson: 'Module 11: Practical Communication',
+      topics: ['Asking for Help & Giving Directions', 'Telephone Conversation Basics', 'Shopping & Customer Interaction', 'Situational Role Plays', 'Review & Speaking'] },
+    { lesson: 'Module 12: Final Fluency & Assessment',
+      topics: ['Revision (Grammar & Vocabulary)', 'Fluency Activities (JAM, Rapid Speaking)', 'Group Discussion', 'Final Presentations', 'Assessment'] },
+  ],
+  'Spoken English Level 2': [
+    { lesson: 'Module 1: Advanced Communication Basics',
+      topics: ['Effective Self-Introduction & Conversation Starters', 'Vocabulary for Expressing Ideas', 'Asking & Answering Confidently', 'Pair Conversation Practice', 'Review & Speaking'] },
+    { lesson: 'Module 2: Expressing Opinions & Ideas',
+      topics: ['Sentence Structures for Opinions', 'Opinion-based Vocabulary', 'Speaking Practice (Agree/Disagree)', 'Group Discussion Activity', 'Review & Speaking'] },
+    { lesson: 'Module 3: Advanced Grammar in Speaking',
+      topics: ['Advanced Sentence Formation', 'Question Tags & Question Formation', 'Irregular Verbs in Communication', 'Role Play Using Grammar Structures', 'Review & Speaking'] },
+    { lesson: 'Module 4: Sentence Expansion & Connectors',
+      topics: ['Sentence Connectors (and, but, because, although)', 'Complex Sentence Construction', 'Sentence Expansion Exercises', 'Speaking Activity Using Connectors', 'Review & Speaking'] },
+    { lesson: 'Module 5: Vocabulary & Expression Skills',
+      topics: ['Advanced Everyday Vocabulary', 'Synonyms & Antonyms', 'Idioms & Expressions', 'Conversation Using New Vocabulary', 'Review & Speaking'] },
+    { lesson: 'Module 6: Pronunciation & Fluency',
+      topics: ['Pronunciation Correction Exercises', 'Voice Clarity & Stress Patterns', 'Reading with Expression', 'Listening & Repetition Practice', 'Review & Speaking'] },
+    { lesson: 'Module 7: Practical Speaking Development',
+      topics: ['Speaking on Everyday Situations', 'Asking & Giving Explanations', 'Pair Conversation Practice', 'Situational Role Play', 'Review & Speaking'] },
+    { lesson: 'Module 8: Interactive Communication Activities',
+      topics: ['JAM Session (Just a Minute)', 'Debate Practice', 'Extempore Speaking', 'Group Discussion Activity', 'Review & Speaking'] },
+    { lesson: 'Module 9: Workplace Communication Skills',
+      topics: ['Formal Communication Basics', 'Telephone Conversation Practice', 'Customer Interaction', 'Team Communication Role Play', 'Review & Speaking'] },
+    { lesson: 'Module 10: Professional English Usage',
+      topics: ['Email Drafting Basics', 'Asking for Information Professionally', 'Giving Instructions Clearly', 'Role Play (Office Situations)', 'Review & Speaking'] },
+    { lesson: 'Module 11: Interview & Career Communication',
+      topics: ['Interview Question Practice', 'Professional Self-Introduction', 'Answering Confidently', 'Mock Interview Activity', 'Review & Speaking'] },
+    { lesson: 'Module 12: Fluency & Final Assessment',
+      topics: ['Revision (Grammar & Vocabulary)', 'Fluency Activities (JAM, Rapid Speaking)', 'Group Discussion', 'Final Presentations', 'Assessment'] },
+  ],
+  Electrical: [
+    { lesson: 'Module 1: Electrical Safety',
+      topics: ['Introduction & Safety Practices', 'Fire Types & Extinguishers', 'Rescue Operations & First Aid', 'PPE & Workshop Guidelines'] },
+    { lesson: 'Module 2: Fundamentals of Electricity',
+      topics: ['Current, Voltage & Resistance', "Ohm's Law & Electrical Circuits", 'Conductors, Insulators & Semiconductors', 'AC & DC'] },
+    { lesson: 'Module 3: Electrical Tools & Instruments',
+      topics: ['Fitting & Marking Tools', 'Pliers & Hand Tools', 'Voltmeter, Ammeter & Clamp Meter', 'Multimeter, Megger & Earth Tester'] },
+    { lesson: 'Module 4: Domestic Wiring Installation',
+      topics: ['Wiring Accessories & Diagrams', 'Junction Boxes & Conduit Installation', 'Distribution Boards & MCBs', 'ELCB, Cable Routing & Fuses'] },
+    { lesson: 'Module 5: Wiring Types',
+      topics: ['Cleat & Casing Wiring', 'Batten Wiring', 'Conduit & Concealed Wiring', 'Surface & Flexible Wiring'] },
+    { lesson: 'Module 6: Electrical Fixtures & Fittings',
+      topics: ['Switches & Socket Outlets', 'Lamp Holders & Ceiling Roses', 'LED Lights & Fans', 'Bell Circuits & Distribution Boards'] },
+    { lesson: 'Module 7: Earthing',
+      topics: ['Purpose of Earthing', 'Types of Earthing', 'Earth Resistance', 'Earthing Installation & Testing'] },
+    { lesson: 'Module 8: Testing & Inspection',
+      topics: ['Continuity & Polarity Testing', 'Insulation Resistance', 'Earth Continuity', 'Functional Testing & Documentation'] },
+    { lesson: 'Module 9: Proper Finishing',
+      topics: ['Cable Dressing', 'Labelling & Panel Organization', 'Workmanship Standards', 'Housekeeping & Quality Inspection'] },
+    { lesson: 'Module 10: Repair & Maintenance',
+      topics: ['Preventive & Corrective Maintenance', 'Replacing Switches & Sockets', 'Lighting Repair & Fan Servicing', 'Distribution Board Maintenance'] },
+    { lesson: 'Module 11: Fault Diagnosis & Troubleshooting',
+      topics: ['Problem Identification & Root Cause Analysis', 'Troubleshooting Process & Circuit Tracing', 'Testing Procedures & Fault Isolation', 'House Wiring Project'] },
+  ],
+  'Refrigeration & AC Technician': [
+    { lesson: 'Module 1: Safety Precautions',
+      topics: ['Electronic Hazards & Radiation Risks', 'Personal Protective Equipment (PPE)', 'Fire Safety & First Aid for Electric Shock', 'Safe Handling of Appliances & Test Equipment', 'Safety Inspection / Quiz'] },
+    { lesson: 'Module 2: Fundamentals of Electronics',
+      topics: ['Voltage, Current & Resistance', "Ohm's Law", 'Power Calculations & PCB Basics', 'AC and DC, Electronic Components'] },
+    { lesson: 'Module 3: Tools and Measuring Instruments',
+      topics: ['Hand Tools & Wire Preparation Tools', 'Soldering, Insulation & Circuit Testing', 'Electrical, Temperature & Current Measurements', 'Measuring AC/DC Current – Hands-on Practice', 'Wiring, Soldering & Measurement Activity'] },
+    { lesson: 'Module 4: Refrigerator',
+      topics: ['Refrigeration Systems & Classification', 'Types of Refrigerators & Applications', 'Domestic & Commercial Refrigeration', 'Cold Room & Cold Storage Systems', 'Automotive, Mobile & Industrial Refrigeration'] },
+    { lesson: 'Module 5: Compressor',
+      topics: ['Introduction to Compressors & Working Principle', 'Hermetic & Semi-Hermetic Compressors', 'Open-Type Compressors', 'Rotary & Reciprocating Compressors', 'BLDC & Inverter Compressors', 'Comparison of All Compressor Types', 'Practical Demonstration & Viva Assessment'] },
+    { lesson: 'Module 6: Refrigerants (Gases)',
+      topics: ['Introduction to Refrigerants', 'R-12, R-22 & R-32 Refrigerants', 'R-134a, R-290 & R-600a Refrigerants', 'R-190 (Ethane) Refrigerant', 'Case Study on Refrigerant Types'] },
+    { lesson: 'Module 7: Air Conditioners',
+      topics: ['AC Definition, Components & Diagram', 'Types of AC & Applications', 'Dismantle & Reassemble Split, Window, Portable AC', 'Dismantle & Reassemble Floor, Smart, Hybrid AC', 'Component Testing & Refrigerant Charging', 'Tube Bending, Bracing, Pinching & Leak Detection'] },
+    { lesson: 'Module 8: Repair and Maintenance',
+      topics: ['Compressor Faults & Remedies', 'No Air Flow & Compressor Run Issues', 'Compressor Start-up Problems', 'Refrigerant Flow Tube Bending', 'Repair & Documentation'] },
+    { lesson: 'Module 9: Fault Diagnosis and Troubleshooting',
+      topics: ['Refrigerant Leak Detection & Prevention', 'Fault Diagnosis Exercises', 'Evaporator Troubleshooting & Testing', 'Practical Assessment', 'Record Writing & Final Exam Preparation'] },
+  ],
+};
+
+async function loadCurriculum() {
+  const list = document.getElementById('curriculum-list');
+  list.innerHTML = '<p class="loading-text">Loading…</p>';
+
+  if (SCRIPT_URL) {
+    try {
+      const res  = await fetch(`${SCRIPT_URL}?action=options&course=${encodeURIComponent(currentCourse)}`);
+      const data = await res.json();
+      if (data.status === 'ok') { renderCurriculum(data.curriculum); return; }
+    } catch { /* fall through */ }
+  }
+
+  renderCurriculum(FALLBACK_CURRICULUM[currentCourse] || []);
+}
+
+function renderCurriculum(curriculum) {
+  const list = document.getElementById('curriculum-list');
+  if (!curriculum.length) {
+    list.innerHTML = '<p class="loading-text">No curriculum data found.</p>';
+    return;
+  }
+
+  list.innerHTML = '';
+  curriculum.forEach(({ lesson, topics }) => {
+    const color   = colorFor(lesson);
+    const section = document.createElement('div');
+    section.className = 'lesson-section';
+
+    // ── Module header (click to toggle, drag to create calendar span) ──
+    const header = document.createElement('div');
+    header.className = 'lesson-header-row';
+    header.style.setProperty('--lesson-color', color);
+    header.draggable = true;
+    header.title = 'Drag to calendar to schedule this module';
+
+    header.innerHTML = `
+      <span class="toggle-icon">▼</span>
+      <span class="lesson-name-text">${escHtml(lesson)}</span>
+      <span class="drag-grip">⠿</span>
+    `;
+
+    // ── Topic chips ──
+    const topicList = document.createElement('div');
+    topicList.className = 'topic-list';
+
+    topics.forEach(topic => {
+      const chip = document.createElement('div');
+      chip.className   = 'topic-chip';
+      chip.draggable   = true;
+      chip.textContent = topic;
+      chip.style.setProperty('--lesson-color', color);
+      chip.title = topic;
+      chip.addEventListener('dragstart', e => {
+        dragData = { type: 'new', lesson, topic };
+        e.dataTransfer.effectAllowed = 'copy';
+        e.dataTransfer.setData('text/plain', topic);
+      });
+      topicList.appendChild(chip);
+    });
+
+    // Toggle topic list on click (not drag)
+    header.addEventListener('click', () => {
+      const open = !topicList.classList.contains('collapsed');
+      topicList.classList.toggle('collapsed', open);
+      header.querySelector('.toggle-icon').textContent = open ? '▶' : '▼';
+    });
+
+    // Drag module header → create a span on calendar
+    header.addEventListener('dragstart', e => {
+      dragData = { type: 'new-span', lesson };
+      e.dataTransfer.effectAllowed = 'copy';
+      e.dataTransfer.setData('text/plain', lesson);
+    });
+
+    section.appendChild(header);
+    section.appendChild(topicList);
+    list.appendChild(section);
+  });
+}
+
+// ── CALENDAR ───────────────────────────────────────────────────────
+const MONTH_NAMES = ['January','February','March','April','May','June',
+                     'July','August','September','October','November','December'];
+
+function getWeeksForMonth(year, month) {
+  const first = new Date(year, month, 1);
+  const last  = new Date(year, month + 1, 0);
+
+  // Start from Sunday of the first week
+  const cur = new Date(first);
+  cur.setDate(first.getDate() - first.getDay());
+
+  const weeks = [];
+  while (cur <= last) {
+    const week = [];
+    for (let i = 0; i < 7; i++) {
+      week.push(new Date(cur));
+      cur.setDate(cur.getDate() + 1);
+    }
+    weeks.push(week);
+  }
+  return weeks;
+}
+
+function renderCalendar() {
+  document.getElementById('cal-month-label').textContent = `${MONTH_NAMES[viewMonth]} ${viewYear}`;
+
+  const grid     = document.getElementById('cal-grid');
+  grid.innerHTML = '';
+
+  const weeks    = getWeeksForMonth(viewYear, viewMonth);
+  const todayStr = toDateStr(new Date());
+
+  weeks.forEach(week => {
+    const weekEl = document.createElement('div');
+    weekEl.className = 'cal-week';
+
+    // ── Span row: multi-day module bars ──
+    const spanRow = document.createElement('div');
+    spanRow.className = 'span-row';
+
+    // Drop on span-row: calculates which day column from mouse X — this is what
+    // makes dragging resize handles LEFT or RIGHT (sideways) work naturally,
+    // instead of requiring a drop on a day cell below.
+    spanRow.addEventListener('dragover', e => { e.preventDefault(); });
+    spanRow.addEventListener('drop', e => {
+      e.preventDefault();
+      const rect     = spanRow.getBoundingClientRect();
+      const colWidth = rect.width / 7;
+      const colIdx   = Math.max(0, Math.min(6, Math.floor((e.clientX - rect.left) / colWidth)));
+      handleDrop(toDateStr(week[colIdx]));
+    });
+
+    const weekStart = toDateStr(week[0]);
+    const weekEnd   = toDateStr(week[6]);
+
+    spans
+      .filter(s => s.startDate <= weekEnd && s.endDate >= weekStart)
+      .forEach(span => {
+        const startsHere = span.startDate >= weekStart;
+        const endsHere   = span.endDate   <= weekEnd;
+
+        const colStart = startsHere
+          ? week.findIndex(d => toDateStr(d) === span.startDate) + 1
+          : 1;
+        const colEnd = endsHere
+          ? week.findIndex(d => toDateStr(d) === span.endDate) + 2
+          : 8;
+
+        const bar = document.createElement('div');
+        bar.className = 'cal-span';
+        bar.style.gridColumn = `${colStart} / ${colEnd}`;
+        bar.style.background = colorFor(span.lesson);
+        if (!startsHere) bar.classList.add('span-cont-left');
+        if (!endsHere)   bar.classList.add('span-cont-right');
+
+        // Left resize handle (only on the week where the span starts)
+        if (startsHere) {
+          const rL = document.createElement('div');
+          rL.className = 'span-resize span-resize-left';
+          rL.draggable = true;
+          rL.title     = 'Drag to change start';
+          rL.addEventListener('dragstart', e => {
+            dragData = { type: 'resize-start', spanId: span.id };
+            e.dataTransfer.effectAllowed = 'move';
+            e.stopPropagation();
+          });
+          bar.appendChild(rL);
+        }
+
+        const label = document.createElement('span');
+        label.className   = 'span-label';
+        label.textContent = span.lesson;
+        bar.appendChild(label);
+
+        const del = document.createElement('button');
+        del.className   = 'span-del';
+        del.textContent = '×';
+        del.addEventListener('click', e => { e.stopPropagation(); removeSpan(span.id); });
+        bar.appendChild(del);
+
+        // Right resize handle (only on the week where the span ends)
+        if (endsHere) {
+          const rR = document.createElement('div');
+          rR.className = 'span-resize span-resize-right';
+          rR.draggable = true;
+          rR.title     = 'Drag to change end';
+          rR.addEventListener('dragstart', e => {
+            dragData = { type: 'resize-end', spanId: span.id };
+            e.dataTransfer.effectAllowed = 'move';
+            e.stopPropagation();
+          });
+          bar.appendChild(rR);
+        }
+
+        spanRow.appendChild(bar);
+      });
+
+    weekEl.appendChild(spanRow);
+
+    // ── Day cells ──
+    const dayRow = document.createElement('div');
+    dayRow.className = 'day-row';
+
+    week.forEach(date => {
+      const ds          = toDateStr(date);
+      const thisMonth   = date.getMonth() === viewMonth;
+      const isToday     = ds === todayStr;
+
+      const cell = document.createElement('div');
+      cell.className    = `cal-cell${!thisMonth ? ' cal-other-month' : ''}${isToday ? ' today' : ''}`;
+      cell.dataset.date = ds;
+
+      const num = document.createElement('span');
+      num.className   = 'cal-day-num';
+      num.textContent = date.getDate();
+      num.title       = 'Click to add feedback or photo';
+      num.addEventListener('click', () => openDayModal(ds));
+      cell.appendChild(num);
+
+      // Feedback indicator dots
+      const dayFeedback = feedback[ds] || [];
+      if (dayFeedback.length) {
+        const dots = document.createElement('div');
+        dots.className = 'cal-feedback-dot';
+        const hasText  = dayFeedback.some(f => f.type === 'text');
+        const hasPhoto = dayFeedback.some(f => f.type === 'photo');
+        if (hasText)  dots.appendChild(Object.assign(document.createElement('span'), { textContent: '✏️' }));
+        if (hasPhoto) dots.appendChild(Object.assign(document.createElement('span'), { textContent: '📷' }));
+        cell.appendChild(dots);
+      }
+
+      const items = document.createElement('div');
+      items.className = 'cal-items';
+      items.id        = `items-${ds}`;
+      cell.appendChild(items);
+
+      // Drop handling (topics + module spans + resize)
+      cell._dnd = 0;
+      cell.addEventListener('dragenter', e => {
+        e.preventDefault();
+        cell._dnd++;
+        cell.classList.add('drag-over');
+      });
+      cell.addEventListener('dragleave', () => {
+        cell._dnd--;
+        if (cell._dnd <= 0) { cell._dnd = 0; cell.classList.remove('drag-over'); }
+      });
+      cell.addEventListener('dragover', e => { e.preventDefault(); });
+      cell.addEventListener('drop', e => {
+        e.preventDefault();
+        cell._dnd = 0;
+        cell.classList.remove('drag-over');
+        handleDrop(ds);
+      });
+
+      dayRow.appendChild(cell);
+    });
+
+    weekEl.appendChild(dayRow);
+    grid.appendChild(weekEl);
+
+    // Render topic chips for each day now that elements are in DOM
+    week.forEach(date => renderCellItems(toDateStr(date)));
+  });
+}
+
+function renderCellItems(ds) {
+  const container = document.getElementById(`items-${ds}`);
+  if (!container) return;
+  container.innerHTML = '';
+  (schedule[ds] || []).forEach(item => container.appendChild(makeChip(item, ds)));
+}
+
+function makeChip(item, ds) {
+  const color = colorFor(item.lesson);
+  const chip  = document.createElement('div');
+  chip.className        = 'cal-chip';
+  chip.style.background = color;
+  chip.draggable        = true;
+  chip.title            = `${item.lesson}: ${item.topic}`;
+
+  const text = document.createElement('span');
+  text.className   = 'cal-chip-text';
+  text.textContent = item.topic;
+
+  const del = document.createElement('button');
+  del.className   = 'cal-chip-del';
+  del.textContent = '×';
+  del.addEventListener('click', e => { e.stopPropagation(); removeItem(item.id, ds); });
+
+  chip.appendChild(text);
+  chip.appendChild(del);
+
+  chip.addEventListener('dragstart', e => {
+    dragData = { type: 'move', item, fromDate: ds };
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/plain', item.topic);
+    e.stopPropagation();
+  });
+
+  return chip;
+}
+
+// ── DROP HANDLER ───────────────────────────────────────────────────
+async function handleDrop(toDate) {
+  if (!dragData) return;
+
+  if (dragData.type === 'new') {
+    // Topic chip from sidebar → single-day entry
+    await addItem(toDate, dragData.lesson, dragData.topic);
+
+  } else if (dragData.type === 'new-span') {
+    // Module header from sidebar → create a span starting and ending on this day
+    addSpan(dragData.lesson, toDate, toDate);
+
+  } else if (dragData.type === 'move') {
+    // Topic chip dragged between days
+    if (dragData.fromDate !== toDate) await moveItem(dragData.item, dragData.fromDate, toDate);
+
+  } else if (dragData.type === 'resize-start') {
+    // Left handle dragged to new start date
+    const span = spans.find(s => s.id === dragData.spanId);
+    if (span && toDate <= span.endDate) {
+      span.startDate = toDate;
+      saveSpansLocally(currentCourse);
+      renderCalendar();
+    }
+
+  } else if (dragData.type === 'resize-end') {
+    // Right handle dragged to new end date
+    const span = spans.find(s => s.id === dragData.spanId);
+    if (span && toDate >= span.startDate) {
+      span.endDate = toDate;
+      saveSpansLocally(currentCourse);
+      renderCalendar();
+    }
+  }
+
+  dragData = null;
+}
+
+// ── SPAN CRUD ──────────────────────────────────────────────────────
+function addSpan(lesson, startDate, endDate) {
+  spans.push({ id: makeId(), lesson, startDate, endDate });
+  saveSpansLocally(currentCourse);
+  renderCalendar();
+}
+
+function removeSpan(id) {
+  spans = spans.filter(s => s.id !== id);
+  saveSpansLocally(currentCourse);
+  renderCalendar();
+}
+
+// ── TOPIC CRUD ─────────────────────────────────────────────────────
+function makeId() {
+  return Date.now().toString(36) + Math.random().toString(36).slice(2);
+}
+
+async function addItem(date, lesson, topic) {
+  const id   = makeId();
+  const item = { id, lesson, topic };
+  if (!schedule[date]) schedule[date] = [];
+  schedule[date].push(item);
+  renderCellItems(date);
+
+  if (SCRIPT_URL) {
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify({ action: 'add', course: currentCourse, date, lesson, topic, id }),
+    }).catch(console.warn);
+  }
+}
+
+async function moveItem(item, fromDate, toDate) {
+  if (schedule[fromDate]) {
+    schedule[fromDate] = schedule[fromDate].filter(i => i.id !== item.id);
+    renderCellItems(fromDate);
+  }
+  if (!schedule[toDate]) schedule[toDate] = [];
+  schedule[toDate].push(item);
+  renderCellItems(toDate);
+
+  if (SCRIPT_URL) {
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify({ action: 'move', id: item.id, newDate: toDate, course: currentCourse }),
+    }).catch(console.warn);
+  }
+}
+
+async function removeItem(id, date) {
+  if (!schedule[date]) return;
+  schedule[date] = schedule[date].filter(i => i.id !== id);
+  renderCellItems(date);
+
+  if (SCRIPT_URL) {
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify({ action: 'delete', id, course: currentCourse }),
+    }).catch(console.warn);
+  }
+}
+
+async function loadSchedule() {
+  if (!SCRIPT_URL) return;
+  try {
+    const url  = `${SCRIPT_URL}?action=schedule&course=${encodeURIComponent(currentCourse)}&year=${viewYear}&month=${viewMonth + 1}`;
+    const res  = await fetch(url);
+    const data = await res.json();
+    if (data.status === 'ok') {
+      schedule = {};
+      data.items.forEach(item => {
+        colorFor(item.lesson);
+        if (!schedule[item.date]) schedule[item.date] = [];
+        schedule[item.date].push(item);
+      });
+      renderCalendar();
+    }
+  } catch { /* keep current */ }
+}
+
+// ── FEEDBACK & MODAL ───────────────────────────────────────────────
+function openDayModal(ds) {
+  modalDate = ds;
+  pendingPhoto = null;
+
+  const d = new Date(ds + 'T00:00:00');
+  document.getElementById('modal-date-label').textContent =
+    d.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+  document.getElementById('modal-course-badge').textContent = currentCourse;
+
+  document.getElementById('modal-feedback-text').value = '';
+  document.getElementById('modal-file-name').textContent = 'Choose a photo…';
+  document.getElementById('modal-photo-preview').classList.add('hidden');
+  document.getElementById('modal-submit-photo').disabled = true;
+  document.getElementById('modal-photo-input').value = '';
+
+  renderModalItems();
+  document.getElementById('day-modal').classList.remove('hidden');
+}
+
+function closeDayModal() {
+  document.getElementById('day-modal').classList.add('hidden');
+  modalDate = null;
+  pendingPhoto = null;
+}
+
+function renderModalItems() {
+  const container = document.getElementById('modal-existing');
+  const items = feedback[modalDate] || [];
+
+  if (!items.length) {
+    container.innerHTML = '<p class="modal-empty">No feedback yet — add a note or photo below.</p>';
+    return;
+  }
+
+  container.innerHTML = '';
+  items.forEach(item => {
+    const el  = document.createElement('div');
+    el.className = 'modal-item';
+    const ts = new Date(item.timestamp).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+
+    const icon = document.createElement('div');
+    icon.className   = 'modal-item-icon';
+    icon.textContent = item.type === 'text' ? '✏️' : '📷';
+
+    const body = document.createElement('div');
+    body.className = 'modal-item-body';
+
+    if (item.type === 'text') {
+      const txt = document.createElement('div');
+      txt.className   = 'modal-item-text';
+      txt.textContent = item.content;
+      body.appendChild(txt);
+    } else {
+      const img = document.createElement('img');
+      img.className = 'modal-item-photo';
+      img.src       = item.content;
+      img.alt       = 'Uploaded photo';
+      body.appendChild(img);
+    }
+
+    const meta = document.createElement('div');
+    meta.className   = 'modal-item-meta';
+    meta.textContent = ts;
+    body.appendChild(meta);
+
+    const del = document.createElement('button');
+    del.className   = 'modal-item-del';
+    del.textContent = '×';
+    del.addEventListener('click', () => removeFeedbackItem(item.id));
+
+    el.appendChild(icon);
+    el.appendChild(body);
+    el.appendChild(del);
+    container.appendChild(el);
+  });
+}
+
+function addFeedbackText() {
+  const text = document.getElementById('modal-feedback-text').value.trim();
+  if (!text || !modalDate) return;
+
+  const item = { id: makeId(), type: 'text', content: text, timestamp: Date.now() };
+  if (!feedback[modalDate]) feedback[modalDate] = [];
+  feedback[modalDate].push(item);
+  saveFeedbackLocally();
+  renderModalItems();
+  renderCalendar(); // refresh dots
+  document.getElementById('modal-feedback-text').value = '';
+
+  if (SCRIPT_URL) {
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify({ action: 'addFeedback', course: currentCourse, date: modalDate,
+        id: item.id, feedbackType: 'text', content: text }),
+    }).catch(console.warn);
+  }
+}
+
+async function addFeedbackPhoto() {
+  if (!pendingPhoto || !modalDate) return;
+
+  const btn = document.getElementById('modal-submit-photo');
+  btn.textContent = 'Saving…';
+  btn.disabled = true;
+
+  const item = { id: makeId(), type: 'photo', content: pendingPhoto.base64, timestamp: Date.now() };
+  if (!feedback[modalDate]) feedback[modalDate] = [];
+  feedback[modalDate].push(item);
+
+  try {
+    saveFeedbackLocally();
+  } catch {
+    feedback[modalDate].pop();
+    btn.textContent = 'Upload Photo';
+    btn.disabled = false;
+    alert('Local storage is full. Please set up the Google Drive backend (add SCRIPT_URL) to save photos.');
+    return;
+  }
+
+  renderModalItems();
+  renderCalendar(); // refresh dots
+  document.getElementById('modal-photo-preview').classList.add('hidden');
+  document.getElementById('modal-file-name').textContent = 'Choose a photo…';
+  document.getElementById('modal-photo-input').value = '';
+  pendingPhoto = null;
+  btn.textContent = 'Upload Photo';
+
+  if (SCRIPT_URL) {
+    try {
+      const res  = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        body: JSON.stringify({ action: 'addFeedback', course: currentCourse, date: modalDate,
+          id: item.id, feedbackType: 'photo',
+          content: item.content, mimeType: 'image/jpeg' }),
+      });
+      const data = await res.json();
+      if (data.driveUrl) {
+        // swap base64 for the permanent Drive thumbnail URL
+        item.content = data.driveUrl;
+        saveFeedbackLocally();
+        renderModalItems();
+      }
+    } catch { /* keep base64 locally */ }
+  }
+}
+
+function removeFeedbackItem(id) {
+  if (!modalDate) return;
+  feedback[modalDate] = (feedback[modalDate] || []).filter(i => i.id !== id);
+  saveFeedbackLocally();
+  renderModalItems();
+  renderCalendar();
+
+  if (SCRIPT_URL) {
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify({ action: 'deleteFeedback', id, course: currentCourse }),
+    }).catch(console.warn);
+  }
+}
+
+function compressImage(file, maxPx, quality) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = e => {
+      const img = new Image();
+      img.onload = () => {
+        const scale  = Math.min(1, maxPx / Math.max(img.width, img.height));
+        const canvas = document.createElement('canvas');
+        canvas.width  = Math.round(img.width  * scale);
+        canvas.height = Math.round(img.height * scale);
+        canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+        resolve({ base64: canvas.toDataURL('image/jpeg', quality), mimeType: 'image/jpeg' });
+      };
+      img.onerror = reject;
+      img.src = e.target.result;
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+// Modal event wiring
+document.getElementById('modal-close').addEventListener('click', closeDayModal);
+document.getElementById('day-modal').addEventListener('click', e => {
+  if (e.target.id === 'day-modal') closeDayModal();
+});
+document.getElementById('modal-submit-text').addEventListener('click', addFeedbackText);
+document.getElementById('modal-feedback-text').addEventListener('keydown', e => {
+  if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) addFeedbackText();
+});
+document.getElementById('modal-photo-input').addEventListener('change', async e => {
+  const file = e.target.files[0];
+  if (!file) return;
+  document.getElementById('modal-file-name').textContent = file.name;
+  pendingPhoto = await compressImage(file, 1200, 0.78);
+  document.getElementById('modal-preview-img').src = pendingPhoto.base64;
+  document.getElementById('modal-photo-preview').classList.remove('hidden');
+  document.getElementById('modal-submit-photo').disabled = false;
+});
+document.getElementById('modal-submit-photo').addEventListener('click', addFeedbackPhoto);
+
+// ── SPAN PERSISTENCE (localStorage) ───────────────────────────────
+function saveSpansLocally(course) {
+  localStorage.setItem(`aj-spans-${course}`, JSON.stringify(spans));
+}
+
+function loadSpansLocally(course) {
+  try { return JSON.parse(localStorage.getItem(`aj-spans-${course}`)) || []; }
+  catch { return []; }
+}
+
+function saveFeedbackLocally() {
+  localStorage.setItem(`aj-feedback-${currentCourse}`, JSON.stringify(feedback));
+}
+
+function loadFeedbackLocally(course) {
+  try { return JSON.parse(localStorage.getItem(`aj-feedback-${course}`)) || {}; }
+  catch { return {}; }
+}
+
+// ── MONTH NAVIGATION ───────────────────────────────────────────────
+document.getElementById('prev-month').addEventListener('click', () => {
+  viewMonth--;
+  if (viewMonth < 0) { viewMonth = 11; viewYear--; }
+  renderCalendar();
+  loadSchedule();
+});
+
+document.getElementById('next-month').addEventListener('click', () => {
+  viewMonth++;
+  if (viewMonth > 11) { viewMonth = 0; viewYear++; }
+  renderCalendar();
+  loadSchedule();
+});
+
+document.getElementById('today-btn').addEventListener('click', () => {
+  const now = new Date();
+  viewYear  = now.getFullYear();
+  viewMonth = now.getMonth();
+  renderCalendar();
+  loadSchedule();
+});
+
+// ── UTILITIES ──────────────────────────────────────────────────────
+function pad(n) { return String(n).padStart(2, '0'); }
+
+function toDateStr(d) {
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+}
+
+function escHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+// ── INIT ───────────────────────────────────────────────────────────
+if (sessionStorage.getItem('authenticated') === 'true') {
+  showView('view-select');
+}
