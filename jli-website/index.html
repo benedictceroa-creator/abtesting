@@ -884,6 +884,95 @@
       color: var(--gold);
     }
 
+    /* ── LOGIN ── */
+    #login-screen {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 60%, #2d3f6e 100%);
+    }
+
+    .login-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 48px 40px;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    .login-logo {
+      width: 130px;
+      height: auto;
+      margin: 0 auto 16px;
+      display: block;
+    }
+
+    .login-title {
+      font-family: 'Merriweather', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .login-sub {
+      font-size: 0.82rem;
+      color: var(--gray);
+      margin-bottom: 28px;
+    }
+
+    .login-card label {
+      display: block;
+      text-align: left;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .login-card input[type="password"] {
+      width: 100%;
+      padding: 12px 14px;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+      margin-bottom: 14px;
+      font-family: inherit;
+    }
+
+    .login-card input:focus { border-color: var(--gold); }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      letter-spacing: 0.03em;
+      transition: background 0.2s;
+      font-family: inherit;
+    }
+
+    .login-btn:hover { background: var(--gold-light); }
+
+    .login-error {
+      font-size: 0.82rem;
+      color: #dc2626;
+      margin-bottom: 12px;
+      display: none;
+    }
+
     /* ── SKILLS PHOTOS ── */
     .skills-photos {
       display: grid;
@@ -982,6 +1071,24 @@
 </head>
 
 <body>
+
+  <!-- LOGIN -->
+  <div id="login-screen">
+    <div class="login-card">
+      <img src="JLI Logo.png" alt="JLI Logo" class="login-logo" />
+      <p class="login-title">John's Leadership Institute</p>
+      <p class="login-sub">Enter your password to continue</p>
+      <form id="login-form" onsubmit="handleLogin(event)">
+        <label for="jli-password">Password</label>
+        <input type="password" id="jli-password" placeholder="Enter password" required autocomplete="current-password" />
+        <p class="login-error" id="login-error">Incorrect password. Please try again.</p>
+        <button type="submit" class="login-btn">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MAIN SITE -->
+  <div id="main-site" style="display:none;">
 
   <!-- NAV -->
   <nav>
@@ -1671,7 +1778,26 @@
         Theological Association</span></p>
   </footer>
 
+  </div><!-- /main-site -->
+
   <script>
+    function handleLogin(e) {
+      e.preventDefault();
+      const val = document.getElementById('jli-password').value;
+      if (val === 'JLI2025') {
+        sessionStorage.setItem('jli-auth', '1');
+        document.getElementById('login-screen').style.display = 'none';
+        document.getElementById('main-site').style.display = 'block';
+      } else {
+        document.getElementById('login-error').style.display = 'block';
+      }
+    }
+
+    if (sessionStorage.getItem('jli-auth') === '1') {
+      document.getElementById('login-screen').style.display = 'none';
+      document.getElementById('main-site').style.display = 'block';
+    }
+
     function switchTab(id) {
       document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
