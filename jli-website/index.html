@@ -364,7 +364,7 @@
       background: var(--navy);
       padding: 1.5rem;
       color: var(--white);
-      min-height: 120px;
+      min-height: 220px;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -632,7 +632,7 @@
 
     .campus-photos {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 0.5rem;
     }
 
@@ -969,7 +969,8 @@
         grid-template-columns: 1fr;
       }
 
-      .graduation-grid {
+      .graduation-grid,
+      .campus-photos {
         grid-template-columns: 1fr 1fr;
       }
 
@@ -1122,7 +1123,7 @@
         </div>
 
         <div class="course-card">
-          <div class="course-card-header" style="background: linear-gradient(rgba(26,39,68,0.78), rgba(26,39,68,0.78)), url('Images/Classrooms.jpg') center/cover no-repeat;">
+          <div class="course-card-header" style="background: linear-gradient(rgba(26,39,68,0.78), rgba(26,39,68,0.78)), url('Images/Classroom Books.jpg') center/cover no-repeat;">
             <div class="course-badge">ATA Accredited</div>
             <h3>Diploma in Theology</h3>
             <div class="abbr">Dip.Th Program</div>
@@ -1461,7 +1462,6 @@
           <ul class="facility-list">
             <li>Spacious, well-ventilated rooms with separate hostels for boys and girls</li>
             <li>24/7 water and electricity supply</li>
-            <li>Study tables and storage cupboards in every room</li>
             <li>Hygienic dining hall with nutritious food</li>
             <li>Security staff and CCTV surveillance</li>
             <li>Medical assistance on campus</li>
@@ -1483,13 +1483,19 @@
             <img src="Images/Campus Life.jpeg" alt="Campus Life" />
           </div>
           <div class="campus-photo">
-            <img src="Images/Hostels.jpg" alt="Student Hostel" />
+            <img src="Images/Campus Life 2.jpeg" alt="Campus Life" />
+          </div>
+          <div class="campus-photo">
+            <img src="Images/Campus Life 3.jpeg" alt="Campus Recreation" />
+          </div>
+          <div class="campus-photo">
+            <img src="Images/Campus Life 4.jpeg" alt="Campus Recreation" />
           </div>
           <div class="campus-photo">
             <img src="Images/Devotion hall.jpg" alt="Devotion Hall" />
           </div>
           <div class="campus-photo">
-            <img src="Images/Campus Life 2.jpeg" alt="Campus Life" />
+            <img src="Images/Hostels 1.jpg" alt="Student Hostels" />
           </div>
         </div>
       </div>
@@ -1558,7 +1564,7 @@
       </div>
 
       <div style="margin-top:2.5rem;border-radius:10px;overflow:hidden;height:300px;">
-        <img src="Images/Library.jpg" alt="JLI Library" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        <img src="Images/Library.jpg" alt="JLI Library" style="width:100%;height:100%;object-fit:cover;display:block;object-position:bottom;" />
       </div>
     </div>
   </section>
