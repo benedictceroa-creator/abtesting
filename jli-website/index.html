@@ -153,17 +153,109 @@
       margin-bottom: 1.5rem;
     }
 
+    .hero-motto {
+      margin-bottom: 2rem;
+      margin-top: 0.5rem;
+    }
+
+    .hero-motto-label {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.85;
+      margin-bottom: 0.35rem;
+    }
+
     .hero-tagline {
       font-family: 'Merriweather', serif;
       font-style: italic;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       color: var(--gold-light);
-      margin-bottom: 2rem;
+      margin-bottom: 0.4rem;
     }
 
-    .hero-tagline span {
+    .motto-verse {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.45);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials {
+      background: var(--off-white);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 2rem;
+      border: 1px solid #e5e7eb;
+      border-top: 3px solid var(--gold);
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: '\201C';
+      font-family: 'Merriweather', serif;
+      font-size: 4.5rem;
+      color: var(--gold);
+      opacity: 0.25;
+      position: absolute;
+      top: 0.25rem;
+      left: 1.25rem;
+      line-height: 1;
+    }
+
+    .testimonial-text {
+      font-size: 0.9rem;
+      color: var(--gray);
+      font-style: italic;
+      line-height: 1.85;
+      padding-top: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 1rem;
+    }
+
+    .t-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
       font-size: 0.85rem;
-      color: rgba(255, 255, 255, 0.5);
+      flex-shrink: 0;
+    }
+
+    .t-name {
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--navy);
+    }
+
+    .t-role {
+      font-size: 0.78rem;
+      color: var(--gray);
     }
 
     .hero-cta {
@@ -1059,7 +1151,8 @@
       }
 
       .graduation-grid,
-      .campus-photos {
+      .campus-photos,
+      .testimonials-grid {
         grid-template-columns: 1fr 1fr;
       }
 
@@ -1106,6 +1199,7 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#faculty">Faculty</a></li>
       <li><a href="#campus">Campus</a></li>
+      <li><a href="#testimonials">Alumni</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -1115,7 +1209,12 @@
     <div class="hero-content">
       <h1>John's Leadership Institute</h1>
       <p class="hero-subtitle">Hyderabad, Telangana</p>
-      <div class="hero-accreditation">Accredited by Asia Theological Association (ATA)</div>
+      <div class="hero-accreditation">Accredited by the Asia Theological Association (ATA)</div>
+      <div class="hero-motto">
+        <span class="hero-motto-label">Our Motto</span>
+        <p class="hero-tagline">"Train Disciples to Make Disciples"</p>
+        <p class="motto-verse">Matthew 28:19–20</p>
+      </div>
       <div class="hero-cta">
         <a href="#admissions" class="btn btn-gold">Apply for Admissions</a>
         <a href="#courses" class="btn btn-outline">Explore Courses</a>
@@ -1134,9 +1233,9 @@
         <div>
           <p style="color:var(--gray);line-height:1.9;font-size:0.95rem;margin-bottom:1.5rem;">
             John's Leadership Institute (JLI) was born out of a simple act of obedience. In 2011, a young post-graduate
-            student walked into our founder's office with nothing but a desire to study the Bible and plant a church in
-            his community. With no existing Bible college, Dr. Saji K. John took a step of faith and began the Asha
-            Church Training Program with just 12 students that year.
+            student walked into our founder's office with nothing but a desire to study the Bible. With no existing Bible
+            college, our founder, Dr. Saji K. John took a step of faith and began the Asha Church Training Program with
+            just 12 students that year.
           </p>
           <p style="color:var(--gray);line-height:1.9;font-size:0.95rem;">
             Over the years, the institute grew into Asha Bible College and then into John's Leadership Institute —
@@ -1444,6 +1543,13 @@
 
       <div class="faculty-grid">
         <div class="faculty-card">
+          <div class="faculty-avatar">CJ</div>
+          <h4>Mrs. Cynthia John</h4>
+          <div class="faculty-role">Co-Founder &amp; Faculty</div>
+          <div class="faculty-qual">B.A, B.Min.</div>
+          <div class="faculty-exp">Ministry since 1982 · Teacher, Preacher, Counselor</div>
+        </div>
+        <div class="faculty-card">
           <div class="faculty-avatar">KN</div>
           <h4>Rev. Dr. Karra Nehemiah</h4>
           <div class="faculty-role">Principal &amp; Faculty</div>
@@ -1505,6 +1611,13 @@
           <div class="faculty-role">Adjunct Faculty</div>
           <div class="faculty-qual">B.D, M.A, M.Div, D.Min.</div>
           <div class="faculty-exp">Ministry since 1997 · Pastor, Teacher</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">KA</div>
+          <h4>Koda Anand</h4>
+          <div class="faculty-role">Librarian</div>
+          <div class="faculty-qual">Dip.Th, CTL (Certificate in Theological Librarianship)</div>
+          <div class="faculty-exp">Ministry since 2021 · Librarian</div>
         </div>
       </div>
     </div>
@@ -1685,6 +1798,50 @@
     </div>
   </section>
 
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="container">
+      <p class="section-label">Alumni Voices</p>
+      <h2 class="section-title">What Our Graduates Say</h2>
+      <div class="section-divider"></div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">JLI gave me more than a degree — it gave me a calling. The combination of biblical depth and practical ministry prepared me for church planting in ways I never expected. I planted my first church within a year of graduating.</p>
+          <div class="testimonial-author">
+            <div class="t-avatar">DR</div>
+            <div>
+              <div class="t-name">Rev. David Raju</div>
+              <div class="t-role">B.Th Graduate, 2019 · Church Planter, Nalgonda District</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">As a woman in ministry, JLI was a place that truly affirmed my calling. The teachers poured into us with love and rigour. The Employable Skills training also helped me become financially independent while serving my community.</p>
+          <div class="testimonial-author">
+            <div class="t-avatar">AP</div>
+            <div>
+              <div class="t-name">Mrs. Anitha Paul</div>
+              <div class="t-role">Dip.Th Graduate, 2021 · Women's Ministry Leader, Warangal</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">I came from a village with no theological background. JLI welcomed me, trained me, and sent me out equipped. Today I lead a small congregation and run a skills workshop for youth in my community. I owe it all to JLI.</p>
+          <div class="testimonial-author">
+            <div class="t-avatar">SY</div>
+            <div>
+              <div class="t-name">Samuel Yesu Babu</div>
+              <div class="t-role">Dip.Th Graduate, 2022 · Church Planter &amp; Community Worker, Medak</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contact">
     <div class="container">
@@ -1727,7 +1884,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 John's Leadership Institute, Hyderabad · Part of <span>John Foundation</span> · Accredited by <span>Asia
+    <p>© 2025 John's Leadership Institute, Hyderabad · Part of <span>John Foundation</span> · Accredited by <span>the Asia
         Theological Association</span></p>
   </footer>
 
