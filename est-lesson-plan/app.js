@@ -231,17 +231,24 @@ const FULL_COURSE_OUTLINES = {
   },
 
   'Computer – MS-Office': {
-    meta: { title: 'Computer – MS-Office', duration: '5 Weeks', daysPerWeek: '5 Days', approach: 'Hands-on application learning with guided practice' },
-    objective: 'To equip learners with practical skills in Microsoft Office applications — Word, Excel, PowerPoint, and Outlook — enabling them to perform everyday office and workplace tasks confidently.',
-    dailyFlow: ['Day 1: Concept Introduction', 'Day 2: Guided Practice', 'Day 3: Hands-on Lab', 'Day 4: Application Exercise', 'Day 5: Review & Assessment'],
+    meta: { title: 'Computer Basic (MS Word, Excel, PowerPoint & Internet Concepts)', duration: '12 Weeks', creditHours: '240 Hours', daysPerWeek: '5 Days', approach: 'Hands-on application learning with guided practice' },
+    objective: 'The MS Office course is designed to help students develop practical computer skills by learning Microsoft Word, Excel, and PowerPoint for creating documents, managing data, preparing presentations, and improving productivity for academic and professional success.',
+    dailyFlow: ['Day 1 (Monday): New Topic Introduction', 'Day 2 (Tuesday): Concept & Theory', 'Day 3 (Wednesday): Related Topic', 'Day 4 (Thursday): Applied Learning', 'Day 5 (Friday): Practical / Lab Session'],
     modules: [
-      { name: 'Module 1 – Introduction to MS-Office', objective: 'Familiarise learners with the MS-Office suite and computer basics.', days: ['MS-Office Suite overview and applications', 'Computer basics – Windows, taskbar, file management', 'Creating, saving and organising files and folders', 'Keyboard shortcuts and navigation tips', 'Review & hands-on exercise'], weeklyTask: 'Set up a folder structure and save practice files' },
-      { name: 'Module 2 – MS Word', objective: 'Create, format and manage professional documents.', days: ['Creating documents – interface, typing, saving', 'Formatting text – fonts, bold, italic, alignment, spacing', 'Tables, images and bullet lists', 'Headers, footers, page layout and margins', 'Practice: formal letter / notice'], weeklyTask: 'Create a formatted one-page document' },
-      { name: 'Module 3 – MS Excel', objective: 'Use spreadsheets for data, calculations and charts.', days: ['Cells, rows, columns and data entry', 'Formulas and functions – SUM, AVERAGE, COUNT, IF', 'Charts and graphs – creating and formatting', 'Data sorting, filtering and conditional formatting', 'Practice: budget or attendance sheet'], weeklyTask: 'Build a spreadsheet with formulas and a chart' },
-      { name: 'Module 4 – MS PowerPoint', objective: 'Design and deliver effective presentations.', days: ['Creating slides – interface, themes and layouts', 'Text, images, icons and SmartArt', 'Animations and slide transitions', 'Presenter view and slide show delivery', 'Practice: 5-slide topic presentation'], weeklyTask: 'Create and present a 5-slide presentation' },
-      { name: 'Module 5 – MS Outlook & Cloud Tools', objective: 'Manage email, calendar and cloud-based file sharing.', days: ['Email composition, reply, forward and folders', 'Calendar – scheduling events and reminders', 'OneDrive – uploading, sharing and syncing files', 'Microsoft Teams basics – chat and meetings', 'Review & final assessment'], weeklyTask: 'Send a professional email with an attachment' },
+      { name: 'Module 1 – Introduction to Computers', objective: 'Understand computer basics and identify hardware components.', days: ['Introduction to Computers', 'Parts of a Computer', 'Hardware & Software', 'Input & Output Devices', 'Practical: Identify Computer Parts'], weeklyTask: 'Identify and label all major computer parts' },
+      { name: 'Module 2 – Operating Systems', objective: 'Navigate the Windows OS and manage files and folders.', days: ['Operating Systems', 'Windows Desktop', 'Files & Folders', 'File Management', 'Practical: Create, Rename, Copy & Delete Files'], weeklyTask: 'Create, rename, copy and delete files on Windows' },
+      { name: 'Module 3 – Keyboard & Mouse', objective: 'Develop keyboard and mouse skills and learn internet and email basics.', days: ['Keyboard & Mouse', 'Typing Practice', 'Internet Basics', 'Email Basics', 'Practical: Internet & Email'], weeklyTask: 'Browse the internet and send a basic email' },
+      { name: 'Module 4 – Introduction to MS Word', objective: 'Get familiar with the MS Word interface and create basic documents.', days: ['Introduction to MS Word', 'Word Interface & Tools', 'Creating & Saving Documents', 'Text Formatting', 'Practical: Simple Document'], weeklyTask: 'Create and save a formatted simple document' },
+      { name: 'Module 5 – Paragraph Formatting', objective: 'Apply paragraph formatting, bullets, page setup and headers & footers.', days: ['Paragraph Formatting', 'Bullets & Numbering', 'Page Setup', 'Headers & Footers', 'Practical: Formal Letter'], weeklyTask: 'Type and format a formal letter with headers and footers' },
+      { name: 'Module 6 – Tables in Word', objective: 'Insert tables, images, WordArt and page design elements in Word.', days: ['Tables in Word', 'Images & Shapes', 'WordArt & Text Boxes', 'Page Borders & Watermarks', 'Practical: Create a Notice'], weeklyTask: 'Design a notice using tables, images and borders' },
+      { name: 'Module 7 – Introduction to MS Excel', objective: 'Understand the Excel interface and perform basic data entry.', days: ['Introduction to MS Excel', 'Workbook & Worksheet', 'Rows, Columns & Cells', 'Data Entry', 'Practical: Student Mark Sheet'], weeklyTask: 'Create a student mark sheet with data entry' },
+      { name: 'Module 8 – Basic Formulas', objective: 'Apply basic Excel formulas and format cells.', days: ['Basic Formulas', 'SUM, AVERAGE, MIN, MAX', 'COUNT & COUNTA', 'Cell Formatting', 'Practical: Mark Sheet with Formulas'], weeklyTask: 'Build a mark sheet using SUM, AVERAGE, MIN, MAX and COUNT formulas' },
+      { name: 'Module 9 – Sorting & Filtering', objective: 'Sort, filter data and create charts with conditional formatting.', days: ['Sorting & Filtering', 'Charts', 'Conditional Formatting', 'Page Setup & Printing', 'Practical: Sales Report'], weeklyTask: 'Create a sales report with a chart and conditional formatting' },
+      { name: 'Module 10 – Introduction to PowerPoint', objective: 'Learn the PowerPoint interface and create basic slides.', days: ['Introduction to PowerPoint', 'Creating Slides', 'Slide Layouts', 'Text & Formatting', 'Practical: 5-Slide Presentation'], weeklyTask: 'Create a 5-slide presentation with proper layouts' },
+      { name: 'Module 11 – Images & Shapes', objective: 'Enhance presentations with images, charts, transitions and animations.', days: ['Images & Shapes', 'Tables & Charts', 'Transitions', 'Animations', 'Practical: Business Presentation'], weeklyTask: 'Create a business presentation with transitions and animations' },
+      { name: 'Module 12 – PowerPoint Presentation Skills', objective: 'Develop presentation skills and complete final integrated projects.', days: ['PowerPoint Presentation Skills', 'Presentation Design', 'Final Project – Word', 'Final Project – Excel', 'Final Project Presentation'], weeklyTask: 'Present final integrated projects for Word, Excel and PowerPoint' },
     ],
-    outcomes: ['Use MS Word to create and format professional documents', 'Build spreadsheets with formulas and charts in MS Excel', 'Design and deliver presentations using MS PowerPoint', 'Manage email and calendar using MS Outlook', 'Share and collaborate using OneDrive and Teams'],
+    outcomes: ['Understand basic computer concepts and operate a computer confidently', 'Create, edit, format and print professional documents using MS Word', 'Enter, calculate, analyze and present data using MS Excel', 'Create and deliver attractive presentations using MS PowerPoint', 'Apply computer skills to practical academic and business projects'],
   },
 
   'Computer – Desktop Publishing': {
@@ -878,11 +885,18 @@ function loadPlansLocally(course) {
 // ── CURRICULUM (left sidebar) ───────────────────────────────────────
 const FALLBACK_CURRICULUM = {
   'Computer – MS-Office': [
-    { lesson: 'Introduction to MS-Office',  topics: ['MS-Office Suite Overview', 'Computer & Windows Basics', 'File Management & Saving'] },
-    { lesson: 'MS Word',                    topics: ['Creating & Formatting Documents', 'Tables, Images & Lists', 'Headers, Footers & Page Layout', 'Mail Merge Basics', 'Practice Document'] },
-    { lesson: 'MS Excel',                   topics: ['Cells, Rows & Columns', 'Formulas & Functions (SUM, AVG)', 'Charts & Graphs', 'Data Sorting & Filtering', 'Practice Spreadsheet'] },
-    { lesson: 'MS PowerPoint',              topics: ['Creating Presentations', 'Slide Design & Layouts', 'Animations & Transitions', 'Images, Charts & SmartArt', 'Practice Presentation'] },
-    { lesson: 'MS Outlook & Cloud Tools',   topics: ['Email Composition & Management', 'Calendar & Scheduling', 'OneDrive & File Sharing', 'Teams Basics', 'Review & Assessment'] },
+    { lesson: 'Introduction to Computers',       topics: ['Introduction to Computers', 'Parts of a Computer', 'Hardware & Software', 'Input & Output Devices', 'Practical: Identify Computer Parts'] },
+    { lesson: 'Operating Systems',               topics: ['Operating Systems', 'Windows Desktop', 'Files & Folders', 'File Management', 'Practical: Create, Rename, Copy & Delete Files'] },
+    { lesson: 'Keyboard & Mouse',                topics: ['Keyboard & Mouse', 'Typing Practice', 'Internet Basics', 'Email Basics', 'Practical: Internet & Email'] },
+    { lesson: 'Introduction to MS Word',         topics: ['Introduction to MS Word', 'Word Interface & Tools', 'Creating & Saving Documents', 'Text Formatting', 'Practical: Simple Document'] },
+    { lesson: 'Paragraph Formatting',            topics: ['Paragraph Formatting', 'Bullets & Numbering', 'Page Setup', 'Headers & Footers', 'Practical: Formal Letter'] },
+    { lesson: 'Tables in Word',                  topics: ['Tables in Word', 'Images & Shapes', 'WordArt & Text Boxes', 'Page Borders & Watermarks', 'Practical: Create a Notice'] },
+    { lesson: 'Introduction to MS Excel',        topics: ['Introduction to MS Excel', 'Workbook & Worksheet', 'Rows, Columns & Cells', 'Data Entry', 'Practical: Student Mark Sheet'] },
+    { lesson: 'Basic Formulas',                  topics: ['Basic Formulas', 'SUM, AVERAGE, MIN, MAX', 'COUNT & COUNTA', 'Cell Formatting', 'Practical: Mark Sheet with Formulas'] },
+    { lesson: 'Sorting & Filtering',             topics: ['Sorting & Filtering', 'Charts', 'Conditional Formatting', 'Page Setup & Printing', 'Practical: Sales Report'] },
+    { lesson: 'Introduction to PowerPoint',      topics: ['Introduction to PowerPoint', 'Creating Slides', 'Slide Layouts', 'Text & Formatting', 'Practical: 5-Slide Presentation'] },
+    { lesson: 'Images & Shapes',                 topics: ['Images & Shapes', 'Tables & Charts', 'Transitions', 'Animations', 'Practical: Business Presentation'] },
+    { lesson: 'PowerPoint Presentation Skills',  topics: ['PowerPoint Presentation Skills', 'Presentation Design', 'Final Project – Word', 'Final Project – Excel', 'Final Project Presentation'] },
   ],
   'Computer – Desktop Publishing': [
     { lesson: 'Introduction to DTP',        topics: ['What is Desktop Publishing?', 'Computer Basics & Software Overview', 'Design Principles & Terminology'] },
