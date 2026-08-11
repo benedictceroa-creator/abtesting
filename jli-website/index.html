@@ -431,6 +431,32 @@
       font-size: 0.95rem;
     }
 
+    .vm-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: stretch;
+    }
+
+    .vm-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .vm-photo {
+      border-radius: 8px;
+      overflow: hidden;
+      min-height: 300px;
+    }
+
+    .vm-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
     /* ── COURSES ── */
     #courses {
       background: var(--off-white);
@@ -670,8 +696,8 @@
     }
 
     .faculty-avatar {
-      width: 52px;
-      height: 52px;
+      width: 80px;
+      height: 80px;
       background: var(--navy);
       border-radius: 50%;
       display: flex;
@@ -682,6 +708,30 @@
       font-weight: 700;
       font-size: 1.2rem;
       margin-bottom: 1rem;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .faculty-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .faculty-group-photo {
+      border-radius: 10px;
+      overflow: hidden;
+      height: 340px;
+      margin-bottom: 3rem;
+    }
+
+    .faculty-group-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      object-position: top;
     }
 
     .faculty-card h4 {
@@ -1138,7 +1188,7 @@
       }
 
       .about-grid,
-      .vm-grid,
+      .vm-layout,
       .campus-grid,
       .library-grid,
       .admissions-grid {
@@ -1258,18 +1308,23 @@
       <h2 class="section-title">Vision &amp; Mission</h2>
       <div class="section-divider"></div>
 
-      <div class="vm-grid">
-        <div class="vm-card">
-          <div class="vm-icon">🎯</div>
-          <h3>Vision Statement</h3>
-          <p>To train young men and women to plant churches that are biblically sound, growing and sustainable,
-            especially among unreached communities.</p>
+      <div class="vm-layout">
+        <div class="vm-cards">
+          <div class="vm-card">
+            <div class="vm-icon">🎯</div>
+            <h3>Vision Statement</h3>
+            <p>To train young men and women to plant churches that are biblically sound, growing and sustainable,
+              especially among unreached communities.</p>
+          </div>
+          <div class="vm-card">
+            <div class="vm-icon">🌱</div>
+            <h3>Mission Statement</h3>
+            <p>To train young men and women who are passionate about church planting and empower them with employable
+              skills that will help build community relationships and help sustain themselves financially.</p>
+          </div>
         </div>
-        <div class="vm-card">
-          <div class="vm-icon">🌱</div>
-          <h3>Mission Statement</h3>
-          <p>To train young men and women who are passionate about church planting and empower them with employable
-            skills that will help build community relationships and help sustain themselves financially.</p>
+        <div class="vm-photo">
+          <img src="Images/Graduation 4.jpg" alt="JLI Graduation Ceremony" />
         </div>
       </div>
     </div>
@@ -1541,79 +1596,105 @@
       <h2 class="section-title">Faculty</h2>
       <div class="section-divider"></div>
 
+      <div class="faculty-group-photo">
+        <img src="Images/Group Photo.jpeg" alt="JLI Faculty Group Photo" />
+      </div>
+
       <div class="faculty-grid">
         <div class="faculty-card">
-          <div class="faculty-avatar">CJ</div>
+          <div class="faculty-avatar">
+            <img src="Images/CJ.JPG" alt="Mrs. Cynthia John" />
+          </div>
           <h4>Mrs. Cynthia John</h4>
           <div class="faculty-role">Co-Founder &amp; Faculty</div>
           <div class="faculty-qual">B.A, B.Min.</div>
           <div class="faculty-exp">Ministry since 1982 · Teacher, Preacher, Counselor</div>
         </div>
         <div class="faculty-card">
-          <div class="faculty-avatar">KN</div>
+          <div class="faculty-avatar">
+            <img src="Images/KN.jpeg" alt="Rev. Dr. Karra Nehemiah" />
+          </div>
           <h4>Rev. Dr. Karra Nehemiah</h4>
           <div class="faculty-role">Principal &amp; Faculty</div>
           <div class="faculty-qual">B.Th, M.A, M.Div, Ph.D</div>
           <div class="faculty-exp">Ministry since 1999 · Pastor, Teacher</div>
         </div>
         <div class="faculty-card">
-          <div class="faculty-avatar">PM</div>
+          <div class="faculty-avatar">
+            <img src="Images/PM.jpeg" alt="Rev. Prabhakar Malladi" />
+          </div>
           <h4>Rev. Prabhakar Malladi</h4>
           <div class="faculty-role">Academic Dean &amp; Faculty</div>
           <div class="faculty-qual">B.Th, M.A, M.Div, M.Th</div>
           <div class="faculty-exp">Ministry since 1997 · Pastor, Teacher</div>
         </div>
         <div class="faculty-card">
-          <div class="faculty-avatar">LB</div>
+          <div class="faculty-avatar">
+            <img src="Images/LB.JPG" alt="Rev. L. Bharath" />
+          </div>
           <h4>Rev. L. Bharath</h4>
           <div class="faculty-role">Student Dean &amp; Faculty</div>
           <div class="faculty-qual">B.Th, M.Div</div>
           <div class="faculty-exp">Ministry since 2016 · Pastor, Teacher</div>
         </div>
         <div class="faculty-card">
-          <div class="faculty-avatar">VG</div>
+          <div class="faculty-avatar">
+            <img src="Images/VG.JPG" alt="Rev. M. Venu Gopal" />
+          </div>
           <h4>Rev. M. Venu Gopal</h4>
           <div class="faculty-role">Faculty</div>
           <div class="faculty-qual">B.Th, M.Div</div>
           <div class="faculty-exp">Ministry since 1992 · Teacher, Pastor</div>
         </div>
         <div class="faculty-card">
-          <div class="faculty-avatar">DP</div>
+          <div class="faculty-avatar">
+            <img src="Images/DP.JPG" alt="Pr. S. Deva Prakash" />
+          </div>
           <h4>Pr. S. Deva Prakash</h4>
           <div class="faculty-role">Registrar &amp; Faculty</div>
           <div class="faculty-qual">G.Th, B.Sc, M.Div</div>
           <div class="faculty-exp">Ministry since 2010 · Pastor, Teacher</div>
         </div>
         <div class="faculty-card">
-          <div class="faculty-avatar">BP</div>
+          <div class="faculty-avatar">
+            <img src="Images/PP.JPG" alt="Pr. B. Paul Prabhakar" />
+          </div>
           <h4>Pr. B. Paul Prabhakar</h4>
           <div class="faculty-role">Chaplain &amp; Faculty</div>
           <div class="faculty-qual">B.Th, M.A, M.Div, M.Th (NT)</div>
           <div class="faculty-exp">Ministry since 2019 · Pastor, Teacher, Counsellor</div>
         </div>
         <div class="faculty-card">
-          <div class="faculty-avatar">RP</div>
+          <div class="faculty-avatar">
+            <img src="Images/RP.JPG" alt="Rev. T. Rajendra Prasad" />
+          </div>
           <h4>Rev. T. Rajendra Prasad</h4>
           <div class="faculty-role">Adjunct Faculty</div>
           <div class="faculty-qual">B.Sc, M.Div</div>
           <div class="faculty-exp">Ministry since 1992 · Pastor, Teacher</div>
         </div>
         <div class="faculty-card">
-          <div class="faculty-avatar">BM</div>
+          <div class="faculty-avatar">
+            <img src="Images/BM.JPG" alt="Rev. Dr. B. Mark" />
+          </div>
           <h4>Rev. Dr. B. Mark</h4>
           <div class="faculty-role">Adjunct Faculty</div>
           <div class="faculty-qual">B.Th, M.Div, M.Th, Th.D</div>
           <div class="faculty-exp">Ministry since 1990 · Pastor, Teacher</div>
         </div>
         <div class="faculty-card">
-          <div class="faculty-avatar">WC</div>
+          <div class="faculty-avatar">
+            <img src="Images/WC.JPG" alt="Rev. Dr. M. William Carey" />
+          </div>
           <h4>Rev. Dr. M. William Carey</h4>
           <div class="faculty-role">Adjunct Faculty</div>
           <div class="faculty-qual">B.D, M.A, M.Div, D.Min.</div>
           <div class="faculty-exp">Ministry since 1997 · Pastor, Teacher</div>
         </div>
         <div class="faculty-card">
-          <div class="faculty-avatar">KA</div>
+          <div class="faculty-avatar">
+            <img src="Images/KA.jpeg" alt="Koda Anand" />
+          </div>
           <h4>Koda Anand</h4>
           <div class="faculty-role">Librarian</div>
           <div class="faculty-qual">Dip.Th, CTL (Certificate in Theological Librarianship)</div>
@@ -1670,6 +1751,21 @@
           <div class="campus-photo">
             <img src="Images/Hostels 1.jpg" alt="Student Hostels" />
           </div>
+          <div class="campus-photo">
+            <img src="Images/Campus.jpg" alt="Campus" />
+          </div>
+          <div class="campus-photo">
+            <img src="Images/Campus1.jpg" alt="Campus" />
+          </div>
+          <div class="campus-photo">
+            <img src="Images/Campus 3.jpg" alt="Campus" />
+          </div>
+          <div class="campus-photo">
+            <img src="Images/Hostels.jpg" alt="Student Hostels" />
+          </div>
+          <div class="campus-photo">
+            <img src="Images/Hostels 2.jpg" alt="Student Hostels" />
+          </div>
         </div>
       </div>
 
@@ -1688,6 +1784,52 @@
           <div class="graduation-photo">
             <img src="Images/Graduation 4.jpg" alt="Graduation Ceremony" />
           </div>
+        </div>
+      </div>
+
+      <div style="margin-top:3rem;">
+        <h3 style="font-size:1rem;color:var(--navy);margin-bottom:1.25rem;">Dining &amp; Nutrition</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
+          <div style="border-radius:8px;overflow:hidden;height:220px;">
+            <img src="Images/Dining1.jpg" alt="Dining Hall" style="width:100%;height:100%;object-fit:cover;display:block;" />
+          </div>
+          <div style="border-radius:8px;overflow:hidden;height:220px;">
+            <img src="Images/Dining2.jpg" alt="Dining Hall" style="width:100%;height:100%;object-fit:cover;display:block;" />
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:3rem;">
+        <h3 style="font-size:1rem;color:var(--navy);margin-bottom:1.25rem;">Sports &amp; Recreation</h3>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;">
+          <div style="border-radius:8px;overflow:hidden;height:200px;">
+            <img src="Images/Sports2.jpeg" alt="Sports and Recreation" style="width:100%;height:100%;object-fit:cover;display:block;" />
+          </div>
+          <div style="border-radius:8px;overflow:hidden;height:200px;">
+            <img src="Images/Sports 3.jpeg" alt="Sports and Recreation" style="width:100%;height:100%;object-fit:cover;display:block;" />
+          </div>
+          <div style="border-radius:8px;overflow:hidden;height:200px;">
+            <img src="Images/Sports 4.jpeg" alt="Sports and Recreation" style="width:100%;height:100%;object-fit:cover;display:block;" />
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:3rem;">
+        <h3 style="font-size:1rem;color:var(--navy);margin-bottom:1.25rem;">Practical Ministry</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
+          <div style="border-radius:8px;overflow:hidden;height:220px;">
+            <img src="Images/PRactical ministry.jpg" alt="Practical Ministry" style="width:100%;height:100%;object-fit:cover;display:block;" />
+          </div>
+          <div style="border-radius:8px;overflow:hidden;height:220px;">
+            <img src="Images/Practical Ministry 2.jpg" alt="Practical Ministry" style="width:100%;height:100%;object-fit:cover;display:block;" />
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:3rem;">
+        <h3 style="font-size:1rem;color:var(--navy);margin-bottom:1.25rem;">Digital Classrooms</h3>
+        <div style="border-radius:8px;overflow:hidden;height:260px;">
+          <img src="Images/Digital Classroom.jpg" alt="Digital Classroom" style="width:100%;height:100%;object-fit:cover;display:block;" />
         </div>
       </div>
     </div>
@@ -1736,8 +1878,19 @@
         </div>
       </div>
 
-      <div style="margin-top:2.5rem;border-radius:10px;overflow:hidden;height:300px;">
-        <img src="Images/Library.jpg" alt="JLI Library" style="width:100%;height:100%;object-fit:cover;display:block;object-position:bottom;" />
+      <div style="margin-top:2.5rem;display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem;">
+        <div style="border-radius:8px;overflow:hidden;height:200px;">
+          <img src="Images/Library.jpg" alt="JLI Library" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        </div>
+        <div style="border-radius:8px;overflow:hidden;height:200px;">
+          <img src="Images/Library 2.jpg" alt="JLI Library" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        </div>
+        <div style="border-radius:8px;overflow:hidden;height:200px;">
+          <img src="Images/Library 3.jpg" alt="JLI Library" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        </div>
+        <div style="border-radius:8px;overflow:hidden;height:200px;">
+          <img src="Images/Library 4.jpg" alt="JLI Library" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        </div>
       </div>
     </div>
   </section>
