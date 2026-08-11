@@ -4,9 +4,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>John's Leadership Institute – Hyderabad</title>
+  <meta name="theme-color" content="#1a2744" />
+  <title>John's Leadership Institute – ATA-Accredited Bible College, Hyderabad</title>
+
+  <!-- SEO -->
+  <meta name="description" content="John's Leadership Institute (JLI) is an ATA-accredited theological seminary in Hyderabad training students for church planting. Offering B.Th, Dip.Th & C.Th programs with on-campus accommodation in Telangana." />
+  <meta name="keywords" content="Bible college Hyderabad, theological seminary India, ATA accredited seminary, church planting training, Bachelor of Theology Hyderabad, Diploma Theology India, JLI Hyderabad, ministry training Telangana, Asha Bible College" />
+  <meta name="author" content="John's Leadership Institute" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://ceroa.org/jli-website/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ceroa.org/jli-website/" />
+  <meta property="og:title" content="John's Leadership Institute – ATA-Accredited Bible College, Hyderabad" />
+  <meta property="og:description" content="Train to plant churches and lead in ministry. JLI offers B.Th, Dip.Th & C.Th programs with full residential accommodation in Hyderabad, Telangana." />
+  <meta property="og:image" content="https://ceroa.org/jli-website/Images/Faculty.JPG.jpeg" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:site_name" content="John's Leadership Institute" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="John's Leadership Institute – ATA-Accredited Bible College, Hyderabad" />
+  <meta name="twitter:description" content="Train to plant churches and lead in ministry. JLI offers B.Th, Dip.Th & C.Th programs in Hyderabad, Telangana." />
+  <meta name="twitter:image" content="https://ceroa.org/jli-website/Images/Faculty.JPG.jpeg" />
+
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Open+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
@@ -1173,6 +1198,7 @@
         padding: 0.875rem 2rem;
         border-bottom: 1px solid rgba(255, 255, 255, 0.07);
         font-size: 0.95rem;
+        min-height: 44px;
       }
 
       section {
@@ -1210,8 +1236,204 @@
       .skills-photos {
         grid-template-columns: 1fr 1fr;
       }
+
+      .faculty-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* Collapse 3- and 4-column inline photo grids to 2 columns */
+      [style*="repeat(4,1fr)"],
+      [style*="repeat(3,1fr)"] {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      /* Collapse 2-column inline grids to 1 column on small phones */
+      .about-grid [style*="1fr 1fr"],
+      .admissions-grid [style*="1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+      }
+
+      .faculty-group-photo {
+        height: 320px;
+      }
+
+      .graduation-gallery h3,
+      .graduation-gallery + div h3 {
+        font-size: 0.95rem;
+      }
+
+      .btn {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.85rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(1.6rem, 7vw, 2.5rem);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .graduation-grid,
+      .campus-photos {
+        grid-template-columns: 1fr;
+      }
+
+      .faculty-grid {
+        grid-template-columns: 1fr;
+      }
+
+      [style*="repeat(4,1fr)"],
+      [style*="repeat(3,1fr)"],
+      [style*="1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── GLOBAL MOBILE SAFETY ── */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    body {
+      overflow-x: hidden;
     }
   </style>
+
+  <!-- Structured Data (SEO / AEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "EducationalOrganization",
+        "@id": "https://ceroa.org/jli-website/#organization",
+        "name": "John's Leadership Institute",
+        "alternateName": ["JLI", "Asha Bible College"],
+        "url": "https://ceroa.org/jli-website/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://ceroa.org/jli-website/JLI Logo.png"
+        },
+        "image": "https://ceroa.org/jli-website/Images/Faculty.JPG.jpeg",
+        "description": "John's Leadership Institute (JLI) is an ATA-accredited theological seminary in Hyderabad, Telangana, training young men and women for church planting and ministry since 2011.",
+        "foundingDate": "2011",
+        "slogan": "Train Disciples to Make Disciples",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Near Shantha Biotechnics Ltd, Opposite Vignan School, Athvelly",
+          "addressLocality": "Hyderabad",
+          "addressRegion": "Telangana",
+          "postalCode": "501401",
+          "addressCountry": "IN"
+        },
+        "telephone": ["+91-9000776457", "+91-7799103050"],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+91-9000776457",
+          "contactType": "admissions",
+          "availableLanguage": ["English", "Telugu"]
+        },
+        "accreditingOrganization": {
+          "@type": "Organization",
+          "name": "Asia Theological Association",
+          "alternateName": "ATA"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Theological Programs",
+          "itemListElement": [
+            {
+              "@type": "Course",
+              "name": "Bachelor of Theology (B.Th)",
+              "description": "A 3-year ATA-accredited program in biblical studies, theology, and practical ministry. Open to students with 12th Pass or equivalent.",
+              "timeRequired": "P3Y",
+              "inLanguage": "en",
+              "provider": { "@id": "https://ceroa.org/jli-website/#organization" }
+            },
+            {
+              "@type": "Course",
+              "name": "Diploma in Theology (Dip.Th)",
+              "description": "A 2-year ATA-accredited diploma accessible to students with 10th standard or SSC.",
+              "timeRequired": "P2Y",
+              "inLanguage": "en",
+              "provider": { "@id": "https://ceroa.org/jli-website/#organization" }
+            },
+            {
+              "@type": "Course",
+              "name": "Certificate in Theology (C.Th)",
+              "description": "A 1-year foundational certificate in Telugu, open to all students regardless of prior qualifications.",
+              "timeRequired": "P1Y",
+              "inLanguage": "te",
+              "provider": { "@id": "https://ceroa.org/jli-website/#organization" }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What courses does John's Leadership Institute offer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "JLI offers three residential programs: Bachelor of Theology (B.Th, 3 years) for students with 12th Pass; Diploma in Theology (Dip.Th, 2 years) for students with 10th standard; and Certificate in Theology (C.Th, 1 year) in Telugu for all students. All programs include on-campus accommodation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is John's Leadership Institute accredited?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. John's Leadership Institute is fully accredited by the Asia Theological Association (ATA), earning full accreditation in 2025."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where is John's Leadership Institute located?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "JLI is located near Shantha Biotechnics Ltd, Opposite Vignan School, Athvelly, Medchal District, Hyderabad, Telangana – 501401, India."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I apply to John's Leadership Institute?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Contact JLI by phone (+91 90007 76457 or +91 77991 03050) or visit the campus. Submit your academic certificates and a personal testimony, select your program (B.Th, Dip.Th, or C.Th), then pay the admission fee. Provisional admission is available for students awaiting results."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does JLI provide hostel accommodation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. JLI provides fully residential on-campus accommodation with separate hostels for boys and girls, a hygienic dining hall, CCTV security, medical assistance, sports grounds, and digital classrooms."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the motto of John's Leadership Institute?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "JLI's motto is 'Train Disciples to Make Disciples', drawn from Matthew 28:19-20."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
