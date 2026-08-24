@@ -828,6 +828,11 @@ function renderOutline() {
   body.innerHTML = '';
   const d = courseOutline;
 
+  if (!d || !d.meta) {
+    body.innerHTML = '<p style="padding:3rem;text-align:center;color:#94a3b8;">No course outline found. Please reload the page.</p>';
+    return;
+  }
+
   body.appendChild(coHeaderCard(d));
   if (d.objective)        body.appendChild(coTextCard('Course Objective', d.objective,        v => { d.objective = v; saveOutlineLocally(); }));
   if (d.description)      body.appendChild(coTextCard('Course Description', d.description,    v => { d.description = v; saveOutlineLocally(); }));
