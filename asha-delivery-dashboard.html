@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asha Books · Delivery Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f1f5f9; color: #1e293b; min-height: 100vh; }
+
+    #lockScreen {
+      position: fixed; inset: 0; background: #1a1a1a;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      z-index: 9999; gap: 28px;
+    }
+    #lockScreen h2 { color: #fff; font-size: 1.1rem; letter-spacing: 0.04em; font-weight: 600; }
+    #lockForm { display: flex; flex-direction: column; align-items: center; gap: 12px; width: min(280px, 86vw); }
+    #lockInput {
+      width: 100%; padding: 12px 16px; border: 1.5px solid #444;
+      border-radius: 10px; font-size: 1rem; text-align: center; outline: none;
+      background: #2a2a2a; color: #fff; transition: border-color .18s;
+    }
+    #lockInput:focus { border-color: #C82035; }
+    #lockInput.shake { animation: shake .35s ease; border-color: #C82035; }
+    @keyframes shake {
+      0%,100% { transform: translateX(0); }
+      20%      { transform: translateX(-8px); }
+      60%      { transform: translateX(8px); }
+      80%      { transform: translateX(-4px); }
+    }
+    #lockBtn {
+      width: 100%; padding: 12px; background: #C82035; color: #fff;
+      border: none; border-radius: 10px; font-size: 1rem; font-weight: bold;
+      cursor: pointer; transition: background .18s;
+    }
+    #lockBtn:hover { background: #a81a2a; }
+    #lockError { font-size: .8rem; color: #fc8181; min-height: 1.1em; }
+
+    /* ── Header ── */
+    .header { background: #1a1a1a; color: #fff; padding: 0.85rem 1.75rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 3px solid #C82035; }
+    .header-brand { display: flex; align-items: center; gap: 0.75rem; }
+    .header-brand-icon { font-size: 1.6rem; }
+    .header h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.01em; }
+    .header-sub { font-size: 0.72rem; color: rgba(255,255,255,0.5); margin-top: 2px; }
+    .header-logo { height: 40px; object-fit: contain; display: block; opacity: 0.95; }
+
+    /* ── Layout ── */
+    .main { max-width: 1380px; margin: 0 auto; padding: 1.5rem; }
+
+    /* ── Upload zone ── */
+    .upload-zone { background: #fff; border: 2px dashed #cbd5e1; border-radius: 14px; padding: 2.5rem 2rem; text-align: center; cursor: pointer; transition: border-color .2s, background .2s; margin-bottom: 1.25rem; }
+    .upload-zone:hover, .upload-zone.drag-over { border-color: #C82035; background: #fff5f5; }
+    .upload-zone input { display: none; }
+    .upload-icon { font-size: 2.25rem; margin-bottom: 0.65rem; }
+    .upload-title { font-size: 0.95rem; font-weight: 700; color: #1e293b; margin-bottom: 0.25rem; }
+    .upload-sub { font-size: 0.78rem; color: #64748b; }
+
+    /* ── File chips ── */
+    .file-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; min-height: 0; }
+    .chip { background: #ffe4e6; color: #9b1c2e; padding: 0.3rem 0.7rem; border-radius: 999px; font-size: 0.72rem; font-weight: 600; display: flex; align-items: center; gap: 0.4rem; }
+    .chip-x { cursor: pointer; opacity: 0.55; font-size: 0.9rem; line-height: 1; }
+    .chip-x:hover { opacity: 1; }
+
+    /* ── Filters ── */
+    .filters { background: #fff; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.85rem; align-items: flex-end; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+    .fg { display: flex; flex-direction: column; gap: 0.3rem; }
+    .fg label { font-size: 0.65rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: .06em; }
+    .fi, .fs { height: 36px; border: 1px solid #e2e8f0; border-radius: 8px; padding: 0 0.7rem; font-size: 0.82rem; color: #1e293b; outline: none; transition: border-color .15s; background: #fff; }
+    .fi { min-width: 130px; }
+    .fi:focus, .fs:focus { border-color: #C82035; }
+    .fi-date { width: 148px; }
+    .fs { min-width: 155px; }
+    .btn-reset { height: 36px; padding: 0 1rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.78rem; cursor: pointer; color: #64748b; font-weight: 600; white-space: nowrap; }
+    .btn-reset:hover { background: #e2e8f0; color: #475569; }
+
+    /* ── KPI cards ── */
+    .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 1.25rem; }
+    .kpi { background: #fff; border-radius: 12px; padding: 1.1rem 1.35rem; box-shadow: 0 1px 3px rgba(0,0,0,.06); border-left: 4px solid transparent; }
+    .kpi.c-total  { border-color: #C82035; }
+    .kpi.c-blue   { border-color: #2563eb; }
+    .kpi.c-green  { border-color: #16a34a; }
+    .kpi.c-amber  { border-color: #d97706; }
+    .kpi.c-purple { border-color: #7c3aed; }
+    .kpi-lbl { font-size: 0.65rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 0.45rem; }
+    .kpi-val { font-size: 1.85rem; font-weight: 800; color: #1e293b; line-height: 1; }
+    .kpi-val .unit { font-size: 0.78rem; color: #94a3b8; font-weight: 400; margin-left: 2px; }
+    .kpi.c-blue   .kpi-val { color: #2563eb; }
+    .kpi.c-green  .kpi-val { color: #16a34a; }
+    .kpi.c-amber  .kpi-val { color: #d97706; }
+    .kpi.c-purple .kpi-val { color: #7c3aed; }
+    .kpi-sub { font-size: 0.7rem; color: #94a3b8; margin-top: 0.3rem; }
+
+    /* ── Charts ── */
+    .charts { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 1rem; margin-bottom: 1.25rem; }
+    .chart-card { background: #fff; border-radius: 12px; padding: 1.35rem; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+    .chart-title { font-size: 0.8rem; font-weight: 700; color: #475569; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: .04em; }
+    .chart-wrap { position: relative; height: 255px; }
+
+    /* ── Table card ── */
+    .table-card { background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,.06); overflow: hidden; }
+    .table-head-bar { padding: 1rem 1.35rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #f1f5f9; flex-wrap: wrap; gap: 0.5rem; }
+    .table-head-bar .t-title { font-size: 0.85rem; font-weight: 700; color: #1e293b; }
+    .table-head-bar .t-count { font-size: 0.72rem; color: #94a3b8; }
+    .legend { display: flex; gap: 1rem; align-items: center; font-size: 0.7rem; color: #64748b; }
+    .legend-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 4px; }
+    .legend-dot.g { background: #16a34a; } .legend-dot.a { background: #d97706; } .legend-dot.r { background: #dc2626; }
+    .table-scroll { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
+    thead th { padding: 0.65rem 0.9rem; text-align: left; font-size: 0.63rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: .05em; background: #f8fafc; border-bottom: 1px solid #e2e8f0; white-space: nowrap; cursor: pointer; user-select: none; }
+    thead th:hover { color: #C82035; }
+    thead th.th-sorted { color: #C82035; }
+    thead th.th-sorted::after { content: ' ↑'; }
+    thead th.th-sorted.desc::after { content: ' ↓'; }
+    tbody tr { border-bottom: 1px solid #f8fafc; }
+    tbody tr:hover { background: #f8fafc; }
+    tbody td { padding: 0.6rem 0.9rem; color: #334155; white-space: nowrap; }
+    .td-num { font-variant-numeric: tabular-nums; font-weight: 600; }
+    .c-g { color: #16a34a; } .c-a { color: #d97706; } .c-r { color: #dc2626; } .c-n { color: #94a3b8; font-weight: 400; }
+    .badge { display: inline-flex; padding: 0.18rem 0.5rem; border-radius: 999px; font-size: 0.65rem; font-weight: 700; }
+    .bd { background: #dcfce7; color: #15803d; }
+    .bt { background: #fef3c7; color: #92400e; }
+    .br { background: #fee2e2; color: #dc2626; }
+    .bk { background: #fce7f3; color: #9d174d; }
+    .bu { background: #f1f5f9; color: #64748b; }
+
+    /* ── Pagination ── */
+    .pager { padding: 0.85rem 1.35rem; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #f1f5f9; }
+    .pager-info { font-size: 0.72rem; color: #94a3b8; }
+    .pager-btns { display: flex; gap: 0.3rem; }
+    .pb { padding: 0.35rem 0.65rem; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 0.75rem; cursor: pointer; background: #fff; color: #64748b; }
+    .pb:hover { background: #f1f5f9; }
+    .pb.active { background: #C82035; color: #fff; border-color: #C82035; }
+    .pb:disabled { opacity: 0.38; cursor: not-allowed; }
+
+    /* ── Empty state ── */
+    .empty { padding: 3.5rem 1rem; text-align: center; }
+    .empty-ico { font-size: 2.75rem; margin-bottom: 0.75rem; opacity: 0.25; }
+    .empty-txt { color: #94a3b8; font-size: 0.85rem; }
+
+    .leaflet-container { background: #f1f5f9 !important; }
+    .leaflet-container:focus { outline: none; }
+
+    /* ── Data source card ── */
+    .ds-card { background:#fff; border-radius:12px; padding:0; box-shadow:0 1px 3px rgba(0,0,0,.06); margin-bottom:1rem; overflow:hidden; }
+    .ds-tabs { display:flex; border-bottom:1px solid #e2e8f0; }
+    .ds-tab  { flex:1; padding:0.65rem 1rem; font-size:0.78rem; font-weight:600; color:#64748b; background:none; border:none; cursor:pointer; transition:all .15s; letter-spacing:.01em; }
+    .ds-tab-active { color:#C82035; border-bottom:2px solid #C82035; background:#fff9f9; }
+    .ds-tab:hover:not(.ds-tab-active) { background:#f8fafc; color:#334155; }
+    .ds-panel { padding:1rem 1.25rem; }
+    .btn-sync { padding:0.45rem 1rem; background:#C82035; color:#fff; border:none; border-radius:7px; font-size:0.78rem; font-weight:600; cursor:pointer; white-space:nowrap; transition:opacity .15s; }
+    .btn-sync:hover { opacity:0.88; }
+    .btn-sync:disabled { opacity:0.5; cursor:default; }
+
+    @media (max-width: 720px) {
+      .main { padding: 1rem; }
+      .charts { grid-template-columns: 1fr; }
+      .header { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="lockScreen">
+  <h2>&#128666; Asha Books · Delivery Dashboard</h2>
+  <div id="lockForm">
+    <input id="lockInput" type="password" placeholder="Enter password" autocomplete="current-password" />
+    <button id="lockBtn" onclick="checkPassword()">Unlock</button>
+    <div id="lockError"></div>
+  </div>
+</div>
+
+<div id="mainContent" style="display:none;">
+
+<div class="header">
+  <div class="header-brand">
+    <span class="header-brand-icon">📦</span>
+    <div>
+      <h1>Asha Books · Delivery Dashboard</h1>
+      <div class="header-sub">Upload monthly CSV reports to analyse delivery performance</div>
+    </div>
+  </div>
+  <img class="header-logo" src="Asha Books Wholesale Website/ashabookslogo.JPG" alt="Asha Books">
+</div>
+
+<div class="main">
+
+  <!-- Data source -->
+  <div class="ds-card" id="dsCard">
+    <div class="ds-tabs">
+      <button class="ds-tab ds-tab-active" id="tabSheet" onclick="switchTab('sheet')">Live · Google Sheet</button>
+      <button class="ds-tab" id="tabCsv" onclick="switchTab('csv')">Manual · Upload CSV</button>
+    </div>
+
+    <!-- Google Sheet panel -->
+    <div id="panelSheet" class="ds-panel">
+      <div style="display:flex;gap:0.6rem;align-items:center;flex-wrap:wrap;">
+        <input class="fi" id="sheetUrl" type="text" placeholder="Paste Apps Script web app URL…"
+               style="flex:1;min-width:260px;" oninput="saveSheetUrl()">
+        <button class="btn-sync" id="btnSync" onclick="syncFromSheet()">⟳ Sync now</button>
+        <label style="display:flex;align-items:center;gap:0.35rem;font-size:0.72rem;color:#64748b;cursor:pointer;">
+          <input type="checkbox" id="autoRefresh" style="cursor:pointer;" onchange="toggleAutoRefresh()"> Auto-refresh every 5 min
+        </label>
+      </div>
+      <div id="syncStatus" style="font-size:0.72rem;color:#94a3b8;margin-top:0.4rem;min-height:1.1rem;"></div>
+    </div>
+
+    <!-- CSV panel -->
+    <div id="panelCsv" class="ds-panel" style="display:none;">
+      <div class="upload-zone" id="uploadZone" style="margin:0;border-radius:8px;">
+        <input type="file" id="fileInput" accept=".csv" multiple>
+        <div class="upload-icon" style="font-size:1.6rem;">📂</div>
+        <div class="upload-title" style="font-size:0.88rem;">Drop CSV files here, or click to browse</div>
+        <div class="upload-sub">Supports multiple monthly reports. Duplicate AWBs are merged.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="file-chips" id="fileChips"></div>
+
+  <!-- Filters -->
+  <div class="filters">
+    <div class="fg">
+      <label>Order ID</label>
+      <input class="fi" type="text" id="fOrderId" placeholder="e.g. 3541">
+    </div>
+    <div class="fg">
+      <label>Ordered From</label>
+      <input class="fi fi-date" type="date" id="fDateFrom">
+    </div>
+    <div class="fg">
+      <label>Ordered To</label>
+      <input class="fi fi-date" type="date" id="fDateTo">
+    </div>
+    <div class="fg">
+      <label>State</label>
+      <select class="fs" id="fState"><option value="">All States</option></select>
+    </div>
+    <div class="fg">
+      <label>Carrier</label>
+      <select class="fs" id="fCarrier"><option value="">All Carriers</option></select>
+    </div>
+    <button class="btn-reset" id="btnReset">↺ Reset</button>
+  </div>
+
+  <!-- KPIs -->
+  <div class="kpis">
+    <div class="kpi c-total">
+      <div class="kpi-lbl">Total Orders</div>
+      <div class="kpi-val" id="kTotal">—</div>
+      <div class="kpi-sub">Upload a CSV to begin</div>
+    </div>
+    <div class="kpi c-blue">
+      <div class="kpi-lbl">Avg Order → Dispatch</div>
+      <div class="kpi-val" id="kDispatch">—<span class="unit"> days</span></div>
+      <div class="kpi-sub" id="kDispatchSub">Processing time</div>
+    </div>
+    <div class="kpi c-green">
+      <div class="kpi-lbl">Avg Dispatch → Pickup</div>
+      <div class="kpi-val" id="kPickup">—<span class="unit"> days</span></div>
+      <div class="kpi-sub" id="kPickupSub">Freight vendor collection</div>
+    </div>
+    <div class="kpi c-amber">
+      <div class="kpi-lbl">Avg Pickup → Delivery</div>
+      <div class="kpi-val" id="kDeliver">—<span class="unit"> days</span></div>
+      <div class="kpi-sub" id="kDeliverSub">Doorstep delivery</div>
+    </div>
+    <div class="kpi c-purple">
+      <div class="kpi-lbl">Avg Total (Order → Door)</div>
+      <div class="kpi-val" id="kTotal2">—<span class="unit"> days</span></div>
+      <div class="kpi-sub" id="kTotal2Sub">All three stages</div>
+    </div>
+  </div>
+
+  <!-- Charts — top row -->
+  <div class="charts" style="grid-template-columns:repeat(auto-fit,minmax(360px,1fr));">
+    <div class="chart-card">
+      <div class="chart-title">Pickup → Delivery Days Distribution <span id="distribFilterBadge" style="display:none;font-size:0.65rem;font-weight:600;color:#2563eb;background:#eff6ff;padding:0.1rem 0.45rem;border-radius:4px;margin-left:0.4rem;cursor:pointer;border:1px solid #bfdbfe;" onclick="clearBucketFilter()">✕ clear</span></div>
+      <div id="distribTable" style="height:255px;overflow-y:auto;"></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Shipments by Carrier</div>
+      <div id="carrierSummaryTable" style="height:255px;overflow-y:auto;"></div>
+    </div>
+  </div>
+
+  <!-- Map — full width -->
+  <div class="chart-card" style="margin-bottom:1.25rem;">
+    <div class="chart-title">Avg Pickup → Delivery Days by State</div>
+    <div id="cStateMapContainer" style="position:relative;height:480px;">
+      <div id="mapLoading" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#94a3b8;font-size:0.8rem;text-align:center;pointer-events:none;z-index:9;">Loading map…</div>
+      <div id="cStateMap" style="width:100%;height:480px;"></div>
+    </div>
+    <div id="mapLegend" style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;padding:0.5rem 0.5rem 0;"></div>
+    <div id="mapDebugLine" style="font-size:0.58rem;color:#94a3b8;padding:0.15rem 0.5rem 0.4rem;word-break:break-all;line-height:1.4;"></div>
+  </div>
+
+  <!-- Table -->
+  <div class="table-card">
+    <div class="table-head-bar">
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <span class="t-title">All Orders</span>
+        <span class="t-count" id="tCount">—</span>
+      </div>
+      <div class="legend">
+        <span><span class="legend-dot g"></span>≤ 3 days</span>
+        <span><span class="legend-dot a"></span>4–7 days</span>
+        <span><span class="legend-dot r"></span>8+ days</span>
+      </div>
+    </div>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th data-col="orderId">Order ID</th>
+            <th data-col="orderedDate">Ordered</th>
+            <th data-col="destination">Destination</th>
+            <th data-col="state">State</th>
+            <th data-col="carrier">Carrier</th>
+            <th data-col="daysToDispatch">Days to Dispatch</th>
+            <th data-col="daysToPickup">Days Dispatch→Pickup</th>
+            <th data-col="daysToDeliver">Days Pickup→Delivery</th>
+            <th data-col="totalDays">Total Days</th>
+            <th>Status</th>
+            <th data-col="delayReason">Delay Reason</th>
+          </tr>
+        </thead>
+        <tbody id="tBody">
+          <tr><td colspan="11"><div class="empty"><div class="empty-ico">📊</div><div class="empty-txt">Upload CSV files to view delivery data</div></div></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pager" id="pager" style="display:none">
+      <span class="pager-info" id="pagerInfo"></span>
+      <div class="pager-btns" id="pagerBtns"></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ─────────────────────────────────────────────────────────
+// STATE
+// ─────────────────────────────────────────────────────────
+let allOrders      = [];
+let filteredOrders = [];
+const fileMap      = new Map();   // filename → parsed orders[]
+let sortCol        = 'orderedDate';
+let sortAsc        = true;
+let page           = 1;
+const PER_PAGE     = 30;
+const charts       = {};
+let geoData           = null;   // cached India GeoJSON
+let _leafletMap       = null;   // Leaflet map instance
+let _geojsonLayer     = null;   // current GeoJSON layer
+let _autoRefreshTimer = null;   // setInterval handle for sheet auto-refresh
+
+// ─────────────────────────────────────────────────────────
+// GOOGLE SHEETS INTEGRATION
+// ─────────────────────────────────────────────────────────
+
+function switchTab(tab) {
+  document.getElementById('tabSheet').classList.toggle('ds-tab-active', tab === 'sheet');
+  document.getElementById('tabCsv').classList.toggle('ds-tab-active', tab === 'csv');
+  document.getElementById('panelSheet').style.display = tab === 'sheet' ? '' : 'none';
+  document.getElementById('panelCsv').style.display   = tab === 'csv'   ? '' : 'none';
+  localStorage.setItem('asha_ds_tab', tab);
+}
+
+function saveSheetUrl() {
+  localStorage.setItem('asha_sheet_url', document.getElementById('sheetUrl').value.trim());
+}
+
+function toggleAutoRefresh() {
+  clearInterval(_autoRefreshTimer);
+  if (document.getElementById('autoRefresh').checked) {
+    _autoRefreshTimer = setInterval(syncFromSheet, 5 * 60 * 1000);
+    localStorage.setItem('asha_auto_refresh', '1');
+  } else {
+    localStorage.removeItem('asha_auto_refresh');
+  }
+}
+
+async function syncFromSheet() {
+  const url = document.getElementById('sheetUrl').value.trim();
+  if (!url) { setStatus('⚠ Paste your Apps Script URL first.', '#d97706'); return; }
+
+  const btn = document.getElementById('btnSync');
+  btn.disabled = true;
+  btn.textContent = '⟳ Syncing…';
+  setStatus('Fetching from Google Sheet…', '#94a3b8');
+
+  try {
+    const resp = await fetch(url);
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const rows = await resp.json();
+    if (!Array.isArray(rows)) throw new Error('Unexpected response format');
+
+    // Convert sheet rows → allOrders format
+    allOrders = rows
+      .map(parseSheetRow)
+      .filter(Boolean)
+      .sort((a, b) => (b.orderedDate || 0) - (a.orderedDate || 0));
+
+    filteredOrders = [];
+    fileMap.clear();
+    rebuildDropdowns();
+    applyFilters();
+
+    const t = new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
+    setStatus(`✓ ${allOrders.length} orders synced · last updated ${t}`, '#16a34a');
+    localStorage.setItem('asha_sheet_url', url);
+  } catch (err) {
+    setStatus('⚠ Sync failed: ' + err.message, '#dc2626');
+    console.error('Sheet sync error:', err);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '⟳ Sync now';
+  }
+}
+
+function setStatus(msg, color) {
+  const el = document.getElementById('syncStatus');
+  el.textContent = msg;
+  el.style.color = color;
+}
+
+function parseSheetRow(row) {
+  const orderId      = String(row['Order ID'] || '').trim();
+  const state        = normalizeStateCode(String(row['State'] || '').trim().toUpperCase().replace(/\s/g, ''));
+  const carrier      = normalizeCarrier(String(row['Carrier'] || ''));
+  const orderedDate  = parseDate(String(row['Order Date'] || ''));
+  const dispatchDate = parseDate(String(row['Dispatch Date'] || ''));
+  const pickupDate   = parseDate(String(row['Pickup Date'] || ''));
+  const deliverDate  = parseDate(String(row['Delivery Date'] || ''));
+
+  if (!orderId && !orderedDate) return null;
+
+  // Prefer pre-computed day values from Apps Script; fall back to client-side calc
+  const daysToDispatch = row['Days to Dispatch']     != null ? Number(row['Days to Dispatch'])     : dateDiff(orderedDate, dispatchDate);
+  const daysToPickup   = row['Days Dispatch→Pickup'] != null ? Number(row['Days Dispatch→Pickup']) : dateDiff(dispatchDate, pickupDate);
+  const daysToDeliver  = row['Days Pickup→Delivery'] != null ? Number(row['Days Pickup→Delivery']) : dateDiff(pickupDate, deliverDate);
+  const totalDays      = row['Total Days']            != null ? Number(row['Total Days'])           : dateDiff(orderedDate, deliverDate);
+
+  const statusRaw = String(row['Status'] || '').trim();
+  const status = statusRaw || getStatus(String(row['Delivery Date'] || ''), '');
+
+  return {
+    orderId, orderedDate, dispatchDate, pickupDate,
+    deliveryDate: deliverDate,
+    destination:  String(row['Destination'] || '').trim().toUpperCase(),
+    state, carrier,
+    daysToDispatch: isNaN(daysToDispatch) ? null : daysToDispatch,
+    daysToPickup:   isNaN(daysToPickup)   ? null : daysToPickup,
+    daysToDeliver:  isNaN(daysToDeliver)  ? null : daysToDeliver,
+    totalDays:      isNaN(totalDays)      ? null : totalDays,
+    delayReason: String(row['Delay Reason'] || '').trim(),
+    status,
+    awb: orderId,  // use Order ID as dedup key when no AWB column
+  };
+}
+
+function dateDiff(a, b) {
+  if (!a || !b) return null;
+  const ms = b.getTime() - a.getTime();
+  return ms < 0 ? null : Math.round(ms / 86400000);
+}
+let chartBucketFilter = null;  // active delivery-days bucket (e.g. '4-5')
+
+// ─────────────────────────────────────────────────────────
+// PARSING HELPERS
+// ─────────────────────────────────────────────────────────
+
+/** Extract the leading integer from a messy string like "3 sat,sun" or "2-Customer hold" */
+function extractNum(v) {
+  if (v === 0 || v === '0') return 0;
+  if (!v) return null;
+  const s = String(v).trim();
+  if (!s || s === '-') return null;
+  const m = s.match(/^(\d+)/);
+  return m ? parseInt(m[1], 10) : null;
+}
+
+function matchBucket(days, bucket) {
+  if (bucket === '1')    return days <= 1;
+  if (bucket === '2')    return days === 2;
+  if (bucket === '3')    return days === 3;
+  if (bucket === '4-5')  return days >= 4  && days <= 5;
+  if (bucket === '6-7')  return days >= 6  && days <= 7;
+  if (bucket === '8-10') return days >= 8  && days <= 10;
+  if (bucket === '11+')  return days >= 11;
+  return true;
+}
+
+/**
+ * Parse dates from several messy formats found in the CSVs:
+ *  DD-MM-YY  DD-MM-YYYY  DD/MM/YYYY  D-M-YY  M/D/YYYY  DD.M-YY  etc.
+ */
+function parseDate(v) {
+  if (!v) return null;
+  const s = String(v).trim();
+  if (!s || s === '-') return null;
+
+  // Split on any of: - / .
+  const parts = s.split(/[-\/\.]/);
+  if (parts.length < 3) return null;
+
+  let a = parseInt(parts[0], 10);
+  let b = parseInt(parts[1], 10);
+  let c = parseInt(parts[2], 10);
+  if (isNaN(a) || isNaN(b) || isNaN(c)) return null;
+
+  let day, month, year;
+  if (String(parts[2]).length === 4) {
+    year = c;
+    // If b > 12 it can't be a month → format is M/D/YYYY (e.g. 6/30/2026)
+    if (b > 12) { month = a; day = b; }
+    else         { day   = a; month = b; }
+  } else {
+    year  = c + 2000;
+    day   = a;
+    month = b;
+  }
+
+  if (month < 1 || month > 12 || day < 1 || day > 31) return null;
+  const d = new Date(year, month - 1, day);
+  return isNaN(d.getTime()) ? null : d;
+}
+
+function fmtDate(d) {
+  if (!d) return '—';
+  return d.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: '2-digit' });
+}
+
+function fmtDateISO(d) {
+  if (!d) return '';
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+
+// ─────────────────────────────────────────────────────────
+// LOOKUP TABLES
+// ─────────────────────────────────────────────────────────
+
+function normalizeStateCode(code) {
+  if (!code) return code;
+  return HC_CODE_MAP[code] || code;
+}
+
+function normalizeCarrier(c) {
+  if (!c) return 'Unknown';
+  const u = c.trim().toUpperCase().replace(/\s+/g,'');
+  if (u === 'ST')         return 'ST Courier';
+  if (u === 'TRACKON')    return 'Trackon';
+  if (u === 'DELHIVERY')  return 'Delhivery';
+  if (u === 'DTDC')       return 'DTDC';
+  if (u === 'POST')       return 'India Post';
+  return c.trim();
+}
+
+const STATE_NAMES = {
+  TN:'Tamil Nadu', AP:'Andhra Pradesh', KA:'Karnataka', TG:'Telangana',
+  KL:'Kerala', MH:'Maharashtra', UP:'Uttar Pradesh', DL:'Delhi',
+  PB:'Punjab', AS:'Assam', WB:'West Bengal', GJ:'Gujarat',
+  HR:'Haryana', MP:'Madhya Pradesh', CH:'Chandigarh', JH:'Jharkhand',
+  OR:'Odisha', OD:'Odisha', TR:'Tripura', ML:'Meghalaya', NL:'Nagaland',
+  AR:'Arunachal Pradesh', MZ:'Mizoram', JK:'J&K', UT:'Uttarakhand',
+  RJ:'Rajasthan', PY:'Puducherry', AN:'Andaman & Nicobar',
+};
+
+// Full name → 2-letter code (for matching GeoJSON feature names to our state codes)
+const NAME_TO_CODE = {
+  'Tamil Nadu':'TN','Karnataka':'KA','Andhra Pradesh':'AP',
+  'Telangana':'TG','Telegana':'TG','Telanagana':'TG','Telangana State':'TG',
+  'Kerala':'KL','Maharashtra':'MH','Uttar Pradesh':'UP','Delhi':'DL',
+  'National Capital Territory of Delhi':'DL','Punjab':'PB','Assam':'AS',
+  'West Bengal':'WB','Gujarat':'GJ','Haryana':'HR','Madhya Pradesh':'MP',
+  'Chandigarh':'CH','Jharkhand':'JH','Odisha':'OR','Orissa':'OR',
+  'Tripura':'TR','Meghalaya':'ML','Nagaland':'NL','Arunachal Pradesh':'AR',
+  'Mizoram':'MZ','Jammu and Kashmir':'JK','Jammu & Kashmir':'JK',
+  'Ladakh':'LA','Uttarakhand':'UT','Uttaranchal':'UT','Rajasthan':'RJ',
+  'Puducherry':'PY','Pondicherry':'PY',
+  'Andaman and Nicobar Islands':'AN','Andaman and Nicobar':'AN',
+  'Andaman & Nicobar Island':'AN','Andaman & Nicobar Islands':'AN',
+  'Bihar':'BR','Chhattisgarh':'CT','Goa':'GA','Himachal Pradesh':'HP',
+  'Manipur':'MN','Sikkim':'SK','Dadra and Nagar Haveli':'DN','Daman and Diu':'DD',
+  'Dadra & Nagar Haveli':'DN','Daman & Diu':'DD',
+  'Lakshadweep':'LD','Dadra and Nagar Haveli and Daman and Diu':'DN',
+  'NCT of Delhi':'DL','Nct Of Delhi':'DL',
+};
+
+function stateName(code) {
+  return STATE_NAMES[code] || code;
+}
+
+// Highcharts uses non-standard 2-letter codes for some Indian states
+const HC_CODE_MAP = {
+  'TS':'TG',  // Telangana (Highcharts: TS, India postal: TG)
+  'AD':'AP',  // Andhra Pradesh (old Highcharts HASC code was AD)
+  'GU':'GJ',  // Gujarat (Highcharts: GU, India postal: GJ)
+  'OD':'OR',  // Odisha (Highcharts ISO: OD, India postal: OR)
+};
+
+// Extract our 2-letter code from a GeoJSON feature — tries every known property variant
+function featureToCode(feature) {
+  const p = feature.properties;
+
+  // 1. Name lookup — most robust when name exists
+  const name = p.name || p.NAME_1 || p.ST_NM || p.st_nm || '';
+  if (name && NAME_TO_CODE[name]) return NAME_TO_CODE[name];
+
+  // 2. hc-key: "in-tn" → extract last segment → "TN"
+  const hcKey = p['hc-key'];
+  if (hcKey) {
+    const raw = hcKey.split('-').pop().toUpperCase();
+    return HC_CODE_MAP[raw] || raw;
+  }
+
+  // 3. postal-code (older Highcharts npm package)
+  if (p['postal-code']) {
+    const raw = p['postal-code'].toUpperCase();
+    return HC_CODE_MAP[raw] || raw;
+  }
+
+  // 4. hc-a2 shortcode
+  if (p['hc-a2']) {
+    const raw = p['hc-a2'].toUpperCase();
+    return HC_CODE_MAP[raw] || raw;
+  }
+
+  // 5. hasc "IN.TG" → "TG"
+  const hasc = p.hasc || p.HASC_1 || p.hasc_1;
+  if (hasc) {
+    const parts = hasc.split('.');
+    if (parts.length >= 2) {
+      const raw = parts[parts.length - 1].toUpperCase();
+      return HC_CODE_MAP[raw] || raw;
+    }
+  }
+
+  return null;
+}
+
+// ─────────────────────────────────────────────────────────
+// DELIVERY STATUS
+// ─────────────────────────────────────────────────────────
+
+function getStatus(dateRaw, daysRaw) {
+  const d = String(dateRaw || '').trim().toLowerCase();
+  const n = String(daysRaw  || '').trim().toLowerCase();
+  const combined = d + ' ' + n;
+
+  if (combined.includes('returned'))           return 'Returned';
+  if (combined.includes('not working'))        return 'Tracking Issue';
+  if (combined.includes('transit'))            return 'In Transit';
+  if (d.includes('delivered') || n.includes('delivered')) return 'Delivered';
+  if (parseDate(dateRaw))                      return 'Delivered';
+  return 'Unknown';
+}
+
+// ─────────────────────────────────────────────────────────
+// CSV PARSING
+// ─────────────────────────────────────────────────────────
+
+function parseCSV(text) {
+  const { data } = Papa.parse(text, { header: false, skipEmptyLines: false, dynamicTyping: false });
+  const orders = [];
+  let active = false;
+
+  for (const row of data) {
+    const first = String(row[0] || '').trim().toUpperCase();
+
+    // Detect any header row (file can have Report-1 and Report-2 sections)
+    if (first === 'ORDERED DATE') { active = true; continue; }
+    if (!active) continue;
+
+    // Skip blank or annotation rows
+    if (!first || !row[7]) continue;
+    if (!parseDate(String(row[0])) && !String(row[7]).trim()) continue;
+
+    const dateRaw  = String(row[5] || '').trim();
+    const daysRaw  = String(row[6] || '').trim();
+    const d2d      = extractNum(row[3]);   // days dispatch → pickup
+    const d2deliv  = extractNum(row[6]);
+    const d2disp   = extractNum(row[2]);
+
+    const o = {
+      orderedDate   : parseDate(String(row[0] || '')),
+      dispatchDate  : parseDate(String(row[1] || '')),
+      daysToDispatch: d2disp,
+      daysToPickup  : d2d,
+      pickupDate    : parseDate(String(row[4] || '')),
+      deliveryDate  : parseDate(dateRaw),
+      daysToDeliver : d2deliv,
+      orderId       : String(row[7] || '').trim(),
+      awb           : String(row[8] || '').trim(),
+      destination   : String(row[9]  || '').trim().toUpperCase(),
+      state         : normalizeStateCode(String(row[10] || '').trim().toUpperCase().replace(/\s/g,'')),
+      carrier       : normalizeCarrier(String(row[11] || '')),
+      delayReason   : String(row[12] || '').trim(),
+      status        : getStatus(dateRaw, daysRaw),
+    };
+
+    // Total days (only when all three stages are known)
+    const allNums = [d2disp, d2d, d2deliv];
+    o.totalDays = allNums.every(n => n !== null && n !== undefined)
+      ? allNums.reduce((a,b) => a+b, 0)
+      : null;
+
+    if (!o.orderedDate && !o.orderId) continue;
+    orders.push(o);
+  }
+
+  return orders;
+}
+
+// ─────────────────────────────────────────────────────────
+// FILE HANDLING
+// ─────────────────────────────────────────────────────────
+
+function handleFiles(files) {
+  for (const f of files) {
+    const reader = new FileReader();
+    reader.onload = e => {
+      fileMap.set(f.name, parseCSV(e.target.result));
+      rebuild();
+    };
+    reader.readAsText(f);
+  }
+}
+
+function rebuild() {
+  // Merge all files; deduplicate by AWB
+  const raw = [];
+  for (const orders of fileMap.values()) raw.push(...orders);
+  const seen = new Set();
+  allOrders = raw.filter(o => {
+    if (!o.awb) return true;
+    if (seen.has(o.awb)) return false;
+    seen.add(o.awb);
+    return true;
+  });
+  allOrders.sort((a,b) => {
+    if (!a.orderedDate) return 1;
+    if (!b.orderedDate) return -1;
+    return a.orderedDate - b.orderedDate;
+  });
+
+  rebuildDropdowns();
+  renderChips();
+  applyFilters();
+}
+
+// ─────────────────────────────────────────────────────────
+// DROPDOWNS
+// ─────────────────────────────────────────────────────────
+
+function rebuildDropdowns() {
+  const states   = [...new Set(allOrders.map(o=>o.state).filter(Boolean))].sort();
+  const carriers = [...new Set(allOrders.map(o=>o.carrier).filter(Boolean))].sort();
+
+  const sel = id => document.getElementById(id);
+  sel('fState').innerHTML   = '<option value="">All States</option>'   + states.map(s=>`<option value="${s}">${stateName(s)} (${s})</option>`).join('');
+  sel('fCarrier').innerHTML = '<option value="">All Carriers</option>' + carriers.map(c=>`<option value="${c}">${c}</option>`).join('');
+}
+
+// ─────────────────────────────────────────────────────────
+// CHIPS
+// ─────────────────────────────────────────────────────────
+
+function renderChips() {
+  document.getElementById('fileChips').innerHTML =
+    [...fileMap.keys()].map(n => `
+      <div class="chip">📄 ${n}
+        <span class="chip-x" onclick="removeFile('${n}')">✕</span>
+      </div>
+    `).join('');
+}
+
+function removeFile(name) {
+  fileMap.delete(name);
+  rebuild();
+}
+
+// ─────────────────────────────────────────────────────────
+// FILTERS
+// ─────────────────────────────────────────────────────────
+
+function applyFilters() {
+  const orderId  = document.getElementById('fOrderId').value.trim().toLowerCase();
+  const dateFrom = document.getElementById('fDateFrom').value;
+  const dateTo   = document.getElementById('fDateTo').value;
+  const state    = document.getElementById('fState').value;
+  const carrier  = document.getElementById('fCarrier').value;
+
+  const from = dateFrom ? new Date(dateFrom)              : null;
+  const to   = dateTo   ? new Date(dateTo + 'T23:59:59')  : null;
+
+  filteredOrders = allOrders.filter(o => {
+    if (orderId  && !String(o.orderId).toLowerCase().includes(orderId))  return false;
+    if (from     && o.orderedDate && o.orderedDate < from)               return false;
+    if (to       && o.orderedDate && o.orderedDate > to)                 return false;
+    if (state    && o.state   !== state)                                 return false;
+    if (carrier  && o.carrier !== carrier)                               return false;
+    if (chartBucketFilter) {
+      const d = o.daysToDeliver;
+      if (d === null || d === undefined) return false;
+      if (!matchBucket(d, chartBucketFilter)) return false;
+    }
+    return true;
+  });
+
+  page = 1;
+  updateKPIs();
+  updateCharts();
+  renderTable();
+}
+
+// ─────────────────────────────────────────────────────────
+// KPIs
+// ─────────────────────────────────────────────────────────
+
+function avg(arr) {
+  const vals = arr.filter(v => v !== null && v !== undefined);
+  return vals.length ? vals.reduce((a,b)=>a+b,0)/vals.length : null;
+}
+
+function setKPI(id, val, suffix='') {
+  const el = document.getElementById(id);
+  if (val === null) {
+    el.innerHTML = `—<span class="unit"> days</span>`;
+  } else {
+    el.innerHTML = `${val.toFixed(1)}<span class="unit"> days${suffix}</span>`;
+  }
+}
+
+function updateKPIs() {
+  const o = filteredOrders;
+  document.getElementById('kTotal').textContent = o.length;
+
+  const avgD = avg(o.map(x=>x.daysToDispatch));
+  const avgP = avg(o.map(x=>x.daysToPickup));
+  const avgL = avg(o.map(x=>x.daysToDeliver));
+  const avgT = avg(o.map(x=>x.totalDays));
+
+  setKPI('kDispatch', avgD);
+  setKPI('kPickup',   avgP);
+  setKPI('kDeliver',  avgL);
+  setKPI('kTotal2',   avgT);
+
+  // Counts for sub-text
+  const n = (fn) => o.filter(x=>fn(x)!==null).length;
+  document.getElementById('kDispatchSub').textContent = `Across ${n(x=>x.daysToDispatch)} orders`;
+  document.getElementById('kPickupSub').textContent   = `Across ${n(x=>x.daysToPickup)} orders`;
+  document.getElementById('kDeliverSub').textContent  = `Across ${n(x=>x.daysToDeliver)} orders`;
+  document.getElementById('kTotal2Sub').textContent   = `Across ${n(x=>x.totalDays)} orders`;
+}
+
+// ─────────────────────────────────────────────────────────
+// CHARTS
+// ─────────────────────────────────────────────────────────
+
+function mkChart(id, config) {
+  if (charts[id]) charts[id].destroy();
+  charts[id] = new Chart(document.getElementById(id).getContext('2d'), config);
+}
+
+const CHART_DEFAULTS = {
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: { legend: { labels: { font: { size: 11 }, boxWidth: 12 } } },
+};
+
+function updateCharts() {
+  chartDistrib();
+  chartCarrierSummary();
+  chartState();
+}
+
+function clearBucketFilter() {
+  chartBucketFilter = null;
+  document.getElementById('distribFilterBadge').style.display = 'none';
+  applyFilters();
+}
+
+function chartDistrib() {
+  const BUCKETS = ['1','2','3','4-5','6-7','8-10','11+'];
+  const COLORS  = {'1':'#10b981','2':'#10b981','3':'#10b981','4-5':'#f59e0b','6-7':'#f59e0b','8-10':'#ef4444','11+':'#ef4444'};
+
+  const days = filteredOrders.map(o=>o.daysToDeliver).filter(d=>d!==null);
+  const counts = {'1':0,'2':0,'3':0,'4-5':0,'6-7':0,'8-10':0,'11+':0};
+  for (const d of days) {
+    if (d <= 1)       counts['1']++;
+    else if (d === 2) counts['2']++;
+    else if (d === 3) counts['3']++;
+    else if (d <= 5)  counts['4-5']++;
+    else if (d <= 7)  counts['6-7']++;
+    else if (d <= 10) counts['8-10']++;
+    else              counts['11+']++;
+  }
+  const total = days.length;
+
+  const thStyle = 'padding:0.5rem 0.75rem;text-align:right;font-size:0.63rem;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em;background:#f8fafc;border-bottom:1px solid #e2e8f0;white-space:nowrap;';
+  const container = document.getElementById('distribTable');
+
+  if (!total) {
+    container.innerHTML = '<div style="padding:3rem;text-align:center;color:#94a3b8;font-size:0.8rem;">No data</div>';
+    return;
+  }
+
+  container.innerHTML = `
+    <table style="width:100%;border-collapse:collapse;font-size:0.8rem;">
+      <thead><tr>
+        <th style="${thStyle}text-align:left;">Days (Pickup→Delivery)</th>
+        <th style="${thStyle}">Shipments</th>
+        <th style="${thStyle}">% of Total</th>
+      </tr></thead>
+      <tbody>
+        ${BUCKETS.map(b => {
+          const cnt = counts[b];
+          const pct = total > 0 ? (cnt/total*100).toFixed(1) : '0.0';
+          const isSel = chartBucketFilter === b;
+          const col = COLORS[b];
+          const barW = total > 0 ? (cnt/total*100) : 0;
+          return `<tr data-bucket="${b}" style="border-bottom:1px solid #f8fafc;cursor:pointer;transition:background .1s;background:${isSel?'#eff6ff':'transparent'};">
+            <td style="padding:0.5rem 0.75rem;">
+              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:4px;">
+                <span style="width:9px;height:9px;border-radius:2px;background:${col};display:inline-block;flex-shrink:0;"></span>
+                <span style="font-weight:${isSel?'700':'600'};color:${isSel?'#1d4ed8':'#334155'};">${b} day${b==='1'?'':'s'}</span>
+              </div>
+              <div style="height:3px;background:#e2e8f0;border-radius:2px;overflow:hidden;"><div style="width:${barW}%;height:100%;background:${col};border-radius:2px;"></div></div>
+            </td>
+            <td style="padding:0.5rem 0.75rem;text-align:right;font-variant-numeric:tabular-nums;font-weight:700;color:#1e293b;">${cnt}</td>
+            <td style="padding:0.5rem 0.75rem;text-align:right;color:#64748b;">${pct}%</td>
+          </tr>`;
+        }).join('')}
+        <tr style="border-top:2px solid #e2e8f0;background:#f8fafc;">
+          <td style="padding:0.5rem 0.75rem;font-weight:700;color:#475569;font-size:0.75rem;">TOTAL</td>
+          <td style="padding:0.5rem 0.75rem;text-align:right;font-variant-numeric:tabular-nums;font-weight:700;color:#1e293b;">${total}</td>
+          <td style="padding:0.5rem 0.75rem;text-align:right;font-weight:700;color:#1e293b;">100%</td>
+        </tr>
+      </tbody>
+    </table>`;
+
+  container.querySelectorAll('tr[data-bucket]').forEach(tr => {
+    tr.addEventListener('mouseenter', () => {
+      if (chartBucketFilter !== tr.dataset.bucket) tr.style.background = '#f8fafc';
+    });
+    tr.addEventListener('mouseleave', () => {
+      tr.style.background = chartBucketFilter === tr.dataset.bucket ? '#eff6ff' : 'transparent';
+    });
+    tr.addEventListener('click', () => {
+      const b = tr.dataset.bucket;
+      chartBucketFilter = chartBucketFilter === b ? null : b;
+      const badge = document.getElementById('distribFilterBadge');
+      if (chartBucketFilter) { badge.style.display = 'inline'; badge.textContent = '✕ ' + chartBucketFilter + ' days'; }
+      else badge.style.display = 'none';
+      applyFilters();
+    });
+  });
+}
+
+function chartCarrierSummary() {
+  const byCarrier = {};
+  for (const o of filteredOrders) {
+    if (!o.carrier) continue;
+    if (!byCarrier[o.carrier]) byCarrier[o.carrier] = { count: 0, onTime: 0, withDelivery: 0, deliverDays: [] };
+    byCarrier[o.carrier].count++;
+    if (o.daysToDeliver !== null && o.daysToDeliver !== undefined) {
+      byCarrier[o.carrier].withDelivery++;
+      byCarrier[o.carrier].deliverDays.push(o.daysToDeliver);
+      if (o.daysToDeliver <= 6) byCarrier[o.carrier].onTime++;
+    }
+  }
+  const entries = Object.entries(byCarrier).sort((a,b) => b[1].count - a[1].count);
+  const total   = entries.reduce((s,[,v])=>s+v.count, 0);
+  const COLORS  = ['#3b82f6','#10b981','#f59e0b','#ef4444','#8b5cf6','#ec4899','#06b6d4'];
+  const currentCarrier = document.getElementById('fCarrier').value;
+
+  const thStyle = 'padding:0.5rem 0.75rem;text-align:right;font-size:0.63rem;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em;background:#f8fafc;border-bottom:1px solid #e2e8f0;white-space:nowrap;';
+  const container = document.getElementById('carrierSummaryTable');
+
+  if (!entries.length) {
+    container.innerHTML = '<div style="padding:3rem;text-align:center;color:#94a3b8;font-size:0.8rem;">No data</div>';
+    return;
+  }
+
+  container.innerHTML = `
+    <table style="width:100%;border-collapse:collapse;font-size:0.8rem;">
+      <thead><tr>
+        <th style="${thStyle}text-align:left;">Carrier</th>
+        <th style="${thStyle}">Shipments</th>
+        <th style="${thStyle}">% of Total</th>
+        <th style="${thStyle}">On Time (≤6d)</th>
+        <th style="${thStyle}">Avg P→D Days</th>
+      </tr></thead>
+      <tbody>
+        ${entries.map(([name, v], i) => {
+          const cnt       = v.count;
+          const pct       = total > 0 ? (cnt/total*100).toFixed(1) : '0.0';
+          const barW      = total > 0 ? (cnt/total*100) : 0;
+          const col       = COLORS[i % COLORS.length];
+          const isSel     = currentCarrier === name;
+          const onTimePct = v.withDelivery > 0 ? (v.onTime / v.withDelivery * 100) : null;
+          const otColor   = onTimePct === null ? '#94a3b8'
+                          : onTimePct >= 80    ? '#16a34a'
+                          : onTimePct >= 60    ? '#d97706'
+                          : '#dc2626';
+          const otDisplay = onTimePct !== null ? `${onTimePct.toFixed(0)}%` : '—';
+          const avgPD     = avg(v.deliverDays);
+          const avgPDColor = avgPD === null ? '#94a3b8' : avgPD <= 2 ? '#16a34a' : avgPD <= 5 ? '#d97706' : '#dc2626';
+          const avgPDDisplay = avgPD !== null ? avgPD.toFixed(1) : '—';
+          return `<tr data-carrier="${name.replace(/"/g,'&quot;')}" style="border-bottom:1px solid #f8fafc;cursor:pointer;transition:background .1s;background:${isSel?'#fff5f5':'transparent'};">
+            <td style="padding:0.5rem 0.75rem;">
+              <div style="font-weight:${isSel?'700':'600'};color:${isSel?'#C82035':'#334155'};margin-bottom:4px;">${name}</div>
+              <div style="height:3px;background:#e2e8f0;border-radius:2px;overflow:hidden;"><div style="width:${barW}%;height:100%;background:${col};border-radius:2px;"></div></div>
+            </td>
+            <td style="padding:0.5rem 0.75rem;text-align:right;font-variant-numeric:tabular-nums;font-weight:700;color:#1e293b;">${cnt}</td>
+            <td style="padding:0.5rem 0.75rem;text-align:right;color:#64748b;">${pct}%</td>
+            <td style="padding:0.5rem 0.75rem;text-align:right;font-weight:700;color:${otColor};">${otDisplay}</td>
+            <td style="padding:0.5rem 0.75rem;text-align:right;font-weight:700;color:${avgPDColor};">${avgPDDisplay}</td>
+          </tr>`;
+        }).join('')}
+        <tr style="border-top:2px solid #e2e8f0;background:#f8fafc;">
+          <td style="padding:0.5rem 0.75rem;font-weight:700;color:#475569;font-size:0.75rem;">TOTAL</td>
+          <td style="padding:0.5rem 0.75rem;text-align:right;font-variant-numeric:tabular-nums;font-weight:700;color:#1e293b;">${total}</td>
+          <td style="padding:0.5rem 0.75rem;text-align:right;font-weight:700;color:#1e293b;">100%</td>
+          <td colspan="2" style="padding:0.5rem 0.75rem;text-align:right;font-size:0.65rem;color:#94a3b8;">orders w/ delivery data</td>
+        </tr>
+      </tbody>
+    </table>`;
+
+  container.querySelectorAll('tr[data-carrier]').forEach(tr => {
+    tr.addEventListener('mouseenter', () => {
+      if (document.getElementById('fCarrier').value !== tr.dataset.carrier) tr.style.background = '#f8fafc';
+    });
+    tr.addEventListener('mouseleave', () => {
+      tr.style.background = document.getElementById('fCarrier').value === tr.dataset.carrier ? '#fff5f5' : 'transparent';
+    });
+    tr.addEventListener('click', () => {
+      const sel = document.getElementById('fCarrier');
+      sel.value = sel.value === tr.dataset.carrier ? '' : tr.dataset.carrier;
+      applyFilters();
+    });
+  });
+}
+
+async function chartState() {
+  // Per-state: total shipments, delivery-day values, on-time count
+  const byState = {};
+  for (const o of filteredOrders) {
+    if (!o.state) continue;
+    byState[o.state] ??= { total: 0, days: [], onTime: 0 };
+    byState[o.state].total++;
+    if (o.daysToDeliver !== null && o.daysToDeliver !== undefined) {
+      byState[o.state].days.push(o.daysToDeliver);
+      if (o.daysToDeliver <= 6) byState[o.state].onTime++;
+    }
+  }
+  // stateAvg keyed by state code → avg pickup→delivery days (for color scale)
+  const stateAvg   = {};
+  const stateStats = {}; // richer data for tooltip
+  for (const [s, v] of Object.entries(byState)) {
+    const avgDays = avg(v.days);
+    stateAvg[s] = avgDays;
+    stateStats[s] = {
+      total:    v.total,
+      avgDays,
+      onTimePct: v.days.length > 0 ? (v.onTime / v.days.length * 100) : null,
+    };
+  }
+
+  try {
+    if (!geoData) {
+      const loading = document.getElementById('mapLoading');
+      loading.style.display = 'block';
+      loading.textContent = 'Loading map…';
+
+      // Highcharts .geo.json is plain GeoJSON (no conversion), includes Telangana,
+      // and is served by jsDelivr with full CORS headers.
+      // The old .topo.json produced corrupt geometry via topojson-client — avoid it.
+      const SOURCES = [
+        'https://cdn.jsdelivr.net/npm/@highcharts/map-collection/countries/in/in-all.geo.json',
+        'https://raw.githubusercontent.com/geohacker/india/master/state/india_state.geojson',
+      ];
+
+      let data = null;
+      let lastErr = null;
+      for (const url of SOURCES) {
+        try {
+          const r = await fetch(url);
+          if (!r.ok) throw new Error('HTTP ' + r.status + ' from ' + url);
+          data = await r.json();
+          console.log('Map loaded from:', url);
+          break;
+        } catch (e) {
+          lastErr = e;
+          console.warn('Map source failed:', url, e.message);
+        }
+      }
+      if (!data) throw lastErr || new Error('All map sources failed');
+
+      geoData = data; // plain GeoJSON — no TopoJSON conversion needed
+    }
+    drawIndiaMap(stateAvg, stateStats);
+  } catch (e) {
+    console.error('Map load error:', e);
+    const loading = document.getElementById('mapLoading');
+    loading.style.display = 'block';
+    loading.innerHTML = `⚠️ Map failed to load<br><span style="font-size:0.65rem;color:#94a3b8;">${e.message}</span>`;
+  }
+}
+
+function stateColor(days) {
+  if (days == null) return '#e2e8f0';
+  if (days <= 2)    return '#22c55e';
+  if (days <= 4)    return '#84cc16';
+  if (days <= 6)    return '#eab308';
+  if (days <= 9)    return '#f97316';
+  return '#ef4444';
+}
+
+function drawIndiaMap(stateAvg, stateStats = {}) {
+  const tooltip = document.getElementById('mapTooltip');
+  const sel     = document.getElementById('fState');
+
+  // Initialise Leaflet map once; it handles all WGS84 projection internally
+  if (!_leafletMap) {
+    _leafletMap = L.map('cStateMap', {
+      zoomControl: false, attributionControl: false,
+      dragging: false, touchZoom: false, scrollWheelZoom: false,
+      doubleClickZoom: false, boxZoom: false, keyboard: false,
+    });
+  }
+
+  // Remove previous GeoJSON layer before redrawing
+  if (_geojsonLayer) { _leafletMap.removeLayer(_geojsonLayer); _geojsonLayer = null; }
+
+  _geojsonLayer = L.geoJSON(geoData, {
+    style(feature) {
+      const code = featureToCode(feature);
+      const days = code != null ? stateAvg[code] : null;
+      return {
+        fillColor:   stateColor(days),
+        fillOpacity: 1,
+        color:       sel.value && code === sel.value ? '#C82035' : '#fff',
+        weight:      sel.value && code === sel.value ? 2 : 0.7,
+      };
+    },
+    onEachFeature(feature, layer) {
+      const code = featureToCode(feature);
+      const days = code != null ? stateAvg[code] : null;
+      const name = feature.properties.name || feature.properties.NAME_1 || code || '?';
+      layer.on('mouseover', e => {
+        const st = stateStats[code];
+        tooltip.style.display = 'block';
+        if (st) {
+          const onTimeTxt = st.onTimePct !== null ? `${st.onTimePct.toFixed(0)}%` : '—';
+          const avgTxt    = st.avgDays   !== null ? `${st.avgDays.toFixed(1)}d`   : '—';
+          tooltip.innerHTML =
+            `<strong>${name}</strong>` +
+            `<div style="margin-top:4px;font-size:0.72rem;line-height:1.7;color:#e2e8f0;">` +
+            `Shipments: <b style="color:#fff;">${st.total}</b><br>` +
+            `On time (≤6d): <b style="color:#fff;">${onTimeTxt}</b><br>` +
+            `Avg P→D: <b style="color:#fff;">${avgTxt}</b>` +
+            `</div>`;
+        } else {
+          tooltip.innerHTML = `<strong>${name}</strong><div style="margin-top:4px;font-size:0.72rem;color:#94a3b8;">No data</div>`;
+        }
+      });
+      layer.on('mousemove', e => {
+        tooltip.style.left = (e.originalEvent.clientX + 14) + 'px';
+        tooltip.style.top  = (e.originalEvent.clientY - 36) + 'px';
+      });
+      layer.on('mouseout',  () => { tooltip.style.display = 'none'; });
+      layer.on('click', () => {
+        if (!code) return;
+        sel.value = sel.value === code ? '' : code;
+        applyFilters();
+      });
+    },
+  }).addTo(_leafletMap);
+
+  // Fit map to India mainland (excludes Andaman so mainland fills the card)
+  _leafletMap.fitBounds([[6.5, 68], [36, 97.5]], { padding: [4, 4], animate: false });
+
+  document.getElementById('mapLoading').style.display = 'none';
+  document.getElementById('mapDebugLine').textContent = '';
+
+  // Legend
+  const items = [
+    ['#e2e8f0','No data'],['#22c55e','≤ 2 days'],['#84cc16','3–4'],
+    ['#eab308','5–6'],['#f97316','7–9'],['#ef4444','10+'],
+  ];
+  document.getElementById('mapLegend').innerHTML = items.map(([c,l]) =>
+    `<span style="display:flex;align-items:center;gap:3px;font-size:0.67rem;color:#64748b;">
+       <span style="width:11px;height:11px;border-radius:2px;background:${c};border:1px solid rgba(0,0,0,0.1);flex-shrink:0;"></span>${l}
+     </span>`
+  ).join('');
+}
+
+// ─────────────────────────────────────────────────────────
+// TABLE
+// ─────────────────────────────────────────────────────────
+
+function daysClass(d) {
+  if (d === null || d === undefined) return 'c-n';
+  if (d <= 3) return 'c-g';
+  if (d <= 7) return 'c-a';
+  return 'c-r';
+}
+
+function totalClass(d) {
+  if (d === null || d === undefined) return 'c-n';
+  if (d <= 5) return 'c-g';
+  if (d <= 10) return 'c-a';
+  return 'c-r';
+}
+
+function statusBadge(s) {
+  const map = { Delivered:'bd', 'In Transit':'bt', Returned:'bk', 'Tracking Issue':'br', Unknown:'bu' };
+  return `<span class="badge ${map[s]||'bu'}">${s}</span>`;
+}
+
+function fmtNum(n, cls) {
+  return n !== null && n !== undefined
+    ? `<span class="td-num ${cls}">${n}</span>`
+    : `<span class="c-n">—</span>`;
+}
+
+function sortedOrders() {
+  return [...filteredOrders].sort((a,b) => {
+    let av = a[sortCol], bv = b[sortCol];
+    if (av === null || av === undefined) return 1;
+    if (bv === null || bv === undefined) return -1;
+    if (av instanceof Date) return (sortAsc?1:-1)*(av-bv);
+    if (typeof av === 'number') return (sortAsc?1:-1)*(av-bv);
+    return (sortAsc?1:-1)*String(av).localeCompare(String(bv));
+  });
+}
+
+function renderTable() {
+  const sorted  = sortedOrders();
+  const total   = sorted.length;
+  const pages   = Math.max(1, Math.ceil(total/PER_PAGE));
+  page = Math.min(page, pages);
+  const slice   = sorted.slice((page-1)*PER_PAGE, page*PER_PAGE);
+
+  document.getElementById('tCount').textContent = `${total} order${total!==1?'s':''}`;
+
+  const tbody = document.getElementById('tBody');
+  if (!slice.length) {
+    tbody.innerHTML = `<tr><td colspan="11"><div class="empty"><div class="empty-ico">📭</div><div class="empty-txt">No orders match the current filters</div></div></td></tr>`;
+  } else {
+    tbody.innerHTML = slice.map(o=>`
+      <tr>
+        <td><strong>${o.orderId||'—'}</strong></td>
+        <td>${fmtDate(o.orderedDate)}</td>
+        <td>${o.destination||'—'}</td>
+        <td><strong>${o.state||'—'}</strong></td>
+        <td>${o.carrier||'—'}</td>
+        <td>${fmtNum(o.daysToDispatch, daysClass(o.daysToDispatch))}</td>
+        <td>${fmtNum(o.daysToPickup,   daysClass(o.daysToPickup))}</td>
+        <td>${fmtNum(o.daysToDeliver,  daysClass(o.daysToDeliver))}</td>
+        <td>${fmtNum(o.totalDays,      totalClass(o.totalDays))}</td>
+        <td>${statusBadge(o.status)}</td>
+        <td style="max-width:200px;white-space:normal;color:#94a3b8;font-size:0.72rem;">${o.delayReason||''}</td>
+      </tr>
+    `).join('');
+  }
+
+  // Pagination
+  const pager = document.getElementById('pager');
+  if (total > PER_PAGE) {
+    pager.style.display = 'flex';
+    const from = (page-1)*PER_PAGE+1, to = Math.min(page*PER_PAGE, total);
+    document.getElementById('pagerInfo').textContent = `Showing ${from}–${to} of ${total}`;
+
+    const start = Math.max(1, page-2);
+    const end   = Math.min(pages, start+4);
+    let btns = `<button class="pb" onclick="goPage(${page-1})" ${page===1?'disabled':''}>‹</button>`;
+    for (let i=start; i<=end; i++) btns += `<button class="pb ${i===page?'active':''}" onclick="goPage(${i})">${i}</button>`;
+    btns += `<button class="pb" onclick="goPage(${page+1})" ${page===pages?'disabled':''}>›</button>`;
+    document.getElementById('pagerBtns').innerHTML = btns;
+  } else {
+    pager.style.display = 'none';
+  }
+}
+
+function goPage(p) { page = p; renderTable(); }
+
+// ─────────────────────────────────────────────────────────
+// SORT
+// ─────────────────────────────────────────────────────────
+
+document.querySelectorAll('thead th[data-col]').forEach(th => {
+  th.addEventListener('click', () => {
+    const col = th.dataset.col;
+    if (sortCol === col) { sortAsc = !sortAsc; th.classList.toggle('desc', !sortAsc); }
+    else { sortCol = col; sortAsc = true; document.querySelectorAll('thead th').forEach(t=>{t.classList.remove('th-sorted','desc')}); }
+    th.classList.add('th-sorted');
+    renderTable();
+  });
+});
+
+// ─────────────────────────────────────────────────────────
+// UPLOAD EVENTS
+// ─────────────────────────────────────────────────────────
+
+const zone  = document.getElementById('uploadZone');
+const finp  = document.getElementById('fileInput');
+zone.addEventListener('click', () => finp.click());
+finp.addEventListener('change', e => handleFiles(e.target.files));
+zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('drag-over'); });
+zone.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
+zone.addEventListener('drop', e => { e.preventDefault(); zone.classList.remove('drag-over'); handleFiles(e.dataTransfer.files); });
+
+// ─────────────────────────────────────────────────────────
+// FILTER EVENTS
+// ─────────────────────────────────────────────────────────
+
+['fOrderId','fDateFrom','fDateTo','fState','fCarrier'].forEach(id => {
+  const el = document.getElementById(id);
+  el.addEventListener('input',  applyFilters);
+  el.addEventListener('change', applyFilters);
+});
+
+document.getElementById('btnReset').addEventListener('click', () => {
+  ['fOrderId','fDateFrom','fDateTo'].forEach(id => document.getElementById(id).value = '');
+  ['fState','fCarrier'].forEach(id => document.getElementById(id).value = '');
+  chartBucketFilter = null;
+  document.getElementById('distribFilterBadge').style.display = 'none';
+  applyFilters();
+});
+
+// ── Restore saved data-source preferences on load ────────
+(function initDataSource() {
+  const savedUrl = localStorage.getItem('asha_sheet_url');
+  const savedTab = localStorage.getItem('asha_ds_tab') || 'sheet';
+  if (savedUrl) document.getElementById('sheetUrl').value = savedUrl;
+  switchTab(savedTab);
+  if (localStorage.getItem('asha_auto_refresh') === '1') {
+    document.getElementById('autoRefresh').checked = true;
+    _autoRefreshTimer = setInterval(syncFromSheet, 5 * 60 * 1000);
+  }
+  // Auto-sync on load if URL is saved
+  if (savedUrl && savedTab === 'sheet') syncFromSheet();
+})();
+</script>
+<div id="mapTooltip" style="position:fixed;background:rgba(15,23,42,0.92);color:#fff;padding:0.35rem 0.7rem;border-radius:7px;font-size:0.75rem;pointer-events:none;display:none;z-index:9999;white-space:nowrap;box-shadow:0 2px 10px rgba(0,0,0,0.25);"></div>
+</div><!-- #mainContent -->
+
+<script>
+  const PASS = 'AshaBooks2025';
+
+  if (sessionStorage.getItem('asha_dash_auth') === '1') unlock();
+
+  document.getElementById('lockInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') checkPassword();
+  });
+
+  function checkPassword() {
+    const val = document.getElementById('lockInput').value;
+    if (val === PASS) {
+      sessionStorage.setItem('asha_dash_auth', '1');
+      unlock();
+    } else {
+      const input = document.getElementById('lockInput');
+      document.getElementById('lockError').textContent = 'Incorrect password.';
+      input.classList.remove('shake');
+      void input.offsetWidth;
+      input.classList.add('shake');
+      input.value = '';
+    }
+  }
+
+  function unlock() {
+    document.getElementById('lockScreen').style.display = 'none';
+    document.getElementById('mainContent').style.display = 'block';
+  }
+</script>
+</body>
+</html>
