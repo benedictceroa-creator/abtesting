@@ -35,6 +35,14 @@
       <p>Choose a subject and grade to view or create weekly plans.</p>
       <div class="select-form">
         <div class="field-group">
+          <label for="school-select">School</label>
+          <select id="school-select">
+            <option value="">-- Select School --</option>
+            <option value="Medchal">Medchal</option>
+            <option value="Ramanthapur">Ramanthapur</option>
+          </select>
+        </div>
+        <div class="field-group">
           <label for="subject-select">Subject</label>
           <select id="subject-select">
             <option value="">-- Select Subject --</option>
@@ -59,7 +67,68 @@
           </select>
         </div>
         <button class="btn-primary" id="go-btn">View Planner →</button>
-        <p id="select-error" class="error hidden">Please select both a subject and a grade.</p>
+        <p id="select-error" class="error hidden">Please select a school, subject, and grade.</p>
+      </div>
+    </main>
+  </div>
+
+  <!-- ── VIEW 2b: REVIEW PREVIOUS WEEK ── -->
+  <div id="view-review" class="view hidden">
+    <header class="top-bar">
+      <div class="top-bar-left">
+        <button class="btn-back" id="review-back-btn">← Back</button>
+        <img src="logo.jpg" alt="John's Academy" class="topbar-logo" />
+        <span class="planner-title-text" id="review-title"></span>
+      </div>
+      <button class="btn-logout" id="logout-btn-3">Logout</button>
+    </header>
+    <main class="review-main">
+      <div class="review-card">
+        <div class="review-header-section">
+          <h2>Review Previous Week</h2>
+          <p>Before planning the next week, please mark the completion status for the previous lesson plan.</p>
+        </div>
+        <div class="review-meta">
+          <div class="review-meta-item">
+            <span class="review-meta-label">School</span>
+            <span class="review-meta-value" id="review-school"></span>
+          </div>
+          <div class="review-meta-item">
+            <span class="review-meta-label">Subject</span>
+            <span class="review-meta-value" id="review-subject"></span>
+          </div>
+          <div class="review-meta-item">
+            <span class="review-meta-label">Grade</span>
+            <span class="review-meta-value" id="review-grade"></span>
+          </div>
+          <div class="review-meta-item">
+            <span class="review-meta-label">Week Starting</span>
+            <span class="review-meta-value" id="review-weekdate"></span>
+          </div>
+          <div class="review-meta-item">
+            <span class="review-meta-label">Lesson</span>
+            <span class="review-meta-value" id="review-lesson"></span>
+          </div>
+        </div>
+        <div class="review-table-wrap">
+          <table class="review-table">
+            <thead>
+              <tr>
+                <th class="col-day">Day</th>
+                <th>Topic</th>
+                <th>Activity</th>
+                <th>Assessment</th>
+                <th class="col-status">Completed?</th>
+              </tr>
+            </thead>
+            <tbody id="review-tbody"></tbody>
+          </table>
+        </div>
+        <p class="review-warning hidden" id="review-warning">Please mark completion status for all active days before saving.</p>
+        <div class="review-actions">
+          <button class="btn-primary" id="review-submit-btn">Save &amp; Continue to Planning</button>
+          <button class="btn-skip" id="review-skip-btn">Skip for Now</button>
+        </div>
       </div>
     </main>
   </div>
@@ -190,7 +259,7 @@
               <div class="preview-header">
                 <img src="logo.jpg" alt="John's Academy" class="preview-logo" />
                 <div class="preview-header-text">
-                  <div class="preview-school">John's Academy School</div>
+                  <div class="preview-school" id="preview-school-name">John's Academy School</div>
                   <div class="preview-tagline">Educate | Empower | Transform</div>
                 </div>
               </div>

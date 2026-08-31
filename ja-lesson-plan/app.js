@@ -7,6 +7,7 @@ const TEACHER_PASSWORD = 'JohnsAcademy2025';
 // ── STATE ───────────────────────────────────────────────────────
 let currentSubject     = '';
 let currentGrade       = '';
+let currentSchool      = '';
 let selectedActivity   = '';
 let selectedAssessment = '';
 let selectedRealworld  = '';
@@ -45,33 +46,140 @@ function logout() {
   sessionStorage.removeItem('authenticated');
   currentSubject = '';
   currentGrade   = '';
-  document.getElementById('password').value = '';
+  currentSchool  = '';
+  document.getElementById('password').value        = '';
+  document.getElementById('school-select').value   = '';
+  document.getElementById('subject-select').value  = '';
+  document.getElementById('grade-select').value    = '';
   showView('view-login');
 }
 
 document.getElementById('logout-btn').addEventListener('click', logout);
 document.getElementById('logout-btn-2').addEventListener('click', logout);
+document.getElementById('logout-btn-3').addEventListener('click', logout);
+
+// ── SCHOOL SELECTION & PREVIOUS WEEK CHECK ───────────────────────
+function localStoragePlanKey() {
+  return `ja_plan_${currentSchool}_${currentSubject}_${currentGrade}`;
+}
+
+function getLastPlan() {
+  try {
+    const raw = localStorage.getItem(localStoragePlanKey());
+    return raw ? JSON.parse(raw) : null;
+  } catch { return null; }
+}
+
+function saveLastPlan(planData) {
+  try { localStorage.setItem(localStoragePlanKey(), JSON.stringify(planData)); } catch {}
+}
+
+function checkPreviousWeekReview() {
+  const plan = getLastPlan();
+  if (plan && !plan.completionStatus) {
+    renderReviewView(plan);
+  } else {
+    enterPlanner();
+  }
+}
+
+function enterPlanner() {
+  document.getElementById('planner-title').textContent = `${currentSubject} — Grade ${currentGrade}`;
+  showView('view-planner');
+  loadOptions();
+  resetPreview();
+}
+
+function renderReviewView(planData) {
+  document.getElementById('review-title').textContent   = `${planData.subject} — Grade ${planData.grade}`;
+  document.getElementById('review-school').textContent  = planData.school;
+  document.getElementById('review-subject').textContent = planData.subject;
+  document.getElementById('review-grade').textContent   = `Grade ${planData.grade}`;
+  document.getElementById('review-weekdate').textContent = planData.weekDate;
+  document.getElementById('review-lesson').textContent  = planData.lesson || '—';
+
+  const tbody = document.getElementById('review-tbody');
+  tbody.innerHTML = '';
+
+  planData.days.forEach(day => {
+    const tr = document.createElement('tr');
+    if (day.isHoliday) {
+      tr.innerHTML = `
+        <td class="review-day-cell">${escHtml(day.label)}<br><span class="holiday-badge">HOLIDAY</span></td>
+        <td colspan="3" style="text-align:center;color:#92400e;font-style:italic">Holiday</td>
+        <td style="color:#cbd5e0;text-align:center">—</td>`;
+    } else {
+      const hasContent = !!(day.activity || day.topic);
+      tr.innerHTML = `
+        <td class="review-day-cell">${escHtml(day.label)}</td>
+        <td>${escHtml(day.topic) || '<span style="color:#cbd5e0">—</span>'}</td>
+        <td>${escHtml(day.activity) || '<span style="color:#cbd5e0">—</span>'}</td>
+        <td>${escHtml(day.assessment) || '<span style="color:#cbd5e0">—</span>'}</td>
+        <td>${hasContent
+          ? `<select class="completion-select" data-day="${day.day}">
+              <option value="">— Select —</option>
+              <option value="completed">Completed</option>
+              <option value="not-completed">Not Completed</option>
+              <option value="partial">Partial</option>
+            </select>`
+          : '<span style="color:#cbd5e0;text-align:center">—</span>'
+        }</td>`;
+    }
+    tbody.appendChild(tr);
+  });
+
+  document.getElementById('review-warning').classList.add('hidden');
+  showView('view-review');
+}
+
+document.getElementById('review-submit-btn').addEventListener('click', function () {
+  const selects = document.querySelectorAll('#review-tbody .completion-select');
+  let allMarked = true;
+  selects.forEach(sel => { if (!sel.value) allMarked = false; });
+
+  if (!allMarked) {
+    document.getElementById('review-warning').classList.remove('hidden');
+    return;
+  }
+
+  const plan = getLastPlan();
+  if (plan) {
+    const status = {};
+    selects.forEach(sel => { status[sel.dataset.day] = sel.value; });
+    plan.completionStatus = status;
+    plan.reviewedAt = new Date().toISOString();
+    saveLastPlan(plan);
+  }
+
+  enterPlanner();
+});
+
+document.getElementById('review-skip-btn').addEventListener('click', function () {
+  enterPlanner();
+});
+
+document.getElementById('review-back-btn').addEventListener('click', function () {
+  showView('view-select');
+});
 
 // ── SUBJECT & GRADE SELECTION ────────────────────────────────────
 document.getElementById('go-btn').addEventListener('click', function () {
+  const school  = document.getElementById('school-select').value;
   const subject = document.getElementById('subject-select').value;
   const grade   = document.getElementById('grade-select').value;
   const err     = document.getElementById('select-error');
 
-  if (!subject || !grade) {
+  if (!school || !subject || !grade) {
     err.classList.remove('hidden');
     return;
   }
 
   err.classList.add('hidden');
+  currentSchool  = school;
   currentSubject = subject;
   currentGrade   = grade;
 
-  document.getElementById('planner-title').textContent = `${subject} — Grade ${grade}`;
-
-  showView('view-planner');
-  loadOptions();
-  resetPreview();
+  checkPreviousWeekReview();
 });
 
 // ── LOAD DROPDOWN OPTIONS FROM CURRICULUM SHEET ──────────────────
@@ -385,6 +493,8 @@ function getWeekDayLabels(dateStr) {
 
 // ── LIVE PREVIEW ─────────────────────────────────────────────────
 function resetPreview() {
+  document.getElementById('preview-school-name').textContent =
+    currentSchool ? `John's Academy – ${currentSchool}` : "John's Academy School";
   document.getElementById('preview-subject-label').textContent =
     `${currentSubject} — Grade ${currentGrade}`;
 
@@ -500,6 +610,27 @@ document.getElementById('add-form').addEventListener('submit', async function (e
       saveStatus.className   = 'save-status success';
       saveStatus.classList.remove('hidden');
 
+      // Store plan in localStorage so completion can be reviewed before next week's plan
+      const weekDateRaw = document.getElementById('f-date').value;
+      saveLastPlan({
+        school:    currentSchool,
+        subject:   currentSubject,
+        grade:     currentGrade,
+        weekDate:  formatDate(weekDateRaw),
+        weekDateRaw,
+        lesson:    document.getElementById('f-lesson').value.trim(),
+        days: DAYS.map((d, i) => ({
+          day:        d,
+          label:      getWeekDayLabels(weekDateRaw)[i],
+          topic:      (document.getElementById(`preview-topic-${d}`).textContent || '').trim(),
+          activity:   (document.getElementById(`preview-activity-${d}`).textContent || '').trim(),
+          assessment: (document.getElementById(`preview-assessment-${d}`).textContent || '').trim(),
+          isHoliday:  holidayDays.has(d),
+        })),
+        completionStatus: null,
+        savedAt: new Date().toISOString(),
+      });
+
       setTimeout(() => {
         saveBtn.disabled    = false;
         saveBtn.textContent = 'Save Plan';
@@ -611,11 +742,11 @@ function downloadPDF() {
   <div class="header">
     <img src="${logoSrc}" alt="John's Academy" />
     <div>
-      <h1>John's Academy School</h1>
+      <h1>${escHtml(currentSchool ? `John's Academy – ${currentSchool}` : "John's Academy School")}</h1>
       <p>Educate | Empower | Transform</p>
     </div>
   </div>
-  <div class="subject-bar">Subject: ${escHtml(currentSubject)} &nbsp;&nbsp;&nbsp; Grade: ${escHtml(currentGrade)}</div>
+  <div class="subject-bar">School: ${escHtml(currentSchool)} &nbsp;&nbsp;&nbsp; Subject: ${escHtml(currentSubject)} &nbsp;&nbsp;&nbsp; Grade: ${escHtml(currentGrade)}</div>
   <div class="meta-grid">
     <div class="meta-item"><div class="meta-lbl">Week Starting</div><div class="meta-val">${escHtml(weekStartLabel)}</div></div>
     <div class="meta-item"><div class="meta-lbl">Lesson</div><div class="meta-val">${escHtml(lesson) || '—'}</div></div>
