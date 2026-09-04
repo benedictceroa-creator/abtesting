@@ -1,18 +1,18 @@
 // ── CONFIGURATION ──────────────────────────────────────────────
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz0wqk-ZsbtLBBJFO3RhKN-KkdrEZWLo60Q5IxfhLjJauoV2m4mU_R15cX7f7xqSGQ-WA/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyZ0ICGEOPv1N2kmXF2x5kQbyEvUOVBko2dNBgezGkr3KrYW4DEPD2Hkz0gjJTC4jowHw/exec';
 
 // Simple shared password for all teachers
 const TEACHER_PASSWORD = 'JohnsAcademy2025';
 
 // ── STATE ───────────────────────────────────────────────────────
-let currentSubject     = '';
-let currentGrade       = '';
-let currentSchool      = '';
-let selectedActivity   = '';
+let currentSubject = '';
+let currentGrade = '';
+let currentSchool = '';
+let selectedActivity = '';
 let selectedAssessment = '';
-let selectedRealworld  = '';
-let activeDay          = null; // 'mon'|'tue'|'wed'|'thu'|'fri'|'sat'
-const holidayDays      = new Set();
+let selectedRealworld = '';
+let activeDay = null; // 'mon'|'tue'|'wed'|'thu'|'fri'|'sat'
+const holidayDays = new Set();
 
 // ── VIEW HELPERS ────────────────────────────────────────────────
 function showView(id) {
@@ -45,12 +45,12 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
 function logout() {
   sessionStorage.removeItem('authenticated');
   currentSubject = '';
-  currentGrade   = '';
-  currentSchool  = '';
-  document.getElementById('password').value        = '';
-  document.getElementById('school-select').value   = '';
-  document.getElementById('subject-select').value  = '';
-  document.getElementById('grade-select').value    = '';
+  currentGrade = '';
+  currentSchool = '';
+  document.getElementById('password').value = '';
+  document.getElementById('school-select').value = '';
+  document.getElementById('subject-select').value = '';
+  document.getElementById('grade-select').value = '';
   showView('view-login');
 }
 
@@ -71,7 +71,7 @@ function getLastPlan() {
 }
 
 function saveLastPlan(planData) {
-  try { localStorage.setItem(localStoragePlanKey(), JSON.stringify(planData)); } catch {}
+  try { localStorage.setItem(localStoragePlanKey(), JSON.stringify(planData)); } catch { }
 }
 
 // ── SERVER PLAN STORAGE ─────────────────────────────────────────
@@ -81,13 +81,13 @@ async function getLastPlanFromServer(school, subject, grade) {
       `&school=${encodeURIComponent(school)}` +
       `&subject=${encodeURIComponent(subject)}` +
       `&grade=${encodeURIComponent(grade)}`;
-    const res  = await fetch(url);
+    const res = await fetch(url);
     const data = await res.json();
     if (data.status === 'ok' && data.plan) {
       saveLastPlan(data.plan); // cache locally
       return data.plan;
     }
-  } catch {}
+  } catch { }
   return getLastPlan(); // fall back to localStorage if server unreachable
 }
 
@@ -95,6 +95,7 @@ async function savePlanToServer(planData) {
   try {
     await fetch(SCRIPT_URL, {
       method: 'POST',
+      mode: 'no-cors',
       body: JSON.stringify({ action: 'savePlan', ...planData }),
     });
   } catch (err) { console.warn('savePlanToServer failed (non-fatal):', err); }
@@ -104,6 +105,7 @@ async function saveReviewToServer(school, subject, grade, weekDateRaw, completio
   try {
     await fetch(SCRIPT_URL, {
       method: 'POST',
+      mode: 'no-cors',
       body: JSON.stringify({
         action: 'saveReview',
         school, subject, grade, weekDateRaw, completionStatus,
@@ -130,12 +132,12 @@ function enterPlanner() {
 }
 
 function renderReviewView(planData) {
-  document.getElementById('review-title').textContent   = `${planData.subject} — Grade ${planData.grade}`;
-  document.getElementById('review-school').textContent  = planData.school;
+  document.getElementById('review-title').textContent = `${planData.subject} — Grade ${planData.grade}`;
+  document.getElementById('review-school').textContent = planData.school;
   document.getElementById('review-subject').textContent = planData.subject;
-  document.getElementById('review-grade').textContent   = `Grade ${planData.grade}`;
+  document.getElementById('review-grade').textContent = `Grade ${planData.grade}`;
   document.getElementById('review-weekdate').textContent = planData.weekDate;
-  document.getElementById('review-lesson').textContent  = planData.lesson || '—';
+  document.getElementById('review-lesson').textContent = planData.lesson || '—';
 
   const tbody = document.getElementById('review-tbody');
   tbody.innerHTML = '';
@@ -204,10 +206,10 @@ document.getElementById('review-back-btn').addEventListener('click', function ()
 
 // ── SUBJECT & GRADE SELECTION ────────────────────────────────────
 document.getElementById('go-btn').addEventListener('click', async function () {
-  const school  = document.getElementById('school-select').value;
+  const school = document.getElementById('school-select').value;
   const subject = document.getElementById('subject-select').value;
-  const grade   = document.getElementById('grade-select').value;
-  const err     = document.getElementById('select-error');
+  const grade = document.getElementById('grade-select').value;
+  const err = document.getElementById('select-error');
 
   if (!school || !subject || !grade) {
     err.classList.remove('hidden');
@@ -215,9 +217,9 @@ document.getElementById('go-btn').addEventListener('click', async function () {
   }
 
   err.classList.add('hidden');
-  currentSchool  = school;
+  currentSchool = school;
   currentSubject = subject;
-  currentGrade   = grade;
+  currentGrade = grade;
 
   await checkPreviousWeekReview();
 });
@@ -225,7 +227,7 @@ document.getElementById('go-btn').addEventListener('click', async function () {
 // ── LOAD DROPDOWN OPTIONS FROM CURRICULUM SHEET ──────────────────
 async function loadOptions() {
   const lessonSel = document.getElementById('f-lesson');
-  const topicSel  = document.getElementById('f-topic');
+  const topicSel = document.getElementById('f-topic');
 
   setSelectOptions(lessonSel, [], '-- Loading… --', true);
   setSelectOptions(topicSel, [], '-- Select Lesson first --', true);
@@ -235,8 +237,8 @@ async function loadOptions() {
   hideRealworldPicker();
 
   try {
-    const url  = `${SCRIPT_URL}?action=options&subject=${encodeURIComponent(currentSubject)}&grade=${encodeURIComponent(currentGrade)}`;
-    const res  = await fetch(url);
+    const url = `${SCRIPT_URL}?action=options&subject=${encodeURIComponent(currentSubject)}&grade=${encodeURIComponent(currentGrade)}`;
+    const res = await fetch(url);
     const data = await res.json();
 
     if (data.status !== 'ok') throw new Error(data.message);
@@ -251,7 +253,7 @@ async function loadOptions() {
 
 // When Lesson changes → fetch Topics, update preview
 document.getElementById('f-lesson').addEventListener('change', async function () {
-  const lesson   = this.value;
+  const lesson = this.value;
   const topicSel = document.getElementById('f-topic');
 
   hideActivityPicker();
@@ -270,8 +272,8 @@ document.getElementById('f-lesson').addEventListener('change', async function ()
   topicSel.disabled = true;
 
   try {
-    const url  = `${SCRIPT_URL}?action=options&subject=${encodeURIComponent(currentSubject)}&grade=${encodeURIComponent(currentGrade)}&lesson=${encodeURIComponent(lesson)}`;
-    const res  = await fetch(url);
+    const url = `${SCRIPT_URL}?action=options&subject=${encodeURIComponent(currentSubject)}&grade=${encodeURIComponent(currentGrade)}&lesson=${encodeURIComponent(lesson)}`;
+    const res = await fetch(url);
     const data = await res.json();
 
     if (data.status !== 'ok') throw new Error(data.message);
@@ -288,7 +290,7 @@ document.getElementById('f-lesson').addEventListener('change', async function ()
 // When Topic changes → show three activity cards, update preview
 document.getElementById('f-topic').addEventListener('change', async function () {
   const lesson = document.getElementById('f-lesson').value;
-  const topic  = this.value;
+  const topic = this.value;
 
   hideActivityPicker();
   hideAssessmentPicker();
@@ -306,47 +308,47 @@ document.getElementById('f-topic').addEventListener('change', async function () 
     });
   }
 
-  document.getElementById('activity-text-1').textContent   = 'Loading…';
-  document.getElementById('activity-text-2').textContent   = 'Loading…';
-  document.getElementById('activity-text-3').textContent   = 'Loading…';
+  document.getElementById('activity-text-1').textContent = 'Loading…';
+  document.getElementById('activity-text-2').textContent = 'Loading…';
+  document.getElementById('activity-text-3').textContent = 'Loading…';
   document.getElementById('assessment-text-1').textContent = 'Loading…';
   document.getElementById('assessment-text-2').textContent = 'Loading…';
   document.getElementById('assessment-text-3').textContent = 'Loading…';
-  document.getElementById('realworld-text-1').textContent  = 'Loading…';
-  document.getElementById('realworld-text-2').textContent  = 'Loading…';
-  document.getElementById('realworld-text-3').textContent  = 'Loading…';
+  document.getElementById('realworld-text-1').textContent = 'Loading…';
+  document.getElementById('realworld-text-2').textContent = 'Loading…';
+  document.getElementById('realworld-text-3').textContent = 'Loading…';
   document.getElementById('activity-picker').classList.remove('hidden');
   document.getElementById('assessment-picker').classList.remove('hidden');
   document.getElementById('realworld-picker').classList.remove('hidden');
   document.getElementById('active-day-bar').classList.remove('hidden');
 
   try {
-    const url  = `${SCRIPT_URL}?action=options&subject=${encodeURIComponent(currentSubject)}&grade=${encodeURIComponent(currentGrade)}&lesson=${encodeURIComponent(lesson)}&topic=${encodeURIComponent(topic)}`;
-    const res  = await fetch(url);
+    const url = `${SCRIPT_URL}?action=options&subject=${encodeURIComponent(currentSubject)}&grade=${encodeURIComponent(currentGrade)}&lesson=${encodeURIComponent(lesson)}&topic=${encodeURIComponent(topic)}`;
+    const res = await fetch(url);
     const data = await res.json();
 
     if (data.status !== 'ok') throw new Error(data.message);
 
-    document.getElementById('activity-text-1').textContent   = data.activity1   || '(none)';
-    document.getElementById('activity-text-2').textContent   = data.activity2   || '(none)';
-    document.getElementById('activity-text-3').textContent   = data.activity3   || '(none)';
+    document.getElementById('activity-text-1').textContent = data.activity1 || '(none)';
+    document.getElementById('activity-text-2').textContent = data.activity2 || '(none)';
+    document.getElementById('activity-text-3').textContent = data.activity3 || '(none)';
     document.getElementById('assessment-text-1').textContent = data.assessment1 || '(none)';
     document.getElementById('assessment-text-2').textContent = data.assessment2 || '(none)';
     document.getElementById('assessment-text-3').textContent = data.assessment3 || '(none)';
-    document.getElementById('realworld-text-1').textContent  = data.realworld1  || '(none)';
-    document.getElementById('realworld-text-2').textContent  = data.realworld2  || '(none)';
-    document.getElementById('realworld-text-3').textContent  = data.realworld3  || '(none)';
+    document.getElementById('realworld-text-1').textContent = data.realworld1 || '(none)';
+    document.getElementById('realworld-text-2').textContent = data.realworld2 || '(none)';
+    document.getElementById('realworld-text-3').textContent = data.realworld3 || '(none)';
 
   } catch (err) {
-    document.getElementById('activity-text-1').textContent   = 'Failed to load';
-    document.getElementById('activity-text-2').textContent   = '—';
-    document.getElementById('activity-text-3').textContent   = '—';
+    document.getElementById('activity-text-1').textContent = 'Failed to load';
+    document.getElementById('activity-text-2').textContent = '—';
+    document.getElementById('activity-text-3').textContent = '—';
     document.getElementById('assessment-text-1').textContent = 'Failed to load';
     document.getElementById('assessment-text-2').textContent = '—';
     document.getElementById('assessment-text-3').textContent = '—';
-    document.getElementById('realworld-text-1').textContent  = 'Failed to load';
-    document.getElementById('realworld-text-2').textContent  = '—';
-    document.getElementById('realworld-text-3').textContent  = '—';
+    document.getElementById('realworld-text-1').textContent = 'Failed to load';
+    document.getElementById('realworld-text-2').textContent = '—';
+    document.getElementById('realworld-text-3').textContent = '—';
     console.error('Options load error:', err);
   }
 });
@@ -380,7 +382,7 @@ function toggleHoliday() {
     return;
   }
 
-  const row     = document.getElementById(`row-${activeDay}`);
+  const row = document.getElementById(`row-${activeDay}`);
   const dayCell = document.getElementById(`preview-day-${activeDay}`);
   const dataCols = ['topic', 'activity', 'assessment'];
 
@@ -545,15 +547,15 @@ function resetPreview() {
   });
 
   // Clear contenteditable cells
-  document.getElementById('preview-objective').textContent  = '';
-  document.getElementById('preview-material').textContent   = '';
-  document.getElementById('preview-realworld').textContent  = '';
+  document.getElementById('preview-objective').textContent = '';
+  document.getElementById('preview-material').textContent = '';
+  document.getElementById('preview-realworld').textContent = '';
   document.getElementById('preview-preparedby').textContent = '';
 
   // Clear holidays
   holidayDays.clear();
   DAY_NAMES.forEach((name, i) => {
-    const d   = DAYS[i];
+    const d = DAYS[i];
     const row = document.getElementById(`row-${d}`);
     if (row) row.classList.remove('holiday');
     const dayCell = document.getElementById(`preview-day-${d}`);
@@ -572,15 +574,15 @@ function resetPreview() {
 
 function updatePreview() {
   const dateStr = document.getElementById('f-date').value;
-  const lesson  = document.getElementById('f-lesson').value;
+  const lesson = document.getElementById('f-lesson').value;
 
   function setMeta(id, val, placeholder) {
     const el = document.getElementById(id);
     if (val) { el.textContent = val; el.classList.remove('empty'); }
-    else      { el.textContent = placeholder; el.classList.add('empty'); }
+    else { el.textContent = placeholder; el.classList.add('empty'); }
   }
 
-  setMeta('preview-date',   formatDate(dateStr), 'Not entered');
+  setMeta('preview-date', formatDate(dateStr), 'Not entered');
   setMeta('preview-lesson', lesson, 'Not selected');
 
   // Update day labels with calculated dates
@@ -616,17 +618,18 @@ document.getElementById('add-form').addEventListener('submit', async function (e
     return;
   }
 
-  const saveBtn    = document.getElementById('save-btn');
+  const saveBtn = document.getElementById('save-btn');
   const saveStatus = document.getElementById('save-status');
-  saveBtn.disabled    = true;
+  saveBtn.disabled = true;
   saveBtn.textContent = 'Saving…';
   saveStatus.classList.add('hidden');
 
-  const primaryActivity   = DAYS.map(d => (document.getElementById(`preview-activity-${d}`).textContent || '').trim()).find(a => a) || '';
+  const primaryActivity = DAYS.map(d => (document.getElementById(`preview-activity-${d}`).textContent || '').trim()).find(a => a) || '';
   const primaryAssessment = DAYS.map(d => (document.getElementById(`preview-assessment-${d}`).textContent || '').trim()).find(a => a) || '';
 
-  const payload = {
+  const saveParams = new URLSearchParams({
     action:      'add',
+    school:      currentSchool,
     subject:     currentSubject,
     grade:       currentGrade,
     date:        formatDate(document.getElementById('f-date').value),
@@ -638,33 +641,33 @@ document.getElementById('add-form').addEventListener('submit', async function (e
     assessments: primaryAssessment,
     realworld:   (document.getElementById('preview-realworld').textContent || '').trim(),
     preparedby:  (document.getElementById('preview-preparedby').textContent || '').trim(),
-  };
+  });
 
   try {
-    const res  = await fetch(SCRIPT_URL, { method: 'POST', body: JSON.stringify(payload) });
+    const res = await fetch(`${SCRIPT_URL}?${saveParams.toString()}`);
     const data = await res.json();
 
     if (data.status === 'ok') {
-      saveBtn.textContent    = '✓ Saved!';
+      saveBtn.textContent = '✓ Saved!';
       saveStatus.textContent = 'Plan saved to Google Sheets.';
-      saveStatus.className   = 'save-status success';
+      saveStatus.className = 'save-status success';
       saveStatus.classList.remove('hidden');
 
       const weekDateRaw = document.getElementById('f-date').value;
       const planSnapshot = {
-        school:    currentSchool,
-        subject:   currentSubject,
-        grade:     currentGrade,
-        weekDate:  formatDate(weekDateRaw),
+        school: currentSchool,
+        subject: currentSubject,
+        grade: currentGrade,
+        weekDate: formatDate(weekDateRaw),
         weekDateRaw,
-        lesson:    document.getElementById('f-lesson').value.trim(),
+        lesson: document.getElementById('f-lesson').value.trim(),
         days: DAYS.map((d, i) => ({
-          day:        d,
-          label:      getWeekDayLabels(weekDateRaw)[i],
-          topic:      (document.getElementById(`preview-topic-${d}`).textContent || '').trim(),
-          activity:   (document.getElementById(`preview-activity-${d}`).textContent || '').trim(),
+          day: d,
+          label: getWeekDayLabels(weekDateRaw)[i],
+          topic: (document.getElementById(`preview-topic-${d}`).textContent || '').trim(),
+          activity: (document.getElementById(`preview-activity-${d}`).textContent || '').trim(),
           assessment: (document.getElementById(`preview-assessment-${d}`).textContent || '').trim(),
-          isHoliday:  holidayDays.has(d),
+          isHoliday: holidayDays.has(d),
         })),
         completionStatus: null,
         savedAt: new Date().toISOString(),
@@ -673,7 +676,7 @@ document.getElementById('add-form').addEventListener('submit', async function (e
       savePlanToServer(planSnapshot);
 
       setTimeout(() => {
-        saveBtn.disabled    = false;
+        saveBtn.disabled = false;
         saveBtn.textContent = 'Save Plan';
         saveStatus.classList.add('hidden');
         document.getElementById('add-form').reset();
@@ -688,9 +691,9 @@ document.getElementById('add-form').addEventListener('submit', async function (e
     }
   } catch (err) {
     saveStatus.textContent = 'Could not save. Please try again.';
-    saveStatus.className   = 'save-status error-msg';
+    saveStatus.className = 'save-status error-msg';
     saveStatus.classList.remove('hidden');
-    saveBtn.disabled    = false;
+    saveBtn.disabled = false;
     saveBtn.textContent = 'Save Plan';
     console.error('Save error:', err);
   }
@@ -698,12 +701,12 @@ document.getElementById('add-form').addEventListener('submit', async function (e
 
 // ── DOWNLOAD AS PDF ───────────────────────────────────────────────
 function downloadPDF() {
-  const dateStr    = document.getElementById('f-date').value;
-  const lesson     = document.getElementById('f-lesson').value;
-  const topic      = document.getElementById('f-topic').value;
-  const objective  = (document.getElementById('preview-objective').textContent || '').trim();
-  const material   = (document.getElementById('preview-material').textContent || '').trim();
-  const realworld  = (document.getElementById('preview-realworld').textContent || '').trim();
+  const dateStr = document.getElementById('f-date').value;
+  const lesson = document.getElementById('f-lesson').value;
+  const topic = document.getElementById('f-topic').value;
+  const objective = (document.getElementById('preview-objective').textContent || '').trim();
+  const material = (document.getElementById('preview-material').textContent || '').trim();
+  const realworld = (document.getElementById('preview-realworld').textContent || '').trim();
   const preparedby = (document.getElementById('preview-preparedby').textContent || '').trim();
 
   if (!lesson && !topic && !objective) {
@@ -724,8 +727,8 @@ function downloadPDF() {
         <td colspan="3" style="text-align:center;color:#92400e;font-weight:600;font-style:italic;background:#fef9c3">Holiday</td>
       </tr>`;
       }
-      const dayTopic  = (document.getElementById(`preview-topic-${d}`).textContent || '').trim() || topic;
-      const dayAct    = (document.getElementById(`preview-activity-${d}`).textContent || '').trim();
+      const dayTopic = (document.getElementById(`preview-topic-${d}`).textContent || '').trim() || topic;
+      const dayAct = (document.getElementById(`preview-activity-${d}`).textContent || '').trim();
       const dayAssess = (document.getElementById(`preview-assessment-${d}`).textContent || '').trim();
       return `
       <tr>
@@ -815,8 +818,8 @@ function downloadPDF() {
 </html>`;
 
   const blob = new Blob([html], { type: 'text/html' });
-  const url  = URL.createObjectURL(blob);
-  const win  = window.open(url, '_blank');
+  const url = URL.createObjectURL(blob);
+  const win = window.open(url, '_blank');
   win.addEventListener('unload', () => URL.revokeObjectURL(url));
 }
 

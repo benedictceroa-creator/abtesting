@@ -46,6 +46,7 @@ function doGet(e) {
     const action = e.parameter.action;
     if (action === 'options')     return handleOptions(e.parameter);
     if (action === 'getLastPlan') return handleGetLastPlan(e.parameter);
+    if (action === 'add')         return handleAdd(e.parameter);
     return jsonResponse({ status: 'error', message: 'Unknown GET action: ' + action });
   } catch (err) {
     return jsonResponse({ status: 'error', message: 'doGet exception: ' + err.message });
@@ -55,7 +56,6 @@ function doGet(e) {
 function doPost(e) {
   try {
     const payload = JSON.parse(e.postData.contents);
-    if (payload.action === 'add')        return handleAdd(payload);
     if (payload.action === 'savePlan')   return handleSavePlan(payload);
     if (payload.action === 'saveReview') return handleSaveReview(payload);
     return jsonResponse({ status: 'error', message: 'Unknown POST action: ' + payload.action });
@@ -135,8 +135,9 @@ function handleOptions(params) {
   });
 }
 
-// ── POST: save plan summary to "Lesson Plans" sheet ─────────────
-function handleAdd(payload) {
+// ── GET: save plan summary to "Lesson Plans" sheet ──────────────
+// Sent as GET (URL params) to avoid Apps Script POST redirect issue
+function handleAdd(params) {
   const ss    = getSpreadsheet();
   let   sheet = ss.getSheetByName(PLANS_LOG_SHEET);
 
@@ -153,18 +154,18 @@ function handleAdd(payload) {
 
   sheet.appendRow([
     new Date().toISOString(),
-    payload.school      || '',
-    payload.subject     || '',
-    payload.grade       || '',
-    payload.date        || '',
-    payload.lesson      || '',
-    payload.topic       || '',
-    payload.objective   || '',
-    payload.activities  || '',
-    payload.material    || '',
-    payload.assessments || '',
-    payload.realworld   || '',
-    payload.preparedby  || '',
+    params.school      || '',
+    params.subject     || '',
+    params.grade       || '',
+    params.date        || '',
+    params.lesson      || '',
+    params.topic       || '',
+    params.objective   || '',
+    params.activities  || '',
+    params.material    || '',
+    params.assessments || '',
+    params.realworld   || '',
+    params.preparedby  || '',
   ]);
 
   return jsonResponse({ status: 'ok' });
