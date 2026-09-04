@@ -93,25 +93,23 @@ async function getLastPlanFromServer(school, subject, grade) {
 
 async function savePlanToServer(planData) {
   try {
-    await fetch(SCRIPT_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      body: JSON.stringify({ action: 'savePlan', ...planData }),
+    const params = new URLSearchParams({
+      action:   'savePlan',
+      planData: JSON.stringify(planData),
     });
+    await fetch(`${SCRIPT_URL}?${params.toString()}`);
   } catch (err) { console.warn('savePlanToServer failed (non-fatal):', err); }
 }
 
 async function saveReviewToServer(school, subject, grade, weekDateRaw, completionStatus) {
   try {
-    await fetch(SCRIPT_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      body: JSON.stringify({
-        action: 'saveReview',
-        school, subject, grade, weekDateRaw, completionStatus,
-        reviewedAt: new Date().toISOString(),
-      }),
+    const params = new URLSearchParams({
+      action:           'saveReview',
+      school, subject, grade, weekDateRaw,
+      completionStatus: JSON.stringify(completionStatus),
+      reviewedAt:       new Date().toISOString(),
     });
+    await fetch(`${SCRIPT_URL}?${params.toString()}`);
   } catch (err) { console.warn('saveReviewToServer failed (non-fatal):', err); }
 }
 

@@ -47,18 +47,17 @@ function doGet(e) {
     if (action === 'options')     return handleOptions(e.parameter);
     if (action === 'getLastPlan') return handleGetLastPlan(e.parameter);
     if (action === 'add')         return handleAdd(e.parameter);
+    if (action === 'savePlan')    return handleSavePlan(e.parameter);
+    if (action === 'saveReview')  return handleSaveReview(e.parameter);
     return jsonResponse({ status: 'error', message: 'Unknown GET action: ' + action });
   } catch (err) {
     return jsonResponse({ status: 'error', message: 'doGet exception: ' + err.message });
   }
 }
 
-function doPost(e) {
+function doPost(_e) {
   try {
-    const payload = JSON.parse(e.postData.contents);
-    if (payload.action === 'savePlan')   return handleSavePlan(payload);
-    if (payload.action === 'saveReview') return handleSaveReview(payload);
-    return jsonResponse({ status: 'error', message: 'Unknown POST action: ' + payload.action });
+    return jsonResponse({ status: 'error', message: 'POST not used — all actions are GET' });
   } catch (err) {
     return jsonResponse({ status: 'error', message: 'doPost exception: ' + err.message });
   }
@@ -171,9 +170,9 @@ function handleAdd(params) {
   return jsonResponse({ status: 'ok' });
 }
 
-// ── POST: save full plan snapshot (per-day breakdown) ───────────
-// Called right after handleAdd so the review feature has the daily detail
-function handleSavePlan(payload) {
+// ── GET: save full plan snapshot (per-day breakdown) ────────────
+function handleSavePlan(params) {
+  const plan  = JSON.parse(params.planData);
   const ss    = getSpreadsheet();
   let   sheet = ss.getSheetByName(SNAPSHOTS_SHEET);
 
@@ -187,28 +186,27 @@ function handleSavePlan(payload) {
     sheet.getRange(1, 1, 1, 9).setFontWeight('bold');
   }
 
-  // PlanId is unique per school+subject+grade+week — safe to upsert
-  const planId = [payload.school, payload.subject, payload.grade, payload.weekDateRaw].join('_');
+  const planId = [plan.school, plan.subject, plan.grade, plan.weekDateRaw].join('_');
   const rows   = sheet.getDataRange().getValues();
 
   for (let i = 1; i < rows.length; i++) {
     if (rows[i][0] === planId) {
-      sheet.getRange(i + 1, 6).setValue(new Date().toISOString()); // SavedAt
-      sheet.getRange(i + 1, 7).setValue(JSON.stringify(payload));  // PlanJSON
+      sheet.getRange(i + 1, 6).setValue(new Date().toISOString());
+      sheet.getRange(i + 1, 7).setValue(params.planData);
       return jsonResponse({ status: 'ok' });
     }
   }
 
   sheet.appendRow([
     planId,
-    payload.school   || '',
-    payload.subject  || '',
-    payload.grade    || '',
-    payload.weekDate || '',
-    payload.savedAt  || new Date().toISOString(),
-    JSON.stringify(payload),
-    '',   // ReviewedAt — empty until teacher completes the review screen
-    '',   // CompletionJSON
+    plan.school   || '',
+    plan.subject  || '',
+    plan.grade    || '',
+    plan.weekDate || '',
+    plan.savedAt  || new Date().toISOString(),
+    params.planData,
+    '',
+    '',
   ]);
 
   return jsonResponse({ status: 'ok' });
@@ -241,20 +239,20 @@ function handleGetLastPlan(params) {
   return jsonResponse({ status: 'ok', plan: null });
 }
 
-// ── POST: save completion review ─────────────────────────────────
-function handleSaveReview(payload) {
+// ── GET: save completion review ──────────────────────────────────
+function handleSaveReview(params) {
   const ss    = getSpreadsheet();
   const sheet = ss.getSheetByName(SNAPSHOTS_SHEET);
 
   if (!sheet) return jsonResponse({ status: 'error', message: 'Plans sheet not found' });
 
-  const planId = [payload.school, payload.subject, payload.grade, payload.weekDateRaw].join('_');
+  const planId = [params.school, params.subject, params.grade, params.weekDateRaw].join('_');
   const rows   = sheet.getDataRange().getValues();
 
   for (let i = 1; i < rows.length; i++) {
     if (rows[i][0] === planId) {
-      sheet.getRange(i + 1, 8).setValue(payload.reviewedAt || new Date().toISOString());
-      sheet.getRange(i + 1, 9).setValue(JSON.stringify(payload.completionStatus));
+      sheet.getRange(i + 1, 8).setValue(params.reviewedAt || new Date().toISOString());
+      sheet.getRange(i + 1, 9).setValue(params.completionStatus);
       return jsonResponse({ status: 'ok' });
     }
   }
