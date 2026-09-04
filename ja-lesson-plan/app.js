@@ -74,8 +74,47 @@ function saveLastPlan(planData) {
   try { localStorage.setItem(localStoragePlanKey(), JSON.stringify(planData)); } catch {}
 }
 
-function checkPreviousWeekReview() {
-  const plan = getLastPlan();
+// ── SERVER PLAN STORAGE ─────────────────────────────────────────
+async function getLastPlanFromServer(school, subject, grade) {
+  try {
+    const url = `${SCRIPT_URL}?action=getLastPlan` +
+      `&school=${encodeURIComponent(school)}` +
+      `&subject=${encodeURIComponent(subject)}` +
+      `&grade=${encodeURIComponent(grade)}`;
+    const res  = await fetch(url);
+    const data = await res.json();
+    if (data.status === 'ok' && data.plan) {
+      saveLastPlan(data.plan); // cache locally
+      return data.plan;
+    }
+  } catch {}
+  return getLastPlan(); // fall back to localStorage if server unreachable
+}
+
+async function savePlanToServer(planData) {
+  try {
+    await fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify({ action: 'savePlan', ...planData }),
+    });
+  } catch (err) { console.warn('savePlanToServer failed (non-fatal):', err); }
+}
+
+async function saveReviewToServer(school, subject, grade, weekDateRaw, completionStatus) {
+  try {
+    await fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify({
+        action: 'saveReview',
+        school, subject, grade, weekDateRaw, completionStatus,
+        reviewedAt: new Date().toISOString(),
+      }),
+    });
+  } catch (err) { console.warn('saveReviewToServer failed (non-fatal):', err); }
+}
+
+async function checkPreviousWeekReview() {
+  const plan = await getLastPlanFromServer(currentSchool, currentSubject, currentGrade);
   if (plan && !plan.completionStatus) {
     renderReviewView(plan);
   } else {
@@ -132,7 +171,7 @@ function renderReviewView(planData) {
   showView('view-review');
 }
 
-document.getElementById('review-submit-btn').addEventListener('click', function () {
+document.getElementById('review-submit-btn').addEventListener('click', async function () {
   const selects = document.querySelectorAll('#review-tbody .completion-select');
   let allMarked = true;
   selects.forEach(sel => { if (!sel.value) allMarked = false; });
@@ -149,6 +188,7 @@ document.getElementById('review-submit-btn').addEventListener('click', function 
     plan.completionStatus = status;
     plan.reviewedAt = new Date().toISOString();
     saveLastPlan(plan);
+    saveReviewToServer(plan.school, plan.subject, plan.grade, plan.weekDateRaw, status);
   }
 
   enterPlanner();
@@ -163,7 +203,7 @@ document.getElementById('review-back-btn').addEventListener('click', function ()
 });
 
 // ── SUBJECT & GRADE SELECTION ────────────────────────────────────
-document.getElementById('go-btn').addEventListener('click', function () {
+document.getElementById('go-btn').addEventListener('click', async function () {
   const school  = document.getElementById('school-select').value;
   const subject = document.getElementById('subject-select').value;
   const grade   = document.getElementById('grade-select').value;
@@ -179,7 +219,7 @@ document.getElementById('go-btn').addEventListener('click', function () {
   currentSubject = subject;
   currentGrade   = grade;
 
-  checkPreviousWeekReview();
+  await checkPreviousWeekReview();
 });
 
 // ── LOAD DROPDOWN OPTIONS FROM CURRICULUM SHEET ──────────────────
@@ -610,9 +650,8 @@ document.getElementById('add-form').addEventListener('submit', async function (e
       saveStatus.className   = 'save-status success';
       saveStatus.classList.remove('hidden');
 
-      // Store plan in localStorage so completion can be reviewed before next week's plan
       const weekDateRaw = document.getElementById('f-date').value;
-      saveLastPlan({
+      const planSnapshot = {
         school:    currentSchool,
         subject:   currentSubject,
         grade:     currentGrade,
@@ -629,7 +668,9 @@ document.getElementById('add-form').addEventListener('submit', async function (e
         })),
         completionStatus: null,
         savedAt: new Date().toISOString(),
-      });
+      };
+      saveLastPlan(planSnapshot);
+      savePlanToServer(planSnapshot);
 
       setTimeout(() => {
         saveBtn.disabled    = false;
