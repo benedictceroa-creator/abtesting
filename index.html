@@ -74,6 +74,33 @@
     .tool-label { font-size: 1rem; font-weight: bold; color: var(--black); }
     .tool-sub   { font-size: .78rem; color: var(--muted); margin-top: 2px; font-style: italic; }
 
+    /* expandable JA tool */
+    .tool-expand-wrap { width: 100%; }
+    .tool-expand-btn  { width: 100%; }
+    .tool-expand-btn .tool-chevron { margin-left: auto; font-size: .85rem; color: var(--muted); transition: transform .2s; }
+    .tool-expand-btn.open .tool-chevron { transform: rotate(180deg); }
+    .tool-subnav {
+      display: none;
+      flex-direction: column;
+      gap: 8px;
+      padding: 10px 0 2px 56px;
+    }
+    .tool-subnav.open { display: flex; }
+    .tool-subnav a {
+      display: flex; align-items: center; gap: 10px;
+      background: #f8f6f2;
+      border: 1.5px solid #e0ddd7;
+      border-radius: 9px;
+      padding: 10px 16px;
+      font-size: .88rem;
+      font-weight: bold;
+      color: var(--black);
+      text-decoration: none;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .tool-subnav a:hover { border-color: var(--gold); box-shadow: 0 2px 10px rgba(0,0,0,.08); }
+    .tool-subnav .sub-icon { font-size: 1rem; }
+
     .home-footer {
       position: fixed;
       bottom: 0; left: 0; right: 0;
@@ -102,13 +129,24 @@
     </div>
   </a>
 
-  <a class="tool-btn" href="ja-lesson-plan/index.html">
-    <div class="tool-icon">&#128218;</div>
-    <div>
-      <div class="tool-label">JA Lesson Plan Tool</div>
-      <div class="tool-sub">Teacher activity planner for John's Academy</div>
+  <div class="tool-expand-wrap">
+    <div class="tool-btn tool-expand-btn" id="ja-toggle" onclick="toggleJA()">
+      <div class="tool-icon">&#128218;</div>
+      <div>
+        <div class="tool-label">JA Lesson Plan Tool</div>
+        <div class="tool-sub">Teacher activity planner for John's Academy</div>
+      </div>
+      <span class="tool-chevron">&#9660;</span>
     </div>
-  </a>
+    <div class="tool-subnav" id="ja-subnav">
+      <a href="ja-lesson-plan/index.html">
+        <span class="sub-icon">&#128101;</span> Teacher Login
+      </a>
+      <a href="ja-lesson-plan/dashboard.html">
+        <span class="sub-icon">&#128202;</span> Principal Dashboard
+      </a>
+    </div>
+  </div>
 
   <a class="tool-btn" href="est-lesson-plan/index.html">
     <div class="tool-icon">&#128203;</div>
@@ -139,5 +177,13 @@
   <div class="home-footer">&copy; Ceroa</div>
 </div>
 
+<script>
+  function toggleJA() {
+    const btn  = document.getElementById('ja-toggle');
+    const nav  = document.getElementById('ja-subnav');
+    btn.classList.toggle('open');
+    nav.classList.toggle('open');
+  }
+</script>
 </body>
 </html>
