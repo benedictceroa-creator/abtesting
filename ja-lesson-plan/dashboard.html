@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Johns Academy – Principal Dashboard</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #1a202c; min-height: 100vh; }
+
+    /* ── views ── */
+    .view { display: none; }
+    .view.active { display: block; }
+
+    /* ── login ── */
+    .login-wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #1a365d; }
+    .login-card { background: #fff; border-radius: 14px; padding: 40px 36px; width: 360px; box-shadow: 0 8px 32px rgba(0,0,0,.18); text-align: center; }
+    .login-logo { height: 64px; border-radius: 8px; margin-bottom: 12px; }
+    .login-card h2 { font-size: 1.1rem; color: #1a365d; margin-bottom: 4px; }
+    .login-card p { font-size: .82rem; color: #718096; margin-bottom: 24px; }
+    .login-card label { display: block; text-align: left; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #4a5568; margin-bottom: 6px; }
+    .login-card input { width: 100%; padding: 10px 12px; border: 1.5px solid #e2e8f0; border-radius: 7px; font-size: .9rem; outline: none; transition: border-color .2s; }
+    .login-card input:focus { border-color: #3182ce; }
+    .btn-primary { width: 100%; padding: 11px; background: #1a365d; color: #fff; border: none; border-radius: 7px; font-size: .95rem; font-weight: 600; cursor: pointer; margin-top: 14px; transition: background .2s; }
+    .btn-primary:hover { background: #2a4a7f; }
+    .error { color: #e53e3e; font-size: .82rem; margin-top: 8px; }
+    .hidden { display: none !important; }
+
+    /* ── top bar ── */
+    .top-bar { background: #1a365d; padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .top-bar-left { display: flex; align-items: center; gap: 12px; }
+    .topbar-logo { height: 36px; border-radius: 5px; }
+    .topbar-title { color: #fff; font-size: 1rem; font-weight: 700; letter-spacing: .02em; }
+    .btn-logout { background: rgba(255,255,255,.15); color: #fff; border: 1px solid rgba(255,255,255,.3); border-radius: 6px; padding: 6px 14px; font-size: .8rem; font-weight: 600; cursor: pointer; transition: background .2s; }
+    .btn-logout:hover { background: rgba(255,255,255,.25); }
+
+    /* ── filters bar ── */
+    .filters-bar { background: #fff; border-bottom: 1px solid #e2e8f0; padding: 14px 24px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .filter-group { display: flex; flex-direction: column; gap: 4px; }
+    .filter-group label { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #718096; }
+    .filter-group select { padding: 7px 10px; border: 1.5px solid #e2e8f0; border-radius: 6px; font-size: .85rem; color: #1a202c; background: #f7fafc; cursor: pointer; outline: none; min-width: 160px; }
+    .filter-group select:focus { border-color: #3182ce; }
+    .btn-load { background: #1a365d; color: #fff; border: none; border-radius: 6px; padding: 9px 20px; font-size: .85rem; font-weight: 600; cursor: pointer; margin-top: 18px; transition: background .2s; }
+    .btn-load:hover { background: #2a4a7f; }
+    .btn-load:disabled { opacity: .6; cursor: not-allowed; }
+
+    /* ── main content ── */
+    .dash-main { padding: 24px; max-width: 1200px; margin: 0 auto; }
+
+    /* ── summary cards ── */
+    .summary-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-bottom: 28px; }
+    .card { background: #fff; border-radius: 10px; padding: 18px 20px; box-shadow: 0 1px 4px rgba(0,0,0,.07); }
+    .card-label { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #718096; margin-bottom: 6px; }
+    .card-value { font-size: 1.9rem; font-weight: 800; line-height: 1; }
+    .card-value.blue   { color: #2b6cb0; }
+    .card-value.green  { color: #276749; }
+    .card-value.yellow { color: #b7791f; }
+    .card-value.red    { color: #9b2c2c; }
+
+    /* ── plans table ── */
+    .section-title { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: #4a5568; margin-bottom: 12px; }
+    .plans-table-wrap { background: #fff; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,.07); overflow: hidden; }
+    .plans-table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+    .plans-table thead tr { background: #1a365d; color: #fff; }
+    .plans-table thead th { padding: 11px 14px; text-align: left; font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; white-space: nowrap; }
+    .plans-table tbody tr.plan-row { border-bottom: 1px solid #e2e8f0; cursor: pointer; transition: background .15s; }
+    .plans-table tbody tr.plan-row:hover { background: #f7fafc; }
+    .plans-table tbody tr.plan-row.open { background: #ebf8ff; }
+    .plans-table td { padding: 11px 14px; vertical-align: middle; }
+    .plans-table td.subject-cell { font-weight: 700; color: #1a365d; }
+    .plans-table td.grade-cell { color: #4a5568; }
+
+    .pill { display: inline-block; border-radius: 999px; padding: 2px 10px; font-size: .72rem; font-weight: 700; }
+    .pill.green  { background: #c6f6d5; color: #276749; }
+    .pill.yellow { background: #fefcbf; color: #744210; }
+    .pill.red    { background: #fed7d7; color: #9b2c2c; }
+    .pill.grey   { background: #e2e8f0; color: #4a5568; }
+
+    .toggle-btn { background: none; border: none; color: #3182ce; font-size: .78rem; font-weight: 600; cursor: pointer; white-space: nowrap; padding: 0; }
+
+    /* ── expanded detail rows ── */
+    .detail-row { display: none; }
+    .detail-row.open { display: table-row; }
+    .detail-cell { padding: 0 !important; border-bottom: 2px solid #bee3f8 !important; }
+    .detail-inner { padding: 16px 20px; background: #f0f8ff; }
+    .detail-table { width: 100%; border-collapse: collapse; font-size: .82rem; }
+    .detail-table th { background: #2b6cb0; color: #fff; padding: 7px 12px; text-align: left; font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
+    .detail-table td { padding: 8px 12px; border-bottom: 1px solid #bee3f8; vertical-align: top; }
+    .detail-table tr:last-child td { border-bottom: none; }
+    .detail-table td:first-child { font-weight: 600; white-space: nowrap; color: #2b6cb0; background: #ebf8ff; }
+
+    .status-icon { font-size: .8rem; }
+
+    /* ── empty / loading states ── */
+    .empty-state { text-align: center; padding: 48px 24px; color: #a0aec0; }
+    .empty-state p { font-size: .95rem; }
+    .loading-msg { text-align: center; padding: 32px; color: #718096; font-size: .9rem; }
+  </style>
+</head>
+<body>
+
+  <!-- ── VIEW 1: LOGIN ── -->
+  <div id="view-login" class="view active">
+    <div class="login-wrap">
+      <div class="login-card">
+        <img src="logo.jpg" alt="John's Academy" class="login-logo" />
+        <h2>Principal Dashboard</h2>
+        <p>John's Academy – Lesson Plan Tracker</p>
+        <form id="login-form">
+          <label for="password">Principal Password</label>
+          <input type="password" id="password" placeholder="Enter password" required />
+          <p id="login-error" class="error hidden">Incorrect password. Please try again.</p>
+          <button type="submit" class="btn-primary">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── VIEW 2: DASHBOARD ── -->
+  <div id="view-dashboard" class="view">
+
+    <header class="top-bar">
+      <div class="top-bar-left">
+        <img src="logo.jpg" alt="John's Academy" class="topbar-logo" />
+        <span class="topbar-title">Principal Dashboard</span>
+      </div>
+      <button class="btn-logout" id="logout-btn">Logout</button>
+    </header>
+
+    <div class="filters-bar">
+      <div class="filter-group">
+        <label>School</label>
+        <select id="school-filter">
+          <option value="Medchal">Medchal</option>
+          <option value="Ramanthapur">Ramanthapur</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Week</label>
+        <select id="week-filter">
+          <option value="">-- All weeks --</option>
+        </select>
+      </div>
+      <button class="btn-load" id="load-btn">Load Plans</button>
+    </div>
+
+    <main class="dash-main">
+      <div id="loading-msg" class="loading-msg hidden">Loading plans…</div>
+
+      <div id="dashboard-content" class="hidden">
+        <!-- Summary cards -->
+        <div class="summary-cards">
+          <div class="card">
+            <div class="card-label">Plans Reviewed</div>
+            <div class="card-value blue" id="stat-plans">0</div>
+          </div>
+          <div class="card">
+            <div class="card-label">Days Completed</div>
+            <div class="card-value green" id="stat-completed">0</div>
+          </div>
+          <div class="card">
+            <div class="card-label">Days Partial</div>
+            <div class="card-value yellow" id="stat-partial">0</div>
+          </div>
+          <div class="card">
+            <div class="card-label">Days Not Done</div>
+            <div class="card-value red" id="stat-notdone">0</div>
+          </div>
+          <div class="card">
+            <div class="card-label">Completion Rate</div>
+            <div class="card-value blue" id="stat-rate">—</div>
+          </div>
+        </div>
+
+        <!-- Plans table -->
+        <div class="section-title">Reviewed Lesson Plans</div>
+        <div class="plans-table-wrap">
+          <table class="plans-table">
+            <thead>
+              <tr>
+                <th>Subject</th>
+                <th>Grade</th>
+                <th>Week</th>
+                <th>✓ Done</th>
+                <th>◑ Partial</th>
+                <th>✗ Not Done</th>
+                <th>Progress</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="plans-tbody"></tbody>
+          </table>
+          <div id="empty-state" class="empty-state hidden">
+            <p>No reviewed plans found for the selected filters.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

@@ -49,6 +49,7 @@ function doGet(e) {
     if (action === 'add')         return handleAdd(e.parameter);
     if (action === 'savePlan')    return handleSavePlan(e.parameter);
     if (action === 'saveReview')  return handleSaveReview(e.parameter);
+    if (action === 'getReviews')  return handleGetReviews(e.parameter);
     return jsonResponse({ status: 'error', message: 'Unknown GET action: ' + action });
   } catch (err) {
     return jsonResponse({ status: 'error', message: 'doGet exception: ' + err.message });
@@ -258,6 +259,33 @@ function handleSaveReview(params) {
   }
 
   return jsonResponse({ status: 'error', message: 'Plan not found — savePlan must be called first' });
+}
+
+// ── GET: return all reviewed plans for a school (principal dashboard)
+function handleGetReviews(params) {
+  const { school } = params;
+  const ss    = getSpreadsheet();
+  const sheet = ss.getSheetByName(SNAPSHOTS_SHEET);
+
+  if (!sheet) return jsonResponse({ status: 'ok', plans: [] });
+
+  const rows  = sheet.getDataRange().getValues();
+  const plans = [];
+
+  for (let i = 1; i < rows.length; i++) {
+    const [planId, rowSchool, rowSubject, rowGrade, weekDate, savedAt, planJson, reviewedAt, completionJson] = rows[i];
+    if (rowSchool !== school || !reviewedAt) continue;
+
+    let days             = [];
+    let completionStatus = {};
+    try { days             = JSON.parse(planJson).days || []; } catch {}
+    try { completionStatus = JSON.parse(completionJson);       } catch {}
+
+    plans.push({ planId, school: rowSchool, subject: rowSubject, grade: String(rowGrade),
+                 weekDate, savedAt, reviewedAt, days, completionStatus });
+  }
+
+  return jsonResponse({ status: 'ok', plans });
 }
 
 // ── Shared helper ────────────────────────────────────────────────
