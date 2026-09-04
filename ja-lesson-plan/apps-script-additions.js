@@ -50,6 +50,7 @@ function doGet(e) {
     if (action === 'savePlan')    return handleSavePlan(e.parameter);
     if (action === 'saveReview')  return handleSaveReview(e.parameter);
     if (action === 'getReviews')  return handleGetReviews(e.parameter);
+    if (action === 'getAllPlans')  return handleGetAllPlans(e.parameter);
     return jsonResponse({ status: 'error', message: 'Unknown GET action: ' + action });
   } catch (err) {
     return jsonResponse({ status: 'error', message: 'doGet exception: ' + err.message });
@@ -283,6 +284,33 @@ function handleGetReviews(params) {
 
     plans.push({ planId, school: rowSchool, subject: rowSubject, grade: String(rowGrade),
                  weekDate, savedAt, reviewedAt, days, completionStatus });
+  }
+
+  return jsonResponse({ status: 'ok', plans });
+}
+
+// ── GET: all saved plans for a school (principal current-week view) ─
+function handleGetAllPlans(params) {
+  const { school } = params;
+  const ss    = getSpreadsheet();
+  const sheet = ss.getSheetByName(SNAPSHOTS_SHEET);
+
+  if (!sheet) return jsonResponse({ status: 'ok', plans: [] });
+
+  const rows  = sheet.getDataRange().getValues();
+  const plans = [];
+
+  for (let i = 1; i < rows.length; i++) {
+    const [planId, rowSchool, rowSubject, rowGrade, weekDate, savedAt, planJson, reviewedAt] = rows[i];
+    if (rowSchool !== school) continue;
+
+    let days = [];
+    try { days = JSON.parse(planJson).days || []; } catch {}
+
+    plans.push({
+      planId, school: rowSchool, subject: rowSubject, grade: String(rowGrade),
+      weekDate, savedAt, reviewedAt: reviewedAt || null, days,
+    });
   }
 
   return jsonResponse({ status: 'ok', plans });

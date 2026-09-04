@@ -72,10 +72,11 @@
     .plans-table td.grade-cell { color: #4a5568; }
 
     .pill { display: inline-block; border-radius: 999px; padding: 2px 10px; font-size: .72rem; font-weight: 700; }
-    .pill.green  { background: #c6f6d5; color: #276749; }
-    .pill.yellow { background: #fefcbf; color: #744210; }
-    .pill.red    { background: #fed7d7; color: #9b2c2c; }
-    .pill.grey   { background: #e2e8f0; color: #4a5568; }
+    .pill.green      { background: #c6f6d5; color: #276749; }
+    .pill.yellow     { background: #fefcbf; color: #744210; }
+    .pill.red        { background: #fed7d7; color: #9b2c2c; }
+    .pill.grey       { background: #e2e8f0; color: #4a5568; }
+    .pill.blue-light { background: #bee3f8; color: #2b6cb0; }
 
     .toggle-btn { background: none; border: none; color: #3182ce; font-size: .78rem; font-weight: 600; cursor: pointer; white-space: nowrap; padding: 0; }
 
@@ -91,6 +92,16 @@
     .detail-table td:first-child { font-weight: 600; white-space: nowrap; color: #2b6cb0; background: #ebf8ff; }
 
     .status-icon { font-size: .8rem; }
+
+    /* ── tabs ── */
+    .tab-bar { display: flex; gap: 4px; padding: 20px 24px 0; max-width: 1200px; margin: 0 auto; }
+    .tab-btn {
+      padding: 9px 20px; border: none; border-radius: 8px 8px 0 0; font-size: .85rem;
+      font-weight: 700; cursor: pointer; background: #dbe4ee; color: #4a5568;
+      border-bottom: 3px solid transparent; transition: background .15s, color .15s;
+    }
+    .tab-btn.active { background: #fff; color: #1a365d; border-bottom: 3px solid #1a365d; }
+    .tab-btn:hover:not(.active) { background: #c8d6e5; }
 
     /* ── empty / loading states ── */
     .empty-state { text-align: center; padding: 48px 24px; color: #a0aec0; }
@@ -145,11 +156,17 @@
       <button class="btn-load" id="load-btn">Load Plans</button>
     </div>
 
+    <!-- Tab buttons -->
+    <div class="tab-bar">
+      <button class="tab-btn active" id="tab-btn-reviews" onclick="switchTab('reviews')">Completed Reviews</button>
+      <button class="tab-btn" id="tab-btn-current" onclick="switchTab('current')">Current Week Plans</button>
+    </div>
+
     <main class="dash-main">
       <div id="loading-msg" class="loading-msg hidden">Loading plans…</div>
 
-      <div id="dashboard-content" class="hidden">
-        <!-- Summary cards -->
+      <!-- TAB 1: Completed Reviews -->
+      <div id="tab-reviews" class="hidden">
         <div class="summary-cards">
           <div class="card">
             <div class="card-label">Plans Reviewed</div>
@@ -172,30 +189,43 @@
             <div class="card-value blue" id="stat-rate">—</div>
           </div>
         </div>
-
-        <!-- Plans table -->
         <div class="section-title">Reviewed Lesson Plans</div>
         <div class="plans-table-wrap">
           <table class="plans-table">
             <thead>
               <tr>
-                <th>Subject</th>
-                <th>Grade</th>
-                <th>Week</th>
-                <th>✓ Done</th>
-                <th>◑ Partial</th>
-                <th>✗ Not Done</th>
-                <th>Progress</th>
-                <th></th>
+                <th>Subject</th><th>Grade</th><th>Week</th>
+                <th>✓ Done</th><th>◑ Partial</th><th>✗ Not Done</th>
+                <th>Progress</th><th></th>
               </tr>
             </thead>
             <tbody id="plans-tbody"></tbody>
           </table>
-          <div id="empty-state" class="empty-state hidden">
+          <div id="empty-state-reviews" class="empty-state hidden">
             <p>No reviewed plans found for the selected filters.</p>
           </div>
         </div>
       </div>
+
+      <!-- TAB 2: Current Week Plans -->
+      <div id="tab-current" class="hidden">
+        <div class="section-title">Plans Prepared by Teachers</div>
+        <div class="plans-table-wrap">
+          <table class="plans-table">
+            <thead>
+              <tr>
+                <th>Subject</th><th>Grade</th><th>Week</th>
+                <th>Days Planned</th><th>Reviewed?</th><th></th>
+              </tr>
+            </thead>
+            <tbody id="current-tbody"></tbody>
+          </table>
+          <div id="empty-state-current" class="empty-state hidden">
+            <p>No plans found for the selected filters.</p>
+          </div>
+        </div>
+      </div>
+
     </main>
   </div>
 
