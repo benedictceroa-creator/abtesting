@@ -27,20 +27,41 @@ function getSpreadsheet() {
   return SpreadsheetApp.openById(SPREADSHEET_ID);
 }
 
+// ── Setup test — run this ONCE manually in the Apps Script editor ─
+// Click Run → testSetup to authorize the script and verify the sheet
+// connection before deploying. Check the Execution Log for results.
+function testSetup() {
+  try {
+    const ss     = getSpreadsheet();
+    const sheets = ss.getSheets().map(s => s.getName());
+    Logger.log('✅ Connected. Sheets found: ' + sheets.join(', '));
+  } catch (err) {
+    Logger.log('❌ Error: ' + err.message);
+  }
+}
+
 // ── Router ──────────────────────────────────────────────────────
 function doGet(e) {
-  const action = e.parameter.action;
-  if (action === 'options')     return handleOptions(e.parameter);
-  if (action === 'getLastPlan') return handleGetLastPlan(e.parameter);
-  return jsonResponse({ status: 'error', message: 'Unknown GET action: ' + action });
+  try {
+    const action = e.parameter.action;
+    if (action === 'options')     return handleOptions(e.parameter);
+    if (action === 'getLastPlan') return handleGetLastPlan(e.parameter);
+    return jsonResponse({ status: 'error', message: 'Unknown GET action: ' + action });
+  } catch (err) {
+    return jsonResponse({ status: 'error', message: 'doGet exception: ' + err.message });
+  }
 }
 
 function doPost(e) {
-  const payload = JSON.parse(e.postData.contents);
-  if (payload.action === 'add')        return handleAdd(payload);
-  if (payload.action === 'savePlan')   return handleSavePlan(payload);
-  if (payload.action === 'saveReview') return handleSaveReview(payload);
-  return jsonResponse({ status: 'error', message: 'Unknown POST action: ' + payload.action });
+  try {
+    const payload = JSON.parse(e.postData.contents);
+    if (payload.action === 'add')        return handleAdd(payload);
+    if (payload.action === 'savePlan')   return handleSavePlan(payload);
+    if (payload.action === 'saveReview') return handleSaveReview(payload);
+    return jsonResponse({ status: 'error', message: 'Unknown POST action: ' + payload.action });
+  } catch (err) {
+    return jsonResponse({ status: 'error', message: 'doPost exception: ' + err.message });
+  }
 }
 
 // ── GET: curriculum options ──────────────────────────────────────
