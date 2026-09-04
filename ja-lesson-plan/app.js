@@ -690,7 +690,7 @@ document.getElementById('add-form').addEventListener('submit', async function (e
       throw new Error(data.message || 'Save failed');
     }
   } catch (err) {
-    saveStatus.textContent = 'Could not save. Please try again.';
+    saveStatus.textContent = err.message || 'Could not save. Please try again.';
     saveStatus.className = 'save-status error-msg';
     saveStatus.classList.remove('hidden');
     saveBtn.disabled = false;
