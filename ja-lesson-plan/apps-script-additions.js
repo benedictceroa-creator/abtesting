@@ -12,10 +12,20 @@
 //  4. Copy the deployment URL and paste it into app.js as SCRIPT_URL
 // ══════════════════════════════════════════════════════════════════
 
+// ── Spreadsheet ID ──────────────────────────────────────────────
+// Found in your Google Sheet URL:
+// https://docs.google.com/spreadsheets/d/<ID>/edit
+const SPREADSHEET_ID = '1_FgJCmovK9jYahAfnzmg2g2Y7UXR9SAMXRT8nU2fBXI';
+
 // ── Sheet names ─────────────────────────────────────────────────
 const CURRICULUM_SHEET  = 'Sheet1';       // your existing curriculum tab
 const PLANS_LOG_SHEET   = 'Lesson Plans'; // created automatically on first save
 const SNAPSHOTS_SHEET   = 'Plans';        // created automatically on first save
+
+// ── Open the spreadsheet ─────────────────────────────────────────
+function getSpreadsheet() {
+  return SpreadsheetApp.openById(SPREADSHEET_ID);
+}
 
 // ── Router ──────────────────────────────────────────────────────
 function doGet(e) {
@@ -38,7 +48,7 @@ function doPost(e) {
 function handleOptions(params) {
   const { subject, grade, lesson, topic } = params;
 
-  const ss    = SpreadsheetApp.getActiveSpreadsheet();
+  const ss    = getSpreadsheet();
   const sheet = ss.getSheetByName(CURRICULUM_SHEET);
   if (!sheet) return jsonResponse({ status: 'error', message: 'Curriculum sheet "' + CURRICULUM_SHEET + '" not found' });
 
@@ -106,7 +116,7 @@ function handleOptions(params) {
 
 // ── POST: save plan summary to "Lesson Plans" sheet ─────────────
 function handleAdd(payload) {
-  const ss    = SpreadsheetApp.getActiveSpreadsheet();
+  const ss    = getSpreadsheet();
   let   sheet = ss.getSheetByName(PLANS_LOG_SHEET);
 
   if (!sheet) {
@@ -142,7 +152,7 @@ function handleAdd(payload) {
 // ── POST: save full plan snapshot (per-day breakdown) ───────────
 // Called right after handleAdd so the review feature has the daily detail
 function handleSavePlan(payload) {
-  const ss    = SpreadsheetApp.getActiveSpreadsheet();
+  const ss    = getSpreadsheet();
   let   sheet = ss.getSheetByName(SNAPSHOTS_SHEET);
 
   if (!sheet) {
@@ -186,7 +196,7 @@ function handleSavePlan(payload) {
 function handleGetLastPlan(params) {
   const { school, subject, grade } = params;
 
-  const ss    = SpreadsheetApp.getActiveSpreadsheet();
+  const ss    = getSpreadsheet();
   const sheet = ss.getSheetByName(SNAPSHOTS_SHEET);
 
   if (!sheet) return jsonResponse({ status: 'ok', plan: null });
@@ -211,7 +221,7 @@ function handleGetLastPlan(params) {
 
 // ── POST: save completion review ─────────────────────────────────
 function handleSaveReview(payload) {
-  const ss    = SpreadsheetApp.getActiveSpreadsheet();
+  const ss    = getSpreadsheet();
   const sheet = ss.getSheetByName(SNAPSHOTS_SHEET);
 
   if (!sheet) return jsonResponse({ status: 'error', message: 'Plans sheet not found' });
