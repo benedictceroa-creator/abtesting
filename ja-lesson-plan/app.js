@@ -35,6 +35,7 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
     err.classList.add('hidden');
     sessionStorage.setItem('authenticated', 'true');
     showView('view-select');
+    loadSubjectsGrades();
   } else {
     err.classList.remove('hidden');
     document.getElementById('password').value = '';
@@ -57,6 +58,69 @@ function logout() {
 document.getElementById('logout-btn').addEventListener('click', logout);
 document.getElementById('logout-btn-2').addEventListener('click', logout);
 document.getElementById('logout-btn-3').addEventListener('click', logout);
+
+// ── DYNAMIC SUBJECT & GRADE DROPDOWNS ───────────────────────────
+let subjectGradeMap = null; // cached after first fetch
+
+async function loadSubjectsGrades() {
+  if (subjectGradeMap) { populateSubjectDropdown(); return; }
+
+  const subjectSel = document.getElementById('subject-select');
+  const gradeSel   = document.getElementById('grade-select');
+  subjectSel.innerHTML = '<option value="">-- Loading… --</option>';
+  subjectSel.disabled  = true;
+  gradeSel.innerHTML   = '<option value="">-- Select Subject first --</option>';
+  gradeSel.disabled    = true;
+
+  try {
+    const res  = await fetch(`${SCRIPT_URL}?action=getSubjectsGrades`);
+    const data = await res.json();
+    if (data.status !== 'ok') throw new Error(data.message);
+    subjectGradeMap = data.subjectGrades;
+    populateSubjectDropdown();
+  } catch (err) {
+    subjectSel.innerHTML = '<option value="">-- Failed to load --</option>';
+    console.error('loadSubjectsGrades failed:', err);
+  }
+}
+
+function populateSubjectDropdown() {
+  const subjectSel = document.getElementById('subject-select');
+  subjectSel.innerHTML = '<option value="">-- Select Subject --</option>';
+  Object.keys(subjectGradeMap).forEach(s => {
+    const opt = document.createElement('option');
+    opt.value = opt.textContent = s;
+    subjectSel.appendChild(opt);
+  });
+  subjectSel.disabled = false;
+
+  // Restore previously selected value if still valid
+  if (currentSubject && subjectGradeMap[currentSubject]) {
+    subjectSel.value = currentSubject;
+    populateGradeDropdown(currentSubject);
+  }
+}
+
+function populateGradeDropdown(subject) {
+  const gradeSel = document.getElementById('grade-select');
+  const grades   = (subjectGradeMap && subjectGradeMap[subject]) || [];
+  gradeSel.innerHTML = '<option value="">-- Select Grade --</option>';
+  grades.forEach(g => {
+    const opt = document.createElement('option');
+    opt.value       = g;
+    opt.textContent = `Grade ${g}`;
+    gradeSel.appendChild(opt);
+  });
+  gradeSel.disabled = grades.length === 0;
+
+  if (currentGrade && grades.includes(currentGrade)) {
+    gradeSel.value = currentGrade;
+  }
+}
+
+document.getElementById('subject-select').addEventListener('change', function () {
+  populateGradeDropdown(this.value);
+});
 
 // ── SCHOOL SELECTION & PREVIOUS WEEK CHECK ───────────────────────
 function localStoragePlanKey() {
@@ -200,6 +264,7 @@ document.getElementById('review-skip-btn').addEventListener('click', function ()
 
 document.getElementById('review-back-btn').addEventListener('click', function () {
   showView('view-select');
+  loadSubjectsGrades();
 });
 
 // ── SUBJECT & GRADE SELECTION ────────────────────────────────────
@@ -511,6 +576,7 @@ function setSelectOptions(selectEl, values, placeholder, disabled) {
 // ── BACK BUTTON ──────────────────────────────────────────────────
 document.getElementById('back-btn').addEventListener('click', function () {
   showView('view-select');
+  loadSubjectsGrades();
 });
 
 // ── WEEK DATE HELPERS ─────────────────────────────────────────────
@@ -840,4 +906,5 @@ function escHtml(str) {
 // ── INIT: check session ───────────────────────────────────────────
 if (sessionStorage.getItem('authenticated') === 'true') {
   showView('view-select');
+  loadSubjectsGrades();
 }

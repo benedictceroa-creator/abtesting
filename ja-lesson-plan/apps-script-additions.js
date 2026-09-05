@@ -50,7 +50,8 @@ function doGet(e) {
     if (action === 'savePlan')    return handleSavePlan(e.parameter);
     if (action === 'saveReview')  return handleSaveReview(e.parameter);
     if (action === 'getReviews')  return handleGetReviews(e.parameter);
-    if (action === 'getAllPlans')  return handleGetAllPlans(e.parameter);
+    if (action === 'getAllPlans')       return handleGetAllPlans(e.parameter);
+    if (action === 'getSubjectsGrades') return handleGetSubjectsGrades();
     return jsonResponse({ status: 'error', message: 'Unknown GET action: ' + action });
   } catch (err) {
     return jsonResponse({ status: 'error', message: 'doGet exception: ' + err.message });
@@ -287,6 +288,35 @@ function handleGetReviews(params) {
   }
 
   return jsonResponse({ status: 'ok', plans });
+}
+
+// ── GET: distinct subject→grades map from curriculum sheet ──────────
+function handleGetSubjectsGrades() {
+  const ss    = getSpreadsheet();
+  const sheet = ss.getSheetByName(CURRICULUM_SHEET);
+  if (!sheet) return jsonResponse({ status: 'error', message: 'Curriculum sheet not found' });
+
+  const data    = sheet.getDataRange().getValues();
+  const headers = data[0].map(h => h.toString().trim().toLowerCase());
+  const iSubject = headers.indexOf('subject');
+  const iGrade   = headers.indexOf('grade');
+
+  const map = {};
+  data.slice(1).forEach(row => {
+    const s = (row[iSubject] || '').toString().trim();
+    const g = (row[iGrade]   || '').toString().trim();
+    if (!s || !g) return;
+    if (!map[s]) map[s] = new Set();
+    map[s].add(g);
+  });
+
+  // Convert sets to sorted arrays
+  const subjectGrades = {};
+  Object.keys(map).sort().forEach(s => {
+    subjectGrades[s] = [...map[s]].sort((a, b) => Number(a) - Number(b));
+  });
+
+  return jsonResponse({ status: 'ok', subjectGrades });
 }
 
 // ── GET: all saved plans for a school (principal current-week view) ─
