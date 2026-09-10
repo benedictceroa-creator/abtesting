@@ -534,7 +534,7 @@ body {
 /* ── PREVIEW META SECTION ── */
 .preview-meta-section {
   display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-columns: 1fr;
   border-bottom: 2px solid #e2e8f0;
 }
 
@@ -596,10 +596,12 @@ body {
   white-space: nowrap;
 }
 
-.weekly-table thead th.col-day { width: 18%; }
-.weekly-table thead th.col-topic { width: 22%; }
-.weekly-table thead th.col-activity { width: 38%; }
-.weekly-table thead th.col-assessment { width: 22%; }
+.weekly-table thead th.col-day { width: 15%; }
+.weekly-table thead th.col-lesson { width: 12%; }
+.weekly-table thead th.col-objective { width: 18%; }
+.weekly-table thead th.col-topic { width: 15%; }
+.weekly-table thead th.col-activity { width: 25%; }
+.weekly-table thead th.col-assessment { width: 15%; }
 
 .weekly-table tbody tr { border-bottom: 1px solid #e2e8f0; }
 .weekly-table tbody tr:last-child { border-bottom: none; }

@@ -255,19 +255,11 @@
                 <span id="preview-subject-label"></span>
               </div>
 
-              <!-- Header meta: Week Starting, Lesson, Objective -->
+              <!-- Header meta: Week Starting -->
               <div class="preview-meta-section">
                 <div class="preview-meta-item">
                   <span class="preview-meta-label">Week Starting</span>
                   <span class="preview-meta-value empty" id="preview-date">Not entered</span>
-                </div>
-                <div class="preview-meta-item">
-                  <span class="preview-meta-label">Lesson</span>
-                  <span class="preview-meta-value empty" id="preview-lesson">Not selected</span>
-                </div>
-                <div class="preview-meta-item">
-                  <span class="preview-meta-label">Objective</span>
-                  <span class="preview-meta-value editable-cell" id="preview-objective" contenteditable="true" data-placeholder="Click to enter objective"></span>
                 </div>
               </div>
 
@@ -277,6 +269,8 @@
                   <thead>
                     <tr>
                       <th class="col-day">Day (Date)</th>
+                      <th class="col-lesson">Lesson</th>
+                      <th class="col-objective">Objective</th>
                       <th class="col-topic">Topic</th>
                       <th class="col-activity">Activity</th>
                       <th class="col-assessment">Assessment</th>
@@ -285,36 +279,48 @@
                   <tbody>
                     <tr id="row-mon" class="plan-row" onclick="setActiveDay('mon')">
                       <td class="day-cell" id="preview-day-mon">Monday</td>
+                      <td class="weekly-cell editable-cell" id="preview-lesson-mon" contenteditable="true" data-placeholder="—"></td>
+                      <td class="weekly-cell editable-cell" id="preview-objective-mon" contenteditable="true" data-placeholder="—"></td>
                       <td class="weekly-cell editable-cell" id="preview-topic-mon" contenteditable="true" data-placeholder="—"></td>
                       <td class="weekly-cell editable-cell" id="preview-activity-mon" contenteditable="true" data-placeholder="—"></td>
                       <td class="weekly-cell editable-cell" id="preview-assessment-mon" contenteditable="true" data-placeholder="—"></td>
                     </tr>
                     <tr id="row-tue" class="plan-row" onclick="setActiveDay('tue')">
                       <td class="day-cell" id="preview-day-tue">Tuesday</td>
+                      <td class="weekly-cell editable-cell" id="preview-lesson-tue" contenteditable="true" data-placeholder="—"></td>
+                      <td class="weekly-cell editable-cell" id="preview-objective-tue" contenteditable="true" data-placeholder="—"></td>
                       <td class="weekly-cell editable-cell" id="preview-topic-tue" contenteditable="true" data-placeholder="—"></td>
                       <td class="weekly-cell editable-cell" id="preview-activity-tue" contenteditable="true" data-placeholder="—"></td>
                       <td class="weekly-cell editable-cell" id="preview-assessment-tue" contenteditable="true" data-placeholder="—"></td>
                     </tr>
                     <tr id="row-wed" class="plan-row" onclick="setActiveDay('wed')">
                       <td class="day-cell" id="preview-day-wed">Wednesday</td>
+                      <td class="weekly-cell editable-cell" id="preview-lesson-wed" contenteditable="true" data-placeholder="—"></td>
+                      <td class="weekly-cell editable-cell" id="preview-objective-wed" contenteditable="true" data-placeholder="—"></td>
                       <td class="weekly-cell editable-cell" id="preview-topic-wed" contenteditable="true" data-placeholder="—"></td>
                       <td class="weekly-cell editable-cell" id="preview-activity-wed" contenteditable="true" data-placeholder="—"></td>
                       <td class="weekly-cell editable-cell" id="preview-assessment-wed" contenteditable="true" data-placeholder="—"></td>
                     </tr>
                     <tr id="row-thu" class="plan-row" onclick="setActiveDay('thu')">
                       <td class="day-cell" id="preview-day-thu">Thursday</td>
+                      <td class="weekly-cell editable-cell" id="preview-lesson-thu" contenteditable="true" data-placeholder="—"></td>
+                      <td class="weekly-cell editable-cell" id="preview-objective-thu" contenteditable="true" data-placeholder="—"></td>
                       <td class="weekly-cell editable-cell" id="preview-topic-thu" contenteditable="true" data-placeholder="—"></td>
                       <td class="weekly-cell editable-cell" id="preview-activity-thu" contenteditable="true" data-placeholder="—"></td>
                       <td class="weekly-cell editable-cell" id="preview-assessment-thu" contenteditable="true" data-placeholder="—"></td>
                     </tr>
                     <tr id="row-fri" class="plan-row" onclick="setActiveDay('fri')">
                       <td class="day-cell" id="preview-day-fri">Friday</td>
+                      <td class="weekly-cell editable-cell" id="preview-lesson-fri" contenteditable="true" data-placeholder="—"></td>
+                      <td class="weekly-cell editable-cell" id="preview-objective-fri" contenteditable="true" data-placeholder="—"></td>
                       <td class="weekly-cell editable-cell" id="preview-topic-fri" contenteditable="true" data-placeholder="—"></td>
                       <td class="weekly-cell editable-cell" id="preview-activity-fri" contenteditable="true" data-placeholder="—"></td>
                       <td class="weekly-cell editable-cell" id="preview-assessment-fri" contenteditable="true" data-placeholder="—"></td>
                     </tr>
                     <tr id="row-sat" class="plan-row" onclick="setActiveDay('sat')">
                       <td class="day-cell" id="preview-day-sat">Saturday</td>
+                      <td class="weekly-cell editable-cell" id="preview-lesson-sat" contenteditable="true" data-placeholder="—"></td>
+                      <td class="weekly-cell editable-cell" id="preview-objective-sat" contenteditable="true" data-placeholder="—"></td>
                       <td class="weekly-cell editable-cell" id="preview-topic-sat" contenteditable="true" data-placeholder="—"></td>
                       <td class="weekly-cell editable-cell" id="preview-activity-sat" contenteditable="true" data-placeholder="—"></td>
                       <td class="weekly-cell editable-cell" id="preview-assessment-sat" contenteditable="true" data-placeholder="—"></td>

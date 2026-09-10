@@ -447,7 +447,7 @@ function toggleHoliday() {
 
   const row = document.getElementById(`row-${activeDay}`);
   const dayCell = document.getElementById(`preview-day-${activeDay}`);
-  const dataCols = ['topic', 'activity', 'assessment'];
+  const dataCols = ['lesson', 'objective', 'topic', 'activity', 'assessment'];
 
   if (holidayDays.has(activeDay)) {
     // Remove holiday
@@ -604,14 +604,11 @@ function resetPreview() {
   document.getElementById('preview-subject-label').textContent =
     `${currentSubject} — Grade ${currentGrade}`;
 
-  ['preview-date', 'preview-lesson'].forEach(id => {
-    const el = document.getElementById(id);
-    el.textContent = id === 'preview-date' ? 'Not entered' : 'Not selected';
-    el.classList.add('empty');
-  });
+  const dateEl = document.getElementById('preview-date');
+  dateEl.textContent = 'Not entered';
+  dateEl.classList.add('empty');
 
   // Clear contenteditable cells
-  document.getElementById('preview-objective').textContent = '';
   document.getElementById('preview-material').textContent = '';
   document.getElementById('preview-realworld').textContent = '';
   document.getElementById('preview-preparedby').textContent = '';
@@ -627,7 +624,7 @@ function resetPreview() {
       dayCell.querySelector('.holiday-badge')?.remove();
       dayCell.textContent = name;
     }
-    ['topic', 'activity', 'assessment'].forEach(col => {
+    ['lesson', 'objective', 'topic', 'activity', 'assessment'].forEach(col => {
       const cell = document.getElementById(`preview-${col}-${d}`);
       if (cell) { cell.contentEditable = 'true'; cell.textContent = ''; }
     });
@@ -640,14 +637,16 @@ function updatePreview() {
   const dateStr = document.getElementById('f-date').value;
   const lesson = document.getElementById('f-lesson').value;
 
-  function setMeta(id, val, placeholder) {
-    const el = document.getElementById(id);
-    if (val) { el.textContent = val; el.classList.remove('empty'); }
-    else { el.textContent = placeholder; el.classList.add('empty'); }
-  }
+  const dateEl = document.getElementById('preview-date');
+  const formattedDate = formatDate(dateStr);
+  if (formattedDate) { dateEl.textContent = formattedDate; dateEl.classList.remove('empty'); }
+  else { dateEl.textContent = 'Not entered'; dateEl.classList.add('empty'); }
 
-  setMeta('preview-date', formatDate(dateStr), 'Not entered');
-  setMeta('preview-lesson', lesson, 'Not selected');
+  // Populate lesson column for each day
+  DAYS.forEach(d => {
+    const cell = document.getElementById(`preview-lesson-${d}`);
+    if (cell) cell.textContent = lesson;
+  });
 
   // Update day labels with calculated dates
   const dayLabels = getWeekDayLabels(dateStr);
@@ -699,7 +698,7 @@ document.getElementById('add-form').addEventListener('submit', async function (e
     date:        formatDate(document.getElementById('f-date').value),
     lesson:      document.getElementById('f-lesson').value.trim(),
     topic:       document.getElementById('f-topic').value.trim(),
-    objective:   (document.getElementById('preview-objective').textContent || '').trim(),
+    objective:   (document.getElementById('preview-objective-mon').textContent || '').trim(),
     activities:  primaryActivity,
     material:    (document.getElementById('preview-material').textContent || '').trim(),
     assessments: primaryAssessment,
@@ -768,7 +767,7 @@ function downloadPDF() {
   const dateStr = document.getElementById('f-date').value;
   const lesson = document.getElementById('f-lesson').value;
   const topic = document.getElementById('f-topic').value;
-  const objective = (document.getElementById('preview-objective').textContent || '').trim();
+  const objective = (document.getElementById('preview-objective-mon').textContent || '').trim();
   const material = (document.getElementById('preview-material').textContent || '').trim();
   const realworld = (document.getElementById('preview-realworld').textContent || '').trim();
   const preparedby = (document.getElementById('preview-preparedby').textContent || '').trim();
@@ -788,15 +787,19 @@ function downloadPDF() {
         return `
       <tr style="background:#fef9c3">
         <td class="day-cell" style="background:#fef08a">${escHtml(day)}<br><span style="font-size:0.6rem;font-weight:800;letter-spacing:0.12em;color:#78350f;background:#fbbf24;border-radius:3px;padding:1px 5px">HOLIDAY</span></td>
-        <td colspan="3" style="text-align:center;color:#92400e;font-weight:600;font-style:italic;background:#fef9c3">Holiday</td>
+        <td colspan="5" style="text-align:center;color:#92400e;font-weight:600;font-style:italic;background:#fef9c3">Holiday</td>
       </tr>`;
       }
+      const dayLesson = (document.getElementById(`preview-lesson-${d}`).textContent || '').trim() || lesson;
+      const dayObjective = (document.getElementById(`preview-objective-${d}`).textContent || '').trim();
       const dayTopic = (document.getElementById(`preview-topic-${d}`).textContent || '').trim() || topic;
       const dayAct = (document.getElementById(`preview-activity-${d}`).textContent || '').trim();
       const dayAssess = (document.getElementById(`preview-assessment-${d}`).textContent || '').trim();
       return `
       <tr>
         <td class="day-cell">${escHtml(day)}</td>
+        <td>${escHtml(dayLesson) || '<span class="empty">—</span>'}</td>
+        <td>${escHtml(dayObjective) || '<span class="empty">—</span>'}</td>
         <td>${escHtml(dayTopic) || '<span class="empty">—</span>'}</td>
         <td>${escHtml(dayAct) || '<span class="empty">—</span>'}</td>
         <td>${escHtml(dayAssess) || '<span class="empty">—</span>'}</td>
@@ -855,18 +858,18 @@ function downloadPDF() {
     </div>
   </div>
   <div class="subject-bar">School: ${escHtml(currentSchool)} &nbsp;&nbsp;&nbsp; Subject: ${escHtml(currentSubject)} &nbsp;&nbsp;&nbsp; Grade: ${escHtml(currentGrade)}</div>
-  <div class="meta-grid">
+  <div class="meta-grid" style="grid-template-columns:1fr">
     <div class="meta-item"><div class="meta-lbl">Week Starting</div><div class="meta-val">${escHtml(weekStartLabel)}</div></div>
-    <div class="meta-item"><div class="meta-lbl">Lesson</div><div class="meta-val">${escHtml(lesson) || '—'}</div></div>
-    <div class="meta-item"><div class="meta-lbl">Objective</div><div class="meta-val">${escHtml(objective) || '—'}</div></div>
   </div>
   <table>
     <thead>
       <tr>
-        <th style="width:22%">Day (Date)</th>
-        <th style="width:22%">Topic</th>
-        <th style="width:34%">Activity</th>
-        <th style="width:22%">Assessment</th>
+        <th style="width:15%">Day (Date)</th>
+        <th style="width:12%">Lesson</th>
+        <th style="width:18%">Objective</th>
+        <th style="width:15%">Topic</th>
+        <th style="width:22%">Activity</th>
+        <th style="width:18%">Assessment</th>
       </tr>
     </thead>
     <tbody>${weekRows()}</tbody>
