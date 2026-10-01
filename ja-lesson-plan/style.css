@@ -95,6 +95,37 @@ body {
   letter-spacing: 0.02em;
 }
 
+/* ── TOP BAR ACTIONS (save + download side by side) ── */
+.top-bar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.btn-save {
+  background: #2b6cb0;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+.btn-save:hover { background: #2c5282; }
+.btn-save:disabled { background: #a0aec0; border-color: transparent; cursor: not-allowed; }
+
+.top-bar-actions .save-status {
+  margin-top: 0;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+.top-bar-actions .save-status.success   { color: #68d391; }
+.top-bar-actions .save-status.error-msg { color: #fc8181; }
+
 /* ── BUTTONS ── */
 .btn-primary {
   width: 100%;

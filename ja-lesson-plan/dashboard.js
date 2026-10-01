@@ -106,7 +106,8 @@ function populateWeekFilter(plans) {
   select.innerHTML = '<option value="">-- All weeks --</option>';
   weeks.forEach(w => {
     const opt = document.createElement('option');
-    opt.value = opt.textContent = w;
+    opt.value       = w;
+    opt.textContent = formatWeekDate(w);
     select.appendChild(opt);
   });
 }
@@ -162,7 +163,8 @@ function renderReviews() {
     tr.innerHTML   = `
       <td class="subject-cell">${escHtml(plan.subject)}</td>
       <td class="grade-cell">Grade ${escHtml(plan.grade)}</td>
-      <td>${escHtml(plan.weekDate)}</td>
+      <td>${escHtml(formatWeekDate(plan.weekDate))}</td>
+      <td>${escHtml(plan.preparedby) || '<span style="color:#a0aec0">—</span>'}</td>
       <td><span class="pill green">${done}</span></td>
       <td><span class="pill yellow">${partial}</span></td>
       <td><span class="pill red">${notDone}</span></td>
@@ -174,7 +176,7 @@ function renderReviews() {
     dtr.className   = 'detail-row';
     dtr.dataset.idx = idx;
     dtr.dataset.tbl = 'reviews';
-    dtr.innerHTML   = `<td class="detail-cell" colspan="8">${buildReviewDetailHTML(plan)}</td>`;
+    dtr.innerHTML   = `<td class="detail-cell" colspan="9">${buildReviewDetailHTML(plan)}</td>`;
     tbody.appendChild(dtr);
   });
 }
@@ -231,7 +233,8 @@ function renderCurrentPlans() {
     tr.innerHTML   = `
       <td class="subject-cell">${escHtml(plan.subject)}</td>
       <td class="grade-cell">Grade ${escHtml(plan.grade)}</td>
-      <td>${escHtml(plan.weekDate)}</td>
+      <td>${escHtml(formatWeekDate(plan.weekDate))}</td>
+      <td>${escHtml(plan.preparedby) || '<span style="color:#a0aec0">—</span>'}</td>
       <td><span class="pill blue-light">${daysPlanned} day${daysPlanned !== 1 ? 's' : ''}</span></td>
       <td>${reviewed}</td>
       <td><button class="toggle-btn" data-idx="${idx}" data-tbl="current">▶ Details</button></td>`;
@@ -241,7 +244,7 @@ function renderCurrentPlans() {
     dtr.className   = 'detail-row';
     dtr.dataset.idx = idx;
     dtr.dataset.tbl = 'current';
-    dtr.innerHTML   = `<td class="detail-cell" colspan="6">${buildCurrentDetailHTML(plan)}</td>`;
+    dtr.innerHTML   = `<td class="detail-cell" colspan="7">${buildCurrentDetailHTML(plan)}</td>`;
     tbody.appendChild(dtr);
   });
 }
@@ -307,6 +310,15 @@ function escHtml(str) {
   return String(str)
     .replace(/&/g, '&amp;').replace(/</g, '&lt;')
     .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function formatWeekDate(raw) {
+  if (!raw) return '—';
+  const d = new Date(raw);
+  if (!isNaN(d.getTime())) {
+    return d.toLocaleDateString('en-IN', { day: '2-digit', month: 'long', year: 'numeric' });
+  }
+  return String(raw);
 }
 
 // ── Init ─────────────────────────────────────────────────────────

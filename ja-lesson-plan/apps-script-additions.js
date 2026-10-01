@@ -278,13 +278,19 @@ function handleGetReviews(params) {
     const [planId, rowSchool, rowSubject, rowGrade, weekDate, savedAt, planJson, reviewedAt, completionJson] = rows[i];
     if (rowSchool !== school || !reviewedAt) continue;
 
-    let days             = [];
+    let planData         = {};
     let completionStatus = {};
-    try { days             = JSON.parse(planJson).days || []; } catch {}
-    try { completionStatus = JSON.parse(completionJson);       } catch {}
+    try { planData         = JSON.parse(planJson);       } catch {}
+    try { completionStatus = JSON.parse(completionJson); } catch {}
 
-    plans.push({ planId, school: rowSchool, subject: rowSubject, grade: String(rowGrade),
-                 weekDate, savedAt, reviewedAt, days, completionStatus });
+    plans.push({
+      planId, school: rowSchool, subject: rowSubject, grade: String(rowGrade),
+      weekDate:   formatWeekDate(weekDate),
+      savedAt, reviewedAt,
+      days:       planData.days || [],
+      preparedby: planData.preparedby || '',
+      completionStatus,
+    });
   }
 
   return jsonResponse({ status: 'ok', plans });
@@ -334,16 +340,28 @@ function handleGetAllPlans(params) {
     const [planId, rowSchool, rowSubject, rowGrade, weekDate, savedAt, planJson, reviewedAt] = rows[i];
     if (rowSchool !== school) continue;
 
-    let days = [];
-    try { days = JSON.parse(planJson).days || []; } catch {}
+    let planData = {};
+    try { planData = JSON.parse(planJson); } catch {}
 
     plans.push({
       planId, school: rowSchool, subject: rowSubject, grade: String(rowGrade),
-      weekDate, savedAt, reviewedAt: reviewedAt || null, days,
+      weekDate:   formatWeekDate(weekDate),
+      savedAt, reviewedAt: reviewedAt || null,
+      days:       planData.days || [],
+      preparedby: planData.preparedby || '',
     });
   }
 
   return jsonResponse({ status: 'ok', plans });
+}
+
+// ── Helper: format weekDate regardless of how Sheets stored it ───
+function formatWeekDate(val) {
+  if (!val) return '';
+  if (val instanceof Date) {
+    return Utilities.formatDate(val, Session.getScriptTimeZone(), 'dd MMMM yyyy');
+  }
+  return String(val);
 }
 
 // ── Shared helper ────────────────────────────────────────────────

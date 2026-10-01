@@ -322,7 +322,6 @@ document.getElementById('f-lesson').addEventListener('change', async function ()
   hideActivityPicker();
   hideAssessmentPicker();
   hideRealworldPicker();
-  resetActiveDay();
   updatePreview();
 
   if (!lesson) {
@@ -642,10 +641,15 @@ function updatePreview() {
   if (formattedDate) { dateEl.textContent = formattedDate; dateEl.classList.remove('empty'); }
   else { dateEl.textContent = 'Not entered'; dateEl.classList.add('empty'); }
 
-  // Populate lesson column for each day
+  // Populate lesson column: respect active day and don't overwrite existing data
   DAYS.forEach(d => {
     const cell = document.getElementById(`preview-lesson-${d}`);
-    if (cell) cell.textContent = lesson;
+    if (!cell) return;
+    if (activeDay) {
+      if (d === activeDay) cell.textContent = lesson;
+    } else {
+      if (!cell.textContent.trim()) cell.textContent = lesson;
+    }
   });
 
   // Update day labels with calculated dates
@@ -724,6 +728,7 @@ document.getElementById('add-form').addEventListener('submit', async function (e
         weekDate: formatDate(weekDateRaw),
         weekDateRaw,
         lesson: document.getElementById('f-lesson').value.trim(),
+        preparedby: (document.getElementById('preview-preparedby').textContent || '').trim(),
         days: DAYS.map((d, i) => ({
           day: d,
           label: getWeekDayLabels(weekDateRaw)[i],
@@ -742,13 +747,7 @@ document.getElementById('add-form').addEventListener('submit', async function (e
         saveBtn.disabled = false;
         saveBtn.textContent = 'Save Plan';
         saveStatus.classList.add('hidden');
-        document.getElementById('add-form').reset();
-        hideActivityPicker();
-        hideAssessmentPicker();
-        hideRealworldPicker();
-        loadOptions();
-        resetPreview();
-      }, 2000);
+      }, 3000);
     } else {
       throw new Error(data.message || 'Save failed');
     }

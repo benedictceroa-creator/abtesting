@@ -129,7 +129,12 @@
         <img src="logo.jpg" alt="John's Academy" class="topbar-logo" />
         <span id="planner-title" class="planner-title-text"></span>
       </div>
-      <button class="btn-logout" id="logout-btn-2">Logout</button>
+      <div class="top-bar-actions">
+        <p class="save-status hidden" id="save-status"></p>
+        <button class="btn-download" onclick="downloadPDF()">⬇ Download as PDF</button>
+        <button class="btn-save" id="save-btn" form="add-form" type="submit">Save Plan</button>
+        <button class="btn-logout" id="logout-btn-2">Logout</button>
+      </div>
     </header>
 
     <main class="planner-main">
@@ -227,10 +232,6 @@
               </div>
               <input type="hidden" id="f-realworld" />
 
-              <div class="form-actions">
-                <button type="submit" class="btn-primary" id="save-btn">Save Plan</button>
-                <p class="save-status hidden" id="save-status"></p>
-              </div>
 
             </form>
           </div>
@@ -240,7 +241,6 @@
         <section class="panel panel-right">
           <div class="panel-heading">
             <h3>Weekly Lesson Plan Preview</h3>
-            <button class="btn-download" onclick="downloadPDF()">⬇ Download as PDF</button>
           </div>
           <div class="panel-body">
             <div class="preview-card">
