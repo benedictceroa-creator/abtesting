@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 220">
+  <text
+    x="260" y="152"
+    text-anchor="middle"
+    font-family="'Outfit', 'Arial Black', 'Helvetica Neue', sans-serif"
+    font-weight="900"
+    font-size="164"
+    letter-spacing="-4"
+    fill="#111111"
+  >ASHA</text>
+  <text
+    x="260" y="198"
+    text-anchor="middle"
+    font-family="'Outfit', 'Arial Black', 'Helvetica Neue', sans-serif"
+    font-weight="700"
+    font-size="38"
+    letter-spacing="7"
+    fill="#111111"
+  >GARMENT FACTORY</text>
+</svg>
