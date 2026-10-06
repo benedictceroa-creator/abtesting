@@ -1253,8 +1253,8 @@
       <div class="campus-card fade-up">
         <div class="campus-img">
           <img
-            src="Images/IMG_20260224_115439672_HDR.jpg"
-            alt="John's Academy Medchal Campus — school building with landscaped grounds"
+            src="Images/WhatsApp Image 2026-06-29 at 10.01.26 AM.jpg"
+            alt="John's Academy Medchal Campus — students in morning assembly"
             loading="lazy"
           />
         </div>
@@ -1672,9 +1672,14 @@
   }, { threshold: 0.6 });
   statsObserver.observe(statsEl);
 
-  /* ===== ENQUIRY FORM ===== */
-  document.getElementById('enquiry-form').addEventListener('submit', function(e) {
+  /* ===== ENQUIRY FORM (Formspree) ===== */
+  /* TODO: Replace YOUR_FORM_ID below with the ID from formspree.io/dashboard */
+  const FORMSPREE_ID = 'YOUR_FORM_ID';
+
+  document.getElementById('enquiry-form').addEventListener('submit', async function(e) {
     e.preventDefault();
+
+    // Client-side validation
     const required = this.querySelectorAll('[required]');
     let valid = true;
     required.forEach(field => {
@@ -1685,9 +1690,34 @@
       }
     });
     if (!valid) return;
-    document.getElementById('form-body').style.display = 'none';
-    document.getElementById('form-success').style.display = 'block';
-    document.getElementById('form-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    const btn = this.querySelector('.form-submit-btn');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        body: new FormData(this),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        document.getElementById('form-body').style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+        document.getElementById('form-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        const data = await res.json();
+        const msg = data.errors ? data.errors.map(e => e.message).join(', ') : 'Submission failed.';
+        btn.textContent = 'Submit Enquiry →';
+        btn.disabled = false;
+        alert('Sorry, something went wrong: ' + msg + '\nPlease call us on +91 90308 69502.');
+      }
+    } catch {
+      btn.textContent = 'Submit Enquiry →';
+      btn.disabled = false;
+      alert('Network error. Please call us on +91 90308 69502 or try again.');
+    }
   });
 
   /* ===== GALLERY LIGHTBOX ===== */
