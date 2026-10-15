@@ -324,6 +324,55 @@ const STREAM_FIT = {
   SCI: { PCM: 3, PCB: 2, COM: 0, ARTS: 0 },
 };
 
+// ── HYDERABAD SCHOOLS (by stream) ────────────────────────────────────────────
+const SCHOOLS = {
+  PCM: {
+    note: 'Look for junior colleges with integrated JEE/EAMCET coaching alongside board preparation. Most Hyderabad coaching colleges offer MPC (Maths, Physics, Chemistry) integrated programmes.',
+    list: [
+      { name: 'Sri Chaitanya Junior College', detail: 'Largest network in Telangana. Separate IIT and Engineering batches. Strong JEE Main & Advanced record.' },
+      { name: 'Narayana Junior College', detail: 'Multiple Hyderabad campuses. Renowned for JEE & EAMCET results. Intensive revision programmes.' },
+      { name: 'Bhashyam Junior College', detail: 'Competitive coaching with TSBIE board curriculum. Good Maths and Physics faculty.' },
+      { name: 'FIITJEE / Resonance Hyderabad', detail: 'Coaching-integrated junior college model. Best suited for serious JEE Main/Advanced aspirants.' },
+      { name: 'Sri Gayatri Junior College', detail: 'Strong TS EAMCET record. Multiple Hyderabad locations. Affordable fees.' },
+      { name: 'Government Model Junior Colleges (TSBIE)', detail: 'Free education. MPC stream. Excellent science faculty at major campuses — good EAMCET results.' },
+      { name: 'Kendriya Vidyalaya (KV) Schools, Hyderabad', detail: 'CBSE board. Multiple KV campuses. Solid academic foundation for JEE preparation.' },
+    ]
+  },
+  PCB: {
+    note: 'NEET demands deep Biology and Chemistry mastery. Choose a college that balances TSBIE board preparation with NEET coaching — they are different syllabi.',
+    list: [
+      { name: 'Sri Chaitanya Junior College (Medical)', detail: 'Dedicated medical batches with NEET-focused curriculum. Largest NEET coaching network in Telangana.' },
+      { name: 'Narayana Junior College (Medical)', detail: 'Consistently strong NEET results. Dedicated MBiPC (Maths, Biology, Physics, Chemistry) batches.' },
+      { name: 'Aakash Institute + Partner Junior Colleges', detail: 'National NEET leader. Hyderabad study centre. Some tie-ups with local junior colleges.' },
+      { name: 'Bhashyam Junior College', detail: 'BiPC stream with good laboratory facilities and NEET preparation.' },
+      { name: 'NTR Memorial Junior Colleges', detail: 'Government supported. MBiPC stream. Affordable and academically solid.' },
+      { name: 'Government Junior Colleges (TSBIE)', detail: 'Free education. BiPC stream widely available. Dedicated Biology labs at major campuses.' },
+    ]
+  },
+  COM: {
+    note: 'Strong Accountancy and Business Studies are the foundation for CA, MBA, and banking careers. Choose a college known for its commerce department.',
+    list: [
+      { name: 'Badruka Junior College of Commerce', detail: 'Hyderabad\'s oldest commerce college (est. 1952). Strong B.Com and CA Foundation pathway.' },
+      { name: 'St. Francis Junior College', detail: 'Reputed English-medium college. Commerce stream with strong Accountancy faculty.' },
+      { name: 'Loyola Academy Junior College', detail: 'Jesuit institution. Strong academic culture. Commerce with Maths option available.' },
+      { name: 'Aurora Junior College', detail: 'Popular commerce college in Hyderabad. Good industry connections.' },
+      { name: 'Don Bosco Junior College', detail: 'Commerce and Science streams. Known for discipline and consistent board results.' },
+      { name: 'Government Junior Colleges (TSBIE)', detail: 'Free. CEC (Commerce, Economics, Civics) stream at many Hyderabad government campuses.' },
+    ]
+  },
+  ARTS: {
+    note: 'Strong English, History, and Political Science are essential for CLAT, UPSC, Journalism, and Humanities degrees. Build your reading habit from Day 1.',
+    list: [
+      { name: 'Loyola Academy Junior College', detail: 'Excellent Humanities department. Strong English, History, and Economics faculty. Good debate culture.' },
+      { name: 'St. Francis Junior College', detail: 'HEC (History, Economics, Civics) and MEC streams. Good language and communication training.' },
+      { name: 'Osmania University-affiliated Junior Colleges', detail: 'Wide selection across Hyderabad. Strong Humanities faculty at established campuses.' },
+      { name: 'The Hyderabad Public School (HPS, Begumpet)', detail: 'One of India\'s most prestigious schools. Humanities stream. Strong debate and writing culture.' },
+      { name: 'Government Junior Colleges (TSBIE)', detail: 'Free. HEC (History, Economics, Civics) widely available across Hyderabad government campuses.' },
+      { name: 'Chirec / Oakridge / Gitanjali International', detail: 'CBSE/IGCSE Humanities track. Good for students also considering UK or US universities.' },
+    ]
+  }
+};
+
 // ── QUIZ QUESTIONS ────────────────────────────────────────────────────────────
 const SECTIONS = {
   A: { label: 'Section A', title: 'Academic Interests' },
@@ -522,6 +571,16 @@ const QUESTIONS = [
   },
 ];
 
+// Shuffle each question's options once at load — prevents any obvious A=tech, B=med pattern
+;(function shuffleAllOpts() {
+  QUESTIONS.forEach(q => {
+    for (let i = q.opts.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [q.opts[i], q.opts[j]] = [q.opts[j], q.opts[i]];
+    }
+  });
+})();
+
 // ── APP STATE ─────────────────────────────────────────────────────────────────
 const state = {
   name: '', grade: '', section: '',
@@ -611,77 +670,50 @@ function selectOption(idx) {
 
 // ── RESULTS RENDERING ─────────────────────────────────────────────────────────
 function renderResults() {
-  const sectionEl = document.getElementById('results-name');
-  sectionEl.textContent = `${state.name}'s Career Report`;
+  document.getElementById('results-name').textContent = `${state.name}'s Career Report`;
   document.getElementById('results-meta').textContent =
     `Grade ${state.grade}${state.section ? ', Section ' + state.section : ''} · Johns Academy · Career Compass`;
-  document.getElementById('print-date').textContent = new Date().toLocaleDateString('en-IN', { year:'numeric', month:'long', day:'numeric' });
-
-  // Stream card
-  const stream = state.recommendedStream;
-  document.getElementById('stream-card').innerHTML = `
-    <div class="stream-card-header" style="background:${stream.color}">
-      <div style="flex:1">
-        <h3>${stream.name}</h3>
-        <p>${stream.note}</p>
-      </div>
-      <div class="stream-card-badge">RECOMMENDED</div>
-    </div>
-    <div class="stream-card-body">
-      <div class="stream-subjects">${stream.subjects.map(s => `<span class="subject-chip">${s}</span>`).join('')}</div>
-    </div>
-  `;
+  document.getElementById('print-date').textContent =
+    new Date().toLocaleDateString('en-IN', { year:'numeric', month:'long', day:'numeric' });
 
   // Score chart
   const maxScore = Math.max(...Object.values(state.scores), 1);
-  const chartEl = document.getElementById('score-chart');
-  chartEl.innerHTML = state.topCareers.map(({ id, score }) => {
+  document.getElementById('score-chart').innerHTML = state.topCareers.map(({ id, score }) => {
     const c = CAREERS[id];
     const pct = Math.round((score / maxScore) * 100);
     return `
       <div class="score-row">
-        <div class="score-label">
-          <span class="score-emoji">${c.emoji}</span>
-          <span>${c.title}</span>
-        </div>
-        <div class="score-bar-bg">
-          <div class="score-bar-fill" data-pct="${pct}" style="background:${c.color}"></div>
-        </div>
+        <div class="score-label"><span class="score-emoji">${c.emoji}</span><span>${c.title}</span></div>
+        <div class="score-bar-bg"><div class="score-bar-fill" data-pct="${pct}" style="background:${c.color}"></div></div>
         <div class="score-pct">${pct}%</div>
-      </div>
-    `;
+      </div>`;
   }).join('');
-
-  // Animate bars after paint
   requestAnimationFrame(() => {
-    document.querySelectorAll('.score-bar-fill').forEach(bar => {
-      bar.style.width = bar.dataset.pct + '%';
-    });
+    document.querySelectorAll('.score-bar-fill').forEach(b => { b.style.width = b.dataset.pct + '%'; });
   });
 
-  // Top 3 career cards
+  renderStep1();
+  renderStep2();
+  renderStep3();
+
+  // Career explore cards
   const ranks = ['1st Match', '2nd Match', '3rd Match'];
-  const cardsEl = document.getElementById('career-cards');
-  cardsEl.innerHTML = state.topCareers.slice(0, 3).map(({ id }, i) => {
+  document.getElementById('career-cards').innerHTML = state.topCareers.slice(0, 3).map(({ id }, i) => {
     const c = CAREERS[id];
     const topExams = c.exams.slice(0, 2).map(e => e.name).join(', ');
     return `
       <div class="career-card" data-career="${id}" tabindex="0" role="button" aria-label="View details for ${c.title}">
         <div class="career-card-header" style="background:${c.color}">
           <span class="career-card-emoji">${c.emoji}</span>
-          <div>
-            <h4>${c.title}</h4>
-            <div class="career-card-rank">${ranks[i]}</div>
-          </div>
+          <div><h4>${c.title}</h4><div class="career-card-rank">${ranks[i]}</div></div>
         </div>
         <div class="career-card-body">
           <p class="career-card-tagline">"${c.tagline}"</p>
           <p class="career-card-stream">&#9654; Stream: ${c.stream}</p>
           <p class="career-card-exams"><strong>Key Exams:</strong> ${topExams}</p>
-          <p class="career-card-cta">Tap to see colleges, exams &amp; timeline &rarr;</p>
+          <p class="career-card-cta">Tap for full details &rarr;</p>
         </div>
-      </div>
-    `;
+      </div>`;
   }).join('');
 
   document.querySelectorAll('.career-card').forEach(card => {
@@ -690,8 +722,75 @@ function renderResults() {
     card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') open(); });
   });
 
-  // Chat setup
   initChat();
+}
+
+function renderStep1() {
+  const stream = state.recommendedStream;
+  const schools = SCHOOLS[stream.key];
+  document.getElementById('step1-content').innerHTML = `
+    <div class="stream-card" style="margin-bottom:20px">
+      <div class="stream-card-header" style="background:${stream.color}">
+        <div style="flex:1">
+          <h3>${stream.name}</h3>
+          <p>${stream.note}</p>
+        </div>
+        <div class="stream-card-badge">RECOMMENDED</div>
+      </div>
+      <div class="stream-card-body">
+        <div class="stream-subjects">${stream.subjects.map(s => `<span class="subject-chip">${s}</span>`).join('')}</div>
+      </div>
+    </div>
+    <p class="step-note">${schools.note}</p>
+    <div class="step-schools">
+      ${schools.list.map(s => `
+        <div class="step-school-item">
+          <div class="step-school-name">${s.name}</div>
+          <div class="step-school-detail">${s.detail}</div>
+        </div>`).join('')}
+    </div>`;
+}
+
+function renderStep2() {
+  const top3 = state.topCareers.slice(0, 3).map(({ id }) => CAREERS[id]);
+  const seen = new Set();
+  const blocks = top3.map(c => {
+    const exams = c.exams.filter(e => !seen.has(e.name) && seen.add(e.name));
+    if (!exams.length) return '';
+    return `
+      <div class="step-career-block">
+        <div class="step-career-label" style="border-left-color:${c.color}">${c.emoji} ${c.title}</div>
+        <div class="exams-list">
+          ${exams.map(e => `
+            <div class="exam-row">
+              <span class="exam-badge ${e.level}">${e.level.toUpperCase()}</span>
+              <div class="exam-info"><strong>${e.name}</strong>${e.desc}</div>
+            </div>`).join('')}
+        </div>
+      </div>`;
+  }).join('');
+  document.getElementById('step2-content').innerHTML = `
+    <p class="step-note">Start preparing for these exams during Class 11 &amp; 12 — alongside your board exams.</p>
+    ${blocks}`;
+}
+
+function renderStep3() {
+  const top3 = state.topCareers.slice(0, 3).map(({ id }) => CAREERS[id]);
+  const blocks = top3.map(c => `
+    <div class="step-career-block">
+      <div class="step-career-label" style="border-left-color:${c.color}">${c.emoji} ${c.title}</div>
+      <div class="modal-section-title" style="margin-bottom:8px">Degree Options</div>
+      <div class="branches-wrap" style="margin-bottom:14px">
+        ${c.branches.map(b => `<span class="branch-chip">${b}</span>`).join('')}
+      </div>
+      <div class="modal-section-title" style="margin-bottom:8px">Colleges in Hyderabad &amp; India</div>
+      <div class="colleges-list">
+        ${c.colleges.map(col => `<div class="college-item">${col}</div>`).join('')}
+      </div>
+    </div>`).join('');
+  document.getElementById('step3-content').innerHTML = `
+    <p class="step-note">After finishing Class 12 and entrance exams, these are your target degree programmes and colleges.</p>
+    ${blocks}`;
 }
 
 // ── CAREER DETAIL MODAL ───────────────────────────────────────────────────────
