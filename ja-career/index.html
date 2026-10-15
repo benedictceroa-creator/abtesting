@@ -8,59 +8,41 @@
 </head>
 <body>
 
-  <!-- VIEW: WELCOME -->
+  <!-- VIEW: WELCOME (includes student info inline) -->
   <div id="view-welcome" class="view active">
     <div class="welcome-hero">
       <img src="../ja-lesson-plan/logo.jpg" alt="Johns Academy" class="welcome-logo" />
       <h1 class="welcome-title">Career Compass</h1>
-      <p class="welcome-subtitle">Discover your strengths, find your path,<br>and plan your future after Class 10</p>
       <div class="welcome-tags">
         <span class="tag">Grade 9 &amp; 10</span>
         <span class="tag">18 Questions</span>
         <span class="tag">~10 Minutes</span>
       </div>
-      <button class="btn-primary welcome-btn" id="btn-start">Begin Your Assessment</button>
-      <p class="welcome-note">Johns Academy &nbsp;|&nbsp; Career Counselling Tool</p>
-    </div>
-  </div>
 
-  <!-- VIEW: STUDENT INFO -->
-  <div id="view-info" class="view hidden">
-    <header class="top-bar">
-      <div class="top-bar-left">
-        <img src="../ja-lesson-plan/logo.jpg" alt="Johns Academy" class="topbar-logo" />
-        <span class="planner-title-text">Career Compass</span>
-      </div>
-    </header>
-    <main class="info-main">
-      <h2>Tell us about yourself</h2>
-      <p>This helps personalise your career report.</p>
-      <div class="info-form">
-        <div class="field-group">
-          <label for="student-name">Your Full Name</label>
-          <input type="text" id="student-name" placeholder="e.g. Arjun Reddy" maxlength="60" autocomplete="off" />
+      <div class="welcome-form">
+        <div class="welcome-field">
+          <label for="welcome-name">Your Full Name</label>
+          <input type="text" id="welcome-name" placeholder="e.g. Arjun Reddy" maxlength="60" autocomplete="off" />
         </div>
-        <div class="field-group">
+        <div class="welcome-field">
           <label>Grade</label>
-          <div class="radio-row">
-            <label class="radio-card" id="grade-9-card">
-              <input type="radio" name="grade" value="9" id="grade-9" />
-              <span class="radio-label-text">Grade 9</span>
+          <div class="welcome-radio-row">
+            <label class="welcome-radio-card" id="w-grade-9-card">
+              <input type="radio" name="welcome-grade" value="9" id="w-grade-9" />
+              <span>Grade 9</span>
             </label>
-            <label class="radio-card" id="grade-10-card">
-              <input type="radio" name="grade" value="10" id="grade-10" />
-              <span class="radio-label-text">Grade 10</span>
+            <label class="welcome-radio-card" id="w-grade-10-card">
+              <input type="radio" name="welcome-grade" value="10" id="w-grade-10" />
+              <span>Grade 10</span>
             </label>
           </div>
         </div>
-        <div class="field-group">
-          <label for="student-section">Section <span class="label-opt">(optional)</span></label>
-          <input type="text" id="student-section" placeholder="e.g. A" maxlength="10" autocomplete="off" />
-        </div>
-        <p id="info-error" class="error hidden">Please enter your name and select your grade.</p>
-        <button class="btn-primary" id="btn-begin-quiz">Start Quiz &rarr;</button>
+        <p id="welcome-error" class="welcome-error hidden">Please enter your name and select your grade.</p>
       </div>
-    </main>
+
+      <button class="btn-primary welcome-btn" id="btn-start">Begin Your Assessment &rarr;</button>
+      <p class="welcome-note">Johns Academy &nbsp;|&nbsp; Career Counselling Tool</p>
+    </div>
   </div>
 
   <!-- VIEW: QUIZ -->

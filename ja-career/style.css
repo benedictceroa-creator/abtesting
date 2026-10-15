@@ -131,43 +131,36 @@ body {
 
 .welcome-hero {
   text-align: center;
-  padding: 40px 24px;
-  max-width: 540px;
+  padding: 28px 24px 24px;
+  max-width: 460px;
   width: 100%;
 }
 
 .welcome-logo {
-  width: 160px;
+  width: 110px;
   height: auto;
-  margin: 0 auto 24px;
+  margin: 0 auto 16px;
   display: block;
-  border-radius: 10px;
+  border-radius: 8px;
   background: #fff;
-  padding: 6px 10px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  padding: 5px 8px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.25);
 }
 
 .welcome-title {
-  font-size: 2.8rem;
+  font-size: 2.2rem;
   font-weight: 800;
   color: #fff;
   letter-spacing: -0.02em;
-  margin-bottom: 12px;
-}
-
-.welcome-subtitle {
-  font-size: 1.1rem;
-  color: #bee3f8;
-  line-height: 1.6;
-  margin-bottom: 28px;
+  margin-bottom: 14px;
 }
 
 .welcome-tags {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 36px;
+  margin-bottom: 20px;
 }
 
 .tag {
@@ -175,27 +168,92 @@ body {
   color: #fff;
   border: 1px solid rgba(255,255,255,0.3);
   border-radius: 20px;
-  padding: 5px 14px;
-  font-size: 0.82rem;
+  padding: 4px 12px;
+  font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.03em;
 }
 
+/* ── WELCOME INLINE FORM ── */
+.welcome-form {
+  text-align: left;
+  margin-bottom: 18px;
+}
+
+.welcome-field {
+  margin-bottom: 13px;
+}
+
+.welcome-field label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 6px;
+}
+
+.welcome-field input[type="text"] {
+  width: 100%;
+  padding: 11px 14px;
+  border: 2px solid rgba(255,255,255,0.25);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+.welcome-field input[type="text"]::placeholder { color: rgba(255,255,255,0.4); }
+.welcome-field input[type="text"]:focus {
+  border-color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.22);
+}
+
+.welcome-radio-row {
+  display: flex;
+  gap: 10px;
+}
+
+.welcome-radio-card {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 16px;
+  border: 2px solid rgba(255,255,255,0.25);
+  border-radius: 8px;
+  cursor: pointer;
+  background: rgba(255,255,255,0.12);
+  transition: border-color 0.18s, background 0.18s;
+}
+.welcome-radio-card:hover { border-color: rgba(255,255,255,0.55); background: rgba(255,255,255,0.2); }
+.welcome-radio-card.selected { border-color: #fff; background: rgba(255,255,255,0.28); }
+.welcome-radio-card input[type="radio"] { accent-color: #fff; width: 17px; height: 17px; cursor: pointer; }
+.welcome-radio-card span { font-size: 0.92rem; font-weight: 600; color: #fff; }
+
+.welcome-error {
+  color: #fed7d7;
+  font-size: 0.82rem;
+  margin-top: 8px;
+}
+
 .welcome-btn {
   width: 100%;
-  max-width: 320px;
-  padding: 16px;
-  font-size: 1.1rem;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 700;
   background: #fff;
   color: #1a365d;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 .welcome-btn:hover { background: #ebf8ff; color: #1a365d; }
 
 .welcome-note {
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.5);
+  font-size: 0.76rem;
+  color: rgba(255,255,255,0.45);
   letter-spacing: 0.03em;
 }
 

@@ -859,27 +859,24 @@ async function sendChat() {
 
 // ── INIT ──────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-  // Welcome → Info
-  document.getElementById('btn-start').addEventListener('click', () => showView('view-info'));
-
-  // Grade radio cards
-  document.querySelectorAll('input[name="grade"]').forEach(radio => {
+  // Welcome grade radio card highlight
+  document.querySelectorAll('input[name="welcome-grade"]').forEach(radio => {
     radio.addEventListener('change', () => {
-      document.getElementById('grade-9-card').classList.toggle('selected', radio.value === '9' && radio.checked);
-      document.getElementById('grade-10-card').classList.toggle('selected', radio.value === '10' && radio.checked);
+      document.getElementById('w-grade-9-card').classList.toggle('selected', document.getElementById('w-grade-9').checked);
+      document.getElementById('w-grade-10-card').classList.toggle('selected', document.getElementById('w-grade-10').checked);
     });
   });
 
-  // Info → Quiz
-  document.getElementById('btn-begin-quiz').addEventListener('click', () => {
-    const name = document.getElementById('student-name').value.trim();
-    const grade = document.querySelector('input[name="grade"]:checked')?.value;
-    const errEl = document.getElementById('info-error');
+  // Welcome → Quiz (single step)
+  document.getElementById('btn-start').addEventListener('click', () => {
+    const name = document.getElementById('welcome-name').value.trim();
+    const grade = document.querySelector('input[name="welcome-grade"]:checked')?.value;
+    const errEl = document.getElementById('welcome-error');
     if (!name || !grade) { errEl.classList.remove('hidden'); return; }
     errEl.classList.add('hidden');
     state.name = name;
     state.grade = grade;
-    state.section = document.getElementById('student-section').value.trim();
+    state.section = '';
     state.currentQ = 0;
     showView('view-quiz');
     renderQuestion();
