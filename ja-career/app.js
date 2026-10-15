@@ -626,7 +626,11 @@ function showView(id) {
     v.classList.toggle('active', v.id === id);
     v.classList.toggle('hidden', v.id !== id);
   });
-  window.scrollTo(0, 0);
+  requestAnimationFrame(() => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    window.scrollTo(0, 0);
+  });
 }
 
 // ── QUIZ LOGIC ────────────────────────────────────────────────────────────────
