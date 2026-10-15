@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Compass — Johns Academy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- VIEW: WELCOME -->
+  <div id="view-welcome" class="view active">
+    <div class="welcome-hero">
+      <img src="../ja-lesson-plan/logo.jpg" alt="Johns Academy" class="welcome-logo" />
+      <h1 class="welcome-title">Career Compass</h1>
+      <p class="welcome-subtitle">Discover your strengths, find your path,<br>and plan your future after Class 10</p>
+      <div class="welcome-tags">
+        <span class="tag">Grade 9 &amp; 10</span>
+        <span class="tag">18 Questions</span>
+        <span class="tag">~10 Minutes</span>
+      </div>
+      <button class="btn-primary welcome-btn" id="btn-start">Begin Your Assessment</button>
+      <p class="welcome-note">Johns Academy &nbsp;|&nbsp; Career Counselling Tool</p>
+    </div>
+  </div>
+
+  <!-- VIEW: STUDENT INFO -->
+  <div id="view-info" class="view hidden">
+    <header class="top-bar">
+      <div class="top-bar-left">
+        <img src="../ja-lesson-plan/logo.jpg" alt="Johns Academy" class="topbar-logo" />
+        <span class="planner-title-text">Career Compass</span>
+      </div>
+    </header>
+    <main class="info-main">
+      <h2>Tell us about yourself</h2>
+      <p>This helps personalise your career report.</p>
+      <div class="info-form">
+        <div class="field-group">
+          <label for="student-name">Your Full Name</label>
+          <input type="text" id="student-name" placeholder="e.g. Arjun Reddy" maxlength="60" autocomplete="off" />
+        </div>
+        <div class="field-group">
+          <label>Grade</label>
+          <div class="radio-row">
+            <label class="radio-card" id="grade-9-card">
+              <input type="radio" name="grade" value="9" id="grade-9" />
+              <span class="radio-label-text">Grade 9</span>
+            </label>
+            <label class="radio-card" id="grade-10-card">
+              <input type="radio" name="grade" value="10" id="grade-10" />
+              <span class="radio-label-text">Grade 10</span>
+            </label>
+          </div>
+        </div>
+        <div class="field-group">
+          <label for="student-section">Section <span class="label-opt">(optional)</span></label>
+          <input type="text" id="student-section" placeholder="e.g. A" maxlength="10" autocomplete="off" />
+        </div>
+        <p id="info-error" class="error hidden">Please enter your name and select your grade.</p>
+        <button class="btn-primary" id="btn-begin-quiz">Start Quiz &rarr;</button>
+      </div>
+    </main>
+  </div>
+
+  <!-- VIEW: QUIZ -->
+  <div id="view-quiz" class="view hidden">
+    <header class="top-bar">
+      <div class="top-bar-left">
+        <img src="../ja-lesson-plan/logo.jpg" alt="Johns Academy" class="topbar-logo" />
+        <span class="planner-title-text">Career Compass</span>
+      </div>
+      <div class="quiz-counter">
+        <span id="q-current">1</span><span class="q-sep"> / </span><span id="q-total">18</span>
+      </div>
+    </header>
+    <div class="progress-bar-outer">
+      <div class="progress-bar-inner" id="progress-bar"></div>
+    </div>
+    <main class="quiz-main">
+      <div class="quiz-section-badge" id="quiz-section-badge"></div>
+      <div class="quiz-card">
+        <p class="quiz-q-label" id="quiz-q-label">Question 1 of 18</p>
+        <h2 class="quiz-question" id="quiz-question">Loading...</h2>
+        <div class="quiz-options" id="quiz-options"></div>
+      </div>
+      <div class="quiz-nav">
+        <button class="btn-nav" id="btn-prev-q">&#8592; Back</button>
+        <button class="btn-primary quiz-next-btn" id="btn-next-q" disabled>Next &rarr;</button>
+      </div>
+    </main>
+  </div>
+
+  <!-- VIEW: LOADING -->
+  <div id="view-loading" class="view hidden">
+    <div class="loading-center">
+      <div class="loading-spinner"></div>
+      <p class="loading-text">Analysing your responses&hellip;</p>
+      <p class="loading-sub">Matching you with the best career paths in India</p>
+    </div>
+  </div>
+
+  <!-- VIEW: RESULTS -->
+  <div id="view-results" class="view hidden">
+    <header class="top-bar no-print">
+      <div class="top-bar-left">
+        <img src="../ja-lesson-plan/logo.jpg" alt="Johns Academy" class="topbar-logo" />
+        <span class="planner-title-text">Career Compass — Results</span>
+      </div>
+      <button class="btn-print no-print" onclick="window.print()">&#128438; Print Report</button>
+    </header>
+
+    <main class="results-main">
+
+      <!-- Print header (only shows when printing) -->
+      <div class="print-header">
+        <img src="../ja-lesson-plan/logo.jpg" alt="Johns Academy" class="print-logo" />
+        <div>
+          <div class="print-school">Johns Academy — Career Compass Report</div>
+          <div class="print-date" id="print-date"></div>
+        </div>
+      </div>
+
+      <div class="results-hero">
+        <h2 id="results-name">Your Career Report</h2>
+        <p id="results-meta" class="results-meta-text"></p>
+      </div>
+
+      <!-- RECOMMENDED STREAM -->
+      <section class="results-section">
+        <h3 class="section-heading">&#9654; Recommended Class 11 Stream</h3>
+        <div id="stream-card"></div>
+      </section>
+
+      <!-- SCORE CHART -->
+      <section class="results-section">
+        <h3 class="section-heading">&#9654; Your Career Profile</h3>
+        <p class="section-note">This shows how well your answers match each career area.</p>
+        <div id="score-chart" class="score-chart"></div>
+      </section>
+
+      <!-- TOP CAREER CARDS -->
+      <section class="results-section">
+        <h3 class="section-heading">&#9654; Your Top 3 Career Paths</h3>
+        <p class="section-note no-print">Tap any card to see colleges, entrance exams, timeline, and salary details.</p>
+        <div id="career-cards" class="career-cards-grid"></div>
+      </section>
+
+      <!-- AI CHAT -->
+      <section class="results-section no-print" id="chat-section">
+        <h3 class="section-heading">&#9654; Ask our AI Career Advisor</h3>
+        <p class="section-note">Still have questions? Ask about any career, entrance exam, or college in India.</p>
+        <div id="chat-not-configured" class="chat-notice hidden">
+          <p><strong>Setup needed:</strong> Open <code>app.js</code> and paste your Google Apps Script proxy URL into <code>CHAT_PROXY_URL</code>. See <code>ChatProxy.gs</code> for instructions.</p>
+        </div>
+        <div id="chat-box" class="chat-box">
+          <div id="chat-messages" class="chat-messages"></div>
+          <div class="chat-input-row">
+            <input type="text" id="chat-input" placeholder="Ask a question about your career path…" autocomplete="off" />
+            <button class="btn-primary chat-send" id="btn-send">Send</button>
+          </div>
+          <p id="chat-thinking" class="chat-thinking hidden">AI Advisor is thinking…</p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- CAREER DETAIL MODAL -->
+  <div id="modal-overlay" class="modal-overlay hidden" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <button class="modal-close" id="modal-close" aria-label="Close">&#10005;</button>
+      <div id="modal-content" class="modal-content"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
