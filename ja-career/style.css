@@ -1,15 +1,26 @@
 /* ── RESET & BASE ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #f0f4f8;
   color: #1a202c;
-  min-height: 100vh;
 }
 
 /* ── VIEW SYSTEM ── */
-.view { min-height: 100vh; }
+/* Each view is a fixed fullscreen layer with its own scroll.
+   The window itself never scrolls — no iOS keyboard/scroll race condition. */
+.view {
+  position: fixed;
+  inset: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
 .view.hidden { display: none; }
 .view.active { display: block; }
 
