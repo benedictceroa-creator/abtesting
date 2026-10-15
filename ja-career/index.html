@@ -103,23 +103,15 @@
         </div>
       </div>
 
-      <div class="results-hero">
-        <h2 id="results-name">Your Career Report</h2>
-        <p id="results-meta" class="results-meta-text"></p>
+      <!-- RESULTS SUMMARY — visible immediately, no scrolling needed -->
+      <div class="results-summary" id="results-summary">
+        <div class="summary-namerow">
+          <h2 id="results-name">Career Report</h2>
+          <p id="results-meta"></p>
+        </div>
+        <div id="summary-top-match"></div>
       </div>
-
-      <!-- SCORE CHART -->
-      <section class="results-section">
-        <h3 class="section-heading">&#9654; Your Career Profile</h3>
-        <p class="section-note">How your answers matched each career area.</p>
-        <div id="score-chart" class="score-chart"></div>
-      </section>
-
-      <!-- PATHWAY HEADER -->
-      <div class="pathway-header">
-        <h3>Your Recommended Pathway</h3>
-        <p>A step-by-step plan from where you are now to your career.</p>
-      </div>
+      <div class="summary-scroll-hint no-print">&#8595; Scroll down for your step-by-step pathway</div>
 
       <!-- STEP 1: Class 11 & 12 -->
       <section class="results-section pathway-step">
@@ -147,6 +139,13 @@
         <h3 class="section-heading">&#9654; Explore Your Top Career Paths</h3>
         <p class="section-note no-print">Tap any card for full details — timeline, salary, and more.</p>
         <div id="career-cards" class="career-cards-grid"></div>
+      </section>
+
+      <!-- SCORE CHART (supplementary context, moved to bottom) -->
+      <section class="results-section">
+        <h3 class="section-heading">&#9654; Full Career Profile</h3>
+        <p class="section-note">How your answers matched all ten career areas.</p>
+        <div id="score-chart" class="score-chart"></div>
       </section>
 
       <!-- AI CHAT -->

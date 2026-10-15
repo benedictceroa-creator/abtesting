@@ -676,7 +676,39 @@ function renderResults() {
   document.getElementById('print-date').textContent =
     new Date().toLocaleDateString('en-IN', { year:'numeric', month:'long', day:'numeric' });
 
-  // Score chart
+  // Summary card — visible immediately above the fold
+  const [top1, top2, top3] = state.topCareers.slice(0, 3).map(({ id }) => CAREERS[id]);
+  const stream = state.recommendedStream;
+  document.getElementById('summary-top-match').innerHTML = `
+    <div class="summary-top1" style="background:${top1.color}">
+      <span class="summary-top1-emoji">${top1.emoji}</span>
+      <div>
+        <div class="summary-top1-label">Your #1 Career Match</div>
+        <div class="summary-top1-title">${top1.title}</div>
+      </div>
+    </div>
+    <div class="summary-others">
+      <div class="summary-other">
+        <span>${top2.emoji}</span>
+        <span class="summary-other-title">${top2.title}</span>
+        <span class="summary-other-rank">#2</span>
+      </div>
+      <div class="summary-other">
+        <span>${top3.emoji}</span>
+        <span class="summary-other-title">${top3.title}</span>
+        <span class="summary-other-rank">#3</span>
+      </div>
+    </div>
+    <div class="summary-stream" style="border-color:${stream.color}">
+      <div class="summary-stream-label">Recommended Class 11 Stream</div>
+      <div class="summary-stream-name" style="color:${stream.color}">${stream.name}</div>
+    </div>`;
+
+  renderStep1();
+  renderStep2();
+  renderStep3();
+
+  // Score chart (now at bottom)
   const maxScore = Math.max(...Object.values(state.scores), 1);
   document.getElementById('score-chart').innerHTML = state.topCareers.map(({ id, score }) => {
     const c = CAREERS[id];
@@ -691,10 +723,6 @@ function renderResults() {
   requestAnimationFrame(() => {
     document.querySelectorAll('.score-bar-fill').forEach(b => { b.style.width = b.dataset.pct + '%'; });
   });
-
-  renderStep1();
-  renderStep2();
-  renderStep3();
 
   // Career explore cards
   const ranks = ['1st Match', '2nd Match', '3rd Match'];
