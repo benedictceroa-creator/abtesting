@@ -200,6 +200,60 @@
     .warning-box { background: #FFF3E0; border: 1.5px solid #FFCC80; border-radius: var(--radius); padding: 18px 20px; margin: 16px 0; }
     .warning-box strong { color: var(--orange); }
 
+    /* ═══════════ WHAT WOULD YOU DO ═══════════ */
+    .wwyd-start { text-align: center; padding: 40px 20px; }
+    .wwyd-start-icon { font-size: 3rem; margin-bottom: 16px; }
+    .wwyd-start-title { font-size: 1.25rem; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+    .wwyd-start-sub { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 24px; max-width: 420px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+    .wwyd-start-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border-radius: 50px; background: var(--teal); color: white; border: none; font-family: inherit; font-size: 0.9375rem; font-weight: 700; cursor: pointer; transition: all var(--transition); }
+    .wwyd-start-btn:hover { background: #004D40; transform: translateY(-1px); }
+    .wwyd-progress { margin-bottom: 24px; }
+    .wwyd-progress-bar-bg { height: 6px; background: var(--border); border-radius: 50px; margin-bottom: 8px; }
+    .wwyd-progress-fill { height: 6px; background: var(--teal); border-radius: 50px; transition: width 400ms ease; }
+    .wwyd-progress-label { font-size: 0.8125rem; color: var(--text-muted); }
+    .wwyd-card { background: white; border-radius: var(--radius); border: 1px solid var(--border); padding: 28px; margin-bottom: 20px; box-shadow: var(--shadow-sm); }
+    .wwyd-num { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal); margin-bottom: 12px; }
+    .wwyd-situation { font-size: 0.9375rem; color: var(--text); line-height: 1.75; margin-bottom: 14px; }
+    .wwyd-question { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 20px; }
+    .wwyd-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+    .wwyd-option { display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; border-radius: var(--radius-sm); border: 2px solid var(--border); background: var(--bg); font-family: inherit; font-size: 0.875rem; color: var(--text); cursor: pointer; text-align: left; transition: all var(--transition); }
+    .wwyd-option:hover:not(:disabled) { border-color: var(--teal); background: var(--teal-light); }
+    .wwyd-option:disabled { cursor: not-allowed; }
+    .wwyd-option.selected-best { border-color: var(--green); background: var(--green-light); }
+    .wwyd-option.selected-ok { border-color: var(--gold); background: #FFF8E1; }
+    .wwyd-option.selected-wrong { border-color: var(--red); background: #FFEBEE; }
+    .wwyd-option.show-best { border-color: var(--green); background: var(--green-light); opacity: 0.85; }
+    .wwyd-option-letter { width: 26px; height: 26px; border-radius: 50%; background: var(--border); color: var(--text); font-size: 0.8rem; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .wwyd-option.selected-best .wwyd-option-letter, .wwyd-option.show-best .wwyd-option-letter { background: var(--green); color: white; }
+    .wwyd-option.selected-ok .wwyd-option-letter { background: var(--gold); color: white; }
+    .wwyd-option.selected-wrong .wwyd-option-letter { background: var(--red); color: white; }
+    .wwyd-option-text { flex: 1; line-height: 1.55; }
+    .wwyd-option-badge { font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 50px; white-space: nowrap; flex-shrink: 0; margin-left: auto; }
+    .wwyd-option.selected-best .wwyd-option-badge, .wwyd-option.show-best .wwyd-option-badge { background: var(--green); color: white; }
+    .wwyd-option.selected-ok .wwyd-option-badge { background: var(--gold); color: white; }
+    .wwyd-option.selected-wrong .wwyd-option-badge { background: var(--red); color: white; }
+    .wwyd-feedback { display: none; border-top: 1px solid var(--border); padding-top: 20px; margin-top: 4px; }
+    .wwyd-feedback.shown { display: flex; flex-direction: column; gap: 12px; }
+    .wwyd-feedback-item { padding: 12px 16px; border-radius: var(--radius-sm); font-size: 0.875rem; line-height: 1.65; }
+    .wwyd-feedback-item.best { background: var(--green-light); border-left: 3px solid var(--green); }
+    .wwyd-feedback-item.ok { background: #FFF8E1; border-left: 3px solid var(--gold); }
+    .wwyd-feedback-item.wrong { background: #FFEBEE; border-left: 3px solid var(--red); }
+    .wwyd-feedback-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 6px; }
+    .wwyd-feedback-item.best .wwyd-feedback-label { color: var(--green); }
+    .wwyd-feedback-item.ok .wwyd-feedback-label { color: #F57F17; }
+    .wwyd-feedback-item.wrong .wwyd-feedback-label { color: var(--red); }
+    .wwyd-nav { display: flex; justify-content: center; gap: 10px; margin-top: 4px; }
+    .wwyd-nav-btn { display: flex; align-items: center; gap: 7px; padding: 11px 24px; border-radius: 50px; font-family: inherit; font-size: 0.875rem; font-weight: 700; cursor: pointer; transition: all var(--transition); }
+    .wwyd-btn-next { background: var(--teal); color: white; border: none; }
+    .wwyd-btn-next:hover { background: #004D40; }
+    .wwyd-btn-restart { background: none; border: 1.5px solid var(--teal); color: var(--teal); }
+    .wwyd-btn-restart:hover { background: var(--teal-light); }
+    .wwyd-done { text-align: center; padding: 32px 20px; }
+    .wwyd-done-icon { font-size: 3.5rem; margin-bottom: 16px; }
+    .wwyd-done-title { font-size: 1.25rem; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+    .wwyd-score { font-size: 1.5rem; font-weight: 800; color: var(--teal); margin-bottom: 10px; }
+    .wwyd-done-sub { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 24px; max-width: 440px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+
     @media (max-width: 640px) {
       .days-grid, .rights-grid, .epf-grid { grid-template-columns: 1fr; }
       .slip-body { grid-template-columns: 1fr; }
@@ -251,6 +305,7 @@
         <button class="tab-btn" onclick="switchTab('epf', this)" role="tab">🏦 EPF &amp; ESI</button>
         <button class="tab-btn" onclick="switchTab('rights', this)" role="tab">⚖️ Your Rights</button>
         <button class="tab-btn" onclick="switchTab('scams', this)" role="tab">🛡️ Stay Safe</button>
+        <button class="tab-btn" onclick="switchTab('wwyd', this)" role="tab">🤔 What Would You Do?</button>
       </div>
     </div>
   </div>
@@ -747,6 +802,26 @@
     </div>
   </div>
 
+  <!-- ═══════ WHAT WOULD YOU DO PANEL ═══════ -->
+  <div class="tab-panel" id="panel-wwyd">
+    <div class="container">
+      <p class="section-label">Workplace Judgement</p>
+      <h2 class="section-title">What Would You Do?</h2>
+      <p class="section-sub">Each scenario tests real workplace situations you may face. Pick the option you think is best — then see the feedback and learn why. There are no tricks, just real judgement calls.</p>
+      <div id="wwydContent">
+        <div class="wwyd-start">
+          <div class="wwyd-start-icon">🤔</div>
+          <div class="wwyd-start-title">Ready to test your workplace judgement?</div>
+          <div class="wwyd-start-sub">You'll work through 8 real workplace situations. For each one, choose what you would do — then see whether you made the professional choice and why.</div>
+          <button class="wwyd-start-btn" onclick="startWWYD()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Start the challenge
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer style="background:var(--navy-dark);padding:24px 0;margin-top:8px;">
     <div class="container" style="text-align:center;">
       <p style="font-size:0.8125rem;color:rgba(255,255,255,0.4);">
@@ -780,6 +855,173 @@
       const el = document.getElementById(hash);
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 100);
+  }
+
+  // ═══════════════════════════════════
+  //  WHAT WOULD YOU DO
+  // ═══════════════════════════════════
+  const WWYD_SCENARIOS = [
+    { id: 'w1', situation: 'It is your second week at a new job. Your supervisor gives you instructions on how to do a task. You are not sure you understood correctly.', question: 'What would you do?',
+      options: [
+        { letter: 'A', text: 'Start the task and guess the parts you are unsure about.', quality: 'wrong' },
+        { letter: 'B', text: 'Ask your supervisor to clarify the parts you are unsure about before you start.', quality: 'best' },
+        { letter: 'C', text: "Ask a colleague instead so your supervisor doesn't think you weren't listening.", quality: 'ok' }
+      ],
+      feedback: { best: "Asking your supervisor directly is always the right move. Supervisors expect new employees to have questions — it shows you want to do the job correctly.", ok: "A colleague can help, but they may not know the supervisor's exact expectations. It's better to go to the source, especially for a new task.", wrong: "Guessing on an unfamiliar task often leads to errors that take more time to fix later. Supervisors lose trust when mistakes are made silently." } },
+    { id: 'w2', situation: "A colleague confides in you that they are planning to leave the company soon. Your supervisor asks you later how the team morale is.", question: 'What would you do?',
+      options: [
+        { letter: 'A', text: 'Tell your supervisor that your colleague is planning to leave.', quality: 'wrong' },
+        { letter: 'B', text: "Say team morale is generally good and leave your colleague's confidence out of it.", quality: 'best' },
+        { letter: 'C', text: "Say you're not sure about team morale and don't comment.", quality: 'ok' }
+      ],
+      feedback: { best: "Confidences shared by colleagues must be respected. You can be honest about general morale without betraying someone's private news. Trust between colleagues is precious.", ok: "Staying neutral protects your colleague, but you may seem uninformed. Option B is better because you engage honestly without revealing private information.", wrong: "Sharing a colleague's private information without their permission damages trust and can harm their career. This is a serious breach of workplace ethics." } },
+    { id: 'w3', situation: 'You are given a task to finish by 5 PM. At 4 PM you realise the task will take at least 2 more hours.', question: 'What would you do?',
+      options: [
+        { letter: 'A', text: 'Rush and submit an incomplete or low-quality version by 5 PM.', quality: 'wrong' },
+        { letter: 'B', text: 'Inform your supervisor at 4 PM that you need more time and explain why.', quality: 'best' },
+        { letter: 'C', text: 'Stay late silently, finish by 7 PM, and say nothing about the delay.', quality: 'ok' }
+      ],
+      feedback: { best: "Communicating early about a deadline problem gives your supervisor time to adjust plans, get help, or extend the deadline. This shows maturity and good judgement.", ok: "Staying late and delivering quality work is better than rushing, but not telling your supervisor leaves them uninformed. Always communicate deadline issues early.", wrong: "Submitting poor quality work to meet a deadline creates more problems. Quality and communication both matter — never sacrifice one for the other." } },
+    { id: 'w4', situation: 'You notice that a colleague is making a significant error that will affect a client. Your colleague has not noticed the mistake.', question: 'What would you do?',
+      options: [
+        { letter: 'A', text: "Say nothing — it's their work, not yours.", quality: 'wrong' },
+        { letter: 'B', text: 'Quietly point out the error to your colleague privately.', quality: 'best' },
+        { letter: 'C', text: 'Report the error to your supervisor immediately without telling your colleague.', quality: 'ok' }
+      ],
+      feedback: { best: "Telling your colleague privately first gives them a chance to correct it themselves, preserves their dignity, and builds trust. This is the professional approach.", ok: "Going to the supervisor without telling the colleague first can damage the working relationship. Try the colleague first unless the error is urgent or very serious.", wrong: "Ignoring a client-affecting error affects the whole team's reputation, including yours. Good employees look out for their team — it's not 'not your business.'" } },
+    { id: 'w5', situation: 'You receive your salary slip and notice the amount is less than what was agreed in your offer letter.', question: 'What would you do?',
+      options: [
+        { letter: 'A', text: 'Say nothing to avoid causing problems.', quality: 'wrong' },
+        { letter: 'B', text: 'Raise it professionally with your HR or supervisor, bringing your offer letter.', quality: 'best' },
+        { letter: 'C', text: 'Complain about it to your colleagues.', quality: 'wrong' }
+      ],
+      feedback: { best: 'Salary discrepancies are your legal right to question. Raise it calmly and professionally with documentation. Frame it as "I wanted to check this" — not "you made a mistake."', ok: null, wrong: "Saying nothing means you accept the lower salary. Complaining to colleagues creates a negative atmosphere and rarely solves the problem. Always address the source directly." } },
+    { id: 'w6', situation: "A job recruiter approaches you on social media offering a job with a much higher salary than you currently earn, with no interview required.", question: 'What would you do?',
+      options: [
+        { letter: 'A', text: 'Accept immediately — it sounds like a great opportunity.', quality: 'wrong' },
+        { letter: 'B', text: 'Research the company thoroughly before responding, and never pay any fee.', quality: 'best' },
+        { letter: 'C', text: 'Ask a trusted person for advice before responding.', quality: 'ok' }
+      ],
+      feedback: { best: "Legitimate jobs always involve an interview process. High salary with no interview is a major red flag. Research the company, verify their existence, and never pay a fee to get a job.", ok: "Getting a second opinion is wise. Make sure you also verify the company independently, not just rely on someone else's judgment.", wrong: "This is a classic job scam pattern. Accepting immediately — especially if they ask for a fee — puts you at serious risk of losing money." } },
+    { id: 'w7', situation: "Your supervisor asks you to do something that seems against company rules, but they insist it's fine.", question: 'What would you do?',
+      options: [
+        { letter: 'A', text: "Do it without questioning — your supervisor said it's fine.", quality: 'ok' },
+        { letter: 'B', text: 'Politely ask for clarification, and if still uncomfortable, speak to HR.', quality: 'best' },
+        { letter: 'C', text: 'Refuse immediately and loudly.', quality: 'wrong' }
+      ],
+      feedback: { best: "You can respectfully ask for clarification on why this is permitted. If you still feel uncomfortable, HR exists for exactly this situation. You are never required to break rules to please a supervisor.", ok: "Following a supervisor's instruction is usually correct, but not when it involves breaking rules. Trust your instincts, ask questions, and document the instruction.", wrong: "Refusing loudly escalates the situation unnecessarily. A calm, private conversation is almost always the better first step." } },
+    { id: 'w8', situation: "You have been working for 6 months and feel you are ready for more responsibility, but your supervisor hasn't offered it.", question: 'What would you do?',
+      options: [
+        { letter: 'A', text: "Wait patiently and hope your supervisor notices.", quality: 'ok' },
+        { letter: 'B', text: "Ask your supervisor in your next one-on-one if there are opportunities to take on more.", quality: 'best' },
+        { letter: 'C', text: "Start doing tasks outside your role without asking.", quality: 'wrong' }
+      ],
+      feedback: { best: "Expressing your desire to grow is professional and proactive. Most supervisors appreciate employees who are motivated and willing to ask directly. Come with examples of your reliability.", ok: "Patience has its place, but supervisors are often busy and may not notice readiness unless you indicate it. Waiting too long can mean missing opportunities.", wrong: "Taking on tasks outside your role without permission can create confusion and step on others' responsibilities. Always ask first." } },
+    { id: 'w9', situation: 'You overhear two colleagues gossiping negatively about your supervisor. They invite you to join the conversation.', question: 'What would you do?',
+      options: [
+        { letter: 'A', text: "Join in — it's just venting and everyone does it.", quality: 'wrong' },
+        { letter: 'B', text: 'Politely decline to participate and walk away.', quality: 'best' },
+        { letter: 'C', text: 'Listen but say nothing.', quality: 'ok' }
+      ],
+      feedback: { best: "Walking away from workplace gossip protects your professional reputation. Never be seen as part of a group that undermines management.", ok: "Listening without speaking still puts you at the scene. If someone reports the conversation, you were part of it. Politely excusing yourself is a cleaner exit.", wrong: "Workplace gossip almost always reaches management eventually. Being known as someone who criticises leadership behind their back damages your professional standing significantly." } },
+    { id: 'w10', situation: 'On your fourth day at a new job, you realise the role is very different from what was described in the interview.', question: 'What would you do?',
+      options: [
+        { letter: 'A', text: "Quit immediately — this isn't what you signed up for.", quality: 'wrong' },
+        { letter: 'B', text: 'Give it 2–3 weeks, document the differences, and have a professional conversation with HR.', quality: 'best' },
+        { letter: 'C', text: 'Accept it and adjust your expectations.', quality: 'ok' }
+      ],
+      feedback: { best: "Four days is too early to judge fully. Give it time, keep notes on differences, and raise it with HR calmly. If the issues are serious, you have documentation to support your case.", ok: "Adapting is sometimes the right move, but only if the differences are manageable. Major discrepancies in role or salary should be raised professionally.", wrong: "Quitting on day four can harm future job prospects — you may be asked why you left so quickly. Exhaust professional channels first." } }
+  ];
+
+  let wwydIndex = 0, wwydAnswered = false, wwydCorrect = 0, wwydShuffled = [];
+
+  function startWWYD() {
+    wwydShuffled = [...WWYD_SCENARIOS].sort(() => Math.random() - 0.5).slice(0, 8);
+    wwydIndex = 0;
+    wwydCorrect = 0;
+    wwydAnswered = false;
+    renderWWYD();
+  }
+
+  function renderWWYD() {
+    const container = document.getElementById('wwydContent');
+    if (wwydIndex >= wwydShuffled.length) {
+      const pct = Math.round((wwydCorrect / wwydShuffled.length) * 100);
+      container.innerHTML = `
+        <div class="wwyd-progress">
+          <div class="wwyd-progress-bar-bg"><div class="wwyd-progress-fill" style="width:100%"></div></div>
+          <div class="wwyd-progress-label">Complete!</div>
+        </div>
+        <div class="wwyd-done">
+          <div class="wwyd-done-icon">${pct >= 75 ? '🏆' : pct >= 50 ? '👍' : '💪'}</div>
+          <div class="wwyd-done-title">Well done for completing the challenge!</div>
+          <div class="wwyd-score">${wwydCorrect} / ${wwydShuffled.length} best answers</div>
+          <div class="wwyd-done-sub">${pct >= 75 ? 'Excellent judgement — you are ready for the workplace!' : pct >= 50 ? 'Good instincts. Review the scenarios you missed to sharpen your judgement.' : 'Keep practising. Re-read each scenario and the feedback explanations — they will stick.'}</div>
+          <div class="wwyd-nav">
+            <button class="wwyd-nav-btn wwyd-btn-restart" onclick="startWWYD()">Try again</button>
+          </div>
+        </div>`;
+      return;
+    }
+    wwydAnswered = false;
+    const s = wwydShuffled[wwydIndex];
+    const total = wwydShuffled.length;
+    const pct = Math.round((wwydIndex / total) * 100);
+    const feedbackHtml = s.options.map(o => {
+      const fb = o.quality === 'best' ? s.feedback.best : o.quality === 'ok' ? s.feedback.ok : s.feedback.wrong;
+      if (!fb) return '';
+      return `<div class="wwyd-feedback-item ${o.quality}">
+        <div class="wwyd-feedback-label">Option ${o.letter}: ${o.quality === 'best' ? '✓ Best answer' : o.quality === 'ok' ? '~ Okay, but...' : '✗ Not ideal'}</div>
+        <div>${fb}</div>
+      </div>`;
+    }).join('');
+    container.innerHTML = `
+      <div class="wwyd-progress">
+        <div class="wwyd-progress-bar-bg"><div class="wwyd-progress-fill" style="width:${pct}%"></div></div>
+        <div class="wwyd-progress-label">Scenario ${wwydIndex + 1} of ${total}</div>
+      </div>
+      <div class="wwyd-card">
+        <div class="wwyd-num">Scenario ${wwydIndex + 1}</div>
+        <div class="wwyd-situation">${s.situation}</div>
+        <div class="wwyd-question">${s.question}</div>
+        <div class="wwyd-options" id="wwydOptions">
+          ${s.options.map(o => `
+            <button class="wwyd-option" data-quality="${o.quality}" onclick="selectWWYD('${o.letter}', this)">
+              <span class="wwyd-option-letter">${o.letter}</span>
+              <span class="wwyd-option-text">${o.text}</span>
+            </button>`).join('')}
+        </div>
+        <div class="wwyd-feedback" id="wwydFeedback">${feedbackHtml}</div>
+      </div>
+      <div class="wwyd-nav" id="wwydNav" style="display:none;">
+        <button class="wwyd-nav-btn wwyd-btn-next" onclick="nextWWYD()">
+          ${wwydIndex + 1 < total ? 'Next scenario' : 'See results'}
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>`;
+  }
+
+  function selectWWYD(letter, btn) {
+    if (wwydAnswered) return;
+    wwydAnswered = true;
+    if (btn.dataset.quality === 'best') wwydCorrect++;
+    document.querySelectorAll('.wwyd-option').forEach(b => {
+      b.disabled = true;
+      const q = b.dataset.quality;
+      if (b === btn) b.classList.add(q === 'best' ? 'selected-best' : q === 'ok' ? 'selected-ok' : 'selected-wrong');
+      if (q === 'best' && b !== btn) b.classList.add('show-best');
+      const badge = document.createElement('span');
+      badge.className = 'wwyd-option-badge';
+      badge.textContent = q === 'best' ? '✓ Best' : q === 'ok' ? '~ Okay' : '✗ Avoid';
+      b.appendChild(badge);
+    });
+    document.getElementById('wwydFeedback').classList.add('shown');
+    document.getElementById('wwydNav').style.display = 'flex';
+  }
+
+  function nextWWYD() {
+    wwydIndex++;
+    renderWWYD();
   }
 
   // Salary Calculator

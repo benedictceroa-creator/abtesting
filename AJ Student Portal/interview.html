@@ -186,12 +186,56 @@
     .qa-a { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 14px; line-height: 1.65; }
     .qa-a:last-child { margin-bottom: 0; }
 
+    /* ═══════════ ROLE PLAY ═══════════ */
+    .rp-filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+    .rp-filter-btn { padding: 7px 16px; border-radius: 50px; border: 1.5px solid var(--border); background: none; font-family: inherit; font-size: 0.8125rem; font-weight: 600; color: var(--text-muted); cursor: pointer; transition: all var(--transition); }
+    .rp-filter-btn:hover { border-color: var(--purple); color: var(--purple); }
+    .rp-filter-btn.active { background: var(--purple); border-color: var(--purple); color: white; }
+    .rp-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 20px; overflow: hidden; }
+    .rp-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 20px 22px 16px; }
+    .rp-category-tag { display: inline-flex; align-items: center; padding: 3px 10px; border-radius: 50px; font-size: 0.7rem; font-weight: 700; flex-shrink: 0; }
+    .rp-category-tag.customer { background: #E8F5E9; color: #2E7D32; }
+    .rp-category-tag.supervisor { background: #E3F2FD; color: #1565C0; }
+    .rp-category-tag.colleague { background: #FFF8E1; color: #F57F17; }
+    .rp-category-tag.professional { background: var(--purple-light); color: var(--purple); }
+    .rp-title { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .rp-setup { font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; padding: 0 22px; margin-bottom: 16px; }
+    .rp-situation-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 8px; padding: 0 22px; }
+    .rp-situation-bubble { background: var(--bg); border-radius: 0 var(--radius) var(--radius) var(--radius); padding: 14px 18px; font-size: 0.9375rem; color: var(--text); line-height: 1.6; font-style: italic; border-left: 3px solid var(--purple); margin: 0 22px 6px; }
+    .rp-role-tag { display: flex; align-items: center; gap: 6px; font-size: 0.75rem; color: var(--text-muted); padding: 0 22px; margin-bottom: 18px; }
+    .rp-role-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--purple); flex-shrink: 0; }
+    .rp-reveal-row { padding: 0 22px 18px; }
+    .rp-reveal-btn { display: inline-flex; align-items: center; gap: 7px; padding: 9px 20px; border-radius: 50px; background: var(--purple); color: white; border: none; font-family: inherit; font-size: 0.8375rem; font-weight: 700; cursor: pointer; transition: all var(--transition); }
+    .rp-reveal-btn:hover { background: #4A148C; }
+    .rp-response { display: none; border-top: 1px solid var(--border); background: #FAFAFA; padding: 20px 22px; }
+    .rp-response.shown { display: block; }
+    .rp-response-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #2E7D32; margin-bottom: 8px; }
+    .rp-response-text { font-size: 0.9375rem; color: var(--text); line-height: 1.75; margin-bottom: 14px; font-style: italic; }
+    .rp-why { padding: 12px 16px; background: #FFF8E1; border-left: 3px solid var(--gold); border-radius: 0 6px 6px 0; font-size: 0.8125rem; color: #5D4037; line-height: 1.6; margin-bottom: 16px; }
+    .rp-dos-donts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .rp-list-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 8px; }
+    .rp-do-list .rp-list-label { color: #2E7D32; }
+    .rp-dont-list .rp-list-label { color: var(--red); }
+    .rp-list-item { display: flex; gap: 7px; font-size: 0.8125rem; color: var(--text); line-height: 1.55; margin-bottom: 6px; }
+    .rp-do-list .rp-list-item::before { content: '✓'; color: #2E7D32; font-weight: 700; flex-shrink: 0; }
+    .rp-dont-list .rp-list-item::before { content: '✗'; color: var(--red); font-weight: 700; flex-shrink: 0; }
+
+    /* ═══════════ INTRO BUILDER ═══════════ */
+    .builder-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; padding: 20px; background: var(--purple-light); border-radius: var(--radius); border: 1px solid #D1C4E9; }
+    .builder-field { display: flex; flex-direction: column; gap: 6px; }
+    .builder-field.full-width { grid-column: 1 / -1; }
+    .builder-field label { font-size: 0.75rem; font-weight: 700; color: var(--purple); text-transform: uppercase; letter-spacing: 0.06em; }
+    .builder-field input { width: 100%; padding: 9px 12px; border: 1.5px solid #D1C4E9; border-radius: var(--radius-sm); font-family: inherit; font-size: 0.875rem; color: var(--text); background: white; outline: none; transition: border-color var(--transition); }
+    .builder-field input:focus { border-color: var(--purple); }
+
     @media (max-width: 640px) {
       .tips-grid { grid-template-columns: 1fr; }
       .salary-tips { grid-template-columns: 1fr; }
       .phrase-row { grid-template-columns: 1fr; }
       .checklist-grid { grid-template-columns: 1fr; }
       .practice-card { padding: 22px 18px; }
+      .rp-dos-donts { grid-template-columns: 1fr; }
+      .builder-fields { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -235,6 +279,7 @@
         <button class="tab-btn" onclick="switchTab('intro', this)" role="tab">🙋 Introduce Yourself</button>
         <button class="tab-btn" onclick="switchTab('english', this)" role="tab">🗣️ Workplace English</button>
         <button class="tab-btn" onclick="switchTab('tips', this)" role="tab">✅ Interview Tips</button>
+        <button class="tab-btn" onclick="switchTab('roleplay', this)" role="tab">🎭 Role Play</button>
       </div>
     </div>
   </div>
@@ -301,6 +346,25 @@
           <option value="phlebotomy">Lab Phlebotomy / Pharmacy</option>
           <option value="pre-primary">Pre-Primary Teaching</option>
         </select>
+      </div>
+
+      <div class="builder-fields" id="builderFields" style="display:none;">
+        <div class="builder-field">
+          <label for="builderName">Your name</label>
+          <input type="text" id="builderName" placeholder="e.g. Priya Reddy" oninput="updateIntroPreview()">
+        </div>
+        <div class="builder-field">
+          <label for="builderArea">Your area / locality</label>
+          <input type="text" id="builderArea" placeholder="e.g. Uppal, Hyderabad" oninput="updateIntroPreview()">
+        </div>
+        <div class="builder-field full-width">
+          <label for="builderSkills">2–3 key skills you learned</label>
+          <input type="text" id="builderSkills" placeholder="e.g. stitching, pattern drafting, machine operation" oninput="updateIntroPreview()">
+        </div>
+        <div class="builder-field full-width">
+          <label for="builderStrength">Your greatest strength</label>
+          <input type="text" id="builderStrength" placeholder="e.g. hardworking and punctual" oninput="updateIntroPreview()">
+        </div>
       </div>
 
       <div id="introContent">
@@ -447,6 +511,25 @@
         <div class="qa-q">Is there a probation period and what are the conditions?</div>
         <div class="qa-a">Many jobs have a 3–6 month probation. During this time, your employment can end with shorter notice. Ask what the conditions are and whether salary is lower during probation.</div>
       </div>
+    </div>
+  </div>
+
+  <!-- ═══════ ROLE PLAY PANEL ═══════ -->
+  <div class="tab-panel" id="panel-roleplay">
+    <div class="container">
+      <p class="section-label">Practice Scenarios</p>
+      <h2 class="section-title">Role Play Practice</h2>
+      <p class="section-sub">Read each situation carefully and think about what you would say. Then reveal the professional response to compare. Practise saying the responses out loud — the more natural they feel, the more confident you will be at work.</p>
+
+      <div class="rp-filter-bar">
+        <button class="rp-filter-btn active" onclick="filterRolePlay('all', this)">All Scenarios</button>
+        <button class="rp-filter-btn" onclick="filterRolePlay('customer', this)">Customer Situations</button>
+        <button class="rp-filter-btn" onclick="filterRolePlay('supervisor', this)">With Your Supervisor</button>
+        <button class="rp-filter-btn" onclick="filterRolePlay('colleague', this)">With Colleagues</button>
+        <button class="rp-filter-btn" onclick="filterRolePlay('professional', this)">Professional Situations</button>
+      </div>
+
+      <div id="rpContainer"></div>
     </div>
   </div>
 
@@ -632,6 +715,105 @@
     'A folder or file to carry documents neatly', 'Fully charged phone', 'Small amount of cash for transport'
   ];
 
+  const ROLE_PLAY_SCENARIOS = [
+    { id: 'rp1', category: 'customer', title: 'Customer is unhappy with your work',
+      setup: 'You are a beautician. A customer says her haircut looks nothing like what she asked for and she is very upset.',
+      situation: '"I showed you a picture! This is not what I wanted at all. I want to speak to your manager."',
+      role: 'You (the beautician)',
+      response: '"I am very sorry, Madam. I understand you are disappointed. Let me call my manager right away so we can find the best solution for you. Please sit comfortably — I want to make sure you leave here happy."',
+      why: 'Never argue with a customer. Apologise immediately, stay calm, and escalate quickly. This protects both the customer and your professional reputation.',
+      dos: ['Apologise genuinely and immediately', 'Stay calm even if the customer raises their voice', 'Offer to involve your manager'],
+      donts: ['Argue or say "but I did exactly what you said"', 'Get defensive or upset', 'Ignore the complaint and walk away'] },
+    { id: 'rp2', category: 'customer', title: "Customer asks something you don't know",
+      setup: "You are a computer operator at a front desk. A customer asks a question about company policy that you're not sure about.",
+      situation: '"Can you tell me what documents I need to bring for my appointment next week?"',
+      role: 'You (the computer operator)',
+      response: '"Good question. I want to give you the correct information — let me just check that for you right now, or I can connect you with my colleague who handles appointments. I will only take a moment."',
+      why: 'Never guess or give wrong information. Admitting you need to check something shows honesty and professionalism — much better than confidently giving wrong information.',
+      dos: ['Acknowledge the question positively', 'Offer to find the correct answer quickly', 'Follow through on what you promise'],
+      donts: ["Say 'I don't know' and stop there", 'Guess and give incorrect information', 'Keep the customer waiting without explanation'] },
+    { id: 'rp3', category: 'customer', title: 'Customer is being rude',
+      setup: 'You are a nursing assistant. A patient is frustrated and speaks rudely to you when you bring their lunch.',
+      situation: '"Why is this taking so long? You people don\'t know anything. Just leave it and go."',
+      role: 'You (the nursing assistant)',
+      response: '"I understand you\'re frustrated, and I\'m sorry you\'ve had to wait. Here is your lunch. If there is anything I can do to make you more comfortable, please press the call button and I will come right away."',
+      why: 'In healthcare especially, patients may be in pain or scared and act out. Your role is to remain professional and compassionate regardless of how you are spoken to.',
+      dos: ['Stay calm and speak gently', 'Acknowledge their frustration', 'Redirect focus to their care and comfort'],
+      donts: ['Respond with equal rudeness', 'Take it personally and become upset', 'Leave abruptly without completing your duty'] },
+    { id: 'rp4', category: 'supervisor', title: 'Your supervisor gives you critical feedback',
+      setup: 'Your supervisor calls you aside and says the quality of your work last week was below what is expected.',
+      situation: '"I\'ve noticed your output has been inconsistent. This isn\'t the standard we need. What\'s going on?"',
+      role: 'You (the employee)',
+      response: '"Thank you for telling me directly, Sir/Madam. I understand. I have been finding this part challenging and I should have asked for help sooner. Can you guide me on what to improve first? I want to get this right."',
+      why: 'Never become defensive when receiving feedback. Acknowledge it, take responsibility, and ask for clear guidance. Supervisors value employees who can receive feedback gracefully.',
+      dos: ['Thank them for the feedback', 'Take responsibility without making excuses', 'Ask specific questions about how to improve'],
+      donts: ["Argue or say 'it wasn't my fault'", "Make excuses ('I was tired', 'nobody told me')", 'Stay silent and walk away looking upset'] },
+    { id: 'rp5', category: 'supervisor', title: 'Asking for help when you are stuck',
+      setup: "You have been given a new task but you're not confident you understood the instructions correctly. Your supervisor is busy.",
+      situation: '(Your supervisor has given you a new assignment and returned to their desk. You are unsure about two steps.)',
+      role: 'You (the employee)',
+      response: '"Excuse me, Sir/Madam — I\'m sorry to interrupt. I want to make sure I do this correctly. Could you spare two minutes to clarify steps 3 and 4? I don\'t want to make an error and waste your time later."',
+      why: 'It is always better to ask one question at the right time than to fix many mistakes later. Supervisors respect employees who check before acting, not after.',
+      dos: ['Ask politely, acknowledging they are busy', 'Be specific about what you need to know', 'Thank them for their time'],
+      donts: ['Guess and proceed incorrectly', 'Interrupt repeatedly with many small questions', "Do the task wrong and then say you weren't sure"] },
+    { id: 'rp6', category: 'supervisor', title: 'You made a mistake at work',
+      setup: 'You accidentally sent the wrong document to a client. You realise the error before your supervisor notices.',
+      situation: '(You discover you sent the wrong file 15 minutes ago. Your supervisor is nearby.)',
+      role: 'You (the employee)',
+      response: '"Sir/Madam, I need to tell you something immediately. I sent the wrong document to the client by mistake. I\'m very sorry. I wanted to tell you straight away so we can fix it before it causes any problem. How should I handle this?"',
+      why: 'Always report your own mistakes immediately. Supervisors lose trust in employees who hide errors. Coming forward quickly shows integrity and gives the team a chance to correct the issue.',
+      dos: ['Report immediately and directly', 'State clearly what happened without minimising it', 'Ask how you can help fix it'],
+      donts: ['Wait and hope nobody notices', 'Blame system or circumstances', 'Make the supervisor discover it themselves'] },
+    { id: 'rp7', category: 'colleague', title: 'A colleague is not doing their share of the work',
+      setup: 'You and a colleague are assigned a task together. They keep leaving early and you are doing most of the work. The deadline is tomorrow.',
+      situation: '(Your colleague is about to leave early again today.)',
+      role: 'You (speaking to the colleague)',
+      response: '"[Name], can I speak with you for a moment? I want to make sure we submit this correctly tomorrow. I\'ve been handling most of the parts and I\'m worried about the deadline. Can we divide what\'s left clearly so we both contribute before end of day?"',
+      why: 'Address the issue directly but without accusation. Focus on the work outcome, not on blaming the person. This is more likely to get cooperation and keeps the working relationship intact.',
+      dos: ['Address it privately, not in front of others', 'Focus on the task and deadline, not their behaviour', 'Propose a clear solution'],
+      donts: ['Complain about them to other colleagues', 'Let resentment build until you explode', 'Do all the work silently and then complain after'] },
+    { id: 'rp8', category: 'colleague', title: 'A colleague asks you to cover for them',
+      setup: 'A colleague asks you to tell the supervisor they were sick when actually they left early to go to a wedding.',
+      situation: '"Just tell Sir that I wasn\'t feeling well, okay? I\'ll return the favour sometime."',
+      role: 'You (the colleague being asked)',
+      response: '"I understand you\'re in a difficult position, but I\'m not comfortable lying to our supervisor. If you need to leave for personal reasons, it\'s better to speak to Sir yourself. I\'m sorry, I can\'t help you this way."',
+      why: "Covering for a colleague's dishonesty puts your own integrity and job at risk. Being kind does not mean enabling dishonesty. A respectful but firm 'no' protects both of you.",
+      dos: ['Decline clearly but kindly', 'Offer an alternative (speak to supervisor yourself)', "Not judge them harshly — just protect your own integrity"],
+      donts: ['Agree and lie to your supervisor', 'Gossip about it to other colleagues', 'Be harsh or lecture them at length'] },
+    { id: 'rp9', category: 'professional', title: 'Calling in sick professionally',
+      setup: 'You are genuinely unwell and cannot come to work today. You need to inform your supervisor.',
+      situation: '(It is 8:00 AM. Work starts at 9:00 AM. You need to call your supervisor.)',
+      role: 'You (calling your supervisor)',
+      response: '"Good morning Sir/Madam, this is [Name] calling. I\'m sorry to inform you that I am unwell today and I won\'t be able to come in. I will rest and return tomorrow. I\'ll make sure any urgent tasks are covered. Should I send you a medical certificate? I apologise for any inconvenience."',
+      why: "Always inform your supervisor before your shift starts, not after. Explain briefly, mention your return plan, and offer to handle any urgent tasks. This shows professionalism even when you are unwell.",
+      dos: ['Call before your shift starts', 'Keep it brief and professional', 'Mention how you will handle pending work'],
+      donts: ['Send a WhatsApp message only and hope they see it', 'Inform after your shift has already started', 'Say nothing and simply not appear'] },
+    { id: 'rp10', category: 'professional', title: 'Requesting leave from your supervisor',
+      setup: 'You need to take one day off next week for a family function. You want to request leave formally.',
+      situation: '(You approach your supervisor at an appropriate time.)',
+      role: 'You (requesting leave)',
+      response: '"Sir/Madam, I would like to request leave on [day, date] for a family function. I will ensure all my work for that day is completed in advance, and I will inform my colleague in case anything urgent comes up. Would it be alright if I took that day off?"',
+      why: 'Give as much advance notice as possible. Show that you have thought about the impact on the team and have a plan. Framing it as a request rather than a demand shows respect.',
+      dos: ['Request in advance — not the day before if possible', 'Show you have thought about coverage', 'Accept the decision gracefully even if denied'],
+      donts: ["Say 'I won't be coming next week' without asking", 'Request on a day you know is very busy', 'Argue if the leave is not approved'] },
+    { id: 'rp11', category: 'professional', title: 'Asking for a salary increase',
+      setup: "You have been working for 11 months, your performance has been good, and the annual review is approaching.",
+      situation: '(Your supervisor asks to meet with you for your performance review.)',
+      role: 'You (during the performance review)',
+      response: '"Thank you for this review. I\'ve enjoyed working here and I\'m proud of what I\'ve contributed, including [specific example]. I was hoping to discuss my salary — I\'ve been here for nearly a year and I\'ve taken on more responsibility. Would it be possible to review my compensation?"',
+      why: "Performance reviews are the right time to raise salary. Come with specific examples of your contribution. Be professional, not emotional. Always frame it as a discussion, not a demand.",
+      dos: ['Prepare specific examples of your contribution', 'Raise it professionally as a discussion', 'Know the market rate for your role beforehand'],
+      donts: ["Say 'I need more money for personal reasons'", "Threaten to leave if you don't get a raise", 'Raise it informally or by text message'] },
+    { id: 'rp12', category: 'professional', title: 'Handling a task you have never done before',
+      setup: "Your supervisor asks you to complete a task that you haven't done before and are not fully trained for.",
+      situation: '"Can you handle the monthly inventory report this time? Just use the format from last month."',
+      role: 'You (the employee)',
+      response: '"I will certainly try my best, Sir/Madam. I haven\'t done this before, so could I look at last month\'s report to understand the format first? And if I have any questions while doing it, may I come to you? I want to make sure it\'s done correctly."',
+      why: "Being given new tasks is a sign of trust. Saying 'yes' enthusiastically while honestly naming your gaps and asking for guidance is the best response — not pretending to know, and not refusing.",
+      dos: ['Accept the task willingly', 'Ask for resources (templates, examples) upfront', 'Confirm you can ask questions if stuck'],
+      donts: ["Say 'I don't know how to do that' and stop there", 'Attempt it without asking for guidance and make errors', "Ask someone else without getting your supervisor's permission"] }
+  ];
+
   // ═══════════════════════════════════
   //  STATE
   // ═══════════════════════════════════
@@ -787,44 +969,127 @@
   // ═══════════════════════════════════
   function renderIntro() {
     const key = document.getElementById('introCourse').value;
+    const fields = document.getElementById('builderFields');
+    if (!key) {
+      fields.style.display = 'none';
+      document.getElementById('introContent').innerHTML = `
+        <div class="intro-card" style="text-align:center;padding:40px;">
+          <div style="font-size:2.5rem;margin-bottom:12px;">🎯</div>
+          <div style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:6px;">Select your course above</div>
+          <div style="font-size:0.875rem;color:var(--text-muted);">You'll get a personalised introduction script ready to practise</div>
+        </div>`;
+      return;
+    }
+    fields.style.display = 'grid';
+    updateIntroPreview();
+  }
+
+  function updateIntroPreview() {
+    const key = document.getElementById('introCourse').value;
     if (!key) return;
     const d = INTRO_SCRIPTS[key];
     if (!d) return;
 
-    const script = `Good morning, Sir / Madam.
+    const nameVal = document.getElementById('builderName').value.trim();
+    const areaVal = document.getElementById('builderArea').value.trim();
+    const skillsVal = document.getElementById('builderSkills').value.trim();
+    const strengthVal = document.getElementById('builderStrength').value.trim();
 
-My name is <span class="placeholder">[Your Name]</span>. I am from <span class="placeholder">[Your Area]</span>, Secunderabad.
+    const nameSafe = nameVal ? escapeHtml(nameVal) : '<span class="placeholder">[Your Name]</span>';
+    const areaSafe = areaVal ? escapeHtml(areaVal) : '<span class="placeholder">[Your Area]</span>';
+    const skillsSafe = skillsVal ? escapeHtml(skillsVal) : `<span class="placeholder">${d.skills}</span>`;
+    const strengthSafe = strengthVal ? escapeHtml(strengthVal) : `<span class="placeholder">${d.strength}</span>`;
 
-I have completed the <strong>${d.course}</strong> at Asha Jyothi Employable Skill Training Centre. This is a government-recognised course certified by the Intermediate Board of Telangana.
+    const script = `Good morning, Sir / Madam.<br><br>My name is ${nameSafe}. I am from ${areaSafe}, Secunderabad.<br><br>I have completed the <strong>${d.course}</strong> at Asha Jyothi Employable Skill Training Centre. This is a government-recognised course certified by the Intermediate Board of Telangana.<br><br>During my training I learned <strong>${skillsSafe}</strong>. I am a fresher, but I am <strong>${strengthSafe}</strong>, and I am very eager to begin my career and learn everything this role requires.<br><br>I am applying for the position of <strong>${d.role}</strong> because it is a direct match for my training, and I believe I can contribute to your team from day one.<br><br>Thank you for this opportunity.`;
 
-During my training I learned <strong>${d.skills}</strong>. I am a fresher, but I am <strong>${d.strength}</strong>, and I am very eager to begin my career and learn everything this role requires.
-
-I am applying for the position of <strong>${d.role}</strong> because it is a direct match for my training, and I believe I can contribute to your team from day one.
-
-Thank you for this opportunity.`;
-
-    const plainText = `Good morning, Sir / Madam.\n\nMy name is [Your Name]. I am from [Your Area], Secunderabad.\n\nI have completed the ${d.course} at Asha Jyothi Employable Skill Training Centre. This is a government-recognised course certified by the Intermediate Board of Telangana.\n\nDuring my training I learned ${d.skills}. I am a fresher, but I am ${d.strength}, and I am very eager to begin my career and learn everything this role requires.\n\nI am applying for the position of ${d.role} because it is a direct match for my training, and I believe I can contribute to your team from day one.\n\nThank you for this opportunity.`;
+    const plainText = `Good morning, Sir / Madam.\n\nMy name is ${nameVal || '[Your Name]'}. I am from ${areaVal || '[Your Area]'}, Secunderabad.\n\nI have completed the ${d.course} at Asha Jyothi Employable Skill Training Centre. This is a government-recognised course certified by the Intermediate Board of Telangana.\n\nDuring my training I learned ${skillsVal || d.skills}. I am a fresher, but I am ${strengthVal || d.strength}, and I am very eager to begin my career and learn everything this role requires.\n\nI am applying for the position of ${d.role} because it is a direct match for my training, and I believe I can contribute to your team from day one.\n\nThank you for this opportunity.`;
 
     document.getElementById('introContent').innerHTML = `
       <div class="intro-card">
         <div class="intro-card-title">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-          Introduction Script — ${d.course}
+          Your Introduction Script — ${d.course}
         </div>
         <div class="intro-script">${script}</div>
-        <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:10px;">Words in <span style="color:var(--purple);font-weight:700;">[purple]</span> are placeholders — replace them with your own details.</p>
-        <button class="intro-copy-btn" onclick="copyIntro(\`${plainText.replace(/`/g, '\\`')}\`, this)">
+        <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:10px;">Words in <span style="color:var(--purple);font-weight:700;">purple</span> are placeholders — fill in the fields above to personalise your script.</p>
+        <button class="intro-copy-btn" id="introCopyBtn" onclick="copyIntro()">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
           Copy script
         </button>
       </div>`;
+    document.getElementById('introContent').dataset.plain = plainText;
   }
 
-  function copyIntro(text, btn) {
+  function copyIntro() {
+    const el = document.getElementById('introContent');
+    const text = el && el.dataset.plain;
+    if (!text) return;
+    const btn = document.getElementById('introCopyBtn');
     navigator.clipboard.writeText(text).then(() => {
       btn.textContent = '✓ Copied!';
       setTimeout(() => { btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy script'; }, 2000);
     });
+  }
+
+  function escapeHtml(str) {
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  // ═══════════════════════════════════
+  //  ROLE PLAY
+  // ═══════════════════════════════════
+  function renderRolePlay(filter) {
+    filter = filter || 'all';
+    const container = document.getElementById('rpContainer');
+    const scenarios = filter === 'all' ? ROLE_PLAY_SCENARIOS : ROLE_PLAY_SCENARIOS.filter(s => s.category === filter);
+    if (!scenarios.length) { container.innerHTML = '<p style="color:var(--text-muted);padding:20px 0;">No scenarios found.</p>'; return; }
+    const LABELS = { customer: 'Customer', supervisor: 'Supervisor', colleague: 'Colleague', professional: 'Professional' };
+    container.innerHTML = scenarios.map(s => `
+      <div class="rp-card" id="${s.id}">
+        <div class="rp-card-head">
+          <div class="rp-title">${s.title}</div>
+          <span class="rp-category-tag ${s.category}">${LABELS[s.category]}</span>
+        </div>
+        <p class="rp-setup">${s.setup}</p>
+        <p class="rp-situation-label">The situation</p>
+        <div class="rp-situation-bubble">${s.situation}</div>
+        <p class="rp-role-tag"><span class="rp-role-dot"></span>${s.role} — how would you respond?</p>
+        <div class="rp-reveal-row">
+          <button class="rp-reveal-btn" id="btn-${s.id}" onclick="toggleRpResponse('${s.id}', this)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            Show professional response
+          </button>
+        </div>
+        <div class="rp-response" id="resp-${s.id}">
+          <div class="rp-response-label">✓ Professional response</div>
+          <div class="rp-response-text">${s.response}</div>
+          <div class="rp-why"><strong>Why this works:</strong> ${s.why}</div>
+          <div class="rp-dos-donts">
+            <div class="rp-do-list">
+              <div class="rp-list-label">Do</div>
+              ${s.dos.map(d => `<div class="rp-list-item">${d}</div>`).join('')}
+            </div>
+            <div class="rp-dont-list">
+              <div class="rp-list-label">Don't</div>
+              ${s.donts.map(d => `<div class="rp-list-item">${d}</div>`).join('')}
+            </div>
+          </div>
+        </div>
+      </div>`).join('');
+  }
+
+  function filterRolePlay(category, btn) {
+    document.querySelectorAll('.rp-filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderRolePlay(category);
+  }
+
+  function toggleRpResponse(id, btn) {
+    const resp = document.getElementById('resp-' + id);
+    const shown = resp.classList.toggle('shown');
+    btn.innerHTML = shown
+      ? '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24M1 1l22 22"/></svg> Hide response'
+      : '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> Show professional response';
   }
 
   // ═══════════════════════════════════
@@ -919,6 +1184,7 @@ Thank you for this opportunity.`;
     renderQuestions();
     renderEnglish();
     renderChecklist();
+    renderRolePlay();
   }
 
   init();
