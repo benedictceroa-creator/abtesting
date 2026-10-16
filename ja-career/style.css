@@ -458,10 +458,12 @@ body {
 /* ── LOADING VIEW ── */
 #view-loading {
   background: linear-gradient(155deg, #1a365d, #2b6cb0);
-  display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+}
+#view-loading.active {
+  display: flex;
 }
 
 .loading-center { text-align: center; }
