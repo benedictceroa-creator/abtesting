@@ -143,6 +143,7 @@
       color: #1a1a1a; line-height: 1.5;
       min-height: 900px;
       overflow: hidden;
+      display: flex; flex-direction: column;
     }
 
     .resume-header { background: var(--navy-dark); padding: 28px 32px 24px; }
@@ -151,7 +152,7 @@
     .resume-contact-bar { display: flex; flex-wrap: wrap; gap: 16px; }
     .resume-contact-item { display: flex; align-items: center; gap: 6px; font-size: 0.8rem; color: rgba(255,255,255,0.8); font-family: 'Lato', sans-serif; }
 
-    .resume-body { display: grid; grid-template-columns: 220px 1fr; }
+    .resume-body { display: grid; grid-template-columns: 220px 1fr; flex: 1; align-items: stretch; }
     .resume-sidebar { background: #F0F2F8; padding: 24px 20px; border-right: 1px solid #DDE1EF; }
     .resume-main { padding: 24px 28px; }
 
