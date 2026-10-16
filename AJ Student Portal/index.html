@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asha Jyothi EDGE Portal — Student Career Resources</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red: #C62828;
+      --red-dark: #8E0000;
+      --red-light: #EF5350;
+      --navy: #1A237E;
+      --navy-dark: #0D0D4F;
+      --navy-light: #3949AB;
+      --gold: #F9A825;
+      --green: #2E7D32;
+      --green-light: #E8F5E9;
+      --bg: #F4F6FB;
+      --surface: #FFFFFF;
+      --text: #1C1C1E;
+      --text-muted: #6E6E73;
+      --border: #E5E5EA;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+      --shadow-lg: 0 10px 28px rgba(0,0,0,0.12);
+      --radius: 16px;
+      --radius-sm: 10px;
+      --transition: 200ms ease;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+    /* ── Navbar ── */
+    .navbar {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      position: sticky; top: 0; z-index: 50;
+    }
+    .navbar-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .navbar-logo { display: flex; align-items: center; gap: 10px; }
+    .navbar-logo img { height: 40px; width: auto; object-fit: contain; }
+    .navbar-logo-text { display: flex; flex-direction: column; }
+    .navbar-logo-name { font-size: 1rem; font-weight: 700; color: var(--red); line-height: 1.1; }
+    .navbar-logo-sub { font-size: 0.6rem; font-weight: 500; color: var(--navy); letter-spacing: 0.05em; text-transform: uppercase; }
+    .navbar-portal-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--navy); color: white;
+      padding: 5px 14px; border-radius: 50px;
+      font-size: 0.75rem; font-weight: 600;
+    }
+    .navbar-portal-tag svg { flex-shrink: 0; }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, #283593 100%);
+      padding: 56px 0 48px;
+      position: relative; overflow: hidden;
+    }
+    .hero::after {
+      content: ''; position: absolute; right: -80px; top: -80px;
+      width: 500px; height: 500px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(198,40,40,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; }
+
+    .hero-greeting {
+      font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+    }
+    .hero-title {
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      font-weight: 800; color: white; line-height: 1.2; margin-bottom: 12px;
+    }
+    .hero-title span { color: var(--gold); }
+    .hero-subtitle {
+      font-size: 0.9375rem; color: rgba(255,255,255,0.75);
+      max-width: 480px; margin-bottom: 32px; line-height: 1.7;
+    }
+
+    /* Course Selector */
+    .course-selector {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(8px);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      max-width: 480px;
+    }
+    .course-selector-label {
+      font-size: 0.8125rem; font-weight: 600; color: rgba(255,255,255,0.85);
+      margin-bottom: 10px;
+    }
+    .course-selector-row { display: flex; gap: 10px; align-items: stretch; }
+    .course-select {
+      flex: 1; padding: 11px 16px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.15);
+      color: white; font-family: inherit; font-size: 0.9rem; font-weight: 500;
+      outline: none; cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.7)' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 12px center;
+      padding-right: 36px;
+    }
+    .course-select option { background: var(--navy-dark); color: white; }
+    .course-select:focus { border-color: var(--gold); }
+    .course-save-btn {
+      padding: 11px 20px; border-radius: var(--radius-sm);
+      background: var(--gold); color: var(--navy-dark);
+      border: none; font-family: inherit; font-size: 0.875rem; font-weight: 700;
+      cursor: pointer; transition: all var(--transition); white-space: nowrap;
+    }
+    .course-save-btn:hover { background: #FFB300; transform: translateY(-1px); }
+
+    .course-saved-tag {
+      display: none; align-items: center; gap: 6px;
+      background: rgba(46,125,50,0.25); border: 1px solid rgba(46,125,50,0.4);
+      color: #A5D6A7; padding: 6px 14px; border-radius: 50px;
+      font-size: 0.8125rem; font-weight: 500; margin-top: 10px;
+    }
+    .course-saved-tag.show { display: inline-flex; }
+
+    /* ── Readiness Banner ── */
+    .readiness-banner {
+      background: white;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--gold);
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+      margin: 28px 0 0;
+      display: flex; align-items: center; gap: 16px;
+      cursor: pointer; transition: box-shadow var(--transition);
+    }
+    .readiness-banner:hover { box-shadow: var(--shadow-md); }
+    .readiness-banner-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: #FFF8E1; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .readiness-banner-text { flex: 1; }
+    .readiness-banner-title { font-size: 0.9375rem; font-weight: 700; color: var(--navy); }
+    .readiness-banner-sub { font-size: 0.8125rem; color: var(--text-muted); margin-top: 1px; }
+    .readiness-score-pill {
+      display: none; background: var(--navy); color: white;
+      padding: 4px 12px; border-radius: 50px; font-size: 0.8125rem; font-weight: 700;
+      flex-shrink: 0;
+    }
+    .readiness-score-pill.show { display: block; }
+
+    /* ── Section ── */
+    .section { padding: 48px 0; }
+    .section-header { margin-bottom: 28px; }
+    .section-label {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--red); margin-bottom: 6px;
+    }
+    .section-title { font-size: 1.5rem; font-weight: 700; color: var(--navy); }
+    .section-subtitle { font-size: 0.9rem; color: var(--text-muted); margin-top: 4px; }
+
+    /* ── Portal Cards ── */
+    .portal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .portal-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      display: flex; flex-direction: column;
+      transition: all 250ms ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      text-decoration: none; color: inherit;
+    }
+    .portal-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--card-color, var(--navy));
+      border-radius: var(--radius) var(--radius) 0 0;
+    }
+    .portal-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: transparent;
+    }
+
+    .card-icon {
+      width: 52px; height: 52px; border-radius: 14px;
+      background: var(--card-bg, #EEF0FF);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 18px; flex-shrink: 0;
+    }
+    .card-title { font-size: 1.0625rem; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .card-desc { font-size: 0.8125rem; color: var(--text-muted); line-height: 1.65; flex: 1; }
+    .card-action {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; font-weight: 600; margin-top: 18px;
+      color: var(--card-color, var(--navy));
+    }
+    .card-action svg { transition: transform var(--transition); }
+    .portal-card:hover .card-action svg { transform: translateX(4px); }
+
+    .card-tag {
+      display: inline-flex; align-items: center;
+      background: var(--card-bg, #EEF0FF);
+      color: var(--card-color, var(--navy));
+      padding: 3px 10px; border-radius: 50px;
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em;
+      margin-bottom: 12px; align-self: flex-start;
+    }
+
+    /* ── Quick Links ── */
+    .quick-links {
+      display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px;
+    }
+    .quick-link {
+      display: flex; align-items: center; gap: 8px;
+      background: white; border: 1.5px solid var(--border);
+      padding: 10px 18px; border-radius: 50px;
+      font-size: 0.8125rem; font-weight: 500; color: var(--text);
+      cursor: pointer; transition: all var(--transition); text-decoration: none;
+    }
+    .quick-link:hover { border-color: var(--navy); color: var(--navy); background: #EEF0FF; }
+    .quick-link svg { color: var(--text-muted); flex-shrink: 0; }
+
+    /* ── Footer ── */
+    .footer {
+      background: var(--navy-dark); padding: 32px 0;
+      text-align: center; margin-top: 16px;
+    }
+    .footer-text { font-size: 0.8125rem; color: rgba(255,255,255,0.4); }
+    .footer-text a { color: rgba(255,255,255,0.6); }
+    .footer-text a:hover { color: white; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .portal-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .portal-grid { grid-template-columns: 1fr; }
+      .hero { padding: 40px 0 36px; }
+      .readiness-banner { flex-wrap: wrap; }
+      .course-selector { max-width: 100%; }
+      .course-selector-row { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="../AJ Website 2026/index.html" class="navbar-logo">
+          <img src="../AJ Website 2026/Logo/Asha Jyothi Logo.jpg" alt="Asha Jyothi">
+          <div class="navbar-logo-text">
+            <span class="navbar-logo-name">Asha Jyothi</span>
+            <span class="navbar-logo-sub">Employable Skill Training Centre</span>
+          </div>
+        </a>
+        <div class="navbar-portal-tag">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          EDGE Portal
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <p class="hero-greeting">Asha Jyothi EDGE Portal</p>
+        <h1 class="hero-title">
+          Everything you need to<br><span>get your first job</span>
+        </h1>
+        <p class="hero-subtitle">
+          Jobs, career guidance, resume builder, interview practice and more — all in one place, built for Asha Jyothi students.
+        </p>
+
+        <!-- Course Selector -->
+        <div class="course-selector">
+          <p class="course-selector-label">Select your course to personalise this portal</p>
+          <div class="course-selector-row">
+            <select class="course-select" id="courseSelect" aria-label="Select your course">
+              <option value="">— Choose your course —</option>
+              <optgroup label="Tailoring">
+                <option value="tailoring-basic">Tailoring Basic</option>
+                <option value="tailoring-advance">Tailoring Advance</option>
+                <option value="maggam">Maggam / Electric Machine</option>
+              </optgroup>
+              <optgroup label="Beautician">
+                <option value="beautician-basic">Beautician Basic</option>
+                <option value="beautician-advance">Beautician Advance</option>
+              </optgroup>
+              <optgroup label="Spoken English & Office">
+                <option value="english-1">Spoken English Level 1</option>
+                <option value="english-2">Spoken English Level 2</option>
+              </optgroup>
+              <optgroup label="Computer">
+                <option value="computer-basic">Computer Basic</option>
+                <option value="computer-dtp">Computer DTP</option>
+                <option value="computer-tally">Computer Tally</option>
+                <option value="data-entry">Data Entry & Typing</option>
+              </optgroup>
+              <optgroup label="Trade Skills">
+                <option value="electrical">Electrical &amp; Electronics</option>
+                <option value="appliance-repair">Home Appliance Repair</option>
+                <option value="pre-primary">Pre-Primary Teachers Training</option>
+              </optgroup>
+              <optgroup label="Paramedics">
+                <option value="nursing">Medical Nursing Assistant</option>
+                <option value="phlebotomy">Medical Lab Phlebotomy</option>
+                <option value="pharmacy">Pharmacy Assistant</option>
+              </optgroup>
+            </select>
+            <button class="course-save-btn" onclick="saveCourse()" aria-label="Save course selection">Save</button>
+          </div>
+          <div class="course-saved-tag" id="savedTag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <span id="savedTagText">Course saved</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container">
+
+    <!-- Readiness Banner -->
+    <a href="readiness.html" class="readiness-banner" id="readinessBanner" aria-label="Check your job readiness score">
+      <div class="readiness-banner-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F9A825" stroke-width="2.5" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+      </div>
+      <div class="readiness-banner-text">
+        <div class="readiness-banner-title">Check your Job Readiness Score</div>
+        <div class="readiness-banner-sub" id="readinessBannerSub">Answer 15 quick questions to find out where you stand — and what to do next</div>
+      </div>
+      <div class="readiness-score-pill" id="readinessScorePill"></div>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+
+    <!-- Portal Sections -->
+    <section class="section">
+      <div class="section-header">
+        <p class="section-label">Your Resources</p>
+        <h2 class="section-title">Where would you like to start?</h2>
+        <p class="section-subtitle">Six areas to help you prepare, apply and succeed</p>
+      </div>
+
+      <div class="portal-grid">
+
+        <!-- Find Opportunities -->
+        <a href="jobs.html" class="portal-card" style="--card-color:#C62828; --card-bg:#FEE2E2;">
+          <span class="card-tag">Essential</span>
+          <div class="card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C62828" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+          </div>
+          <div class="card-title">Find Opportunities</div>
+          <p class="card-desc">Browse jobs, apprenticeships and internships filtered by your course and location. Entry-level vacancies from verified employers.</p>
+          <div class="card-action">
+            Browse jobs
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- Explore Careers -->
+        <a href="careers.html" class="portal-card" style="--card-color:#1565C0; --card-bg:#E3F2FD;">
+          <span class="card-tag">Essential</span>
+          <div class="card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1565C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          </div>
+          <div class="card-title">Explore Careers</div>
+          <p class="card-desc">Career interest quiz, course-specific pathways, and salary expectations. Discover which roles suit your skills and goals.</p>
+          <div class="card-action">
+            Explore paths
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- Build Resume -->
+        <a href="resume.html" class="portal-card" style="--card-color:#2E7D32; --card-bg:#E8F5E9;">
+          <span class="card-tag">Essential</span>
+          <div class="card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <div class="card-title">Build My Resume</div>
+          <p class="card-desc">Course-specific resume templates. Fill in your details, download as PDF, and get WhatsApp message templates to contact employers.</p>
+          <div class="card-action">
+            Build resume
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- Practise & Learn -->
+        <a href="interview.html" class="portal-card" style="--card-color:#6A1B9A; --card-bg:#F3E5F5;">
+          <span class="card-tag">Essential</span>
+          <div class="card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#6A1B9A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <div class="card-title">Practise &amp; Learn</div>
+          <p class="card-desc">Mock interview questions for your course, workplace English phrases, how to introduce yourself and answer salary questions.</p>
+          <div class="card-action">
+            Start practising
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- Prepare for Work -->
+        <a href="survival.html" class="portal-card" style="--card-color:#E65100; --card-bg:#FFF3E0;">
+          <span class="card-tag">Essential</span>
+          <div class="card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E65100" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <div class="card-title">Prepare for Work</div>
+          <p class="card-desc">First job survival guide — salary slips, workplace behaviour, your rights as an employee, and how to spot and avoid job scams.</p>
+          <div class="card-action">
+            Read the guide
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- Start My Business -->
+        <a href="business.html" class="portal-card" style="--card-color:#00695C; --card-bg:#E0F2F1;">
+          <span class="card-tag">Self-Employment</span>
+          <div class="card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00695C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <div class="card-title">Start My Business</div>
+          <p class="card-desc">Not everyone wants a salary job. Learn how to start a home business, find your first customers and manage your income.</p>
+          <div class="card-action">
+            Explore options
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Quick Links -->
+      <div class="quick-links" role="list" aria-label="Quick links">
+        <a href="readiness.html" class="quick-link" role="listitem">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F9A825" stroke-width="2.5" aria-hidden="true"><path d="M9 11l3 3L22 4"/></svg>
+          Job Readiness Score
+        </a>
+        <a href="survival.html#schemes" class="quick-link" role="listitem">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          Government Schemes
+        </a>
+        <a href="survival.html#rights" class="quick-link" role="listitem">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2" aria-hidden="true"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/></svg>
+          Worker Rights
+        </a>
+        <a href="resume.html#whatsapp" class="quick-link" role="listitem">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          WhatsApp Templates
+        </a>
+        <a href="survival.html#salary" class="quick-link" role="listitem">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          Salary Calculator
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p class="footer-text">
+      Asha Jyothi EDGE Portal &nbsp;·&nbsp;
+      <a href="../AJ Website 2026/index.html">Back to main site</a> &nbsp;·&nbsp;
+      <a href="tel:8019680291">Call us: 80196 80291</a>
+    </p>
+  </footer>
+
+  <script>
+    const COURSES = {
+      'tailoring-basic': 'Tailoring Basic',
+      'tailoring-advance': 'Tailoring Advance',
+      'maggam': 'Maggam / Electric Machine',
+      'beautician-basic': 'Beautician Basic',
+      'beautician-advance': 'Beautician Advance',
+      'english-1': 'Spoken English Level 1',
+      'english-2': 'Spoken English Level 2',
+      'computer-basic': 'Computer Basic',
+      'computer-dtp': 'Computer DTP',
+      'computer-tally': 'Computer Tally',
+      'data-entry': 'Data Entry & Typing',
+      'electrical': 'Electrical & Electronics',
+      'appliance-repair': 'Home Appliance Repair',
+      'pre-primary': 'Pre-Primary Teachers Training',
+      'nursing': 'Medical Nursing Assistant',
+      'phlebotomy': 'Medical Lab Phlebotomy',
+      'pharmacy': 'Pharmacy Assistant'
+    };
+
+    function saveCourse() {
+      const sel = document.getElementById('courseSelect');
+      if (!sel.value) return;
+      localStorage.setItem('aj_course', sel.value);
+      const tag = document.getElementById('savedTag');
+      const tagText = document.getElementById('savedTagText');
+      tagText.textContent = COURSES[sel.value] + ' saved';
+      tag.classList.add('show');
+      setTimeout(() => tag.classList.remove('show'), 3000);
+    }
+
+    function loadSavedCourse() {
+      const saved = localStorage.getItem('aj_course');
+      if (!saved) return;
+      const sel = document.getElementById('courseSelect');
+      sel.value = saved;
+    }
+
+    function loadReadinessScore() {
+      const score = localStorage.getItem('aj_readiness_score');
+      const pill = document.getElementById('readinessScorePill');
+      const sub = document.getElementById('readinessBannerSub');
+      if (score !== null) {
+        pill.textContent = score + '/100';
+        pill.classList.add('show');
+        sub.textContent = 'Your score: ' + score + '/100 — click to see your next steps';
+      }
+    }
+
+    loadSavedCourse();
+    loadReadinessScore();
+  </script>
+</body>
+</html>

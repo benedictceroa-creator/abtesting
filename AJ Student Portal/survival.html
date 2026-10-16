@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prepare for Work — AJ EDGE Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #C62828; --navy: #1A237E; --navy-dark: #0D0D4F; --navy-light: #3949AB;
+      --gold: #F9A825; --green: #2E7D32; --green-light: #E8F5E9; --orange: #E65100;
+      --orange-light: #FFF3E0; --teal: #00695C; --teal-light: #E0F2F1;
+      --bg: #F4F6FB; --surface: #FFFFFF;
+      --text: #1C1C1E; --text-muted: #6E6E73; --border: #E5E5EA;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.09);
+      --shadow-lg: 0 10px 28px rgba(0,0,0,0.12);
+      --radius: 14px; --radius-sm: 9px; --transition: 200ms ease;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+    /* Navbar */
+    .navbar { background: white; border-bottom: 1px solid var(--border); box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 50; }
+    .navbar-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .navbar-logo { display: flex; align-items: center; gap: 10px; }
+    .navbar-logo img { height: 40px; width: auto; object-fit: contain; }
+    .navbar-logo-name { font-size: 1rem; font-weight: 700; color: var(--red); line-height: 1.1; }
+    .navbar-logo-sub { font-size: 0.6rem; font-weight: 500; color: var(--navy); letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-back { display: flex; align-items: center; gap: 6px; font-size: 0.875rem; font-weight: 500; color: var(--text-muted); padding: 8px 14px; border-radius: 50px; border: 1.5px solid var(--border); transition: all var(--transition); }
+    .nav-back:hover { border-color: var(--navy); color: var(--navy); }
+
+    /* Page Header */
+    .page-header { background: linear-gradient(135deg, var(--navy-dark) 0%, #1B5E20 60%, var(--teal) 100%); padding: 44px 0 40px; position: relative; overflow: hidden; }
+    .page-header::after { content: ''; position: absolute; right: -60px; top: -60px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(249,168,37,0.12) 0%, transparent 70%); pointer-events: none; }
+    .page-header-inner { position: relative; z-index: 1; }
+    .page-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .page-title { font-size: clamp(1.5rem, 3.5vw, 2.25rem); font-weight: 800; color: white; margin-bottom: 8px; }
+    .page-subtitle { font-size: 0.9375rem; color: rgba(255,255,255,0.7); max-width: 520px; }
+
+    /* Tabs */
+    .tab-nav { background: white; border-bottom: 1px solid var(--border); position: sticky; top: 64px; z-index: 40; overflow-x: auto; }
+    .tab-nav::-webkit-scrollbar { display: none; }
+    .tab-nav-inner { display: flex; min-width: max-content; }
+    .tab-btn { display: flex; align-items: center; gap: 7px; padding: 14px 18px; font-family: inherit; font-size: 0.875rem; font-weight: 600; color: var(--text-muted); background: none; border: none; border-bottom: 3px solid transparent; cursor: pointer; transition: all var(--transition); white-space: nowrap; }
+    .tab-btn:hover { color: var(--teal); }
+    .tab-btn.active { color: var(--teal); border-bottom-color: var(--teal); }
+    .tab-panel { display: none; padding: 36px 0 60px; }
+    .tab-panel.active { display: block; }
+
+    /* Section */
+    .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 6px; }
+    .section-title { font-size: 1.25rem; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .section-sub { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 24px; line-height: 1.7; }
+
+    /* Cards */
+    .card { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 16px; }
+    .card-title { font-size: 0.9375rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .card-body { font-size: 0.875rem; color: var(--text); line-height: 1.75; }
+
+    /* Info list */
+    .info-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .info-item { display: flex; gap: 10px; font-size: 0.875rem; color: var(--text); line-height: 1.6; }
+    .info-dot { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; font-size: 0.75rem; font-weight: 700; }
+    .info-dot.green { background: var(--green-light); color: var(--green); }
+    .info-dot.orange { background: var(--orange-light); color: var(--orange); }
+    .info-dot.teal { background: var(--teal-light); color: var(--teal); }
+    .info-dot.navy { background: #E8EAF6; color: var(--navy); }
+
+    /* ═══════════ FIRST DAYS ═══════════ */
+    .days-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+    .day-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+    .day-card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .day-card-icon { font-size: 1.4rem; }
+    .day-card-title { font-size: 0.875rem; font-weight: 700; color: var(--navy); }
+    .day-tip-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .day-tip { display: flex; gap: 8px; font-size: 0.8375rem; color: var(--text); line-height: 1.55; }
+    .day-tip::before { content: '›'; color: var(--teal); font-weight: 700; flex-shrink: 0; font-size: 1rem; line-height: 1.4; }
+    .mistake-card { background: #FFF3E0; border: 1px solid #FFCC80; border-radius: var(--radius); padding: 20px; margin-bottom: 16px; }
+    .mistake-title { font-size: 0.875rem; font-weight: 700; color: var(--orange); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+
+    /* ═══════════ SALARY ═══════════ */
+    .slip-wrap { background: white; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 24px; }
+    .slip-header { background: var(--navy); padding: 18px 24px; color: white; }
+    .slip-company { font-size: 1rem; font-weight: 700; }
+    .slip-sub { font-size: 0.75rem; opacity: 0.7; margin-top: 2px; }
+    .slip-body { display: grid; grid-template-columns: 1fr 1fr; }
+    .slip-col { padding: 20px 24px; }
+    .slip-col:first-child { border-right: 1px solid var(--border); }
+    .slip-col-head { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 12px; }
+    .slip-row { display: flex; justify-content: space-between; align-items: center; padding: 7px 0; border-bottom: 1px solid var(--bg); font-size: 0.8375rem; gap: 8px; }
+    .slip-row:last-child { border-bottom: none; }
+    .slip-row-label { color: var(--text-muted); }
+    .slip-row-amt { font-weight: 600; color: var(--text); }
+    .slip-row-amt.green { color: var(--green); }
+    .slip-row-amt.red { color: var(--red); }
+    .slip-footer { background: var(--navy-dark); padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; }
+    .slip-footer-label { font-size: 0.8125rem; font-weight: 700; color: rgba(255,255,255,0.7); }
+    .slip-footer-amt { font-size: 1.1rem; font-weight: 800; color: white; }
+    .slip-note { font-size: 0.75rem; color: var(--text-muted); margin-top: 10px; line-height: 1.6; }
+
+    /* Salary Calculator */
+    .calc-wrap { background: white; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 24px; }
+    .calc-header { background: var(--teal); padding: 16px 24px; }
+    .calc-header-title { font-size: 0.9375rem; font-weight: 700; color: white; display: flex; align-items: center; gap: 8px; }
+    .calc-body { padding: 24px; }
+    .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px; }
+    .calc-field label { font-size: 0.75rem; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 6px; }
+    .calc-field input { width: 100%; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.9rem; color: var(--text); outline: none; transition: border-color var(--transition); }
+    .calc-field input:focus { border-color: var(--teal); }
+    .calc-field input[readonly] { background: var(--bg); cursor: not-allowed; }
+    .calc-divider { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); padding: 8px 0 14px; grid-column: 1/-1; border-top: 1px solid var(--border); margin-top: 4px; }
+    .calc-result { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; padding: 20px; background: var(--bg); border-radius: var(--radius-sm); }
+    .calc-res-card { background: white; border-radius: var(--radius-sm); padding: 14px 16px; text-align: center; border: 1px solid var(--border); }
+    .calc-res-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 6px; }
+    .calc-res-amt { font-size: 1.125rem; font-weight: 800; color: var(--navy); }
+    .calc-res-amt.green { color: var(--green); }
+    .calc-res-amt.red { color: var(--red); }
+
+    /* Deduction explainer */
+    .ded-legend { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+    .ded-chip { display: flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 50px; font-size: 0.775rem; font-weight: 600; }
+    .ded-chip.green { background: var(--green-light); color: var(--green); }
+    .ded-chip.orange { background: var(--orange-light); color: var(--orange); }
+    .ded-chip.red { background: #FFEBEE; color: var(--red); }
+
+    /* ═══════════ EPF & ESI ═══════════ */
+    .epf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
+    .epf-card { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
+    .epf-card-head { padding: 16px 20px; color: white; display: flex; align-items: center; gap: 10px; }
+    .epf-card-head.navy { background: var(--navy); }
+    .epf-card-head.teal { background: var(--teal); }
+    .epf-card-title { font-size: 0.9375rem; font-weight: 700; }
+    .epf-card-sub { font-size: 0.75rem; opacity: 0.75; }
+    .epf-card-body { padding: 18px 20px; background: white; }
+    .epf-row { display: flex; gap: 8px; font-size: 0.85rem; color: var(--text); line-height: 1.6; margin-bottom: 10px; }
+    .epf-row:last-child { margin-bottom: 0; }
+    .epf-row::before { content: '✓'; color: var(--green); font-weight: 800; flex-shrink: 0; }
+    .contrib-bar { background: var(--bg); border-radius: var(--radius-sm); padding: 16px 20px; margin-bottom: 12px; }
+    .contrib-label { font-size: 0.75rem; font-weight: 600; color: var(--text-muted); margin-bottom: 8px; }
+    .contrib-track { height: 20px; border-radius: 50px; background: var(--border); display: flex; overflow: hidden; margin-bottom: 6px; }
+    .contrib-fill-you { background: var(--navy); display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 700; color: white; }
+    .contrib-fill-emp { background: var(--teal); display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 700; color: white; }
+    .contrib-legend { display: flex; gap: 12px; font-size: 0.75rem; color: var(--text-muted); }
+    .contrib-legend-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 4px; }
+    .step-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 12px; }
+    .step-card-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .step-num { width: 30px; height: 30px; border-radius: 50%; background: var(--teal); color: white; font-size: 0.8125rem; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-title { font-size: 0.9rem; font-weight: 700; color: var(--navy); }
+    .step-body { font-size: 0.85rem; color: var(--text); line-height: 1.7; padding-left: 42px; }
+
+    /* ═══════════ RIGHTS ═══════════ */
+    .rights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+    .right-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+    .right-head { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+    .right-icon { font-size: 1.5rem; flex-shrink: 0; }
+    .right-title { font-size: 0.875rem; font-weight: 700; color: var(--navy); line-height: 1.3; }
+    .right-law { font-size: 0.7rem; font-weight: 600; color: var(--teal); margin-top: 2px; }
+    .right-body { font-size: 0.8375rem; color: var(--text); line-height: 1.65; }
+    .right-stat { display: inline-flex; align-items: baseline; gap: 4px; padding: 3px 10px; background: var(--teal-light); color: var(--teal); border-radius: 50px; font-size: 0.8125rem; font-weight: 700; margin: 6px 0 4px; }
+    .wage-table { width: 100%; border-collapse: collapse; font-size: 0.8375rem; }
+    .wage-table th { background: var(--navy); color: white; padding: 10px 14px; text-align: left; font-size: 0.775rem; font-weight: 700; }
+    .wage-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); }
+    .wage-table tr:last-child td { border-bottom: none; }
+    .wage-table tr:nth-child(even) td { background: var(--bg); }
+    .complain-card { background: #FFF3E0; border: 1px solid #FFB74D; border-radius: var(--radius); padding: 20px; margin-bottom: 16px; }
+    .complain-title { font-size: 0.875rem; font-weight: 700; color: var(--orange); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+
+    /* ═══════════ SAFE JOB / SCAMS ═══════════ */
+    .red-flags { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+    .flag-item { display: flex; gap: 12px; align-items: flex-start; background: #FFEBEE; border: 1px solid #FFCDD2; border-radius: var(--radius-sm); padding: 14px 16px; }
+    .flag-icon { font-size: 1.25rem; flex-shrink: 0; }
+    .flag-text { font-size: 0.875rem; color: var(--text); line-height: 1.6; }
+    .flag-text strong { color: var(--red); }
+    .green-flags { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+    .gflag-item { display: flex; gap: 12px; align-items: flex-start; background: var(--green-light); border: 1px solid #A5D6A7; border-radius: var(--radius-sm); padding: 14px 16px; }
+    .gflag-icon { font-size: 1.25rem; flex-shrink: 0; }
+    .gflag-text { font-size: 0.875rem; color: var(--text); line-height: 1.6; }
+    .gflag-text strong { color: var(--green); }
+    .scheme-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 14px; display: flex; gap: 16px; }
+    .scheme-icon { font-size: 1.75rem; flex-shrink: 0; }
+    .scheme-title { font-size: 0.9375rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .scheme-body { font-size: 0.8375rem; color: var(--text); line-height: 1.65; }
+    .scheme-tag { display: inline-flex; align-items: center; padding: 3px 10px; border-radius: 50px; font-size: 0.7rem; font-weight: 700; margin-right: 6px; margin-top: 8px; }
+    .scheme-tag.central { background: #E3F2FD; color: #1565C0; }
+    .scheme-tag.state { background: var(--teal-light); color: var(--teal); }
+    .scheme-tag.women { background: #FCE4EC; color: #880E4F; }
+    .helpline-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .helpline-card { background: white; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px; display: flex; gap: 12px; align-items: center; }
+    .helpline-icon { font-size: 1.375rem; flex-shrink: 0; }
+    .helpline-name { font-size: 0.8rem; font-weight: 600; color: var(--navy); }
+    .helpline-num { font-size: 1rem; font-weight: 800; color: var(--teal); }
+    .highlight-box { background: var(--teal-light); border: 1.5px solid var(--teal); border-radius: var(--radius); padding: 18px 20px; margin: 16px 0; }
+    .highlight-box strong { color: var(--teal); }
+    .warning-box { background: #FFF3E0; border: 1.5px solid #FFCC80; border-radius: var(--radius); padding: 18px 20px; margin: 16px 0; }
+    .warning-box strong { color: var(--orange); }
+
+    @media (max-width: 640px) {
+      .days-grid, .rights-grid, .epf-grid { grid-template-columns: 1fr; }
+      .slip-body { grid-template-columns: 1fr; }
+      .slip-col:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+      .calc-grid { grid-template-columns: 1fr; }
+      .calc-result { grid-template-columns: 1fr; }
+      .helpline-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="index.html" class="navbar-logo">
+          <img src="../AJ Website 2026/Logo/Asha Jyothi Logo.jpg" alt="Asha Jyothi">
+          <div>
+            <div class="navbar-logo-name">Asha Jyothi</div>
+            <div class="navbar-logo-sub">EDGE Portal</div>
+          </div>
+        </a>
+        <a href="index.html" class="nav-back">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          Dashboard
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <div class="page-header-inner">
+        <p class="page-label">Prepare for Work</p>
+        <h1 class="page-title">Your First Job Survival Guide</h1>
+        <p class="page-subtitle">Everything you need to know before and after joining your first job — pay slips, EPF, your rights, and how to spot a scam.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab Nav -->
+  <div class="tab-nav">
+    <div class="container">
+      <div class="tab-nav-inner" role="tablist">
+        <button class="tab-btn active" onclick="switchTab('firstdays', this)" role="tab">🌱 First Days</button>
+        <button class="tab-btn" onclick="switchTab('salary', this)" role="tab">💰 Your Pay</button>
+        <button class="tab-btn" onclick="switchTab('epf', this)" role="tab">🏦 EPF &amp; ESI</button>
+        <button class="tab-btn" onclick="switchTab('rights', this)" role="tab">⚖️ Your Rights</button>
+        <button class="tab-btn" onclick="switchTab('scams', this)" role="tab">🛡️ Stay Safe</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ FIRST DAYS ═══════ -->
+  <div class="tab-panel active" id="panel-firstdays">
+    <div class="container">
+      <p class="section-label">Week One</p>
+      <h2 class="section-title">Your first week at work</h2>
+      <p class="section-sub">The first few days of any job feel overwhelming. This is completely normal. Here is how to navigate them well — and make a strong first impression that stays with your employer.</p>
+
+      <div class="days-grid">
+        <div class="day-card">
+          <div class="day-card-head"><div class="day-card-icon">📅</div><div class="day-card-title">Day 1 — Arrive prepared</div></div>
+          <ul class="day-tip-list">
+            <li class="day-tip">Arrive 10 minutes early. On your very first day, tardiness is unforgivable.</li>
+            <li class="day-tip">Bring all your documents in a clean folder — Aadhaar, certificate, photos, bank details.</li>
+            <li class="day-tip">Dress neatly and professionally — even if it is "just training day."</li>
+            <li class="day-tip">Greet everyone with a smile and "Good morning Sir/Madam."</li>
+            <li class="day-tip">Carry a pen and a small notebook to write down instructions.</li>
+          </ul>
+        </div>
+        <div class="day-card">
+          <div class="day-card-head"><div class="day-card-icon">👂</div><div class="day-card-title">Day 1 — Listen more than you speak</div></div>
+          <ul class="day-tip-list">
+            <li class="day-tip">Ask questions, but not too many at once. Write them down and ask when appropriate.</li>
+            <li class="day-tip">Do not volunteer opinions about how things "should" be done on your first day.</li>
+            <li class="day-tip">Observe how people communicate — formal or informal, English or Telugu?</li>
+            <li class="day-tip">Find out who your direct supervisor is and speak to them first for any need.</li>
+            <li class="day-tip">Thank your manager at the end of day one for welcoming you.</li>
+          </ul>
+        </div>
+        <div class="day-card">
+          <div class="day-card-head"><div class="day-card-icon">📋</div><div class="day-card-title">First week — Understand the rules</div></div>
+          <ul class="day-tip-list">
+            <li class="day-tip">Ask where to find the attendance register and how to mark your arrival.</li>
+            <li class="day-tip">Confirm exact working hours, break timings, and which day is your weekly off.</li>
+            <li class="day-tip">Ask how to request leave — through whom, with how much notice, and in which format.</li>
+            <li class="day-tip">Find out if there is a probation period and what is expected of you during it.</li>
+            <li class="day-tip">Ask about the uniform policy (if any) — make sure you comply from day two.</li>
+          </ul>
+        </div>
+        <div class="day-card">
+          <div class="day-card-head"><div class="day-card-icon">🤝</div><div class="day-card-title">Building relationships</div></div>
+          <ul class="day-tip-list">
+            <li class="day-tip">Learn your colleagues' names and use them — it builds trust quickly.</li>
+            <li class="day-tip">Offer to help when you see a colleague struggling — do not wait to be asked.</li>
+            <li class="day-tip">Do not get involved in office gossip or complaints, especially as a new employee.</li>
+            <li class="day-tip">Be respectful to everyone regardless of their position — peons and cleaning staff included.</li>
+            <li class="day-tip">Eat lunch with colleagues when possible — relationships built over food are strong ones.</li>
+          </ul>
+        </div>
+        <div class="day-card">
+          <div class="day-card-head"><div class="day-card-icon">💪</div><div class="day-card-title">Performing your work</div></div>
+          <ul class="day-tip-list">
+            <li class="day-tip">Always do your current task better than required — employers promote people who over-deliver.</li>
+            <li class="day-tip">If you finish a task early, do not sit idle — ask what you can do next.</li>
+            <li class="day-tip">Report problems to your supervisor immediately — never hide a mistake.</li>
+            <li class="day-tip">If you do not know how to do something, say "I am not sure — could you show me once?" Never guess and damage work.</li>
+            <li class="day-tip">Keep your workspace clean and organised at all times.</li>
+          </ul>
+        </div>
+        <div class="day-card">
+          <div class="day-card-head"><div class="day-card-icon">📱</div><div class="day-card-title">Phone and personal conduct</div></div>
+          <ul class="day-tip-list">
+            <li class="day-tip">Keep your phone on silent during working hours. Check messages only during break time.</li>
+            <li class="day-tip">Do not use the employer's wi-fi for personal browsing or social media.</li>
+            <li class="day-tip">Do not take photographs inside the workplace without permission.</li>
+            <li class="day-tip">Personal calls should be taken outside, briefly, and only for urgent matters.</li>
+            <li class="day-tip">Never speak negatively about your employer on social media — even privately.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mistake-card">
+        <div class="mistake-title">⚠️ Common mistakes new employees make — and how to avoid them</div>
+        <ul class="info-list">
+          <li class="info-item"><div class="info-dot orange">✕</div><div><strong>Being late after day one.</strong> Punctuality is how employers measure reliability. One late arrival without a reason plants doubt that never fully disappears.</div></li>
+          <li class="info-item"><div class="info-dot orange">✕</div><div><strong>Taking too many sick days in the first 3 months.</strong> During probation, attendance is watched closely. If you are genuinely unwell, call in early and provide a medical certificate.</div></li>
+          <li class="info-item"><div class="info-dot orange">✕</div><div><strong>Saying "that was not my job."</strong> Freshers who refuse tasks outside their exact description are seen as difficult. In your first year, be willing to help wherever needed.</div></li>
+          <li class="info-item"><div class="info-dot orange">✕</div><div><strong>Leaving without notice.</strong> Even if the job is not right, give the required notice period. Leaving without notice means you will not get a reference letter — and in small industries, word travels fast.</div></li>
+          <li class="info-item"><div class="info-dot orange">✕</div><div><strong>Not following up on documents.</strong> Collect your offer letter, appointment letter, pay slips, and EPF UAN number within the first month. These are your rights and you will need them.</div></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+          Questions to ask your manager in your first week
+        </div>
+        <div class="card-body">
+          <ul class="info-list">
+            <li class="info-item"><div class="info-dot teal">?</div>"What does success look like in this role after 3 months?"</li>
+            <li class="info-item"><div class="info-dot teal">?</div>"How and when will my performance be reviewed?"</li>
+            <li class="info-item"><div class="info-dot teal">?</div>"Is there any training or upskilling support available?"</li>
+            <li class="info-item"><div class="info-dot teal">?</div>"What is the best way to communicate urgent issues to you?"</li>
+            <li class="info-item"><div class="info-dot teal">?</div>"What are the most important priorities for the team right now?"</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ SALARY ═══════ -->
+  <div class="tab-panel" id="panel-salary">
+    <div class="container">
+      <p class="section-label">Understanding Your Salary</p>
+      <h2 class="section-title">How to read your pay slip</h2>
+      <p class="section-sub">Your pay slip is a document your employer must give you every month. It shows exactly what you earned and what was deducted. Here is what each part means.</p>
+
+      <!-- Sample Slip -->
+      <div class="slip-wrap">
+        <div class="slip-header">
+          <div class="slip-company">ABC Garments Pvt Ltd</div>
+          <div class="slip-sub">Pay Slip — October 2026 &nbsp;|&nbsp; Employee: Priya Sharma &nbsp;|&nbsp; Designation: Sewing Operator</div>
+        </div>
+        <div class="slip-body">
+          <div class="slip-col">
+            <div class="slip-col-head">Earnings (what you are paid)</div>
+            <div class="slip-row"><span class="slip-row-label">Basic Salary</span><span class="slip-row-amt green">₹6,000</span></div>
+            <div class="slip-row"><span class="slip-row-label">House Rent Allowance (HRA)</span><span class="slip-row-amt green">₹2,000</span></div>
+            <div class="slip-row"><span class="slip-row-label">Conveyance Allowance</span><span class="slip-row-amt green">₹800</span></div>
+            <div class="slip-row"><span class="slip-row-label">Medical Allowance</span><span class="slip-row-amt green">₹500</span></div>
+            <div class="slip-row" style="padding-top:12px;border-top:2px solid var(--border);margin-top:6px;"><span class="slip-row-label" style="font-weight:700;">Gross Earnings</span><span class="slip-row-amt green" style="font-size:1rem;">₹9,300</span></div>
+          </div>
+          <div class="slip-col">
+            <div class="slip-col-head">Deductions (what is taken out)</div>
+            <div class="slip-row"><span class="slip-row-label">PF — Employee (12%)</span><span class="slip-row-amt red">₹720</span></div>
+            <div class="slip-row"><span class="slip-row-label">ESI — Employee (0.75%)</span><span class="slip-row-amt red">₹70</span></div>
+            <div class="slip-row"><span class="slip-row-label">Professional Tax</span><span class="slip-row-amt red">₹150</span></div>
+            <div class="slip-row"><span class="slip-row-label">TDS / Income Tax</span><span class="slip-row-amt red">₹0</span></div>
+            <div class="slip-row" style="padding-top:12px;border-top:2px solid var(--border);margin-top:6px;"><span class="slip-row-label" style="font-weight:700;">Total Deductions</span><span class="slip-row-amt red" style="font-size:1rem;">₹940</span></div>
+          </div>
+        </div>
+        <div class="slip-footer">
+          <div class="slip-footer-label">NET TAKE-HOME PAY</div>
+          <div class="slip-footer-amt">₹8,360</div>
+        </div>
+      </div>
+      <p class="slip-note">Note: Employer also contributes an additional 12% of basic to your PF account (₹720 in this example) — this does NOT come from your salary. It is extra money the employer saves for you. Plus 3.25% ESI from the employer side.</p>
+
+      <div class="highlight-box" style="margin-bottom:24px;">
+        <strong>Important:</strong> PF and ESI deductions are NOT money lost — they are savings and insurance that protect you. See the EPF &amp; ESI tab to understand exactly what you get from them.
+      </div>
+
+      <!-- Deduction explainer -->
+      <div class="card" style="margin-bottom:24px;">
+        <div class="card-title">What do the deductions mean?</div>
+        <div class="card-body">
+          <div class="ded-legend">
+            <span class="ded-chip green">✓ Normal</span>
+            <span class="ded-chip orange">⚠ Ask questions</span>
+            <span class="ded-chip red">✕ Never allowed</span>
+          </div>
+          <ul class="info-list">
+            <li class="info-item"><div class="info-dot green">✓</div><div><strong>PF (Provident Fund):</strong> 12% of your Basic Salary. Goes into your retirement savings account. You can withdraw it when you leave the job or retire. NORMAL.</div></li>
+            <li class="info-item"><div class="info-dot green">✓</div><div><strong>ESI (Employee State Insurance):</strong> 0.75% of Gross Salary. Provides free medical treatment for you and your family, maternity benefits, and sickness pay. NORMAL.</div></li>
+            <li class="info-item"><div class="info-dot green">✓</div><div><strong>Professional Tax:</strong> A small state tax (₹150–200/month). Every state has it. NORMAL.</div></li>
+            <li class="info-item"><div class="info-dot orange">⚠</div><div><strong>TDS / Income Tax:</strong> Only applies if your annual income exceeds ₹2.5 lakh (about ₹20,833/month). If you earn less, this should be ₹0. If they are deducting it on a lower salary, ask for an explanation.</div></li>
+            <li class="info-item"><div class="info-dot orange">⚠</div><div><strong>Uniform deduction:</strong> Some companies deduct the cost of uniforms from your first salary. Ask in advance so you are prepared. Confirm how much and whether it will be refunded.</div></li>
+            <li class="info-item"><div class="info-dot orange">⚠</div><div><strong>Advances:</strong> If you took an advance salary, it should be deducted in a way that was agreed in writing. Do not accept verbal agreements on advances.</div></li>
+            <li class="info-item"><div class="info-dot" style="background:#FFEBEE;color:var(--red);">✕</div><div><strong>Training fee deductions:</strong> An employer CANNOT deduct fees for mandatory on-the-job training. If this happens, it may be illegal. Report to the Labour Department.</div></li>
+            <li class="info-item"><div class="info-dot" style="background:#FFEBEE;color:var(--red);">✕</div><div><strong>Damage deductions without proof:</strong> An employer cannot deduct money claiming you damaged something without proper investigation and your written consent.</div></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Salary Calculator -->
+      <div class="calc-wrap" id="salary">
+        <div class="calc-header">
+          <div class="calc-header-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="11" y2="14"/></svg>
+            Salary Take-Home Calculator
+          </div>
+        </div>
+        <div class="calc-body">
+          <div class="calc-grid">
+            <div class="calc-field">
+              <label for="cBasic">Basic Salary (₹)</label>
+              <input type="number" id="cBasic" placeholder="e.g. 6000" oninput="calcSalary()" min="0">
+            </div>
+            <div class="calc-field">
+              <label for="cHRA">HRA — House Rent Allowance (₹)</label>
+              <input type="number" id="cHRA" placeholder="e.g. 2000" oninput="calcSalary()" min="0">
+            </div>
+            <div class="calc-field">
+              <label for="cConv">Conveyance / Travel Allowance (₹)</label>
+              <input type="number" id="cConv" placeholder="e.g. 800" oninput="calcSalary()" min="0">
+            </div>
+            <div class="calc-field">
+              <label for="cOther">Other Allowances (₹)</label>
+              <input type="number" id="cOther" placeholder="e.g. 500" oninput="calcSalary()" min="0">
+            </div>
+            <div class="calc-divider">Deductions</div>
+            <div class="calc-field">
+              <label for="cPTax">Professional Tax (₹/month)</label>
+              <input type="number" id="cPTax" placeholder="e.g. 150" oninput="calcSalary()" min="0">
+            </div>
+            <div class="calc-field">
+              <label for="cAdvance">Other Deductions / Advance (₹)</label>
+              <input type="number" id="cAdvance" placeholder="e.g. 0" oninput="calcSalary()" min="0">
+            </div>
+          </div>
+          <div class="calc-result">
+            <div class="calc-res-card">
+              <div class="calc-res-label">Gross Salary</div>
+              <div class="calc-res-amt" id="rGross">₹0</div>
+            </div>
+            <div class="calc-res-card">
+              <div class="calc-res-label">Total Deductions</div>
+              <div class="calc-res-amt red" id="rDed">₹0</div>
+            </div>
+            <div class="calc-res-card">
+              <div class="calc-res-label">Take-Home</div>
+              <div class="calc-res-amt green" id="rNet">₹0</div>
+            </div>
+          </div>
+          <p style="font-size:0.775rem;color:var(--text-muted);margin-top:12px;">PF (12% of basic) and ESI (0.75% of gross) are calculated automatically. This calculator gives an estimate — your actual pay slip may vary slightly based on your employer's structure.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ EPF & ESI ═══════ -->
+  <div class="tab-panel" id="panel-epf">
+    <div class="container">
+      <p class="section-label">Your Savings & Insurance</p>
+      <h2 class="section-title">EPF and ESI — what they are and why they matter</h2>
+      <p class="section-sub">Many first-time employees see PF and ESI as "deductions" and feel cheated. In reality, they are the two most important financial benefits you will receive as an employee in India. Understanding them will change how you see them.</p>
+
+      <div class="epf-grid">
+        <div class="epf-card">
+          <div class="epf-card-head navy">
+            <div>
+              <div class="epf-card-title">EPF — Employee Provident Fund</div>
+              <div class="epf-card-sub">Managed by EPFO (Government of India)</div>
+            </div>
+          </div>
+          <div class="epf-card-body">
+            <div class="epf-row">You and your employer each contribute 12% of your basic salary every month into a savings account in your name.</div>
+            <div class="epf-row">The government adds 8.15% annual interest on your total balance — higher than most bank savings accounts.</div>
+            <div class="epf-row">You can withdraw your EPF balance when you leave a job, retire, or in an emergency (housing, medical, education).</div>
+            <div class="epf-row">When you change jobs, you transfer your EPF balance — you do not lose it.</div>
+            <div class="epf-row">Applies to all companies with 20 or more employees and to employees earning below ₹15,000/month basic.</div>
+          </div>
+        </div>
+        <div class="epf-card">
+          <div class="epf-card-head teal">
+            <div>
+              <div class="epf-card-title">ESI — Employee State Insurance</div>
+              <div class="epf-card-sub">Managed by ESIC (Government of India)</div>
+            </div>
+          </div>
+          <div class="epf-card-body">
+            <div class="epf-row">You pay 0.75% of gross salary; your employer pays 3.25%. Together this funds your medical insurance.</div>
+            <div class="epf-row">You and your entire family get FREE medical treatment at ESIC hospitals and dispensaries.</div>
+            <div class="epf-row">If you fall sick and cannot work, you receive 70% of your salary as sickness benefit for up to 91 days per year.</div>
+            <div class="epf-row">Maternity benefit: full salary for 26 weeks of maternity leave, paid by ESIC (not your employer).</div>
+            <div class="epf-row">Applies to companies with 10+ employees where gross salary is ₹21,000/month or less.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contribution bar -->
+      <div class="card" style="margin-bottom:24px;">
+        <div class="card-title">Who contributes what — for every ₹10,000 basic salary</div>
+        <div class="contrib-bar">
+          <div class="contrib-label">EPF (Provident Fund) contribution per month</div>
+          <div class="contrib-track">
+            <div class="contrib-fill-you" style="width:50%;">You ₹1,200</div>
+            <div class="contrib-fill-emp" style="width:50%;">Employer ₹1,200</div>
+          </div>
+          <div class="contrib-legend">
+            <span><span class="contrib-legend-dot" style="background:var(--navy)"></span>Your contribution (12%)</span>
+            <span><span class="contrib-legend-dot" style="background:var(--teal)"></span>Employer contribution (12%)</span>
+          </div>
+          <p style="font-size:0.8rem;color:var(--text-muted);margin-top:8px;">Every month ₹2,400 goes into your EPF account. After 5 years at this salary: approximately ₹1,70,000 in your account (with interest).</p>
+        </div>
+        <div class="contrib-bar">
+          <div class="contrib-label">ESI contribution per month (on ₹10,000 gross salary)</div>
+          <div class="contrib-track">
+            <div class="contrib-fill-you" style="width:19%;">₹75</div>
+            <div class="contrib-fill-emp" style="width:81%;">Employer ₹325</div>
+          </div>
+          <div class="contrib-legend">
+            <span><span class="contrib-legend-dot" style="background:var(--navy)"></span>Your contribution (0.75%) — ₹75</span>
+            <span><span class="contrib-legend-dot" style="background:var(--teal)"></span>Employer contribution (3.25%) — ₹325</span>
+          </div>
+          <p style="font-size:0.8rem;color:var(--text-muted);margin-top:8px;">You pay ₹75 and your employer pays ₹325. For ₹75/month you get full family medical coverage and sick pay.</p>
+        </div>
+      </div>
+
+      <!-- How to access EPF -->
+      <p class="section-label" style="margin-top:4px;">How to Access Your EPF</p>
+      <h3 style="font-size:1.1rem;font-weight:800;color:var(--navy);margin-bottom:20px;">Getting and using your UAN number</h3>
+      <div class="step-card">
+        <div class="step-card-head"><div class="step-num">1</div><div class="step-title">Ask your employer for your UAN (Universal Account Number)</div></div>
+        <div class="step-body">Your employer must give you your UAN within the first month of joining. The UAN is a 12-digit number linked to your EPF account for life. Keep it safe — it does not change even when you change jobs.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-card-head"><div class="step-num">2</div><div class="step-title">Activate your UAN on the EPFO portal</div></div>
+        <div class="step-body">Go to <strong>unifiedportal-mem.epfindia.gov.in</strong> → click "Activate UAN" → enter your UAN, Aadhaar, mobile number and date of birth. You will receive an OTP to activate. Once active, you can check your balance anytime.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-card-head"><div class="step-num">3</div><div class="step-title">Check your balance by SMS</div></div>
+        <div class="step-body">Send an SMS: <strong>EPFOHO UAN ENG</strong> to <strong>7738299899</strong> from your registered mobile number. You will receive your latest balance by return SMS. No internet needed.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-card-head"><div class="step-num">4</div><div class="step-title">When you leave a job — transfer, do not withdraw</div></div>
+        <div class="step-body">When you join a new employer, ask them to link your existing UAN. This transfers your old EPF balance to continue earning interest. Only withdraw your EPF if you are unemployed for 2 months or more — withdrawing loses the employer's contribution and the government interest if done too early.</div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>ESI Hospital in Hyderabad:</strong> ESIC Model Hospital, Sanathnagar, Hyderabad — 040-23810801. Show your ESI card (or ESIC app) at any ESI dispensary for free OPD treatment for you and your family.
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ RIGHTS ═══════ -->
+  <div class="tab-panel" id="panel-rights">
+    <div class="container">
+      <p class="section-label">Know Your Rights</p>
+      <h2 class="section-title">Your legal rights as an employee</h2>
+      <p class="section-sub">As an employee in India you have rights guaranteed by law. Knowing them does not make you a difficult employee — it makes you a protected one.</p>
+
+      <div class="rights-grid" id="rights">
+        <div class="right-card">
+          <div class="right-head"><div class="right-icon">⏰</div><div><div class="right-title">Working Hours</div><div class="right-law">Factories Act / Shops & Establishments Act</div></div></div>
+          <div class="right-body">
+            <div class="right-stat">Max 8–9 hours/day</div><div class="right-stat">Max 48 hours/week</div>
+            <p style="margin-top:8px;">Overtime beyond these hours must be paid at <strong>double the normal wage rate</strong>. You cannot be forced to work overtime without extra pay. A 30-minute break must be given after every 5 hours of continuous work.</p>
+          </div>
+        </div>
+        <div class="right-card">
+          <div class="right-head"><div class="right-icon">🗓️</div><div><div class="right-title">Leave Entitlements</div><div class="right-law">Telangana Shops & Establishments Act</div></div></div>
+          <div class="right-body">
+            <div class="right-stat">1 weekly off</div><div class="right-stat">12 days sick/casual leave per year</div>
+            <p style="margin-top:8px;">After completing 240 days of work in a year, you earn <strong>earned leave</strong> (1 day for every 20 days worked). Unused leave can accumulate up to 30 days. Leaves must be given in writing by the employer each year.</p>
+          </div>
+        </div>
+        <div class="right-card">
+          <div class="right-head"><div class="right-icon">🤱</div><div><div class="right-title">Maternity Leave</div><div class="right-law">Maternity Benefit (Amendment) Act 2017</div></div></div>
+          <div class="right-body">
+            <div class="right-stat">26 weeks paid leave</div>
+            <p style="margin-top:8px;">Women employees who have worked for at least <strong>80 days in the 12 months</strong> before delivery are entitled to 26 weeks of fully paid maternity leave. ESI pays this benefit — your employer cannot refuse it. An employer cannot fire or deny promotion due to pregnancy.</p>
+          </div>
+        </div>
+        <div class="right-card">
+          <div class="right-head"><div class="right-icon">🛡️</div><div><div class="right-title">Protection from Harassment</div><div class="right-law">PoSH Act 2013</div></div></div>
+          <div class="right-body">
+            <p>Every workplace with 10+ employees must have an <strong>Internal Complaints Committee (ICC)</strong> for sexual harassment complaints. You have the right to complain and be protected from retaliation. If your workplace has no ICC, report to the Local Complaints Committee in your district.</p>
+            <p style="margin-top:8px;">Helpline: <strong>181</strong> (Women's Helpline, Telangana)</p>
+          </div>
+        </div>
+        <div class="right-card">
+          <div class="right-head"><div class="right-icon">📝</div><div><div class="right-title">Notice Period & Termination</div><div class="right-law">Telangana Shops & Establishments Act</div></div></div>
+          <div class="right-body">
+            <p>After completing 3 months of service, an employer must give you <strong>30 days' notice</strong> or 30 days' pay before dismissal (unless for serious misconduct). You must also give the same notice when resigning. You cannot be dismissed for filing a legal complaint or for pregnancy.</p>
+          </div>
+        </div>
+        <div class="right-card">
+          <div class="right-head"><div class="right-icon">💳</div><div><div class="right-title">Right to a Pay Slip</div><div class="right-law">Payment of Wages Act</div></div></div>
+          <div class="right-body">
+            <p>Your employer must give you a written or digital pay slip every month. Wages must be paid <strong>on or before the 10th of the following month</strong>. You cannot be asked to sign for an amount different from what you received. Wages cannot be paid in alcohol or goods instead of money.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Minimum Wage Table -->
+      <div class="card" style="margin-bottom:24px;">
+        <div class="card-title">Minimum Wage — Telangana 2024–2025</div>
+        <table class="wage-table">
+          <thead><tr><th>Category / Zone</th><th>Unskilled</th><th>Semi-Skilled</th><th>Skilled</th></tr></thead>
+          <tbody>
+            <tr><td>Garments / Tailoring</td><td>₹9,580</td><td>₹10,210</td><td>₹10,900</td></tr>
+            <tr><td>Beautician / Hairdressing</td><td>₹9,580</td><td>₹10,210</td><td>₹10,900</td></tr>
+            <tr><td>Healthcare / Hospitals</td><td>₹10,020</td><td>₹10,680</td><td>₹11,380</td></tr>
+            <tr><td>Computer / IT Enabled</td><td>₹10,450</td><td>₹11,130</td><td>₹11,870</td></tr>
+            <tr><td>Electrical / Electronics</td><td>₹9,870</td><td>₹10,520</td><td>₹11,220</td></tr>
+            <tr><td>Commercial / Shops (Zone A)</td><td>₹10,020</td><td>₹10,680</td><td>₹11,380</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:0.775rem;color:var(--text-muted);margin-top:10px;">These are approximate figures — minimum wages are revised periodically. Check the Telangana Labour Department website for current rates. If you are paid below minimum wage, you can file a complaint with no fee.</p>
+      </div>
+
+      <!-- How to complain -->
+      <div class="complain-card">
+        <div class="complain-title">⚠️ If your rights are being violated — how to report</div>
+        <ul class="info-list">
+          <li class="info-item"><div class="info-dot orange">1</div><div>First, speak to your employer or HR in writing (even a WhatsApp message is a record). Keep all messages.</div></li>
+          <li class="info-item"><div class="info-dot orange">2</div><div>If unresolved: contact the <strong>Telangana Labour Department</strong> — file a complaint at labour.telangana.gov.in or visit the District Labour Office in Secunderabad.</div></li>
+          <li class="info-item"><div class="info-dot orange">3</div><div>For EPF disputes: call EPFO helpline <strong>1800-118-005</strong> (free, Monday–Friday 9am–6pm).</div></li>
+          <li class="info-item"><div class="info-dot orange">4</div><div>For wage theft or dismissal without notice: approach the <strong>Labour Court</strong> — filing is free for workers. A union or legal aid society can help you draft the complaint.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ SCAMS & SAFE JOB SEARCH ═══════ -->
+  <div class="tab-panel" id="panel-scams">
+    <div class="container">
+      <p class="section-label">Protect Yourself</p>
+      <h2 class="section-title" id="scams">How to spot a job scam</h2>
+      <p class="section-sub">Job scams target freshers specifically — because freshers are eager, less experienced, and often don't know what a real employer looks like. These red flags will protect you.</p>
+
+      <div class="red-flags">
+        <div class="flag-item"><div class="flag-icon">🚨</div><div class="flag-text"><strong>They ask you to pay any money — for registration, training, uniform deposit, ID card, or "processing fees."</strong> Real employers NEVER charge money to hire you. Any payment demand before or on the first day is a scam. Leave immediately.</div></div>
+        <div class="flag-item"><div class="flag-icon">🚨</div><div class="flag-text"><strong>The salary offered is shockingly high — ₹30,000–₹50,000/month for a fresher with no experience.</strong> No legitimate employer offers this to someone just out of vocational training. If it sounds too good to be true, it is.</div></div>
+        <div class="flag-item"><div class="flag-icon">🚨</div><div class="flag-text"><strong>They contacted you without you applying — via unknown WhatsApp number, Instagram DM, or phone call.</strong> Genuine employers post jobs publicly or contact through placement centres. Unsolicited "job offers" from strangers are almost always fraudulent.</div></div>
+        <div class="flag-item"><div class="flag-icon">🚨</div><div class="flag-text"><strong>The job requires you to travel to another city before you have signed any papers or met the employer in person.</strong> Traffickers use fake job offers. Never travel to another city or state for a job without a written offer letter on company letterhead, confirmed independently.</div></div>
+        <div class="flag-item"><div class="flag-icon">🚨</div><div class="flag-text"><strong>They ask for your Aadhaar, bank account details, or OTP before you have joined or received an offer letter.</strong> Your Aadhaar and bank details can be misused for fraud. Never share OTPs with anyone — not even with someone claiming to be from a company.</div></div>
+        <div class="flag-item"><div class="flag-icon">🚨</div><div class="flag-text"><strong>The interview happens only on WhatsApp or Telegram — you never meet anyone in person or via verified video call.</strong> Most genuine employers conduct at least one in-person or verified video interview. Text-only "interviews" are a serious red flag.</div></div>
+        <div class="flag-item"><div class="flag-icon">🚨</div><div class="flag-text"><strong>They ask you to keep the "job offer" secret from your family.</strong> Any genuine employer is comfortable with you discussing the job with your parents or guardian. Secrecy is a manipulation tactic.</div></div>
+      </div>
+
+      <h3 style="font-size:1rem;font-weight:800;color:var(--green);margin-bottom:14px;">✓ What a real employer looks like</h3>
+      <div class="green-flags">
+        <div class="gflag-item"><div class="gflag-icon">✅</div><div class="gflag-text"><strong>They have a physical address</strong> you can visit before accepting. A real company has a real place — a factory, a clinic, a shop, an office. Visit and confirm before you commit.</div></div>
+        <div class="gflag-item"><div class="gflag-icon">✅</div><div class="gflag-text"><strong>They give you a written offer letter</strong> on company letterhead with the salary, role, location, and joining date clearly stated. Verbal offers are not enough.</div></div>
+        <div class="gflag-item"><div class="gflag-icon">✅</div><div class="gflag-text"><strong>They are comfortable with you taking time to decide</strong> and to show the offer to your family. Pressure to "decide right now" or "join today" is a red flag.</div></div>
+        <div class="gflag-item"><div class="gflag-icon">✅</div><div class="gflag-text"><strong>They register you for EPF and ESI</strong> if they have 10+ employees — this is a legal requirement. An employer who refuses to register you is operating illegally.</div></div>
+        <div class="gflag-item"><div class="gflag-icon">✅</div><div class="gflag-text"><strong>They pay salary on time, every month</strong> into your bank account with a pay slip. Cash-only payments with no record are often used to avoid legal obligations.</div></div>
+      </div>
+
+      <!-- Government Schemes -->
+      <div style="margin-top:36px;" id="schemes">
+        <p class="section-label">Government Support</p>
+        <h3 style="font-size:1.125rem;font-weight:800;color:var(--navy);margin-bottom:6px;">Government schemes you can apply for</h3>
+        <p class="section-sub">These schemes are free to apply for and are specifically designed for people from vocational training backgrounds like yours.</p>
+
+        <div class="scheme-card">
+          <div class="scheme-icon">🏭</div>
+          <div>
+            <div class="scheme-title">PM Mudra Yojana (PMMY)</div>
+            <div class="scheme-body">Loans up to ₹10 lakh for small businesses — no collateral needed for loans up to ₹10,000 (Shishu category). For tailoring boutiques, beauty parlours, electrical repair shops, or any small service business. Apply at any government bank or NBFC. No processing fee.
+              <span class="scheme-tag central">Central Government</span>
+            </div>
+          </div>
+        </div>
+        <div class="scheme-card">
+          <div class="scheme-icon">👩‍💼</div>
+          <div>
+            <div class="scheme-title">Telangana WE-HUB (Women Entrepreneurs)</div>
+            <div class="scheme-body">Telangana state-run incubator for women entrepreneurs. Provides mentorship, funding support, market access, and free workspace in Hyderabad. If you have completed training and want to start your own beauty parlour, tailoring unit, or training centre, WE-HUB can support you.
+              <span class="scheme-tag state">Telangana State</span><span class="scheme-tag women">Women Only</span>
+            </div>
+          </div>
+        </div>
+        <div class="scheme-card">
+          <div class="scheme-icon">🎓</div>
+          <div>
+            <div class="scheme-title">PMKVY — PM Kaushal Vikas Yojana</div>
+            <div class="scheme-body">If you want to upgrade your skills further, PMKVY offers free short-term training courses (usually 3–6 months) in trades similar to what you studied. On completion you receive a government certificate and placement assistance. Check NSDC (nationalskillindia.gov.in) for courses near Secunderabad.
+              <span class="scheme-tag central">Central Government</span>
+            </div>
+          </div>
+        </div>
+        <div class="scheme-card">
+          <div class="scheme-icon">🏦</div>
+          <div>
+            <div class="scheme-title">Standup India</div>
+            <div class="scheme-body">Bank loans between ₹10 lakh and ₹1 crore for SC/ST and women entrepreneurs to set up greenfield enterprises in manufacturing, services, or trade. One loan per bank branch is reserved for each category. If you are planning a larger business venture, speak to your nearest SBI, Canara Bank, or nationalised bank branch.
+              <span class="scheme-tag central">Central Government</span><span class="scheme-tag women">Women / SC / ST</span>
+            </div>
+          </div>
+        </div>
+        <div class="scheme-card">
+          <div class="scheme-icon">🏥</div>
+          <div>
+            <div class="scheme-title">Pradhan Mantri Jan Arogya Yojana (Ayushman Bharat)</div>
+            <div class="scheme-body">Free hospitalisation coverage of up to ₹5 lakh per family per year at empanelled government and private hospitals. If your family is below or near the poverty line, check your eligibility at pmjay.gov.in or call 14555. ESIC covers you while employed — Ayushman Bharat covers family members not covered by ESI.
+              <span class="scheme-tag central">Central Government</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Helplines -->
+      <div style="margin-top:32px;">
+        <h3 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:14px;">Important helpline numbers</h3>
+        <div class="helpline-grid">
+          <div class="helpline-card"><div class="helpline-icon">👮</div><div><div class="helpline-name">Police Emergency</div><div class="helpline-num">100</div></div></div>
+          <div class="helpline-card"><div class="helpline-icon">👩</div><div><div class="helpline-name">Women's Helpline (Telangana)</div><div class="helpline-num">181</div></div></div>
+          <div class="helpline-card"><div class="helpline-icon">👧</div><div><div class="helpline-name">Child Labour Helpline</div><div class="helpline-num">1098</div></div></div>
+          <div class="helpline-card"><div class="helpline-icon">🏦</div><div><div class="helpline-name">EPFO Helpline</div><div class="helpline-num">1800-118-005</div></div></div>
+          <div class="helpline-card"><div class="helpline-icon">⚖️</div><div><div class="helpline-name">Labour Department (TS)</div><div class="helpline-num">040-23457389</div></div></div>
+          <div class="helpline-card"><div class="helpline-icon">🏥</div><div><div class="helpline-name">Ayushman Bharat</div><div class="helpline-num">14555</div></div></div>
+        </div>
+      </div>
+
+      <div class="warning-box" style="margin-top:24px;">
+        <strong>Remember:</strong> If you are ever unsure about a job offer, show it to the Asha Jyothi placement coordinator before accepting or travelling anywhere. It is always better to ask than to regret.
+      </div>
+    </div>
+  </div>
+
+  <footer style="background:var(--navy-dark);padding:24px 0;margin-top:8px;">
+    <div class="container" style="text-align:center;">
+      <p style="font-size:0.8125rem;color:rgba(255,255,255,0.4);">
+        Asha Jyothi EST EDGE Portal &nbsp;·&nbsp;
+        <a href="index.html" style="color:rgba(255,255,255,0.6);">Dashboard</a>
+      </p>
+    </div>
+  </footer>
+
+<script>
+  // Tab switching
+  function switchTab(id, btn) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('panel-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  // Hash-based tab navigation (e.g. survival.html#scams)
+  const HASH_TABS = { salary: 'salary', scams: 'scams', schemes: 'scams', rights: 'rights', epf: 'epf' };
+  const hash = window.location.hash.replace('#', '');
+  if (hash && HASH_TABS[hash]) {
+    const targetTab = HASH_TABS[hash];
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('panel-' + targetTab).classList.add('active');
+    const tabs = document.querySelectorAll('.tab-btn');
+    const tabMap = { firstdays: 0, salary: 1, epf: 2, rights: 3, scams: 4 };
+    if (tabMap[targetTab] !== undefined) tabs[tabMap[targetTab]].classList.add('active');
+    setTimeout(() => {
+      const el = document.getElementById(hash);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  }
+
+  // Salary Calculator
+  function calcSalary() {
+    const n = id => parseFloat(document.getElementById(id).value) || 0;
+    const basic = n('cBasic'), hra = n('cHRA'), conv = n('cConv'), other = n('cOther');
+    const pTax = n('cPTax'), advance = n('cAdvance');
+
+    const gross = basic + hra + conv + other;
+    const pf = Math.round(basic * 0.12);
+    const esi = gross <= 21000 ? Math.round(gross * 0.0075) : 0;
+    const totalDed = pf + esi + pTax + advance;
+    const net = gross - totalDed;
+
+    const fmt = v => '₹' + Math.max(0, v).toLocaleString('en-IN');
+    document.getElementById('rGross').textContent = fmt(gross);
+    document.getElementById('rDed').textContent = fmt(totalDed);
+    document.getElementById('rNet').textContent = fmt(net);
+  }
+</script>
+</body>
+</html>

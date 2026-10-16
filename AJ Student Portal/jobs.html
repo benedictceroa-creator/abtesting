@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Opportunities — AJ EDGE Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #C62828; --red-dark: #8E0000;
+      --navy: #1A237E; --navy-dark: #0D0D4F; --navy-light: #3949AB;
+      --gold: #F9A825;
+      --bg: #F4F6FB; --surface: #FFFFFF;
+      --text: #1C1C1E; --text-muted: #6E6E73; --border: #E5E5EA;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+      --shadow-lg: 0 10px 28px rgba(0,0,0,0.12);
+      --radius: 14px; --radius-sm: 9px;
+      --transition: 200ms ease;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+    /* Navbar */
+    .navbar { background: white; border-bottom: 1px solid var(--border); box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 50; }
+    .navbar-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .navbar-logo { display: flex; align-items: center; gap: 10px; }
+    .navbar-logo img { height: 40px; width: auto; object-fit: contain; }
+    .navbar-logo-name { font-size: 1rem; font-weight: 700; color: var(--red); line-height: 1.1; }
+    .navbar-logo-sub { font-size: 0.6rem; font-weight: 500; color: var(--navy); letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-back {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--text-muted);
+      padding: 8px 14px; border-radius: 50px; border: 1.5px solid var(--border);
+      transition: all var(--transition);
+    }
+    .nav-back:hover { border-color: var(--navy); color: var(--navy); }
+
+    /* Page Header */
+    .page-header {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, #283593 100%);
+      padding: 44px 0 40px; position: relative; overflow: hidden;
+    }
+    .page-header::after {
+      content: ''; position: absolute; right: -60px; top: -60px;
+      width: 400px; height: 400px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(198,40,40,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .page-header-inner { position: relative; z-index: 1; }
+    .page-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .page-title { font-size: clamp(1.5rem, 3.5vw, 2.25rem); font-weight: 800; color: white; margin-bottom: 8px; }
+    .page-subtitle { font-size: 0.9375rem; color: rgba(255,255,255,0.7); max-width: 460px; }
+
+    .header-stats { display: flex; gap: 28px; margin-top: 24px; flex-wrap: wrap; }
+    .hstat { display: flex; flex-direction: column; }
+    .hstat-num { font-size: 1.5rem; font-weight: 700; color: var(--gold); line-height: 1; }
+    .hstat-label { font-size: 0.75rem; color: rgba(255,255,255,0.55); margin-top: 2px; }
+
+    /* Search & Filters */
+    .filters-bar {
+      background: white; border-bottom: 1px solid var(--border);
+      padding: 16px 0; position: sticky; top: 64px; z-index: 40;
+      box-shadow: var(--shadow-sm);
+    }
+    .filters-inner { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+
+    .search-wrap { position: relative; flex: 1; min-width: 200px; }
+    .search-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; }
+    .search-input {
+      width: 100%; padding: 10px 14px 10px 40px;
+      border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+      font-family: inherit; font-size: 0.9rem; color: var(--text);
+      outline: none; transition: border-color var(--transition);
+      background: var(--bg);
+    }
+    .search-input:focus { border-color: var(--navy); background: white; }
+    .search-input::placeholder { color: var(--text-muted); }
+
+    .filter-select {
+      padding: 10px 34px 10px 14px; border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm); font-family: inherit; font-size: 0.875rem;
+      color: var(--text); background: var(--bg); outline: none;
+      cursor: pointer; transition: border-color var(--transition);
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236E6E73' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 10px center;
+    }
+    .filter-select:focus { border-color: var(--navy); background-color: white; }
+
+    .results-count {
+      font-size: 0.8125rem; color: var(--text-muted); font-weight: 500;
+      white-space: nowrap; padding: 10px 0;
+    }
+    .results-count span { color: var(--navy); font-weight: 700; }
+
+    /* Course Badge Strip */
+    .course-strip {
+      background: #EEF0FF; border-bottom: 1px solid #C5CAE9;
+      padding: 10px 0;
+    }
+    .course-strip-inner { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .course-strip-label { font-size: 0.75rem; font-weight: 600; color: var(--navy-light); }
+    .active-course-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--navy); color: white;
+      padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600;
+    }
+    .clear-course-btn {
+      font-size: 0.75rem; color: var(--navy-light); cursor: pointer;
+      background: none; border: none; font-family: inherit; font-weight: 500;
+      text-decoration: underline; padding: 0;
+    }
+    .clear-course-btn:hover { color: var(--red); }
+
+    /* Layout */
+    .main-layout { display: grid; grid-template-columns: 1fr; gap: 24px; padding: 28px 0 48px; }
+
+    /* Job Cards */
+    .jobs-list { display: flex; flex-direction: column; gap: 16px; }
+
+    .job-card {
+      background: white; border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 24px; transition: all 250ms ease; position: relative;
+    }
+    .job-card:hover { box-shadow: var(--shadow-md); border-color: #C5CAE9; transform: translateY(-2px); }
+    .job-card.hidden { display: none; }
+
+    .job-card-top { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 14px; }
+    .job-employer-logo {
+      width: 52px; height: 52px; border-radius: 12px; flex-shrink: 0;
+      background: var(--bg); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem; font-weight: 700; color: var(--navy);
+    }
+    .job-info { flex: 1; min-width: 0; }
+    .job-title { font-size: 1.0625rem; font-weight: 700; color: var(--text); line-height: 1.3; margin-bottom: 3px; }
+    .job-employer { font-size: 0.875rem; color: var(--navy); font-weight: 600; }
+    .job-meta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
+    .job-meta-item {
+      display: flex; align-items: center; gap: 5px;
+      font-size: 0.8rem; color: var(--text-muted);
+    }
+    .job-meta-item svg { flex-shrink: 0; }
+
+    .job-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 3px 10px; border-radius: 50px; font-size: 0.7rem; font-weight: 600;
+    }
+    .badge-type { background: #EEF0FF; color: var(--navy-light); }
+    .badge-verified { background: #E8F5E9; color: #2E7D32; }
+    .badge-fresher { background: #FFF8E1; color: #E65100; }
+    .badge-course { background: var(--bg); color: var(--text-muted); border: 1px solid var(--border); }
+    .badge-urgent { background: #FEE2E2; color: var(--red); }
+
+    .job-desc { font-size: 0.8375rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 16px; }
+
+    .job-salary-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .job-salary { font-size: 1rem; font-weight: 700; color: var(--navy); }
+    .job-salary-label { font-size: 0.75rem; color: var(--text-muted); font-weight: 400; }
+
+    .job-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn-apply {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 9px 20px; border-radius: 50px;
+      font-family: inherit; font-size: 0.875rem; font-weight: 600;
+      cursor: pointer; border: 2px solid transparent; transition: all var(--transition);
+    }
+    .btn-call { background: var(--red); color: white; border-color: var(--red); }
+    .btn-call:hover { background: var(--red-dark); border-color: var(--red-dark); }
+    .btn-whatsapp { background: #25D366; color: white; border-color: #25D366; }
+    .btn-whatsapp:hover { background: #1DA851; border-color: #1DA851; }
+    .btn-details { background: transparent; color: var(--navy); border-color: var(--border); }
+    .btn-details:hover { border-color: var(--navy); background: #EEF0FF; }
+
+    .job-posted { font-size: 0.75rem; color: var(--text-muted); }
+
+    /* Modal */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.5); z-index: 200;
+      align-items: center; justify-content: center; padding: 20px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: white; border-radius: var(--radius); max-width: 540px; width: 100%;
+      max-height: 90vh; overflow-y: auto; padding: 32px;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute; top: 16px; right: 16px;
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--bg); border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-muted); transition: all var(--transition);
+    }
+    .modal-close:hover { background: var(--border); color: var(--text); }
+    .modal-title { font-size: 1.25rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .modal-employer { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px; }
+    .modal-section { margin-bottom: 20px; }
+    .modal-section-title { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 8px; }
+    .modal-body { font-size: 0.9rem; color: var(--text); line-height: 1.7; }
+    .modal-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .modal-list li { display: flex; align-items: flex-start; gap: 8px; font-size: 0.875rem; color: var(--text); }
+    .modal-list li::before { content: '✓'; color: var(--navy); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .modal-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
+
+    /* Empty state */
+    .empty-state { text-align: center; padding: 60px 20px; }
+    .empty-state-icon { font-size: 3rem; margin-bottom: 16px; }
+    .empty-state-title { font-size: 1.125rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .empty-state-sub { font-size: 0.875rem; color: var(--text-muted); }
+
+    /* Sidebar info */
+    .sidebar { display: flex; flex-direction: column; gap: 16px; }
+    .info-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+    .info-card-title { font-size: 0.875rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .info-card-body { font-size: 0.8125rem; color: var(--text-muted); line-height: 1.65; }
+    .info-tip { display: flex; gap: 10px; margin-bottom: 10px; font-size: 0.8125rem; color: var(--text); line-height: 1.5; }
+    .info-tip:last-child { margin-bottom: 0; }
+    .tip-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 7px; }
+
+    @media (min-width: 800px) {
+      .main-layout { grid-template-columns: 1fr 280px; }
+    }
+    @media (max-width: 600px) {
+      .filters-inner { gap: 8px; }
+      .filter-select { font-size: 0.8125rem; }
+      .job-card-top { flex-direction: row; }
+      .job-actions { flex-direction: column; }
+      .btn-apply { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="index.html" class="navbar-logo">
+          <img src="../AJ Website 2026/Logo/Asha Jyothi Logo.jpg" alt="Asha Jyothi">
+          <div>
+            <div class="navbar-logo-name">Asha Jyothi</div>
+            <div class="navbar-logo-sub">EDGE Portal</div>
+          </div>
+        </a>
+        <a href="index.html" class="nav-back">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          Dashboard
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <div class="page-header-inner">
+        <p class="page-label">Find Opportunities</p>
+        <h1 class="page-title">Jobs &amp; Apprenticeships</h1>
+        <p class="page-subtitle">Entry-level vacancies from verified local employers. Filter by your course to see the most relevant openings.</p>
+        <div class="header-stats">
+          <div class="hstat">
+            <span class="hstat-num" id="totalCount">0</span>
+            <span class="hstat-label">Listings</span>
+          </div>
+          <div class="hstat">
+            <span class="hstat-num">14</span>
+            <span class="hstat-label">Verified Employers</span>
+          </div>
+          <div class="hstat">
+            <span class="hstat-num">3</span>
+            <span class="hstat-label">Cities</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Course Strip -->
+  <div class="course-strip" id="courseStrip" style="display:none;">
+    <div class="container">
+      <div class="course-strip-inner">
+        <span class="course-strip-label">Showing jobs for:</span>
+        <span class="active-course-tag" id="activeCourseTag"></span>
+        <button class="clear-course-btn" onclick="clearCourseFilter()">Show all courses</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filters Bar -->
+  <div class="filters-bar">
+    <div class="container">
+      <div class="filters-inner">
+        <div class="search-wrap">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <input type="search" class="search-input" id="searchInput" placeholder="Search jobs, employers…" oninput="applyFilters()" aria-label="Search jobs">
+        </div>
+        <select class="filter-select" id="categoryFilter" onchange="applyFilters()" aria-label="Filter by course category">
+          <option value="">All Categories</option>
+          <option value="tailoring">Tailoring</option>
+          <option value="beautician">Beautician</option>
+          <option value="computer">Computer</option>
+          <option value="electrical">Electrical &amp; Trade</option>
+          <option value="paramedics">Paramedics</option>
+          <option value="english">English &amp; Office</option>
+        </select>
+        <select class="filter-select" id="typeFilter" onchange="applyFilters()" aria-label="Filter by job type">
+          <option value="">All Types</option>
+          <option value="full-time">Full-time</option>
+          <option value="part-time">Part-time</option>
+          <option value="apprenticeship">Apprenticeship</option>
+          <option value="internship">Internship</option>
+        </select>
+        <select class="filter-select" id="locationFilter" onchange="applyFilters()" aria-label="Filter by location">
+          <option value="">All Locations</option>
+          <option value="secunderabad">Secunderabad</option>
+          <option value="hyderabad">Hyderabad</option>
+          <option value="alwal">Alwal</option>
+          <option value="malkajgiri">Malkajgiri</option>
+        </select>
+        <div class="results-count" id="resultsCount"><span>0</span> jobs found</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="main-layout">
+
+      <!-- Jobs List -->
+      <div>
+        <div class="jobs-list" id="jobsList">
+          <!-- populated by JS -->
+        </div>
+        <div class="empty-state" id="emptyState" style="display:none;">
+          <div class="empty-state-icon">🔍</div>
+          <div class="empty-state-title">No jobs match your filters</div>
+          <div class="empty-state-sub">Try adjusting your search or removing a filter</div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="info-card">
+          <div class="info-card-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5" aria-hidden="true"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+            Asha Jyothi Advantage
+          </div>
+          <div class="info-card-body">
+            <div class="info-tip"><span class="tip-dot"></span><span>Jobs marked <strong>Verified</strong> are from employers we have personally contacted</span></div>
+            <div class="info-tip"><span class="tip-dot"></span><span>Asha Jyothi staff can help you apply — visit any campus</span></div>
+            <div class="info-tip"><span class="tip-dot"></span><span>Tell employers you trained at Asha Jyothi — it matters</span></div>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            Applying via WhatsApp
+          </div>
+          <div class="info-card-body">
+            <div class="info-tip"><span class="tip-dot"></span><span>Start with: <em>"Good morning, I am enquiring about the [Job Title] vacancy"</em></span></div>
+            <div class="info-tip"><span class="tip-dot"></span><span>Mention your course and Asha Jyothi certificate</span></div>
+            <div class="info-tip"><span class="tip-dot"></span><span>See <a href="resume.html#whatsapp" style="color:var(--navy);font-weight:600;">WhatsApp Templates</a> for ready-to-send messages</span></div>
+          </div>
+        </div>
+
+        <div class="info-card" style="border-left: 3px solid var(--red);">
+          <div class="info-card-title" style="color:var(--red);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.5" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            Watch out for scams
+          </div>
+          <div class="info-card-body">
+            <div class="info-tip"><span class="tip-dot" style="background:var(--red);"></span><span>Never pay a fee to apply or get a job</span></div>
+            <div class="info-tip"><span class="tip-dot" style="background:var(--red);"></span><span>Confirm salary and location before joining</span></div>
+            <div class="info-tip"><span class="tip-dot" style="background:var(--red);"></span><span>Ask for an offer letter with duties in writing</span></div>
+            <div class="info-tip" style="margin-top:8px;"><a href="survival.html#scams" style="color:var(--red);font-weight:600;font-size:0.8125rem;">Read the full Safe Job Search guide →</a></div>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- Job Detail Modal -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="closeModal(event)">
+    <div class="modal" id="modal">
+      <button class="modal-close" onclick="closeModalBtn()" aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <footer style="background:var(--navy-dark);padding:24px 0;margin-top:8px;">
+    <div class="container" style="text-align:center;">
+      <p style="font-size:0.8125rem;color:rgba(255,255,255,0.4);">
+        Asha Jyothi EST EDGE Portal &nbsp;·&nbsp;
+        <a href="index.html" style="color:rgba(255,255,255,0.6);">Dashboard</a>
+      </p>
+    </div>
+  </footer>
+
+<script>
+  const COURSE_NAMES = {
+    'tailoring-basic': 'Tailoring Basic', 'tailoring-advance': 'Tailoring Advance',
+    'maggam': 'Maggam / Electric Machine', 'beautician-basic': 'Beautician Basic',
+    'beautician-advance': 'Beautician Advance', 'english-1': 'Spoken English L1',
+    'english-2': 'Spoken English L2', 'computer-basic': 'Computer Basic',
+    'computer-dtp': 'Computer DTP', 'computer-tally': 'Computer Tally',
+    'data-entry': 'Data Entry & Typing', 'electrical': 'Electrical & Electronics',
+    'appliance-repair': 'Home Appliance Repair', 'pre-primary': 'Pre-Primary Teaching',
+    'nursing': 'Nursing Assistant', 'phlebotomy': 'Lab Phlebotomy',
+    'pharmacy': 'Pharmacy Assistant'
+  };
+
+  const COURSE_CATEGORY = {
+    'tailoring-basic': 'tailoring', 'tailoring-advance': 'tailoring', 'maggam': 'tailoring',
+    'beautician-basic': 'beautician', 'beautician-advance': 'beautician',
+    'english-1': 'english', 'english-2': 'english',
+    'computer-basic': 'computer', 'computer-dtp': 'computer', 'computer-tally': 'computer', 'data-entry': 'computer',
+    'electrical': 'electrical', 'appliance-repair': 'electrical', 'pre-primary': 'english',
+    'nursing': 'paramedics', 'phlebotomy': 'paramedics', 'pharmacy': 'paramedics'
+  };
+
+  const JOBS = [
+    {
+      id: 1, title: 'Tailoring Assistant', employer: 'Lakshmi Textiles',
+      initials: 'LT', location: 'Alwal, Secunderabad', locationKey: 'alwal',
+      type: 'full-time', category: 'tailoring', experience: 'Fresher',
+      salary: '₹8,000 – ₹12,000', salaryPeriod: '/month',
+      courses: ['tailoring-basic', 'tailoring-advance'],
+      verified: true, urgent: false,
+      posted: '12 Oct 2026',
+      shortDesc: 'Assist in cutting, stitching and finishing garments. Suitable for Basic Tailoring graduates. On-the-job training provided.',
+      fullDesc: 'We are looking for a motivated Tailoring Assistant to join our production team. You will assist senior tailors with cutting fabric, stitching garments, and quality finishing. Full on-the-job training is provided, and there is a clear path to becoming a Senior Tailor within 18 months.',
+      requirements: ['Completed Basic or Advance Tailoring course', 'Ability to use a domestic sewing machine', 'Attention to detail', 'Willingness to learn'],
+      benefits: ['₹500 monthly performance bonus', 'ESI and EPF covered', 'Saturday half-day', 'Festival leave'],
+      applyPhone: '9876500001', applyWhatsApp: true,
+      address: 'Dwarakapuri Colony, Prem Nagar, Alwal'
+    },
+    {
+      id: 2, title: 'Maggam Work Specialist', employer: 'Bridal Studio Hyderabad',
+      initials: 'BS', location: 'Secunderabad', locationKey: 'secunderabad',
+      type: 'full-time', category: 'tailoring', experience: 'Fresher',
+      salary: '₹10,000 – ₹16,000', salaryPeriod: '/month',
+      courses: ['maggam', 'tailoring-advance'],
+      verified: true, urgent: true,
+      posted: '14 Oct 2026',
+      shortDesc: 'Specialist role doing Maggam embroidery on sarees, lehengas and bridal blouses. Higher pay for skilled graduates.',
+      fullDesc: 'Bridal Studio is one of Secunderabad\'s busiest bridal wear studios. We are urgently looking for a Maggam Work Specialist to handle embroidery and thread work on premium sarees and lehengas. Candidates with electric machine experience preferred.',
+      requirements: ['Maggam / Electric Machine course completed', 'Experience with thread, stone and beadwork', 'Able to work to a design brief', 'Reliable and punctual'],
+      benefits: ['₹2,000 skill bonus for electric machine operators', 'Flexible hours available', 'Order-based incentive pay'],
+      applyPhone: '9876500002', applyWhatsApp: true,
+      address: 'Near Paradise Circle, Secunderabad'
+    },
+    {
+      id: 3, title: 'Beauty Parlour Assistant', employer: 'Glow Salon',
+      initials: 'GS', location: 'Malkajgiri, Hyderabad', locationKey: 'malkajgiri',
+      type: 'full-time', category: 'beautician', experience: 'Fresher',
+      salary: '₹7,000 – ₹11,000', salaryPeriod: '/month',
+      courses: ['beautician-basic', 'beautician-advance'],
+      verified: true, urgent: false,
+      posted: '11 Oct 2026',
+      shortDesc: 'Assist senior beauticians with threading, waxing, facials and basic hair treatments. Growing parlour with room to take on clients independently.',
+      fullDesc: 'Glow Salon is a busy neighbourhood parlour looking for a trained Beautician Assistant. You will assist with all services initially, and after 3 months of demonstrated performance, you will handle clients independently and earn commission on services.',
+      requirements: ['Beautician Basic or Advance course completed', 'Friendly and professional manner with clients', 'Able to work on weekends (busiest days)'],
+      benefits: ['Commission on independent client work', 'Tips kept by staff', 'Monday off', 'Product training provided'],
+      applyPhone: '9876500003', applyWhatsApp: true,
+      address: 'Main Road, Malkajgiri'
+    },
+    {
+      id: 4, title: 'Computer Operator', employer: 'Suresh & Co. Accountants',
+      initials: 'SC', location: 'Secunderabad', locationKey: 'secunderabad',
+      type: 'full-time', category: 'computer', experience: 'Fresher',
+      salary: '₹9,000 – ₹14,000', salaryPeriod: '/month',
+      courses: ['computer-basic', 'data-entry', 'computer-tally'],
+      verified: true, urgent: false,
+      posted: '13 Oct 2026',
+      shortDesc: 'Data entry, MS Word/Excel work, filing and basic office support. Ideal for Computer Basic or Tally graduates.',
+      fullDesc: 'We are a small accounting firm seeking a reliable Computer Operator to handle data entry, document formatting, client file management, and Excel-based reporting. Tally knowledge is an advantage but not required — we will provide training.',
+      requirements: ['Computer Basic, Data Entry, or Tally course completed', 'Typing speed of at least 25 WPM', 'Honest and punctual', 'Basic English communication'],
+      benefits: ['Provident Fund after 6 months', 'Paid annual leave', 'Sunday off', 'Office located near bus stop'],
+      applyPhone: '9876500004', applyWhatsApp: false,
+      address: 'Clock Tower Road, Secunderabad'
+    },
+    {
+      id: 5, title: 'Accounts Trainee (Tally)', employer: 'Ravi Electronics Wholesale',
+      initials: 'RE', location: 'Alwal, Secunderabad', locationKey: 'alwal',
+      type: 'apprenticeship', category: 'computer', experience: 'Fresher',
+      salary: '₹7,000 – ₹9,000', salaryPeriod: '/month (trainee stipend)',
+      courses: ['computer-tally'],
+      verified: true, urgent: false,
+      posted: '10 Oct 2026',
+      shortDesc: '6-month paid apprenticeship for Tally course graduates. Learn real business accounting with a path to a permanent role.',
+      fullDesc: 'A 6-month paid apprenticeship for candidates who have completed the Computer Tally course. You will shadow our senior accountant, process purchase and sales invoices, reconcile accounts, and assist with GST filing. High performers will be offered a full-time position.',
+      requirements: ['Computer Tally course completed', 'Basic understanding of GST (we will train)', 'Willing to commit to 6 months'],
+      benefits: ['Guaranteed interview for full-time role on completion', 'Mentored by a CA', 'Certificate of apprenticeship'],
+      applyPhone: '9876500005', applyWhatsApp: true,
+      address: 'Bolarum Main Road, Alwal'
+    },
+    {
+      id: 6, title: 'DTP & Design Operator', employer: 'Print Plus',
+      initials: 'PP', location: 'Secunderabad', locationKey: 'secunderabad',
+      type: 'full-time', category: 'computer', experience: 'Fresher',
+      salary: '₹9,500 – ₹13,000', salaryPeriod: '/month',
+      courses: ['computer-dtp'],
+      verified: false, urgent: false,
+      posted: '9 Oct 2026',
+      shortDesc: 'Design visiting cards, banners, wedding cards and brochures using CorelDraw and Photoshop. Busy print shop, fast-paced work.',
+      fullDesc: 'Print Plus handles high volumes of printing work — visiting cards, wedding invitations, flex banners and brochures. We need a DTP Operator who can work quickly and accurately in CorelDraw and Photoshop. Work samples or a portfolio are helpful but not required.',
+      requirements: ['Computer DTP course completed', 'Working knowledge of CorelDraw and/or Photoshop', 'Able to work under deadline pressure'],
+      benefits: ['Performance bonus on high-output months', 'Learn offset printing on the job'],
+      applyPhone: '9876500006', applyWhatsApp: true,
+      address: 'Near Railway Station, Secunderabad'
+    },
+    {
+      id: 7, title: 'Electrical Helper', employer: 'Sharma Electricals',
+      initials: 'SE', location: 'Hyderabad', locationKey: 'hyderabad',
+      type: 'apprenticeship', category: 'electrical', experience: 'Fresher',
+      salary: '₹8,000 – ₹11,000', salaryPeriod: '/month',
+      courses: ['electrical'],
+      verified: true, urgent: false,
+      posted: '12 Oct 2026',
+      shortDesc: 'Paid apprenticeship assisting licensed electricians on domestic and commercial wiring projects. Safety equipment provided.',
+      fullDesc: 'Sharma Electricals handles domestic wiring, panel installations, and small commercial projects across Hyderabad. We are looking for an Electrical Helper who has completed their Electrical & Electronics course. You will work alongside licensed electricians and progressively take on more responsibility as your confidence grows.',
+      requirements: ['Electrical & Electronics course completed', 'Basic knowledge of household wiring and circuit safety', 'Physical fitness for site work', 'Must be comfortable working at height'],
+      benefits: ['Safety equipment and uniform provided', 'Path to becoming a licensed electrician', 'Travel allowance for site work', 'EPF covered'],
+      applyPhone: '9876500007', applyWhatsApp: true,
+      address: 'Kachiguda, Hyderabad'
+    },
+    {
+      id: 8, title: 'AC & Refrigeration Technician Trainee', employer: 'Cool Care Services',
+      initials: 'CC', location: 'Secunderabad', locationKey: 'secunderabad',
+      type: 'apprenticeship', category: 'electrical', experience: 'Fresher',
+      salary: '₹9,000 – ₹13,000', salaryPeriod: '/month',
+      courses: ['appliance-repair'],
+      verified: true, urgent: true,
+      posted: '14 Oct 2026',
+      shortDesc: 'Urgently hiring Home Appliance Repair graduates to service ACs and refrigerators at customer homes. High demand role with good earning potential.',
+      fullDesc: 'Cool Care Services provides AC and refrigerator repairs across Secunderabad. We urgently need Technician Trainees who have completed the Home Appliance Repair course. You will go on customer calls with a senior technician, handle gas refilling and part replacements, and after 4 months, handle solo calls with incentive pay.',
+      requirements: ['Home Appliance Repair course completed', 'Knowledge of refrigerant handling (we will certify)', 'Two-wheeler preferred (fuel allowance provided if you have one)', 'Good customer communication'],
+      benefits: ['₹50–100 per solo call incentive after training period', 'Fuel allowance', 'High seasonal demand means consistent work'],
+      applyPhone: '9876500008', applyWhatsApp: true,
+      address: 'ECIL Area, Secunderabad'
+    },
+    {
+      id: 9, title: 'Healthcare Assistant', employer: 'Sunrise Nursing Home',
+      initials: 'SN', location: 'Alwal, Secunderabad', locationKey: 'alwal',
+      type: 'full-time', category: 'paramedics', experience: 'Fresher',
+      salary: '₹10,000 – ₹14,000', salaryPeriod: '/month',
+      courses: ['nursing'],
+      verified: true, urgent: false,
+      posted: '11 Oct 2026',
+      shortDesc: 'Assist registered nurses in patient care, vitals monitoring and ward duties. Day and night shift options available.',
+      fullDesc: 'Sunrise Nursing Home is a 40-bed facility in Alwal. We are looking for trained Nursing Assistants to join our care team. Responsibilities include assisting patients with daily care, recording vitals, supporting nurses with procedures, and maintaining ward cleanliness. Both day and night shifts are available.',
+      requirements: ['Medical Nursing Assistant course completed', '10th Pass minimum', 'Caring and patient attitude', 'Able to work shift duties'],
+      benefits: ['ESI and EPF', 'Night shift allowance', 'One free meal per shift', 'Annual increment based on performance'],
+      applyPhone: '9876500009', applyWhatsApp: false,
+      address: 'Bolarum Road, Alwal, Secunderabad'
+    },
+    {
+      id: 10, title: 'Sample Collection Technician', employer: 'MedLab Diagnostics',
+      initials: 'ML', location: 'Secunderabad', locationKey: 'secunderabad',
+      type: 'full-time', category: 'paramedics', experience: 'Fresher',
+      salary: '₹11,000 – ₹16,000', salaryPeriod: '/month',
+      courses: ['phlebotomy'],
+      verified: true, urgent: false,
+      posted: '13 Oct 2026',
+      shortDesc: 'Collect blood and other samples from patients at our diagnostic centre. 12th BiPC required. Well-equipped lab with training.',
+      fullDesc: 'MedLab Diagnostics operates a busy sample collection centre. We are looking for a trained Phlebotomy Technician to handle patient registration, blood collection, sample labelling and dispatch. Full training on our lab management system is provided.',
+      requirements: ['Medical Lab Phlebotomy course completed', '12th BiPC pass', 'Good bedside manner with anxious patients', 'Accuracy and hygiene standards essential'],
+      benefits: ['Professional uniform provided', 'Sundays off', 'Internal promotion opportunities to Lab Assistant'],
+      applyPhone: '9876500010', applyWhatsApp: false,
+      address: 'SD Road, Secunderabad'
+    },
+    {
+      id: 11, title: 'Pharmacy Shop Assistant', employer: 'Medico Pharma',
+      initials: 'MP', location: 'Malkajgiri, Hyderabad', locationKey: 'malkajgiri',
+      type: 'full-time', category: 'paramedics', experience: 'Fresher',
+      salary: '₹9,000 – ₹13,000', salaryPeriod: '/month',
+      courses: ['pharmacy'],
+      verified: false, urgent: false,
+      posted: '8 Oct 2026',
+      shortDesc: 'Help dispense medicines, manage inventory and assist customers in a busy neighbourhood pharmacy.',
+      fullDesc: 'Medico Pharma is a neighbourhood pharmacy looking for a trained Pharmacy Assistant. You will handle over-the-counter sales, assist in dispensing prescriptions, manage stock and expiry dates, and handle the billing system. Basic computer knowledge is helpful.',
+      requirements: ['Pharmacy Assistant course completed', 'Honest and trustworthy', 'Good communication with customers', 'Basic counting and billing skills'],
+      benefits: ['Sunday half-day', 'Medicine purchase at cost price', 'Bonus at Diwali/Eid'],
+      applyPhone: '9876500011', applyWhatsApp: true,
+      address: 'Old Malkajgiri Road, Hyderabad'
+    },
+    {
+      id: 12, title: 'Pre-Primary Class Teacher', employer: 'Little Stars Play School',
+      initials: 'LS', location: 'Alwal, Secunderabad', locationKey: 'alwal',
+      type: 'full-time', category: 'english', experience: 'Fresher',
+      salary: '₹10,000 – ₹15,000', salaryPeriod: '/month',
+      courses: ['pre-primary'],
+      verified: true, urgent: false,
+      posted: '10 Oct 2026',
+      shortDesc: 'Teach Nursery and LKG children. Plan activities, manage the classroom and communicate with parents. School hours only.',
+      fullDesc: 'Little Stars Play School is looking for a qualified Pre-Primary Teacher to join our team. You will plan and deliver age-appropriate activities, manage a class of 15–20 children, communicate with parents, and maintain attendance and progress records. School hours are 8am to 1:30pm Monday to Saturday.',
+      requirements: ['Pre-Primary Teachers Training course completed', 'Love for young children', 'Basic English spoken communication', 'Patient and creative'],
+      benefits: ['School hours only — no evening work', 'Summer and festival holidays', 'Clean, safe work environment'],
+      applyPhone: '9876500012', applyWhatsApp: true,
+      address: 'Prem Nagar, Alwal'
+    },
+    {
+      id: 13, title: 'Front Office Receptionist', employer: 'Apex Clinic',
+      initials: 'AC', location: 'Secunderabad', locationKey: 'secunderabad',
+      type: 'full-time', category: 'english', experience: 'Fresher',
+      salary: '₹9,000 – ₹12,000', salaryPeriod: '/month',
+      courses: ['english-2', 'computer-basic'],
+      verified: false, urgent: false,
+      posted: '9 Oct 2026',
+      shortDesc: 'Handle patient bookings, reception duties and billing at a busy clinic. Good English communication required.',
+      fullDesc: 'Apex Clinic requires a Front Office Receptionist who can speak confidently with patients, manage appointment bookings on our system, handle billing, and keep the reception area organised. Good spoken English and basic computer skills are essential.',
+      requirements: ['Spoken English Level 2 completed (or equivalent)', 'Basic computer skills', 'Neat and professional appearance', 'Calm under pressure'],
+      benefits: ['ESI coverage', 'Sunday off', 'Annual salary review'],
+      applyPhone: '9876500013', applyWhatsApp: false,
+      address: 'Trimulgherry, Secunderabad'
+    },
+    {
+      id: 14, title: 'Beautician (Home Service)', employer: 'Glamour On Call',
+      initials: 'GC', location: 'Hyderabad', locationKey: 'hyderabad',
+      type: 'part-time', category: 'beautician', experience: 'Fresher',
+      salary: '₹400 – ₹600', salaryPeriod: '/day + tips',
+      courses: ['beautician-basic', 'beautician-advance'],
+      verified: false, urgent: false,
+      posted: '7 Oct 2026',
+      shortDesc: 'Freelance home-service beautician work. Choose your own days and build your client base. Good for those starting their own business.',
+      fullDesc: 'Glamour On Call connects trained beauticians with home service clients. You set your own availability. We handle bookings and payment. Pay is per appointment with tips on top. This is ideal if you want to start earning while building towards your own parlour.',
+      requirements: ['Beautician Basic or Advance completed', 'Own basic kit (kit allowance available)', 'Smartphone with WhatsApp', 'Two-wheeler helpful but not required'],
+      benefits: ['Flexible schedule', 'Build your own client base', 'Option to work full-time hours'],
+      applyPhone: '9876500014', applyWhatsApp: true,
+      address: 'Multiple locations — Hyderabad'
+    },
+  ];
+
+  let activeCourseFilter = null;
+
+  function init() {
+    document.getElementById('totalCount').textContent = JOBS.length;
+    const saved = localStorage.getItem('aj_course');
+    if (saved && COURSE_CATEGORY[saved]) {
+      activeCourseFilter = COURSE_CATEGORY[saved];
+      showCourseStrip(saved);
+    }
+    renderJobs(JOBS);
+    applyFilters();
+  }
+
+  function showCourseStrip(courseKey) {
+    const strip = document.getElementById('courseStrip');
+    const tag = document.getElementById('activeCourseTag');
+    tag.textContent = COURSE_NAMES[courseKey] || courseKey;
+    strip.style.display = 'block';
+  }
+
+  function clearCourseFilter() {
+    activeCourseFilter = null;
+    document.getElementById('courseStrip').style.display = 'none';
+    applyFilters();
+  }
+
+  function renderJobs(jobs) {
+    const list = document.getElementById('jobsList');
+    list.innerHTML = '';
+    jobs.forEach(job => {
+      list.innerHTML += buildJobCard(job);
+    });
+    document.getElementById('resultsCount').innerHTML = `<span>${jobs.length}</span> job${jobs.length !== 1 ? 's' : ''} found`;
+    document.getElementById('emptyState').style.display = jobs.length === 0 ? 'block' : 'none';
+  }
+
+  function buildJobCard(job) {
+    const badges = [
+      `<span class="badge badge-type">${job.type}</span>`,
+      job.verified ? '<span class="badge badge-verified">✓ Verified employer</span>' : '',
+      job.experience === 'Fresher' ? '<span class="badge badge-fresher">Freshers welcome</span>' : '',
+      job.urgent ? '<span class="badge badge-urgent">Urgent hire</span>' : '',
+    ].filter(Boolean).join('');
+
+    const courseTags = job.courses.map(c =>
+      `<span class="badge badge-course">${COURSE_NAMES[c] || c}</span>`
+    ).join('');
+
+    const whatsappMsg = encodeURIComponent(`Good morning, I am enquiring about the ${job.title} vacancy at ${job.employer}. I have completed the ${job.courses.map(c => COURSE_NAMES[c]).join(' / ')} course at Asha Jyothi EST. Please let me know if the position is still available. Thank you.`);
+
+    return `
+    <article class="job-card" id="job-${job.id}" data-category="${job.category}" data-type="${job.type}" data-location="${job.locationKey}" data-title="${job.title.toLowerCase()}" data-employer="${job.employer.toLowerCase()}">
+      <div class="job-card-top">
+        <div class="job-employer-logo" aria-hidden="true">${job.initials}</div>
+        <div class="job-info">
+          <div class="job-title">${job.title}</div>
+          <div class="job-employer">${job.employer}</div>
+          <div class="job-meta">
+            <span class="job-meta-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+              ${job.location}
+            </span>
+            <span class="job-meta-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              Posted ${job.posted}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="job-badges">${badges}</div>
+      <div class="job-badges" style="margin-top:-4px;">${courseTags}</div>
+
+      <p class="job-desc">${job.shortDesc}</p>
+
+      <div class="job-salary-row">
+        <div>
+          <div class="job-salary">${job.salary}<span class="job-salary-label">${job.salaryPeriod}</span></div>
+        </div>
+        <div class="job-actions">
+          <button class="btn-apply btn-details" onclick="openModal(${job.id})" aria-label="View full details for ${job.title}">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+            Details
+          </button>
+          ${job.applyWhatsApp ? `<a href="https://wa.me/91${job.applyPhone}?text=${whatsappMsg}" target="_blank" rel="noopener" class="btn-apply btn-whatsapp" aria-label="Apply via WhatsApp for ${job.title}">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>` : ''}
+          <a href="tel:${job.applyPhone}" class="btn-apply btn-call" aria-label="Call to apply for ${job.title}">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+            Call
+          </a>
+        </div>
+      </div>
+    </article>`;
+  }
+
+  function applyFilters() {
+    const search = document.getElementById('searchInput').value.toLowerCase();
+    const category = document.getElementById('categoryFilter').value;
+    const type = document.getElementById('typeFilter').value;
+    const location = document.getElementById('locationFilter').value;
+
+    const filtered = JOBS.filter(job => {
+      if (activeCourseFilter && job.category !== activeCourseFilter) return false;
+      if (category && job.category !== category) return false;
+      if (type && job.type !== type) return false;
+      if (location && job.locationKey !== location) return false;
+      if (search) {
+        const haystack = job.title + ' ' + job.employer + ' ' + job.shortDesc + ' ' + job.location;
+        if (!haystack.toLowerCase().includes(search)) return false;
+      }
+      return true;
+    });
+
+    renderJobs(filtered);
+  }
+
+  function openModal(id) {
+    const job = JOBS.find(j => j.id === id);
+    if (!job) return;
+    const whatsappMsg = encodeURIComponent(`Good morning, I am enquiring about the ${job.title} vacancy at ${job.employer}. I have completed the ${job.courses.map(c => COURSE_NAMES[c]).join(' / ')} course at Asha Jyothi EST. Please let me know if the position is still available. Thank you.`);
+
+    document.getElementById('modalContent').innerHTML = `
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:8px;">
+        <div style="width:52px;height:52px;border-radius:12px;background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.25rem;font-weight:700;color:var(--navy);flex-shrink:0;">${job.initials}</div>
+        <div>
+          <div class="modal-title" id="modalTitle">${job.title}</div>
+          <div class="modal-employer">${job.employer} &nbsp;·&nbsp; ${job.location}</div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;">
+        <span class="badge badge-type">${job.type}</span>
+        ${job.verified ? '<span class="badge badge-verified">✓ Verified employer</span>' : ''}
+        ${job.urgent ? '<span class="badge badge-urgent">Urgent hire</span>' : ''}
+        <span class="badge badge-fresher">Freshers welcome</span>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">About the role</div>
+        <div class="modal-body">${job.fullDesc}</div>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">What they're looking for</div>
+        <ul class="modal-list">${job.requirements.map(r => `<li>${r}</li>`).join('')}</ul>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">Benefits</div>
+        <ul class="modal-list">${job.benefits.map(b => `<li>${b}</li>`).join('')}</ul>
+      </div>
+
+      <div class="modal-section" style="background:var(--bg);border-radius:var(--radius-sm);padding:16px;">
+        <div class="modal-section-title">Salary</div>
+        <div style="font-size:1.25rem;font-weight:700;color:var(--navy);">${job.salary}<span style="font-size:0.85rem;color:var(--text-muted);font-weight:400;"> ${job.salaryPeriod}</span></div>
+        <div style="font-size:0.8125rem;color:var(--text-muted);margin-top:4px;">📍 ${job.address}</div>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">Eligible courses</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;">${job.courses.map(c => `<span class="badge badge-course">${COURSE_NAMES[c]}</span>`).join('')}</div>
+      </div>
+
+      <div class="modal-actions">
+        ${job.applyWhatsApp ? `<a href="https://wa.me/91${job.applyPhone}?text=${whatsappMsg}" target="_blank" rel="noopener" class="btn-apply btn-whatsapp">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Apply via WhatsApp
+        </a>` : ''}
+        <a href="tel:${job.applyPhone}" class="btn-apply btn-call">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+          Call to Apply
+        </a>
+      </div>
+      <p style="font-size:0.75rem;color:var(--text-muted);margin-top:12px;">Posted ${job.posted}. Contact the employer directly — Asha Jyothi staff can also help you apply at any campus.</p>
+    `;
+    document.getElementById('modalOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(e) {
+    if (e.target === document.getElementById('modalOverlay')) closeModalBtn();
+  }
+  function closeModalBtn() {
+    document.getElementById('modalOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalBtn(); });
+
+  init();
+</script>
+</body>
+</html>

@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build My Resume — AJ EDGE Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #C62828; --red-dark: #8E0000;
+      --navy: #1A237E; --navy-dark: #0D0D4F; --navy-light: #3949AB;
+      --gold: #F9A825;
+      --bg: #F4F6FB; --surface: #FFFFFF;
+      --text: #1C1C1E; --text-muted: #6E6E73; --border: #E5E5EA;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.09);
+      --shadow-lg: 0 12px 32px rgba(0,0,0,0.14);
+      --radius: 14px; --radius-sm: 9px;
+      --transition: 200ms ease;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+
+    /* Navbar */
+    .navbar { background: white; border-bottom: 1px solid var(--border); box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 50; }
+    .navbar-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .navbar-logo { display: flex; align-items: center; gap: 10px; }
+    .navbar-logo img { height: 40px; width: auto; object-fit: contain; }
+    .navbar-logo-name { font-size: 1rem; font-weight: 700; color: var(--red); line-height: 1.1; }
+    .navbar-logo-sub { font-size: 0.6rem; font-weight: 500; color: var(--navy); letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-back { display: flex; align-items: center; gap: 6px; font-size: 0.875rem; font-weight: 500; color: var(--text-muted); padding: 8px 14px; border-radius: 50px; border: 1.5px solid var(--border); transition: all var(--transition); }
+    .nav-back:hover { border-color: var(--navy); color: var(--navy); }
+
+    /* Page Header */
+    .page-header { background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, #283593 100%); padding: 36px 0 32px; position: relative; overflow: hidden; }
+    .page-header::after { content: ''; position: absolute; right: -60px; top: -60px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(198,40,40,0.15) 0%, transparent 70%); pointer-events: none; }
+    .page-header-inner { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .page-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+    .page-title { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; color: white; margin-bottom: 4px; }
+    .page-subtitle { font-size: 0.875rem; color: rgba(255,255,255,0.7); }
+    .header-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn-print {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 22px; border-radius: 50px; border: none;
+      background: var(--gold); color: #3E2723;
+      font-family: inherit; font-size: 0.875rem; font-weight: 700;
+      cursor: pointer; transition: all var(--transition);
+    }
+    .btn-print:hover { background: #FFB300; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(249,168,37,0.4); }
+    .btn-clear {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 22px; border-radius: 50px;
+      background: rgba(255,255,255,0.12); border: 1.5px solid rgba(255,255,255,0.25);
+      color: white; font-family: inherit; font-size: 0.875rem; font-weight: 600;
+      cursor: pointer; transition: all var(--transition);
+    }
+    .btn-clear:hover { background: rgba(255,255,255,0.2); }
+
+    /* Mobile Tabs */
+    .mobile-tabs { display: none; background: white; border-bottom: 1px solid var(--border); }
+    .mobile-tabs-inner { display: flex; }
+    .mtab { flex: 1; padding: 13px; text-align: center; font-size: 0.875rem; font-weight: 600; color: var(--text-muted); border: none; background: none; font-family: inherit; cursor: pointer; border-bottom: 3px solid transparent; transition: all var(--transition); }
+    .mtab.active { color: var(--navy); border-bottom-color: var(--navy); }
+
+    /* Builder Layout */
+    .builder-wrap { padding: 24px 0 60px; }
+    .builder-layout { display: grid; grid-template-columns: 420px 1fr; gap: 28px; align-items: start; }
+
+    /* ── FORM PANEL ── */
+    .form-panel { background: white; border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; position: sticky; top: 76px; max-height: calc(100vh - 96px); overflow-y: auto; }
+    .form-panel::-webkit-scrollbar { width: 6px; }
+    .form-panel::-webkit-scrollbar-track { background: transparent; }
+    .form-panel::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+    .form-section { border-bottom: 1px solid var(--border); }
+    .form-section:last-child { border-bottom: none; }
+    .form-section-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 20px; cursor: pointer; user-select: none;
+      transition: background var(--transition);
+    }
+    .form-section-header:hover { background: var(--bg); }
+    .form-section-title { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 700; color: var(--navy); }
+    .form-section-icon { font-size: 1.1rem; }
+    .form-section-chevron { color: var(--text-muted); transition: transform var(--transition); }
+    .form-section.open .form-section-chevron { transform: rotate(180deg); }
+    .form-section-body { display: none; padding: 0 20px 20px; }
+    .form-section.open .form-section-body { display: block; }
+
+    .form-group { margin-bottom: 14px; }
+    .form-group:last-child { margin-bottom: 0; }
+    .form-label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--text-muted); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .form-input, .form-select, .form-textarea {
+      width: 100%; padding: 10px 13px;
+      border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+      font-family: inherit; font-size: 0.9rem; color: var(--text);
+      background: white; outline: none;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--navy); box-shadow: 0 0 0 3px rgba(26,35,126,0.08); }
+    .form-textarea { resize: vertical; min-height: 80px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .form-hint { font-size: 0.75rem; color: var(--text-muted); margin-top: 4px; }
+    .form-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236E6E73' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 10px center; padding-right: 32px; }
+
+    .skills-wrap { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 10px; }
+    .skill-chip {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: #EEF0FF; color: var(--navy);
+      padding: 4px 11px; border-radius: 50px; font-size: 0.78rem; font-weight: 600;
+    }
+    .skill-chip button { background: none; border: none; cursor: pointer; color: var(--navy-light); font-size: 0.9rem; padding: 0; line-height: 1; transition: color var(--transition); }
+    .skill-chip button:hover { color: var(--red); }
+    .skill-add-row { display: flex; gap: 7px; }
+    .skill-add-input { flex: 1; padding: 8px 12px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-family: inherit; font-size: 0.875rem; outline: none; transition: border-color var(--transition); }
+    .skill-add-input:focus { border-color: var(--navy); }
+    .skill-add-btn { padding: 8px 14px; background: var(--navy); color: white; border: none; border-radius: var(--radius-sm); font-family: inherit; font-size: 0.875rem; font-weight: 600; cursor: pointer; transition: background var(--transition); white-space: nowrap; }
+    .skill-add-btn:hover { background: var(--navy-dark); }
+
+    /* Experience rows */
+    .exp-item { background: var(--bg); border-radius: var(--radius-sm); padding: 14px; margin-bottom: 10px; position: relative; }
+    .exp-remove { position: absolute; top: 10px; right: 10px; background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 1rem; transition: color var(--transition); padding: 2px; }
+    .exp-remove:hover { color: var(--red); }
+    .btn-add-exp { display: flex; align-items: center; gap: 6px; padding: 9px 16px; border: 1.5px dashed var(--border); border-radius: var(--radius-sm); background: none; font-family: inherit; font-size: 0.8125rem; font-weight: 600; color: var(--text-muted); cursor: pointer; width: 100%; justify-content: center; transition: all var(--transition); margin-top: 6px; }
+    .btn-add-exp:hover { border-color: var(--navy); color: var(--navy); }
+
+    /* ── PREVIEW PANEL ── */
+    .preview-panel { }
+    .preview-toolbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 10px; }
+    .preview-label { font-size: 0.8125rem; font-weight: 600; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
+    .preview-label span { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #4CAF50; }
+
+    /* ── RESUME TEMPLATE ── */
+    .resume {
+      background: white; border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-lg); width: 100%;
+      font-family: 'Lato', Georgia, serif;
+      color: #1a1a1a; line-height: 1.5;
+      min-height: 900px;
+      overflow: hidden;
+    }
+
+    .resume-header { background: var(--navy-dark); padding: 28px 32px 24px; }
+    .resume-name { font-size: 1.75rem; font-weight: 700; color: white; letter-spacing: 0.02em; margin-bottom: 4px; font-family: 'Lato', sans-serif; }
+    .resume-tagline { font-size: 0.9rem; color: var(--gold); font-weight: 700; letter-spacing: 0.04em; margin-bottom: 14px; text-transform: uppercase; font-family: 'Lato', sans-serif; }
+    .resume-contact-bar { display: flex; flex-wrap: wrap; gap: 16px; }
+    .resume-contact-item { display: flex; align-items: center; gap: 6px; font-size: 0.8rem; color: rgba(255,255,255,0.8); font-family: 'Lato', sans-serif; }
+
+    .resume-body { display: grid; grid-template-columns: 220px 1fr; }
+    .resume-sidebar { background: #F0F2F8; padding: 24px 20px; border-right: 1px solid #DDE1EF; }
+    .resume-main { padding: 24px 28px; }
+
+    .r-section { margin-bottom: 22px; }
+    .r-section:last-child { margin-bottom: 0; }
+    .r-section-title {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--navy); margin-bottom: 12px;
+      padding-bottom: 6px; border-bottom: 2px solid var(--navy);
+      font-family: 'Lato', sans-serif;
+    }
+
+    .r-objective { font-size: 0.875rem; color: #333; line-height: 1.7; font-family: 'Lato', sans-serif; }
+    .r-objective.placeholder { color: #aaa; font-style: italic; }
+
+    .r-skills-list { display: flex; flex-direction: column; gap: 6px; }
+    .r-skill { display: flex; align-items: center; gap: 8px; font-size: 0.8125rem; color: #2a2a2a; font-family: 'Lato', sans-serif; }
+    .r-skill::before { content: '▸'; color: var(--navy); font-size: 0.7rem; flex-shrink: 0; }
+
+    .r-detail { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; }
+    .r-detail:last-child { margin-bottom: 0; }
+    .r-detail-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #888; font-family: 'Lato', sans-serif; }
+    .r-detail-value { font-size: 0.8125rem; color: #2a2a2a; font-family: 'Lato', sans-serif; line-height: 1.4; }
+    .r-detail-value.placeholder { color: #bbb; font-style: italic; }
+
+    .r-edu-item { margin-bottom: 14px; }
+    .r-edu-item:last-child { margin-bottom: 0; }
+    .r-edu-title { font-size: 0.9rem; font-weight: 700; color: #1a1a1a; font-family: 'Lato', sans-serif; }
+    .r-edu-school { font-size: 0.8125rem; color: var(--navy); font-family: 'Lato', sans-serif; }
+    .r-edu-year { font-size: 0.775rem; color: #888; font-family: 'Lato', sans-serif; }
+    .r-edu-grade { font-size: 0.775rem; color: #555; font-family: 'Lato', sans-serif; }
+
+    .r-cert-box { background: #EEF0FF; border-left: 3px solid var(--navy); padding: 12px 14px; border-radius: 0 6px 6px 0; }
+    .r-cert-name { font-size: 0.9rem; font-weight: 700; color: var(--navy); font-family: 'Lato', sans-serif; }
+    .r-cert-institute { font-size: 0.8rem; color: #555; font-family: 'Lato', sans-serif; }
+    .r-cert-year { font-size: 0.775rem; color: #888; margin-top: 2px; font-family: 'Lato', sans-serif; }
+
+    .r-exp-item { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #eee; }
+    .r-exp-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .r-exp-role { font-size: 0.9375rem; font-weight: 700; color: #1a1a1a; font-family: 'Lato', sans-serif; }
+    .r-exp-company { font-size: 0.8375rem; color: var(--navy); font-weight: 700; font-family: 'Lato', sans-serif; }
+    .r-exp-period { font-size: 0.775rem; color: #888; margin-bottom: 5px; font-family: 'Lato', sans-serif; }
+    .r-exp-desc { font-size: 0.8125rem; color: #444; line-height: 1.6; font-family: 'Lato', sans-serif; }
+
+    .r-lang-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .r-lang-chip { background: white; border: 1px solid #DDE1EF; padding: 3px 10px; border-radius: 50px; font-size: 0.775rem; color: #333; font-family: 'Lato', sans-serif; }
+
+    .r-declaration { font-size: 0.775rem; color: #666; line-height: 1.7; font-style: italic; font-family: 'Lato', sans-serif; }
+    .r-sig-row { display: flex; justify-content: space-between; margin-top: 20px; font-size: 0.775rem; color: #888; font-family: 'Lato', sans-serif; }
+
+    /* ── WHATSAPP TEMPLATES ── */
+    .whatsapp-section { padding: 48px 0 60px; border-top: 1px solid var(--border); margin-top: 8px; }
+    .wa-header { margin-bottom: 28px; }
+    .wa-title { font-size: 1.375rem; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .wa-sub { font-size: 0.9rem; color: var(--text-muted); }
+    .wa-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; }
+    .wa-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
+    .wa-card-title { font-size: 0.9rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .wa-message-box {
+      background: #DCF8C6; border-radius: 0 12px 12px 12px;
+      padding: 14px 16px; font-size: 0.85rem; color: #1a1a1a; line-height: 1.65;
+      margin-bottom: 12px; position: relative; white-space: pre-wrap;
+      border: 1px solid #b2e0a0;
+    }
+    .wa-copy-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 16px; border-radius: 50px;
+      background: #25D366; color: white; border: none;
+      font-family: inherit; font-size: 0.8125rem; font-weight: 700;
+      cursor: pointer; transition: all var(--transition);
+    }
+    .wa-copy-btn:hover { background: #1DA851; }
+    .wa-copy-btn.copied { background: #388E3C; }
+
+    /* Save indicator */
+    .save-indicator { display: flex; align-items: center; gap: 6px; font-size: 0.75rem; color: #4CAF50; font-weight: 500; }
+
+    @media (max-width: 1024px) {
+      .builder-layout { grid-template-columns: 1fr; }
+      .form-panel { position: static; max-height: none; }
+    }
+    @media (max-width: 700px) {
+      .mobile-tabs { display: block; }
+      .builder-layout { gap: 0; }
+      .form-panel { border-radius: 0; border-left: none; border-right: none; }
+      .preview-panel { display: none; }
+      .preview-panel.mobile-active { display: block; }
+      .form-panel.mobile-hidden { display: none; }
+    }
+
+    /* ═══════════ PRINT STYLES ═══════════ */
+    @media print {
+      *, *::before, *::after { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; background: white; }
+      .navbar, .page-header, .mobile-tabs, .form-panel, .preview-toolbar,
+      .whatsapp-section, footer, .preview-label { display: none !important; }
+      .builder-wrap { padding: 0; }
+      .builder-layout { display: block; }
+      .preview-panel { display: block !important; }
+      .resume {
+        box-shadow: none; border-radius: 0;
+        width: 100%; min-height: auto;
+        page-break-inside: avoid;
+      }
+      .resume-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .resume-sidebar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .r-cert-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .wa-section { display: none !important; }
+      @page { margin: 0; size: A4; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="index.html" class="navbar-logo">
+          <img src="../AJ Website 2026/Logo/Asha Jyothi Logo.jpg" alt="Asha Jyothi">
+          <div>
+            <div class="navbar-logo-name">Asha Jyothi</div>
+            <div class="navbar-logo-sub">EDGE Portal</div>
+          </div>
+        </a>
+        <a href="index.html" class="nav-back">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          Dashboard
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <div class="page-header-inner">
+        <div>
+          <p class="page-label">Build My Resume</p>
+          <h1 class="page-title">Resume Builder</h1>
+          <p class="page-subtitle">Fill in the form — your resume updates live on the right. Then download as PDF.</p>
+        </div>
+        <div class="header-actions">
+          <div class="save-indicator" id="saveIndicator" style="color:rgba(255,255,255,0.6);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+            Auto-saved
+          </div>
+          <button class="btn-clear" onclick="clearAll()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/></svg>
+            Clear
+          </button>
+          <button class="btn-print" onclick="window.print()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            Download PDF
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Tabs -->
+  <div class="mobile-tabs">
+    <button class="mtab active" id="mtabEdit" onclick="mobileTab('edit')">✏️ Edit</button>
+    <button class="mtab" id="mtabPreview" onclick="mobileTab('preview')">👁️ Preview</button>
+  </div>
+
+  <div class="builder-wrap">
+    <div class="container">
+      <div class="builder-layout">
+
+        <!-- ── FORM PANEL ── -->
+        <div class="form-panel" id="formPanel">
+
+          <!-- Personal Info -->
+          <div class="form-section open">
+            <div class="form-section-header" onclick="toggleSection(this)">
+              <div class="form-section-title"><span class="form-section-icon">👤</span> Personal Information</div>
+              <svg class="form-section-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="form-section-body">
+              <div class="form-group">
+                <label class="form-label">Full Name</label>
+                <input class="form-input" id="f_name" placeholder="e.g. Lakshmi Devi" oninput="save(); render()">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Job Title / Role Applying For</label>
+                <input class="form-input" id="f_role" placeholder="e.g. Tailoring Assistant" oninput="save(); render()">
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Phone Number</label>
+                  <input class="form-input" id="f_phone" placeholder="e.g. 9876543210" oninput="save(); render()">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Date of Birth</label>
+                  <input class="form-input" id="f_dob" type="date" oninput="save(); render()">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email Address <span style="font-weight:400;text-transform:none;">(optional)</span></label>
+                <input class="form-input" id="f_email" placeholder="e.g. lakshmi@gmail.com" oninput="save(); render()">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Address</label>
+                <input class="form-input" id="f_address" placeholder="e.g. Alwal, Secunderabad" oninput="save(); render()">
+              </div>
+            </div>
+          </div>
+
+          <!-- Career Objective -->
+          <div class="form-section open">
+            <div class="form-section-header" onclick="toggleSection(this)">
+              <div class="form-section-title"><span class="form-section-icon">🎯</span> Career Objective</div>
+              <svg class="form-section-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="form-section-body">
+              <div class="form-group">
+                <label class="form-label">Your Course</label>
+                <select class="form-select" id="f_course" onchange="save(); applyCourseDefaults(); render()">
+                  <option value="">— Select your course —</option>
+                  <optgroup label="Tailoring">
+                    <option value="tailoring-basic">Tailoring Basic Course</option>
+                    <option value="tailoring-advance">Tailoring Advance Course</option>
+                    <option value="maggam">Maggam / Electric Machine</option>
+                  </optgroup>
+                  <optgroup label="Beautician">
+                    <option value="beautician-basic">Beautician Basic Course</option>
+                    <option value="beautician-advance">Beautician Advance Course</option>
+                  </optgroup>
+                  <optgroup label="Computer">
+                    <option value="computer-basic">Computer Basic Course</option>
+                    <option value="computer-dtp">Computer DTP Course</option>
+                    <option value="computer-tally">Computer Tally Course</option>
+                    <option value="data-entry">Data Entry & Typing</option>
+                  </optgroup>
+                  <optgroup label="Trade Skills">
+                    <option value="electrical">Electrical & Electronics</option>
+                    <option value="appliance-repair">Home Appliance Repair</option>
+                    <option value="pre-primary">Pre-Primary Teachers Training</option>
+                  </optgroup>
+                  <optgroup label="Paramedics">
+                    <option value="nursing">Medical Nursing Assistant</option>
+                    <option value="phlebotomy">Medical Lab Phlebotomy</option>
+                    <option value="pharmacy">Pharmacy Assistant</option>
+                  </optgroup>
+                  <optgroup label="English">
+                    <option value="english-1">Spoken English Level 1</option>
+                    <option value="english-2">Spoken English Level 2</option>
+                  </optgroup>
+                </select>
+                <div class="form-hint">Selecting your course auto-fills skills and the objective below</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Objective Statement</label>
+                <textarea class="form-textarea" id="f_objective" rows="4" placeholder="A brief statement about your goals and what you bring to the role…" oninput="save(); render()"></textarea>
+                <div class="form-hint">Keep it to 2–3 sentences. Be specific about the role you want.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="form-section open">
+            <div class="form-section-header" onclick="toggleSection(this)">
+              <div class="form-section-title"><span class="form-section-icon">🎓</span> Education</div>
+              <svg class="form-section-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="form-section-body">
+              <div style="font-size:0.8rem;font-weight:600;color:var(--navy);margin-bottom:10px;">10th Standard (SSC)</div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">School Name</label>
+                  <input class="form-input" id="f_edu1_school" placeholder="School name" oninput="save(); render()">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Year of Passing</label>
+                  <input class="form-input" id="f_edu1_year" placeholder="e.g. 2022" oninput="save(); render()">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Percentage / Grade</label>
+                <input class="form-input" id="f_edu1_grade" placeholder="e.g. 72% or Grade B" oninput="save(); render()">
+              </div>
+
+              <div style="font-size:0.8rem;font-weight:600;color:var(--navy);margin:14px 0 10px;">12th / Intermediate <span style="font-weight:400;color:var(--text-muted);">(if completed)</span></div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">College / School</label>
+                  <input class="form-input" id="f_edu2_school" placeholder="College name" oninput="save(); render()">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Year of Passing</label>
+                  <input class="form-input" id="f_edu2_year" placeholder="e.g. 2024" oninput="save(); render()">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Stream</label>
+                  <input class="form-input" id="f_edu2_stream" placeholder="e.g. MPC, BiPC, Arts" oninput="save(); render()">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Percentage / Grade</label>
+                  <input class="form-input" id="f_edu2_grade" placeholder="e.g. 65%" oninput="save(); render()">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills -->
+          <div class="form-section open">
+            <div class="form-section-header" onclick="toggleSection(this)">
+              <div class="form-section-title"><span class="form-section-icon">⚡</span> Skills</div>
+              <svg class="form-section-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="form-section-body">
+              <div class="form-hint" style="margin-bottom:10px;">Skills are auto-filled from your course selection. Add or remove as needed.</div>
+              <div class="skills-wrap" id="skillsWrap"></div>
+              <div class="skill-add-row">
+                <input class="skill-add-input" id="skillInput" placeholder="Add a skill…" onkeydown="if(event.key==='Enter'){addSkill();event.preventDefault();}">
+                <button class="skill-add-btn" onclick="addSkill()">+ Add</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Work Experience -->
+          <div class="form-section">
+            <div class="form-section-header" onclick="toggleSection(this)">
+              <div class="form-section-title"><span class="form-section-icon">💼</span> Work Experience <span style="font-size:0.75rem;font-weight:400;color:var(--text-muted);margin-left:4px;">(optional)</span></div>
+              <svg class="form-section-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="form-section-body">
+              <div class="form-hint" style="margin-bottom:12px;">Leave blank if you are a fresher — it's perfectly fine not to have work experience.</div>
+              <div id="expItems"></div>
+              <button class="btn-add-exp" onclick="addExpItem()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                Add work experience
+              </button>
+            </div>
+          </div>
+
+          <!-- Languages -->
+          <div class="form-section">
+            <div class="form-section-header" onclick="toggleSection(this)">
+              <div class="form-section-title"><span class="form-section-icon">🗣️</span> Languages Known</div>
+              <svg class="form-section-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="form-section-body">
+              <div class="form-group">
+                <input class="form-input" id="f_languages" placeholder="e.g. Telugu, Hindi, English" oninput="save(); render()">
+                <div class="form-hint">Separate with commas</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional -->
+          <div class="form-section">
+            <div class="form-section-header" onclick="toggleSection(this)">
+              <div class="form-section-title"><span class="form-section-icon">📋</span> Additional Details</div>
+              <svg class="form-section-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="form-section-body">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Gender</label>
+                  <select class="form-select" id="f_gender" onchange="save(); render()">
+                    <option value="">— Select —</option>
+                    <option>Female</option>
+                    <option>Male</option>
+                    <option>Prefer not to say</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Nationality</label>
+                  <input class="form-input" id="f_nationality" placeholder="Indian" oninput="save(); render()">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Declaration Date / Place</label>
+                <input class="form-input" id="f_decl_place" placeholder="e.g. Secunderabad" oninput="save(); render()">
+              </div>
+            </div>
+          </div>
+
+        </div><!-- end form-panel -->
+
+        <!-- ── PREVIEW PANEL ── -->
+        <div class="preview-panel" id="previewPanel">
+          <div class="preview-toolbar">
+            <div class="preview-label">
+              <span></span> Live Preview — updates as you type
+            </div>
+            <button class="btn-print" onclick="window.print()" style="padding:9px 18px;font-size:0.8125rem;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+              Download / Print PDF
+            </button>
+          </div>
+
+          <div class="resume" id="resumePreview">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+      </div><!-- end builder-layout -->
+    </div><!-- end container -->
+  </div><!-- end builder-wrap -->
+
+  <!-- WhatsApp Templates -->
+  <div class="whatsapp-section" id="whatsapp">
+    <div class="container">
+      <div class="wa-header">
+        <h2 class="wa-title">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366" style="display:inline;vertical-align:middle;margin-right:8px;" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Message Templates
+        </h2>
+        <p class="wa-sub">Ready-to-send messages — tap to copy, then paste into WhatsApp. Replace the words in [ ] with your own details.</p>
+      </div>
+      <div class="wa-grid" id="waGrid">
+        <!-- populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <footer style="background:var(--navy-dark);padding:24px 0;">
+    <div class="container" style="text-align:center;">
+      <p style="font-size:0.8125rem;color:rgba(255,255,255,0.4);">
+        Asha Jyothi EST EDGE Portal &nbsp;·&nbsp;
+        <a href="index.html" style="color:rgba(255,255,255,0.6);">Dashboard</a>
+      </p>
+    </div>
+  </footer>
+
+<script>
+  // ═══════════════════════════════════
+  //  COURSE DATA
+  // ═══════════════════════════════════
+  const COURSE_DATA = {
+    'tailoring-basic': {
+      skills: ['Hand and machine stitching', 'Pattern cutting', 'Fabric selection', 'Blouse and chudidhar stitching', 'Uniform stitching', 'Measurement taking'],
+      objective: 'To obtain a position as a Tailoring professional where I can apply my training in cutting, stitching and pattern making to contribute to a reputed tailoring establishment and grow as a skilled tailor.',
+      role: 'Tailoring Assistant'
+    },
+    'tailoring-advance': {
+      skills: ['Advanced stitching and finishing', 'Embroidery (hand and machine)', 'Fabric painting', 'Advanced pattern making', 'Design alteration', 'Blouse design', 'Uniform and formal wear stitching'],
+      objective: 'To work as a skilled Tailor where I can apply my expertise in advanced stitching, embroidery and design to deliver quality work and grow professionally in a reputed boutique or tailoring unit.',
+      role: 'Senior Tailor / Boutique Tailor'
+    },
+    'maggam': {
+      skills: ['Electric machine operation', 'Thread work', 'Stone and bead embellishment', 'Maggam embroidery', 'Blouse decoration', 'Lehenga and saree design work'],
+      objective: 'To work as a Maggam Work Specialist where I can apply my training in electric machine operation and decorative embroidery to create high-quality bridal and festive wear.',
+      role: 'Maggam Work Specialist'
+    },
+    'beautician-basic': {
+      skills: ['Threading and waxing', 'Basic facial', 'Eyebrow shaping', 'Hair setting', 'Bridal makeup (basic)', 'Nail care', 'Mehendi application'],
+      objective: 'To work in the beauty and wellness industry where I can apply my training in beauty treatments and client care, deliver quality service, and build a rewarding career.',
+      role: 'Beauty Parlour Assistant'
+    },
+    'beautician-advance': {
+      skills: ['Advanced facial treatments', 'Hair colouring and highlights', 'Haircut with degrees', 'Bridal makeup', 'Pigmentation treatment', 'Hair fall treatment', 'Customer service and consultation'],
+      objective: 'To work as a skilled Beautician where I can apply my advanced training in beauty treatments, hair care and bridal services to deliver exceptional results and grow as a beauty professional.',
+      role: 'Beautician'
+    },
+    'computer-basic': {
+      skills: ['MS Word', 'MS Excel', 'MS PowerPoint', 'Internet and Email', 'Basic computer operation', 'Data entry', 'File management'],
+      objective: 'To work as a Computer Operator or Office Assistant where I can utilise my computer skills in MS Office and data entry to contribute effectively to office operations.',
+      role: 'Computer Operator'
+    },
+    'computer-dtp': {
+      skills: ['CorelDraw', 'Adobe Photoshop', 'PageMaker', 'MS Publisher', 'Graphic design and layout', 'Visiting card and banner design', 'Colour management'],
+      objective: 'To work as a DTP Operator or Graphic Design Assistant where I can apply my design skills in CorelDraw and Photoshop to deliver quality print and digital design work.',
+      role: 'DTP Operator / Graphic Design Assistant'
+    },
+    'computer-tally': {
+      skills: ['Tally ERP 9 / TallyPrime', 'Basic accounting principles', 'GST entries', 'Ledger maintenance', 'Purchase and sales invoicing', 'Data entry', 'MS Excel'],
+      objective: 'To work as a Tally Operator or Accounts Assistant where I can apply my accounting and Tally skills to maintain accurate financial records and support business operations.',
+      role: 'Tally Operator / Accounts Assistant'
+    },
+    'data-entry': {
+      skills: ['Typing (Telugu and English)', 'MS Word', 'MS Excel', 'Data entry', 'Accuracy and attention to detail', 'Basic computer operation'],
+      objective: 'To work as a Data Entry Operator where I can apply my typing speed and accuracy to maintain data records efficiently and support office operations.',
+      role: 'Data Entry Operator'
+    },
+    'electrical': {
+      skills: ['Household wiring', 'Basic circuit installation', 'Electronic appliance troubleshooting', 'Electrical safety procedures', 'Fuse and switch installation', 'Multimeter usage'],
+      objective: 'To work as an Electrical Helper or Trainee Electrician where I can apply my training in wiring and circuit systems, learn from experienced professionals, and build a career in the electrical trade.',
+      role: 'Electrical Helper / Trainee Electrician'
+    },
+    'appliance-repair': {
+      skills: ['AC servicing and maintenance', 'Refrigerator repair', 'Gas refilling and refrigerant handling', 'Fault diagnosis', 'Part replacement', 'Customer service for home visits'],
+      objective: 'To work as an Appliance Technician where I can apply my training in AC and refrigerator repair to deliver quality service to customers and grow as a skilled technician.',
+      role: 'Appliance Repair Technician'
+    },
+    'nursing': {
+      skills: ['Patient care and support', 'Vitals monitoring (BP, temperature, pulse)', 'Nursing procedures assistance', 'Drug administration support', 'Ward hygiene and management', 'Patient communication'],
+      objective: 'To serve as a Healthcare or Nursing Assistant in a reputed hospital or clinic, providing quality patient care, supporting the nursing team, and contributing to the health and wellbeing of patients.',
+      role: 'Nursing / Healthcare Assistant'
+    },
+    'phlebotomy': {
+      skills: ['Blood sample collection', 'Venepuncture technique', 'Sample labelling and documentation', 'Patient registration', 'Lab safety and hygiene protocols', 'Basic lab equipment handling'],
+      objective: 'To work as a Sample Collection Technician or Phlebotomist in a diagnostic laboratory or hospital, applying my training to collect samples accurately and support healthcare operations.',
+      role: 'Sample Collection Technician'
+    },
+    'pharmacy': {
+      skills: ['Medicine dispensing', 'Drug identification', 'Inventory and stock management', 'Expiry date monitoring', 'Over-the-counter sales', 'Basic billing and customer service'],
+      objective: 'To work as a Pharmacy Assistant in a pharmacy or hospital, applying my training in medicine dispensing and inventory management to support safe and efficient pharmaceutical services.',
+      role: 'Pharmacy Assistant'
+    },
+    'pre-primary': {
+      skills: ['Activity-based teaching methods', 'Classroom management', 'Child development knowledge', 'Montessori approach', 'Parent communication', 'Lesson planning', 'Story-telling and creative activities'],
+      objective: 'To work as a Pre-Primary Teacher where I can nurture young children\'s development, create a safe and engaging classroom environment, and build strong foundations for their learning journey.',
+      role: 'Pre-Primary Teacher'
+    },
+    'english-1': {
+      skills: ['Spoken English communication', 'Basic grammar and vocabulary', 'Reading and writing in English', 'Telephone communication', 'Customer service'],
+      objective: 'To work in an office or customer-facing role where I can apply my English communication skills to contribute to the team and continue improving professionally.',
+      role: 'Office Assistant / Receptionist'
+    },
+    'english-2': {
+      skills: ['Professional spoken English', 'Business writing and email', 'Presentation skills', 'Customer service and conflict resolution', 'Office communication', 'Report writing'],
+      objective: 'To work in a front office or administrative role where I can apply my professional English skills and communication ability to represent the organisation effectively.',
+      role: 'Front Office Executive / Office Administrator'
+    }
+  };
+
+  const WA_TEMPLATES = [
+    {
+      title: '📋 Enquiring about a vacancy',
+      message: `Good morning, Sir/Madam.
+
+I am [Your Name] from [Your Area]. I completed the [Your Course] at Asha Jyothi Employable Skill Training Centre, Secunderabad.
+
+I am looking for a [Job Title] position and I am interested in the vacancy at your organisation.
+
+I am a fresher, hard-working, and ready to learn. Please let me know if the vacancy is still available.
+
+Thank you.`
+    },
+    {
+      title: '📄 Sending your resume',
+      message: `Good morning, Sir/Madam.
+
+I am [Your Name]. I am sending my resume for the [Job Title] position at your organisation.
+
+📌 Name: [Your Name]
+📌 Course: [Your Course] — Asha Jyothi EST
+📌 Location: [Your Area]
+📌 Phone: [Your Number]
+
+Please find my resume attached. I am available for an interview at a time convenient to you.
+
+Thank you for your consideration.`
+    },
+    {
+      title: '✅ Confirming an interview',
+      message: `Good morning, Sir/Madam.
+
+Thank you for inviting me for an interview for the [Job Title] position.
+
+I confirm I will be present on [Date] at [Time] at your office.
+
+My name is [Your Name]. Please let me know if you need any additional information before the interview.
+
+Thank you.`
+    },
+    {
+      title: '🙏 Following up after interview',
+      message: `Good morning, Sir/Madam.
+
+I attended the interview for the [Job Title] position on [Date]. My name is [Your Name].
+
+I am very interested in joining your team and believe my [Your Course] training will help me contribute well to your organisation.
+
+Please let me know if there are any further steps I need to complete.
+
+Thank you for the opportunity.`
+    }
+  ];
+
+  // ═══════════════════════════════════
+  //  STATE
+  // ═══════════════════════════════════
+  let skills = [];
+  let expItems = [];
+  let expCounter = 0;
+
+  // ═══════════════════════════════════
+  //  SAVE / LOAD
+  // ═══════════════════════════════════
+  function getFields() {
+    return ['f_name','f_role','f_phone','f_dob','f_email','f_address',
+            'f_course','f_objective','f_edu1_school','f_edu1_year','f_edu1_grade',
+            'f_edu2_school','f_edu2_year','f_edu2_stream','f_edu2_grade',
+            'f_languages','f_gender','f_nationality','f_decl_place'];
+  }
+
+  function save() {
+    const data = {};
+    getFields().forEach(id => { const el = document.getElementById(id); if (el) data[id] = el.value; });
+    data.skills = skills;
+    data.expItems = expItems;
+    localStorage.setItem('aj_resume', JSON.stringify(data));
+  }
+
+  function load() {
+    const raw = localStorage.getItem('aj_resume');
+    if (!raw) return;
+    try {
+      const data = JSON.parse(raw);
+      getFields().forEach(id => { const el = document.getElementById(id); if (el && data[id] !== undefined) el.value = data[id]; });
+      if (data.skills) { skills = data.skills; renderSkills(); }
+      if (data.expItems) { expItems = data.expItems; expItems.forEach(item => renderExpItem(item)); }
+    } catch(e) {}
+  }
+
+  function clearAll() {
+    if (!confirm('Clear all resume data? This cannot be undone.')) return;
+    localStorage.removeItem('aj_resume');
+    getFields().forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+    skills = []; expItems = []; expCounter = 0;
+    document.getElementById('skillsWrap').innerHTML = '';
+    document.getElementById('expItems').innerHTML = '';
+    render();
+  }
+
+  // ═══════════════════════════════════
+  //  COURSE DEFAULTS
+  // ═══════════════════════════════════
+  function applyCourseDefaults() {
+    const course = document.getElementById('f_course').value;
+    const data = COURSE_DATA[course];
+    if (!data) return;
+    // Only auto-fill objective if empty
+    const obj = document.getElementById('f_objective');
+    if (!obj.value.trim()) obj.value = data.objective;
+    // Only auto-fill role if empty
+    const role = document.getElementById('f_role');
+    if (!role.value.trim()) role.value = data.role;
+    // Always set skills from course
+    skills = [...data.skills];
+    renderSkills();
+    save();
+    render();
+  }
+
+  // ═══════════════════════════════════
+  //  SKILLS
+  // ═══════════════════════════════════
+  function renderSkills() {
+    const wrap = document.getElementById('skillsWrap');
+    wrap.innerHTML = '';
+    skills.forEach((s, i) => {
+      const chip = document.createElement('span');
+      chip.className = 'skill-chip';
+      chip.innerHTML = `${s} <button onclick="removeSkill(${i})" aria-label="Remove ${s}">×</button>`;
+      wrap.appendChild(chip);
+    });
+    render();
+  }
+
+  function addSkill() {
+    const input = document.getElementById('skillInput');
+    const val = input.value.trim();
+    if (!val || skills.includes(val)) { input.value = ''; return; }
+    skills.push(val);
+    input.value = '';
+    renderSkills();
+    save();
+  }
+
+  function removeSkill(i) {
+    skills.splice(i, 1);
+    renderSkills();
+    save();
+  }
+
+  // ═══════════════════════════════════
+  //  EXPERIENCE
+  // ═══════════════════════════════════
+  function addExpItem() {
+    const id = expCounter++;
+    const item = { id, role: '', company: '', period: '', desc: '' };
+    expItems.push(item);
+    renderExpItem(item);
+    save();
+  }
+
+  function renderExpItem(item) {
+    const container = document.getElementById('expItems');
+    const div = document.createElement('div');
+    div.className = 'exp-item';
+    div.id = 'exp-' + item.id;
+    div.innerHTML = `
+      <button class="exp-remove" onclick="removeExp(${item.id})" aria-label="Remove experience">×</button>
+      <div class="form-row" style="margin-bottom:8px;">
+        <div class="form-group" style="margin-bottom:0;"><label class="form-label">Job Title</label><input class="form-input" value="${item.role}" placeholder="e.g. Sales Assistant" onchange="updateExp(${item.id},'role',this.value)" oninput="updateExp(${item.id},'role',this.value)"></div>
+        <div class="form-group" style="margin-bottom:0;"><label class="form-label">Company / Employer</label><input class="form-input" value="${item.company}" placeholder="e.g. ABC Shop" onchange="updateExp(${item.id},'company',this.value)" oninput="updateExp(${item.id},'company',this.value)"></div>
+      </div>
+      <div class="form-group" style="margin-bottom:8px;"><label class="form-label">Duration</label><input class="form-input" value="${item.period}" placeholder="e.g. June 2024 – August 2024" onchange="updateExp(${item.id},'period',this.value)" oninput="updateExp(${item.id},'period',this.value)"></div>
+      <div class="form-group" style="margin-bottom:0;"><label class="form-label">What you did</label><textarea class="form-textarea" rows="2" placeholder="Brief description of your role and responsibilities" onchange="updateExp(${item.id},'desc',this.value)" oninput="updateExp(${item.id},'desc',this.value)">${item.desc}</textarea></div>`;
+    container.appendChild(div);
+  }
+
+  function updateExp(id, field, value) {
+    const item = expItems.find(e => e.id === id);
+    if (item) { item[field] = value; save(); render(); }
+  }
+
+  function removeExp(id) {
+    expItems = expItems.filter(e => e.id !== id);
+    const el = document.getElementById('exp-' + id);
+    if (el) el.remove();
+    save(); render();
+  }
+
+  // ═══════════════════════════════════
+  //  RENDER RESUME
+  // ═══════════════════════════════════
+  function v(id) { return (document.getElementById(id)?.value || '').trim(); }
+
+  function ph(text, fallback) {
+    return text || `<span style="color:#ccc;font-style:italic;">${fallback}</span>`;
+  }
+
+  function formatDOB(dob) {
+    if (!dob) return '';
+    try { return new Date(dob).toLocaleDateString('en-IN', {day:'numeric', month:'long', year:'numeric'}); } catch { return dob; }
+  }
+
+  function render() {
+    const name = v('f_name') || 'Your Name';
+    const role = v('f_role') || 'Role / Course';
+    const phone = v('f_phone');
+    const email = v('f_email');
+    const address = v('f_address');
+    const dob = formatDOB(v('f_dob'));
+    const gender = v('f_gender');
+    const nationality = v('f_nationality');
+    const objective = v('f_objective');
+    const course = v('f_course');
+    const courseLabel = document.getElementById('f_course')?.options[document.getElementById('f_course')?.selectedIndex]?.text || '';
+    const edu1School = v('f_edu1_school'), edu1Year = v('f_edu1_year'), edu1Grade = v('f_edu1_grade');
+    const edu2School = v('f_edu2_school'), edu2Year = v('f_edu2_year'), edu2Stream = v('f_edu2_stream'), edu2Grade = v('f_edu2_grade');
+    const langs = v('f_languages');
+    const declPlace = v('f_decl_place');
+
+    const contactItems = [
+      phone ? `<span class="resume-contact-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>${phone}</span>` : '',
+      email ? `<span class="resume-contact-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>${email}</span>` : '',
+      address ? `<span class="resume-contact-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>${address}</span>` : ''
+    ].filter(Boolean).join('');
+
+    const sidebarDetails = [
+      dob ? `<div class="r-detail"><div class="r-detail-label">Date of Birth</div><div class="r-detail-value">${dob}</div></div>` : '',
+      gender ? `<div class="r-detail"><div class="r-detail-label">Gender</div><div class="r-detail-value">${gender}</div></div>` : '',
+      nationality ? `<div class="r-detail"><div class="r-detail-label">Nationality</div><div class="r-detail-value">${nationality}</div></div>` : '',
+      phone ? `<div class="r-detail"><div class="r-detail-label">Phone</div><div class="r-detail-value">${phone}</div></div>` : '',
+      email ? `<div class="r-detail"><div class="r-detail-label">Email</div><div class="r-detail-value">${email}</div></div>` : '',
+      address ? `<div class="r-detail"><div class="r-detail-label">Address</div><div class="r-detail-value">${address}</div></div>` : ''
+    ].filter(Boolean).join('');
+
+    const edu2Block = (edu2School || edu2Year || edu2Grade) ? `
+      <div class="r-edu-item">
+        <div class="r-edu-title">Intermediate (12th)</div>
+        ${edu2School ? `<div class="r-edu-school">${edu2School}${edu2Stream ? ' — ' + edu2Stream : ''}</div>` : ''}
+        <div class="r-edu-year">${edu2Year || ''}${edu2Year && edu2Grade ? ' · ' : ''}${edu2Grade || ''}</div>
+      </div>` : '';
+
+    const expBlock = expItems.filter(e => e.role || e.company).map(e => `
+      <div class="r-exp-item">
+        <div class="r-exp-role">${e.role || 'Role'}</div>
+        <div class="r-exp-company">${e.company || 'Company'}</div>
+        ${e.period ? `<div class="r-exp-period">${e.period}</div>` : ''}
+        ${e.desc ? `<div class="r-exp-desc">${e.desc}</div>` : ''}
+      </div>`).join('');
+
+    const langBlock = langs ? langs.split(',').map(l => `<span class="r-lang-chip">${l.trim()}</span>`).join('') : '<span class="r-lang-chip" style="color:#ccc;">Telugu</span>';
+
+    document.getElementById('resumePreview').innerHTML = `
+      <div class="resume-header">
+        <div class="resume-name">${name}</div>
+        <div class="resume-tagline">${role}</div>
+        ${contactItems ? `<div class="resume-contact-bar">${contactItems}</div>` : ''}
+      </div>
+
+      <div class="resume-body">
+        <div class="resume-sidebar">
+          ${sidebarDetails ? `<div class="r-section"><div class="r-section-title">Personal Details</div>${sidebarDetails}</div>` : ''}
+
+          ${skills.length ? `
+          <div class="r-section">
+            <div class="r-section-title">Skills</div>
+            <div class="r-skills-list">
+              ${skills.map(s => `<div class="r-skill">${s}</div>`).join('')}
+            </div>
+          </div>` : ''}
+
+          ${langs ? `
+          <div class="r-section">
+            <div class="r-section-title">Languages</div>
+            <div class="r-lang-list">${langBlock}</div>
+          </div>` : ''}
+        </div>
+
+        <div class="resume-main">
+          <div class="r-section">
+            <div class="r-section-title">Career Objective</div>
+            <div class="r-objective ${objective ? '' : 'placeholder'}">${objective || 'Your career objective will appear here…'}</div>
+          </div>
+
+          ${(edu1School || edu1Year) ? `
+          <div class="r-section">
+            <div class="r-section-title">Education</div>
+            ${edu1School || edu1Year ? `
+            <div class="r-edu-item">
+              <div class="r-edu-title">10th Standard (SSC)</div>
+              ${edu1School ? `<div class="r-edu-school">${edu1School}</div>` : ''}
+              <div class="r-edu-year">${edu1Year || ''}${edu1Year && edu1Grade ? ' · ' : ''}${edu1Grade || ''}</div>
+            </div>` : ''}
+            ${edu2Block}
+          </div>` : ''}
+
+          ${course ? `
+          <div class="r-section">
+            <div class="r-section-title">Certification</div>
+            <div class="r-cert-box">
+              <div class="r-cert-name">${courseLabel}</div>
+              <div class="r-cert-institute">Asha Jyothi Employable Skill Training Centre</div>
+              <div class="r-cert-institute">Recognised by Intermediate Board of Telangana</div>
+            </div>
+          </div>` : ''}
+
+          ${expBlock ? `
+          <div class="r-section">
+            <div class="r-section-title">Work Experience</div>
+            ${expBlock}
+          </div>` : ''}
+
+          <div class="r-section">
+            <div class="r-section-title">Declaration</div>
+            <div class="r-declaration">I hereby declare that the information furnished above is true and correct to the best of my knowledge and belief. I accept full responsibility for any discrepancy found in the above information.</div>
+            <div class="r-sig-row">
+              <span>Place: ${declPlace || '___________'}</span>
+              <span>${name !== 'Your Name' ? name : '(Signature)'}</span>
+            </div>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  // ═══════════════════════════════════
+  //  WHATSAPP TEMPLATES
+  // ═══════════════════════════════════
+  function renderWATemplates() {
+    const grid = document.getElementById('waGrid');
+    grid.innerHTML = WA_TEMPLATES.map((t, i) => `
+      <div class="wa-card">
+        <div class="wa-card-title">${t.title}</div>
+        <div class="wa-message-box" id="waMsg${i}">${t.message}</div>
+        <button class="wa-copy-btn" id="waBtn${i}" onclick="copyWA(${i})">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          Copy message
+        </button>
+      </div>`).join('');
+  }
+
+  function copyWA(i) {
+    const text = WA_TEMPLATES[i].message;
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.getElementById('waBtn' + i);
+      btn.textContent = '✓ Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy message'; btn.classList.remove('copied'); }, 2000);
+    });
+  }
+
+  // ═══════════════════════════════════
+  //  UI HELPERS
+  // ═══════════════════════════════════
+  function toggleSection(header) {
+    header.parentElement.classList.toggle('open');
+  }
+
+  function mobileTab(tab) {
+    const formPanel = document.getElementById('formPanel');
+    const previewPanel = document.getElementById('previewPanel');
+    document.getElementById('mtabEdit').classList.toggle('active', tab === 'edit');
+    document.getElementById('mtabPreview').classList.toggle('active', tab === 'preview');
+    if (tab === 'edit') { formPanel.classList.remove('mobile-hidden'); previewPanel.classList.remove('mobile-active'); }
+    else { formPanel.classList.add('mobile-hidden'); previewPanel.classList.add('mobile-active'); }
+  }
+
+  // ═══════════════════════════════════
+  //  INIT
+  // ═══════════════════════════════════
+  function init() {
+    load();
+    // Pre-select saved course
+    const savedCourse = localStorage.getItem('aj_course');
+    const courseEl = document.getElementById('f_course');
+    if (savedCourse && courseEl && !courseEl.value) {
+      courseEl.value = savedCourse;
+      if (!skills.length) applyCourseDefaults();
+    }
+    renderSkills();
+    render();
+    renderWATemplates();
+  }
+
+  init();
+</script>
+</body>
+</html>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Readiness Score — AJ EDGE Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #C62828; --navy: #1A237E; --navy-dark: #0D0D4F; --navy-light: #3949AB;
+      --gold: #F9A825; --green: #2E7D32; --green-light: #E8F5E9;
+      --orange: #E65100; --orange-light: #FFF3E0;
+      --teal: #00695C; --teal-light: #E0F2F1;
+      --yellow: #F57F17; --yellow-light: #FFFDE7;
+      --bg: #F4F6FB; --surface: #FFFFFF;
+      --text: #1C1C1E; --text-muted: #6E6E73; --border: #E5E5EA;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.09);
+      --shadow-lg: 0 10px 28px rgba(0,0,0,0.14);
+      --radius: 14px; --radius-sm: 9px; --transition: 200ms ease;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+
+    /* Navbar */
+    .navbar { background: white; border-bottom: 1px solid var(--border); box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 50; }
+    .navbar-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .navbar-logo { display: flex; align-items: center; gap: 10px; }
+    .navbar-logo img { height: 40px; width: auto; object-fit: contain; }
+    .navbar-logo-name { font-size: 1rem; font-weight: 700; color: var(--red); line-height: 1.1; }
+    .navbar-logo-sub { font-size: 0.6rem; font-weight: 500; color: var(--navy); letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-back { display: flex; align-items: center; gap: 6px; font-size: 0.875rem; font-weight: 500; color: var(--text-muted); padding: 8px 14px; border-radius: 50px; border: 1.5px solid var(--border); transition: all var(--transition); }
+    .nav-back:hover { border-color: var(--navy); color: var(--navy); }
+
+    /* Page Header */
+    .page-header { background: linear-gradient(135deg, var(--navy-dark) 0%, #1B5E20 100%); padding: 44px 0 40px; position: relative; overflow: hidden; }
+    .page-header::after { content: ''; position: absolute; right: -60px; top: -60px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(249,168,37,0.12) 0%, transparent 70%); pointer-events: none; }
+    .page-header-inner { position: relative; z-index: 1; display: flex; align-items: center; gap: 32px; }
+    .page-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .page-title { font-size: clamp(1.5rem, 3.5vw, 2.25rem); font-weight: 800; color: white; margin-bottom: 8px; }
+    .page-subtitle { font-size: 0.9375rem; color: rgba(255,255,255,0.7); }
+
+    /* Score Ring in Header */
+    .score-ring-wrap { flex-shrink: 0; position: relative; width: 110px; height: 110px; }
+    .score-ring-svg { width: 110px; height: 110px; transform: rotate(-90deg); }
+    .score-ring-bg { fill: none; stroke: rgba(255,255,255,0.15); stroke-width: 8; }
+    .score-ring-fill { fill: none; stroke: var(--gold); stroke-width: 8; stroke-linecap: round; stroke-dasharray: 283; stroke-dashoffset: 283; transition: stroke-dashoffset 800ms ease, stroke 400ms ease; }
+    .score-ring-center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .score-num { font-size: 1.75rem; font-weight: 800; color: white; line-height: 1; }
+    .score-denom { font-size: 0.7rem; font-weight: 600; color: rgba(255,255,255,0.6); }
+
+    /* Score Banner */
+    .score-banner { padding: 20px 0 0; }
+    .score-band-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px; border-radius: 50px; font-size: 0.875rem; font-weight: 700; margin-bottom: 12px; }
+    .score-band-msg { font-size: 0.9rem; color: var(--text); line-height: 1.65; }
+
+    /* Progress summary row */
+    .progress-row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin: 24px 0; }
+    .prog-cell { background: white; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 8px; text-align: center; cursor: pointer; transition: all var(--transition); }
+    .prog-cell:hover { border-color: var(--teal); }
+    .prog-cell.complete { border-color: var(--green); background: var(--green-light); }
+    .prog-cell-pct { font-size: 1rem; font-weight: 800; color: var(--navy); }
+    .prog-cell.complete .prog-cell-pct { color: var(--green); }
+    .prog-cell-label { font-size: 0.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); margin-top: 2px; line-height: 1.3; }
+
+    /* Checklist Cards */
+    .checklist-section { margin-bottom: 16px; background: white; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .checklist-section-head { display: flex; align-items: center; padding: 16px 20px; cursor: pointer; user-select: none; }
+    .cs-icon { font-size: 1.25rem; margin-right: 12px; flex-shrink: 0; }
+    .cs-title { font-size: 0.9375rem; font-weight: 700; color: var(--navy); flex: 1; }
+    .cs-score { font-size: 0.8125rem; font-weight: 700; color: var(--text-muted); margin-right: 10px; white-space: nowrap; }
+    .cs-score.done { color: var(--green); }
+    .cs-chevron { transition: transform var(--transition); color: var(--text-muted); }
+    .cs-bar-bg { height: 4px; background: var(--border); margin: 0 20px 0; border-radius: 50px; overflow: hidden; }
+    .cs-bar-fill { height: 4px; border-radius: 50px; background: var(--teal); width: 0%; transition: width 400ms ease; }
+
+    .checklist-items { padding: 8px 20px 16px; display: none; }
+    .checklist-section.open .checklist-items { display: block; }
+    .checklist-section.open .cs-chevron { transform: rotate(180deg); }
+
+    .check-item { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--bg); cursor: pointer; }
+    .check-item:last-child { border-bottom: none; }
+    .check-item:hover .check-box { border-color: var(--teal); }
+    .check-box { width: 22px; height: 22px; border: 2px solid var(--border); border-radius: 6px; flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center; transition: all var(--transition); }
+    .check-box.checked { background: var(--teal); border-color: var(--teal); }
+    .check-box.checked::after { content: ''; display: block; width: 5px; height: 9px; border-right: 2.5px solid white; border-bottom: 2.5px solid white; transform: rotate(45deg) translate(-1px, -1px); }
+    .check-label { flex: 1; font-size: 0.875rem; color: var(--text); line-height: 1.5; }
+    .check-label.checked-label { color: var(--text-muted); text-decoration: line-through; }
+    .check-pts { font-size: 0.72rem; font-weight: 700; color: var(--text-muted); white-space: nowrap; margin-top: 2px; }
+    .check-pts.earned { color: var(--green); }
+    .check-link { font-size: 0.72rem; font-weight: 600; color: var(--teal); margin-top: 2px; display: flex; align-items: center; gap: 3px; }
+
+    /* Next Steps */
+    .next-steps { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-top: 24px; margin-bottom: 24px; }
+    .next-steps-title { font-size: 1rem; font-weight: 800; color: var(--navy); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .next-step-item { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--bg); }
+    .next-step-item:last-child { border-bottom: none; }
+    .next-step-num { width: 26px; height: 26px; border-radius: 50%; background: var(--teal); color: white; font-size: 0.8rem; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .next-step-text { font-size: 0.875rem; color: var(--text); line-height: 1.6; }
+    .next-step-text a { color: var(--teal); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+
+    /* Save / Share */
+    .action-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 7px; padding: 12px 24px; border-radius: 50px; background: var(--teal); color: white; border: none; font-family: inherit; font-size: 0.9375rem; font-weight: 700; cursor: pointer; transition: all var(--transition); }
+    .btn-primary:hover { background: var(--green); transform: translateY(-1px); }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 7px; padding: 12px 24px; border-radius: 50px; background: none; color: var(--text-muted); border: 1.5px solid var(--border); font-family: inherit; font-size: 0.9375rem; font-weight: 700; cursor: pointer; transition: all var(--transition); }
+    .btn-secondary:hover { border-color: var(--navy); color: var(--navy); }
+    .save-note { font-size: 0.8rem; color: var(--text-muted); margin-top: 10px; }
+
+    @media (max-width: 600px) {
+      .page-header-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .progress-row { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="index.html" class="navbar-logo">
+          <img src="../AJ Website 2026/Logo/Asha Jyothi Logo.jpg" alt="Asha Jyothi">
+          <div>
+            <div class="navbar-logo-name">Asha Jyothi</div>
+            <div class="navbar-logo-sub">EDGE Portal</div>
+          </div>
+        </a>
+        <a href="index.html" class="nav-back">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          Dashboard
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="container">
+      <div class="page-header-inner">
+        <div style="flex:1;">
+          <p class="page-label">Job Readiness</p>
+          <h1 class="page-title">Your Readiness Score</h1>
+          <p class="page-subtitle">Check off everything you have done. Your score updates live and is saved to your dashboard.</p>
+        </div>
+        <div class="score-ring-wrap" aria-label="Readiness score">
+          <svg class="score-ring-svg" viewBox="0 0 100 100">
+            <circle class="score-ring-bg" cx="50" cy="50" r="45"/>
+            <circle class="score-ring-fill" id="ringFill" cx="50" cy="50" r="45"/>
+          </svg>
+          <div class="score-ring-center">
+            <div class="score-num" id="scoreNum">0</div>
+            <div class="score-denom">/ 100</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="padding-top:28px;">
+
+    <!-- Score band message -->
+    <div id="scoreBand"></div>
+
+    <!-- Category progress summary -->
+    <div class="progress-row" id="progressRow"></div>
+
+    <!-- Checklist sections -->
+    <div id="checklistContainer"></div>
+
+    <!-- Next steps -->
+    <div class="next-steps" id="nextSteps"></div>
+
+    <!-- Actions -->
+    <div class="action-row">
+      <button class="btn-primary" onclick="saveScore()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+        Save score to dashboard
+      </button>
+      <button class="btn-secondary" onclick="resetAll()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+        Reset all
+      </button>
+    </div>
+    <p class="save-note" id="saveNote"></p>
+  </div>
+
+  <footer style="background:var(--navy-dark);padding:24px 0;margin-top:48px;">
+    <div class="container" style="text-align:center;">
+      <p style="font-size:0.8125rem;color:rgba(255,255,255,0.4);">
+        Asha Jyothi EST EDGE Portal &nbsp;·&nbsp;
+        <a href="index.html" style="color:rgba(255,255,255,0.6);">Dashboard</a>
+      </p>
+    </div>
+  </footer>
+
+<script>
+  const CATEGORIES = [
+    {
+      id: 'docs', icon: '📁', title: 'Documents & Profile', shortLabel: 'Documents',
+      items: [
+        { id: 'd1', label: 'I have my Asha Jyothi certificate ready', pts: 5, link: null },
+        { id: 'd2', label: 'I have Aadhaar card + photocopies prepared', pts: 5, link: null },
+        { id: 'd3', label: 'I have passport-size photographs (at least 6)', pts: 3, link: null },
+        { id: 'd4', label: 'I have a bank account linked to my Aadhaar and mobile', pts: 4, link: null },
+        { id: 'd5', label: 'I have a clean folder/file to carry documents to interviews', pts: 3, link: null },
+      ]
+    },
+    {
+      id: 'resume', icon: '📄', title: 'Resume Ready', shortLabel: 'Resume',
+      items: [
+        { id: 'r1', label: 'I have completed my resume with correct contact details', pts: 7, link: { text: 'Build your resume', href: 'resume.html' } },
+        { id: 'r2', label: 'My resume includes my course skills and a career objective', pts: 5, link: { text: 'Resume builder', href: 'resume.html' } },
+        { id: 'r3', label: 'I have at least 3 printed copies of my resume', pts: 5, link: null },
+        { id: 'r4', label: 'My resume has a professional reference or a WhatsApp contact', pts: 3, link: null },
+      ]
+    },
+    {
+      id: 'interview', icon: '🎤', title: 'Interview Prepared', shortLabel: 'Interview',
+      items: [
+        { id: 'i1', label: 'I can introduce myself confidently in English (60 seconds)', pts: 6, link: { text: 'Practise your intro', href: 'interview.html' } },
+        { id: 'i2', label: 'I have practised answering at least 5 common interview questions', pts: 6, link: { text: 'Mock interview', href: 'interview.html' } },
+        { id: 'i3', label: 'I know what to wear to an interview', pts: 3, link: { text: 'Interview tips', href: 'interview.html' } },
+        { id: 'i4', label: 'I know the salary range for a fresher in my field', pts: 5, link: { text: 'Salary guide', href: 'survival.html#salary' } },
+      ]
+    },
+    {
+      id: 'jobsearch', icon: '🔍', title: 'Job Search Active', shortLabel: 'Job Search',
+      items: [
+        { id: 'j1', label: 'I know which job boards, groups and platforms to use for my field', pts: 4, link: { text: 'Find jobs', href: 'jobs.html' } },
+        { id: 'j2', label: 'I have applied to or submitted my resume to at least 3 employers', pts: 7, link: { text: 'Browse jobs', href: 'jobs.html' } },
+        { id: 'j3', label: 'I have told at least 5 people in my network that I am looking for work', pts: 4, link: null },
+      ]
+    },
+    {
+      id: 'career', icon: '🧭', title: 'Career Clarity', shortLabel: 'Career',
+      items: [
+        { id: 'c1', label: 'I have completed the Career Interest Quiz', pts: 5, link: { text: 'Take the quiz', href: 'careers.html' } },
+        { id: 'c2', label: 'I know my top 2 career pathway options', pts: 5, link: { text: 'View pathways', href: 'careers.html' } },
+        { id: 'c3', label: 'I know the difference between employed and self-employed options in my field', pts: 5, link: null },
+      ]
+    },
+    {
+      id: 'workplace', icon: '⚖️', title: 'Workplace Knowledge', shortLabel: 'Rights',
+      items: [
+        { id: 'w1', label: 'I understand what EPF and ESI are and how they benefit me', pts: 5, link: { text: 'Learn EPF & ESI', href: 'survival.html#epf' } },
+        { id: 'w2', label: 'I know my basic worker rights (hours, leave, minimum wage)', pts: 5, link: { text: 'Your rights', href: 'survival.html#rights' } },
+        { id: 'w3', label: 'I can recognise at least 3 signs of a job scam', pts: 5, link: { text: 'Scam warning signs', href: 'survival.html#scams' } },
+      ]
+    }
+  ];
+
+  const BANDS = [
+    { min: 0,  max: 29, label: 'Just Starting Out', emoji: '🌱', bg: '#FFEBEE', color: '#C62828', msg: 'You are at the beginning of your job preparation journey. This is the right time to start — every checkbox you tick gets you closer. Focus on documents and resume first.' },
+    { min: 30, max: 49, label: 'Building Up', emoji: '📚', bg: '#FFF3E0', color: '#E65100', msg: 'Good start — you have the basics in place. Now focus on interview practice and actively searching. Get your resume ready and start applying.' },
+    { min: 50, max: 69, label: 'Getting There', emoji: '🚀', bg: '#FFFDE7', color: '#F57F17', msg: 'You are more than halfway ready. Focus on interview confidence, knowing your rights, and applying to more employers. You are very close.' },
+    { min: 70, max: 84, label: 'Almost Ready', emoji: '⭐', bg: '#E0F2F1', color: '#00695C', msg: 'Excellent progress! You are well-prepared. Tie up the remaining items and apply confidently. Employers will see a prepared candidate.' },
+    { min: 85, max: 100, label: 'Job Ready!', emoji: '🎯', bg: '#E8F5E9', color: '#2E7D32', msg: 'Outstanding! You are fully prepared to apply and succeed in interviews. Keep your documents ready and stay active in your job search. Your next opportunity is close.' }
+  ];
+
+  const NEXT_STEPS = {
+    0:  [
+      { text: 'Gather all your documents — start with your Asha Jyothi certificate and Aadhaar.' },
+      { text: 'Build your resume using the <a href="resume.html">Resume Builder</a>. It takes about 20 minutes.' },
+      { text: 'Take the <a href="careers.html">Career Interest Quiz</a> to identify which career paths suit you best.' },
+    ],
+    30: [
+      { text: 'Complete your resume and print 3 copies — carry one to every application.' },
+      { text: 'Practise your self-introduction using the <a href="interview.html">Introduce Yourself</a> section.' },
+      { text: 'Browse the <a href="jobs.html">Jobs Board</a> and apply to at least 3 opportunities this week.' },
+    ],
+    50: [
+      { text: 'Practise 5 mock interview questions using the <a href="interview.html">Practice Mode</a> on the Interview page.' },
+      { text: 'Learn about <a href="survival.html">EPF, ESI, and your worker rights</a> so you are confident when you join.' },
+      { text: 'Tell your network — family, church, neighbours — that you are actively looking for work.' },
+    ],
+    70: [
+      { text: 'Apply to 2–3 more jobs this week. Consistent applications are the fastest path to an offer.' },
+      { text: 'Complete any unchecked items in the Career Clarity and Workplace Knowledge sections.' },
+      { text: 'Re-read the <a href="survival.html">First Days at Work</a> guide so you are ready to make a great impression.' },
+    ],
+    85: [
+      { text: 'You are fully ready. Apply confidently and prepare for interview calls.' },
+      { text: 'Keep your documents folder organised and ready at all times — opportunities can appear quickly.' },
+      { text: 'After your first interview, come back and note what went well and what to improve.' },
+    ]
+  };
+
+  // ── State ──
+  let checked = {};
+
+  function getScore() {
+    return CATEGORIES.reduce((total, cat) =>
+      total + cat.items.reduce((s, item) => s + (checked[item.id] ? item.pts : 0), 0), 0);
+  }
+
+  function getCatScore(cat) {
+    return cat.items.reduce((s, item) => s + (checked[item.id] ? item.pts : 0), 0);
+  }
+
+  function getCatMax(cat) {
+    return cat.items.reduce((s, item) => s + item.pts, 0);
+  }
+
+  function getBand(score) {
+    return BANDS.find(b => score >= b.min && score <= b.max) || BANDS[0];
+  }
+
+  // ── Render ──
+  function renderAll() {
+    const score = getScore();
+    const band = getBand(score);
+
+    // Ring
+    const circumference = 2 * Math.PI * 45;
+    const offset = circumference - (score / 100) * circumference;
+    document.getElementById('ringFill').style.strokeDashoffset = offset;
+    const ringColors = { 0: '#F9A825', 30: '#FF7043', 50: '#FDD835', 70: '#4DB6AC', 85: '#66BB6A' };
+    let strokeColor = '#F9A825';
+    for (const [min, color] of Object.entries(ringColors)) { if (score >= parseInt(min)) strokeColor = color; }
+    document.getElementById('ringFill').style.stroke = strokeColor;
+    document.getElementById('scoreNum').textContent = score;
+
+    // Band badge
+    document.getElementById('scoreBand').innerHTML = `
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;padding:16px 20px;background:${band.bg};border-radius:var(--radius);border:1px solid ${band.color}30;">
+        <div style="font-size:2rem;">${band.emoji}</div>
+        <div>
+          <div style="font-size:1rem;font-weight:800;color:${band.color};">${band.label}</div>
+          <div style="font-size:0.875rem;color:var(--text);line-height:1.6;margin-top:3px;">${band.msg}</div>
+        </div>
+      </div>`;
+
+    // Progress row
+    document.getElementById('progressRow').innerHTML = CATEGORIES.map(cat => {
+      const cs = getCatScore(cat), cm = getCatMax(cat);
+      const pct = Math.round((cs / cm) * 100);
+      const complete = pct === 100;
+      return `<div class="prog-cell${complete ? ' complete' : ''}" onclick="scrollToSection('sec-${cat.id}')" title="${cat.title}">
+        <div class="prog-cell-pct">${pct}%</div>
+        <div class="prog-cell-label">${cat.shortLabel}</div>
+      </div>`;
+    }).join('');
+
+    // Checklist sections
+    document.getElementById('checklistContainer').innerHTML = CATEGORIES.map(cat => {
+      const cs = getCatScore(cat), cm = getCatMax(cat);
+      const pct = Math.round((cs / cm) * 100);
+      return `
+        <div class="checklist-section open" id="sec-${cat.id}">
+          <div class="checklist-section-head" onclick="toggleSection('sec-${cat.id}')">
+            <span class="cs-icon">${cat.icon}</span>
+            <span class="cs-title">${cat.title}</span>
+            <span class="cs-score${cs === cm ? ' done' : ''}">${cs}/${cm} pts</span>
+            <svg class="cs-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="cs-bar-bg"><div class="cs-bar-fill" style="width:${pct}%"></div></div>
+          <div class="checklist-items">
+            ${cat.items.map(item => `
+              <div class="check-item" onclick="toggle('${item.id}')">
+                <div class="check-box${checked[item.id] ? ' checked' : ''}" role="checkbox" aria-checked="${!!checked[item.id]}"></div>
+                <div style="flex:1;">
+                  <div class="check-label${checked[item.id] ? ' checked-label' : ''}">${item.label}</div>
+                  ${item.link && !checked[item.id] ? `<a class="check-link" href="${item.link.href}" onclick="event.stopPropagation()">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    ${item.link.text}</a>` : ''}
+                </div>
+                <div class="check-pts${checked[item.id] ? ' earned' : ''}">+${item.pts} pts</div>
+              </div>`).join('')}
+          </div>
+        </div>`;
+    }).join('');
+
+    // Next steps
+    let stepsKey = 0;
+    for (const k of [0, 30, 50, 70, 85]) { if (score >= k) stepsKey = k; }
+    const steps = NEXT_STEPS[stepsKey];
+    document.getElementById('nextSteps').innerHTML = `
+      <div class="next-steps-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        What to do next
+      </div>
+      ${steps.map((s, i) => `
+        <div class="next-step-item">
+          <div class="next-step-num">${i + 1}</div>
+          <div class="next-step-text">${s.text}</div>
+        </div>`).join('')}`;
+  }
+
+  function toggle(id) {
+    checked[id] = !checked[id];
+    save();
+    renderAll();
+  }
+
+  function toggleSection(id) {
+    document.getElementById(id).classList.toggle('open');
+  }
+
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) { el.classList.add('open'); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  }
+
+  function saveScore() {
+    const score = getScore();
+    localStorage.setItem('aj_readiness_score', score);
+    save();
+    const note = document.getElementById('saveNote');
+    note.textContent = `✓ Score of ${score}/100 saved to your dashboard.`;
+    setTimeout(() => note.textContent = '', 3000);
+  }
+
+  function resetAll() {
+    if (!confirm('Reset all your progress? This cannot be undone.')) return;
+    checked = {};
+    localStorage.removeItem('aj_readiness');
+    renderAll();
+  }
+
+  function save() { localStorage.setItem('aj_readiness', JSON.stringify(checked)); }
+  function load() {
+    try { const d = localStorage.getItem('aj_readiness'); if (d) checked = JSON.parse(d); } catch(e) {}
+  }
+
+  load();
+  renderAll();
+  // Auto-save score to dashboard on load if previously saved
+  if (localStorage.getItem('aj_readiness_score')) {
+    localStorage.setItem('aj_readiness_score', getScore());
+  }
+</script>
+</body>
+</html>

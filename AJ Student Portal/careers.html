@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Careers — AJ EDGE Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #C62828; --red-dark: #8E0000;
+      --navy: #1A237E; --navy-dark: #0D0D4F; --navy-light: #3949AB;
+      --gold: #F9A825;
+      --bg: #F4F6FB; --surface: #FFFFFF;
+      --text: #1C1C1E; --text-muted: #6E6E73; --border: #E5E5EA;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.09);
+      --shadow-lg: 0 10px 28px rgba(0,0,0,0.12);
+      --radius: 16px; --radius-sm: 10px;
+      --transition: 200ms ease;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+    /* Navbar */
+    .navbar { background: white; border-bottom: 1px solid var(--border); box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 50; }
+    .navbar-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .navbar-logo { display: flex; align-items: center; gap: 10px; }
+    .navbar-logo img { height: 40px; width: auto; object-fit: contain; }
+    .navbar-logo-name { font-size: 1rem; font-weight: 700; color: var(--red); line-height: 1.1; }
+    .navbar-logo-sub { font-size: 0.6rem; font-weight: 500; color: var(--navy); letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-back { display: flex; align-items: center; gap: 6px; font-size: 0.875rem; font-weight: 500; color: var(--text-muted); padding: 8px 14px; border-radius: 50px; border: 1.5px solid var(--border); transition: all var(--transition); }
+    .nav-back:hover { border-color: var(--navy); color: var(--navy); }
+
+    /* Page Header */
+    .page-header { background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, #283593 100%); padding: 44px 0 40px; position: relative; overflow: hidden; }
+    .page-header::after { content: ''; position: absolute; right: -60px; top: -60px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(198,40,40,0.15) 0%, transparent 70%); pointer-events: none; }
+    .page-header-inner { position: relative; z-index: 1; }
+    .page-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .page-title { font-size: clamp(1.5rem, 3.5vw, 2.25rem); font-weight: 800; color: white; margin-bottom: 8px; }
+    .page-subtitle { font-size: 0.9375rem; color: rgba(255,255,255,0.7); max-width: 520px; }
+
+    /* Tab Nav */
+    .tab-nav { background: white; border-bottom: 1px solid var(--border); position: sticky; top: 64px; z-index: 40; }
+    .tab-nav-inner { display: flex; gap: 0; }
+    .tab-btn {
+      display: flex; align-items: center; gap: 8px;
+      padding: 14px 24px; font-family: inherit; font-size: 0.9rem; font-weight: 600;
+      color: var(--text-muted); background: none; border: none; border-bottom: 3px solid transparent;
+      cursor: pointer; transition: all var(--transition); white-space: nowrap;
+    }
+    .tab-btn:hover { color: var(--navy); }
+    .tab-btn.active { color: var(--navy); border-bottom-color: var(--navy); }
+    .tab-btn .tab-icon { font-size: 1.1rem; }
+
+    /* Tab Panels */
+    .tab-panel { display: none; padding: 40px 0 60px; }
+    .tab-panel.active { display: block; }
+
+    /* ═══════════════════════════════════
+       QUIZ
+    ═══════════════════════════════════ */
+    .quiz-wrap { max-width: 680px; margin: 0 auto; }
+
+    .quiz-intro { text-align: center; padding: 20px 0 40px; }
+    .quiz-intro-icon { font-size: 3.5rem; margin-bottom: 16px; }
+    .quiz-intro-title { font-size: 1.5rem; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+    .quiz-intro-sub { font-size: 0.9375rem; color: var(--text-muted); line-height: 1.7; max-width: 480px; margin: 0 auto 28px; }
+    .quiz-start-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--navy); color: white;
+      padding: 14px 32px; border-radius: 50px;
+      font-family: inherit; font-size: 1rem; font-weight: 700;
+      border: none; cursor: pointer; transition: all var(--transition);
+    }
+    .quiz-start-btn:hover { background: var(--navy-dark); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+    /* Progress */
+    .quiz-progress { margin-bottom: 32px; }
+    .progress-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .progress-label { font-size: 0.8125rem; font-weight: 600; color: var(--text-muted); }
+    .progress-num { font-size: 0.8125rem; font-weight: 700; color: var(--navy); }
+    .progress-bar-bg { height: 6px; background: var(--border); border-radius: 50px; }
+    .progress-bar-fill { height: 6px; background: var(--navy); border-radius: 50px; transition: width 400ms ease; }
+
+    /* Question */
+    .question-card { background: white; border-radius: var(--radius); padding: 32px; box-shadow: var(--shadow-md); border: 1px solid var(--border); }
+    .question-number { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 10px; }
+    .question-text { font-size: 1.1875rem; font-weight: 700; color: var(--navy); line-height: 1.4; margin-bottom: 24px; }
+    .options-grid { display: flex; flex-direction: column; gap: 10px; }
+    .option-btn {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 18px; border: 2px solid var(--border);
+      border-radius: var(--radius-sm); background: white;
+      font-family: inherit; font-size: 0.9375rem; font-weight: 500;
+      color: var(--text); cursor: pointer; transition: all var(--transition); text-align: left;
+    }
+    .option-btn:hover { border-color: var(--navy); background: #EEF0FF; color: var(--navy); }
+    .option-btn.selected { border-color: var(--navy); background: #EEF0FF; color: var(--navy); }
+    .option-btn.selected .option-dot { background: var(--navy); border-color: var(--navy); }
+    .option-dot {
+      width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;
+      border: 2px solid var(--border); background: white;
+      display: flex; align-items: center; justify-content: center;
+      transition: all var(--transition);
+    }
+    .option-dot::after { content: ''; width: 8px; height: 8px; border-radius: 50%; background: white; }
+    .option-btn.selected .option-dot::after { background: white; }
+    .option-emoji { font-size: 1.25rem; flex-shrink: 0; }
+
+    .quiz-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 24px; }
+    .quiz-back-btn {
+      display: flex; align-items: center; gap: 6px;
+      padding: 10px 20px; border-radius: 50px; border: 1.5px solid var(--border);
+      background: none; font-family: inherit; font-size: 0.875rem; font-weight: 600;
+      color: var(--text-muted); cursor: pointer; transition: all var(--transition);
+    }
+    .quiz-back-btn:hover { border-color: var(--navy); color: var(--navy); }
+    .quiz-next-btn {
+      display: flex; align-items: center; gap: 6px;
+      padding: 12px 28px; border-radius: 50px;
+      background: var(--navy); color: white; border: none;
+      font-family: inherit; font-size: 0.9375rem; font-weight: 700;
+      cursor: pointer; transition: all var(--transition); opacity: 0.4; pointer-events: none;
+    }
+    .quiz-next-btn.enabled { opacity: 1; pointer-events: all; }
+    .quiz-next-btn.enabled:hover { background: var(--navy-dark); transform: translateY(-1px); }
+
+    /* Results */
+    .quiz-results { display: none; }
+    .results-header { text-align: center; margin-bottom: 32px; }
+    .results-icon { font-size: 3rem; margin-bottom: 12px; }
+    .results-title { font-size: 1.5rem; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+    .results-sub { font-size: 0.9375rem; color: var(--text-muted); }
+
+    .results-grid { display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
+    .result-card {
+      background: white; border: 2px solid var(--border); border-radius: var(--radius);
+      padding: 20px 24px; transition: all var(--transition);
+    }
+    .result-card.top { border-color: var(--navy); box-shadow: var(--shadow-md); }
+    .result-card-header { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+    .result-rank { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.875rem; font-weight: 800; flex-shrink: 0; }
+    .rank-1 { background: var(--gold); color: #5D4037; }
+    .rank-2 { background: #E0E0E0; color: #424242; }
+    .rank-3 { background: #FFE0B2; color: #5D4037; }
+    .result-name { font-size: 1rem; font-weight: 700; color: var(--navy); }
+    .result-match { margin-left: auto; font-size: 0.8125rem; font-weight: 700; color: var(--navy-light); background: #EEF0FF; padding: 3px 10px; border-radius: 50px; }
+    .result-bar-bg { height: 6px; background: var(--border); border-radius: 50px; margin-bottom: 10px; }
+    .result-bar-fill { height: 6px; border-radius: 50px; background: var(--navy); transition: width 600ms ease; }
+    .result-careers { font-size: 0.8375rem; color: var(--text-muted); margin-bottom: 10px; }
+    .result-careers strong { color: var(--text); }
+    .result-action-link { font-size: 0.8125rem; font-weight: 600; color: var(--navy); display: inline-flex; align-items: center; gap: 4px; }
+
+    .results-cta { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 8px; }
+    .btn-retake { padding: 11px 24px; border-radius: 50px; border: 2px solid var(--border); background: none; font-family: inherit; font-size: 0.9rem; font-weight: 600; color: var(--text-muted); cursor: pointer; transition: all var(--transition); }
+    .btn-retake:hover { border-color: var(--navy); color: var(--navy); }
+    .btn-pathways { padding: 11px 24px; border-radius: 50px; background: var(--navy); color: white; border: none; font-family: inherit; font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all var(--transition); display: inline-flex; align-items: center; gap: 8px; }
+    .btn-pathways:hover { background: var(--navy-dark); }
+
+    /* ═══════════════════════════════════
+       PATHWAYS
+    ═══════════════════════════════════ */
+    .pathway-section { margin-bottom: 60px; }
+    .pathway-course-selector { margin-bottom: 36px; }
+    .pathway-course-selector-label { font-size: 0.875rem; font-weight: 600; color: var(--text); margin-bottom: 10px; }
+    .pathway-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+    .ptab {
+      padding: 8px 18px; border-radius: 50px; border: 2px solid var(--border);
+      background: white; font-family: inherit; font-size: 0.8125rem; font-weight: 600;
+      color: var(--text-muted); cursor: pointer; transition: all var(--transition);
+    }
+    .ptab:hover { border-color: var(--navy); color: var(--navy); }
+    .ptab.active { background: var(--navy); border-color: var(--navy); color: white; }
+
+    .pathway-content { display: none; }
+    .pathway-content.active { display: block; }
+
+    .pathway-header { margin-bottom: 28px; }
+    .pathway-title { font-size: 1.25rem; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .pathway-intro { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; }
+
+    /* Path Columns */
+    .paths-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
+    .path-col { }
+    .path-col-label {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+      padding: 4px 12px; border-radius: 50px; margin-bottom: 16px;
+    }
+    .path-col-label.employment { background: #EEF0FF; color: var(--navy-light); }
+    .path-col-label.business { background: #E8F5E9; color: #2E7D32; }
+
+    /* Timeline Steps */
+    .timeline { display: flex; flex-direction: column; }
+    .timeline-step { display: flex; gap: 14px; position: relative; }
+    .timeline-step:not(:last-child)::before { content: ''; position: absolute; left: 15px; top: 36px; bottom: -8px; width: 2px; background: var(--border); z-index: 0; }
+    .step-dot-wrap { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; padding-top: 6px; }
+    .step-dot {
+      width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--border);
+      background: white; display: flex; align-items: center; justify-content: center;
+      font-size: 0.8125rem; font-weight: 700; color: var(--text-muted); z-index: 1; flex-shrink: 0;
+      transition: all var(--transition);
+    }
+    .step-dot.done { background: var(--navy); border-color: var(--navy); color: white; }
+    .step-dot.goal { background: var(--gold); border-color: var(--gold); color: #5D4037; }
+
+    .step-body { padding-bottom: 24px; flex: 1; }
+    .step-stage { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 2px; }
+    .step-title { font-size: 0.9375rem; font-weight: 700; color: var(--text); margin-bottom: 4px; line-height: 1.3; }
+    .step-salary { font-size: 0.8125rem; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+    .step-note { font-size: 0.8rem; color: var(--text-muted); line-height: 1.55; }
+    .step-time { display: inline-flex; align-items: center; gap: 4px; font-size: 0.75rem; font-weight: 600; color: var(--gold); background: #FFF8E1; padding: 2px 9px; border-radius: 50px; margin-top: 5px; }
+
+    /* Salary snapshot */
+    .salary-snapshot { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-top: 8px; }
+    .salary-snapshot-title { font-size: 0.875rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .salary-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .salary-row:last-child { margin-bottom: 0; }
+    .salary-row-label { font-size: 0.8125rem; color: var(--text-muted); min-width: 130px; }
+    .salary-bar { flex: 1; height: 8px; background: var(--bg); border-radius: 50px; overflow: hidden; }
+    .salary-bar-fill { height: 100%; border-radius: 50px; background: var(--navy); }
+    .salary-row-value { font-size: 0.8125rem; font-weight: 700; color: var(--navy); min-width: 80px; text-align: right; }
+
+    @media (max-width: 640px) {
+      .paths-row { grid-template-columns: 1fr; }
+      .tab-btn { padding: 12px 14px; font-size: 0.8125rem; }
+      .question-card { padding: 22px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="index.html" class="navbar-logo">
+          <img src="../AJ Website 2026/Logo/Asha Jyothi Logo.jpg" alt="Asha Jyothi">
+          <div>
+            <div class="navbar-logo-name">Asha Jyothi</div>
+            <div class="navbar-logo-sub">EDGE Portal</div>
+          </div>
+        </a>
+        <a href="index.html" class="nav-back">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          Dashboard
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <div class="page-header-inner">
+        <p class="page-label">Explore Careers</p>
+        <h1 class="page-title">Career Guidance &amp; Pathways</h1>
+        <p class="page-subtitle">Take the career interest quiz to find your best-fit path, then explore where your course can take you — step by step.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab Navigation -->
+  <div class="tab-nav">
+    <div class="container">
+      <div class="tab-nav-inner" role="tablist">
+        <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-quiz" onclick="switchTab('quiz', this)">
+          <span class="tab-icon">🧭</span> Career Interest Quiz
+        </button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-pathways" onclick="switchTab('pathways', this)">
+          <span class="tab-icon">🗺️</span> Career Pathways
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ QUIZ PANEL ═══════════ -->
+  <div class="tab-panel active" id="panel-quiz" role="tabpanel">
+    <div class="container">
+      <div class="quiz-wrap">
+
+        <!-- Intro -->
+        <div id="quizIntro">
+          <div class="quiz-intro">
+            <div class="quiz-intro-icon">🧭</div>
+            <h2 class="quiz-intro-title">Find your best career match</h2>
+            <p class="quiz-intro-sub">10 simple questions about what you enjoy and how you like to work. Your answers will suggest career paths that suit you. There are no right or wrong answers.</p>
+            <button class="quiz-start-btn" onclick="startQuiz()">
+              Start the quiz
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Quiz Questions -->
+        <div id="quizQuestions" style="display:none;">
+          <div class="quiz-progress">
+            <div class="progress-info">
+              <span class="progress-label" id="progressLabel">Question 1 of 10</span>
+              <span class="progress-num" id="progressNum">10%</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" id="progressFill" style="width:10%;"></div>
+            </div>
+          </div>
+
+          <div class="question-card">
+            <div class="question-number" id="questionNumber">Question 1</div>
+            <div class="question-text" id="questionText"></div>
+            <div class="options-grid" id="optionsGrid"></div>
+          </div>
+
+          <div class="quiz-nav">
+            <button class="quiz-back-btn" id="backBtn" onclick="prevQuestion()" style="visibility:hidden;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+              Back
+            </button>
+            <button class="quiz-next-btn" id="nextBtn" onclick="nextQuestion()">
+              Next
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="quiz-results" id="quizResults">
+          <div class="results-header">
+            <div class="results-icon">🎯</div>
+            <h2 class="results-title">Your career matches</h2>
+            <p class="results-sub" id="resultsSub">Based on your answers, here are the paths that suit you best</p>
+          </div>
+          <div class="results-grid" id="resultsGrid"></div>
+          <div class="results-cta">
+            <button class="btn-retake" onclick="retakeQuiz()">Retake quiz</button>
+            <button class="btn-pathways" onclick="switchTab('pathways', document.querySelectorAll('.tab-btn')[1])">
+              Explore career pathways
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ PATHWAYS PANEL ═══════════ -->
+  <div class="tab-panel" id="panel-pathways" role="tabpanel">
+    <div class="container">
+
+      <div class="pathway-section">
+        <div class="pathway-course-selector">
+          <div class="pathway-course-selector-label">Select a course to see its career pathway:</div>
+          <div class="pathway-tabs" role="tablist" id="pathwayTabs">
+            <button class="ptab active" onclick="showPathway('tailoring', this)">Tailoring</button>
+            <button class="ptab" onclick="showPathway('beautician', this)">Beautician</button>
+            <button class="ptab" onclick="showPathway('computer', this)">Computer</button>
+            <button class="ptab" onclick="showPathway('electrical', this)">Electrical</button>
+            <button class="ptab" onclick="showPathway('paramedics', this)">Paramedics</button>
+            <button class="ptab" onclick="showPathway('nursing', this)">Nursing Assistant</button>
+            <button class="ptab" onclick="showPathway('preschool', this)">Pre-Primary Teaching</button>
+          </div>
+        </div>
+
+        <!-- Tailoring Pathway -->
+        <div class="pathway-content active" id="pathway-tailoring">
+          <div class="pathway-header">
+            <h2 class="pathway-title">✂️ Tailoring Career Pathway</h2>
+            <p class="pathway-intro">Tailoring graduates have two clear routes — joining the garment industry as an employee or building your own tailoring business at home or in a boutique. Both are realistic within 2–3 years of completing your course.</p>
+          </div>
+          <div class="paths-row">
+            <div class="path-col">
+              <div class="path-col-label employment">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+                Employment Path
+              </div>
+              <div class="timeline">
+                <div class="timeline-step">
+                  <div class="step-dot-wrap"><div class="step-dot done">✓</div></div>
+                  <div class="step-body">
+                    <div class="step-stage">Now</div>
+                    <div class="step-title">Complete Tailoring Course</div>
+                    <div class="step-note">Basic or Advance — you receive your Asha Jyothi certificate recognised by the Intermediate Board.</div>
+                  </div>
+                </div>
+                <div class="timeline-step">
+                  <div class="step-dot-wrap"><div class="step-dot">1</div></div>
+                  <div class="step-body">
+                    <div class="step-stage">0–6 months</div>
+                    <div class="step-title">Tailoring Assistant / Factory Operator</div>
+                    <div class="step-salary">₹8,000 – ₹12,000/month</div>
+                    <div class="step-note">Join a garment factory or tailoring unit. Learn production speed and quality standards.</div>
+                    <div class="step-time">⏱ Fresher-eligible</div>
+                  </div>
+                </div>
+                <div class="timeline-step">
+                  <div class="step-dot-wrap"><div class="step-dot">2</div></div>
+                  <div class="step-body">
+                    <div class="step-stage">1–2 years</div>
+                    <div class="step-title">Senior Tailor / Pattern Maker</div>
+                    <div class="step-salary">₹13,000 – ₹20,000/month</div>
+                    <div class="step-note">Handle complex cuts, train junior staff, and take on pattern-making responsibilities.</div>
+                  </div>
+                </div>
+                <div class="timeline-step">
+                  <div class="step-dot-wrap"><div class="step-dot goal">★</div></div>
+                  <div class="step-body">
+                    <div class="step-stage">3–5 years</div>
+                    <div class="step-title">Master Tailor / Boutique Supervisor</div>
+                    <div class="step-salary">₹20,000 – ₹35,000/month</div>
+                    <div class="step-note">Run a production team or manage tailoring operations for a boutique.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="path-col">
+              <div class="path-col-label business">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>
+                Self-Employment Path
+              </div>
+              <div class="timeline">
+                <div class="timeline-step">
+                  <div class="step-dot-wrap"><div class="step-dot done">✓</div></div>
+                  <div class="step-body">
+                    <div class="step-stage">Now</div>
+                    <div class="step-title">Complete Tailoring Course</div>
+                    <div class="step-note">Advance course adds embroidery, fabric painting and design skills — valuable for boutique clients.</div>
+                  </div>
+                </div>
+                <div class="timeline-step">
+                  <div class="step-dot-wrap"><div class="step-dot">1</div></div>
+                  <div class="step-body">
+                    <div class="step-stage">0–3 months</div>
+                    <div class="step-title">Start Home-Based Stitching</div>
+                    <div class="step-salary">₹3,000 – ₹8,000/month (growing)</div>
+                    <div class="step-note">Take orders from neighbours, family and WhatsApp. Build a portfolio of 5–10 pieces to show new clients.</div>
+                    <div class="step-time">⏱ Start immediately</div>
+                  </div>
+                </div>
+                <div class="timeline-step">
+                  <div class="step-dot-wrap"><div class="step-dot">2</div></div>
+                  <div class="step-body">
+                    <div class="step-stage">6 months – 2 years</div>
+                    <div class="step-title">Established Home Boutique</div>
+                    <div class="step-salary">₹10,000 – ₹25,000/month</div>
+                    <div class="step-note">Specialise — bridal blouses, school uniforms, or designer alterations. Regular client base via Instagram and WhatsApp.</div>
+                  </div>
+                </div>
+                <div class="timeline-step">
+                  <div class="step-dot-wrap"><div class="step-dot goal">★</div></div>
+                  <div class="step-body">
+                    <div class="step-stage">3–5 years</div>
+                    <div class="step-title">Boutique Owner</div>
+                    <div class="step-salary">₹25,000 – ₹60,000+/month</div>
+                    <div class="step-note">Open your own shop, hire assistants, take bulk orders from local businesses and event organisers.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="salary-snapshot">
+            <div class="salary-snapshot-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+              Typical salary progression
+            </div>
+            <div class="salary-row"><div class="salary-row-label">Fresher (0–6 months)</div><div class="salary-bar"><div class="salary-bar-fill" style="width:25%;"></div></div><div class="salary-row-value">₹8–12k</div></div>
+            <div class="salary-row"><div class="salary-row-label">After 1 year</div><div class="salary-bar"><div class="salary-bar-fill" style="width:42%;"></div></div><div class="salary-row-value">₹13–20k</div></div>
+            <div class="salary-row"><div class="salary-row-label">After 3 years</div><div class="salary-bar"><div class="salary-bar-fill" style="width:70%;"></div></div><div class="salary-row-value">₹20–35k</div></div>
+            <div class="salary-row"><div class="salary-row-label">Own business (est.)</div><div class="salary-bar"><div class="salary-bar-fill" style="width:90%; background:var(--gold);"></div></div><div class="salary-row-value">₹25–60k+</div></div>
+          </div>
+        </div>
+
+        <!-- Beautician Pathway -->
+        <div class="pathway-content" id="pathway-beautician">
+          <div class="pathway-header">
+            <h2 class="pathway-title">💄 Beautician Career Pathway</h2>
+            <p class="pathway-intro">Beauticians have one of the strongest self-employment opportunities of any course. Many graduates start earning within weeks. Salaried salon work is also widely available and lets you build skills with a steady income first.</p>
+          </div>
+          <div class="paths-row">
+            <div class="path-col">
+              <div class="path-col-label employment">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+                Employment Path
+              </div>
+              <div class="timeline">
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot done">✓</div></div><div class="step-body"><div class="step-stage">Now</div><div class="step-title">Complete Beautician Course</div><div class="step-note">Basic covers threading to bridal makeup. Advance adds facials, hair treatments and haircuts.</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot">1</div></div><div class="step-body"><div class="step-stage">0–6 months</div><div class="step-title">Salon Assistant</div><div class="step-salary">₹7,000 – ₹11,000/month</div><div class="step-note">Assist senior beauticians, handle basic services independently, and build client confidence.</div><div class="step-time">⏱ Fresher-eligible</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot">2</div></div><div class="step-body"><div class="step-stage">1–2 years</div><div class="step-title">Beautician (Independent)</div><div class="step-salary">₹12,000 – ₹20,000/month</div><div class="step-note">Handle your own client book, specials services like bridal packages, and earn on commission.</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot goal">★</div></div><div class="step-body"><div class="step-stage">3–5 years</div><div class="step-title">Senior Stylist / Parlour Manager</div><div class="step-salary">₹18,000 – ₹30,000/month</div><div class="step-note">Manage junior staff, drive bookings, and oversee parlour operations. Or open your own outlet.</div></div></div>
+              </div>
+            </div>
+            <div class="path-col">
+              <div class="path-col-label business">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>
+                Self-Employment Path
+              </div>
+              <div class="timeline">
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot done">✓</div></div><div class="step-body"><div class="step-stage">Now</div><div class="step-title">Complete Beautician Course</div><div class="step-note">Advance course recommended before going independent — adds high-value services.</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot">1</div></div><div class="step-body"><div class="step-stage">0–3 months</div><div class="step-title">Home Service / Freelance</div><div class="step-salary">₹400 – ₹700/day</div><div class="step-note">Take home-visit bookings through WhatsApp and referrals. Low startup cost — mainly your kit.</div><div class="step-time">⏱ Start immediately</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot">2</div></div><div class="step-body"><div class="step-stage">6 months – 2 years</div><div class="step-title">Regular Client Base</div><div class="step-salary">₹12,000 – ₹25,000/month</div><div class="step-note">Regulars, bridal bookings, festivals. Promote via Instagram and local WhatsApp groups.</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot goal">★</div></div><div class="step-body"><div class="step-stage">3–5 years</div><div class="step-title">Beauty Parlour Owner</div><div class="step-salary">₹25,000 – ₹60,000+/month</div><div class="step-note">Open your own parlour, hire assistants, run festive and bridal packages.</div></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="salary-snapshot">
+            <div class="salary-snapshot-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>Typical salary progression</div>
+            <div class="salary-row"><div class="salary-row-label">Fresher (salon)</div><div class="salary-bar"><div class="salary-bar-fill" style="width:23%;"></div></div><div class="salary-row-value">₹7–11k</div></div>
+            <div class="salary-row"><div class="salary-row-label">After 1 year</div><div class="salary-bar"><div class="salary-bar-fill" style="width:40%;"></div></div><div class="salary-row-value">₹12–20k</div></div>
+            <div class="salary-row"><div class="salary-row-label">After 3 years</div><div class="salary-bar"><div class="salary-bar-fill" style="width:60%;"></div></div><div class="salary-row-value">₹18–30k</div></div>
+            <div class="salary-row"><div class="salary-row-label">Own parlour</div><div class="salary-bar"><div class="salary-bar-fill" style="width:90%; background:var(--gold);"></div></div><div class="salary-row-value">₹25–60k+</div></div>
+          </div>
+        </div>
+
+        <!-- Computer Pathway -->
+        <div class="pathway-content" id="pathway-computer">
+          <div class="pathway-header">
+            <h2 class="pathway-title">💻 Computer Career Pathway</h2>
+            <p class="pathway-intro">Computer graduates have the widest range of office and administrative roles available to them. Tally graduates in particular are in consistent demand across small businesses. Career progression into accounting, administration and data management is well-defined.</p>
+          </div>
+          <div class="paths-row">
+            <div class="path-col">
+              <div class="path-col-label employment">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+                Office / Admin Path
+              </div>
+              <div class="timeline">
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot done">✓</div></div><div class="step-body"><div class="step-stage">Now</div><div class="step-title">Complete Computer Course</div><div class="step-note">Basic, DTP, Tally, or Data Entry. Each opens different doors — see below.</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot">1</div></div><div class="step-body"><div class="step-stage">0–6 months</div><div class="step-title">Computer Operator / Data Entry / DTP Operator</div><div class="step-salary">₹8,000 – ₹14,000/month</div><div class="step-note">Entry office roles using Word, Excel, Tally, or design software depending on your course.</div><div class="step-time">⏱ Fresher-eligible</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot">2</div></div><div class="step-body"><div class="step-stage">1–2 years</div><div class="step-title">Office Administrator / Junior Accountant</div><div class="step-salary">₹14,000 – ₹22,000/month</div><div class="step-note">Handle GST filing, payroll, or office coordination. Tally graduates can add GST certification to advance faster.</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot goal">★</div></div><div class="step-body"><div class="step-stage">3–5 years</div><div class="step-title">Senior Accountant / Office Manager</div><div class="step-salary">₹22,000 – ₹40,000/month</div><div class="step-note">Manage teams, oversee accounts, or move into government sector data entry roles.</div></div></div>
+              </div>
+            </div>
+            <div class="path-col">
+              <div class="path-col-label business" style="background:#E3F2FD; color:#1565C0;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>
+                DTP / Freelance Path
+              </div>
+              <div class="timeline">
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot done">✓</div></div><div class="step-body"><div class="step-stage">Now</div><div class="step-title">Complete Computer DTP Course</div><div class="step-note">CorelDraw, Photoshop, PageMaker — tools that open freelance design work immediately.</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot">1</div></div><div class="step-body"><div class="step-stage">0–6 months</div><div class="step-title">Freelance Visiting Card / Banner Design</div><div class="step-salary">₹500 – ₹1,500/order</div><div class="step-note">Take design orders from local shops, events and individuals. Share work on WhatsApp Business.</div><div class="step-time">⏱ Start immediately</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot">2</div></div><div class="step-body"><div class="step-stage">6 months – 2 years</div><div class="step-title">Established Freelance Designer</div><div class="step-salary">₹10,000 – ₹20,000/month</div><div class="step-note">Wedding invitations, social media graphics, local business branding. Build a portfolio.</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot goal">★</div></div><div class="step-body"><div class="step-stage">2–4 years</div><div class="step-title">Own Print / Design Studio</div><div class="step-salary">₹20,000 – ₹50,000/month</div><div class="step-note">Partner with a printer, take bulk orders, hire an assistant.</div></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="salary-snapshot">
+            <div class="salary-snapshot-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>Typical salary progression</div>
+            <div class="salary-row"><div class="salary-row-label">Fresher</div><div class="salary-bar"><div class="salary-bar-fill" style="width:27%;"></div></div><div class="salary-row-value">₹8–14k</div></div>
+            <div class="salary-row"><div class="salary-row-label">After 1 year</div><div class="salary-bar"><div class="salary-bar-fill" style="width:46%;"></div></div><div class="salary-row-value">₹14–22k</div></div>
+            <div class="salary-row"><div class="salary-row-label">After 3 years</div><div class="salary-bar"><div class="salary-bar-fill" style="width:75%;"></div></div><div class="salary-row-value">₹22–40k</div></div>
+            <div class="salary-row"><div class="salary-row-label">DTP freelance</div><div class="salary-bar"><div class="salary-bar-fill" style="width:65%; background:var(--gold);"></div></div><div class="salary-row-value">₹20–50k</div></div>
+          </div>
+        </div>
+
+        <!-- Electrical Pathway -->
+        <div class="pathway-content" id="pathway-electrical">
+          <div class="pathway-header">
+            <h2 class="pathway-title">⚡ Electrical &amp; Trade Career Pathway</h2>
+            <p class="pathway-intro">Electrical and appliance repair graduates are in strong and growing demand. With additional licensing, experienced electricians can become independent contractors earning significantly above average. Home Appliance Repair graduates can become service technicians very quickly.</p>
+          </div>
+          <div class="paths-row">
+            <div class="path-col">
+              <div class="path-col-label employment">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+                Electrician Path
+              </div>
+              <div class="timeline">
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot done">✓</div></div><div class="step-body"><div class="step-stage">Now</div><div class="step-title">Complete Electrical &amp; Electronics Course</div><div class="step-note">Covers household wiring, circuits, basic appliance repair and safety fundamentals.</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot">1</div></div><div class="step-body"><div class="step-stage">0–6 months</div><div class="step-title">Electrical Helper / Apprentice</div><div class="step-salary">₹8,000 – ₹11,000/month</div><div class="step-note">Work alongside licensed electricians on domestic and commercial wiring projects. Learn on site.</div><div class="step-time">⏱ Fresher-eligible</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot">2</div></div><div class="step-body"><div class="step-stage">1–3 years</div><div class="step-title">Electrician (Licensed)</div><div class="step-salary">₹15,000 – ₹25,000/month</div><div class="step-note">Obtain wireman licence from State Electricity Board. Handle independent wiring jobs and panel installations.</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot goal">★</div></div><div class="step-body"><div class="step-stage">3–5 years</div><div class="step-title">Electrical Contractor</div><div class="step-salary">₹25,000 – ₹60,000+/month</div><div class="step-note">Bid for commercial contracts, manage a small crew, handle apartment and office wiring projects.</div></div></div>
+              </div>
+            </div>
+            <div class="path-col">
+              <div class="path-col-label business">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>
+                Appliance Repair Path
+              </div>
+              <div class="timeline">
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot done">✓</div></div><div class="step-body"><div class="step-stage">Now</div><div class="step-title">Complete Home Appliance Repair Course</div><div class="step-note">Specialises in refrigerators, ACs, washing machines — high-demand repair services.</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot">1</div></div><div class="step-body"><div class="step-stage">0–6 months</div><div class="step-title">Appliance Technician Trainee</div><div class="step-salary">₹9,000 – ₹13,000/month</div><div class="step-note">Join a service centre or AC company. Handle customer callouts with a senior technician.</div><div class="step-time">⏱ Fresher-eligible</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot">2</div></div><div class="step-body"><div class="step-stage">1–2 years</div><div class="step-title">Independent Repair Technician</div><div class="step-salary">₹15,000 – ₹30,000/month</div><div class="step-note">Handle solo customer calls, earn ₹200–600 per job. Register on Urban Company or similar platforms.</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot goal">★</div></div><div class="step-body"><div class="step-stage">3–5 years</div><div class="step-title">Own Repair Business / Service Franchise</div><div class="step-salary">₹30,000 – ₹70,000+/month</div><div class="step-note">Open a repair shop, get authorised service centre status, hire junior technicians.</div></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="salary-snapshot">
+            <div class="salary-snapshot-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>Typical salary progression</div>
+            <div class="salary-row"><div class="salary-row-label">Fresher helper</div><div class="salary-bar"><div class="salary-bar-fill" style="width:26%;"></div></div><div class="salary-row-value">₹8–11k</div></div>
+            <div class="salary-row"><div class="salary-row-label">Licensed electrician</div><div class="salary-bar"><div class="salary-bar-fill" style="width:50%;"></div></div><div class="salary-row-value">₹15–25k</div></div>
+            <div class="salary-row"><div class="salary-row-label">Contractor (3–5 yrs)</div><div class="salary-bar"><div class="salary-bar-fill" style="width:85%;"></div></div><div class="salary-row-value">₹25–60k+</div></div>
+            <div class="salary-row"><div class="salary-row-label">Appliance business</div><div class="salary-bar"><div class="salary-bar-fill" style="width:95%; background:var(--gold);"></div></div><div class="salary-row-value">₹30–70k+</div></div>
+          </div>
+        </div>
+
+        <!-- Paramedics Pathway -->
+        <div class="pathway-content" id="pathway-paramedics">
+          <div class="pathway-header">
+            <h2 class="pathway-title">🔬 Medical Lab Career Pathway</h2>
+            <p class="pathway-intro">Phlebotomy and Pharmacy graduates enter the growing healthcare sector. Diagnostic labs are expanding rapidly across Hyderabad, and trained phlebotomists are consistently in demand. Further certification significantly increases earning potential.</p>
+          </div>
+          <div class="paths-row">
+            <div class="path-col">
+              <div class="path-col-label employment">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+                Lab / Diagnostics Path
+              </div>
+              <div class="timeline">
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot done">✓</div></div><div class="step-body"><div class="step-stage">Now</div><div class="step-title">Complete Phlebotomy Course</div><div class="step-note">Requires 12th BiPC. Covers sample collection, labelling, basic diagnostic procedures.</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot">1</div></div><div class="step-body"><div class="step-stage">0–6 months</div><div class="step-title">Sample Collection Technician</div><div class="step-salary">₹11,000 – ₹16,000/month</div><div class="step-note">Diagnostic lab or hospital collection centre. Handle blood and sample collection for patients.</div><div class="step-time">⏱ Fresher-eligible</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot">2</div></div><div class="step-body"><div class="step-stage">1–3 years</div><div class="step-title">Lab Assistant / Senior Technician</div><div class="step-salary">₹16,000 – ₹25,000/month</div><div class="step-note">Operate lab equipment, process samples, handle reports. Additional DMLT certification recommended.</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot goal">★</div></div><div class="step-body"><div class="step-stage">3–5 years</div><div class="step-title">Lab Supervisor / Senior Technologist</div><div class="step-salary">₹25,000 – ₹40,000/month</div><div class="step-note">Manage lab operations, train junior staff, liaise with doctors on results.</div></div></div>
+              </div>
+            </div>
+            <div class="path-col">
+              <div class="path-col-label employment" style="background:#E0F7FA; color:#006064;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+                Pharmacy Path
+              </div>
+              <div class="timeline">
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot done">✓</div></div><div class="step-body"><div class="step-stage">Now</div><div class="step-title">Complete Pharmacy Assistant Course</div><div class="step-note">Covers medicine identification, dispensing, inventory and basic billing.</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot">1</div></div><div class="step-body"><div class="step-stage">0–6 months</div><div class="step-title">Pharmacy Shop Assistant</div><div class="step-salary">₹9,000 – ₹13,000/month</div><div class="step-note">Assist in dispensing, manage stock, handle OTC sales at a neighbourhood or hospital pharmacy.</div><div class="step-time">⏱ Fresher-eligible</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot">2</div></div><div class="step-body"><div class="step-stage">1–3 years</div><div class="step-title">Senior Pharmacy Assistant</div><div class="step-salary">₹13,000 – ₹20,000/month</div><div class="step-note">Handle prescriptions, manage supplier relationships, oversee stock and expiry control.</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot goal">★</div></div><div class="step-body"><div class="step-stage">3–5 years</div><div class="step-title">Pharmacy Manager / D.Pharm</div><div class="step-salary">₹20,000 – ₹35,000/month</div><div class="step-note">D.Pharm qualification unlocks independent pharmacy operation and significantly higher pay.</div></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="salary-snapshot">
+            <div class="salary-snapshot-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>Typical salary progression</div>
+            <div class="salary-row"><div class="salary-row-label">Fresher lab / pharmacy</div><div class="salary-bar"><div class="salary-bar-fill" style="width:30%;"></div></div><div class="salary-row-value">₹9–16k</div></div>
+            <div class="salary-row"><div class="salary-row-label">After 1–2 years</div><div class="salary-bar"><div class="salary-bar-fill" style="width:52%;"></div></div><div class="salary-row-value">₹16–25k</div></div>
+            <div class="salary-row"><div class="salary-row-label">With DMLT / D.Pharm</div><div class="salary-bar"><div class="salary-bar-fill" style="width:80%;"></div></div><div class="salary-row-value">₹25–40k</div></div>
+          </div>
+        </div>
+
+        <!-- Nursing Pathway -->
+        <div class="pathway-content" id="pathway-nursing">
+          <div class="pathway-header">
+            <h2 class="pathway-title">🏥 Nursing Assistant Career Pathway</h2>
+            <p class="pathway-intro">Nursing Assistants (10th Pass eligible) enter the healthcare system at an entry level and are in steady demand across government and private hospitals. This pathway has clear progression and is one of the most respected vocational routes available.</p>
+          </div>
+          <div class="paths-row">
+            <div class="path-col" style="grid-column: 1 / -1; max-width: 520px;">
+              <div class="path-col-label employment">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+                Healthcare Employment Path
+              </div>
+              <div class="timeline">
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot done">✓</div></div><div class="step-body"><div class="step-stage">Now</div><div class="step-title">Complete Nursing Assistant Course</div><div class="step-note">10th Pass eligible. Covers patient care, vitals monitoring, nursing procedures and drug administration.</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot">1</div></div><div class="step-body"><div class="step-stage">0–6 months</div><div class="step-title">Healthcare / Nursing Assistant</div><div class="step-salary">₹10,000 – ₹14,000/month</div><div class="step-note">Ward assistance, vitals monitoring, patient care support at govt or private hospitals. Day and night shifts.</div><div class="step-time">⏱ Fresher-eligible · 10th Pass</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot">2</div></div><div class="step-body"><div class="step-stage">1–3 years</div><div class="step-title">Experienced Care Assistant</div><div class="step-salary">₹15,000 – ₹22,000/month</div><div class="step-note">Handle more complex care responsibilities, assist in procedures, become a trusted team member.</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot">3</div></div><div class="step-body"><div class="step-stage">3–5 years</div><div class="step-title">Senior Care Assistant / Team Leader</div><div class="step-salary">₹22,000 – ₹32,000/month</div><div class="step-note">Train new assistants, co-ordinate ward schedules, work in specialised wards (ICU, OT).</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot goal">★</div></div><div class="step-body"><div class="step-stage">5+ years (with further study)</div><div class="step-title">Registered Nurse (GNM / B.Sc Nursing)</div><div class="step-salary">₹30,000 – ₹55,000/month</div><div class="step-note">Completing a GNM or B.Sc Nursing programme significantly increases responsibilities and salary. Government hospital roles are available.</div></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="salary-snapshot">
+            <div class="salary-snapshot-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>Typical salary progression</div>
+            <div class="salary-row"><div class="salary-row-label">Fresher assistant</div><div class="salary-bar"><div class="salary-bar-fill" style="width:28%;"></div></div><div class="salary-row-value">₹10–14k</div></div>
+            <div class="salary-row"><div class="salary-row-label">After 2–3 years</div><div class="salary-bar"><div class="salary-bar-fill" style="width:55%;"></div></div><div class="salary-row-value">₹22–32k</div></div>
+            <div class="salary-row"><div class="salary-row-label">With GNM / B.Sc Nursing</div><div class="salary-bar"><div class="salary-bar-fill" style="width:85%; background:var(--gold);"></div></div><div class="salary-row-value">₹30–55k</div></div>
+          </div>
+        </div>
+
+        <!-- Pre-Primary Teaching Pathway -->
+        <div class="pathway-content" id="pathway-preschool">
+          <div class="pathway-header">
+            <h2 class="pathway-title">🎒 Pre-Primary Teaching Career Pathway</h2>
+            <p class="pathway-intro">Pre-primary teaching is one of the most family-friendly career options — school hours, no evening work, and genuine job satisfaction. Graduates work in playschools, Anganwadis and private schools. Further qualifications (B.Ed, D.El.Ed) open government school opportunities.</p>
+          </div>
+          <div class="paths-row">
+            <div class="path-col" style="grid-column: 1 / -1; max-width: 520px;">
+              <div class="path-col-label employment">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+                Teaching Path
+              </div>
+              <div class="timeline">
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot done">✓</div></div><div class="step-body"><div class="step-stage">Now</div><div class="step-title">Complete Pre-Primary Teachers Training</div><div class="step-note">10-month course. Covers child development, classroom management, Montessori and activity-based teaching.</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot">1</div></div><div class="step-body"><div class="step-stage">0–6 months</div><div class="step-title">Pre-Primary Teacher (Playschool / Anganwadi)</div><div class="step-salary">₹10,000 – ₹15,000/month</div><div class="step-note">Teach Nursery or LKG. School hours only (8am–1:30pm). Government Anganwadi roles also available.</div><div class="step-time">⏱ Fresher-eligible · School hours</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot">2</div></div><div class="step-body"><div class="step-stage">1–3 years</div><div class="step-title">Class Teacher (UKG / Class 1)</div><div class="step-salary">₹15,000 – ₹22,000/month</div><div class="step-note">Take on higher classes, coordinate with parents, mentor new teachers. Build your reputation within the school.</div></div></div>
+                <div class="timeline-step"><div class="step-dot-wrap"><div class="step-dot goal">★</div></div><div class="step-body"><div class="step-stage">3–5 years (with D.El.Ed / B.Ed)</div><div class="step-title">Government School Teacher</div><div class="step-salary">₹28,000 – ₹50,000+/month</div><div class="step-note">D.El.Ed or B.Ed qualification makes you eligible for government primary school teacher posts through TET/DSC examinations. Significant pay and job security.</div></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="salary-snapshot">
+            <div class="salary-snapshot-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>Typical salary progression</div>
+            <div class="salary-row"><div class="salary-row-label">Fresher playschool</div><div class="salary-bar"><div class="salary-bar-fill" style="width:30%;"></div></div><div class="salary-row-value">₹10–15k</div></div>
+            <div class="salary-row"><div class="salary-row-label">After 2 years</div><div class="salary-bar"><div class="salary-bar-fill" style="width:55%;"></div></div><div class="salary-row-value">₹15–22k</div></div>
+            <div class="salary-row"><div class="salary-row-label">Govt school (B.Ed/D.El.Ed)</div><div class="salary-bar"><div class="salary-bar-fill" style="width:95%; background:var(--gold);"></div></div><div class="salary-row-value">₹28–50k+</div></div>
+          </div>
+        </div>
+
+      </div><!-- end pathway-section -->
+    </div>
+  </div><!-- end pathways panel -->
+
+  <footer style="background:var(--navy-dark);padding:24px 0;margin-top:8px;">
+    <div class="container" style="text-align:center;">
+      <p style="font-size:0.8125rem;color:rgba(255,255,255,0.4);">
+        Asha Jyothi EST EDGE Portal &nbsp;·&nbsp;
+        <a href="index.html" style="color:rgba(255,255,255,0.6);">Dashboard</a>
+      </p>
+    </div>
+  </footer>
+
+<script>
+  // ═══════════════════════════════════
+  //  QUIZ DATA
+  // ═══════════════════════════════════
+  const QUESTIONS = [
+    {
+      text: "What kind of work do you enjoy most?",
+      options: [
+        { emoji: "✂️", label: "Creating or making things with my hands", scores: { tailoring: 3, beautician: 1 } },
+        { emoji: "🤝", label: "Helping and taking care of people", scores: { paramedics: 3, nursing: 3, preschool: 2 } },
+        { emoji: "💻", label: "Working on a computer or with numbers", scores: { computer: 3 } },
+        { emoji: "🔧", label: "Fixing things or understanding how machines work", scores: { electrical: 3 } },
+      ]
+    },
+    {
+      text: "Which work setting appeals to you most?",
+      options: [
+        { emoji: "🏠", label: "A home, boutique or salon environment", scores: { tailoring: 2, beautician: 3 } },
+        { emoji: "🏥", label: "A hospital, clinic or healthcare facility", scores: { nursing: 3, paramedics: 3 } },
+        { emoji: "🏢", label: "An office or computer lab", scores: { computer: 3, english: 2 } },
+        { emoji: "🔌", label: "A workshop, site or customer homes", scores: { electrical: 3 } },
+      ]
+    },
+    {
+      text: "What is your main goal after completing your course?",
+      options: [
+        { emoji: "💼", label: "Get a stable salaried job as soon as possible", scores: { nursing: 2, computer: 2, paramedics: 2 } },
+        { emoji: "🏪", label: "Start my own business or work independently", scores: { tailoring: 3, beautician: 3, electrical: 2 } },
+        { emoji: "📚", label: "Gain experience and study further later", scores: { nursing: 2, preschool: 2, paramedics: 2 } },
+        { emoji: "👨‍👩‍👧", label: "Earn while staying close to home and family", scores: { tailoring: 2, beautician: 2, preschool: 3 } },
+      ]
+    },
+    {
+      text: "How do you feel about working directly with customers or the public?",
+      options: [
+        { emoji: "😊", label: "I love interacting with people — it energises me", scores: { beautician: 3, english: 3, preschool: 2 } },
+        { emoji: "👍", label: "I don't mind it — I'm friendly when needed", scores: { computer: 1, nursing: 2, electrical: 1 } },
+        { emoji: "🙏", label: "I prefer to focus on my work behind the scenes", scores: { tailoring: 3, computer: 2 } },
+        { emoji: "🛍️", label: "I want to build my own client base over time", scores: { tailoring: 2, beautician: 2, electrical: 2 } },
+      ]
+    },
+    {
+      text: "Which phrase best describes you?",
+      options: [
+        { emoji: "🎨", label: "Creative and detail-oriented", scores: { tailoring: 3, beautician: 2, computer: 1 } },
+        { emoji: "💗", label: "Caring, patient and calm under pressure", scores: { nursing: 3, paramedics: 2, preschool: 3 } },
+        { emoji: "📋", label: "Organised, reliable and good with numbers", scores: { computer: 3, english: 2 } },
+        { emoji: "🔩", label: "Logical, practical and good at problem-solving", scores: { electrical: 3 } },
+      ]
+    },
+    {
+      text: "How do you feel about working shifts or irregular hours?",
+      options: [
+        { emoji: "🌙", label: "Fine — I'm flexible and can work evenings or nights", scores: { nursing: 3, electrical: 2 } },
+        { emoji: "⏰", label: "I prefer regular, fixed hours", scores: { computer: 2, english: 2 } },
+        { emoji: "🌅", label: "I want school hours — morning to early afternoon only", scores: { preschool: 3 } },
+        { emoji: "📅", label: "I want to set my own hours eventually", scores: { tailoring: 2, beautician: 2, electrical: 1 } },
+      ]
+    },
+    {
+      text: "How important is it to you to be your own boss one day?",
+      options: [
+        { emoji: "🚀", label: "Very important — I want to run my own business", scores: { tailoring: 3, beautician: 3, electrical: 2 } },
+        { emoji: "🌱", label: "Somewhat — maybe after gaining experience first", scores: { tailoring: 1, beautician: 1, electrical: 1 } },
+        { emoji: "🏦", label: "Not important — I want a stable employer and steady pay", scores: { nursing: 2, computer: 2, paramedics: 2 } },
+        { emoji: "🎓", label: "I want to advance through further qualifications", scores: { nursing: 2, paramedics: 2, preschool: 3 } },
+      ]
+    },
+    {
+      text: "Which of these activities have you enjoyed or feel confident about?",
+      options: [
+        { emoji: "🪡", label: "Sewing, embroidery, or working with fabric and design", scores: { tailoring: 3 } },
+        { emoji: "💅", label: "Hairstyling, makeup, skin care or beauty treatments", scores: { beautician: 3 } },
+        { emoji: "🖥️", label: "Typing, using computers, or working with data and accounts", scores: { computer: 3 } },
+        { emoji: "🔬", label: "Science, health topics, or helping sick or injured people", scores: { nursing: 2, paramedics: 3 } },
+      ]
+    },
+    {
+      text: "What do you value most in a career?",
+      options: [
+        { emoji: "💰", label: "Good income and financial independence", scores: { electrical: 2, tailoring: 1, beautician: 1 } },
+        { emoji: "❤️", label: "Making a difference — helping people who need it", scores: { nursing: 3, paramedics: 2, preschool: 3 } },
+        { emoji: "🌟", label: "Creative expression and recognition for my work", scores: { tailoring: 3, beautician: 2 } },
+        { emoji: "🏠", label: "Stability and the ability to work near home", scores: { computer: 2, english: 2, preschool: 2 } },
+      ]
+    },
+    {
+      text: "Where would you like to be in 5 years?",
+      options: [
+        { emoji: "🏪", label: "Running my own tailoring, beauty or repair business", scores: { tailoring: 3, beautician: 3, electrical: 3 } },
+        { emoji: "🏥", label: "Working as a healthcare professional in a hospital", scores: { nursing: 3, paramedics: 3 } },
+        { emoji: "🏢", label: "In a good office role or my own accounting/design work", scores: { computer: 3, english: 2 } },
+        { emoji: "🎒", label: "Teaching in a school or running my own coaching centre", scores: { preschool: 3, english: 2 } },
+      ]
+    },
+  ];
+
+  const CAREER_INFO = {
+    tailoring: {
+      name: "Tailoring & Fashion",
+      emoji: "✂️",
+      careers: "Tailoring Assistant, Boutique Tailor, Maggam Specialist, Home Boutique Owner",
+      pathway: "tailoring"
+    },
+    beautician: {
+      name: "Beauty & Wellness",
+      emoji: "💄",
+      careers: "Salon Assistant, Beautician, Bridal Specialist, Beauty Parlour Owner",
+      pathway: "beautician"
+    },
+    computer: {
+      name: "Computer & Office",
+      emoji: "💻",
+      careers: "Computer Operator, Data Entry, Tally Accountant, DTP Designer",
+      pathway: "computer"
+    },
+    electrical: {
+      name: "Electrical & Repairs",
+      emoji: "⚡",
+      careers: "Electrical Helper, Licensed Electrician, Appliance Technician, Contractor",
+      pathway: "electrical"
+    },
+    nursing: {
+      name: "Nursing & Patient Care",
+      emoji: "🏥",
+      careers: "Nursing Assistant, Healthcare Assistant, Ward Care Staff",
+      pathway: "nursing"
+    },
+    paramedics: {
+      name: "Medical Lab & Pharmacy",
+      emoji: "🔬",
+      careers: "Phlebotomy Technician, Lab Assistant, Pharmacy Assistant",
+      pathway: "paramedics"
+    },
+    preschool: {
+      name: "Pre-Primary Teaching",
+      emoji: "🎒",
+      careers: "Playschool Teacher, Anganwadi Worker, Primary School Teacher (with B.Ed)",
+      pathway: "preschool"
+    },
+    english: {
+      name: "Office & Communication",
+      emoji: "💬",
+      careers: "Receptionist, Front Office, Office Administrator, Customer Service",
+      pathway: "computer"
+    }
+  };
+
+  let currentQ = 0;
+  let answers = {};
+  let scores = {};
+
+  function startQuiz() {
+    document.getElementById('quizIntro').style.display = 'none';
+    document.getElementById('quizQuestions').style.display = 'block';
+    scores = {};
+    answers = {};
+    renderQuestion(0);
+  }
+
+  function renderQuestion(index) {
+    currentQ = index;
+    const q = QUESTIONS[index];
+    const total = QUESTIONS.length;
+    const pct = Math.round(((index + 1) / total) * 100);
+
+    document.getElementById('progressLabel').textContent = `Question ${index + 1} of ${total}`;
+    document.getElementById('progressNum').textContent = pct + '%';
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('questionNumber').textContent = `Question ${index + 1}`;
+    document.getElementById('questionText').textContent = q.text;
+
+    const grid = document.getElementById('optionsGrid');
+    grid.innerHTML = '';
+    q.options.forEach((opt, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'option-btn' + (answers[index] === i ? ' selected' : '');
+      btn.setAttribute('aria-pressed', answers[index] === i ? 'true' : 'false');
+      btn.innerHTML = `<div class="option-dot"></div><span class="option-emoji">${opt.emoji}</span><span>${opt.label}</span>`;
+      btn.onclick = () => selectOption(i);
+      grid.appendChild(btn);
+    });
+
+    document.getElementById('backBtn').style.visibility = index === 0 ? 'hidden' : 'visible';
+    const nextBtn = document.getElementById('nextBtn');
+    nextBtn.textContent = index === total - 1 ? 'See my results' : 'Next';
+    nextBtn.innerHTML = index === total - 1
+      ? 'See my results <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>'
+      : 'Next <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+    updateNextBtn();
+  }
+
+  function selectOption(i) {
+    answers[currentQ] = i;
+    document.querySelectorAll('.option-btn').forEach((btn, idx) => {
+      btn.classList.toggle('selected', idx === i);
+      btn.setAttribute('aria-pressed', idx === i ? 'true' : 'false');
+    });
+    updateNextBtn();
+  }
+
+  function updateNextBtn() {
+    const btn = document.getElementById('nextBtn');
+    btn.classList.toggle('enabled', answers[currentQ] !== undefined);
+  }
+
+  function nextQuestion() {
+    if (answers[currentQ] === undefined) return;
+    const opt = QUESTIONS[currentQ].options[answers[currentQ]];
+    Object.entries(opt.scores).forEach(([cat, pts]) => {
+      scores[cat] = (scores[cat] || 0) + pts;
+    });
+    if (currentQ < QUESTIONS.length - 1) {
+      renderQuestion(currentQ + 1);
+    } else {
+      showResults();
+    }
+  }
+
+  function prevQuestion() {
+    if (currentQ > 0) {
+      const prevOpt = QUESTIONS[currentQ - 1].options[answers[currentQ - 1]];
+      if (prevOpt) {
+        Object.entries(prevOpt.scores).forEach(([cat, pts]) => {
+          scores[cat] = Math.max(0, (scores[cat] || 0) - pts);
+        });
+      }
+      renderQuestion(currentQ - 1);
+    }
+  }
+
+  function showResults() {
+    document.getElementById('quizQuestions').style.display = 'none';
+    const resultsEl = document.getElementById('quizResults');
+    resultsEl.style.display = 'block';
+
+    const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+    const maxScore = sorted[0]?.[1] || 1;
+    const top3 = sorted.slice(0, 3).filter(([, s]) => s > 0);
+
+    const grid = document.getElementById('resultsGrid');
+    grid.innerHTML = '';
+    top3.forEach(([cat, score], idx) => {
+      const info = CAREER_INFO[cat];
+      if (!info) return;
+      const pct = Math.round((score / (QUESTIONS.length * 3)) * 100);
+      const rank = idx + 1;
+      grid.innerHTML += `
+        <div class="result-card ${rank === 1 ? 'top' : ''}">
+          <div class="result-card-header">
+            <div class="result-rank rank-${rank}">${rank}</div>
+            <div class="result-name">${info.emoji} ${info.name}</div>
+            <div class="result-match">${pct}% match</div>
+          </div>
+          <div class="result-bar-bg"><div class="result-bar-fill" style="width:${pct}%;"></div></div>
+          <div class="result-careers"><strong>Possible careers:</strong> ${info.careers}</div>
+          <a class="result-action-link" onclick="switchTab('pathways', document.querySelectorAll('.tab-btn')[1]); setTimeout(()=>showPathway('${info.pathway}', null), 50);" href="#">
+            View ${info.name} pathway
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>`;
+    });
+
+    if (top3[0]) {
+      localStorage.setItem('aj_quiz_result', top3[0][0]);
+    }
+  }
+
+  function retakeQuiz() {
+    document.getElementById('quizResults').style.display = 'none';
+    document.getElementById('quizIntro').style.display = 'block';
+    scores = {}; answers = {};
+  }
+
+  // ═══════════════════════════════════
+  //  TAB SWITCHING
+  // ═══════════════════════════════════
+  function switchTab(id, btn) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+    document.getElementById('panel-' + id).classList.add('active');
+    if (btn) { btn.classList.add('active'); btn.setAttribute('aria-selected', 'true'); }
+  }
+
+  // ═══════════════════════════════════
+  //  PATHWAY SWITCHING
+  // ═══════════════════════════════════
+  function showPathway(id, btn) {
+    document.querySelectorAll('.pathway-content').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.ptab').forEach(b => b.classList.remove('active'));
+    const el = document.getElementById('pathway-' + id);
+    if (el) el.classList.add('active');
+    if (btn) btn.classList.add('active');
+    else {
+      document.querySelectorAll('.ptab').forEach(b => {
+        if (b.getAttribute('onclick')?.includes("'" + id + "'")) b.classList.add('active');
+      });
+    }
+  }
+
+  // ═══════════════════════════════════
+  //  INIT — personalise from saved course
+  // ═══════════════════════════════════
+  function init() {
+    const COURSE_TO_PATHWAY = {
+      'tailoring-basic': 'tailoring', 'tailoring-advance': 'tailoring', 'maggam': 'tailoring',
+      'beautician-basic': 'beautician', 'beautician-advance': 'beautician',
+      'computer-basic': 'computer', 'computer-dtp': 'computer', 'computer-tally': 'computer', 'data-entry': 'computer',
+      'electrical': 'electrical', 'appliance-repair': 'electrical',
+      'nursing': 'nursing',
+      'phlebotomy': 'paramedics', 'pharmacy': 'paramedics',
+      'pre-primary': 'preschool',
+      'english-1': 'computer', 'english-2': 'computer'
+    };
+    const saved = localStorage.getItem('aj_course');
+    if (saved && COURSE_TO_PATHWAY[saved]) {
+      const pw = COURSE_TO_PATHWAY[saved];
+      showPathway(pw, null);
+    }
+  }
+
+  init();
+</script>
+</body>
+</html>
