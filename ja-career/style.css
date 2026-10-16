@@ -21,7 +21,7 @@ body {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
-.view.hidden { display: none; }
+.view.hidden { display: none !important; }
 .view.active { display: block; }
 
 /* ── TOP BAR ── */
