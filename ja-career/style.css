@@ -704,11 +704,38 @@ body {
   border-left: 4px solid #2b6cb0;
 }
 
+.step-school-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 3px;
+}
+
 .step-school-name {
   font-size: 0.88rem;
   font-weight: 700;
   color: #1a365d;
-  margin-bottom: 3px;
+}
+
+.step-school-fee {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #2b6cb0;
+  background: #ebf4ff;
+  border-radius: 999px;
+  padding: 2px 10px;
+  white-space: nowrap;
+}
+.step-school-fee.is-free { color: #276749; background: #f0fff4; }
+
+.step-fee-note {
+  font-size: 0.75rem;
+  color: #a0aec0;
+  font-style: italic;
+  margin-top: 10px;
+  line-height: 1.45;
 }
 
 .step-school-detail {

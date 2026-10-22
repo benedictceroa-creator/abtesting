@@ -329,46 +329,46 @@ const SCHOOLS = {
   PCM: {
     note: 'Look for junior colleges with integrated JEE/EAMCET coaching alongside board preparation. Most Hyderabad coaching colleges offer MPC (Maths, Physics, Chemistry) integrated programmes.',
     list: [
-      { name: 'Sri Chaitanya Junior College', detail: 'Largest network in Telangana. Separate IIT and Engineering batches. Strong JEE Main & Advanced record.' },
-      { name: 'Narayana Junior College', detail: 'Multiple Hyderabad campuses. Renowned for JEE & EAMCET results. Intensive revision programmes.' },
-      { name: 'Bhashyam Junior College', detail: 'Competitive coaching with TSBIE board curriculum. Good Maths and Physics faculty.' },
-      { name: 'FIITJEE / Resonance Hyderabad', detail: 'Coaching-integrated junior college model. Best suited for serious JEE Main/Advanced aspirants.' },
-      { name: 'Sri Gayatri Junior College', detail: 'Strong TS EAMCET record. Multiple Hyderabad locations. Affordable fees.' },
-      { name: 'Government Model Junior Colleges (TSBIE)', detail: 'Free education. MPC stream. Excellent science faculty at major campuses — good EAMCET results.' },
-      { name: 'Kendriya Vidyalaya (KV) Schools, Hyderabad', detail: 'CBSE board. Multiple KV campuses. Solid academic foundation for JEE preparation.' },
+      { name: 'Sri Chaitanya Junior College', fee: '₹1.2–3.5 L', detail: 'Largest network in Telangana. Separate IIT and Engineering batches. Strong JEE Main & Advanced record.' },
+      { name: 'Narayana Junior College', fee: '₹1.2–3.5 L', detail: 'Multiple Hyderabad campuses. Renowned for JEE & EAMCET results. Intensive revision programmes.' },
+      { name: 'Bhashyam Junior College', fee: '₹80K–2 L', detail: 'Competitive coaching with TSBIE board curriculum. Good Maths and Physics faculty.' },
+      { name: 'FIITJEE / Resonance Hyderabad', fee: '₹2–4 L', detail: 'Coaching-integrated junior college model. Best suited for serious JEE Main/Advanced aspirants.' },
+      { name: 'Sri Gayatri Junior College', fee: '₹60K–1.5 L', detail: 'Strong TS EAMCET record. Multiple Hyderabad locations. Affordable fees.' },
+      { name: 'Government Model Junior Colleges (TSBIE)', fee: 'Free', detail: 'Free education. MPC stream. Excellent science faculty at major campuses — good EAMCET results.' },
+      { name: 'Kendriya Vidyalaya (KV) Schools, Hyderabad', fee: '₹3K–10K', detail: 'CBSE board. Multiple KV campuses. Solid academic foundation for JEE preparation.' },
     ]
   },
   PCB: {
     note: 'NEET demands deep Biology and Chemistry mastery. Choose a college that balances TSBIE board preparation with NEET coaching — they are different syllabi.',
     list: [
-      { name: 'Sri Chaitanya Junior College (Medical)', detail: 'Dedicated medical batches with NEET-focused curriculum. Largest NEET coaching network in Telangana.' },
-      { name: 'Narayana Junior College (Medical)', detail: 'Consistently strong NEET results. Dedicated MBiPC (Maths, Biology, Physics, Chemistry) batches.' },
-      { name: 'Aakash Institute + Partner Junior Colleges', detail: 'National NEET leader. Hyderabad study centre. Some tie-ups with local junior colleges.' },
-      { name: 'Bhashyam Junior College', detail: 'BiPC stream with good laboratory facilities and NEET preparation.' },
-      { name: 'NTR Memorial Junior Colleges', detail: 'Government supported. MBiPC stream. Affordable and academically solid.' },
-      { name: 'Government Junior Colleges (TSBIE)', detail: 'Free education. BiPC stream widely available. Dedicated Biology labs at major campuses.' },
+      { name: 'Sri Chaitanya Junior College (Medical)', fee: '₹1.5–3.5 L', detail: 'Dedicated medical batches with NEET-focused curriculum. Largest NEET coaching network in Telangana.' },
+      { name: 'Narayana Junior College (Medical)', fee: '₹1.5–3.5 L', detail: 'Consistently strong NEET results. Dedicated MBiPC (Maths, Biology, Physics, Chemistry) batches.' },
+      { name: 'Aakash Institute + Partner Junior Colleges', fee: '₹1.5–3 L', detail: 'National NEET leader. Hyderabad study centre. Some tie-ups with local junior colleges.' },
+      { name: 'Bhashyam Junior College', fee: '₹80K–2 L', detail: 'BiPC stream with good laboratory facilities and NEET preparation.' },
+      { name: 'NTR Memorial Junior Colleges', fee: '₹40K–1 L', detail: 'Government supported. MBiPC stream. Affordable and academically solid.' },
+      { name: 'Government Junior Colleges (TSBIE)', fee: 'Free', detail: 'Free education. BiPC stream widely available. Dedicated Biology labs at major campuses.' },
     ]
   },
   COM: {
     note: 'Strong Accountancy and Business Studies are the foundation for CA, MBA, and banking careers. Choose a college known for its commerce department.',
     list: [
-      { name: 'Badruka Junior College of Commerce', detail: 'Hyderabad\'s oldest commerce college (est. 1952). Strong B.Com and CA Foundation pathway.' },
-      { name: 'St. Francis Junior College', detail: 'Reputed English-medium college. Commerce stream with strong Accountancy faculty.' },
-      { name: 'Loyola Academy Junior College', detail: 'Jesuit institution. Strong academic culture. Commerce with Maths option available.' },
-      { name: 'Aurora Junior College', detail: 'Popular commerce college in Hyderabad. Good industry connections.' },
-      { name: 'Don Bosco Junior College', detail: 'Commerce and Science streams. Known for discipline and consistent board results.' },
-      { name: 'Government Junior Colleges (TSBIE)', detail: 'Free. CEC (Commerce, Economics, Civics) stream at many Hyderabad government campuses.' },
+      { name: 'Badruka Junior College of Commerce', fee: '₹30K–60K', detail: 'Hyderabad\'s oldest commerce college (est. 1952). Strong B.Com and CA Foundation pathway.' },
+      { name: 'St. Francis Junior College', fee: '₹30K–60K', detail: 'Reputed English-medium college. Commerce stream with strong Accountancy faculty.' },
+      { name: 'Loyola Academy Junior College', fee: '₹30K–60K', detail: 'Jesuit institution. Strong academic culture. Commerce with Maths option available.' },
+      { name: 'Aurora Junior College', fee: '₹40K–80K', detail: 'Popular commerce college in Hyderabad. Good industry connections.' },
+      { name: 'Don Bosco Junior College', fee: '₹30K–60K', detail: 'Commerce and Science streams. Known for discipline and consistent board results.' },
+      { name: 'Government Junior Colleges (TSBIE)', fee: 'Free', detail: 'Free. CEC (Commerce, Economics, Civics) stream at many Hyderabad government campuses.' },
     ]
   },
   ARTS: {
     note: 'Strong English, History, and Political Science are essential for CLAT, UPSC, Journalism, and Humanities degrees. Build your reading habit from Day 1.',
     list: [
-      { name: 'Loyola Academy Junior College', detail: 'Excellent Humanities department. Strong English, History, and Economics faculty. Good debate culture.' },
-      { name: 'St. Francis Junior College', detail: 'HEC (History, Economics, Civics) and MEC streams. Good language and communication training.' },
-      { name: 'Osmania University-affiliated Junior Colleges', detail: 'Wide selection across Hyderabad. Strong Humanities faculty at established campuses.' },
-      { name: 'The Hyderabad Public School (HPS, Begumpet)', detail: 'One of India\'s most prestigious schools. Humanities stream. Strong debate and writing culture.' },
-      { name: 'Government Junior Colleges (TSBIE)', detail: 'Free. HEC (History, Economics, Civics) widely available across Hyderabad government campuses.' },
-      { name: 'Chirec / Oakridge / Gitanjali International', detail: 'CBSE/IGCSE Humanities track. Good for students also considering UK or US universities.' },
+      { name: 'Loyola Academy Junior College', fee: '₹30K–60K', detail: 'Excellent Humanities department. Strong English, History, and Economics faculty. Good debate culture.' },
+      { name: 'St. Francis Junior College', fee: '₹30K–60K', detail: 'HEC (History, Economics, Civics) and MEC streams. Good language and communication training.' },
+      { name: 'Osmania University-affiliated Junior Colleges', fee: '₹15K–40K', detail: 'Wide selection across Hyderabad. Strong Humanities faculty at established campuses.' },
+      { name: 'The Hyderabad Public School (HPS, Begumpet)', fee: '₹2.5–4 L', detail: 'One of India\'s most prestigious schools. Humanities stream. Strong debate and writing culture.' },
+      { name: 'Government Junior Colleges (TSBIE)', fee: 'Free', detail: 'Free. HEC (History, Economics, Civics) widely available across Hyderabad government campuses.' },
+      { name: 'Chirec / Oakridge / Gitanjali International', fee: '₹3–8 L+', detail: 'CBSE/IGCSE Humanities track. Good for students also considering UK or US universities.' },
     ]
   }
 };
@@ -775,10 +775,14 @@ function renderStep1() {
     <div class="step-schools">
       ${schools.list.map(s => `
         <div class="step-school-item">
-          <div class="step-school-name">${s.name}</div>
+          <div class="step-school-head">
+            <div class="step-school-name">${s.name}</div>
+            <div class="step-school-fee${s.fee === 'Free' ? ' is-free' : ''}">${s.fee === 'Free' ? 'Free' : `${s.fee} / yr`}</div>
+          </div>
           <div class="step-school-detail">${s.detail}</div>
         </div>`).join('')}
-    </div>`;
+    </div>
+    <p class="step-fee-note">Fees are approximate annual tuition and vary by campus, batch (e.g. IIT/NEET integrated) and year. Hostel, transport, books and uniform are extra. Always confirm with the college directly.</p>`;
 }
 
 function renderStep2() {
