@@ -237,13 +237,14 @@
   <section class="section" id="about">
     <div class="container">
       <div class="two-col">
-        <div class="two-col-img reveal">
-          <img
-            src="Images/about.jpg"
-            alt="Asha Garment Factory — production floor with skilled craftspeople, Hyderabad"
-            width="900" height="506"
-            loading="lazy"
-          />
+        <div class="two-col-img two-col-video reveal">
+          <video
+            src="Videos/agf-intro.mp4"
+            poster="Images/agf-intro-poster.jpg"
+            width="720" height="1280"
+            autoplay muted loop playsinline controls preload="metadata"
+            aria-label="Asha Garment Factory intro — from design sketch to export packing"
+          ></video>
         </div>
         <div class="two-col-text reveal reveal-delay-1">
           <span class="section-label">About Asha Garment Factory</span>
@@ -413,19 +414,39 @@
         <h2>Manufacturing with a Mission</h2>
       </div>
 
-      <div class="reveal" style="max-width:760px;margin:2rem auto 0;">
-        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:1.25rem;">
-          <li style="padding:1.5rem;background:rgba(255,255,255,0.05);border:1px solid rgba(201,169,110,0.25);border-radius:12px;color:rgba(255,255,255,0.85);line-height:1.7;">
-            <strong style="color:var(--gold);display:block;margin-bottom:0.4rem;">We treat our Employees differently</strong>
+      <ul class="impact-points reveal">
+        <li class="impact-point">
+          <div class="impact-point-img">
+            <img
+              src="Images/gallery-team.jpg"
+              alt="Members of the Asha Garment Factory team sharing a break together"
+              width="1000" height="666"
+              loading="lazy"
+            />
+          </div>
+          <div class="impact-point-body">
+            <strong>We treat our Employees differently</strong>
             Fair wages, fixed working hours, safe working conditions. We manufacture the way your customers want your brand to manufacture.
-          </li>
-          <li style="padding:1.5rem;background:rgba(255,255,255,0.05);border:1px solid rgba(201,169,110,0.25);border-radius:12px;color:rgba(255,255,255,0.85);line-height:1.7;">
-            <strong style="color:var(--gold);display:block;margin-bottom:0.4rem;">Our profits support a Mission</strong>
+          </div>
+        </li>
+        <li class="impact-point">
+          <div class="impact-point-img">
+            <img
+              src="Images/mission-children.jpg"
+              alt="Smiling children supported by Asha's mission in India"
+              width="1200" height="900"
+              loading="lazy"
+            />
+          </div>
+          <div class="impact-point-body">
+            <strong>Our profits support a Mission</strong>
             Our profits go directly toward educating underprivileged children and empowering single mothers in India — providing them with schools, vocational skills, dignity and a pathway to independence.
-          </li>
-        </ul>
+          </div>
+        </li>
+      </ul>
 
-        <p style="margin-top:2rem;color:rgba(255,255,255,0.75);font-size:1.05rem;line-height:1.8;">
+      <div class="reveal" style="max-width:760px;margin:0 auto;text-align:center;">
+        <p style="margin-top:2.5rem;color:rgba(255,255,255,0.75);font-size:1.05rem;line-height:1.8;">
           This isn't a marketing claim — it's who we are. When you manufacture with AGF, you join a supply chain that genuinely transforms lives. That's a story your customers will be proud to hear.
         </p>
 
@@ -452,12 +473,12 @@
       <div class="factory-gallery reveal">
         <div class="factory-gallery-item">
           <img
-            src="Images/gallery-floor.jpg"
-            alt="Production floor at Asha Garment Factory, Hyderabad"
-            width="800" height="450"
+            src="Images/gallery-embroidery.jpg"
+            alt="Multi-head embroidery machine stitching a design at Asha Garment Factory"
+            width="1080" height="675"
             loading="lazy"
           />
-          <div class="factory-gallery-caption">Production Floor</div>
+          <div class="factory-gallery-caption">In-House Embroidery</div>
         </div>
         <div class="factory-gallery-item reveal-delay-1">
           <img
@@ -470,9 +491,9 @@
         </div>
         <div class="factory-gallery-item reveal-delay-2">
           <img
-            src="Images/gallery-workers.jpg"
-            alt="Skilled craftspeople at work — Asha Garment Factory"
-            width="800" height="450"
+            src="Images/gallery-sewing-line.jpg"
+            alt="Skilled craftspeople at work on the sewing line — Asha Garment Factory"
+            width="1000" height="666"
             loading="lazy"
           />
           <div class="factory-gallery-caption">Skilled Craftspeople</div>
