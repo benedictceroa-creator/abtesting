@@ -557,6 +557,40 @@
           </div>
         </div>
 
+        <div class="testimonial-card reveal-delay-2">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            "We have been working with Asha Garment Factory for more than two years and have been very satisfied
+            with the experience. From sampling our designs to packaging and shipping, we receive end-to-end
+            servicing from them. Their standard is pretty high and we have faced no significant issues in
+            production. Beulah is easy to work with and always open to feedback and improving processes where
+            need be. Would easily recommend them to anyone looking to outsource their garment production needs."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">🤝</div>
+            <div>
+              <div class="author-name">Kadambini</div>
+              <div class="author-role">Brand Partner · 2+ Years</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal-delay-3">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            "I received the box of oversized shirts yesterday. I've only had a chance to pull out two of them,
+            but from the two I pulled out, they are beautiful! I cannot believe the quality of this fabric and
+            the sewing. Thank you so much."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">👕</div>
+            <div>
+              <div class="author-name">Verified Client</div>
+              <div class="author-role">Oversized Shirts Order</div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1048,12 +1082,10 @@
     const successMsg = document.getElementById('form-success');
 
     /*
-     * TO CONNECT THE FORM:
-     * 1. Create a Google Apps Script web app (Extensions → Apps Script in a Sheet)
-     * 2. Deploy it and paste the URL below as SCRIPT_URL
-     * The script should doPost(e) → parse JSON → append to sheet → return success
+     * TO CONNECT THE FORM: deploy google-apps-script/Code.gs as a web app
+     * (steps in google-apps-script/README.md) and paste its /exec URL below.
      */
-    const SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwElEcpKldf3kNuXworSTfBozzYf11jbozgzE2SQRuhcl1FTX9DGMVHxaXJKtxsIblaIw/exec';
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -1078,7 +1110,8 @@
             method: 'POST',
             body: JSON.stringify(payload)
           });
-          if (res.ok) {
+          const result = res.ok ? await res.json() : null;
+          if (result && result.result === 'success') {
             successMsg.textContent = '✓ Thank you! We\'ll get back to you within 24 hours.';
             successMsg.classList.add('show');
             form.reset();
