@@ -2092,6 +2092,33 @@ textarea.form-control { resize: vertical; min-height: 96px; }
   box-shadow: var(--shadow-sm);
 }
 
+.program-photo {
+  position: relative;
+  margin: 0 0 1.5rem;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  aspect-ratio: 21 / 8;
+}
+.program-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.program-photo-credit {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.6rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--r-sm);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 0.7rem;
+  line-height: 1.4;
+}
+.program-photo-credit a { color: inherit; text-decoration: underline; }
+
 .program-story-card { display: flex; flex-direction: column; gap: 1.75rem; }
 
 .program-block { display: flex; gap: 1rem; align-items: flex-start; }
@@ -2271,6 +2298,7 @@ textarea.form-control { resize: vertical; min-height: 96px; }
   .kids-impact-card { max-width: 560px; width: 100%; margin: 0 auto; }
 
   .program-grid { grid-template-columns: 1fr; }
+  .program-photo { aspect-ratio: 16 / 9; }
 
   .kids-cta { flex-direction: column; align-items: flex-start; }
 }
