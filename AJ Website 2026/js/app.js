@@ -199,7 +199,7 @@ function initEnquiryForm() {
             </p>
             <p class="status-copy">${safeMessage}</p>
             <p class="status-action">
-              You can contact Asha Jyothi directly at <a href="tel:8019680291" class="status-link">80196 80291</a> (Alwal), <a href="tel:7703466642" class="status-link">77034 66642</a> (Medchal), or <a href="tel:9949809263" class="status-link">99498 09263</a> (Ramanthapur).
+              You can contact Asha Jyothi directly at <a href="tel:8019680291" class="status-link">80196 80291</a> (Alwal), <a href="tel:7780346642" class="status-link">77803 46642</a> (Medchal), or <a href="tel:9949809263" class="status-link">99498 09263</a> (Ramanthapur).
             </p>
           </div>
         </div>

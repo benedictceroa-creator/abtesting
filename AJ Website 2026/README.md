@@ -171,7 +171,7 @@ To replace them with actual institute photographs:
 | **Find the Right Course** | Interactive guidance advisor updates matching courses dynamically based on 5 interest categories. | Verified |
 | **Form Validation** | Trims input, rejects empty required fields, enforces 10-digit Indian mobile format (`^[6-9]\d{9}$`), checks optional email format. | Verified |
 | **Demonstration Mode Notice** | Form displays an honest, non-misleading demonstration alert when no backend is configured. | Verified |
-| **Clickable Phone & Email** | All 3 campus numbers (`80196 80291`, `77034 66642`, `99498 09263`) have `tel:` links; email uses `mailto:info@ashajyothi.org.in`. | Verified |
+| **Clickable Phone & Email** | All 3 campus numbers (`80196 80291`, `77803 46642`, `99498 09263`) have `tel:` links; email uses `mailto:info@ashajyothi.org.in`. | Verified |
 | **Sticky Navigation** | Elevated header with shadow on scroll, smooth anchor navigation with sticky offset. | Verified |
 | **Mobile Drawer Menu** | Accessible hamburger button with `aria-expanded`, keyboard navigation, closes after link click or Esc key. | Verified |
 | **Back to Top Button** | Appears when scrolled down > 400px, smoothly scrolls back to top. | Verified |
@@ -187,6 +187,6 @@ To replace them with actual institute photographs:
 - **Board Recognition**: Recognized by the Intermediate Board of Telangana
 - **General Course Fee**: Courses starting from ₹750*
 - **Campus 1 (Secunderabad / Alwal)**: Phone `80196 80291`
-- **Campus 2 (Medchal)**: Phone `77034 66642`
+- **Campus 2 (Medchal)**: Phone `77803 46642`
 - **Campus 3 (Ramanthapur)**: Phone `99498 09263`
 - **Email**: `info@ashajyothi.org.in`
