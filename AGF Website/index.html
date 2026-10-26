@@ -14,6 +14,7 @@
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0f1c2e" />
 
+
   <!-- Geo -->
   <meta name="geo.region" content="IN-TG" />
   <meta name="geo.placename" content="Hyderabad, Telangana, India" />
@@ -143,16 +144,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload"
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
-    as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" as="style"
+    onload="this.onload=null;this.rel='stylesheet'" />
   <noscript>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet" />
   </noscript>
 
   <!-- Preload LCP hero — avoids layout shift on first paint -->
-  <link rel="preload" as="image" href="Images/hero.jpg"
-    imagesrcset="Images/hero-mobile.jpg 800w, Images/hero.jpg 1920w"
+  <link rel="preload" as="image" href="Images/hero.jpg" imagesrcset="Images/hero-mobile.jpg 800w, Images/hero.jpg 1920w"
     imagesizes="100vw" fetchpriority="high" />
 
   <link rel="stylesheet" href="css/styles.css?v=2026-10-25" />
@@ -193,16 +193,9 @@
   ════════════════════════════════════════ -->
   <section class="hero" id="home">
     <div class="hero-overlay"></div>
-    <img
-      class="hero-img"
-      src="Images/hero.jpg"
-      srcset="Images/hero-mobile.jpg 800w, Images/hero.jpg 1920w"
-      sizes="100vw"
-      alt="Asha Garment Factory — skilled craftspeople at sewing machines in Hyderabad, India"
-      width="1920" height="1080"
-      loading="eager"
-      fetchpriority="high"
-    />
+    <img class="hero-img" src="Images/hero.jpg" srcset="Images/hero-mobile.jpg 800w, Images/hero.jpg 1920w"
+      sizes="100vw" alt="Asha Garment Factory — skilled craftspeople at sewing machines in Hyderabad, India"
+      width="1920" height="1080" loading="eager" fetchpriority="high" />
 
     <div class="container hero-content">
       <h1>Quality Garments.<br /><span>Ethical Manufacturing.</span></h1>
@@ -238,13 +231,9 @@
     <div class="container">
       <div class="two-col">
         <div class="two-col-img two-col-video reveal">
-          <video
-            src="Videos/agf-intro.mp4"
-            poster="Images/agf-intro-poster.jpg"
-            width="720" height="1280"
-            autoplay muted loop playsinline controls preload="metadata"
-            aria-label="Asha Garment Factory intro — from design sketch to export packing"
-          ></video>
+          <video src="Videos/agf-intro.mp4" poster="Images/agf-intro-poster.jpg" width="720" height="1280" autoplay
+            muted loop playsinline controls preload="metadata"
+            aria-label="Asha Garment Factory intro — from design sketch to export packing"></video>
         </div>
         <div class="two-col-text reveal reveal-delay-1">
           <span class="section-label">About Asha Garment Factory</span>
@@ -286,30 +275,50 @@
       </div>
 
       <div class="usp-grid reveal">
+        <div class="usp-card usp-card--img">
+          <div class="usp-card-img">
+            <img src="Images/why-machinery.jpg" alt="Industrial overlock sewing machine on the production floor"
+              width="900" height="600" loading="lazy" />
+          </div>
+          <h4>Advanced Machinery</h4>
+          <p>Industrial lockstitch, overlock and multi-head embroidery machines — the equipment to deliver consistent
+            quality at production scale.</p>
+        </div>
+        <div class="usp-card usp-card--img reveal-delay-1">
+          <div class="usp-card-img">
+            <img src="Images/why-embellishment.jpg" alt="Screen printing a design onto a garment" width="900"
+              height="599" loading="lazy" />
+          </div>
+          <h4>Custom Embellishments</h4>
+          <p>Screen printing, embroidery, heat transfer and custom labels — we bring every finishing detail of your
+            brand's vision to life.</p>
+        </div>
+        <div class="usp-card usp-card--img reveal-delay-2">
+          <div class="usp-card-img">
+            <img src="Images/why-fabric.jpg" alt="Rolls of knit fabric in shades of green, blue and white" width="900"
+              height="672" loading="lazy" />
+          </div>
+          <h4>Premium Fabric Sourcing</h4>
+          <p>We partner with carefully selected premium mills to source the exact fabrics your designs demand, at
+            competitive and transparent pricing.</p>
+        </div>
         <div class="usp-card">
           <div class="usp-icon">🏭</div>
           <h4>One-Stop Shop</h4>
-          <p>Full garment production management from design and sampling to embellishment, finishing and delivery — no juggling multiple vendors.</p>
+          <p>Full garment production management from design and sampling to embellishment, finishing and delivery — no
+            juggling multiple vendors.</p>
         </div>
         <div class="usp-card reveal-delay-1">
           <div class="usp-icon">🔍</div>
           <h4>Three-Stage Quality Control</h4>
-          <p>Rigorous inspection at three stages of production — guaranteeing superior stitching, colour fastness, minimal shrinkage and a premium finish.</p>
-        </div>
-        <div class="usp-card reveal-delay-1">
-          <div class="usp-icon">🎨</div>
-          <h4>Custom Embellishments</h4>
-          <p>Screen printing, embroidery, heat transfer and custom labels — we bring every finishing detail of your brand's vision to life.</p>
+          <p>Rigorous inspection at three stages of production — guaranteeing superior stitching, colour fastness,
+            minimal shrinkage and a premium finish.</p>
         </div>
         <div class="usp-card reveal-delay-2">
-          <div class="usp-icon">🧵</div>
-          <h4>Premium Fabric Sourcing</h4>
-          <p>We partner with carefully selected premium mills to source the exact fabrics your designs demand, at competitive and transparent pricing.</p>
-        </div>
-        <div class="usp-card reveal-delay-3">
           <div class="usp-icon">✈️</div>
           <h4>Global Logistics</h4>
-          <p>Reliable export management to the USA, UK, Europe and the Middle East — we handle paperwork, packaging and shipping so you don't have to.</p>
+          <p>Reliable export management to the USA, UK, Europe and the Middle East — we handle paperwork, packaging and
+            shipping so you don't have to.</p>
         </div>
       </div>
     </div>
@@ -325,7 +334,9 @@
         <span class="section-label">Our Products</span>
         <h2>What We Manufacture</h2>
         <p style="max-width:580px;margin:0.75rem auto 1.5rem;">
-          From casual wear to lifestyle products — a full range of garment categories, made to your brand's specifications. Explore our current collections and share with your buying or design team. New styles added regularly.
+          From casual wear to lifestyle products — a full range of garment categories, made to your brand's
+          specifications. Explore our current collections and share with your buying or design team. New styles added
+          regularly.
         </p>
         <a href="#quote" class="btn btn-outline-dark">Request a Sample &rarr;</a>
       </div>
@@ -333,65 +344,52 @@
       <div class="catalogue-grid reveal">
 
         <div class="catalogue-card">
-          <a
-            href="https://www.canva.com/design/DAG3D4TLPDQ/VkXBDnOB8iusT6yvTbS6jQ/view?utm_content=DAG3D4TLPDQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h8eabecbf41"
-            class="catalogue-cover catalogue-cover--womens"
-            target="_blank" rel="noopener noreferrer" aria-label="Open Women's Collection catalogue"
-          >
-            <!-- Replace inner div with <img src="Images/catalogue-womens.jpg" alt="Women's Collection catalogue cover" width="400" height="225" loading="lazy"> once exported from Canva -->
-            <div class="catalogue-cover-placeholder">👗</div>
+          <a href="https://www.canva.com/design/DAG3D4TLPDQ/VkXBDnOB8iusT6yvTbS6jQ/view?utm_content=DAG3D4TLPDQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h8eabecbf41"
+            class="catalogue-cover catalogue-cover--womens" target="_blank" rel="noopener noreferrer"
+            aria-label="Open Women's Collection catalogue">
+            <img src="Images/catalogue-womens.webp"
+              alt="Model wearing a striped V-neck tee and wide-leg jeans from the Women's Collection" width="900"
+              height="1200" loading="lazy" />
           </a>
           <div class="catalogue-body">
             <h3>Women's Collection</h3>
-            <p>Dresses, tops, blouses and casual wear — our full women's range available for OEM and private label production.</p>
-            <a
-              href="https://www.canva.com/design/DAG3D4TLPDQ/VkXBDnOB8iusT6yvTbS6jQ/view?utm_content=DAG3D4TLPDQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h8eabecbf41"
-              class="btn btn-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >View Catalogue &rarr;</a>
+            <p>Dresses, tops, blouses and casual wear — our full women's range available for OEM and private label
+              production.</p>
+            <a href="https://www.canva.com/design/DAG3D4TLPDQ/VkXBDnOB8iusT6yvTbS6jQ/view?utm_content=DAG3D4TLPDQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h8eabecbf41"
+              class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Catalogue &rarr;</a>
           </div>
         </div>
 
         <div class="catalogue-card reveal-delay-1">
-          <a
-            href="https://www.canva.com/design/DAHCgNqdk_M/c8vtPkW5KlsTgGGctLg_lA/view?utm_content=DAHCgNqdk_M&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h5f9f22006e"
-            class="catalogue-cover catalogue-cover--mens"
-            target="_blank" rel="noopener noreferrer" aria-label="Open Men's Collection catalogue"
-          >
-            <!-- Replace inner div with <img src="Images/catalogue-mens.jpg" alt="Men's Collection catalogue cover" width="400" height="225" loading="lazy"> once exported from Canva -->
-            <div class="catalogue-cover-placeholder">👔</div>
+          <a href="https://www.canva.com/design/DAHCgNqdk_M/c8vtPkW5KlsTgGGctLg_lA/view?utm_content=DAHCgNqdk_M&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h5f9f22006e"
+            class="catalogue-cover catalogue-cover--mens" target="_blank" rel="noopener noreferrer"
+            aria-label="Open Men's Collection catalogue">
+            <img src="Images/catalogue-mens.webp"
+              alt="Model wearing a green ringer tee and stone chinos from the Men's Collection" width="900"
+              height="1200" loading="lazy" />
           </a>
           <div class="catalogue-body">
             <h3>Men's Collection</h3>
-            <p>Shirts, t-shirts, polos and trousers — quality men's wear manufactured to your brand's exact specifications.</p>
-            <a
-              href="https://www.canva.com/design/DAHCgNqdk_M/c8vtPkW5KlsTgGGctLg_lA/view?utm_content=DAHCgNqdk_M&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h5f9f22006e"
-              class="btn btn-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >View Catalogue &rarr;</a>
+            <p>Shirts, t-shirts, polos and trousers — quality men's wear manufactured to your brand's exact
+              specifications.</p>
+            <a href="https://www.canva.com/design/DAHCgNqdk_M/c8vtPkW5KlsTgGGctLg_lA/view?utm_content=DAHCgNqdk_M&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h5f9f22006e"
+              class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Catalogue &rarr;</a>
           </div>
         </div>
 
         <div class="catalogue-card reveal-delay-2">
-          <a
-            href="https://www.canva.com/design/DAG6hNsh8h4/wqu7TzjKY3IZ3xG59AR97w/view?utm_content=DAG6hNsh8h4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc64aa4626f"
-            class="catalogue-cover catalogue-cover--kids"
-            target="_blank" rel="noopener noreferrer" aria-label="Open Kids Catalogue"
-          >
-            <!-- Replace inner div with <img src="Images/catalogue-kids.jpg" alt="Kids Catalogue cover" width="400" height="225" loading="lazy"> once exported from Canva -->
-            <div class="catalogue-cover-placeholder">🧒</div>
+          <a href="https://www.canva.com/design/DAG6hNsh8h4/wqu7TzjKY3IZ3xG59AR97w/view?utm_content=DAG6hNsh8h4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc64aa4626f"
+            class="catalogue-cover catalogue-cover--kids" target="_blank" rel="noopener noreferrer"
+            aria-label="Open Kids Catalogue">
+            <img src="Images/catalogue-kids.webp"
+              alt="Child wearing a grey muslin shirt and shorts set from the Kids Catalogue" width="900" height="1200"
+              loading="lazy" />
           </a>
           <div class="catalogue-body">
             <h3>Kids Catalogue</h3>
             <p>Safe, durable and colourful children's garments — tops, bottoms, sets and school wear made with care.</p>
-            <a
-              href="https://www.canva.com/design/DAG6hNsh8h4/wqu7TzjKY3IZ3xG59AR97w/view?utm_content=DAG6hNsh8h4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc64aa4626f"
-              class="btn btn-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >View Catalogue &rarr;</a>
+            <a href="https://www.canva.com/design/DAG6hNsh8h4/wqu7TzjKY3IZ3xG59AR97w/view?utm_content=DAG6hNsh8h4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc64aa4626f"
+              class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Catalogue &rarr;</a>
           </div>
         </div>
 
@@ -417,37 +415,32 @@
       <ul class="impact-points reveal">
         <li class="impact-point">
           <div class="impact-point-img">
-            <img
-              src="Images/gallery-team.jpg"
-              alt="Members of the Asha Garment Factory team sharing a break together"
-              width="1000" height="666"
-              loading="lazy"
-            />
+            <img src="Images/gallery-team.jpg" alt="Members of the Asha Garment Factory team sharing a break together"
+              width="1000" height="666" loading="lazy" />
           </div>
           <div class="impact-point-body">
             <strong>We treat our Employees differently</strong>
-            Fair wages, fixed working hours, safe working conditions. We manufacture the way your customers want your brand to manufacture.
+            Fair wages, fixed working hours, safe working conditions. We manufacture the way your customers want your
+            brand to manufacture.
           </div>
         </li>
         <li class="impact-point">
           <div class="impact-point-img">
-            <img
-              src="Images/mission-children.jpg"
-              alt="Smiling children supported by Asha's mission in India"
-              width="1200" height="900"
-              loading="lazy"
-            />
+            <img src="Images/mission-children.jpg" alt="Smiling children supported by Asha's mission in India"
+              width="1200" height="900" loading="lazy" />
           </div>
           <div class="impact-point-body">
             <strong>Our profits support a Mission</strong>
-            Our profits go directly toward educating underprivileged children and empowering single mothers in India — providing them with schools, vocational skills, dignity and a pathway to independence.
+            Our profits go directly toward educating underprivileged children and empowering single mothers in India —
+            providing them with schools, vocational skills, dignity and a pathway to independence.
           </div>
         </li>
       </ul>
 
       <div class="reveal" style="max-width:760px;margin:0 auto;text-align:center;">
         <p style="margin-top:2.5rem;color:rgba(255,255,255,0.75);font-size:1.05rem;line-height:1.8;">
-          This isn't a marketing claim — it's who we are. When you manufacture with AGF, you join a supply chain that genuinely transforms lives. That's a story your customers will be proud to hear.
+          This isn't a marketing claim — it's who we are. When you manufacture with AGF, you join a supply chain that
+          genuinely transforms lives. That's a story your customers will be proud to hear.
         </p>
 
         <a href="#quote" class="btn btn-primary" style="margin-top:1.75rem;">Partner With Us</a>
@@ -472,39 +465,25 @@
 
       <div class="factory-gallery reveal">
         <div class="factory-gallery-item">
-          <img
-            src="Images/gallery-embroidery.jpg"
-            alt="Multi-head embroidery machine stitching a design at Asha Garment Factory"
-            width="1080" height="675"
-            loading="lazy"
-          />
+          <img src="Images/gallery-embroidery.jpg"
+            alt="Multi-head embroidery machine stitching a design at Asha Garment Factory" width="1080" height="675"
+            loading="lazy" />
           <div class="factory-gallery-caption">In-House Embroidery</div>
         </div>
         <div class="factory-gallery-item reveal-delay-1">
-          <img
-            src="Images/gallery-cutting.jpg"
-            alt="Pattern cutting and fabric layout at Asha Garment Factory"
-            width="800" height="450"
-            loading="lazy"
-          />
+          <img src="Images/gallery-cutting.jpg" alt="Pattern cutting and fabric layout at Asha Garment Factory"
+            width="800" height="450" loading="lazy" />
           <div class="factory-gallery-caption">Pattern Cutting</div>
         </div>
         <div class="factory-gallery-item reveal-delay-2">
-          <img
-            src="Images/gallery-sewing-line.jpg"
-            alt="Skilled craftspeople at work on the sewing line — Asha Garment Factory"
-            width="1000" height="666"
-            loading="lazy"
-          />
+          <img src="Images/gallery-sewing-line.jpg"
+            alt="Skilled craftspeople at work on the sewing line — Asha Garment Factory" width="1000" height="666"
+            loading="lazy" />
           <div class="factory-gallery-caption">Skilled Craftspeople</div>
         </div>
         <div class="factory-gallery-item reveal-delay-3">
-          <img
-            src="Images/gallery-machines.jpg"
-            alt="Sewing and finishing line at Asha Garment Factory"
-            width="800" height="450"
-            loading="lazy"
-          />
+          <img src="Images/gallery-machines.jpg" alt="Sewing and finishing line at Asha Garment Factory" width="800"
+            height="450" loading="lazy" />
           <div class="factory-gallery-caption">Sewing &amp; Finishing</div>
         </div>
       </div>
@@ -520,7 +499,8 @@
       <div class="section-header text-center">
         <span class="section-label">Trusted by Brands All Over the World</span>
         <h2>What Our Clients Say</h2>
-        <p style="max-width:480px;margin:0.75rem auto 0;">Real words from real brand partners who manufacture with us.</p>
+        <p style="max-width:480px;margin:0.75rem auto 0;">Real words from real brand partners who manufacture with us.
+        </p>
       </div>
 
       <div class="testimonials-grid reveal">
@@ -586,7 +566,7 @@
             <div class="author-avatar">👕</div>
             <div>
               <div class="author-name">Verified Client</div>
-              <div class="author-role">Oversized Shirts Order</div>
+              <div class="author-role">Oversized Shirts Order to Lev Apparel, USA</div>
             </div>
           </div>
         </div>
@@ -613,7 +593,8 @@
         <div class="market-card">
           <div class="market-flag">🇺🇸</div>
           <h4>United States</h4>
-          <p>Serving US ethical fashion and lifestyle brands with export-quality manufacturing and reliable logistics.</p>
+          <p>Serving US ethical fashion and lifestyle brands with export-quality manufacturing and reliable logistics.
+          </p>
         </div>
         <div class="market-card reveal-delay-1">
           <div class="market-flag">🇬🇧</div>
@@ -648,119 +629,132 @@
         </p>
       </div>
 
-      <div class="faq-list">
+      <div class="faq-layout">
+        <div class="faq-img reveal">
+          <img src="Images/faq-spool.jpg" alt="Cone of blue thread on an industrial sewing machine" width="733"
+            height="1100" loading="lazy" />
+        </div>
+        <div class="faq-list">
 
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            What is the minimum order quantity (MOQ)?
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-a">
-            <div class="faq-a-inner">
-              Our standard MOQ starts from <strong>500 pieces per style</strong> for bulk production.
-              We also accept smaller initial sample orders so you can evaluate quality before committing.
-              Contact us to discuss your specific requirements.
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              What is the minimum order quantity (MOQ)?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                Our standard MOQ starts from <strong>500 pieces per style</strong> for bulk production.
+                We also accept smaller initial sample orders so you can evaluate quality before committing.
+                Contact us to discuss your specific requirements.
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            What garment categories do you manufacture?
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-a">
-            <div class="faq-a-inner">
-              We manufacture <strong>women's wear</strong> (dresses, tops, blouses), <strong>men's wear</strong>
-              (shirts, t-shirts, polos, trousers), <strong>kids wear</strong> (tops, bottoms, sets, school uniforms),
-              and <strong>lifestyle and activewear</strong>. All categories are available as OEM or private label production.
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              What garment categories do you manufacture?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                We manufacture <strong>women's wear</strong> (dresses, tops, blouses), <strong>men's wear</strong>
+                (shirts, t-shirts, polos, trousers), <strong>kids wear</strong> (tops, bottoms, sets, school uniforms),
+                and <strong>lifestyle and activewear</strong>. All categories are available as OEM or private label
+                production.
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            How long does sampling and bulk production take?
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-a">
-            <div class="faq-a-inner">
-              Sample development takes <strong>2–4 weeks</strong> from receipt of your tech packs or reference garments.
-              Once samples are approved, bulk production lead time is <strong>6–10 weeks</strong> depending on order volume,
-              embellishments, and fabric sourcing.
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              How long does sampling and bulk production take?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                Sample development takes <strong>2–4 weeks</strong> from receipt of your tech packs or reference
+                garments.
+                Once samples are approved, bulk production lead time is <strong>6–10 weeks</strong> depending on order
+                volume,
+                embellishments, and fabric sourcing.
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            Do you offer private label and OEM manufacturing?
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-a">
-            <div class="faq-a-inner">
-              Yes — we offer complete <strong>private label and OEM manufacturing</strong>. This includes custom branding,
-              woven or printed labels, hangtags, and packaging. We work from your designs, tech packs, mood boards,
-              or reference samples.
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              Do you offer private label and OEM manufacturing?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                Yes — we offer complete <strong>private label and OEM manufacturing</strong>. This includes custom
+                branding,
+                woven or printed labels, hangtags, and packaging. We work from your designs, tech packs, mood boards,
+                or reference samples.
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            Which countries do you export to?
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-a">
-            <div class="faq-a-inner">
-              We export to the <strong>USA, UK, Switzerland, Qatar, UAE,</strong> and India. We manage all export
-              documentation, logistics, and shipping, and are open to working with brands in any country worldwide.
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              Which countries do you export to?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                We export to the <strong>USA, UK, Switzerland, Qatar, UAE,</strong> and India. We manage all export
+                documentation, logistics, and shipping, and are open to working with brands in any country worldwide.
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            How do you ensure garment quality?
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-a">
-            <div class="faq-a-inner">
-              We run a <strong>three-stage quality inspection</strong> — in-process during production, post-production,
-              and pre-shipment. We check stitching quality, colour fastness, dimensional accuracy, and overall finish.
-              Our track record with Swiss, US, and Gulf brands speaks for itself.
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              How do you ensure garment quality?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                We run a <strong>three-stage quality inspection</strong> — in-process during production,
+                post-production,
+                and pre-shipment. We check stitching quality, colour fastness, dimensional accuracy, and overall finish.
+                Our track record with Swiss, US, and Gulf brands speaks for itself.
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            Are you an ethical and sustainable manufacturer?
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-a">
-            <div class="faq-a-inner">
-              Ethical manufacturing is who we are. We pay <strong>fair wages</strong>, maintain safe working conditions,
-              and actively reduce fabric waste. All profits support orphaned children and empower single mothers across
-              India — a supply chain story your customers will value.
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              Are you an ethical and sustainable manufacturer?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                Ethical manufacturing is who we are. We pay <strong>fair wages</strong>, maintain safe working
+                conditions,
+                and actively reduce fabric waste. All profits support orphaned children and empower single mothers
+                across
+                India — a supply chain story your customers will value.
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            How do I get a quote?
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-a">
-            <div class="faq-a-inner">
-              Fill in the <a href="#quote" style="color:var(--gold);font-weight:700;">quote request form</a> below
-              or WhatsApp us directly. Share your garment category, estimated quantity, and any design references —
-              we'll respond with a tailored proposal within <strong>24 hours</strong>. No obligation.
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              How do I get a quote?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                Fill in the <a href="#quote" style="color:var(--gold);font-weight:700;">quote request form</a> below
+                or WhatsApp us directly. Share your garment category, estimated quantity, and any design references —
+                we'll respond with a tailored proposal within <strong>24 hours</strong>. No obligation.
+              </div>
             </div>
           </div>
-        </div>
 
+        </div>
       </div>
     </div>
   </section>
@@ -770,6 +764,7 @@
        CTA BANNER
   ════════════════════════════════════════ -->
   <div class="cta-banner">
+    <img class="section-bg-img" src="Images/cta-threads.jpg" alt="" width="1600" height="1066" loading="lazy" />
     <div class="container">
       <h2>Ready to Source with Confidence?</h2>
       <p>Tell us about your requirements and we'll respond within 24 hours with a tailored proposal for your brand.</p>
@@ -787,6 +782,7 @@
        QUOTE REQUEST FORM
   ════════════════════════════════════════ -->
   <section class="section section-dark" id="quote">
+    <img class="section-bg-img" src="Images/quote-embroidery.jpg" alt="" width="932" height="1400" loading="lazy" />
     <div class="container">
       <div class="two-col" style="gap:3.5rem;">
 
@@ -801,39 +797,51 @@
 
           <div style="display:flex;flex-direction:column;gap:1.4rem;">
             <div style="display:flex;align-items:flex-start;gap:1.1rem;">
-              <div style="width:44px;height:44px;background:rgba(201,169,110,0.14);border:1px solid rgba(201,169,110,0.28);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">
+              <div
+                style="width:44px;height:44px;background:rgba(201,169,110,0.14);border:1px solid rgba(201,169,110,0.28);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">
                 📧
               </div>
               <div>
-                <div style="font-size:0.76rem;color:rgba(255,255,255,0.42);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.3rem;">Email</div>
+                <div
+                  style="font-size:0.76rem;color:rgba(255,255,255,0.42);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.3rem;">
+                  Email</div>
                 <a href="mailto:ashagarmentfactory@gmail.com"
                   style="color:var(--gold);font-weight:700;font-size:1rem;">ashagarmentfactory@gmail.com</a>
               </div>
             </div>
             <div style="display:flex;align-items:flex-start;gap:1.1rem;">
-              <div style="width:44px;height:44px;background:rgba(201,169,110,0.14);border:1px solid rgba(201,169,110,0.28);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">
+              <div
+                style="width:44px;height:44px;background:rgba(201,169,110,0.14);border:1px solid rgba(201,169,110,0.28);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">
                 📸
               </div>
               <div>
-                <div style="font-size:0.76rem;color:rgba(255,255,255,0.42);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.3rem;">Instagram</div>
+                <div
+                  style="font-size:0.76rem;color:rgba(255,255,255,0.42);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.3rem;">
+                  Instagram</div>
                 <a href="https://www.instagram.com/ashagarmentfactory" target="_blank" rel="noopener noreferrer"
                   style="color:var(--gold);font-weight:700;font-size:1rem;">@ashagarmentfactory</a>
               </div>
             </div>
             <div style="display:flex;align-items:flex-start;gap:1.1rem;">
-              <div style="width:44px;height:44px;background:rgba(201,169,110,0.14);border:1px solid rgba(201,169,110,0.28);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">
+              <div
+                style="width:44px;height:44px;background:rgba(201,169,110,0.14);border:1px solid rgba(201,169,110,0.28);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">
                 📍
               </div>
               <div>
-                <div style="font-size:0.76rem;color:rgba(255,255,255,0.42);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.3rem;">Location</div>
-                <div style="color:rgba(255,255,255,0.80);font-weight:600;font-size:1rem;">Hyderabad, Telangana, India</div>
+                <div
+                  style="font-size:0.76rem;color:rgba(255,255,255,0.42);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.3rem;">
+                  Location</div>
+                <div style="color:rgba(255,255,255,0.80);font-weight:600;font-size:1rem;">Hyderabad, Telangana, India
+                </div>
               </div>
             </div>
           </div>
 
-          <div style="margin-top:2.5rem;padding:1.5rem;background:rgba(201,169,110,0.08);border:1px solid rgba(201,169,110,0.2);border-radius:var(--radius-lg);">
+          <div
+            style="margin-top:2.5rem;padding:1.5rem;background:rgba(201,169,110,0.08);border:1px solid rgba(201,169,110,0.2);border-radius:var(--radius-lg);">
             <p style="color:rgba(255,255,255,0.65);font-size:0.9rem;line-height:1.7;">
-              We typically respond within a few hours during business hours (India Standard Time). For urgent enquiries, WhatsApp is the fastest way to reach us.
+              We typically respond within a few hours during business hours (India Standard Time). For urgent enquiries,
+              WhatsApp is the fastest way to reach us.
             </p>
           </div>
         </div>
@@ -853,17 +861,20 @@
 
               <div class="form-group">
                 <label for="company">Company / Brand *</label>
-                <input type="text" id="company" name="company" placeholder="Your brand name" autocomplete="organization" required />
+                <input type="text" id="company" name="company" placeholder="Your brand name" autocomplete="organization"
+                  required />
               </div>
 
               <div class="form-group">
                 <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" inputmode="email" required />
+                <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email"
+                  inputmode="email" required />
               </div>
 
               <div class="form-group">
                 <label for="phone">WhatsApp / Phone</label>
-                <input type="tel" id="phone" name="phone" placeholder="+1 XXX XXX XXXX" autocomplete="tel" inputmode="tel" />
+                <input type="tel" id="phone" name="phone" placeholder="+1 XXX XXX XXXX" autocomplete="tel"
+                  inputmode="tel" />
               </div>
 
               <div class="form-group">
@@ -954,10 +965,13 @@
 
         <div class="footer-brand">
           <img src="Images/logo.svg" alt="Asha Garment Factory" class="footer-logo-img" />
-          <p>An ethical clothing manufacturer for global brands. Women's, men's and kids wear from Hyderabad, India — since 2011.</p>
+          <p>An ethical clothing manufacturer for global brands. Women's, men's and kids wear from Hyderabad, India —
+            since 2011.</p>
           <div class="footer-social">
-            <a href="https://www.instagram.com/ashagarmentfactory" target="_blank" rel="noopener noreferrer" title="Instagram">📸</a>
-            <a href="https://www.facebook.com/shopforasha" target="_blank" rel="noopener noreferrer" title="Facebook">📘</a>
+            <a href="https://www.instagram.com/ashagarmentfactory" target="_blank" rel="noopener noreferrer"
+              title="Instagram">📸</a>
+            <a href="https://www.facebook.com/shopforasha" target="_blank" rel="noopener noreferrer"
+              title="Facebook">📘</a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" title="LinkedIn">💼</a>
           </div>
         </div>
@@ -1025,13 +1039,8 @@
 
 
   <!-- Sticky WhatsApp button — mobile only via CSS -->
-  <a
-    href="https://wa.me/919985931288?text=Hi%2C+I%27d+like+to+enquire+about+garment+manufacturing+at+Asha+Garment+Factory."
-    class="whatsapp-float"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Chat with us on WhatsApp"
-  >💬</a>
+  <a href="https://wa.me/919985931288?text=Hi%2C+I%27d+like+to+enquire+about+garment+manufacturing+at+Asha+Garment+Factory."
+    class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">💬</a>
 
 
   <!-- ═══════════════════════════════════════
@@ -1044,7 +1053,7 @@
     window.addEventListener('scroll', onScroll, { passive: true });
 
     /* — Mobile nav toggle — */
-    const toggle   = document.getElementById('nav-toggle');
+    const toggle = document.getElementById('nav-toggle');
     const navLinks = document.getElementById('nav-links');
     toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
     document.querySelectorAll('.nav-links a').forEach(link =>
@@ -1078,7 +1087,7 @@
     });
 
     /* — Quote form submission — */
-    const form       = document.getElementById('quote-form');
+    const form = document.getElementById('quote-form');
     const successMsg = document.getElementById('form-success');
 
     /*
@@ -1131,4 +1140,5 @@
   </script>
 
 </body>
+
 </html>
