@@ -1,0 +1,33 @@
+# Asha Garment Factory — all search engines and AI answer engines welcome
+User-agent: *
+Allow: /
+
+# AI assistants / answer engines (explicitly allowed so buyers asking AI tools can find us)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://www.ashagarmentfactory.co.in/sitemap.xml

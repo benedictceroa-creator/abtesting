@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Asha Garment Factory | Ethical Garment Manufacturer India | Export to USA, UK, Europe &amp; Middle East</title>
+  <title>Ethical Garment Manufacturer in India | Asha Garment Factory</title>
   <meta name="description"
-    content="Ethical garment manufacturer in Hyderabad, India since 2011. Women's, men's and kids wear for export to USA, UK, Europe and Middle East. Request a quote today." />
+    content="OEM &amp; private label clothing manufacturer in Hyderabad, India since 2011. Women's, men's &amp; kids wear, MOQ 500 pcs, exported to the USA, UK, Europe &amp; Gulf." />
   <meta name="keywords"
     content="garment manufacturer India, clothing manufacturer export, ethical fashion manufacturer India, OEM garment manufacturer Hyderabad, private label clothing India, garment factory export USA UK Europe" />
 
@@ -14,6 +14,12 @@
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0f1c2e" />
 
+  <!-- Favicons -->
+  <link rel="icon" href="favicon.ico" sizes="48x48" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-96.png" type="image/png" sizes="96x96" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
 
   <!-- Geo -->
   <meta name="geo.region" content="IN-TG" />
@@ -39,29 +45,74 @@
     content="Ethical garment manufacturing from Hyderabad, India. Export-ready production since 2011 for global brands." />
   <meta name="twitter:image" content="https://www.ashagarmentfactory.co.in/Images/og-image.jpg" />
 
-  <!-- Structured Data: Organisation -->
+  <!-- Structured Data: Organisation, website, services & intro video (SEO + AEO) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Asha Garment Factory",
-    "url": "https://www.ashagarmentfactory.co.in",
-    "email": "ashagarmentfactory@gmail.com",
-    "logo": "https://www.ashagarmentfactory.co.in/Images/logo.svg",
-    "image": "https://www.ashagarmentfactory.co.in/Images/og-image.jpg",
-    "description": "An ethical clothing manufacturer based in Hyderabad, India, producing women's, men's and kids wear for export to USA, UK, Europe and the Middle East since 2011.",
-    "foundingDate": "2011",
-    "areaServed": ["US", "GB", "CH", "QA", "AE", "IN"],
-    "knowsAbout": ["OEM garment manufacturing", "private label clothing", "women's wear", "men's wear", "kids wear", "activewear", "export garment production"],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Hyderabad",
-      "addressRegion": "Telangana",
-      "addressCountry": "IN"
-    },
-    "sameAs": [
-      "https://www.instagram.com/ashagarmentfactory",
-      "https://www.facebook.com/shopforasha"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.ashagarmentfactory.co.in/#organization",
+        "name": "Asha Garment Factory",
+        "alternateName": "AGF",
+        "url": "https://www.ashagarmentfactory.co.in/",
+        "email": "ashagarmentfactory@gmail.com",
+        "telephone": "+91-99859-31288",
+        "logo": "https://www.ashagarmentfactory.co.in/icon-512.png",
+        "image": "https://www.ashagarmentfactory.co.in/Images/og-image.jpg",
+        "description": "An ethical OEM and private label clothing manufacturer based in Hyderabad, India, producing women's, men's and kids wear for export to the USA, UK, Europe and the Middle East since 2011.",
+        "slogan": "Quality Garments. Ethical Manufacturing.",
+        "foundingDate": "2011",
+        "areaServed": ["US", "GB", "CH", "QA", "AE", "IN"],
+        "knowsAbout": ["OEM garment manufacturing", "private label clothing", "cut and sew manufacturing", "women's wear", "men's wear", "kids wear", "school uniforms", "activewear", "embroidery", "screen printing", "ethical fashion", "export garment production"],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Hyderabad",
+          "addressRegion": "Telangana",
+          "addressCountry": "IN"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "ashagarmentfactory@gmail.com",
+          "telephone": "+91-99859-31288",
+          "areaServed": ["US", "GB", "EU", "CH", "QA", "AE", "IN"],
+          "availableLanguage": ["English"]
+        },
+        "sameAs": [
+          "https://www.instagram.com/ashagarmentfactory",
+          "https://www.facebook.com/shopforasha"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Garment Manufacturing Services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "OEM & private label women's wear manufacturing", "description": "Dresses, tops, blouses and casual wear made to your tech pack." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "OEM & private label men's wear manufacturing", "description": "Shirts, t-shirts, polos and trousers made to your specifications." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Kids wear and school uniform manufacturing", "description": "Tops, bottoms, sets and school uniforms." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Garment embellishment", "description": "Embroidery, screen printing, heat transfer and custom labels." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sample development", "description": "Samples in 2–4 weeks from tech packs or reference garments." } }
+          ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.ashagarmentfactory.co.in/#website",
+        "url": "https://www.ashagarmentfactory.co.in/",
+        "name": "Asha Garment Factory",
+        "publisher": { "@id": "https://www.ashagarmentfactory.co.in/#organization" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "VideoObject",
+        "name": "Inside Asha Garment Factory — from design sketch to export packing",
+        "description": "A 40-second look inside Asha Garment Factory in Hyderabad, India: sampling, cutting, stitching, embroidery, quality control and export packing.",
+        "thumbnailUrl": "https://www.ashagarmentfactory.co.in/Images/agf-intro-poster.jpg",
+        "contentUrl": "https://www.ashagarmentfactory.co.in/Videos/agf-intro.mp4",
+        "uploadDate": "2026-10-25",
+        "duration": "PT40S",
+        "publisher": { "@id": "https://www.ashagarmentfactory.co.in/#organization" }
+      }
     ]
   }
   </script>
@@ -114,6 +165,22 @@
       },
       {
         "@type": "Question",
+        "name": "Does Asha Garment Factory work with startups and small brands?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Bulk orders start from 500 pieces per style, and we accept smaller initial sample orders so new and growing brands can check fit and quality before committing. We can work from a full tech pack or help you develop one from sketches and reference garments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is Asha Garment Factory located?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our factory is in Hyderabad, Telangana, in southern India. We have been manufacturing there since 2011 and ship finished garments worldwide, handling export documentation and logistics for our clients."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "How does Asha Garment Factory ensure quality?",
         "acceptedAnswer": {
           "@type": "Answer",
@@ -155,7 +222,7 @@
   <link rel="preload" as="image" href="Images/hero.jpg" imagesrcset="Images/hero-mobile.jpg 800w, Images/hero.jpg 1920w"
     imagesizes="100vw" fetchpriority="high" />
 
-  <link rel="stylesheet" href="css/styles.css?v=2026-10-25" />
+  <link rel="stylesheet" href="css/styles.css?v=2026-10-28" />
 </head>
 
 <body>
@@ -181,12 +248,14 @@
 
       <a href="#quote" class="btn btn-primary nav-cta">Get a Quote</a>
 
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-controls="nav-links"
+        aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
+  <main id="main">
 
   <!-- ═══════════════════════════════════════
        HERO
@@ -198,9 +267,11 @@
       width="1920" height="1080" loading="eager" fetchpriority="high" />
 
     <div class="container hero-content">
+      <p class="hero-badge">OEM &amp; Private Label Garment Manufacturer · India</p>
       <h1>Quality Garments.<br /><span>Ethical Manufacturing.</span></h1>
       <p class="hero-sub">
-        Made in India with precision and purpose, exported to the World.
+        Women's, men's and kids wear made in Hyderabad with precision and purpose — exported to brands in the
+        USA, UK, Europe and the Middle East since 2011.
       </p>
       <div class="hero-btns">
         <a href="https://wa.me/919985931288?text=Hi%2C+I%27d+like+to+enquire+about+garment+manufacturing+at+Asha+Garment+Factory."
@@ -223,6 +294,30 @@
   </section>
 
 
+  <!-- ═══════════════════════════════════════
+       AT A GLANCE — key facts buyers (and AI search) look for first
+  ════════════════════════════════════════ -->
+  <section class="stats-strip" aria-label="Asha Garment Factory at a glance">
+    <dl class="container stats-grid">
+      <div>
+        <dt class="stat-item-label">Manufacturing since</dt>
+        <dd class="stat-item-num">2011</dd>
+      </div>
+      <div>
+        <dt class="stat-item-label">Minimum order per style</dt>
+        <dd class="stat-item-num">500 pcs</dd>
+      </div>
+      <div>
+        <dt class="stat-item-label">Sample development</dt>
+        <dd class="stat-item-num">2–4 wks</dd>
+      </div>
+      <div>
+        <dt class="stat-item-label">Quote turnaround</dt>
+        <dd class="stat-item-num">24 hrs</dd>
+      </div>
+    </dl>
+  </section>
+
 
   <!-- ═══════════════════════════════════════
        ABOUT
@@ -231,8 +326,9 @@
     <div class="container">
       <div class="two-col">
         <div class="two-col-img two-col-video reveal">
-          <video src="Videos/agf-intro.mp4" poster="Images/agf-intro-poster.jpg" width="720" height="1280" autoplay
-            muted loop playsinline controls preload="metadata"
+          <!-- Starts playing only when scrolled into view (see script) — saves ~6 MB on first load for mobile -->
+          <video id="intro-video" src="Videos/agf-intro.mp4" poster="Images/agf-intro-poster.jpg" width="720"
+            height="1280" muted loop playsinline controls preload="none"
             aria-label="Asha Garment Factory intro — from design sketch to export packing"></video>
         </div>
         <div class="two-col-text reveal reveal-delay-1">
@@ -711,6 +807,34 @@
 
           <div class="faq-item">
             <button class="faq-q" aria-expanded="false">
+              Do you work with startups and small brands?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                Yes. Bulk orders start from <strong>500 pieces per style</strong>, and we accept smaller initial
+                sample orders so new and growing brands can check fit and quality before committing. We can work
+                from a full tech pack or help you develop one from sketches and reference garments.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              Where is your factory located?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                Our factory is in <strong>Hyderabad, Telangana</strong>, in southern India. We have been manufacturing
+                there since 2011 and ship finished garments worldwide, handling export documentation and logistics
+                for our clients.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
               How do you ensure garment quality?
               <span class="faq-icon" aria-hidden="true">+</span>
             </button>
@@ -955,6 +1079,8 @@
     </div>
   </section>
 
+  </main>
+
 
   <!-- ═══════════════════════════════════════
        FOOTER
@@ -969,10 +1095,9 @@
             since 2011.</p>
           <div class="footer-social">
             <a href="https://www.instagram.com/ashagarmentfactory" target="_blank" rel="noopener noreferrer"
-              title="Instagram">📸</a>
+              title="Instagram" aria-label="Asha Garment Factory on Instagram">📸</a>
             <a href="https://www.facebook.com/shopforasha" target="_blank" rel="noopener noreferrer"
-              title="Facebook">📘</a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" title="LinkedIn">💼</a>
+              title="Facebook" aria-label="Asha Garment Factory on Facebook">📘</a>
           </div>
         </div>
 
@@ -981,7 +1106,7 @@
           <ul class="footer-links">
             <li><a href="#about">About AGF</a></li>
             <li><a href="#why-us">Why Manufacture With Us</a></li>
-            <li><a href="#process">Our Process</a></li>
+            <li><a href="#faq">Buyer FAQ</a></li>
             <li><a href="#products">Products</a></li>
             <li><a href="#impact">Our Mission</a></li>
             <li><a href="#testimonials">Client Testimonials</a></li>
@@ -1016,7 +1141,8 @@
           <div class="footer-contact-item">
             <span class="footer-contact-icon">📸</span>
             <div class="footer-contact-text">
-              <a href="https://www.instagram.com/ashagarmentfactory" target="_blank">@ashagarmentfactory</a>
+              <a href="https://www.instagram.com/ashagarmentfactory" target="_blank"
+                rel="noopener noreferrer">@ashagarmentfactory</a>
             </div>
           </div>
           <div class="footer-contact-item">
@@ -1055,10 +1181,23 @@
     /* — Mobile nav toggle — */
     const toggle = document.getElementById('nav-toggle');
     const navLinks = document.getElementById('nav-links');
-    toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    const setMenu = (open) => {
+      navLinks.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open);
+    };
+    toggle.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
     document.querySelectorAll('.nav-links a').forEach(link =>
-      link.addEventListener('click', () => navLinks.classList.remove('open'))
+      link.addEventListener('click', () => setMenu(false))
     );
+
+    /* — Intro video: play only while on screen — */
+    const introVideo = document.getElementById('intro-video');
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) introVideo.play().catch(() => { });
+        else introVideo.pause();
+      }, { threshold: 0.35 }).observe(introVideo);
+    }
 
     /* — Scroll reveal — */
     const observer = new IntersectionObserver((entries) => {

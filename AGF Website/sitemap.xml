@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://www.ashagarmentfactory.co.in/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <image:image><image:loc>https://www.ashagarmentfactory.co.in/Images/hero.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.ashagarmentfactory.co.in/Images/gallery-embroidery.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.ashagarmentfactory.co.in/Images/gallery-sewing-line.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.ashagarmentfactory.co.in/Images/gallery-cutting.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.ashagarmentfactory.co.in/Images/catalogue-womens.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.ashagarmentfactory.co.in/Images/catalogue-mens.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.ashagarmentfactory.co.in/Images/catalogue-kids.webp</image:loc></image:image>
+    <video:video>
+      <video:thumbnail_loc>https://www.ashagarmentfactory.co.in/Images/agf-intro-poster.jpg</video:thumbnail_loc>
+      <video:title>Inside Asha Garment Factory — from design sketch to export packing</video:title>
+      <video:description>A 40-second look inside Asha Garment Factory in Hyderabad, India: sampling, cutting, stitching, embroidery, quality control and export packing.</video:description>
+      <video:content_loc>https://www.ashagarmentfactory.co.in/Videos/agf-intro.mp4</video:content_loc>
+      <video:duration>40</video:duration>
+    </video:video>
+  </url>
+</urlset>
