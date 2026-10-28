@@ -14,7 +14,7 @@
       <img src="../ja-lesson-plan/logo.jpg" alt="Johns Academy" class="welcome-logo" />
       <h1 class="welcome-title">Career Compass</h1>
       <div class="welcome-tags">
-        <span class="tag">Grade 9 &amp; 10</span>
+        <span class="tag">Grades 7 &ndash; 10</span>
         <span class="tag">18 Questions</span>
         <span class="tag">~10 Minutes</span>
       </div>
@@ -27,12 +27,20 @@
         <div class="welcome-field">
           <label>Grade</label>
           <div class="welcome-radio-row">
-            <label class="welcome-radio-card" id="w-grade-9-card">
-              <input type="radio" name="welcome-grade" value="9" id="w-grade-9" />
+            <label class="welcome-radio-card">
+              <input type="radio" name="welcome-grade" value="7" />
+              <span>Grade 7</span>
+            </label>
+            <label class="welcome-radio-card">
+              <input type="radio" name="welcome-grade" value="8" />
+              <span>Grade 8</span>
+            </label>
+            <label class="welcome-radio-card">
+              <input type="radio" name="welcome-grade" value="9" />
               <span>Grade 9</span>
             </label>
-            <label class="welcome-radio-card" id="w-grade-10-card">
-              <input type="radio" name="welcome-grade" value="10" id="w-grade-10" />
+            <label class="welcome-radio-card">
+              <input type="radio" name="welcome-grade" value="10" />
               <span>Grade 10</span>
             </label>
           </div>
@@ -64,6 +72,7 @@
       <div class="quiz-card">
         <p class="quiz-q-label" id="quiz-q-label">Question 1 of 18</p>
         <h2 class="quiz-question" id="quiz-question">Loading...</h2>
+        <p class="quiz-multi-hint">You can pick more than one answer.</p>
         <div class="quiz-options" id="quiz-options"></div>
       </div>
       <div class="quiz-nav">

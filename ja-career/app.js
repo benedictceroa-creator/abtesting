@@ -21,7 +21,7 @@ const CAREERS = {
     ],
     colleges: ['IIT Hyderabad (Sangareddy)', 'BITS Pilani – Hyderabad Campus', 'IIIT Hyderabad', 'JNTU College of Engineering, Hyderabad', 'Osmania University (Engineering)', 'Vasavi College of Engineering, Hyderabad', 'Chaitanya Bharathi Institute of Technology'],
     timeline: [
-      { phase: 'Class 9–10', action: 'Build strong Maths & Science foundation. Practise NTSE and Olympiad problems. Identify a preferred branch early.' },
+      { phase: 'Class 7–10', action: 'Build strong Maths & Science foundation. Practise NTSE and Olympiad problems. Identify a preferred branch early.' },
       { phase: 'Class 11–12', action: 'PCM stream. Start JEE/EAMCET coaching early. Balance board preparation with entrance exam practice.' },
       { phase: 'After Class 12', action: 'Appear for JEE Main (Jan & April), JEE Advanced, TS EAMCET, and BITSAT. 75%+ in PCM needed for IIT/NIT.' },
       { phase: 'B.Tech (4 years)', action: 'Engineering degree in your chosen branch: Civil, Mechanical, Electrical, Chemical, or others.' },
@@ -49,7 +49,7 @@ const CAREERS = {
     ],
     colleges: ['IIIT Hyderabad — India\'s top CS institute outside IITs', 'IIT Hyderabad', 'BITS Pilani – Hyderabad Campus', 'JNTU Hyderabad (CS/IT/AI branches)', 'Osmania University (CS/IT)', 'Woxsen University, Hyderabad'],
     timeline: [
-      { phase: 'Class 9–10', action: 'Learn basic programming (Python). Explore platforms like CodeChef, HackerRank. Excel in Maths.' },
+      { phase: 'Class 7–10', action: 'Learn basic programming (Python). Explore platforms like CodeChef, HackerRank. Excel in Maths.' },
       { phase: 'Class 11–12', action: 'PCM + Computer Science. Build small projects. Start JEE/EAMCET/IIIT-H entrance prep alongside boards.' },
       { phase: 'After Class 12', action: 'Appear for JEE, EAMCET, IIIT-H UGEE, and BITSAT. Focus on B.Tech in CS, IT, or AI.' },
       { phase: 'B.Tech (4 years)', action: 'Deep CS fundamentals + internships + competitive coding + open-source projects. Build your profile.' },
@@ -76,7 +76,7 @@ const CAREERS = {
     ],
     colleges: ['Gandhi Medical College, Hyderabad (oldest in TS, est. 1846)', 'Osmania Medical College, Hyderabad', 'NIMS – Nizam\'s Institute of Medical Sciences', 'Deccan College of Medical Sciences', 'AIIMS Bibinagar (Hyderabad district)', 'MNR Medical College, Sangareddy'],
     timeline: [
-      { phase: 'Class 9–10', action: 'Master NCERT Biology, Physics, Chemistry. Practise diagram labeling and long-answer writing. NEET questions are mostly NCERT-based.' },
+      { phase: 'Class 7–10', action: 'Master NCERT Biology, Physics, Chemistry. Practise diagram labeling and long-answer writing. NEET questions are mostly NCERT-based.' },
       { phase: 'Class 11–12', action: 'PCB stream. Dedicate 3–4 hours daily to NEET prep alongside boards. Biology must be memorised thoroughly.' },
       { phase: 'After Class 12', action: 'Appear for NEET in May. Score 50%+ in PCB for eligibility. Multiple attempts allowed if needed.' },
       { phase: 'MBBS (5.5 years)', action: '4.5 years of medical education + 1 year compulsory rotatory internship in a hospital.' },
@@ -104,7 +104,7 @@ const CAREERS = {
     ],
     colleges: ['ICAI (CA — nationwide programme)', 'IIM Indore (IPM — after Class 12)', 'Osmania University — B.Com/M.Com', 'GITAM University, Hyderabad (BBA/B.Com)', 'NALSAR Business School, Hyderabad', 'Institute of Cost Accountants of India (CMA)'],
     timeline: [
-      { phase: 'Class 9–10', action: 'Follow business news, stock market basics, and everyday economics. Learn mental maths and logical reasoning.' },
+      { phase: 'Class 7–10', action: 'Follow business news, stock market basics, and everyday economics. Learn mental maths and logical reasoning.' },
       { phase: 'Class 11–12', action: 'Commerce stream. Learn Accountancy perfectly — it\'s the foundation of all finance. Consider Maths for MBA/CA preparation.' },
       { phase: 'After Class 12', action: 'Register with ICAI for CA Foundation, appear for IPM at IIMs, or join CUET for B.Com at top universities.' },
       { phase: 'College (3 years)', action: 'B.Com / BBA degree. Complete CA Intermediate exams simultaneously. Internship at a CA firm.' },
@@ -131,7 +131,7 @@ const CAREERS = {
     ],
     colleges: ['NALSAR University of Law, Hyderabad — Ranked #1 or #2 in India every year', 'Osmania University Law College', 'ICFAI Law School, Hyderabad', 'O.P. Jindal Global University, Sonipat', 'Symbiosis Law School, Pune'],
     timeline: [
-      { phase: 'Class 9–10', action: 'Read newspapers daily. Join debate club. Study History, Political Science, and Civics carefully. Develop strong English writing.' },
+      { phase: 'Class 7–10', action: 'Read newspapers daily. Join debate club. Study Social Studies carefully. Develop strong English writing.' },
       { phase: 'Class 11–12', action: 'Any stream. Start CLAT preparation 1.5–2 years before (English, Current Affairs, Legal Reasoning, Logical Reasoning, Maths).' },
       { phase: 'After Class 12', action: 'Appear for CLAT (May), AILET, LSAT, or TS LAWCET. 5-year integrated BA LLB / BBA LLB programme.' },
       { phase: '5-year LLB', action: 'BA LLB or BBA LLB at NALSAR or another NLU. Moot courts, internships at law firms and courts during holidays.' },
@@ -159,7 +159,7 @@ const CAREERS = {
     ],
     colleges: ['JNTU School of Planning & Architecture, Hyderabad', 'NIFT Hyderabad (Fashion Design)', 'NID — National Institute of Design, Ahmedabad', 'CEPT University, Ahmedabad (Architecture)', 'IIT Bombay / IIT Delhi (Industrial Design)', 'MIT Institute of Design, Pune'],
     timeline: [
-      { phase: 'Class 9–10', action: 'Practise drawing and sketching regularly. Observe architecture, logos, and design around Hyderabad with a critical eye. Join art classes.' },
+      { phase: 'Class 7–10', action: 'Practise drawing and sketching regularly. Observe architecture, logos, and design around Hyderabad with a critical eye. Join art classes.' },
       { phase: 'Class 11–12', action: 'Science PCM for Architecture (mandatory). Build a strong drawing portfolio. Begin NATA/NIFT preparation.' },
       { phase: 'After Class 12', action: 'Appear for NATA (Architecture) or NIFT/NID (Design) entrance. Score well in aptitude and drawing tests.' },
       { phase: 'College (4–5 years)', action: 'B.Arch (5 years) or B.Des (4 years). Heavy studio project workload plus internships at architecture firms.' },
@@ -187,7 +187,7 @@ const CAREERS = {
     ],
     colleges: ['Osmania University — Department of Mass Communication & Journalism (MCJ)', 'IIMC New Delhi (post-graduation)', 'Xavier Institute of Communication, Mumbai', 'Symbiosis Institute of Media & Communication, Pune', 'Manipal Institute of Communication', 'Asian College of Journalism, Chennai'],
     timeline: [
-      { phase: 'Class 9–10', action: 'Read at least one newspaper daily. Write for school magazine. Start a blog or YouTube channel. Learn smartphone photography and video editing.' },
+      { phase: 'Class 7–10', action: 'Read at least one newspaper daily. Write for school magazine. Start a blog or YouTube channel. Learn smartphone photography and video editing.' },
       { phase: 'Class 11–12', action: 'Arts stream preferred. Write essays consistently. Track current affairs. Intern at a local Telugu/English newspaper if possible.' },
       { phase: 'After Class 12', action: 'Appear for CUET, IIMC entrance, or XIC. BA Mass Communication / Journalism (3 years) at a good institution.' },
       { phase: 'College (3 years)', action: 'BA Mass Communication. Create real-world work — articles, videos, podcasts. Build a strong portfolio. Internship is everything in media.' },
@@ -215,7 +215,7 @@ const CAREERS = {
     ],
     colleges: ['Osmania University — B.Ed and M.Ed programmes', 'TISS Hyderabad Campus (Social Work)', 'Azim Premji University, Bangalore (Education-focused)', 'Regional Institute of Education (NCERT-affiliated)', 'University of Hyderabad — Education and Social Sciences dept.', 'XISS Ranchi (Social Work)'],
     timeline: [
-      { phase: 'Class 9–10', action: 'Tutor younger classmates or siblings. Join NSS or NCC. Develop patience, public speaking, and listening skills.' },
+      { phase: 'Class 7–10', action: 'Tutor younger classmates or siblings. Join NSS or NCC. Develop patience, public speaking, and listening skills.' },
       { phase: 'Class 11–12', action: 'Any stream. Focus on subjects you want to teach long-term. Arts/Humanities for social work pathway.' },
       { phase: 'After Class 12', action: '3-year degree in your subject (BA/B.Sc/B.Com). OR enroll in the new 4-year integrated B.Ed programme.' },
       { phase: 'B.Ed / MSW (2 years)', action: '2-year B.Ed for teaching, or apply to TISS for MSW. Both open strong doors in their respective sectors.' },
@@ -242,7 +242,7 @@ const CAREERS = {
     ],
     colleges: ['Any recognized degree college qualifies for UPSC/TSPSC', 'University of Hyderabad (strong UPSC alumni network)', 'Osmania University (Political Science, History, Economics depts.)', 'Hyderabad has 100+ UPSC coaching centres — Insights IAS, Drishti, Forum IAS, BYJU\'s IAS are popular'],
     timeline: [
-      { phase: 'Class 9–10', action: 'NCERT books are the UPSC backbone — read them carefully. Follow The Hindu or Indian Express daily. Build reading habits.' },
+      { phase: 'Class 7–10', action: 'NCERT books are the UPSC backbone — read them carefully. Follow The Hindu or Indian Express daily. Build reading habits.' },
       { phase: 'Class 11–12', action: 'Arts with History, Polity, Geography, Economics builds the strongest UPSC foundation. Science/Maths background also common among toppers.' },
       { phase: 'Graduation (3 years)', action: 'Any Bachelor\'s degree. Begin UPSC preliminary preparation seriously from 2nd year of college.' },
       { phase: 'UPSC Preparation (2–5 years)', action: 'Prelims (Objective) → Mains (Essay/Descriptive) → Personality Test (Interview). Average 3–4 attempts before selection.' },
@@ -270,7 +270,7 @@ const CAREERS = {
     ],
     colleges: ['IISc Bangalore — India\'s #1 research university', 'IISERs (Pune, Kolkata, Mohali, Bhopal, Trivandrum, Berhampur, Tirupati)', 'TIFR Mumbai — Tata Institute of Fundamental Research', 'University of Hyderabad — strong research in sciences, ranked top 10', 'CCMB / CDFD / IICT Hyderabad (CSIR labs — excellent PhD programs)', 'HCU (Hyderabad Central University) — good science departments'],
     timeline: [
-      { phase: 'Class 9–10', action: 'Excel in Maths and Science. Participate in National Science Olympiad, NTSE. Read popular science books (Feynman, Carl Sagan). Curiosity is your biggest asset.' },
+      { phase: 'Class 7–10', action: 'Excel in Maths and Science. Participate in National Science Olympiad, NTSE. Read popular science books (Feynman, Carl Sagan). Curiosity is your biggest asset.' },
       { phase: 'Class 11–12', action: 'Science stream. Appear for KVPY in Class 11 (SX) — winning it opens IISc/IISER doors and provides a monthly scholarship.' },
       { phase: 'After Class 12', action: 'IISER Aptitude Test, IISc BS Research entrance, or BSc at a strong university. JEE rank can place you in IIT science departments.' },
       { phase: 'BSc / BS (3–5 years)', action: 'Deep study of your chosen science. Lab research, summer projects (SRFP — Summer Research Fellowship), and academic writing.' },
@@ -389,7 +389,7 @@ const QUESTIONS = [
     opts: [
       { t: 'Mathematics and Physics — solving complex problems',       s: { ENG:2, CS:2, SCI:1 } },
       { t: 'Biology and Chemistry — understanding living things',       s: { MED:2, SCI:2 } },
-      { t: 'History, Economics, or Civics — understanding society',    s: { GOV:2, LAW:1, COM:1 } },
+      { t: 'Social Studies or Economics — understanding society',      s: { GOV:2, LAW:1, COM:1 } },
       { t: 'Languages, Art, or Drawing — expressing creative ideas',   s: { ART:2, DES:2, EDU:1 } },
     ]
   },
@@ -596,10 +596,13 @@ const state = {
 function calculateResults() {
   const scores = { ENG:0, CS:0, MED:0, COM:0, LAW:0, DES:0, ART:0, EDU:0, GOV:0, SCI:0 };
 
-  Object.entries(state.answers).forEach(([qId, optIdx]) => {
+  // Each question carries equal weight — if several options are picked, their points are shared
+  Object.entries(state.answers).forEach(([qId, picks]) => {
     const q = QUESTIONS.find(x => x.id === parseInt(qId));
-    if (!q) return;
-    Object.entries(q.opts[optIdx].s).forEach(([k, v]) => { scores[k] = (scores[k] || 0) + v; });
+    if (!q || !picks.length) return;
+    picks.forEach(optIdx => {
+      Object.entries(q.opts[optIdx].s).forEach(([k, v]) => { scores[k] = (scores[k] || 0) + v / picks.length; });
+    });
   });
 
   state.scores = scores;
@@ -645,10 +648,10 @@ function renderQuestion() {
   document.getElementById('quiz-question').textContent = q.q;
 
   const letters = ['A', 'B', 'C', 'D'];
-  const selectedOpt = state.answers[q.id];
+  const picks = state.answers[q.id] || [];
   const container = document.getElementById('quiz-options');
   container.innerHTML = q.opts.map((opt, i) => `
-    <button class="option-card${selectedOpt === i ? ' selected' : ''}" data-index="${i}">
+    <button class="option-card${picks.includes(i) ? ' selected' : ''}" data-index="${i}" aria-pressed="${picks.includes(i)}">
       <span class="option-letter">${letters[i]}</span>
       <span class="option-text">${opt.t}</span>
     </button>
@@ -658,16 +661,21 @@ function renderQuestion() {
     card.addEventListener('click', () => selectOption(parseInt(card.dataset.index)));
   });
 
-  document.getElementById('btn-next-q').disabled = selectedOpt === undefined;
+  document.getElementById('btn-next-q').disabled = picks.length === 0;
   document.getElementById('btn-prev-q').style.visibility = state.currentQ === 0 ? 'hidden' : 'visible';
 }
 
+// Toggle an option on/off — students can pick more than one per question
 function selectOption(idx) {
-  state.answers[QUESTIONS[state.currentQ].id] = idx;
+  const qId = QUESTIONS[state.currentQ].id;
+  const picks = state.answers[qId] || [];
+  state.answers[qId] = picks.includes(idx) ? picks.filter(i => i !== idx) : [...picks, idx];
+  const current = state.answers[qId];
   document.querySelectorAll('.option-card').forEach((c, i) => {
-    c.classList.toggle('selected', i === idx);
+    c.classList.toggle('selected', current.includes(i));
+    c.setAttribute('aria-pressed', current.includes(i));
   });
-  document.getElementById('btn-next-q').disabled = false;
+  document.getElementById('btn-next-q').disabled = current.length === 0;
 }
 
 // ── RESULTS RENDERING ─────────────────────────────────────────────────────────
@@ -874,7 +882,7 @@ function openModal(careerId) {
       </div>
 
       <div class="modal-section">
-        <div class="modal-section-title">Roadmap: Class 10 → Career</div>
+        <div class="modal-section-title">Roadmap: School → Career</div>
         <div class="timeline-list">
           ${c.timeline.map(t => `
             <div class="timeline-row">
@@ -972,7 +980,7 @@ async function sendChat() {
       body: JSON.stringify({
         model: 'claude-haiku-4-5-20251001',
         max_tokens: 600,
-        system: `You are an expert career counsellor specialising in the Indian education system, with deep knowledge of Hyderabad colleges, entrance exams (JEE, NEET, CLAT, TS EAMCET, BITSAT, CUET, CA Foundation, etc.), and career pathways. You are advising ${state.name}, a Grade ${state.grade} student at Johns Academy, Hyderabad. Their top career matches are: ${state.topCareers.slice(0,3).map(({id})=>CAREERS[id].title).join(', ')}. Recommended stream: ${state.recommendedStream?.name}. Keep responses concise, practical, and encouraging. Use simple language suitable for a 14–16 year old. Always reference specific Indian exams, colleges, and timelines.`,
+        system: `You are an expert career counsellor specialising in the Indian education system, with deep knowledge of Hyderabad colleges, entrance exams (JEE, NEET, CLAT, TS EAMCET, BITSAT, CUET, CA Foundation, etc.), and career pathways. You are advising ${state.name}, a Grade ${state.grade} student at Johns Academy, Hyderabad. Their top career matches are: ${state.topCareers.slice(0,3).map(({id})=>CAREERS[id].title).join(', ')}. Recommended stream: ${state.recommendedStream?.name}. Keep responses concise, practical, and encouraging. Use simple language suitable for a 12–16 year old. Always reference specific Indian exams, colleges, and timelines.`,
         messages: state.chatHistory.filter(m => m.role !== 'system').slice(-10),
       }),
     });
@@ -995,8 +1003,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Welcome grade radio card highlight
   document.querySelectorAll('input[name="welcome-grade"]').forEach(radio => {
     radio.addEventListener('change', () => {
-      document.getElementById('w-grade-9-card').classList.toggle('selected', document.getElementById('w-grade-9').checked);
-      document.getElementById('w-grade-10-card').classList.toggle('selected', document.getElementById('w-grade-10').checked);
+      document.querySelectorAll('.welcome-radio-card').forEach(card => {
+        card.classList.toggle('selected', card.querySelector('input').checked);
+      });
     });
   });
 
@@ -1017,7 +1026,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Quiz navigation
   document.getElementById('btn-next-q').addEventListener('click', () => {
-    if (state.answers[QUESTIONS[state.currentQ].id] === undefined) return;
+    if (!state.answers[QUESTIONS[state.currentQ].id]?.length) return;
     if (state.currentQ < QUESTIONS.length - 1) {
       state.currentQ++;
       renderQuestion();
