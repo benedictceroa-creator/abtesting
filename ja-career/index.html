@@ -3,53 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Career Compass — Johns Academy</title>
+  <title>Career Compass — John's Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- VIEW: WELCOME (includes student info inline) -->
+  <!-- VIEW: WELCOME -->
   <div id="view-welcome" class="view active">
-    <div class="welcome-hero">
-      <img src="../ja-lesson-plan/logo.jpg" alt="Johns Academy" class="welcome-logo" />
-      <h1 class="welcome-title">Career Compass</h1>
-      <div class="welcome-tags">
-        <span class="tag">Grades 7 &ndash; 10</span>
-        <span class="tag">18 Questions</span>
-        <span class="tag">~10 Minutes</span>
-      </div>
+    <div class="welcome">
+      <figure class="welcome-photo">
+        <img src="images/classroom-project-presentation.webp" alt="Two John's Academy students presenting a model village they built for a class project" />
+      </figure>
 
-      <div class="welcome-form">
-        <div class="welcome-field">
-          <label for="welcome-name">Your Full Name</label>
-          <input type="text" id="welcome-name" placeholder="e.g. Arjun Reddy" maxlength="60" autocomplete="off" />
-        </div>
-        <div class="welcome-field">
-          <label>Grade</label>
-          <div class="welcome-radio-row">
-            <label class="welcome-radio-card">
-              <input type="radio" name="welcome-grade" value="7" />
-              <span>Grade 7</span>
-            </label>
-            <label class="welcome-radio-card">
-              <input type="radio" name="welcome-grade" value="8" />
-              <span>Grade 8</span>
-            </label>
-            <label class="welcome-radio-card">
-              <input type="radio" name="welcome-grade" value="9" />
-              <span>Grade 9</span>
-            </label>
-            <label class="welcome-radio-card">
-              <input type="radio" name="welcome-grade" value="10" />
-              <span>Grade 10</span>
-            </label>
+      <div class="welcome-panel">
+        <img src="../ja-lesson-plan/logo.jpg" alt="John's Academy" class="welcome-logo" />
+        <p class="eyebrow">John's Academy · Student guidance</p>
+        <h1 class="welcome-title">Career Compass</h1>
+        <p class="welcome-lead">A short questionnaire for students in Grades 7 to 10. You'll read 46 short statements and say whether each one sounds like you. It takes about eight minutes.</p>
+        <p class="welcome-text">There are no right or wrong answers. Your report shows the kinds of work that suit you and what you could study next, as a starting point for a conversation with your teachers and parents.</p>
+
+        <div class="welcome-form">
+          <div class="field">
+            <label for="welcome-name">Your full name</label>
+            <input type="text" id="welcome-name" placeholder="e.g. Arjun Reddy" maxlength="60" autocomplete="off" />
           </div>
+          <div class="field hidden" id="validate-field">
+            <label for="validate-career">Which area best matches your actual career?</label>
+            <select id="validate-career" class="welcome-select"></select>
+          </div>
+          <fieldset class="field" id="grade-field">
+            <legend>Grade</legend>
+            <div class="welcome-radio-row">
+              <label class="welcome-radio-card"><input type="radio" name="welcome-grade" value="7" /><span>Grade 7</span></label>
+              <label class="welcome-radio-card"><input type="radio" name="welcome-grade" value="8" /><span>Grade 8</span></label>
+              <label class="welcome-radio-card"><input type="radio" name="welcome-grade" value="9" /><span>Grade 9</span></label>
+              <label class="welcome-radio-card"><input type="radio" name="welcome-grade" value="10" /><span>Grade 10</span></label>
+            </div>
+          </fieldset>
+          <p id="welcome-error" class="welcome-error hidden" role="alert">Please enter your name and select your grade.</p>
         </div>
-        <p id="welcome-error" class="welcome-error hidden">Please enter your name and select your grade.</p>
-      </div>
 
-      <button class="btn-primary welcome-btn" id="btn-start">Begin Your Assessment &rarr;</button>
-      <p class="welcome-note">Johns Academy &nbsp;|&nbsp; Career Counselling Tool</p>
+        <button class="btn-primary welcome-btn" id="btn-start">Begin the questionnaire</button>
+      </div>
     </div>
   </div>
 
@@ -57,130 +55,115 @@
   <div id="view-quiz" class="view hidden">
     <header class="top-bar">
       <div class="top-bar-left">
-        <img src="../ja-lesson-plan/logo.jpg" alt="Johns Academy" class="topbar-logo" />
-        <span class="planner-title-text">Career Compass</span>
+        <img src="../ja-lesson-plan/logo.jpg" alt="John's Academy" class="topbar-logo" />
+        <span class="top-bar-title">Career Compass</span>
       </div>
       <div class="quiz-counter">
-        <span id="q-current">1</span><span class="q-sep"> / </span><span id="q-total">18</span>
+        Page <span id="q-current">1</span> of <span id="q-total">8</span>
       </div>
     </header>
     <div class="progress-bar-outer">
       <div class="progress-bar-inner" id="progress-bar"></div>
     </div>
     <main class="quiz-main">
-      <div class="quiz-section-badge" id="quiz-section-badge"></div>
-      <div class="quiz-card">
-        <p class="quiz-q-label" id="quiz-q-label">Question 1 of 18</p>
-        <h2 class="quiz-question" id="quiz-question">Loading...</h2>
-        <p class="quiz-multi-hint">You can pick more than one answer.</p>
-        <div class="quiz-options" id="quiz-options"></div>
-      </div>
+      <p class="eyebrow" id="quiz-section-badge"></p>
+      <h2 class="quiz-question" id="quiz-question">Loading…</h2>
+      <p class="quiz-q-label" id="quiz-q-label">Page 1 of 8</p>
+      <p class="quiz-hint">There are no right or wrong answers. If a statement doesn't apply to you, choose "Not sure".</p>
+      <div class="quiz-options" id="quiz-options"></div>
       <div class="quiz-nav">
-        <button class="btn-nav" id="btn-prev-q">&#8592; Back</button>
-        <button class="btn-primary quiz-next-btn" id="btn-next-q" disabled>Next &rarr;</button>
+        <button class="btn-nav" id="btn-prev-q">Back</button>
+        <button class="btn-primary" id="btn-next-q" disabled>Next</button>
       </div>
     </main>
-  </div>
-
-  <!-- VIEW: LOADING -->
-  <div id="view-loading" class="view hidden">
-    <div class="loading-center">
-      <div class="loading-spinner"></div>
-      <p class="loading-text">Analysing your responses&hellip;</p>
-      <p class="loading-sub">Matching you with the best career paths in India</p>
-    </div>
   </div>
 
   <!-- VIEW: RESULTS -->
   <div id="view-results" class="view hidden">
     <header class="top-bar no-print">
       <div class="top-bar-left">
-        <img src="../ja-lesson-plan/logo.jpg" alt="Johns Academy" class="topbar-logo" />
-        <span class="planner-title-text">Career Compass — Results</span>
+        <img src="../ja-lesson-plan/logo.jpg" alt="John's Academy" class="topbar-logo" />
+        <span class="top-bar-title">Career Compass</span>
       </div>
-      <button class="btn-print no-print" onclick="window.print()">&#128438; Print Report</button>
+      <button class="btn-print" onclick="window.print()">Print report</button>
     </header>
 
-    <main class="results-main">
+    <main class="report">
 
-      <!-- Print header (only shows when printing) -->
-      <div class="print-header">
-        <img src="../ja-lesson-plan/logo.jpg" alt="Johns Academy" class="print-logo" />
+      <header class="report-head">
+        <img src="../ja-lesson-plan/logo.jpg" alt="John's Academy" class="print-logo" />
         <div>
-          <div class="print-school">Johns Academy — Career Compass Report</div>
-          <div class="print-date" id="print-date"></div>
+          <p class="eyebrow">Career Compass report</p>
+          <h1 id="results-name">Career report</h1>
+          <p id="results-meta" class="report-meta"></p>
         </div>
-      </div>
+      </header>
 
-      <!-- RESULTS SUMMARY — visible immediately, no scrolling needed -->
-      <div class="results-summary" id="results-summary">
-        <div class="summary-namerow">
-          <h2 id="results-name">Career Report</h2>
-          <p id="results-meta"></p>
-        </div>
-        <div id="summary-top-match"></div>
-      </div>
-      <div class="summary-scroll-hint no-print">&#8595; Scroll down for your step-by-step pathway</div>
+      <section class="report-section" id="summary-top-match"></section>
 
-      <!-- STEP 1: Class 11 & 12 -->
-      <section class="results-section pathway-step">
-        <div class="step-badge">Step 1</div>
-        <h3 class="section-heading">Class 11 &amp; 12 — Stream &amp; Schools in Hyderabad</h3>
+      <!-- VALIDATION RESULT (only in ?validate mode) -->
+      <section class="report-section validate-box hidden no-print" id="validate-result"></section>
+
+      <section class="report-section">
+        <h2 class="section-heading"><span class="step-num">1</span>Class 11 and 12: stream and junior colleges</h2>
         <div id="step1-content"></div>
       </section>
 
-      <!-- STEP 2: Entrance Exams -->
-      <section class="results-section pathway-step">
-        <div class="step-badge">Step 2</div>
-        <h3 class="section-heading">Entrance Exams to Prepare For</h3>
+      <section class="report-section">
+        <h2 class="section-heading"><span class="step-num">2</span>Entrance exams to prepare for</h2>
         <div id="step2-content"></div>
       </section>
 
-      <!-- STEP 3: College & Degree -->
-      <section class="results-section pathway-step">
-        <div class="step-badge">Step 3</div>
-        <h3 class="section-heading">College &amp; Bachelor&rsquo;s Degree Options</h3>
+      <section class="report-section">
+        <h2 class="section-heading"><span class="step-num">3</span>Degrees and colleges</h2>
         <div id="step3-content"></div>
       </section>
 
-      <!-- CAREER EXPLORE CARDS -->
-      <section class="results-section">
-        <h3 class="section-heading">&#9654; Explore Your Top Career Paths</h3>
-        <p class="section-note no-print">Tap any card for full details — timeline, salary, and more.</p>
+      <section class="report-section">
+        <h2 class="section-heading">Your three areas in detail</h2>
+        <p class="section-note no-print">Each guide covers the stream, exams, colleges, a year-by-year plan, and typical pay.</p>
         <div id="career-cards" class="career-cards-grid"></div>
       </section>
 
-      <!-- SCORE CHART (supplementary context, moved to bottom) -->
-      <section class="results-section">
-        <h3 class="section-heading">&#9654; Full Career Profile</h3>
-        <p class="section-note">How your answers matched all ten career areas.</p>
+      <section class="report-section">
+        <h2 class="section-heading">How you matched all fourteen areas</h2>
+        <p class="section-note">These show which areas are worth exploring. They don't decide your future.</p>
         <div id="score-chart" class="score-chart"></div>
       </section>
 
-      <!-- AI CHAT -->
-      <section class="results-section no-print" id="chat-section">
-        <h3 class="section-heading">&#9654; Ask our AI Career Advisor</h3>
-        <p class="section-note">Still have questions? Ask about any career, entrance exam, or college in India.</p>
-        <div id="chat-not-configured" class="chat-notice hidden">
-          <p><strong>Setup needed:</strong> Open <code>app.js</code> and paste your Google Apps Script proxy URL into <code>CHAT_PROXY_URL</code>. See <code>ChatProxy.gs</code> for instructions.</p>
-        </div>
+      <section class="report-section next-steps">
+        <h2 class="section-heading">What to do next</h2>
+        <ol>
+          <li><strong>Read the guides for your three areas.</strong> They list the exams, colleges, and a plan for each year of school.</li>
+          <li><strong>Talk to someone who does this work.</strong> Ask a relative, teacher, or family friend what an ordinary day in their job is really like.</li>
+          <li><strong>Share this report with your class teacher and parents.</strong> They can help you choose your Class 11 subjects with your results in mind.</li>
+          <li><strong>Take the questionnaire again next year.</strong> Interests change as you grow, and that's normal.</li>
+        </ol>
+      </section>
+
+      <!-- AI CHAT (hidden until CHAT_PROXY_URL is set in app.js — see ChatProxy.gs) -->
+      <section class="report-section no-print hidden" id="chat-section">
+        <h2 class="section-heading">Ask a question</h2>
+        <p class="section-note">Ask about any career, entrance exam, or college in India. Answers come from an AI assistant, so check important details with your teacher.</p>
         <div id="chat-box" class="chat-box">
+          <p class="chat-context">Advising <strong id="chat-student-name"></strong> · Top areas: <span id="chat-top-career"></span></p>
           <div id="chat-messages" class="chat-messages"></div>
           <div class="chat-input-row">
             <input type="text" id="chat-input" placeholder="Ask a question about your career path…" autocomplete="off" />
             <button class="btn-primary chat-send" id="btn-send">Send</button>
           </div>
-          <p id="chat-thinking" class="chat-thinking hidden">AI Advisor is thinking…</p>
+          <p id="chat-thinking" class="chat-thinking hidden">Thinking…</p>
         </div>
       </section>
 
+      <footer class="report-foot">John's Academy · Career Compass</footer>
     </main>
   </div>
 
   <!-- CAREER DETAIL MODAL -->
-  <div id="modal-overlay" class="modal-overlay hidden" role="dialog" aria-modal="true">
+  <div id="modal-overlay" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-box">
-      <button class="modal-close" id="modal-close" aria-label="Close">&#10005;</button>
+      <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
       <div id="modal-content" class="modal-content"></div>
     </div>
   </div>

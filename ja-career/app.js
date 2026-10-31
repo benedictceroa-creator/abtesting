@@ -6,9 +6,8 @@ const CHAT_PROXY_URL = '';
 // ── CAREER DATA ───────────────────────────────────────────────────────────────
 const CAREERS = {
   ENG: {
-    id: 'ENG', title: 'Engineering & Technology', emoji: '⚙️',
-    color: '#2b6cb0', colorLight: '#ebf8ff',
-    tagline: 'Design and build the systems that power the world',
+    id: 'ENG', title: 'Engineering & Technology',
+    summary: 'Designing, building, and maintaining machines, structures, and systems.',
     description: 'Engineers apply mathematics and science to design, build, and maintain machines, structures, and systems. India has an enormous demand for engineers — from bridges and power plants to aerospace, pharmaceuticals, and manufacturing.',
     stream: 'Science with PCM',
     streamNote: 'Physics, Chemistry, and Mathematics are essential for all engineering entrance exams.',
@@ -16,14 +15,14 @@ const CAREERS = {
     exams: [
       { name: 'JEE Main', level: 'national', desc: 'Gateway to NITs, IIITs, and government engineering colleges nationwide. Two attempts per year (Jan & April).' },
       { name: 'JEE Advanced', level: 'national', desc: 'For IITs — one of the world\'s hardest exams. Top 2.5 lakh JEE Main scorers qualify to attempt.' },
-      { name: 'TS EAMCET', level: 'state', desc: 'Telangana entrance for 200+ engineering colleges in Hyderabad, Warangal, and across the state.' },
+      { name: 'TG EAPCET', level: 'state', desc: 'Telangana entrance (formerly EAMCET) for 200+ engineering colleges in Hyderabad, Warangal, and across the state.' },
       { name: 'BITSAT', level: 'private', desc: 'BITS Pilani – Hyderabad Campus entrance. Excellent placements at top companies.' },
     ],
     colleges: ['IIT Hyderabad (Sangareddy)', 'BITS Pilani – Hyderabad Campus', 'IIIT Hyderabad', 'JNTU College of Engineering, Hyderabad', 'Osmania University (Engineering)', 'Vasavi College of Engineering, Hyderabad', 'Chaitanya Bharathi Institute of Technology'],
     timeline: [
       { phase: 'Class 7–10', action: 'Build strong Maths & Science foundation. Practise NTSE and Olympiad problems. Identify a preferred branch early.' },
-      { phase: 'Class 11–12', action: 'PCM stream. Start JEE/EAMCET coaching early. Balance board preparation with entrance exam practice.' },
-      { phase: 'After Class 12', action: 'Appear for JEE Main (Jan & April), JEE Advanced, TS EAMCET, and BITSAT. 75%+ in PCM needed for IIT/NIT.' },
+      { phase: 'Class 11–12', action: 'PCM stream. Start JEE/EAPCET coaching early. Balance board preparation with entrance exam practice.' },
+      { phase: 'After Class 12', action: 'Appear for JEE Main (Jan & April), JEE Advanced, TG EAPCET, and BITSAT. IITs/NITs need 75% in Class 12 (or a top-20-percentile board score).' },
       { phase: 'B.Tech (4 years)', action: 'Engineering degree in your chosen branch: Civil, Mechanical, Electrical, Chemical, or others.' },
       { phase: 'After Graduation', action: 'Campus placements, GATE exam for M.Tech/PSU jobs (BHEL, ONGC, DRDO), entrepreneurship, or MBA.' },
     ],
@@ -33,37 +32,35 @@ const CAREERS = {
   },
 
   CS: {
-    id: 'CS', title: 'Computer Science & IT', emoji: '💻',
-    color: '#553c9a', colorLight: '#faf5ff',
-    tagline: 'Write code that changes how the world works',
+    id: 'CS', title: 'Computer Science & IT',
+    summary: 'Building software, apps, and data systems, and the networks they run on.',
     description: 'Computer Science graduates build software, apps, AI systems, and digital infrastructure. Hyderabad is India\'s second-largest IT hub — Google, Microsoft, Amazon, TCS, Infosys, Wipro, and hundreds of startups are headquartered or have major offices here.',
     stream: 'Science with PCM',
     streamNote: 'Taking Computer Science as an elective in Class 11 gives a strong head start for college coding.',
     class11: ['Physics', 'Chemistry', 'Mathematics', 'English', 'Computer Science (strongly recommended)'],
     exams: [
       { name: 'JEE Main / Advanced', level: 'national', desc: 'CS/IT at IITs and NITs — the top pathway for India\'s most competitive CS placements.' },
-      { name: 'TS EAMCET', level: 'state', desc: 'CS and IT seats at all Telangana state engineering colleges including JNTU campuses.' },
-      { name: 'IIIT Hyderabad (UGEE/CLD)', level: 'private', desc: 'Direct entry to IIIT-H — one of India\'s very best CS institutions with exceptional placement records.' },
+      { name: 'TG EAPCET', level: 'state', desc: 'CS and IT seats at all Telangana state engineering colleges including JNTU campuses.' },
+      { name: 'IIIT Hyderabad (UGEE)', level: 'private', desc: 'IIIT-H\'s own entrance for its dual-degree programmes (it also admits through JEE Main). Direct entry to IIIT-H — one of India\'s very best CS institutions with exceptional placement records.' },
       { name: 'BITSAT', level: 'private', desc: 'CS/IT at BITS Pilani Hyderabad campus. Top recruiters: Google, Microsoft, Goldman Sachs.' },
       { name: 'CUET', level: 'national', desc: 'For BSc Computer Science at central universities, if not targeting engineering.' },
     ],
     colleges: ['IIIT Hyderabad — India\'s top CS institute outside IITs', 'IIT Hyderabad', 'BITS Pilani – Hyderabad Campus', 'JNTU Hyderabad (CS/IT/AI branches)', 'Osmania University (CS/IT)', 'Woxsen University, Hyderabad'],
     timeline: [
       { phase: 'Class 7–10', action: 'Learn basic programming (Python). Explore platforms like CodeChef, HackerRank. Excel in Maths.' },
-      { phase: 'Class 11–12', action: 'PCM + Computer Science. Build small projects. Start JEE/EAMCET/IIIT-H entrance prep alongside boards.' },
-      { phase: 'After Class 12', action: 'Appear for JEE, EAMCET, IIIT-H UGEE, and BITSAT. Focus on B.Tech in CS, IT, or AI.' },
+      { phase: 'Class 11–12', action: 'PCM + Computer Science. Build small projects. Start JEE/EAPCET/IIIT-H entrance prep alongside boards.' },
+      { phase: 'After Class 12', action: 'Appear for JEE, TG EAPCET, IIIT-H UGEE, and BITSAT. Focus on B.Tech in CS, IT, or AI.' },
       { phase: 'B.Tech (4 years)', action: 'Deep CS fundamentals + internships + competitive coding + open-source projects. Build your profile.' },
       { phase: 'After Graduation', action: 'Software Engineer, Data Scientist, or Product Manager at campus placements (₹8–25 LPA average at IIIT-H/IIT-H).' },
     ],
     salary: '₹6–12 LPA (fresher in Hyderabad IT) → ₹25–80+ LPA (senior/specialist with 7–10 years)',
-    hyderabad: 'HITEC City and Gachibowli employ 6+ lakh IT professionals. All FAANG companies (Google, Microsoft, Amazon, Meta, Apple) have major Hyderabad offices. CS graduates from good Hyderabad colleges are extremely well-placed in this city.',
+    hyderabad: 'Hyderabad\'s IT sector employs around 9 lakh people, centred on HITEC City and Gachibowli. All FAANG companies (Google, Microsoft, Amazon, Meta, Apple) have major Hyderabad offices. CS graduates from good Hyderabad colleges are extremely well-placed in this city.',
     branches: ['Computer Science Engineering', 'Information Technology', 'Data Science & AI', 'Machine Learning Engineering', 'Cybersecurity'],
   },
 
   MED: {
-    id: 'MED', title: 'Medicine & Healthcare', emoji: '🩺',
-    color: '#c53030', colorLight: '#fff5f5',
-    tagline: 'Heal people and make the difference between life and death',
+    id: 'MED', title: 'Medicine & Healthcare',
+    summary: 'Diagnosing and treating illness and caring for patients — as a doctor, nurse, pharmacist, or therapist.',
     description: 'Medical careers are among India\'s most respected. Doctors, nurses, pharmacists, and physiotherapists have direct impact on people\'s lives every day. NEET-UG is the single national gateway to MBBS admissions across India.',
     stream: 'Science with PCB',
     streamNote: 'Biology is mandatory for NEET. Physics and Chemistry are equally important and must be studied seriously.',
@@ -71,10 +68,10 @@ const CAREERS = {
     exams: [
       { name: 'NEET-UG', level: 'national', desc: 'The only exam for MBBS and BDS in India. ~20 lakh students compete for ~1 lakh MBBS seats annually. NCERT is the primary study material.' },
       { name: 'NEET-UG (BDS)', level: 'national', desc: 'Bachelor of Dental Surgery — 5-year program. Same exam, different cutoff than MBBS.' },
-      { name: 'TS EAMCET (Medical)', level: 'state', desc: 'For BAMS, BHMS, B.Pharm, BPT, and B.Sc Nursing in Telangana colleges.' },
-      { name: 'AIIMS (via NEET)', level: 'national', desc: 'AIIMS now uses NEET scores. Very top rankers → AIIMS Delhi, AIIMS Bibinagar (near Hyderabad).' },
+      { name: 'TG EAPCET (Agriculture & Pharmacy)', level: 'state', desc: 'For B.Pharm, Pharm D, and B.Sc Agriculture in Telangana. (BAMS, BHMS, and BDS seats go through NEET.)' },
+      { name: 'AIIMS (via NEET)', level: 'national', desc: 'AIIMS now uses NEET scores. Very top rankers → AIIMS Delhi, AIIMS Bibinagar (about 40 km from Hyderabad).' },
     ],
-    colleges: ['Gandhi Medical College, Hyderabad (oldest in TS, est. 1846)', 'Osmania Medical College, Hyderabad', 'NIMS – Nizam\'s Institute of Medical Sciences', 'Deccan College of Medical Sciences', 'AIIMS Bibinagar (Hyderabad district)', 'MNR Medical College, Sangareddy'],
+    colleges: ['Osmania Medical College, Hyderabad (oldest in Telangana, est. 1846)', 'Gandhi Medical College, Secunderabad', 'NIMS – Nizam\'s Institute of Medical Sciences', 'Deccan College of Medical Sciences', 'AIIMS Bibinagar (Yadadri Bhuvanagiri district)', 'MNR Medical College, Sangareddy'],
     timeline: [
       { phase: 'Class 7–10', action: 'Master NCERT Biology, Physics, Chemistry. Practise diagram labeling and long-answer writing. NEET questions are mostly NCERT-based.' },
       { phase: 'Class 11–12', action: 'PCB stream. Dedicate 3–4 hours daily to NEET prep alongside boards. Biology must be memorised thoroughly.' },
@@ -83,14 +80,13 @@ const CAREERS = {
       { phase: 'After MBBS', action: 'Start as general physician, OR appear for NEET-PG for specialization (MD/MS in a specialty like Surgery, Pediatrics, etc.).' },
     ],
     salary: '₹8–15 LPA (junior doctor) → ₹30–100+ LPA (experienced specialist with private practice)',
-    hyderabad: 'Hyderabad is a major medical hub — Apollo, Yashoda, KIMS, Care Hospitals, AIG, and Sunshine Hospitals are headquartered here. The city has 9+ government medical colleges and 20+ private ones. Medical graduates from Hyderabad have strong employment locally and internationally (UK, USA, Australia routes popular).',
+    hyderabad: 'Hyderabad is a major medical hub — Apollo, Yashoda, KIMS, Care Hospitals, AIG, and Sunshine Hospitals are headquartered here. Telangana has opened many new government medical colleges in recent years, alongside well-established private ones. Medical graduates from Hyderabad have strong employment locally and internationally (UK, USA, Australia routes popular).',
     branches: ['MBBS (General Doctor)', 'BDS (Dental Surgery)', 'BAMS (Ayurveda)', 'BHMS (Homeopathy)', 'BPT (Physiotherapy)', 'B.Sc Nursing', 'Pharm D / B.Pharm'],
   },
 
   COM: {
-    id: 'COM', title: 'Business, Commerce & Finance', emoji: '📊',
-    color: '#b7791f', colorLight: '#fffff0',
-    tagline: 'Lead companies, manage money, and drive economic growth',
+    id: 'COM', title: 'Business, Commerce & Finance',
+    summary: 'Managing money, accounts, and businesses — in companies, banks, or a venture of your own.',
     description: 'Commerce careers span accounting, banking, finance, entrepreneurship, and corporate management. India\'s growing economy constantly demands Chartered Accountants, business analysts, bankers, and managers. CA is one of India\'s most prestigious qualifications.',
     stream: 'Commerce',
     streamNote: 'Accountancy, Business Studies, and Economics form the core. Adding Maths opens more doors.',
@@ -100,9 +96,9 @@ const CAREERS = {
       { name: 'IPM Entrance (IIM)', level: 'national', desc: '5-year Integrated MBA directly after Class 12. IIM Indore, IIM Rohtak, IIM Ranchi — no gap year needed.' },
       { name: 'CUET', level: 'national', desc: 'For B.Com at Delhi University, Jamia Millia, and other central universities.' },
       { name: 'CMA Foundation', level: 'national', desc: 'Cost & Management Accountancy — parallel to CA, strong in manufacturing and operations finance.' },
-      { name: 'State B.Com Entrance', level: 'state', desc: 'Osmania University, Kakatiya University B.Com admissions in Telangana.' },
+      { name: 'DOST (Telangana Degree Admissions)', level: 'state', desc: 'Online admission for B.Com, BA, and B.Sc at Osmania, Kakatiya, and other Telangana universities — based on Intermediate marks, no entrance exam.' },
     ],
-    colleges: ['ICAI (CA — nationwide programme)', 'IIM Indore (IPM — after Class 12)', 'Osmania University — B.Com/M.Com', 'GITAM University, Hyderabad (BBA/B.Com)', 'NALSAR Business School, Hyderabad', 'Institute of Cost Accountants of India (CMA)'],
+    colleges: ['ICAI (CA — nationwide programme)', 'IIM Indore (IPM — after Class 12)', 'Osmania University — B.Com/M.Com', 'GITAM University, Hyderabad (BBA/B.Com)', 'NALSAR — Department of Management Studies (MBA)', 'Institute of Cost Accountants of India (CMA)'],
     timeline: [
       { phase: 'Class 7–10', action: 'Follow business news, stock market basics, and everyday economics. Learn mental maths and logical reasoning.' },
       { phase: 'Class 11–12', action: 'Commerce stream. Learn Accountancy perfectly — it\'s the foundation of all finance. Consider Maths for MBA/CA preparation.' },
@@ -116,24 +112,23 @@ const CAREERS = {
   },
 
   LAW: {
-    id: 'LAW', title: 'Law & Policy', emoji: '⚖️',
-    color: '#2d3748', colorLight: '#f7fafc',
-    tagline: 'Argue for justice and shape the laws that govern society',
+    id: 'LAW', title: 'Law & Policy',
+    summary: 'Advising people and organisations on the law, and representing them in court.',
     description: 'Lawyers, judges, and policymakers are the backbone of a functioning democracy. Law graduates practice in courts, advise corporations, join government, or shape public policy. NALSAR, Hyderabad, is consistently ranked among India\'s top 3 law schools.',
     stream: 'Any stream',
     streamNote: 'CLAT is open to all streams. Arts/Humanities gives a strong edge for Mains subjects. Science + Law is powerful for IP or healthcare policy.',
     class11: ['Any stream qualifies for CLAT', 'Arts: History, Political Science, Economics is the ideal combination', 'Science or Commerce stream also accepted'],
     exams: [
       { name: 'CLAT', level: 'national', desc: 'Common Law Admission Test — gateway to all National Law Universities (NLUs) including NALSAR Hyderabad. Tests English, Current Affairs, Legal Reasoning, Maths, and Logical Reasoning.' },
-      { name: 'AILET', level: 'national', desc: 'National Law University Delhi entrance. ~80 seats, extremely competitive. Separate from CLAT.' },
-      { name: 'LSAT India', level: 'private', desc: 'For Symbiosis Law School, O.P. Jindal Global University, and other top private law schools.' },
-      { name: 'TS LAWCET', level: 'state', desc: 'Telangana state law entrance for Osmania University Law College and other TS law institutions.' },
+      { name: 'AILET', level: 'national', desc: 'National Law University Delhi entrance. Only about 100–120 seats, extremely competitive. Separate from CLAT.' },
+      { name: 'SLAT & University Tests', level: 'private', desc: 'Symbiosis Law Admission Test (SLAT) and each private university\'s own entrance — e.g. O.P. Jindal Global University.' },
+      { name: 'TG LAWCET', level: 'state', desc: 'Telangana state law entrance for Osmania University Law College and other Telangana law colleges.' },
     ],
-    colleges: ['NALSAR University of Law, Hyderabad — Ranked #1 or #2 in India every year', 'Osmania University Law College', 'ICFAI Law School, Hyderabad', 'O.P. Jindal Global University, Sonipat', 'Symbiosis Law School, Pune'],
+    colleges: ['NALSAR University of Law, Hyderabad — consistently in India\'s top 3 (NIRF)', 'Osmania University Law College', 'ICFAI Law School, Hyderabad', 'O.P. Jindal Global University, Sonipat', 'Symbiosis Law School, Pune'],
     timeline: [
       { phase: 'Class 7–10', action: 'Read newspapers daily. Join debate club. Study Social Studies carefully. Develop strong English writing.' },
       { phase: 'Class 11–12', action: 'Any stream. Start CLAT preparation 1.5–2 years before (English, Current Affairs, Legal Reasoning, Logical Reasoning, Maths).' },
-      { phase: 'After Class 12', action: 'Appear for CLAT (May), AILET, LSAT, or TS LAWCET. 5-year integrated BA LLB / BBA LLB programme.' },
+      { phase: 'After Class 12', action: 'Appear for CLAT (held in December), AILET, SLAT, or TG LAWCET. 5-year integrated BA LLB / BBA LLB programme.' },
       { phase: '5-year LLB', action: 'BA LLB or BBA LLB at NALSAR or another NLU. Moot courts, internships at law firms and courts during holidays.' },
       { phase: 'After LLB', action: 'Enrolled advocate (practice at bar), judicial services exam, corporate legal team, government law officer, or policy/NGO.' },
     ],
@@ -143,9 +138,8 @@ const CAREERS = {
   },
 
   DES: {
-    id: 'DES', title: 'Design & Architecture', emoji: '🎨',
-    color: '#97266d', colorLight: '#fff5f7',
-    tagline: 'Create the visual world — buildings, brands, and beautiful things',
+    id: 'DES', title: 'Design & Architecture',
+    summary: 'Designing buildings, interiors, products, clothing, and visual communication.',
     description: 'Designers and architects shape everything around us — from buildings and city skylines to logos, fashion collections, and digital interfaces. India\'s construction boom and growing design economy offer expanding opportunities for creative careers.',
     stream: 'Science PCM (for Architecture) or Arts (for Design)',
     streamNote: 'Architecture requires PCM (Maths essential for NATA). Graphic, Fashion, and Interior Design are open to any stream.',
@@ -155,12 +149,12 @@ const CAREERS = {
       { name: 'JEE Paper 2 (B.Arch)', level: 'national', desc: 'For B.Arch at IITs and NITs. Combines JEE Main score with a drawing/planning aptitude test.' },
       { name: 'NIFT Entrance Exam', level: 'national', desc: 'National Institute of Fashion Technology — India\'s top fashion design institution. Hyderabad campus available. Tests creative ability and general knowledge.' },
       { name: 'NID DAT', level: 'national', desc: 'National Institute of Design — for product design, graphic design, animation, and communication design.' },
-      { name: 'CEED', level: 'national', desc: 'IIT Common Entrance Exam for Design — for M.Des at IITs after graduation.' },
+      { name: 'UCEED', level: 'national', desc: 'IIT entrance for B.Des after Class 12 — IIT Bombay, Delhi, Guwahati, Hyderabad, and others.' },
     ],
-    colleges: ['JNTU School of Planning & Architecture, Hyderabad', 'NIFT Hyderabad (Fashion Design)', 'NID — National Institute of Design, Ahmedabad', 'CEPT University, Ahmedabad (Architecture)', 'IIT Bombay / IIT Delhi (Industrial Design)', 'MIT Institute of Design, Pune'],
+    colleges: ['JNAFAU — Jawaharlal Nehru Architecture & Fine Arts University, Hyderabad', 'NIFT Hyderabad (Fashion Design)', 'NID — National Institute of Design, Ahmedabad', 'CEPT University, Ahmedabad (Architecture)', 'IIT Bombay / IIT Hyderabad (B.Des via UCEED)', 'MIT Institute of Design, Pune'],
     timeline: [
       { phase: 'Class 7–10', action: 'Practise drawing and sketching regularly. Observe architecture, logos, and design around Hyderabad with a critical eye. Join art classes.' },
-      { phase: 'Class 11–12', action: 'Science PCM for Architecture (mandatory). Build a strong drawing portfolio. Begin NATA/NIFT preparation.' },
+      { phase: 'Class 11–12', action: 'Science PCM for Architecture (mandatory). Build a strong drawing portfolio. Begin NATA/NIFT/UCEED preparation.' },
       { phase: 'After Class 12', action: 'Appear for NATA (Architecture) or NIFT/NID (Design) entrance. Score well in aptitude and drawing tests.' },
       { phase: 'College (4–5 years)', action: 'B.Arch (5 years) or B.Des (4 years). Heavy studio project workload plus internships at architecture firms.' },
       { phase: 'After Graduation', action: 'Architecture firm, interior design studio, fashion house, branding agency, or independent practice.' },
@@ -171,25 +165,25 @@ const CAREERS = {
   },
 
   ART: {
-    id: 'ART', title: 'Media, Journalism & Communication', emoji: '📢',
-    color: '#c05621', colorLight: '#fffaf0',
-    tagline: 'Tell stories that inform, move, and inspire millions',
+    id: 'ART', title: 'Media, Journalism & Communication',
+    summary: 'Reporting, writing, filming, and communicating for news organisations, media, and brands.',
     description: 'Journalists, content creators, advertisers, PR professionals, and filmmakers shape public opinion and culture. Digital media has exploded career possibilities — YouTube, OTT platforms, podcasts, and social media have created entirely new professions in the last decade.',
     stream: 'Arts / Humanities (preferred) or any stream',
     streamNote: 'Arts/Humanities with History, Political Science, and English provides the strongest base for journalism and media careers.',
     class11: ['English (essential)', 'History or Political Science', 'Economics or Sociology', 'Psychology also valuable'],
     exams: [
       { name: 'CUET', level: 'national', desc: 'For BA Mass Communication and Journalism at Delhi University, Jamia Millia, and other central universities.' },
-      { name: 'IIMC Entrance', level: 'national', desc: 'Indian Institute of Mass Communication, New Delhi — India\'s most prestigious journalism school.' },
-      { name: 'Xavier\'s Communication Test (XIC)', level: 'private', desc: 'Xavier Institute of Communications, Mumbai — top-tier media industry reputation.' },
+      { name: 'SET / IPU CET', level: 'private', desc: 'After Class 12: Symbiosis Entrance Test (BA Mass Communication) and IP University CET (BJMC, Delhi).' },
+      { name: 'IIMC Entrance', level: 'national', desc: 'Indian Institute of Mass Communication, New Delhi — India\'s most prestigious journalism school. Post-graduate diploma, after your degree.' },
+      { name: 'Xavier\'s Communication Test (XIC)', level: 'private', desc: 'Xavier Institute of Communications, Mumbai — top-tier media industry reputation. After graduation.' },
       { name: 'FTII Entrance', level: 'national', desc: 'Film & Television Institute of India, Pune — for film direction, cinematography, or editing. Graduate-level entry.' },
-      { name: 'MCRC (Jamia)', level: 'national', desc: 'Jamia\'s Mass Communication Research Centre — well-placed alumni in print, digital, and broadcast media.' },
+      { name: 'MCRC (Jamia)', level: 'national', desc: 'Jamia\'s Mass Communication Research Centre — MA after graduation; well-placed alumni in print, digital, and broadcast media.' },
     ],
     colleges: ['Osmania University — Department of Mass Communication & Journalism (MCJ)', 'IIMC New Delhi (post-graduation)', 'Xavier Institute of Communication, Mumbai', 'Symbiosis Institute of Media & Communication, Pune', 'Manipal Institute of Communication', 'Asian College of Journalism, Chennai'],
     timeline: [
       { phase: 'Class 7–10', action: 'Read at least one newspaper daily. Write for school magazine. Start a blog or YouTube channel. Learn smartphone photography and video editing.' },
       { phase: 'Class 11–12', action: 'Arts stream preferred. Write essays consistently. Track current affairs. Intern at a local Telugu/English newspaper if possible.' },
-      { phase: 'After Class 12', action: 'Appear for CUET, IIMC entrance, or XIC. BA Mass Communication / Journalism (3 years) at a good institution.' },
+      { phase: 'After Class 12', action: 'Appear for CUET, SET, or IPU CET. BA Mass Communication / Journalism (3 years) — then IIMC, XIC, or MCRC for a post-graduate diploma.' },
       { phase: 'College (3 years)', action: 'BA Mass Communication. Create real-world work — articles, videos, podcasts. Build a strong portfolio. Internship is everything in media.' },
       { phase: 'After Graduation', action: 'Reporter, digital content creator, PR executive, advertising copywriter, brand communication manager.' },
     ],
@@ -199,79 +193,185 @@ const CAREERS = {
   },
 
   EDU: {
-    id: 'EDU', title: 'Teaching & Social Work', emoji: '📚',
-    color: '#276749', colorLight: '#f0fff4',
-    tagline: 'Shape the next generation and build a better society',
-    description: 'Teachers, counselors, social workers, and NGO professionals make India\'s future. Teaching offers stability, deep respect, and genuine satisfaction. Social work lets you fight poverty and injustice directly at the ground level.',
+    id: 'EDU', title: 'Teaching & Education',
+    summary: 'Teaching children and young people, and helping schools run well.',
+    description: 'Teachers make India\'s future, one class at a time. Teaching offers stability, deep respect, and the daily satisfaction of watching students understand something new. Good teachers are needed at every level — from early years to senior secondary and beyond.',
     stream: 'Any stream',
-    streamNote: 'Choose your stream based on the subjects you want to teach or the social sector you want to work in.',
-    class11: ['Any stream works', 'Strong English and regional language communication is the key foundation', 'Arts/Humanities for social work; Science for teaching science subjects'],
+    streamNote: 'Choose your stream based on the subjects you want to teach — Science to teach Science, Commerce to teach Accountancy, and so on.',
+    class11: ['Any stream works', 'Strong English and regional language communication is the key foundation', 'Pick the subjects you would enjoy teaching for years'],
     exams: [
       { name: 'CTET', level: 'national', desc: 'Central Teacher Eligibility Test — required to teach in KVS, NVS, and central government schools. Valid for life (lifetime validity from 2021).' },
-      { name: 'TS TET', level: 'state', desc: 'Telangana Teacher Eligibility Test — required for all Telangana government school teaching positions.' },
-      { name: 'B.Ed Entrance', level: 'state', desc: '2-year B.Ed programme for teaching certification after any graduation. Integrated 4-year B.Ed also available now.' },
-      { name: 'TISS Entrance (NET)', level: 'national', desc: 'Tata Institute of Social Sciences — India\'s top institution for MSW (Master of Social Work). HAS Hyderabad campus.' },
-      { name: 'CUET (BA Education)', level: 'national', desc: 'For BA Education programmes at central universities leading to teaching or counselling careers.' },
+      { name: 'TG TET', level: 'state', desc: 'Telangana Teacher Eligibility Test — required for all Telangana government school teaching positions.' },
+      { name: 'TG EdCET', level: 'state', desc: 'Telangana entrance for the 2-year B.Ed, taken after any degree.' },
+      { name: 'NCET (ITEP)', level: 'national', desc: 'National entrance for the 4-year Integrated Teacher Education Programme — become a teacher straight after Class 12.' },
+      { name: 'CUET (BA Education)', level: 'national', desc: 'For BA Education programmes at central universities leading to teaching careers.' },
     ],
-    colleges: ['Osmania University — B.Ed and M.Ed programmes', 'TISS Hyderabad Campus (Social Work)', 'Azim Premji University, Bangalore (Education-focused)', 'Regional Institute of Education (NCERT-affiliated)', 'University of Hyderabad — Education and Social Sciences dept.', 'XISS Ranchi (Social Work)'],
+    colleges: ['Osmania University — B.Ed and M.Ed programmes', 'Azim Premji University, Bangalore (Education-focused)', 'Regional Institute of Education (NCERT-affiliated)', 'University of Hyderabad — School of Education'],
     timeline: [
-      { phase: 'Class 7–10', action: 'Tutor younger classmates or siblings. Join NSS or NCC. Develop patience, public speaking, and listening skills.' },
-      { phase: 'Class 11–12', action: 'Any stream. Focus on subjects you want to teach long-term. Arts/Humanities for social work pathway.' },
+      { phase: 'Class 7–10', action: 'Tutor younger classmates or siblings. Develop patience, public speaking, and listening skills.' },
+      { phase: 'Class 11–12', action: 'Any stream. Focus on the subjects you want to teach long-term.' },
       { phase: 'After Class 12', action: '3-year degree in your subject (BA/B.Sc/B.Com). OR enroll in the new 4-year integrated B.Ed programme.' },
-      { phase: 'B.Ed / MSW (2 years)', action: '2-year B.Ed for teaching, or apply to TISS for MSW. Both open strong doors in their respective sectors.' },
-      { phase: 'Career', action: 'Govt. school teacher (via TET/CTET → TSPSC recruitment), private school, counselor, NGO field worker, or development sector manager.' },
+      { phase: 'B.Ed (2 years)', action: '2-year B.Ed for teaching certification, with practice teaching in real schools.' },
+      { phase: 'Career', action: 'Govt. school teacher (via TET/CTET → Telangana DSC recruitment), private or international school teacher, special educator, or school leader.' },
     ],
-    salary: '₹2–6 LPA (govt. school teacher) → ₹5–12 LPA (private/international school) → ₹6–18 LPA (NGO senior manager or TISS alumnus)',
-    hyderabad: 'Hyderabad has 3,000+ schools and a large NGO ecosystem — Pratham, Childline, CRY, CARE India, and Akshara Foundation all have Hyderabad offices. Government teacher vacancies in Telangana are regularly announced through TSPSC (Group IV / SGT / Secondary Grade). A secure, respected career.',
-    branches: ['Primary & Secondary School Teaching', 'Special Education', 'Educational Counseling & Guidance', 'NGO & Development Work', 'Child Rights & Protection', 'Community Development & Social Work'],
+    salary: '₹2–6 LPA (govt. school teacher) → ₹5–12 LPA (private/international school) → ₹12–20 LPA (senior teacher / school leadership)',
+    hyderabad: 'Hyderabad has 3,000+ schools, from government and KV schools to large international school chains. Government teacher posts in Telangana are filled through the DSC (District Selection Committee) recruitment exam. A secure, respected career.',
+    branches: ['Primary & Secondary School Teaching', 'Subject Specialist (Senior Secondary)', 'Special Education', 'Early Childhood Education', 'Educational Technology', 'School Leadership'],
+  },
+
+  CMN: {
+    id: 'CMN', title: 'Community & Counselling',
+    summary: 'Counselling, social work, youth work, and pastoral ministry — supporting people and communities.',
+    description: 'Counsellors, psychologists, social workers, NGO leaders, youth workers, and pastors and other faith leaders all help people through hard moments and hold communities together. These careers suit people who listen well, speak with conviction, and want their work to serve a bigger purpose.',
+    stream: 'Arts / Humanities (preferred) or any stream',
+    streamNote: 'Psychology, Sociology, and English are the best base. Science (PCB) helps if you want to become a clinical psychologist.',
+    class11: ['Psychology', 'Sociology or Political Science', 'English', 'Any stream is accepted for most degrees'],
+    pathwayNote: 'Community & Counselling careers are open to any stream. What counts most is experience: volunteering, leading a youth group, and helping in your community or faith group.',
+    exams: [
+      { name: 'CUET', level: 'national', desc: 'For BA Psychology, Sociology, or Social Work (BSW) at central universities.' },
+      { name: 'TISS (MSW / MA Counselling)', level: 'national', desc: 'Tata Institute of Social Sciences — India\'s top institution for social work, with a Hyderabad campus. Admission is after graduation, now through CUET-PG.' },
+      { name: 'Seminary / Theology Admission', level: 'private', desc: 'For pastoral ministry: Bachelor of Theology (B.Th) or B.D. at a seminary, usually after Class 12 or a degree, often with a recommendation from your church.' },
+      { name: 'M.Phil Clinical Psychology (RCI)', level: 'national', desc: 'Rehabilitation Council of India–recognised route to become a licensed clinical psychologist, after an MA in Psychology.' },
+    ],
+    colleges: ['TISS Hyderabad Campus (Social Work)', 'University of Hyderabad (Psychology, Sociology)', 'Osmania University (Psychology, Social Work)', 'St. Francis College for Women, Begumpet (Psychology)', 'Andhra Christian Theological College, Hyderabad (Theology)', 'Union Biblical Seminary, Pune / SAIACS, Bangalore (Theology)'],
+    timeline: [
+      { phase: 'Class 7–10', action: 'Volunteer — NSS, youth groups, community or faith activities. Practise listening carefully and speaking in front of groups.' },
+      { phase: 'Class 11–12', action: 'Psychology, Sociology, English. Lead a club, youth group, or service project.' },
+      { phase: 'After Class 12', action: 'BA Psychology / Sociology / Social Work (BSW), or B.Th at a seminary for ministry.' },
+      { phase: 'College (3–4 years)', action: 'Fieldwork with NGOs, counselling centres, or your faith community. Find a mentor already doing the work you want to do.' },
+      { phase: 'Career', action: 'MSW / MA Counselling / M.Div or ordination → counsellor, social worker, NGO manager, youth pastor, pastor, or chaplain.' },
+    ],
+    salary: '₹2.5–5 LPA (early-career social worker, counsellor, or youth worker) → ₹8–18 LPA (clinical psychologist, NGO manager, senior counsellor). Pastoral pay varies widely by church or organisation.',
+    hyderabad: 'Hyderabad has a large NGO and CSR sector (Pratham, CRY, CARE India, Akshara Foundation), counselling roles in schools, hospitals, and IT companies, and long-established churches, seminaries, and faith-based organisations across Secunderabad and the city.',
+    branches: ['School & Career Counselling', 'Clinical / Counselling Psychology', 'Social Work & NGO Leadership', 'Youth Work & Mentoring', 'Pastoral Ministry & Chaplaincy', 'Community Development'],
+  },
+
+  DEF: {
+    id: 'DEF', title: 'Defence & Uniformed Services',
+    summary: 'Serving in the Army, Navy, Air Force, police, or emergency services.',
+    description: 'Officers and personnel in the armed forces, central armed police (CRPF, BSF, CISF), state police, and fire and disaster response. The work is physically demanding and highly respected, with clear ranks, structured training, and long-term security.',
+    stream: 'Any stream (PCM for Navy & Air Force)',
+    streamNote: 'Army entry through NDA is open to any stream. The Navy and Air Force wings of NDA require Physics and Maths in Class 12.',
+    class11: ['PCM keeps every NDA wing open (Army, Navy, Air Force)', 'Any stream qualifies for the Army wing, CDS (after graduation), and police', 'NCC in school or college is a big advantage'],
+    pathwayNote: 'Defence: Army entry through NDA is open to any stream, but the Navy and Air Force wings need Physics and Maths in Class 12. Fitness and NCC matter as much as marks.',
+    exams: [
+      { name: 'NDA & NA (UPSC)', level: 'national', desc: 'After Class 12 (age about 16½–19½). Written exam + 5-day SSB interview + medical. Leads to officer training at NDA Khadakwasla, Pune. Held twice a year.' },
+      { name: 'CDS (UPSC)', level: 'national', desc: 'For graduates — entry to Indian Military Academy, Naval Academy, Air Force Academy, and OTA Chennai.' },
+      { name: 'AFCAT', level: 'national', desc: 'Air Force Common Admission Test — for graduates joining flying, technical, and ground duty branches.' },
+      { name: 'Agniveer (Agnipath)', level: 'national', desc: '4-year enlistment in the Army, Navy, or Air Force after Class 10/12; up to 25% are retained for regular service.' },
+      { name: 'Telangana Police Recruitment', level: 'state', desc: 'State police Sub-Inspector (graduates) and Constable (Class 12) posts, with written, physical, and medical tests.' },
+    ],
+    colleges: ['National Defence Academy, Khadakwasla (Pune)', 'Indian Military Academy, Dehradun', 'Indian Naval Academy, Ezhimala', 'Air Force Academy, Dundigal (Hyderabad)', 'Officers Training Academy, Chennai', 'Sainik Schools / RIMC (entry from Class 6 or 9)'],
+    timeline: [
+      { phase: 'Class 7–10', action: 'Build fitness — running, swimming, push-ups. Join NCC or Scouts. Read the newspaper and practise spoken English and general knowledge.' },
+      { phase: 'Class 11–12', action: 'PCM if you want the Navy or Air Force. Prepare for the NDA written exam (Maths + General Ability) alongside boards.' },
+      { phase: 'After Class 12', action: 'NDA written exam → SSB interview (psychology tests, group tasks, interview) → medical exam.' },
+      { phase: 'Training (4 years)', action: '3 years at NDA + 1 year at the Indian Military, Naval, or Air Force Academy.' },
+      { phase: 'Career', action: 'Commissioned officer (Lieutenant / Sub-Lieutenant / Flying Officer), promoted by rank, with the option to serve 20+ years with pension.' },
+    ],
+    salary: 'Lieutenant: about ₹56,100/month basic + Military Service Pay + allowances (roughly ₹10–12 LPA early on) → ₹25+ LPA at senior ranks, plus housing, medical care, and pension.',
+    hyderabad: 'Hyderabad has the Air Force Academy (Dundigal), the College of Defence Management and the Military College of Electronics & Mechanical Engineering (both Secunderabad), and a large Army presence in Secunderabad Cantonment. Telangana Police recruits regularly.',
+    branches: ['Army (Infantry, Artillery, Engineers, Signals)', 'Navy (Executive, Engineering, Naval Aviation)', 'Air Force (Flying, Technical, Ground Duty)', 'Police (IPS via UPSC, State Sub-Inspector)', 'Central Armed Police (CRPF, BSF, CISF)', 'Fire & Disaster Response (NDRF)'],
+  },
+
+  SPT: {
+    id: 'SPT', title: 'Sports, Fitness & Coaching',
+    summary: 'Playing, coaching, and teaching sport, and keeping athletes fit and healthy.',
+    description: 'Professional athletes, coaches, PE teachers, physiotherapists, fitness trainers, sports scientists, and sports managers. Becoming a professional athlete takes talent plus years of training, so most successful sportspeople also build a backup path in coaching, teaching, or sports science.',
+    stream: 'Any stream',
+    streamNote: 'Your training schedule matters more than your stream. Pick a school and stream that leave time for daily practice. PCB helps if you want physiotherapy or sports science.',
+    class11: ['Any stream works for athletes and coaches', 'Physical Education as an elective (offered by CBSE)', 'PCB for physiotherapy or sports science'],
+    pathwayNote: 'Sports: no stream is required. Choose a school whose timetable lets you train every day, and keep your marks steady as a backup. PCB helps if you want physiotherapy or sports science.',
+    exams: [
+      { name: 'Khelo India / SAI Selection', level: 'national', desc: 'Sports Authority of India talent identification and the Khelo India Youth Games — selection into training centres with coaching, hostel, and stipend.' },
+      { name: 'TG PECET (B.P.Ed)', level: 'state', desc: 'Telangana Physical Education entrance for B.P.Ed — the route to becoming a PE teacher or coach.' },
+      { name: 'NEET-UG / State CET (Physiotherapy)', level: 'national', desc: 'For BPT (Bachelor of Physiotherapy) — the base for sports physio and rehabilitation work.' },
+      { name: 'Sports Quota', level: 'national', desc: 'Reserved seats in colleges and jobs (Railways, Army, banks, police) for district, state, and national level medal winners.' },
+    ],
+    colleges: ['Pullela Gopichand Badminton Academy, Gachibowli', 'Telangana State Sports School, Hakimpet', 'Osmania University — College of Physical Education', 'Lakshmibai National Institute of Physical Education (LNIPE), Gwalior', 'Netaji Subhas National Institute of Sports (NIS), Patiala — coaching courses'],
+    timeline: [
+      { phase: 'Class 7–10', action: 'Pick one or two sports and train with a coach. Play inter-school, district, and state tournaments — results here open doors.' },
+      { phase: 'Class 11–12', action: 'Choose a school schedule that allows training. Aim for state or national selection while keeping academics steady.' },
+      { phase: 'After Class 12', action: 'Full-time sport at an academy or SAI centre, or a degree that keeps you in sport: B.P.Ed, BPT, B.Sc Sports Science, BBA Sports Management.' },
+      { phase: 'College (3–4 years)', action: 'Represent your university at the Khelo India University Games. Earn coaching certificates (NIS).' },
+      { phase: 'Career', action: 'Professional athlete, coach, PE teacher, physiotherapist, strength & conditioning coach, sports analyst, or a sports-quota government job.' },
+    ],
+    salary: '₹2.5–5 LPA (PE teacher / fitness trainer fresher) → ₹8–20 LPA (experienced coach, physio, or sports scientist). Top professional athletes earn far more, but very few reach that level.',
+    hyderabad: 'Hyderabad is one of India\'s top badminton centres (Pullela Gopichand Academy trained P.V. Sindhu and Saina Nehwal), with the Gachibowli stadium complex, the Hakimpet sports school, and a strong cricket and kabaddi scene (Sunrisers Hyderabad, Telugu Titans).',
+    branches: ['Professional Athlete', 'Coach / PE Teacher', 'Physiotherapy & Sports Medicine', 'Strength & Conditioning / Fitness', 'Sports Science & Performance Analysis', 'Sports Management'],
+  },
+
+  PER: {
+    id: 'PER', title: 'Performing Arts',
+    summary: 'Performing and teaching music, dance, theatre, and acting.',
+    description: 'Musicians, singers, dancers, actors, theatre artists, voice artists, and music producers. It is a competitive field built on years of practice and a record of performances. Many performers also teach, compose, or work behind the scenes for a steady income.',
+    stream: 'Arts / Humanities (preferred) or any stream',
+    streamNote: 'No stream is required. Arts leaves more time and offers electives like Music or Dance — but regular training with a teacher or institute matters most.',
+    class11: ['Any stream', 'Music / Dance electives where offered (CBSE has Hindustani & Carnatic Music and Dance)', 'English and a regional language — useful for theatre and voice work'],
+    pathwayNote: 'Performing arts: no stream is required. Keep training with a teacher, perform often, and build a recording or video portfolio.',
+    exams: [
+      { name: 'CUET (Music, Dance, Theatre)', level: 'national', desc: 'For performing-arts degrees at central universities, including the University of Hyderabad\'s Sarojini Naidu School of Arts & Communication.' },
+      { name: 'National School of Drama', level: 'national', desc: 'India\'s top drama school — 3-year diploma after graduation. Selection by audition and workshop.' },
+      { name: 'FTII (Acting)', level: 'national', desc: 'Film & Television Institute of India acting course — after graduation.' },
+      { name: 'Graded Music Exams', level: 'private', desc: 'Trinity, ABRSM, or Gandharva Mahavidyalaya grades (Western or Indian classical) — a recognised record of your skill.' },
+    ],
+    colleges: ['University of Hyderabad — S.N. School of Arts & Communication', 'Potti Sreeramulu Telugu University, Hyderabad (Music, Dance, Theatre)', 'National School of Drama, New Delhi', 'FTII Pune (Acting)', 'KM Music Conservatory, Chennai', 'Kalakshetra Foundation, Chennai (Bharatanatyam, Carnatic music)'],
+    timeline: [
+      { phase: 'Class 7–10', action: 'Train regularly with a teacher. Perform at school events, competitions, and local programmes; take graded music or dance exams.' },
+      { phase: 'Class 11–12', action: 'Keep training seriously. Build a recording or video portfolio. Join a theatre group or choir.' },
+      { phase: 'After Class 12', action: 'BPA / BA in Music, Dance, or Theatre — or continue professional training alongside any degree.' },
+      { phase: 'College (3–4 years)', action: 'Perform as often as possible, assist on productions, and record and publish your work.' },
+      { phase: 'Career', action: 'Performer, session musician, playback or voice artist, choreographer, music producer, actor, or performing-arts teacher.' },
+    ],
+    salary: 'Highly variable: ₹2–5 LPA (early-career performer or teacher) → ₹10–30+ LPA for established artists; a few earn much more. Teaching and studio work give steady income.',
+    hyderabad: 'Hyderabad is home to the Telugu film industry — Ramoji Film City and Annapurna Studios employ actors, dancers, musicians, and dubbing artists. The city also has a strong Carnatic, Kuchipudi, and theatre scene (Ravindra Bharathi, Lamakaan).',
+    branches: ['Music (Vocal / Instrumental)', 'Dance (Classical & Contemporary)', 'Theatre & Film Acting', 'Music Production & Sound', 'Voice & Dubbing', 'Choreography & Performing-Arts Teaching'],
   },
 
   GOV: {
-    id: 'GOV', title: 'Government & Civil Services', emoji: '🏛️',
-    color: '#2b6cb0', colorLight: '#ebf4ff',
-    tagline: 'Lead the nation — administer districts, shape policy, serve crores',
-    description: 'Civil servants — IAS, IPS, IRS, and state service officers — run India\'s administrative machinery. The UPSC Civil Services exam is India\'s most prestigious competitive examination. State services (TSPSC) offer equally powerful careers in Telangana.',
+    id: 'GOV', title: 'Government & Civil Services',
+    summary: 'Running government departments and districts through the civil services.',
+    description: 'Civil servants — IAS, IPS, IRS, and state service officers — run India\'s administrative machinery. The UPSC Civil Services exam is India\'s most prestigious competitive examination. State services (TGPSC) offer equally powerful careers in Telangana.',
     stream: 'Any stream',
     streamNote: 'Any degree qualifies for UPSC. Arts/Humanities with History, Political Science, and Geography are popular optional subjects for UPSC Mains.',
     class11: ['Any stream qualifies for UPSC', 'Arts/Humanities with History, Political Science, Geography → best UPSC optional foundation', 'Science and Engineering backgrounds also crack UPSC every year'],
     exams: [
       { name: 'UPSC Civil Services (IAS/IPS)', level: 'national', desc: 'India\'s most prestigious exam for IAS, IPS, IRS, and IFS (Foreign Service). Taken after graduation. ~1000 selections per year from 10+ lakh applicants.' },
-      { name: 'TSPSC Group I / II / III', level: 'state', desc: 'Telangana state services — DSP, Tahsildar, Revenue Officer, Deputy Collector, DEO. Thousands of posts. Conducted by TSPSC.' },
+      { name: 'TGPSC Group I / II / III', level: 'state', desc: 'Telangana state services — DSP, Tahsildar, Revenue Officer, Deputy Collector, DEO. Thousands of posts. Conducted by TGPSC (formerly TSPSC).' },
       { name: 'SSC CGL', level: 'national', desc: 'Staff Selection Commission — Income Tax Inspector, CBI Sub-Inspector, Central Excise Officer, and many central government posts.' },
       { name: 'Banking PO (IBPS/SBI)', level: 'national', desc: 'Probationary Officer in public sector banks — secure career, strong salary, respected position.' },
     ],
-    colleges: ['Any recognized degree college qualifies for UPSC/TSPSC', 'University of Hyderabad (strong UPSC alumni network)', 'Osmania University (Political Science, History, Economics depts.)', 'Hyderabad has 100+ UPSC coaching centres — Insights IAS, Drishti, Forum IAS, BYJU\'s IAS are popular'],
+    colleges: ['Any recognized degree college qualifies for UPSC/TGPSC', 'University of Hyderabad (strong UPSC alumni network)', 'Osmania University (Political Science, History, Economics depts.)', 'Hyderabad has many UPSC coaching centres — Ashok Nagar is the city\'s main coaching hub'],
     timeline: [
       { phase: 'Class 7–10', action: 'NCERT books are the UPSC backbone — read them carefully. Follow The Hindu or Indian Express daily. Build reading habits.' },
       { phase: 'Class 11–12', action: 'Arts with History, Polity, Geography, Economics builds the strongest UPSC foundation. Science/Maths background also common among toppers.' },
       { phase: 'Graduation (3 years)', action: 'Any Bachelor\'s degree. Begin UPSC preliminary preparation seriously from 2nd year of college.' },
-      { phase: 'UPSC Preparation (2–5 years)', action: 'Prelims (Objective) → Mains (Essay/Descriptive) → Personality Test (Interview). Average 3–4 attempts before selection.' },
-      { phase: 'After Selection', action: 'IAS → District Collector / Secretary level. IPS → Superintendent of Police. IRS → Income Tax / Customs. TSPSC → Revenue, Education, Police departments.' },
+      { phase: 'UPSC Preparation (2–5 years)', action: 'Prelims (Objective) → Mains (Essay/Descriptive) → Personality Test (Interview). Many successful candidates need 2–4 attempts.' },
+      { phase: 'After Selection', action: 'IAS → District Collector / Secretary level. IPS → Superintendent of Police. IRS → Income Tax / Customs. TGPSC → Revenue, Education, Police departments.' },
     ],
-    salary: '₹56,100/month starting for IAS/IPS + free accommodation, car, utilities (effective ₹15–20 LPA equivalent). TSPSC officers: ₹4–8 LPA. Banking PO: ₹8–12 LPA.',
-    hyderabad: 'Hyderabad is Telangana\'s capital — the centre of state administration. TSPSC recruits hundreds of officers annually. The Secretariat, Collectorate, and dozens of government departments are major long-term employers. Hyderabad students have a strong track record in UPSC — multiple toppers from the city in recent years.',
-    branches: ['IAS (District Administration & Secretariat)', 'IPS (Police Services)', 'IRS (Income Tax & Customs)', 'IFS (Indian Foreign Service)', 'TSPSC Group I–III (State Officers)', 'Banking PO / SSC (Central Govt.)'],
+    salary: '₹56,100/month starting for IAS/IPS + free accommodation, car, utilities (effective ₹15–20 LPA equivalent). TGPSC officers: ₹4–8 LPA. Banking PO: ₹8–12 LPA.',
+    hyderabad: 'Hyderabad is Telangana\'s capital — the centre of state administration. TGPSC recruits hundreds of officers annually. The Secretariat, Collectorate, and dozens of government departments are major long-term employers. Hyderabad students have a strong track record in UPSC — multiple toppers from the city in recent years.',
+    branches: ['IAS (District Administration & Secretariat)', 'IPS (Police Services)', 'IRS (Income Tax & Customs)', 'IFS (Indian Foreign Service)', 'TGPSC Group I–III (State Officers)', 'Banking PO / SSC (Central Govt.)'],
   },
 
   SCI: {
-    id: 'SCI', title: 'Pure Sciences & Research', emoji: '🔬',
-    color: '#0987a0', colorLight: '#e9fafb',
-    tagline: 'Ask the deepest questions about the universe and find the answers',
+    id: 'SCI', title: 'Pure Sciences & Research',
+    summary: 'Researching how the natural world works, in universities and laboratories.',
     description: 'Scientists and researchers push the frontier of human knowledge. From particle physics to cancer biology to climate science, research careers offer the thrill of genuine discovery. India\'s ISRO, DRDO, CSIR, IISc, and IISERs are world-class institutions.',
     stream: 'Science (PCM for Physics/Maths research; PCB for Biology/Medicine research)',
     streamNote: 'Strong in both Physics and Biology? PCM with Biology as optional covers all bases.',
     class11: ['Physics', 'Chemistry', 'Maths (for Physics/CS/Chemistry research)', 'Biology (for Life Sciences/Biotech)', 'Computer Science also valuable'],
     exams: [
-      { name: 'KVPY / INSPIRE Scholarship', level: 'national', desc: 'Kishore Vaigyanik Protsahan Yojana — fellowship for science students. Appear in Class 11 (SX category). Opens direct admission to IISc and IISERs.' },
-      { name: 'IISER Aptitude Test', level: 'national', desc: 'For the 7 Indian Institutes of Science Education and Research — India\'s best pure science colleges. 5-year BS-MS integrated program.' },
-      { name: 'IISc Bangalore (BS Research)', level: 'national', desc: 'India\'s top-ranked research university. Entry via KVPY or JEE Advanced rank. Extremely competitive.' },
+      { name: 'INSPIRE-SHE Scholarship', level: 'national', desc: 'Government scholarship for top Class 12 students who study natural sciences at BSc/BS-MS level. (It replaced KVPY, which ended in 2022.)' },
+      { name: 'IISER Aptitude Test (IAT)', level: 'national', desc: 'For the 7 Indian Institutes of Science Education and Research — India\'s best pure science colleges. 5-year BS-MS integrated program.' },
+      { name: 'IISc Bangalore (BS Research)', level: 'national', desc: 'India\'s top-ranked research university. Entry using JEE Main/Advanced, NEET-UG, or IAT scores. Extremely competitive.' },
       { name: 'IIT JAM', level: 'national', desc: 'IIT Joint Admission Test — for M.Sc in Physics, Chemistry, Maths, Biology at IITs after BSc.' },
       { name: 'JEST / GATE (Sciences)', level: 'national', desc: 'For PhD and research positions at TIFR, IMSc, ICTS, and CSIR national laboratories.' },
     ],
-    colleges: ['IISc Bangalore — India\'s #1 research university', 'IISERs (Pune, Kolkata, Mohali, Bhopal, Trivandrum, Berhampur, Tirupati)', 'TIFR Mumbai — Tata Institute of Fundamental Research', 'University of Hyderabad — strong research in sciences, ranked top 10', 'CCMB / CDFD / IICT Hyderabad (CSIR labs — excellent PhD programs)', 'HCU (Hyderabad Central University) — good science departments'],
+    colleges: ['IISc Bangalore — India\'s #1 research university', 'IISERs (Pune, Kolkata, Mohali, Bhopal, Trivandrum, Berhampur, Tirupati)', 'TIFR Mumbai — Tata Institute of Fundamental Research', 'University of Hyderabad — strong science research departments', 'CCMB / CDFD / IICT Hyderabad (CSIR labs — excellent PhD programs)'],
     timeline: [
       { phase: 'Class 7–10', action: 'Excel in Maths and Science. Participate in National Science Olympiad, NTSE. Read popular science books (Feynman, Carl Sagan). Curiosity is your biggest asset.' },
-      { phase: 'Class 11–12', action: 'Science stream. Appear for KVPY in Class 11 (SX) — winning it opens IISc/IISER doors and provides a monthly scholarship.' },
+      { phase: 'Class 11–12', action: 'Science stream. Prepare for the IISER Aptitude Test and JEE alongside boards. Strong Class 12 marks can win an INSPIRE-SHE scholarship.' },
       { phase: 'After Class 12', action: 'IISER Aptitude Test, IISc BS Research entrance, or BSc at a strong university. JEE rank can place you in IIT science departments.' },
       { phase: 'BSc / BS (3–5 years)', action: 'Deep study of your chosen science. Lab research, summer projects (SRFP — Summer Research Fellowship), and academic writing.' },
       { phase: 'MSc + PhD (5–6 years)', action: 'PhD fellowship from government: ₹31,000–37,000/month. After PhD: postdoc, faculty position, or transition to industry R&D.' },
@@ -287,30 +387,27 @@ const STREAMS = {
   PCM: {
     name: 'Science with Maths (PCM)',
     subjects: ['Physics', 'Chemistry', 'Mathematics', 'English', '+ 1 optional (Computer Science / Economics / Physical Education)'],
-    color: '#2b6cb0',
     note: 'Opens doors to Engineering, Computer Science, Architecture, and all science and research streams. The most versatile science option.',
   },
   PCB: {
     name: 'Science with Biology (PCB)',
     subjects: ['Physics', 'Chemistry', 'Biology', 'English', '+ 1 optional (Maths / Biotechnology)'],
-    color: '#c53030',
     note: 'Essential for MBBS (NEET), Dentistry, Pharmacy, Nursing, Biotechnology, and Life Sciences. Adding Maths as optional keeps engineering options open.',
   },
   COM: {
     name: 'Commerce',
     subjects: ['Accountancy', 'Business Studies', 'Economics', 'English', '+ 1 optional (Mathematics / IT / Legal Studies)'],
-    color: '#b7791f',
     note: 'Foundation for Chartered Accountancy, MBA, Banking, Finance, and entrepreneurship. Adding Maths makes you eligible for some management entrance exams too.',
   },
   ARTS: {
     name: 'Arts / Humanities',
     subjects: ['History or Political Science', 'Geography or Sociology', 'English', 'Economics', '+ 1 optional (Fine Arts / Psychology / Mathematics)'],
-    color: '#276749',
     note: 'Best pathway for Law (CLAT → NALSAR), Civil Services (UPSC), Journalism, Teaching, and Social Work. More flexible subject choices than Science.',
   },
 };
 
-// How well each career cluster fits each stream (0–3)
+// How well each career cluster fits each stream (0–3).
+// A 3 means the stream is effectively required; clusters without a 3 are stream-flexible.
 const STREAM_FIT = {
   ENG: { PCM: 3, PCB: 0, COM: 0, ARTS: 0 },
   CS:  { PCM: 3, PCB: 0, COM: 0, ARTS: 0 },
@@ -318,35 +415,72 @@ const STREAM_FIT = {
   COM: { PCM: 0, PCB: 0, COM: 3, ARTS: 1 },
   LAW: { PCM: 1, PCB: 1, COM: 1, ARTS: 2 },
   DES: { PCM: 2, PCB: 0, COM: 0, ARTS: 2 },
-  ART: { PCM: 0, PCB: 0, COM: 1, ARTS: 3 },
-  EDU: { PCM: 0, PCB: 1, COM: 1, ARTS: 2 },
+  ART: { PCM: 0, PCB: 0, COM: 1, ARTS: 2 },
+  EDU: { PCM: 1, PCB: 1, COM: 1, ARTS: 2 },
+  CMN: { PCM: 0, PCB: 1, COM: 1, ARTS: 2 },
   GOV: { PCM: 1, PCB: 1, COM: 1, ARTS: 2 },
   SCI: { PCM: 3, PCB: 2, COM: 0, ARTS: 0 },
+  DEF: { PCM: 2, PCB: 1, COM: 1, ARTS: 1 },
+  SPT: { PCM: 1, PCB: 1, COM: 1, ARTS: 1 },
+  PER: { PCM: 0, PCB: 0, COM: 1, ARTS: 2 },
+};
+
+// ── RIASEC MODEL ──────────────────────────────────────────────────────────────
+// Holland's six interest types — the standard framework used by career counsellors.
+const RIASEC = ['R', 'I', 'A', 'S', 'E', 'C'];
+const RIASEC_INFO = {
+  R: { name: 'Realistic',     short: 'Doer',      desc: 'hands-on, physical, practical work — tools, machines, sport, the outdoors' },
+  I: { name: 'Investigative', short: 'Thinker',   desc: 'figuring out how and why things work — puzzles, science, research' },
+  A: { name: 'Artistic',      short: 'Creator',   desc: 'expressing ideas through art, writing, music, or performance' },
+  S: { name: 'Social',        short: 'Helper',    desc: 'teaching, caring for, and guiding other people' },
+  E: { name: 'Enterprising',  short: 'Persuader', desc: 'leading, convincing, and taking charge' },
+  C: { name: 'Conventional',  short: 'Organiser', desc: 'order, accuracy, and clear systems' },
+};
+
+// What students want from work, beyond interests
+const VALUES = ['active', 'outdoor', 'structure', 'service', 'team', 'security', 'spotlight'];
+
+// Each cluster's interest profile (RIASEC weights 0–3) and work values
+// (+1 = this career offers it, −1 = this career usually lacks it; omitted = neutral)
+const CLUSTER_PROFILES = {
+  ENG: { riasec: { R:3, I:2, C:1 },      values: { team:1, security:1 } },
+  CS:  { riasec: { I:3, C:2, R:1 },      values: { active:-1, outdoor:-1, security:1 } },
+  MED: { riasec: { I:3, S:3, R:1 },      values: { service:1, structure:1, security:1, team:1 } },
+  COM: { riasec: { E:3, C:3 },           values: { active:-1, outdoor:-1 } },
+  LAW: { riasec: { E:3, I:2, S:1 },      values: { active:-1 } },
+  DES: { riasec: { A:3, R:2, I:1 },      values: { structure:-1 } },
+  ART: { riasec: { A:3, E:2, I:1 },      values: { structure:-1, security:-1 } },
+  EDU: { riasec: { S:3, E:1, A:1 },      values: { service:1, security:1 } },
+  CMN: { riasec: { S:3, E:2, A:1 },      values: { service:1, team:1 } },
+  GOV: { riasec: { E:3, C:2, S:2 },      values: { structure:1, security:1, service:1 } },
+  SCI: { riasec: { I:3, R:1, A:1 },      values: { active:-1, structure:-1, spotlight:-1 } },
+  DEF: { riasec: { R:3, C:2, E:1, S:1 }, values: { active:1, outdoor:1, structure:1, service:1, team:1, security:1 } },
+  SPT: { riasec: { R:3, E:2, S:1 },      values: { active:1, outdoor:1, team:1, spotlight:1, security:-1 } },
+  PER: { riasec: { A:3, E:2, S:1 },      values: { spotlight:1, security:-1, structure:-1 } },
 };
 
 // ── HYDERABAD SCHOOLS (by stream) ────────────────────────────────────────────
 const SCHOOLS = {
   PCM: {
-    note: 'Look for junior colleges with integrated JEE/EAMCET coaching alongside board preparation. Most Hyderabad coaching colleges offer MPC (Maths, Physics, Chemistry) integrated programmes.',
+    note: 'Look for junior colleges with integrated JEE/EAPCET coaching alongside board preparation. Most Hyderabad coaching colleges offer MPC (Maths, Physics, Chemistry) integrated programmes.',
     list: [
       { name: 'Sri Chaitanya Junior College', fee: '₹1.2–3.5 L', detail: 'Largest network in Telangana. Separate IIT and Engineering batches. Strong JEE Main & Advanced record.' },
-      { name: 'Narayana Junior College', fee: '₹1.2–3.5 L', detail: 'Multiple Hyderabad campuses. Renowned for JEE & EAMCET results. Intensive revision programmes.' },
-      { name: 'Bhashyam Junior College', fee: '₹80K–2 L', detail: 'Competitive coaching with TSBIE board curriculum. Good Maths and Physics faculty.' },
+      { name: 'Narayana Junior College', fee: '₹1.2–3.5 L', detail: 'Multiple Hyderabad campuses. Renowned for JEE & EAPCET results. Intensive revision programmes.' },
+      { name: 'Bhashyam Junior College', fee: '₹80K–2 L', detail: 'Competitive coaching with TGBIE board curriculum. Good Maths and Physics faculty.' },
       { name: 'FIITJEE / Resonance Hyderabad', fee: '₹2–4 L', detail: 'Coaching-integrated junior college model. Best suited for serious JEE Main/Advanced aspirants.' },
-      { name: 'Sri Gayatri Junior College', fee: '₹60K–1.5 L', detail: 'Strong TS EAMCET record. Multiple Hyderabad locations. Affordable fees.' },
-      { name: 'Government Model Junior Colleges (TSBIE)', fee: 'Free', detail: 'Free education. MPC stream. Excellent science faculty at major campuses — good EAMCET results.' },
+      { name: 'Sri Gayatri Junior College', fee: '₹60K–1.5 L', detail: 'Strong TG EAPCET record. Multiple Hyderabad locations. Affordable fees.' },
+      { name: 'Government Junior Colleges (TGBIE)', fee: 'Free', detail: 'Free education. MPC stream. Good science faculty at major campuses.' },
       { name: 'Kendriya Vidyalaya (KV) Schools, Hyderabad', fee: '₹3K–10K', detail: 'CBSE board. Multiple KV campuses. Solid academic foundation for JEE preparation.' },
     ]
   },
   PCB: {
-    note: 'NEET demands deep Biology and Chemistry mastery. Choose a college that balances TSBIE board preparation with NEET coaching — they are different syllabi.',
+    note: 'NEET demands deep Biology and Chemistry mastery. Choose a college that balances TGBIE board preparation with NEET coaching — they are different syllabi.',
     list: [
       { name: 'Sri Chaitanya Junior College (Medical)', fee: '₹1.5–3.5 L', detail: 'Dedicated medical batches with NEET-focused curriculum. Largest NEET coaching network in Telangana.' },
       { name: 'Narayana Junior College (Medical)', fee: '₹1.5–3.5 L', detail: 'Consistently strong NEET results. Dedicated MBiPC (Maths, Biology, Physics, Chemistry) batches.' },
       { name: 'Aakash Institute + Partner Junior Colleges', fee: '₹1.5–3 L', detail: 'National NEET leader. Hyderabad study centre. Some tie-ups with local junior colleges.' },
       { name: 'Bhashyam Junior College', fee: '₹80K–2 L', detail: 'BiPC stream with good laboratory facilities and NEET preparation.' },
-      { name: 'NTR Memorial Junior Colleges', fee: '₹40K–1 L', detail: 'Government supported. MBiPC stream. Affordable and academically solid.' },
-      { name: 'Government Junior Colleges (TSBIE)', fee: 'Free', detail: 'Free education. BiPC stream widely available. Dedicated Biology labs at major campuses.' },
+      { name: 'Government Junior Colleges (TGBIE)', fee: 'Free', detail: 'Free education. BiPC stream widely available. Dedicated Biology labs at major campuses.' },
     ]
   },
   COM: {
@@ -357,7 +491,7 @@ const SCHOOLS = {
       { name: 'Loyola Academy Junior College', fee: '₹30K–60K', detail: 'Jesuit institution. Strong academic culture. Commerce with Maths option available.' },
       { name: 'Aurora Junior College', fee: '₹40K–80K', detail: 'Popular commerce college in Hyderabad. Good industry connections.' },
       { name: 'Don Bosco Junior College', fee: '₹30K–60K', detail: 'Commerce and Science streams. Known for discipline and consistent board results.' },
-      { name: 'Government Junior Colleges (TSBIE)', fee: 'Free', detail: 'Free. CEC (Commerce, Economics, Civics) stream at many Hyderabad government campuses.' },
+      { name: 'Government Junior Colleges (TGBIE)', fee: 'Free', detail: 'Free. CEC (Commerce, Economics, Civics) stream at many Hyderabad government campuses.' },
     ]
   },
   ARTS: {
@@ -367,260 +501,196 @@ const SCHOOLS = {
       { name: 'St. Francis Junior College', fee: '₹30K–60K', detail: 'HEC (History, Economics, Civics) and MEC streams. Good language and communication training.' },
       { name: 'Osmania University-affiliated Junior Colleges', fee: '₹15K–40K', detail: 'Wide selection across Hyderabad. Strong Humanities faculty at established campuses.' },
       { name: 'The Hyderabad Public School (HPS, Begumpet)', fee: '₹2.5–4 L', detail: 'One of India\'s most prestigious schools. Humanities stream. Strong debate and writing culture.' },
-      { name: 'Government Junior Colleges (TSBIE)', fee: 'Free', detail: 'Free. HEC (History, Economics, Civics) widely available across Hyderabad government campuses.' },
+      { name: 'Government Junior Colleges (TGBIE)', fee: 'Free', detail: 'Free. HEC (History, Economics, Civics) widely available across Hyderabad government campuses.' },
       { name: 'Chirec / Oakridge / Gitanjali International', fee: '₹3–8 L+', detail: 'CBSE/IGCSE Humanities track. Good for students also considering UK or US universities.' },
     ]
   }
 };
 
-// ── QUIZ QUESTIONS ────────────────────────────────────────────────────────────
-const SECTIONS = {
-  A: { label: 'Section A', title: 'Academic Interests' },
-  B: { label: 'Section B', title: 'Activities & Hobbies' },
-  C: { label: 'Section C', title: 'Work Style' },
-  D: { label: 'Section D', title: 'Future Vision' },
+// ── ASSESSMENT ITEMS ──────────────────────────────────────────────────────────
+// Statements describe activities, never jobs, so students rate what they enjoy rather than
+// which careers they already admire. `d` is the RIASEC type (or work value) the item measures;
+// `h` gives a small subject-matter hint toward specific clusters.
+const PARTS = {
+  1: {
+    title: 'Things you might enjoy',
+    prompt: 'How would you feel about doing each of these?',
+    scale: [{ v: 1, t: 'I\'d enjoy it', cls: 'like' }, { v: 0, t: 'Not sure', cls: 'unsure' }, { v: -1, t: 'Not for me', cls: 'dislike' }],
+  },
+  2: {
+    title: 'What you want from work',
+    prompt: 'Is each of these true for you?',
+    scale: [{ v: 1, t: 'Yes', cls: 'like' }, { v: 0, t: 'Not sure', cls: 'unsure' }, { v: -1, t: 'No', cls: 'dislike' }],
+  },
 };
 
-const QUESTIONS = [
-  // ── SECTION A: Academic Interests ──────────────────────────────────────
-  {
-    id: 1, section: 'A',
-    q: 'Which school subject do you enjoy the most?',
-    opts: [
-      { t: 'Mathematics and Physics — solving complex problems',       s: { ENG:2, CS:2, SCI:1 } },
-      { t: 'Biology and Chemistry — understanding living things',       s: { MED:2, SCI:2 } },
-      { t: 'Social Studies or Economics — understanding society',      s: { GOV:2, LAW:1, COM:1 } },
-      { t: 'Languages, Art, or Drawing — expressing creative ideas',   s: { ART:2, DES:2, EDU:1 } },
-    ]
-  },
-  {
-    id: 2, section: 'A',
-    q: 'Your teacher assigns a project. Which one excites you most?',
-    opts: [
-      { t: 'Build a working model — a bridge, circuit, or small robot', s: { ENG:2, CS:1, SCI:1 } },
-      { t: 'Research a disease and present findings to the class',       s: { MED:2, SCI:2 } },
-      { t: 'Create a business plan and pitch it like a startup founder', s: { COM:2, LAW:1 } },
-      { t: 'Write, direct, or design a creative campaign or short film', s: { ART:2, DES:2 } },
-    ]
-  },
-  {
-    id: 3, section: 'A',
-    q: 'If you could choose your own timetable, which two subjects would you definitely include?',
-    opts: [
-      { t: 'Maths + Physics (or Computer Science)',           s: { ENG:2, CS:2, SCI:1 } },
-      { t: 'Biology + Chemistry',                             s: { MED:2, SCI:2 } },
-      { t: 'Economics + Business Studies (or Politics)',      s: { COM:2, GOV:1, LAW:1 } },
-      { t: 'English Literature + Drawing (or Fine Arts)',     s: { ART:2, DES:2, EDU:1 } },
-    ]
-  },
-  {
-    id: 4, section: 'A',
-    q: 'When you face a tough problem, what is your first instinct?',
-    opts: [
-      { t: 'Break it into logical steps and solve with numbers or formulas',  s: { ENG:2, CS:2, SCI:1 } },
-      { t: 'Think about how it affects people and what help they need',        s: { MED:1, EDU:2, GOV:1 } },
-      { t: 'Research what the rules, laws, or experts say about it',           s: { LAW:2, GOV:2 } },
-      { t: 'Come up with a creative or visual solution',                        s: { DES:2, ART:2 } },
-    ]
-  },
-  {
-    id: 5, section: 'A',
-    q: 'You start watching a documentary. Which topic would hold your attention longest?',
-    opts: [
-      { t: 'How rockets, AI systems, or machines are engineered',        s: { ENG:2, CS:2, SCI:1 } },
-      { t: 'How doctors fought an epidemic or discovered a new cure',     s: { MED:2, SCI:1 } },
-      { t: 'How a government handled a national crisis or election',      s: { GOV:2, LAW:1, COM:1 } },
-      { t: 'How an artist, designer, or filmmaker changed culture',       s: { ART:2, DES:2 } },
-    ]
-  },
+const INTEREST_ITEMS = {
+  R: [
+    { t: 'Fix a broken bicycle, fan, or gadget at home',                      h: { ENG:1 } },
+    { t: 'Train hard every day to get better at a sport',                      h: { SPT:1 } },
+    { t: 'Go trekking or camping and set up the tent yourself',                h: { DEF:1 } },
+    { t: 'Build something with tools — wood, wires, or metal',                 h: { ENG:1, DES:1 } },
+    { t: 'Do tough physical work that leaves you tired but proud',             h: { DEF:1, SPT:1 } },
+    { t: 'Learn to drive, steer, or operate a machine or vehicle',             h: { DEF:1, ENG:1 } },
+  ],
+  I: [
+    { t: 'Work out why a science experiment gave a strange result',            h: { SCI:1 } },
+    { t: 'Solve a tricky maths puzzle or logic problem',                        h: { CS:1, SCI:1 } },
+    { t: 'Read about how the human body or brain works',                        h: { MED:1 } },
+    { t: 'Spot patterns hidden in a big table of numbers',                      h: { CS:1 } },
+    { t: 'Keep digging into a question until you find the real answer',         h: { SCI:1, LAW:1, ART:1 } },
+    { t: 'Write code to make a game, app, or website',                          h: { CS:1 } },
+  ],
+  A: [
+    { t: 'Draw, paint, or design something original',                           h: { DES:1 } },
+    { t: 'Act, sing, dance, or play an instrument on stage',                    h: { PER:1 } },
+    { t: 'Write a story, poem, or article',                                     h: { ART:1 } },
+    { t: 'Shoot and edit a short video',                                        h: { ART:1 } },
+    { t: 'Rearrange and decorate a room so it looks great',                     h: { DES:1 } },
+    { t: 'Make up a new dance routine or piece of music',                       h: { PER:1 } },
+  ],
+  S: [
+    { t: 'Explain a topic to a classmate who is struggling with it',            h: { EDU:1 } },
+    { t: 'Listen to a friend\'s problem and help them feel better',             h: { CMN:1 } },
+    { t: 'Look after younger children or elderly relatives',                    h: { EDU:1, MED:1 } },
+    { t: 'Volunteer at a shelter, hospital, or community service drive',        h: { CMN:1 } },
+    { t: 'Help organise a festival, prayer meeting, or community gathering',    h: { CMN:1 } },
+    { t: 'Give first aid or care for someone who is unwell',                    h: { MED:1 } },
+  ],
+  E: [
+    { t: 'Be the captain or leader of a team',                                  h: { GOV:1, DEF:1, SPT:1 } },
+    { t: 'Persuade people to support your idea',                                h: { LAW:1, COM:1 } },
+    { t: 'Sell things or run a stall at a school fair',                         h: { COM:1 } },
+    { t: 'Speak in front of a large group of people',                           h: { CMN:1, GOV:1, EDU:1 } },
+    { t: 'Debate what the government or courts should do about an issue',       h: { LAW:1, GOV:1, ART:1 } },
+    { t: 'Start your own small business or project',                            h: { COM:1 } },
+  ],
+  C: [
+    { t: 'Keep track of the money collected for a class event',                 h: { COM:1 } },
+    { t: 'Organise notes, files, or a timetable so everything is in order',     h: { GOV:1 } },
+    { t: 'Follow a clear set of rules to get a job done exactly right',         h: { GOV:1, DEF:1 } },
+    { t: 'Check work carefully for mistakes before it is handed in',            h: { LAW:1 } },
+    { t: 'Plan a trip step by step — timings, tickets, and budget',             h: {} },
+    { t: 'Enter information neatly into a spreadsheet or register',             h: { COM:1, CS:1 } },
+  ],
+};
 
-  // ── SECTION B: Activities & Hobbies ────────────────────────────────────
-  {
-    id: 6, section: 'B',
-    q: 'What do you usually end up doing in your free time?',
-    opts: [
-      { t: 'Gaming, coding, tinkering with gadgets, or watching tech videos', s: { CS:2, ENG:2 } },
-      { t: 'Helping unwell family members or watching medical shows',           s: { MED:2, EDU:1 } },
-      { t: 'Reading news, following politics, or debating world events',        s: { GOV:2, LAW:2, COM:1 } },
-      { t: 'Drawing, writing stories, making videos, or playing music',         s: { DES:2, ART:2 } },
-    ]
-  },
-  {
-    id: 7, section: 'B',
-    q: 'Your school is hosting competitions. Which one would you enter?',
-    opts: [
-      { t: 'Science Olympiad, Maths Quiz, or Coding Hackathon',        s: { ENG:1, CS:1, SCI:2 } },
-      { t: 'Biology Quiz, Health Awareness Drive, or First Aid event', s: { MED:2, SCI:1, EDU:1 } },
-      { t: 'Debate, Mock Parliament, or Entrepreneurship Challenge',    s: { LAW:2, GOV:1, COM:2 } },
-      { t: 'Art Exhibition, Creative Writing, or Short Film Contest',  s: { DES:2, ART:2 } },
-    ]
-  },
-  {
-    id: 8, section: 'B',
-    q: 'A friend needs your help. Which situation would you handle best?',
-    opts: [
-      { t: 'Their laptop crashed before an exam — you figure out how to fix it', s: { CS:2, ENG:1 } },
-      { t: 'They are scared and unwell — you calm and care for them',             s: { MED:2, EDU:2 } },
-      { t: 'They are being treated unfairly — you help argue their case',         s: { LAW:2, GOV:1 } },
-      { t: 'They need an eye-catching poster done fast — you design it',          s: { DES:2, ART:1 } },
-    ]
-  },
-  {
-    id: 9, section: 'B',
-    q: 'If you could shadow a professional for one day, who would you choose?',
-    opts: [
-      { t: 'A software engineer at a tech company in Hyderabad (Google/TCS)',  s: { CS:2, ENG:1, COM:1 } },
-      { t: 'A doctor doing ward rounds at a hospital',                           s: { MED:2 } },
-      { t: 'A District Collector (IAS officer) or a High Court lawyer',          s: { GOV:2, LAW:2 } },
-      { t: 'A fashion designer, architect, or award-winning filmmaker',          s: { DES:2, ART:2 } },
-    ]
-  },
-  {
-    id: 10, section: 'B',
-    q: 'What would you most want to create in your lifetime?',
-    opts: [
-      { t: 'A useful app, machine, or technological invention',              s: { CS:2, ENG:2, SCI:1 } },
-      { t: 'A medicine, treatment, or health programme that saves lives',    s: { MED:2, SCI:2 } },
-      { t: 'A successful company or a law that helps millions of people',    s: { COM:2, LAW:2 } },
-      { t: 'An artwork, film, building, or design that people remember',     s: { ART:2, DES:2 } },
-    ]
-  },
-
-  // ── SECTION C: Work Style ───────────────────────────────────────────────
-  {
-    id: 11, section: 'C',
-    q: 'How do you prefer to work most of the time?',
-    opts: [
-      { t: 'Alone, focused on analytical or technical problems',              s: { CS:2, ENG:2, SCI:2 } },
-      { t: 'Directly with patients, students, or people who need guidance',  s: { MED:2, EDU:2 } },
-      { t: 'In a group — debating, strategising, and making decisions',       s: { LAW:2, GOV:2, COM:1 } },
-      { t: 'Independently on creative projects at my own pace',               s: { DES:2, ART:2 } },
-    ]
-  },
-  {
-    id: 12, section: 'C',
-    q: 'Which phrase describes you best?',
-    opts: [
-      { t: 'I love finding the most logical and efficient solution',         s: { ENG:1, CS:2, SCI:1, COM:1 } },
-      { t: 'I am naturally good at understanding and taking care of people', s: { MED:2, EDU:2 } },
-      { t: 'I enjoy researching, debating, and convincing others',           s: { LAW:2, GOV:1, ART:1 } },
-      { t: 'I need to create — making beautiful or original things drives me', s: { DES:2, ART:2 } },
-    ]
-  },
-  {
-    id: 13, section: 'C',
-    q: 'When you succeed at something, what makes you feel most satisfied?',
-    opts: [
-      { t: 'A system I built works perfectly, or my code runs without errors',  s: { CS:2, ENG:2 } },
-      { t: 'Someone\'s health or situation genuinely improved because of me',    s: { MED:2, EDU:2, GOV:1 } },
-      { t: 'I won an argument or negotiation fair and square',                   s: { LAW:2, COM:1 } },
-      { t: 'The final output is beautiful and original, and people notice it',  s: { DES:2, ART:2 } },
-    ]
-  },
-  {
-    id: 14, section: 'C',
-    q: 'Which work schedule sounds most appealing to you?',
-    opts: [
-      { t: 'Project-based: intense problem-solving, then the satisfaction of completion', s: { ENG:1, CS:1, SCI:2, DES:1 } },
-      { t: 'People-focused: different patients or students every day, always helping',    s: { MED:2, EDU:2 } },
-      { t: 'Structured office hours: meetings, court sessions, or policy work',           s: { LAW:2, GOV:2, COM:2 } },
-      { t: 'Flexible: manage your own time, travel for stories, or work from a studio',   s: { ART:2, DES:1, SCI:1 } },
-    ]
-  },
-
-  // ── SECTION D: Future Vision ────────────────────────────────────────────
-  {
-    id: 15, section: 'D',
-    q: 'Which headline would you most want to see about yourself in 20 years?',
-    opts: [
-      { t: '"[Your name]\'s engineering team builds India\'s fastest train"',        s: { ENG:2, CS:1 } },
-      { t: '"Dr. [Your name] discovers breakthrough treatment for rare disease"',    s: { MED:2, SCI:2 } },
-      { t: '"[Your name] listed in Forbes India 30 Under 30 for business innovation"', s: { COM:2, CS:1 } },
-      { t: '"[Your name], IAS — youngest District Collector in Telangana"',          s: { GOV:2, LAW:1 } },
-    ]
-  },
-  {
-    id: 16, section: 'D',
-    q: 'Where do you picture yourself working on a typical weekday?',
-    opts: [
-      { t: 'A tech campus or research lab — screens, whiteboards, experiments',  s: { CS:2, ENG:1, SCI:2 } },
-      { t: 'A hospital, clinic, or school — people depending on you every hour', s: { MED:2, EDU:1 } },
-      { t: 'A government office, courtroom, or corporate boardroom',              s: { LAW:2, GOV:2, COM:1 } },
-      { t: 'A studio, newsroom, or creative agency — energy, deadlines, ideas',  s: { DES:2, ART:2 } },
-    ]
-  },
-  {
-    id: 17, section: 'D',
-    q: 'What do you most want your career to give you?',
-    opts: [
-      { t: 'High salary, financial freedom, and long-term job security',      s: { CS:1, ENG:1, COM:2 } },
-      { t: 'The feeling that I helped people and made a real difference',      s: { MED:2, EDU:2, GOV:1 } },
-      { t: 'Power, prestige, and the ability to change how the system works',  s: { LAW:2, GOV:2 } },
-      { t: 'Creative freedom to build, express, and pursue discovery',         s: { DES:2, ART:2, SCI:1 } },
-    ]
-  },
-  {
-    id: 18, section: 'D',
-    q: 'Which story inspires you the most?',
-    opts: [
-      { t: 'Sundar Pichai — from Madurai to CEO of Google',                         s: { CS:2, ENG:1, COM:1 } },
-      { t: 'Dr. Tessy Thomas — led India\'s Agni missile programme from DRDO',      s: { SCI:2, ENG:2, GOV:1 } },
-      { t: 'Kiran Mazumdar-Shaw — built Biocon into India\'s top biotech company',  s: { MED:1, SCI:1, COM:2 } },
-      { t: 'Priyanka Paul — 19-year-old whose illustrations went global',           s: { ART:2, DES:2 } },
-    ]
-  },
+const VALUE_ITEMS = [
+  { t: 'I\'d like a job where I\'m on my feet and active most of the day',             d: 'active' },
+  { t: 'I\'d like to spend a lot of my working day outdoors',                           d: 'outdoor' },
+  { t: 'I\'d be comfortable wearing a uniform and following a chain of command',        d: 'structure' },
+  { t: 'I want my work to serve people or a bigger cause, even if it pays less',        d: 'service' },
+  { t: 'I\'d rather be part of a close team than work on my own',                       d: 'team' },
+  { t: 'A steady, secure income matters more to me than fame or taking big risks',      d: 'security' },
+  { t: 'I\'d enjoy being in the spotlight — performing or competing in front of crowds', d: 'spotlight' },
+  { t: 'Daily exercise or training would be part of my ideal job',                      d: 'active' },
+  { t: 'I like clear rules, routines, and knowing exactly what is expected of me',      d: 'structure' },
+  { t: 'I want my work to be guided by my faith or my values',                          d: 'service' },
 ];
 
-// Shuffle each question's options once at load — prevents any obvious A=tech, B=med pattern
-;(function shuffleAllOpts() {
-  QUESTIONS.forEach(q => {
-    for (let i = q.opts.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [q.opts[i], q.opts[j]] = [q.opts[j], q.opts[i]];
-    }
-  });
-})();
+// Interest items are interleaved so each page mixes all six types (no themed pages)
+const ITEMS = [];
+for (let p = 0; p < 6; p++) {
+  for (let k = 0; k < 6; k++) {
+    const d = RIASEC[(k + p) % 6];
+    ITEMS.push({ ...INTEREST_ITEMS[d][p], d, part: 1 });
+  }
+}
+VALUE_ITEMS.forEach(v => ITEMS.push({ ...v, h: {}, part: 2 }));
+
+// Page layout: 6 interest pages of 6, then 2 value pages of 5
+const PAGES = [];
+for (let i = 0; i < 36; i += 6) PAGES.push({ part: 1, items: [0,1,2,3,4,5].map(n => i + n) });
+PAGES.push({ part: 2, items: [36, 37, 38, 39, 40] });
+PAGES.push({ part: 2, items: [41, 42, 43, 44, 45] });
+
+// Validation mode (?validate) — adults record their actual career to test the quiz's accuracy
+const VALIDATE = new URLSearchParams(location.search).has('validate');
 
 // ── APP STATE ─────────────────────────────────────────────────────────────────
 const state = {
   name: '', grade: '', section: '',
-  currentQ: 0,
-  answers: {},
+  actualCareer: '',
+  currentPage: 0,
+  answers: {},        // item index → 1 (yes), 0 (not sure), -1 (no)
   scores: {},
+  profile: null,
   topCareers: [],
   recommendedStream: null,
   chatHistory: [],
 };
 
 // ── SCORING ───────────────────────────────────────────────────────────────────
-function calculateResults() {
-  const scores = { ENG:0, CS:0, MED:0, COM:0, LAW:0, DES:0, ART:0, EDU:0, GOV:0, SCI:0 };
+const avg = arr => arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length : 0;
+const clamp = (x, lo, hi) => Math.max(lo, Math.min(hi, x));
 
-  // Each question carries equal weight — if several options are picked, their points are shared
-  Object.entries(state.answers).forEach(([qId, picks]) => {
-    const q = QUESTIONS.find(x => x.id === parseInt(qId));
-    if (!q || !picks.length) return;
-    picks.forEach(optIdx => {
-      Object.entries(q.opts[optIdx].s).forEach(([k, v]) => { scores[k] = (scores[k] || 0) + v / picks.length; });
-    });
+function calculateResults() {
+  // Level for each RIASEC type and value: share of answered items rated "yes" (0–1).
+  // "Not sure" is treated as a skip, so it never drags a score down.
+  const yes = {}, answered = {};
+  let unsure = 0;
+  ITEMS.forEach((item, i) => {
+    const r = state.answers[i];
+    if (!r) { unsure++; return; }
+    answered[item.d] = (answered[item.d] || 0) + 1;
+    yes[item.d] = (yes[item.d] || 0) + (r > 0 ? 1 : 0);
+  });
+  const level = d => answered[d] ? yes[d] / answered[d] : 0.5;
+
+  const interest = Object.fromEntries(RIASEC.map(d => [d, level(d)]));
+  const values = Object.fromEntries(VALUES.map(v => [v, level(v)]));
+
+  // Profile shape matters more than overall enthusiasm, so centre interests on the student's own mean
+  const meanInterest = avg(Object.values(interest));
+  const centred = Object.fromEntries(RIASEC.map(d => [d, interest[d] - meanInterest]));
+
+  const scores = {};
+  Object.entries(CLUSTER_PROFILES).forEach(([id, prof]) => {
+    const weights = Object.entries(prof.riasec);
+    const totalW = weights.reduce((s, [, w]) => s + w, 0);
+    const interestFit = clamp(2 * weights.reduce((s, [d, w]) => s + w * centred[d], 0) / totalW, -1, 1);
+
+    const prefs = Object.entries(prof.values);
+    const valueFit = avg(prefs.map(([v, p]) => p * (values[v] - 0.5) * 2));
+
+    const hinted = ITEMS.map((item, i) => item.h[id] ? (state.answers[i] || 0) : null).filter(x => x !== null);
+    const domainFit = avg(hinted);
+
+    scores[id] = 0.5 * interestFit + 0.3 * domainFit + 0.2 * valueFit;
   });
 
   state.scores = scores;
-
   state.topCareers = Object.entries(scores)
     .sort((a, b) => b[1] - a[1])
     .map(([id, score]) => ({ id, score }));
 
-  // Stream recommendation: weight top 3 careers
+  // Holland code: the student's three strongest interest types
+  const code = RIASEC.slice().sort((a, b) => interest[b] - interest[a]).slice(0, 3);
+  const spread = Math.max(...Object.values(interest)) - Math.min(...Object.values(interest));
+  const unsureShare = unsure / ITEMS.length;
+  let caution = '';
+  if (unsureShare > 0.4) caution = 'You chose "Not sure" for many statements, so these results are a rough starting point.';
+  else if (spread < 0.2) caution = 'Your answers were quite even across very different kinds of work, so no single area stands out strongly yet.';
+  state.profile = { interest, values, code, caution, unsure };
+
+  // Stream: weight the top 3 clusters. Only call it a firm recommendation when the #1 area depends on a stream.
   const streamScores = { PCM:0, PCB:0, COM:0, ARTS:0 };
-  state.topCareers.slice(0, 3).forEach(({ id, score }, rank) => {
+  state.topCareers.slice(0, 3).forEach(({ id }, rank) => {
     const w = rank === 0 ? 3 : rank === 1 ? 2 : 1;
-    Object.entries(STREAM_FIT[id]).forEach(([stream, fit]) => {
-      streamScores[stream] += fit * w;
-    });
+    Object.entries(STREAM_FIT[id]).forEach(([stream, fit]) => { streamScores[stream] += fit * w; });
   });
   const topStreamKey = Object.entries(streamScores).sort((a, b) => b[1] - a[1])[0][0];
-  state.recommendedStream = { key: topStreamKey, ...STREAMS[topStreamKey] };
+  const top1Fit = STREAM_FIT[state.topCareers[0].id];
+  const flexible = Math.max(...Object.values(top1Fit)) < 3;
+  state.recommendedStream = { key: topStreamKey, flexible, ...STREAMS[topStreamKey] };
+}
+
+// Plain-language fit band for a cluster score (−1 to 1)
+function fitBand(score) {
+  if (score >= 0.4) return 'Strong fit';
+  if (score >= 0.15) return 'Good fit';
+  if (score >= -0.1) return 'Some fit';
+  return 'Less likely';
 }
 
 // ── VIEW MANAGEMENT ───────────────────────────────────────────────────────────
@@ -634,150 +704,173 @@ function showView(id) {
 }
 
 // ── QUIZ LOGIC ────────────────────────────────────────────────────────────────
-function renderQuestion() {
-  const q = QUESTIONS[state.currentQ];
-  const total = QUESTIONS.length;
-  const sec = SECTIONS[q.section];
+const pageComplete = () => PAGES[state.currentPage].items.every(i => i in state.answers);
 
-  document.getElementById('q-current').textContent = state.currentQ + 1;
-  document.getElementById('q-total').textContent = total;
-  document.getElementById('progress-bar').style.width = `${((state.currentQ) / total) * 100}%`;
-
-  document.getElementById('quiz-section-badge').textContent = `${sec.label}: ${sec.title}`;
-  document.getElementById('quiz-q-label').textContent = `Question ${state.currentQ + 1} of ${total}`;
-  document.getElementById('quiz-question').textContent = q.q;
-
-  const letters = ['A', 'B', 'C', 'D'];
-  const picks = state.answers[q.id] || [];
-  const container = document.getElementById('quiz-options');
-  container.innerHTML = q.opts.map((opt, i) => `
-    <button class="option-card${picks.includes(i) ? ' selected' : ''}" data-index="${i}" aria-pressed="${picks.includes(i)}">
-      <span class="option-letter">${letters[i]}</span>
-      <span class="option-text">${opt.t}</span>
-    </button>
-  `).join('');
-
-  container.querySelectorAll('.option-card').forEach(card => {
-    card.addEventListener('click', () => selectOption(parseInt(card.dataset.index)));
-  });
-
-  document.getElementById('btn-next-q').disabled = picks.length === 0;
-  document.getElementById('btn-prev-q').style.visibility = state.currentQ === 0 ? 'hidden' : 'visible';
+function updateQuizProgress() {
+  const done = Object.keys(state.answers).length;
+  document.getElementById('progress-bar').style.width = `${(done / ITEMS.length) * 100}%`;
+  document.getElementById('btn-next-q').disabled = !pageComplete();
 }
 
-// Toggle an option on/off — students can pick more than one per question
-function selectOption(idx) {
-  const qId = QUESTIONS[state.currentQ].id;
-  const picks = state.answers[qId] || [];
-  state.answers[qId] = picks.includes(idx) ? picks.filter(i => i !== idx) : [...picks, idx];
-  const current = state.answers[qId];
-  document.querySelectorAll('.option-card').forEach((c, i) => {
-    c.classList.toggle('selected', current.includes(i));
-    c.setAttribute('aria-pressed', current.includes(i));
+function renderPage() {
+  const page = PAGES[state.currentPage];
+  const part = PARTS[page.part];
+
+  document.getElementById('q-current').textContent = state.currentPage + 1;
+  document.getElementById('q-total').textContent = PAGES.length;
+  document.getElementById('quiz-section-badge').textContent = `Part ${page.part} of 2: ${part.title}`;
+  document.getElementById('quiz-q-label').textContent = `Page ${state.currentPage + 1} of ${PAGES.length}`;
+  document.getElementById('quiz-question').textContent = part.prompt;
+
+  const container = document.getElementById('quiz-options');
+  container.innerHTML = page.items.map(i => {
+    const r = state.answers[i];
+    return `
+      <div class="statement${i in state.answers ? ' answered' : ''}" role="radiogroup" aria-label="${ITEMS[i].t}">
+        <p class="statement-text">${ITEMS[i].t}</p>
+        <div class="rating-row">
+          ${part.scale.map(s => `
+            <button class="rating-btn ${s.cls}${r === s.v ? ' selected' : ''}" data-item="${i}" data-value="${s.v}"
+              role="radio" aria-checked="${r === s.v}">${s.t}</button>`).join('')}
+        </div>
+      </div>`;
+  }).join('');
+
+  container.querySelectorAll('.rating-btn').forEach(btn => {
+    btn.addEventListener('click', () => rateItem(parseInt(btn.dataset.item), parseInt(btn.dataset.value), btn));
   });
-  document.getElementById('btn-next-q').disabled = current.length === 0;
+
+  document.getElementById('btn-next-q').textContent = state.currentPage === PAGES.length - 1 ? 'See my results' : 'Next';
+  document.getElementById('btn-prev-q').style.visibility = state.currentPage === 0 ? 'hidden' : 'visible';
+  document.getElementById('view-quiz').scrollTop = 0;
+  updateQuizProgress();
+}
+
+function rateItem(idx, value, btn) {
+  state.answers[idx] = value;
+  const row = btn.closest('.statement');
+  row.classList.add('answered');
+  row.querySelectorAll('.rating-btn').forEach(b => {
+    const on = b === btn;
+    b.classList.toggle('selected', on);
+    b.setAttribute('aria-checked', on);
+  });
+  updateQuizProgress();
 }
 
 // ── RESULTS RENDERING ─────────────────────────────────────────────────────────
 function renderResults() {
-  document.getElementById('results-name').textContent = `${state.name}'s Career Report`;
-  document.getElementById('results-meta').textContent =
-    `Grade ${state.grade}${state.section ? ', Section ' + state.section : ''} · Johns Academy · Career Compass`;
-  document.getElementById('print-date').textContent =
-    new Date().toLocaleDateString('en-IN', { year:'numeric', month:'long', day:'numeric' });
+  const today = new Date().toLocaleDateString('en-IN', { year:'numeric', month:'long', day:'numeric' });
+  document.getElementById('results-name').textContent = state.name;
+  document.getElementById('results-meta').textContent = VALIDATE
+    ? `Validation run · ${today}`
+    : `Grade ${state.grade}${state.section ? ', Section ' + state.section : ''} · ${today}`;
 
-  // Summary card — visible immediately above the fold
-  const [top1, top2, top3] = state.topCareers.slice(0, 3).map(({ id }) => CAREERS[id]);
+  // Summary — interest code beside the three areas worth exploring
+  const top3 = state.topCareers.slice(0, 3).map(({ id }) => CAREERS[id]);
   const stream = state.recommendedStream;
+  const { code, caution } = state.profile;
   document.getElementById('summary-top-match').innerHTML = `
-    <div class="summary-top1" style="background:${top1.color}">
-      <span class="summary-top1-emoji">${top1.emoji}</span>
-      <div>
-        <div class="summary-top1-label">Your #1 Career Match</div>
-        <div class="summary-top1-title">${top1.title}</div>
+    <div class="summary-grid">
+      <div class="summary-code">
+        <p class="label">Your interest code</p>
+        <p class="code-letters">${code.join('')}</p>
+        <dl class="code-list">
+          ${code.map(d => `<dt>${d} — ${RIASEC_INFO[d].name}</dt><dd>Enjoys ${RIASEC_INFO[d].desc}.</dd>`).join('')}
+        </dl>
+      </div>
+      <div class="summary-areas">
+        <p class="label">Areas worth exploring</p>
+        <ol class="area-list">
+          ${top3.map(c => `<li><strong>${c.title}</strong><span>${c.summary}</span></li>`).join('')}
+        </ol>
+        <div class="summary-stream">
+          <p class="label">${stream.flexible ? 'Class 11 stream (flexible for your top area)' : 'Recommended Class 11 stream'}</p>
+          <p class="stream-name">${stream.flexible ? `Suggested: ${stream.name}` : stream.name}</p>
+        </div>
       </div>
     </div>
-    <div class="summary-others">
-      <div class="summary-other">
-        <span>${top2.emoji}</span>
-        <span class="summary-other-title">${top2.title}</span>
-        <span class="summary-other-rank">#2</span>
-      </div>
-      <div class="summary-other">
-        <span>${top3.emoji}</span>
-        <span class="summary-other-title">${top3.title}</span>
-        <span class="summary-other-rank">#3</span>
-      </div>
-    </div>
-    <div class="summary-stream" style="border-color:${stream.color}">
-      <div class="summary-stream-label">Recommended Class 11 Stream</div>
-      <div class="summary-stream-name" style="color:${stream.color}">${stream.name}</div>
-    </div>`;
+    ${caution ? `<p class="summary-caution">${caution} Talk it through with your teacher, or take it again in a few months.</p>` : ''}`;
 
+  renderValidation();
   renderStep1();
   renderStep2();
   renderStep3();
 
-  // Score chart (now at bottom)
-  const maxScore = Math.max(...Object.values(state.scores), 1);
-  document.getElementById('score-chart').innerHTML = state.topCareers.map(({ id, score }) => {
-    const c = CAREERS[id];
-    const pct = Math.round((score / maxScore) * 100);
+  // Score chart — bars use a fixed scale (not relative to the top score), labelled with plain-language bands
+  document.getElementById('score-chart').innerHTML = state.topCareers.map(({ id, score }, i) => {
+    const pct = Math.round(clamp((score + 1) / 2, 0.03, 1) * 100);
     return `
-      <div class="score-row">
-        <div class="score-label"><span class="score-emoji">${c.emoji}</span><span>${c.title}</span></div>
-        <div class="score-bar-bg"><div class="score-bar-fill" data-pct="${pct}" style="background:${c.color}"></div></div>
-        <div class="score-pct">${pct}%</div>
-      </div>`;
-  }).join('');
-  requestAnimationFrame(() => {
-    document.querySelectorAll('.score-bar-fill').forEach(b => { b.style.width = b.dataset.pct + '%'; });
-  });
-
-  // Career explore cards
-  const ranks = ['1st Match', '2nd Match', '3rd Match'];
-  document.getElementById('career-cards').innerHTML = state.topCareers.slice(0, 3).map(({ id }, i) => {
-    const c = CAREERS[id];
-    const topExams = c.exams.slice(0, 2).map(e => e.name).join(', ');
-    return `
-      <div class="career-card" data-career="${id}" tabindex="0" role="button" aria-label="View details for ${c.title}">
-        <div class="career-card-header" style="background:${c.color}">
-          <span class="career-card-emoji">${c.emoji}</span>
-          <div><h4>${c.title}</h4><div class="career-card-rank">${ranks[i]}</div></div>
-        </div>
-        <div class="career-card-body">
-          <p class="career-card-tagline">"${c.tagline}"</p>
-          <p class="career-card-stream">&#9654; Stream: ${c.stream}</p>
-          <p class="career-card-exams"><strong>Key Exams:</strong> ${topExams}</p>
-          <p class="career-card-cta">Tap for full details &rarr;</p>
-        </div>
+      <div class="score-row${i < 3 ? ' is-top' : ''}">
+        <div class="score-label">${CAREERS[id].title}</div>
+        <div class="score-bar-bg"><div class="score-bar-fill" style="width:${pct}%"></div></div>
+        <div class="score-pct">${fitBand(score)}</div>
       </div>`;
   }).join('');
 
-  document.querySelectorAll('.career-card').forEach(card => {
-    const open = () => openModal(card.dataset.career);
-    card.addEventListener('click', open);
-    card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') open(); });
+  // Career detail cards
+  document.getElementById('career-cards').innerHTML = top3.map((c, i) => `
+    <article class="career-card">
+      <p class="career-card-rank">${['First', 'Second', 'Third'][i]} area</p>
+      <h3>${c.title}</h3>
+      <p class="career-card-summary">${c.summary}</p>
+      <dl class="career-card-facts">
+        <dt>Stream</dt><dd>${c.stream}</dd>
+        <dt>Key exams</dt><dd>${c.exams.slice(0, 2).map(e => e.name).join(', ')}</dd>
+      </dl>
+      <button class="link-btn" data-career="${c.id}">Read the full guide</button>
+    </article>`).join('');
+
+  document.querySelectorAll('.career-card .link-btn').forEach(btn => {
+    btn.addEventListener('click', () => openModal(btn.dataset.career));
   });
 
   initChat();
 }
 
+// Validation mode: show where the person's real career landed and give a row to paste into a spreadsheet
+function renderValidation() {
+  const box = document.getElementById('validate-result');
+  if (!VALIDATE) { box.classList.add('hidden'); return; }
+  const rank = state.topCareers.findIndex(c => c.id === state.actualCareer) + 1;
+  const hit = rank > 0 && rank <= 3;
+  const row = [
+    new Date().toISOString().slice(0, 10), state.name, state.actualCareer, rank,
+    hit ? 'HIT' : 'MISS', state.topCareers.slice(0, 3).map(c => c.id).join(' '),
+    state.profile.code.join(''), state.profile.unsure,
+  ].join('\t');
+  box.innerHTML = `
+    <h2 class="section-heading">Validation result</h2>
+    <p class="validate-line">Actual area: <strong>${CAREERS[state.actualCareer].title}</strong> — ranked
+      <strong>#${rank} of ${state.topCareers.length}</strong> <span class="validate-${hit ? 'hit' : 'miss'}">${hit ? 'Top-3 hit' : 'Outside top 3'}</span></p>
+    <p class="section-note">Spreadsheet row (date, name, actual, rank, hit, top 3, code, not-sure count):</p>
+    <code class="validate-row" id="validate-row">${row}</code>
+    <button class="btn-nav" id="btn-copy-row">Copy row</button>`;
+  document.getElementById('btn-copy-row').addEventListener('click', e => {
+    navigator.clipboard?.writeText(row).then(() => { e.target.textContent = 'Copied'; }, () => {});
+  });
+  box.classList.remove('hidden');
+}
+
+const examRows = exams => exams.map(e => `
+  <div class="exam-row">
+    <span class="exam-badge">${e.level}</span>
+    <div class="exam-info"><strong>${e.name}</strong>${e.desc}</div>
+  </div>`).join('');
+
 function renderStep1() {
   const stream = state.recommendedStream;
   const schools = SCHOOLS[stream.key];
+  // Clusters that don't follow the usual stream route explain their own pathway
+  const pathwayNotes = state.topCareers.slice(0, 3).map(({ id }) => CAREERS[id].pathwayNote).filter(Boolean);
   document.getElementById('step1-content').innerHTML = `
-    <div class="stream-card" style="margin-bottom:20px">
-      <div class="stream-card-header" style="background:${stream.color}">
-        <div style="flex:1">
-          <h3>${stream.name}</h3>
-          <p>${stream.note}</p>
-        </div>
-        <div class="stream-card-badge">RECOMMENDED</div>
-      </div>
-      <div class="stream-card-body">
-        <div class="stream-subjects">${stream.subjects.map(s => `<span class="subject-chip">${s}</span>`).join('')}</div>
-      </div>
+    ${stream.flexible ? `<p class="callout">Your top area doesn't depend on one particular stream. The stream below suits your overall profile, but choosing subjects you genuinely enjoy matters more.</p>` : ''}
+    ${pathwayNotes.map(n => `<p class="callout">${n}</p>`).join('')}
+    <div class="stream-card">
+      <p class="label">${stream.flexible ? 'Suggested stream' : 'Recommended stream'}</p>
+      <h3>${stream.name}</h3>
+      <p>${stream.note}</p>
+      <div class="chip-row">${stream.subjects.map(s => `<span class="subject-chip">${s}</span>`).join('')}</div>
     </div>
     <p class="step-note">${schools.note}</p>
     <div class="step-schools">
@@ -785,7 +878,7 @@ function renderStep1() {
         <div class="step-school-item">
           <div class="step-school-head">
             <div class="step-school-name">${s.name}</div>
-            <div class="step-school-fee${s.fee === 'Free' ? ' is-free' : ''}">${s.fee === 'Free' ? 'Free' : `${s.fee} / yr`}</div>
+            <div class="step-school-fee">${s.fee === 'Free' ? 'Free' : `${s.fee} / yr`}</div>
           </div>
           <div class="step-school-detail">${s.detail}</div>
         </div>`).join('')}
@@ -801,18 +894,12 @@ function renderStep2() {
     if (!exams.length) return '';
     return `
       <div class="step-career-block">
-        <div class="step-career-label" style="border-left-color:${c.color}">${c.emoji} ${c.title}</div>
-        <div class="exams-list">
-          ${exams.map(e => `
-            <div class="exam-row">
-              <span class="exam-badge ${e.level}">${e.level.toUpperCase()}</span>
-              <div class="exam-info"><strong>${e.name}</strong>${e.desc}</div>
-            </div>`).join('')}
-        </div>
+        <h3 class="step-career-label">${c.title}</h3>
+        <div class="exams-list">${examRows(exams)}</div>
       </div>`;
   }).join('');
   document.getElementById('step2-content').innerHTML = `
-    <p class="step-note">Start preparing for these exams during Class 11 &amp; 12 — alongside your board exams.</p>
+    <p class="step-note">Start preparing for these exams during Class 11 and 12, alongside your board exams.</p>
     ${blocks}`;
 }
 
@@ -820,100 +907,78 @@ function renderStep3() {
   const top3 = state.topCareers.slice(0, 3).map(({ id }) => CAREERS[id]);
   const blocks = top3.map(c => `
     <div class="step-career-block">
-      <div class="step-career-label" style="border-left-color:${c.color}">${c.emoji} ${c.title}</div>
-      <div class="modal-section-title" style="margin-bottom:8px">Degree Options</div>
-      <div class="branches-wrap" style="margin-bottom:14px">
-        ${c.branches.map(b => `<span class="branch-chip">${b}</span>`).join('')}
-      </div>
-      <div class="modal-section-title" style="margin-bottom:8px">Colleges in Hyderabad &amp; India</div>
-      <div class="colleges-list">
-        ${c.colleges.map(col => `<div class="college-item">${col}</div>`).join('')}
-      </div>
+      <h3 class="step-career-label">${c.title}</h3>
+      <p class="sub-label">Degree options</p>
+      <div class="chip-row">${c.branches.map(b => `<span class="branch-chip">${b}</span>`).join('')}</div>
+      <p class="sub-label">Colleges in Hyderabad and India</p>
+      <ul class="colleges-list">${c.colleges.map(col => `<li>${col}</li>`).join('')}</ul>
     </div>`).join('');
   document.getElementById('step3-content').innerHTML = `
-    <p class="step-note">After finishing Class 12 and entrance exams, these are your target degree programmes and colleges.</p>
+    <p class="step-note">After Class 12 and your entrance exams, these are the degree programmes and colleges to aim for.</p>
     ${blocks}`;
 }
 
 // ── CAREER DETAIL MODAL ───────────────────────────────────────────────────────
 function openModal(careerId) {
   const c = CAREERS[careerId];
-  const levelClass = { national: 'national', state: 'state', private: 'private' };
 
   document.getElementById('modal-content').innerHTML = `
-    <div class="modal-hero" style="background:${c.color}">
-      <span class="modal-hero-emoji">${c.emoji}</span>
-      <div>
-        <h2>${c.title}</h2>
-        <p>${c.tagline}</p>
-      </div>
-    </div>
+    <header class="modal-hero">
+      <p class="label">Career guide</p>
+      <h2 id="modal-title">${c.title}</h2>
+      <p>${c.summary}</p>
+    </header>
     <div class="modal-body">
       <p class="modal-desc">${c.description}</p>
 
-      <div class="modal-section">
-        <div class="modal-section-title">Class 11 Stream</div>
-        <div class="modal-stream-box">
-          <strong>${c.stream}</strong>
-          <p class="modal-stream-note">${c.streamNote}</p>
-          <div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:6px">
-            ${c.class11.map(s => `<span class="subject-chip">${s}</span>`).join('')}
-          </div>
-        </div>
-      </div>
+      <section class="modal-section">
+        <h3 class="modal-section-title">Class 11 stream</h3>
+        <p><strong>${c.stream}</strong></p>
+        <p class="modal-stream-note">${c.streamNote}</p>
+        <div class="chip-row">${c.class11.map(s => `<span class="subject-chip">${s}</span>`).join('')}</div>
+      </section>
 
-      <div class="modal-section">
-        <div class="modal-section-title">Key Entrance Exams</div>
-        <div class="exams-list">
-          ${c.exams.map(e => `
-            <div class="exam-row">
-              <span class="exam-badge ${levelClass[e.level] || 'national'}">${e.level.toUpperCase()}</span>
-              <div class="exam-info"><strong>${e.name}</strong>${e.desc}</div>
-            </div>
-          `).join('')}
-        </div>
-      </div>
+      <section class="modal-section">
+        <h3 class="modal-section-title">Entrance exams</h3>
+        <div class="exams-list">${examRows(c.exams)}</div>
+      </section>
 
-      <div class="modal-section">
-        <div class="modal-section-title">Top Colleges (India &amp; Hyderabad)</div>
-        <div class="colleges-list">
-          ${c.colleges.map(col => `<div class="college-item">${col}</div>`).join('')}
-        </div>
-      </div>
+      <section class="modal-section">
+        <h3 class="modal-section-title">Colleges</h3>
+        <ul class="colleges-list">${c.colleges.map(col => `<li>${col}</li>`).join('')}</ul>
+      </section>
 
-      <div class="modal-section">
-        <div class="modal-section-title">Roadmap: School → Career</div>
-        <div class="timeline-list">
+      <section class="modal-section">
+        <h3 class="modal-section-title">From school to career</h3>
+        <ol class="timeline-list">
           ${c.timeline.map(t => `
-            <div class="timeline-row">
+            <li class="timeline-row">
               <div class="timeline-phase">${t.phase}</div>
               <div class="timeline-action">${t.action}</div>
-            </div>
-          `).join('')}
-        </div>
-      </div>
+            </li>`).join('')}
+        </ol>
+      </section>
 
-      <div class="modal-section">
-        <div class="modal-section-title">Expected Salary in India</div>
-        <div class="modal-salary"><strong>${c.salary}</strong></div>
-      </div>
+      <section class="modal-section">
+        <h3 class="modal-section-title">Typical pay in India</h3>
+        <p>${c.salary}</p>
+      </section>
 
-      <div class="modal-section">
-        <div class="modal-section-title">Hyderabad Advantage</div>
-        <div class="modal-hyderabad">${c.hyderabad}</div>
-      </div>
+      <section class="modal-section">
+        <h3 class="modal-section-title">In and around Hyderabad</h3>
+        <p>${c.hyderabad}</p>
+      </section>
 
-      <div class="modal-section">
-        <div class="modal-section-title">Branches &amp; Specialisations</div>
-        <div class="branches-wrap">
-          ${c.branches.map(b => `<span class="branch-chip">${b}</span>`).join('')}
-        </div>
-      </div>
+      <section class="modal-section">
+        <h3 class="modal-section-title">Specialisations</h3>
+        <div class="chip-row">${c.branches.map(b => `<span class="branch-chip">${b}</span>`).join('')}</div>
+      </section>
     </div>
   `;
 
   document.getElementById('modal-overlay').classList.remove('hidden');
   document.body.style.overflow = 'hidden';
+  document.getElementById('modal-close').focus();
 }
 
 function closeModal() {
@@ -924,30 +989,26 @@ function closeModal() {
 // ── AI CHAT ───────────────────────────────────────────────────────────────────
 function initChat() {
   const top3 = state.topCareers.slice(0, 3).map(({ id }) => CAREERS[id].title).join(', ');
-  const noticeEl = document.getElementById('chat-not-configured');
-  const boxEl = document.getElementById('chat-box');
   const nameEl = document.getElementById('chat-student-name');
   const topCareerEl = document.getElementById('chat-top-career');
 
-  if (!CHAT_PROXY_URL) {
-    noticeEl.classList.remove('hidden');
-    boxEl.style.display = 'none';
-    return;
-  }
+  // Students never see the chat (or setup instructions) until the proxy is configured
+  if (!CHAT_PROXY_URL) return;
+  document.getElementById('chat-section').classList.remove('hidden');
 
   nameEl.textContent = state.name;
   topCareerEl.textContent = top3;
 
   state.chatHistory = [{
     role: 'user',
-    content: `[Context: This is ${state.name}, a Grade ${state.grade} student at Johns Academy, Hyderabad, India. Their top 3 career matches from the assessment are: ${top3}. Their recommended Class 11 stream is: ${state.recommendedStream.name}. Please answer their career questions as an expert Indian career counsellor who knows about entrance exams (JEE, NEET, CLAT, EAMCET, etc.), Hyderabad colleges, and the Indian education system.]`,
+    content: `[Context: This is ${state.name}, a Grade ${state.grade} student at Johns Academy, Hyderabad, India. Their top 3 career matches from the assessment are: ${top3}. Their recommended Class 11 stream is: ${state.recommendedStream.name}. Please answer their career questions as an expert Indian career counsellor who knows about entrance exams (JEE, NEET, CLAT, TG EAPCET, etc.), Hyderabad colleges, and the Indian education system.]`,
   }, {
     role: 'assistant',
-    content: `Hi ${state.name}! I've reviewed your assessment results. You're a great match for ${top3}. I'm here to answer any questions about your career path, Class 11 stream choice, entrance exams, or colleges in Hyderabad and across India. What would you like to know?`,
+    content: `Hi ${state.name}! I've reviewed your assessment results. Your top areas to explore are ${top3}. I'm here to answer any questions about your career path, Class 11 stream choice, entrance exams, or colleges in Hyderabad and across India. What would you like to know?`,
   }];
 
   // Pre-render the greeting bubble
-  appendChatBubble('assistant', `Hi ${state.name}! I've reviewed your assessment. You're a great match for <strong>${top3}</strong>. Ask me anything about your career path, Class 11 stream, entrance exams, or colleges in India.`);
+  appendChatBubble('assistant', `Hi ${state.name}! I've reviewed your assessment. Your top areas to explore are <strong>${top3}</strong>. Ask me anything about your career path, Class 11 stream, entrance exams, or colleges in India.`);
 }
 
 function appendChatBubble(role, html) {
@@ -980,7 +1041,7 @@ async function sendChat() {
       body: JSON.stringify({
         model: 'claude-haiku-4-5-20251001',
         max_tokens: 600,
-        system: `You are an expert career counsellor specialising in the Indian education system, with deep knowledge of Hyderabad colleges, entrance exams (JEE, NEET, CLAT, TS EAMCET, BITSAT, CUET, CA Foundation, etc.), and career pathways. You are advising ${state.name}, a Grade ${state.grade} student at Johns Academy, Hyderabad. Their top career matches are: ${state.topCareers.slice(0,3).map(({id})=>CAREERS[id].title).join(', ')}. Recommended stream: ${state.recommendedStream?.name}. Keep responses concise, practical, and encouraging. Use simple language suitable for a 12–16 year old. Always reference specific Indian exams, colleges, and timelines.`,
+        system: `You are an expert career counsellor specialising in the Indian education system, with deep knowledge of Hyderabad colleges, entrance exams (JEE, NEET, CLAT, TG EAPCET, BITSAT, CUET, CA Foundation, etc.), and career pathways. You are advising ${state.name}, a Grade ${state.grade} student at Johns Academy, Hyderabad. Their top career matches are: ${state.topCareers.slice(0,3).map(({id})=>CAREERS[id].title).join(', ')}. Recommended stream: ${state.recommendedStream?.name}. Keep responses concise, practical, and encouraging. Use simple language suitable for a 12–16 year old. Always reference specific Indian exams, colleges, and timelines.`,
         messages: state.chatHistory.filter(m => m.role !== 'system').slice(-10),
       }),
     });
@@ -1009,46 +1070,48 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Validation mode swaps the grade picker for an "actual career" picker
+  if (VALIDATE) {
+    document.getElementById('grade-field').classList.add('hidden');
+    document.getElementById('validate-field').classList.remove('hidden');
+    document.getElementById('validate-career').innerHTML = '<option value="">Choose…</option>' +
+      Object.values(CAREERS).map(c => `<option value="${c.id}">${c.title}</option>`).join('');
+    document.getElementById('welcome-error').textContent = 'Please enter your name and choose your career area.';
+  }
+
   // Welcome → Quiz (single step)
   document.getElementById('btn-start').addEventListener('click', () => {
     const name = document.getElementById('welcome-name').value.trim();
-    const grade = document.querySelector('input[name="welcome-grade"]:checked')?.value;
+    const grade = VALIDATE ? 'Adult' : document.querySelector('input[name="welcome-grade"]:checked')?.value;
+    const actual = VALIDATE ? document.getElementById('validate-career').value : '';
     const errEl = document.getElementById('welcome-error');
-    if (!name || !grade) { errEl.classList.remove('hidden'); return; }
+    if (!name || !grade || (VALIDATE && !actual)) { errEl.classList.remove('hidden'); return; }
     errEl.classList.add('hidden');
     state.name = name;
     state.grade = grade;
+    state.actualCareer = actual;
     state.section = '';
-    state.currentQ = 0;
+    state.currentPage = 0;
     showView('view-quiz');
-    renderQuestion();
+    renderPage();
   });
 
   // Quiz navigation
   document.getElementById('btn-next-q').addEventListener('click', () => {
-    if (!state.answers[QUESTIONS[state.currentQ].id]?.length) return;
-    if (state.currentQ < QUESTIONS.length - 1) {
-      state.currentQ++;
-      renderQuestion();
+    if (!pageComplete()) return;
+    if (state.currentPage < PAGES.length - 1) {
+      state.currentPage++;
+      renderPage();
     } else {
-      // Final question answered — show loading then results
-      document.getElementById('progress-bar').style.width = '100%';
-      showView('view-loading');
-      setTimeout(() => {
-        calculateResults();
-        showView('view-results');
-        renderResults();
-      }, 1800);
+      // Final page answered — show results
+      calculateResults();
+      showView('view-results');
+      renderResults();
     }
   });
 
   document.getElementById('btn-prev-q').addEventListener('click', () => {
-    if (state.currentQ > 0) { state.currentQ--; renderQuestion(); }
-  });
-
-  // Enter key on quiz options
-  document.getElementById('quiz-options').addEventListener('keydown', e => {
-    if (e.key === 'Enter') document.getElementById('btn-next-q').click();
+    if (state.currentPage > 0) { state.currentPage--; renderPage(); }
   });
 
   // Modal close
