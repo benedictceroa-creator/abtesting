@@ -514,13 +514,20 @@ const SCHOOLS = {
 const PARTS = {
   1: {
     title: 'Things you might enjoy',
-    prompt: 'How would you feel about doing each of these?',
-    scale: [{ v: 1, t: 'I\'d enjoy it', cls: 'like' }, { v: 0, t: 'Not sure', cls: 'unsure' }, { v: -1, t: 'Not for me', cls: 'dislike' }],
+    prompt: 'Would you enjoy doing each of these?',
+    hint: 'There are no right or wrong answers. If you can\'t decide, choose "Maybe".',
+    scale: [{ v: 1, t: 'Yes', cls: 'like' }, { v: 0, t: 'Maybe', cls: 'maybe' }, { v: -1, t: 'No', cls: 'dislike' }],
   },
   2: {
     title: 'What you want from work',
     prompt: 'Is each of these true for you?',
-    scale: [{ v: 1, t: 'Yes', cls: 'like' }, { v: 0, t: 'Not sure', cls: 'unsure' }, { v: -1, t: 'No', cls: 'dislike' }],
+    hint: 'There are no right or wrong answers. If you can\'t decide, choose "Maybe".',
+    scale: [{ v: 1, t: 'Yes', cls: 'like' }, { v: 0, t: 'Maybe', cls: 'maybe' }, { v: -1, t: 'No', cls: 'dislike' }],
+  },
+  3: {
+    title: 'Subjects you like',
+    prompt: 'If you could add two subjects to your timetable, which would you choose?',
+    hint: 'Pick the two you would most enjoy, even if they aren\'t your best marks.',
   },
 };
 
@@ -552,10 +559,12 @@ const INTEREST_ITEMS = {
   S: [
     { t: 'Explain a topic to a classmate who is struggling with it',            h: { EDU:1 } },
     { t: 'Listen to a friend\'s problem and help them feel better',             h: { CMN:1 } },
-    { t: 'Look after younger children or elderly relatives',                    h: { EDU:1, MED:1 } },
-    { t: 'Volunteer at a shelter, hospital, or community service drive',        h: { CMN:1 } },
+    { t: 'Look after younger children',                                         h: { EDU:1 } },
+    { t: 'Volunteer at a hospital or clinic',                                   h: { MED:1, CMN:1 } },
     { t: 'Help organise a festival, prayer meeting, or community gathering',    h: { CMN:1 } },
     { t: 'Give first aid or care for someone who is unwell',                    h: { MED:1 } },
+    { t: 'Look after elderly relatives or grandparents',                        h: { MED:1, CMN:1 } },
+    { t: 'Volunteer at a community centre or shelter',                          h: { CMN:1 } },
   ],
   E: [
     { t: 'Be the captain or leader of a team',                                  h: { GOV:1, DEF:1, SPT:1 } },
@@ -588,21 +597,44 @@ const VALUE_ITEMS = [
   { t: 'I want my work to be guided by my faith or my values',                          d: 'service' },
 ];
 
-// Interest items are interleaved so each page mixes all six types (no themed pages)
-const ITEMS = [];
-for (let p = 0; p < 6; p++) {
-  for (let k = 0; k < 6; k++) {
-    const d = RIASEC[(k + p) % 6];
-    ITEMS.push({ ...INTEREST_ITEMS[d][p], d, part: 1 });
-  }
-}
-VALUE_ITEMS.forEach(v => ITEMS.push({ ...v, h: {}, part: 2 }));
+// Part 3: students pick two subjects they'd add to their timetable; each pick nudges the areas it leads to
+const SUBJECTS = [
+  { t: 'Mathematics',            h: { ENG:1, CS:1, SCI:1, COM:1 } },
+  { t: 'Physics',                h: { ENG:1, SCI:1 } },
+  { t: 'Chemistry',              h: { SCI:1, MED:1 } },
+  { t: 'Biology',                h: { MED:1, SCI:1 } },
+  { t: 'Computer Science',       h: { CS:1 } },
+  { t: 'History',                h: { GOV:1, LAW:1, EDU:1 } },
+  { t: 'Geography',              h: { GOV:1, DEF:1, SCI:1 } },
+  { t: 'Civics',                 h: { LAW:1, GOV:1 } },
+  { t: 'Economics & Business',   h: { COM:1 } },
+  { t: 'English Literature',     h: { ART:1, EDU:1, LAW:1 } },
+  { t: 'Art & Craft',            h: { DES:1 } },
+  { t: 'Music, Dance & Drama',   h: { PER:1 } },
+  { t: 'Physical Education',     h: { SPT:1, DEF:1 } },
+  { t: 'Psychology',             h: { CMN:1, EDU:1, MED:1 } },
+];
+const SUBJECT_PICKS = 2;
 
-// Page layout: 6 interest pages of 6, then 2 value pages of 5
+// Interest items are interleaved so each page mixes all six types (no themed pages).
+// A type with more than six items has its extras spread across the pages, each placed
+// away from the item of the same type already on that page.
+const INTEREST_PAGES = 6;
+const interestPages = Array.from({ length: INTEREST_PAGES }, (_, p) =>
+  RIASEC.map((_, k) => { const d = RIASEC[(k + p) % 6]; return { ...INTEREST_ITEMS[d][p], d }; }));
+const extraItems = RIASEC.flatMap(d => INTEREST_ITEMS[d].slice(INTEREST_PAGES).map(item => ({ ...item, d })));
+extraItems.forEach((item, e) => {
+  const page = interestPages[Math.floor((e + 0.5) * INTEREST_PAGES / extraItems.length)];
+  page.splice((page.findIndex(x => x.d === item.d) + 3) % 6, 0, item);
+});
+
+// Page layout: interest pages, value pages of 5, then the subject picker
+const ITEMS = [];
 const PAGES = [];
-for (let i = 0; i < 36; i += 6) PAGES.push({ part: 1, items: [0,1,2,3,4,5].map(n => i + n) });
-PAGES.push({ part: 2, items: [36, 37, 38, 39, 40] });
-PAGES.push({ part: 2, items: [41, 42, 43, 44, 45] });
+const addPage = (part, items) => PAGES.push({ part, items: items.map(item => ITEMS.push({ ...item, part }) - 1) });
+interestPages.forEach(items => addPage(1, items));
+for (let i = 0; i < VALUE_ITEMS.length; i += 5) addPage(2, VALUE_ITEMS.slice(i, i + 5).map(v => ({ ...v, h: {} })));
+PAGES.push({ part: 3, items: [] });
 
 // Validation mode (?validate) — adults record their actual career to test the quiz's accuracy
 const VALIDATE = new URLSearchParams(location.search).has('validate');
@@ -612,7 +644,8 @@ const state = {
   name: '', grade: '', section: '',
   actualCareer: '',
   currentPage: 0,
-  answers: {},        // item index → 1 (yes), 0 (not sure), -1 (no)
+  answers: {},        // item index → 1 (yes), 0 (maybe), -1 (no)
+  subjects: [],       // indices into SUBJECTS, in the order picked
   scores: {},
   profile: null,
   topCareers: [],
@@ -625,17 +658,17 @@ const avg = arr => arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length : 0;
 const clamp = (x, lo, hi) => Math.max(lo, Math.min(hi, x));
 
 function calculateResults() {
-  // Level for each RIASEC type and value: share of answered items rated "yes" (0–1).
-  // "Not sure" is treated as a skip, so it never drags a score down.
-  const yes = {}, answered = {};
-  let unsure = 0;
+  // Level for each RIASEC type and value (0–1): Yes counts 1, Maybe ½, No 0, averaged over its items
+  const sum = {}, count = {};
+  let maybe = 0;
   ITEMS.forEach((item, i) => {
     const r = state.answers[i];
-    if (!r) { unsure++; return; }
-    answered[item.d] = (answered[item.d] || 0) + 1;
-    yes[item.d] = (yes[item.d] || 0) + (r > 0 ? 1 : 0);
+    if (r === 0) maybe++;
+    count[item.d] = (count[item.d] || 0) + 1;
+    sum[item.d] = (sum[item.d] || 0) + (r + 1) / 2;
   });
-  const level = d => answered[d] ? yes[d] / answered[d] : 0.5;
+  const level = d => count[d] ? sum[d] / count[d] : 0.5;
+  const picked = state.subjects.map(i => SUBJECTS[i]);
 
   const interest = Object.fromEntries(RIASEC.map(d => [d, level(d)]));
   const values = Object.fromEntries(VALUES.map(v => [v, level(v)]));
@@ -656,7 +689,10 @@ function calculateResults() {
     const hinted = ITEMS.map((item, i) => item.h[id] ? (state.answers[i] || 0) : null).filter(x => x !== null);
     const domainFit = avg(hinted);
 
-    scores[id] = 0.5 * interestFit + 0.3 * domainFit + 0.2 * valueFit;
+    // Each chosen subject that leads to this area adds a small bonus (at most +0.15 for two)
+    const subjectBonus = 0.075 * picked.filter(s => s.h[id]).length;
+
+    scores[id] = 0.5 * interestFit + 0.3 * domainFit + 0.2 * valueFit + subjectBonus;
   });
 
   state.scores = scores;
@@ -667,11 +703,11 @@ function calculateResults() {
   // Holland code: the student's three strongest interest types
   const code = RIASEC.slice().sort((a, b) => interest[b] - interest[a]).slice(0, 3);
   const spread = Math.max(...Object.values(interest)) - Math.min(...Object.values(interest));
-  const unsureShare = unsure / ITEMS.length;
+  const maybeShare = maybe / ITEMS.length;
   let caution = '';
-  if (unsureShare > 0.4) caution = 'You chose "Not sure" for many statements, so these results are a rough starting point.';
+  if (maybeShare > 0.4) caution = 'You chose "Maybe" for many statements, so these results are a rough starting point.';
   else if (spread < 0.2) caution = 'Your answers were quite even across very different kinds of work, so no single area stands out strongly yet.';
-  state.profile = { interest, values, code, caution, unsure };
+  state.profile = { interest, values, code, caution, maybe, subjects: picked.map(s => s.t) };
 
   // Stream: weight the top 3 clusters. Only call it a firm recommendation when the #1 area depends on a stream.
   const streamScores = { PCM:0, PCB:0, COM:0, ARTS:0 };
@@ -704,12 +740,19 @@ function showView(id) {
 }
 
 // ── QUIZ LOGIC ────────────────────────────────────────────────────────────────
-const pageComplete = () => PAGES[state.currentPage].items.every(i => i in state.answers);
+const isSubjectPage = () => PAGES[state.currentPage].part === 3;
+const pageComplete = () => isSubjectPage()
+  ? state.subjects.length === SUBJECT_PICKS
+  : PAGES[state.currentPage].items.every(i => i in state.answers);
 
 function updateQuizProgress() {
-  const done = Object.keys(state.answers).length;
-  document.getElementById('progress-bar').style.width = `${(done / ITEMS.length) * 100}%`;
+  const done = Object.keys(state.answers).length + state.subjects.length;
+  document.getElementById('progress-bar').style.width = `${(done / (ITEMS.length + SUBJECT_PICKS)) * 100}%`;
   document.getElementById('btn-next-q').disabled = !pageComplete();
+  if (isSubjectPage()) {
+    document.getElementById('quiz-q-label').textContent =
+      `Page ${state.currentPage + 1} of ${PAGES.length} · ${state.subjects.length} of ${SUBJECT_PICKS} chosen`;
+  }
 }
 
 function renderPage() {
@@ -718,12 +761,15 @@ function renderPage() {
 
   document.getElementById('q-current').textContent = state.currentPage + 1;
   document.getElementById('q-total').textContent = PAGES.length;
-  document.getElementById('quiz-section-badge').textContent = `Part ${page.part} of 2: ${part.title}`;
+  document.getElementById('quiz-section-badge').textContent = `Part ${page.part} of ${Object.keys(PARTS).length}: ${part.title}`;
   document.getElementById('quiz-q-label').textContent = `Page ${state.currentPage + 1} of ${PAGES.length}`;
   document.getElementById('quiz-question').textContent = part.prompt;
+  document.getElementById('quiz-hint').textContent = part.hint;
 
   const container = document.getElementById('quiz-options');
-  container.innerHTML = page.items.map(i => {
+  container.classList.toggle('subject-grid', page.part === 3);
+  if (page.part === 3) renderSubjects(container);
+  else container.innerHTML = page.items.map(i => {
     const r = state.answers[i];
     return `
       <div class="statement${i in state.answers ? ' answered' : ''}" role="radiogroup" aria-label="${ITEMS[i].t}">
@@ -758,6 +804,32 @@ function rateItem(idx, value, btn) {
   updateQuizProgress();
 }
 
+function renderSubjects(container) {
+  container.innerHTML = SUBJECTS.map((s, i) => {
+    const on = state.subjects.includes(i);
+    return `<button class="subject-btn${on ? ' selected' : ''}" data-subject="${i}" aria-pressed="${on}">${s.t}</button>`;
+  }).join('');
+  container.querySelectorAll('.subject-btn').forEach(btn => {
+    btn.addEventListener('click', () => toggleSubject(parseInt(btn.dataset.subject), container));
+  });
+}
+
+// Picking a third subject replaces the earliest pick, so students never hit a dead end
+function toggleSubject(idx, container) {
+  const at = state.subjects.indexOf(idx);
+  if (at >= 0) state.subjects.splice(at, 1);
+  else {
+    state.subjects.push(idx);
+    if (state.subjects.length > SUBJECT_PICKS) state.subjects.shift();
+  }
+  container.querySelectorAll('.subject-btn').forEach(b => {
+    const on = state.subjects.includes(parseInt(b.dataset.subject));
+    b.classList.toggle('selected', on);
+    b.setAttribute('aria-pressed', on);
+  });
+  updateQuizProgress();
+}
+
 // ── RESULTS RENDERING ─────────────────────────────────────────────────────────
 function renderResults() {
   const today = new Date().toLocaleDateString('en-IN', { year:'numeric', month:'long', day:'numeric' });
@@ -769,7 +841,7 @@ function renderResults() {
   // Summary — interest code beside the three areas worth exploring
   const top3 = state.topCareers.slice(0, 3).map(({ id }) => CAREERS[id]);
   const stream = state.recommendedStream;
-  const { code, caution } = state.profile;
+  const { code, caution, subjects } = state.profile;
   document.getElementById('summary-top-match').innerHTML = `
     <div class="summary-grid">
       <div class="summary-code">
@@ -778,6 +850,8 @@ function renderResults() {
         <dl class="code-list">
           ${code.map(d => `<dt>${d} — ${RIASEC_INFO[d].name}</dt><dd>Enjoys ${RIASEC_INFO[d].desc}.</dd>`).join('')}
         </dl>
+        <p class="label summary-subjects-label">Subjects you'd add</p>
+        <p class="summary-subjects">${subjects.join(' and ')}</p>
       </div>
       <div class="summary-areas">
         <p class="label">Areas worth exploring</p>
@@ -837,13 +911,13 @@ function renderValidation() {
   const row = [
     new Date().toISOString().slice(0, 10), state.name, state.actualCareer, rank,
     hit ? 'HIT' : 'MISS', state.topCareers.slice(0, 3).map(c => c.id).join(' '),
-    state.profile.code.join(''), state.profile.unsure,
+    state.profile.code.join(''), state.profile.maybe, state.profile.subjects.join(', '),
   ].join('\t');
   box.innerHTML = `
     <h2 class="section-heading">Validation result</h2>
     <p class="validate-line">Actual area: <strong>${CAREERS[state.actualCareer].title}</strong> — ranked
       <strong>#${rank} of ${state.topCareers.length}</strong> <span class="validate-${hit ? 'hit' : 'miss'}">${hit ? 'Top-3 hit' : 'Outside top 3'}</span></p>
-    <p class="section-note">Spreadsheet row (date, name, actual, rank, hit, top 3, code, not-sure count):</p>
+    <p class="section-note">Spreadsheet row (date, name, actual, rank, hit, top 3, code, maybe count, subjects):</p>
     <code class="validate-row" id="validate-row">${row}</code>
     <button class="btn-nav" id="btn-copy-row">Copy row</button>`;
   document.getElementById('btn-copy-row').addEventListener('click', e => {
