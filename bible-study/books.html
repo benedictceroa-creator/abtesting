@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bible Book Explorer: All 66 Books at a Glance | Asha Books</title>
+  <meta name="description" content="Explore all 66 books of the Bible: who wrote each one, when, what it is about, a key verse, and how it points to Christ.">
+  <!-- Prototype: keep out of search results until the content has passed theological review -->
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/hub/asha-books-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/hub/hub.css">
+  <link rel="stylesheet" href="assets/books/books.css">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M3 5.5C5.5 4 9 4 12 6c3-2 6.5-2 9-.5V19c-2.5-1.5-6-1.5-9 .5-3-2-6.5-2-9-.5z"/><path d="M12 6v13.5"/></symbol>
+      <symbol id="i-map" viewBox="0 0 24 24"><path d="M9 4 3 6.5v13.5l6-2.5 6 2.5 6-2.5V4l-6 2.5z"/><path d="M9 4v13.5M15 6.5V20"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+      <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></symbol>
+      <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+      <symbol id="i-cross" viewBox="0 0 24 24"><path d="M12 3v18M7 8h10"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="top">
+    <div class="wrap top-in">
+      <a class="brand" href="index.html" aria-label="Asha Books Bible Study Resources">
+        <img src="assets/hub/asha-books-logo.png" alt="Asha Books" width="511" height="168">
+        <span class="brand-tag">Bible Study</span>
+      </a>
+      <a class="pill pill-line" href="index.html"><svg class="ic"><use href="#i-back"/></svg>All resources</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="bx-head">
+      <div class="wrap">
+        <p class="kicker">Bible book explorer</p>
+        <div class="bx-head-row">
+          <div>
+            <h1>All 66 books at a glance</h1>
+            <p class="sec-sub">Who wrote each book, when, what it's about, a verse to remember, and how it points to Christ.</p>
+          </div>
+          <div class="bx-search" role="search">
+            <svg class="ic"><use href="#i-search"/></svg>
+            <input id="bx-q" type="search" placeholder="Find a book" autocomplete="off" aria-label="Find a book">
+          </div>
+        </div>
+
+        <div class="bx-shelf-wrap">
+          <div class="bx-shelf" id="bx-shelf" aria-label="All 66 books, sized by number of chapters"></div>
+          <div class="bx-shelf-key">
+            <span><strong>Old Testament</strong> 39 books · 929 chapters</span>
+            <span><strong>New Testament</strong> 27 books · 260 chapters</span>
+          </div>
+        </div>
+
+        <div class="bx-filters">
+          <div class="bx-seg" role="tablist" aria-label="Testament" id="bx-seg">
+            <button type="button" role="tab" data-t="" aria-selected="true">All</button>
+            <button type="button" role="tab" data-t="OT" aria-selected="false">Old Testament</button>
+            <button type="button" role="tab" data-t="NT" aria-selected="false">New Testament</button>
+          </div>
+          <div class="bx-chips" id="bx-chips" aria-label="Sections"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bx-body">
+      <div class="wrap" id="bx-groups"></div>
+      <p class="wrap bx-empty" id="bx-empty" hidden>No book matches that search.</p>
+    </section>
+  </main>
+
+  <div class="bx-scrim" id="bx-scrim" hidden></div>
+  <aside class="bx-drawer" id="bx-drawer" role="dialog" aria-modal="true" aria-labelledby="bx-d-title" hidden>
+    <div class="bx-drawer-in" id="bx-d"></div>
+  </aside>
+
+  <footer class="foot foot-slim">
+    <div class="wrap foot-in">
+      <div class="foot-brand">
+        <img src="assets/hub/asha-books-logo-white.png" alt="Asha Books" width="511" height="168">
+        <a class="foot-link" href="index.html">More Bible study resources</a>
+      </div>
+      <div class="foot-notes">
+        <p><strong>Prototype.</strong> This content is awaiting theological review.</p>
+        <p>Authors and dates follow the traditional view held by most evangelical scholars. Where Bible-believing scholars differ, each book says so.</p>
+        <p>Scripture quotations are from the ESV&reg; Bible (The Holy Bible, English Standard Version&reg;), &copy; 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/books/books.js"></script>
+</body>
+</html>

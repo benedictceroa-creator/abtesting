@@ -1,0 +1,2530 @@
+{
+ "eras": {
+  "beginnings": {
+   "label": "Before the flood",
+   "color": "#2F7F86"
+  },
+  "nations": {
+   "label": "Noah to Abraham",
+   "color": "#4F7A5A"
+  },
+  "patriarchs": {
+   "label": "The patriarchs",
+   "color": "#8C6A3E"
+  },
+  "tribes": {
+   "label": "The twelve tribes",
+   "color": "#B4762C"
+  },
+  "exodus": {
+   "label": "Exodus & wilderness",
+   "color": "#A0522D"
+  },
+  "judges": {
+   "label": "Judges & Ruth",
+   "color": "#6E5A8C"
+  },
+  "kings": {
+   "label": "The kings",
+   "color": "#A8402E"
+  },
+  "return": {
+   "label": "Exile & return",
+   "color": "#3F5E8C"
+  },
+  "gospels": {
+   "label": "The Gospels",
+   "color": "#E72C47"
+  }
+ },
+ "jumps": [
+  "adam",
+  "noah",
+  "abraham",
+  "jacob",
+  "judah",
+  "moses",
+  "ruth",
+  "david",
+  "josiah",
+  "jesus"
+ ],
+ "people": [
+  {
+   "id": "adam",
+   "name": "Adam",
+   "sex": "m",
+   "parents": [],
+   "summary": "The first man, formed by God from the dust and made in his image. Through his disobedience sin and death entered the world; Paul calls Christ the last Adam, through whom comes life.",
+   "refs": [
+    "Genesis 1:26-28",
+    "Genesis 2:7",
+    "Genesis 3",
+    "Genesis 5:1-5",
+    "Romans 5:12-19",
+    "1 Corinthians 15:22, 45"
+   ],
+   "meaning": {
+    "text": "Man, humankind; related to adamah, \"ground\"",
+    "ref": "Genesis 2:7"
+   },
+   "age": 930,
+   "era": "beginnings",
+   "line": true
+  },
+  {
+   "id": "eve",
+   "name": "Eve",
+   "sex": "f",
+   "parents": [],
+   "summary": "The first woman, made from Adam's side as a helper fit for him. After the fall God promised that her offspring would crush the serpent's head (Genesis 3:15), the first promise of the gospel.",
+   "refs": [
+    "Genesis 2:18-25",
+    "Genesis 3",
+    "Genesis 4:1-2, 25"
+   ],
+   "meaning": {
+    "text": "Life: \"the mother of all living\"",
+    "ref": "Genesis 3:20"
+   },
+   "spouses": [
+    "adam"
+   ],
+   "era": "beginnings"
+  },
+  {
+   "id": "cain",
+   "name": "Cain",
+   "sex": "m",
+   "parents": [
+    "adam",
+    "eve"
+   ],
+   "summary": "Adam and Eve's firstborn, a farmer. In jealousy he murdered his brother Abel, and went away from the presence of the LORD to the land of Nod.",
+   "refs": [
+    "Genesis 4:1-17",
+    "1 John 3:12",
+    "Hebrews 11:4"
+   ],
+   "era": "beginnings"
+  },
+  {
+   "id": "abel",
+   "name": "Abel",
+   "sex": "m",
+   "parents": [
+    "adam",
+    "eve"
+   ],
+   "summary": "A shepherd whose offering God accepted. Killed by his brother, he is the first martyr: \"through his faith, though he died, he still speaks\".",
+   "refs": [
+    "Genesis 4:2-10",
+    "Hebrews 11:4",
+    "Hebrews 12:24",
+    "Matthew 23:35"
+   ],
+   "era": "beginnings"
+  },
+  {
+   "id": "seth",
+   "name": "Seth",
+   "sex": "m",
+   "parents": [
+    "adam",
+    "eve"
+   ],
+   "summary": "Born after Abel's death, \"another offspring instead of Abel\". In his son's days people began to call on the name of the LORD.",
+   "refs": [
+    "Genesis 4:25-26",
+    "Genesis 5:3-8",
+    "Luke 3:38"
+   ],
+   "meaning": {
+    "text": "Appointed: \"God has appointed for me another offspring\"",
+    "ref": "Genesis 4:25"
+   },
+   "age": 912,
+   "era": "beginnings",
+   "line": true
+  },
+  {
+   "id": "enosh",
+   "name": "Enosh",
+   "sex": "m",
+   "parents": [
+    "seth"
+   ],
+   "summary": "Seth's son. \"At that time people began to call upon the name of the LORD.\"",
+   "refs": [
+    "Genesis 4:26",
+    "Genesis 5:6-11"
+   ],
+   "age": 905,
+   "era": "beginnings",
+   "line": true
+  },
+  {
+   "id": "kenan",
+   "name": "Kenan",
+   "sex": "m",
+   "parents": [
+    "enosh"
+   ],
+   "summary": "Son of Enosh, in the line from Adam to Noah.",
+   "refs": [
+    "Genesis 5:9-14",
+    "Luke 3:37"
+   ],
+   "also": "Cainan",
+   "age": 910,
+   "era": "beginnings",
+   "line": true
+  },
+  {
+   "id": "mahalalel",
+   "name": "Mahalalel",
+   "sex": "m",
+   "parents": [
+    "kenan"
+   ],
+   "summary": "Son of Kenan, in the line from Adam to Noah.",
+   "refs": [
+    "Genesis 5:12-17"
+   ],
+   "age": 895,
+   "era": "beginnings",
+   "line": true
+  },
+  {
+   "id": "jared",
+   "name": "Jared",
+   "sex": "m",
+   "parents": [
+    "mahalalel"
+   ],
+   "summary": "Son of Mahalalel and father of Enoch. The longest-lived man after Methuselah.",
+   "refs": [
+    "Genesis 5:15-20"
+   ],
+   "age": 962,
+   "era": "beginnings",
+   "line": true
+  },
+  {
+   "id": "enoch",
+   "name": "Enoch",
+   "sex": "m",
+   "parents": [
+    "jared"
+   ],
+   "summary": "\"Enoch walked with God, and he was not, for God took him.\" He did not see death. Jude quotes his prophecy of the Lord's coming in judgement.",
+   "refs": [
+    "Genesis 5:18-24",
+    "Hebrews 11:5-6",
+    "Jude 14-15"
+   ],
+   "note": "He lived 365 years on earth before God took him.",
+   "era": "beginnings",
+   "line": true
+  },
+  {
+   "id": "methuselah",
+   "name": "Methuselah",
+   "sex": "m",
+   "parents": [
+    "enoch"
+   ],
+   "summary": "Son of Enoch and the longest-lived person in the Bible. By the ages in Genesis 5 he died in the year of the flood.",
+   "refs": [
+    "Genesis 5:21-27"
+   ],
+   "age": 969,
+   "era": "beginnings",
+   "line": true
+  },
+  {
+   "id": "lamech",
+   "name": "Lamech",
+   "sex": "m",
+   "parents": [
+    "methuselah"
+   ],
+   "summary": "Father of Noah, who named his son in hope that he would bring relief from the curse on the ground.",
+   "refs": [
+    "Genesis 5:25-31"
+   ],
+   "age": 777,
+   "era": "beginnings",
+   "note": "Not the same as Lamech of Cain's line (Genesis 4:18-24).",
+   "line": true
+  },
+  {
+   "id": "noah",
+   "name": "Noah",
+   "sex": "m",
+   "parents": [
+    "lamech"
+   ],
+   "summary": "\"Noah found favour in the eyes of the LORD.\" A righteous man in a corrupt generation, he built the ark by faith and was saved with his family through the flood. God made his covenant with Noah and every living creature, with the rainbow as its sign.",
+   "refs": [
+    "Genesis 6:5-9:29",
+    "Hebrews 11:7",
+    "1 Peter 3:20",
+    "2 Peter 2:5"
+   ],
+   "meaning": {
+    "text": "Rest: \"this one shall bring us relief\"",
+    "ref": "Genesis 5:29"
+   },
+   "age": 950,
+   "era": "beginnings",
+   "line": true
+  },
+  {
+   "id": "shem",
+   "name": "Shem",
+   "sex": "m",
+   "parents": [
+    "noah"
+   ],
+   "summary": "Noah's son, blessed by his father: \"Blessed be the LORD, the God of Shem.\" Ancestor of Eber, Abraham and the Semitic peoples.",
+   "refs": [
+    "Genesis 9:18-27",
+    "Genesis 10:21-31",
+    "Genesis 11:10-11",
+    "Luke 3:36"
+   ],
+   "age": 600,
+   "era": "nations",
+   "line": true
+  },
+  {
+   "id": "ham",
+   "name": "Ham",
+   "sex": "m",
+   "parents": [
+    "noah"
+   ],
+   "summary": "Noah's son, father of Cush, Egypt, Put and Canaan, the peoples of Africa and Canaan in the Table of Nations.",
+   "refs": [
+    "Genesis 9:18-27",
+    "Genesis 10:6-20"
+   ],
+   "era": "nations"
+  },
+  {
+   "id": "japheth",
+   "name": "Japheth",
+   "sex": "m",
+   "parents": [
+    "noah"
+   ],
+   "summary": "Noah's son, ancestor of the peoples of the coastlands and the north, including the Greeks (Javan) and Medes (Madai).",
+   "refs": [
+    "Genesis 9:18-27",
+    "Genesis 10:2-5"
+   ],
+   "era": "nations"
+  },
+  {
+   "id": "canaan",
+   "name": "Canaan",
+   "sex": "m",
+   "parents": [
+    "ham"
+   ],
+   "summary": "Ham's son, cursed by Noah after Ham's sin. His descendants were the Canaanite peoples whose land God later gave to Israel.",
+   "refs": [
+    "Genesis 9:20-27",
+    "Genesis 10:15-19"
+   ],
+   "era": "nations"
+  },
+  {
+   "id": "arphaxad",
+   "name": "Arphaxad",
+   "sex": "m",
+   "parents": [
+    "shem"
+   ],
+   "summary": "Born two years after the flood.",
+   "refs": [
+    "Genesis 11:10-13",
+    "Luke 3:36"
+   ],
+   "also": "Arpachshad",
+   "age": 438,
+   "era": "nations",
+   "note": "Luke 3:36 names Cainan between Arphaxad and Shelah, following the Greek Septuagint. Genesis 11 in Hebrew does not.",
+   "line": true
+  },
+  {
+   "id": "shelah",
+   "name": "Shelah",
+   "sex": "m",
+   "parents": [
+    "arphaxad"
+   ],
+   "summary": "In the line from Shem to Abraham.",
+   "refs": [
+    "Genesis 11:12-15",
+    "Luke 3:35"
+   ],
+   "age": 433,
+   "era": "nations",
+   "line": true
+  },
+  {
+   "id": "eber",
+   "name": "Eber",
+   "sex": "m",
+   "parents": [
+    "shelah"
+   ],
+   "summary": "Ancestor from whom the name \"Hebrew\" may come. Shem is called \"the father of all the children of Eber\".",
+   "refs": [
+    "Genesis 10:21-25",
+    "Genesis 11:14-17"
+   ],
+   "age": 464,
+   "era": "nations",
+   "line": true
+  },
+  {
+   "id": "peleg",
+   "name": "Peleg",
+   "sex": "m",
+   "parents": [
+    "eber"
+   ],
+   "summary": "\"In his days the earth was divided\", perhaps referring to the scattering of the nations at Babel.",
+   "refs": [
+    "Genesis 10:25",
+    "Genesis 11:16-19"
+   ],
+   "meaning": {
+    "text": "Division",
+    "ref": "Genesis 10:25"
+   },
+   "age": 239,
+   "era": "nations",
+   "line": true
+  },
+  {
+   "id": "reu",
+   "name": "Reu",
+   "sex": "m",
+   "parents": [
+    "peleg"
+   ],
+   "summary": "In the line from Shem to Abraham.",
+   "refs": [
+    "Genesis 11:18-21"
+   ],
+   "age": 239,
+   "era": "nations",
+   "line": true
+  },
+  {
+   "id": "serug",
+   "name": "Serug",
+   "sex": "m",
+   "parents": [
+    "reu"
+   ],
+   "summary": "In the line from Shem to Abraham.",
+   "refs": [
+    "Genesis 11:20-23"
+   ],
+   "age": 230,
+   "era": "nations",
+   "line": true
+  },
+  {
+   "id": "nahor-1",
+   "name": "Nahor",
+   "sex": "m",
+   "parents": [
+    "serug"
+   ],
+   "summary": "Abraham's grandfather.",
+   "refs": [
+    "Genesis 11:22-25"
+   ],
+   "age": 148,
+   "era": "nations",
+   "note": "Not the same as Abraham's brother Nahor.",
+   "line": true
+  },
+  {
+   "id": "terah",
+   "name": "Terah",
+   "sex": "m",
+   "parents": [
+    "nahor-1"
+   ],
+   "summary": "Abraham's father, who served other gods in Ur. He set out with his family for Canaan but settled and died in Haran.",
+   "refs": [
+    "Genesis 11:24-32",
+    "Joshua 24:2",
+    "Acts 7:2-4"
+   ],
+   "age": 205,
+   "era": "nations",
+   "atlas": "patriarchs.html#leader:terah",
+   "line": true
+  },
+  {
+   "id": "abraham",
+   "name": "Abraham",
+   "sex": "m",
+   "parents": [
+    "terah"
+   ],
+   "summary": "Called by God from Ur to the land he would show him. He believed the LORD, who counted it to him as righteousness, and received the promise that in him all the families of the earth would be blessed. The father of all who believe.",
+   "refs": [
+    "Genesis 12:1-3",
+    "Genesis 15:6",
+    "Genesis 22",
+    "Romans 4",
+    "Galatians 3:6-9",
+    "Hebrews 11:8-19"
+   ],
+   "also": "Abram",
+   "meaning": {
+    "text": "Father of a multitude",
+    "ref": "Genesis 17:5"
+   },
+   "age": 175,
+   "era": "patriarchs",
+   "atlas": "patriarchs.html#leader:abraham",
+   "line": true
+  },
+  {
+   "id": "nahor-2",
+   "name": "Nahor",
+   "sex": "m",
+   "parents": [
+    "terah"
+   ],
+   "summary": "Abraham's brother, who stayed in Mesopotamia. His granddaughter Rebekah married Isaac.",
+   "refs": [
+    "Genesis 11:26-29",
+    "Genesis 22:20-24",
+    "Genesis 24:10"
+   ],
+   "era": "patriarchs"
+  },
+  {
+   "id": "haran",
+   "name": "Haran",
+   "sex": "m",
+   "parents": [
+    "terah"
+   ],
+   "summary": "Abraham's brother, who died in Ur. Father of Lot and Milcah.",
+   "refs": [
+    "Genesis 11:27-28"
+   ],
+   "era": "patriarchs"
+  },
+  {
+   "id": "sarah",
+   "name": "Sarah",
+   "sex": "f",
+   "parents": [
+    "terah"
+   ],
+   "summary": "Abraham's wife and half-sister, barren until God gave her Isaac at 90. Hebrews praises her faith, and Peter holds her up as a model for Christian wives.",
+   "refs": [
+    "Genesis 17:15-21",
+    "Genesis 18:9-15",
+    "Genesis 20:12",
+    "Genesis 21:1-7",
+    "Hebrews 11:11",
+    "1 Peter 3:6"
+   ],
+   "also": "Sarai",
+   "meaning": {
+    "text": "Princess",
+    "ref": "Genesis 17:15-16"
+   },
+   "age": 127,
+   "spouses": [
+    "abraham"
+   ],
+   "era": "patriarchs",
+   "atlas": "patriarchs.html#leader:sarah",
+   "note": "Abraham calls her \"the daughter of my father though not the daughter of my mother\" (Genesis 20:12)."
+  },
+  {
+   "id": "hagar",
+   "name": "Hagar",
+   "sex": "f",
+   "parents": [],
+   "summary": "Sarah's Egyptian servant, given to Abraham as a wife. Twice in the wilderness the angel of the LORD found her and cared for her and her son.",
+   "refs": [
+    "Genesis 16",
+    "Genesis 21:8-21",
+    "Galatians 4:21-31"
+   ],
+   "spouses": [
+    "abraham"
+   ],
+   "era": "patriarchs"
+  },
+  {
+   "id": "keturah",
+   "name": "Keturah",
+   "sex": "f",
+   "parents": [],
+   "summary": "Abraham's wife after Sarah's death, mother of six sons including Midian.",
+   "refs": [
+    "Genesis 25:1-6",
+    "1 Chronicles 1:32"
+   ],
+   "spouses": [
+    "abraham"
+   ],
+   "era": "patriarchs"
+  },
+  {
+   "id": "lot",
+   "name": "Lot",
+   "sex": "m",
+   "parents": [
+    "haran"
+   ],
+   "summary": "Abraham's nephew, who chose the Jordan valley and settled in Sodom. Rescued before its destruction, he is called \"righteous Lot\" by Peter.",
+   "refs": [
+    "Genesis 13",
+    "Genesis 19",
+    "2 Peter 2:7-8",
+    "Luke 17:28-32"
+   ],
+   "era": "patriarchs"
+  },
+  {
+   "id": "milcah",
+   "name": "Milcah",
+   "sex": "f",
+   "parents": [
+    "haran"
+   ],
+   "summary": "Haran's daughter, who married her uncle Nahor. Grandmother of Rebekah.",
+   "refs": [
+    "Genesis 11:29",
+    "Genesis 22:20-23"
+   ],
+   "spouses": [
+    "nahor-2"
+   ],
+   "era": "patriarchs"
+  },
+  {
+   "id": "moab",
+   "name": "Moab",
+   "sex": "m",
+   "parents": [
+    "lot"
+   ],
+   "summary": "Son of Lot by his elder daughter, ancestor of the Moabites, the people of Ruth.",
+   "refs": [
+    "Genesis 19:30-37",
+    "Deuteronomy 2:9"
+   ],
+   "era": "patriarchs"
+  },
+  {
+   "id": "ben-ammi",
+   "name": "Ben-ammi",
+   "sex": "m",
+   "parents": [
+    "lot"
+   ],
+   "summary": "Son of Lot by his younger daughter, ancestor of the Ammonites.",
+   "refs": [
+    "Genesis 19:38",
+    "Deuteronomy 2:19"
+   ],
+   "era": "patriarchs"
+  },
+  {
+   "id": "ishmael",
+   "name": "Ishmael",
+   "sex": "m",
+   "parents": [
+    "abraham",
+    "hagar"
+   ],
+   "summary": "Abraham's son by Hagar. God heard him and made him a great nation, father of twelve princes, but the covenant was established with Isaac.",
+   "refs": [
+    "Genesis 16:11-16",
+    "Genesis 17:18-21",
+    "Genesis 21:8-21",
+    "Genesis 25:12-18"
+   ],
+   "meaning": {
+    "text": "God hears",
+    "ref": "Genesis 16:11"
+   },
+   "age": 137,
+   "era": "patriarchs",
+   "atlas": "patriarchs.html#leader:ishmael"
+  },
+  {
+   "id": "isaac",
+   "name": "Isaac",
+   "sex": "m",
+   "parents": [
+    "abraham",
+    "sarah"
+   ],
+   "summary": "The son of promise, born when Abraham was 100. Bound on the altar at Moriah and spared when God provided a ram, he inherited the covenant promises.",
+   "refs": [
+    "Genesis 21:1-7",
+    "Genesis 22",
+    "Genesis 26",
+    "Romans 9:7-9",
+    "Hebrews 11:17-20"
+   ],
+   "meaning": {
+    "text": "He laughs",
+    "ref": "Genesis 21:6"
+   },
+   "age": 180,
+   "era": "patriarchs",
+   "atlas": "patriarchs.html#leader:isaac",
+   "line": true
+  },
+  {
+   "id": "midian",
+   "name": "Midian",
+   "sex": "m",
+   "parents": [
+    "abraham",
+    "keturah"
+   ],
+   "summary": "Son of Abraham and Keturah, ancestor of the Midianites. Moses married into a Midianite family.",
+   "refs": [
+    "Genesis 25:2-6",
+    "Exodus 2:15-21"
+   ],
+   "era": "patriarchs"
+  },
+  {
+   "id": "bethuel",
+   "name": "Bethuel",
+   "sex": "m",
+   "parents": [
+    "nahor-2",
+    "milcah"
+   ],
+   "summary": "Son of Nahor and Milcah, father of Rebekah and Laban.",
+   "refs": [
+    "Genesis 22:22-23",
+    "Genesis 24:15, 50"
+   ],
+   "era": "patriarchs"
+  },
+  {
+   "id": "rebekah",
+   "name": "Rebekah",
+   "sex": "f",
+   "parents": [
+    "bethuel"
+   ],
+   "summary": "Chosen in answer to the prayer of Abraham's servant, she left her family to marry Isaac. She was told \"the older shall serve the younger\" before Esau and Jacob were born.",
+   "refs": [
+    "Genesis 24",
+    "Genesis 25:20-28",
+    "Genesis 27",
+    "Romans 9:10-13"
+   ],
+   "spouses": [
+    "isaac"
+   ],
+   "era": "patriarchs"
+  },
+  {
+   "id": "laban",
+   "name": "Laban",
+   "sex": "m",
+   "parents": [
+    "bethuel"
+   ],
+   "summary": "Rebekah's brother in Haran, who gave Jacob his daughters Leah and Rachel and repeatedly cheated him over twenty years.",
+   "refs": [
+    "Genesis 24:29-60",
+    "Genesis 29-31"
+   ],
+   "era": "patriarchs"
+  },
+  {
+   "id": "esau",
+   "name": "Esau",
+   "sex": "m",
+   "parents": [
+    "isaac",
+    "rebekah"
+   ],
+   "summary": "Jacob's older twin, a hunter, who sold his birthright for a meal. He forgave Jacob, settled in Seir and was the father of the Edomites.",
+   "refs": [
+    "Genesis 25:21-34",
+    "Genesis 27",
+    "Genesis 33",
+    "Genesis 36",
+    "Hebrews 12:16-17"
+   ],
+   "also": "Edom",
+   "meaning": {
+    "text": "Edom, \"red\"",
+    "ref": "Genesis 25:30"
+   },
+   "era": "patriarchs"
+  },
+  {
+   "id": "jacob",
+   "name": "Jacob",
+   "sex": "m",
+   "parents": [
+    "isaac",
+    "rebekah"
+   ],
+   "summary": "The younger twin, chosen before birth. He took Esau's blessing by deceit, met God at Bethel, served Laban twenty years and wrestled with God at Peniel. His twelve sons became the tribes of Israel.",
+   "refs": [
+    "Genesis 25:19-34",
+    "Genesis 27-35",
+    "Genesis 46-49",
+    "Hosea 12:2-4",
+    "Romans 9:10-13"
+   ],
+   "also": "Israel",
+   "meaning": {
+    "text": "He takes by the heel; renamed Israel, \"he strives with God\"",
+    "ref": "Genesis 25:26; 32:28"
+   },
+   "age": 147,
+   "era": "patriarchs",
+   "atlas": "patriarchs.html#leader:jacob",
+   "line": true
+  },
+  {
+   "id": "leah",
+   "name": "Leah",
+   "sex": "f",
+   "parents": [
+    "laban"
+   ],
+   "summary": "Laban's older daughter, given to Jacob by deception. Unloved, she was blessed by God with six sons, among them Levi and Judah, the ancestors of Israel's priests and kings.",
+   "refs": [
+    "Genesis 29:16-35",
+    "Genesis 30:9-21",
+    "Genesis 49:31",
+    "Ruth 4:11"
+   ],
+   "spouses": [
+    "jacob"
+   ],
+   "era": "patriarchs"
+  },
+  {
+   "id": "rachel",
+   "name": "Rachel",
+   "sex": "f",
+   "parents": [
+    "laban"
+   ],
+   "summary": "Laban's younger daughter, whom Jacob loved and served fourteen years to marry. Long barren, she bore Joseph, and died giving birth to Benjamin near Bethlehem.",
+   "refs": [
+    "Genesis 29:9-30",
+    "Genesis 30:22-24",
+    "Genesis 35:16-20",
+    "Jeremiah 31:15",
+    "Matthew 2:18"
+   ],
+   "spouses": [
+    "jacob"
+   ],
+   "era": "patriarchs"
+  },
+  {
+   "id": "bilhah",
+   "name": "Bilhah",
+   "sex": "f",
+   "parents": [],
+   "summary": "Rachel's servant, given to Jacob. Mother of Dan and Naphtali.",
+   "refs": [
+    "Genesis 29:29",
+    "Genesis 30:1-8"
+   ],
+   "spouses": [
+    "jacob"
+   ],
+   "era": "patriarchs"
+  },
+  {
+   "id": "zilpah",
+   "name": "Zilpah",
+   "sex": "f",
+   "parents": [],
+   "summary": "Leah's servant, given to Jacob. Mother of Gad and Asher.",
+   "refs": [
+    "Genesis 29:24",
+    "Genesis 30:9-13"
+   ],
+   "spouses": [
+    "jacob"
+   ],
+   "era": "patriarchs"
+  },
+  {
+   "id": "reuben",
+   "name": "Reuben",
+   "sex": "m",
+   "parents": [
+    "jacob",
+    "leah"
+   ],
+   "summary": "Jacob's firstborn, who tried to rescue Joseph from his brothers. He lost the rights of the firstborn because he slept with his father's concubine.",
+   "refs": [
+    "Genesis 29:32",
+    "Genesis 37:21-30",
+    "Genesis 49:3-4",
+    "1 Chronicles 5:1-2"
+   ],
+   "meaning": {
+    "text": "See, a son",
+    "ref": "Genesis 29:32"
+   },
+   "era": "tribes"
+  },
+  {
+   "id": "simeon",
+   "name": "Simeon",
+   "sex": "m",
+   "parents": [
+    "jacob",
+    "leah"
+   ],
+   "summary": "One of the twelve sons of Jacob, ancestor of the tribe of Simeon. With Levi he avenged Dinah on Shechem. Joseph kept him in Egypt as a hostage.",
+   "refs": [
+    "Genesis 29:33",
+    "Genesis 34:25-31",
+    "Genesis 42:24",
+    "Genesis 49:5-7"
+   ],
+   "meaning": {
+    "text": "Heard: \"the LORD has heard\"",
+    "ref": "Genesis 29:33"
+   },
+   "era": "tribes"
+  },
+  {
+   "id": "levi",
+   "name": "Levi",
+   "sex": "m",
+   "parents": [
+    "jacob",
+    "leah"
+   ],
+   "summary": "Jacob's third son. His descendants, the Levites, were set apart for the LORD's service, and from them came Moses, Aaron and the priests.",
+   "refs": [
+    "Genesis 29:34",
+    "Genesis 49:5-7",
+    "Exodus 6:16-20",
+    "Numbers 3:5-13"
+   ],
+   "meaning": {
+    "text": "Attached: \"my husband will be attached to me\"",
+    "ref": "Genesis 29:34"
+   },
+   "age": 137,
+   "era": "tribes",
+   "atlas": "patriarchs.html#leader:levi"
+  },
+  {
+   "id": "judah",
+   "name": "Judah",
+   "sex": "m",
+   "parents": [
+    "jacob",
+    "leah"
+   ],
+   "summary": "Jacob's fourth son. He offered himself as a slave in Benjamin's place, and Jacob promised that \"the sceptre shall not depart from Judah\". From his tribe came David and Jesus, the Lion of the tribe of Judah.",
+   "refs": [
+    "Genesis 29:35",
+    "Genesis 38",
+    "Genesis 44:18-34",
+    "Genesis 49:8-12",
+    "Hebrews 7:14",
+    "Revelation 5:5"
+   ],
+   "meaning": {
+    "text": "Praise: \"this time I will praise the LORD\"",
+    "ref": "Genesis 29:35"
+   },
+   "era": "tribes",
+   "line": true
+  },
+  {
+   "id": "issachar",
+   "name": "Issachar",
+   "sex": "m",
+   "parents": [
+    "jacob",
+    "leah"
+   ],
+   "summary": "One of the twelve sons of Jacob, ancestor of the tribe of Issachar. Its men later \"had understanding of the times\".",
+   "refs": [
+    "Genesis 30:17-18",
+    "Genesis 49:14-15",
+    "1 Chronicles 12:32"
+   ],
+   "era": "tribes"
+  },
+  {
+   "id": "zebulun",
+   "name": "Zebulun",
+   "sex": "m",
+   "parents": [
+    "jacob",
+    "leah"
+   ],
+   "summary": "One of the twelve sons of Jacob, ancestor of the tribe of Zebulun. Isaiah foretold a great light in the land of Zebulun and Naphtali, fulfilled in Jesus' ministry in Galilee.",
+   "refs": [
+    "Genesis 30:19-20",
+    "Genesis 49:13",
+    "Isaiah 9:1-2",
+    "Matthew 4:13-16"
+   ],
+   "era": "tribes"
+  },
+  {
+   "id": "dinah",
+   "name": "Dinah",
+   "sex": "f",
+   "parents": [
+    "jacob",
+    "leah"
+   ],
+   "summary": "Jacob's daughter by Leah. Her violation by Shechem led to Simeon and Levi's revenge on the city.",
+   "refs": [
+    "Genesis 30:21",
+    "Genesis 34"
+   ],
+   "era": "tribes"
+  },
+  {
+   "id": "dan",
+   "name": "Dan",
+   "sex": "m",
+   "parents": [
+    "jacob",
+    "bilhah"
+   ],
+   "summary": "One of the twelve sons of Jacob, ancestor of the tribe of Dan. Samson was a Danite.",
+   "refs": [
+    "Genesis 30:5-6",
+    "Genesis 49:16-18",
+    "Judges 13:2"
+   ],
+   "meaning": {
+    "text": "He judged: \"God has judged me\"",
+    "ref": "Genesis 30:6"
+   },
+   "era": "tribes"
+  },
+  {
+   "id": "naphtali",
+   "name": "Naphtali",
+   "sex": "m",
+   "parents": [
+    "jacob",
+    "bilhah"
+   ],
+   "summary": "One of the twelve sons of Jacob, ancestor of the tribe of Naphtali. Barak, who fought with Deborah, came from Naphtali.",
+   "refs": [
+    "Genesis 30:7-8",
+    "Genesis 49:21",
+    "Judges 4:6"
+   ],
+   "meaning": {
+    "text": "My wrestling",
+    "ref": "Genesis 30:8"
+   },
+   "era": "tribes"
+  },
+  {
+   "id": "gad",
+   "name": "Gad",
+   "sex": "m",
+   "parents": [
+    "jacob",
+    "zilpah"
+   ],
+   "summary": "One of the twelve sons of Jacob, ancestor of the tribe of Gad. The tribe settled east of the Jordan.",
+   "refs": [
+    "Genesis 30:10-11",
+    "Genesis 49:19",
+    "Numbers 32"
+   ],
+   "meaning": {
+    "text": "Good fortune",
+    "ref": "Genesis 30:11"
+   },
+   "era": "tribes"
+  },
+  {
+   "id": "asher",
+   "name": "Asher",
+   "sex": "m",
+   "parents": [
+    "jacob",
+    "zilpah"
+   ],
+   "summary": "One of the twelve sons of Jacob, ancestor of the tribe of Asher. The prophetess Anna, who greeted the baby Jesus, was of this tribe.",
+   "refs": [
+    "Genesis 30:12-13",
+    "Genesis 49:20",
+    "Luke 2:36-38"
+   ],
+   "meaning": {
+    "text": "Happy",
+    "ref": "Genesis 30:13"
+   },
+   "era": "tribes"
+  },
+  {
+   "id": "joseph",
+   "name": "Joseph",
+   "sex": "m",
+   "parents": [
+    "jacob",
+    "rachel"
+   ],
+   "summary": "Jacob's favoured son, sold into Egypt by his brothers. God raised him from slavery and prison to rule Egypt and save many lives in the famine: \"You meant evil against me, but God meant it for good.\"",
+   "refs": [
+    "Genesis 37",
+    "Genesis 39-50",
+    "Psalm 105:16-22",
+    "Acts 7:9-16",
+    "Hebrews 11:22"
+   ],
+   "meaning": {
+    "text": "May he add: \"may the LORD add to me another son\"",
+    "ref": "Genesis 30:24"
+   },
+   "age": 110,
+   "era": "tribes",
+   "atlas": "patriarchs.html#leader:joseph"
+  },
+  {
+   "id": "benjamin",
+   "name": "Benjamin",
+   "sex": "m",
+   "parents": [
+    "jacob",
+    "rachel"
+   ],
+   "summary": "Jacob's youngest son, the only one born in Canaan. His tribe gave Israel its first king, Saul, and the apostle Paul.",
+   "refs": [
+    "Genesis 35:16-18",
+    "Genesis 42-45",
+    "Genesis 49:27",
+    "Philippians 3:5"
+   ],
+   "meaning": {
+    "text": "Son of the right hand",
+    "ref": "Genesis 35:18"
+   },
+   "era": "tribes"
+  },
+  {
+   "id": "asenath",
+   "name": "Asenath",
+   "sex": "f",
+   "parents": [],
+   "summary": "Joseph's Egyptian wife, daughter of Potiphera, priest of On.",
+   "refs": [
+    "Genesis 41:45, 50-52"
+   ],
+   "spouses": [
+    "joseph"
+   ],
+   "era": "tribes"
+  },
+  {
+   "id": "manasseh-j",
+   "name": "Manasseh",
+   "sex": "m",
+   "parents": [
+    "joseph",
+    "asenath"
+   ],
+   "summary": "Joseph's firstborn, adopted by Jacob as one of his own sons. His tribe settled on both sides of the Jordan.",
+   "refs": [
+    "Genesis 41:51",
+    "Genesis 48",
+    "Joshua 17"
+   ],
+   "meaning": {
+    "text": "Making to forget: \"God has made me forget all my hardship\"",
+    "ref": "Genesis 41:51"
+   },
+   "era": "tribes"
+  },
+  {
+   "id": "ephraim",
+   "name": "Ephraim",
+   "sex": "m",
+   "parents": [
+    "joseph",
+    "asenath"
+   ],
+   "summary": "Joseph's younger son, whom Jacob blessed ahead of his brother. Ephraim became the leading tribe of the north, and its name came to stand for the whole northern kingdom.",
+   "refs": [
+    "Genesis 41:52",
+    "Genesis 48:8-20",
+    "Hosea 11:8"
+   ],
+   "meaning": {
+    "text": "Fruitful: \"God has made me fruitful\"",
+    "ref": "Genesis 41:52"
+   },
+   "era": "tribes"
+  },
+  {
+   "id": "joshua",
+   "name": "Joshua",
+   "sex": "m",
+   "parents": [
+    "ephraim"
+   ],
+   "summary": "Son of Nun of the tribe of Ephraim. Moses' assistant and successor, he led Israel into the promised land: \"As for me and my house, we will serve the LORD.\"",
+   "refs": [
+    "Numbers 13:8, 16",
+    "Numbers 27:18-23",
+    "Joshua 1",
+    "Joshua 24:14-15",
+    "1 Chronicles 7:20-27"
+   ],
+   "gap": true,
+   "meaning": {
+    "text": "The LORD saves (the same name as Jesus)",
+    "ref": "Numbers 13:16"
+   },
+   "era": "exodus",
+   "atlas": "exodus.html#leader:joshua",
+   "note": "1 Chronicles 7:20-27 traces about ten generations from Ephraim to Joshua."
+  },
+  {
+   "id": "kohath",
+   "name": "Kohath",
+   "sex": "m",
+   "parents": [
+    "levi"
+   ],
+   "summary": "Levi's son. His clan, the Kohathites, carried the ark and the holy things of the tabernacle.",
+   "refs": [
+    "Exodus 6:16-18",
+    "Numbers 4:1-15"
+   ],
+   "age": 133,
+   "era": "exodus"
+  },
+  {
+   "id": "amram",
+   "name": "Amram",
+   "sex": "m",
+   "parents": [
+    "kohath"
+   ],
+   "summary": "Father of Miriam, Aaron and Moses.",
+   "refs": [
+    "Exodus 6:18-20",
+    "Numbers 26:58-59"
+   ],
+   "age": 137,
+   "era": "exodus",
+   "note": "Exodus 6 is usually read as naming the main ancestors rather than every generation across Israel's years in Egypt."
+  },
+  {
+   "id": "jochebed",
+   "name": "Jochebed",
+   "sex": "f",
+   "parents": [],
+   "summary": "A daughter of Levi, mother of Moses. By faith she hid her baby and set him among the reeds of the Nile.",
+   "refs": [
+    "Exodus 2:1-10",
+    "Exodus 6:20",
+    "Hebrews 11:23"
+   ],
+   "spouses": [
+    "amram"
+   ],
+   "era": "exodus"
+  },
+  {
+   "id": "miriam",
+   "name": "Miriam",
+   "sex": "f",
+   "parents": [
+    "amram",
+    "jochebed"
+   ],
+   "summary": "Sister of Moses and Aaron. She watched over the baby Moses and led the women in song after the sea crossing. Micah names her among the leaders God sent.",
+   "refs": [
+    "Exodus 2:4-8",
+    "Exodus 15:20-21",
+    "Numbers 12",
+    "Micah 6:4"
+   ],
+   "era": "exodus",
+   "atlas": "exodus.html#leader:miriam"
+  },
+  {
+   "id": "aaron",
+   "name": "Aaron",
+   "sex": "m",
+   "parents": [
+    "amram",
+    "jochebed"
+   ],
+   "summary": "Moses' older brother and spokesman, consecrated as Israel's first high priest. All later priests descended from him.",
+   "refs": [
+    "Exodus 4:14-16",
+    "Exodus 28:1",
+    "Leviticus 8",
+    "Numbers 20:22-29",
+    "Hebrews 5:1-5"
+   ],
+   "age": 123,
+   "era": "exodus",
+   "atlas": "exodus.html#leader:aaron"
+  },
+  {
+   "id": "moses",
+   "name": "Moses",
+   "sex": "m",
+   "parents": [
+    "amram",
+    "jochebed"
+   ],
+   "summary": "Drawn from the Nile and raised in Pharaoh's house, he met God at the burning bush and led Israel out of Egypt. Through him God gave the law. \"There has not arisen a prophet since in Israel like Moses, whom the LORD knew face to face.\"",
+   "refs": [
+    "Exodus 2-4",
+    "Exodus 19-20",
+    "Deuteronomy 34:5-12",
+    "Acts 7:20-44",
+    "Hebrews 3:1-6",
+    "Hebrews 11:23-29"
+   ],
+   "meaning": {
+    "text": "Drawn out: \"because I drew him out of the water\"",
+    "ref": "Exodus 2:10"
+   },
+   "age": 120,
+   "era": "exodus",
+   "atlas": "exodus.html#leader:moses"
+  },
+  {
+   "id": "zipporah",
+   "name": "Zipporah",
+   "sex": "f",
+   "parents": [],
+   "summary": "Daughter of Jethro (Reuel), priest of Midian, and wife of Moses.",
+   "refs": [
+    "Exodus 2:16-22",
+    "Exodus 4:24-26",
+    "Exodus 18:1-6"
+   ],
+   "spouses": [
+    "moses"
+   ],
+   "era": "exodus"
+  },
+  {
+   "id": "gershom",
+   "name": "Gershom",
+   "sex": "m",
+   "parents": [
+    "moses",
+    "zipporah"
+   ],
+   "summary": "Moses' firstborn, born in Midian.",
+   "refs": [
+    "Exodus 2:22",
+    "1 Chronicles 23:14-15"
+   ],
+   "meaning": {
+    "text": "A sojourner there: \"I have been a sojourner in a foreign land\"",
+    "ref": "Exodus 2:22"
+   },
+   "era": "exodus"
+  },
+  {
+   "id": "eliezer-m",
+   "name": "Eliezer",
+   "sex": "m",
+   "parents": [
+    "moses",
+    "zipporah"
+   ],
+   "summary": "Moses' second son.",
+   "refs": [
+    "Exodus 18:4",
+    "1 Chronicles 23:15"
+   ],
+   "meaning": {
+    "text": "My God is help",
+    "ref": "Exodus 18:4"
+   },
+   "era": "exodus"
+  },
+  {
+   "id": "elisheba",
+   "name": "Elisheba",
+   "sex": "f",
+   "parents": [
+    "amminadab"
+   ],
+   "summary": "Aaron's wife, daughter of Amminadab and sister of Nahshon of Judah, so the priestly line and the royal line were joined by marriage.",
+   "refs": [
+    "Exodus 6:23"
+   ],
+   "spouses": [
+    "aaron"
+   ],
+   "era": "exodus"
+  },
+  {
+   "id": "nadab",
+   "name": "Nadab",
+   "sex": "m",
+   "parents": [
+    "aaron",
+    "elisheba"
+   ],
+   "summary": "Aaron's firstborn, who with Abihu offered unauthorised fire before the LORD and died.",
+   "refs": [
+    "Exodus 6:23",
+    "Leviticus 10:1-3"
+   ],
+   "era": "exodus"
+  },
+  {
+   "id": "abihu",
+   "name": "Abihu",
+   "sex": "m",
+   "parents": [
+    "aaron",
+    "elisheba"
+   ],
+   "summary": "Aaron's son, who died with Nadab for offering unauthorised fire.",
+   "refs": [
+    "Exodus 6:23",
+    "Leviticus 10:1-3"
+   ],
+   "era": "exodus"
+  },
+  {
+   "id": "eleazar",
+   "name": "Eleazar",
+   "sex": "m",
+   "parents": [
+    "aaron",
+    "elisheba"
+   ],
+   "summary": "Aaron's son and successor as high priest, who helped Joshua divide the land.",
+   "refs": [
+    "Numbers 20:25-28",
+    "Joshua 14:1",
+    "Joshua 24:33"
+   ],
+   "era": "exodus",
+   "atlas": "exodus.html#leader:eleazar"
+  },
+  {
+   "id": "ithamar",
+   "name": "Ithamar",
+   "sex": "m",
+   "parents": [
+    "aaron",
+    "elisheba"
+   ],
+   "summary": "Aaron's youngest son, who oversaw the Levites' work on the tabernacle. Eli the priest was probably descended from him.",
+   "refs": [
+    "Exodus 6:23",
+    "Numbers 4:28",
+    "1 Chronicles 24:3"
+   ],
+   "era": "exodus"
+  },
+  {
+   "id": "phinehas",
+   "name": "Phinehas",
+   "sex": "m",
+   "parents": [
+    "eleazar"
+   ],
+   "summary": "Eleazar's son, given \"a covenant of a perpetual priesthood\" for his zeal for the LORD at Peor.",
+   "refs": [
+    "Numbers 25:7-13",
+    "Joshua 22:13-34",
+    "Psalm 106:30-31"
+   ],
+   "era": "exodus",
+   "atlas": "judges.html#leader:phinehas"
+  },
+  {
+   "id": "tamar",
+   "name": "Tamar",
+   "sex": "f",
+   "parents": [],
+   "summary": "Judah's daughter-in-law. Denied the son she was owed, she conceived by Judah himself, who admitted \"she is more righteous than I\". She is one of four women named in Jesus' genealogy in Matthew.",
+   "refs": [
+    "Genesis 38",
+    "Ruth 4:12",
+    "Matthew 1:3"
+   ],
+   "spouses": [
+    "judah"
+   ],
+   "era": "tribes",
+   "matthew": true
+  },
+  {
+   "id": "perez",
+   "name": "Perez",
+   "sex": "m",
+   "parents": [
+    "judah",
+    "tamar"
+   ],
+   "summary": "Twin son of Judah and Tamar, who broke out ahead of his brother. Ancestor of David.",
+   "refs": [
+    "Genesis 38:27-30",
+    "Ruth 4:12, 18",
+    "Matthew 1:3"
+   ],
+   "meaning": {
+    "text": "A breach",
+    "ref": "Genesis 38:29"
+   },
+   "era": "tribes",
+   "line": true
+  },
+  {
+   "id": "zerah",
+   "name": "Zerah",
+   "sex": "m",
+   "parents": [
+    "judah",
+    "tamar"
+   ],
+   "summary": "Twin brother of Perez, ancestor of Achan and of the wise men Ethan and Heman.",
+   "refs": [
+    "Genesis 38:30",
+    "Joshua 7:1",
+    "1 Chronicles 2:4-6"
+   ],
+   "era": "tribes"
+  },
+  {
+   "id": "hezron",
+   "name": "Hezron",
+   "sex": "m",
+   "parents": [
+    "perez"
+   ],
+   "summary": "Son of Perez, who went down to Egypt with Jacob.",
+   "refs": [
+    "Genesis 46:12",
+    "Ruth 4:18-19",
+    "Matthew 1:3"
+   ],
+   "era": "tribes",
+   "line": true
+  },
+  {
+   "id": "ram",
+   "name": "Ram",
+   "sex": "m",
+   "parents": [
+    "hezron"
+   ],
+   "summary": "In the line of Judah, from Perez to David.",
+   "refs": [
+    "Ruth 4:19",
+    "1 Chronicles 2:9-10",
+    "Matthew 1:3-4"
+   ],
+   "era": "exodus",
+   "note": "The line from Hezron to Nahshon spans Israel's years in Egypt, so it probably names key ancestors rather than every generation.",
+   "line": true
+  },
+  {
+   "id": "amminadab",
+   "name": "Amminadab",
+   "sex": "m",
+   "parents": [
+    "ram"
+   ],
+   "summary": "Father of Nahshon and of Elisheba, Aaron's wife.",
+   "refs": [
+    "Exodus 6:23",
+    "Ruth 4:19-20",
+    "Matthew 1:4"
+   ],
+   "era": "exodus",
+   "line": true
+  },
+  {
+   "id": "nahshon",
+   "name": "Nahshon",
+   "sex": "m",
+   "parents": [
+    "amminadab"
+   ],
+   "summary": "Leader of the tribe of Judah in the wilderness, who brought the first offering at the dedication of the tabernacle.",
+   "refs": [
+    "Numbers 1:7",
+    "Numbers 7:12-17",
+    "Ruth 4:20",
+    "Matthew 1:4"
+   ],
+   "era": "exodus",
+   "line": true
+  },
+  {
+   "id": "salmon",
+   "name": "Salmon",
+   "sex": "m",
+   "parents": [
+    "nahshon"
+   ],
+   "summary": "Husband of Rahab and father of Boaz.",
+   "refs": [
+    "Ruth 4:20-21",
+    "Matthew 1:4-5"
+   ],
+   "era": "exodus",
+   "line": true
+  },
+  {
+   "id": "rahab",
+   "name": "Rahab",
+   "sex": "f",
+   "parents": [],
+   "summary": "A Canaanite prostitute of Jericho who hid Israel's spies because she feared the LORD. She was saved with her family, married into Judah and is named in Jesus' genealogy and among the heroes of faith.",
+   "refs": [
+    "Joshua 2",
+    "Joshua 6:22-25",
+    "Matthew 1:5",
+    "Hebrews 11:31",
+    "James 2:25"
+   ],
+   "spouses": [
+    "salmon"
+   ],
+   "era": "exodus",
+   "matthew": true
+  },
+  {
+   "id": "boaz",
+   "name": "Boaz",
+   "sex": "m",
+   "parents": [
+    "salmon",
+    "rahab"
+   ],
+   "summary": "A worthy man of Bethlehem who acted as kinsman-redeemer for Naomi's family and married Ruth: a picture of Christ the Redeemer.",
+   "refs": [
+    "Ruth 2-4",
+    "Matthew 1:5"
+   ],
+   "era": "judges",
+   "note": "Matthew 1:5 names Rahab as his mother. Since the conquest is about three centuries before David, Salmon and Boaz may stand for a longer line.",
+   "line": true
+  },
+  {
+   "id": "ruth",
+   "name": "Ruth",
+   "sex": "f",
+   "parents": [],
+   "summary": "A Moabite widow who left her people for Naomi and her God: \"Your people shall be my people, and your God my God.\" She married Boaz and became David's great-grandmother.",
+   "refs": [
+    "Ruth 1-4",
+    "Matthew 1:5"
+   ],
+   "spouses": [
+    "boaz"
+   ],
+   "era": "judges",
+   "atlas": "judges.html#event:e-ruth",
+   "matthew": true
+  },
+  {
+   "id": "obed",
+   "name": "Obed",
+   "sex": "m",
+   "parents": [
+    "boaz",
+    "ruth"
+   ],
+   "summary": "Son of Boaz and Ruth, of whom the women of Bethlehem said \"A son has been born to Naomi.\" Grandfather of David.",
+   "refs": [
+    "Ruth 4:13-22",
+    "Matthew 1:5"
+   ],
+   "era": "judges",
+   "line": true
+  },
+  {
+   "id": "jesse",
+   "name": "Jesse",
+   "sex": "m",
+   "parents": [
+    "obed"
+   ],
+   "summary": "A Bethlehemite, father of eight sons, the youngest being David. Isaiah foretold \"a shoot from the stump of Jesse\".",
+   "refs": [
+    "1 Samuel 16:1-13",
+    "Isaiah 11:1-10",
+    "Romans 15:12"
+   ],
+   "era": "judges",
+   "line": true
+  },
+  {
+   "id": "kish",
+   "name": "Kish",
+   "sex": "m",
+   "parents": [
+    "benjamin"
+   ],
+   "summary": "A Benjaminite of Gibeah, father of King Saul.",
+   "refs": [
+    "1 Samuel 9:1-3",
+    "Acts 13:21"
+   ],
+   "gap": true,
+   "era": "judges"
+  },
+  {
+   "id": "saul",
+   "name": "Saul",
+   "sex": "m",
+   "parents": [
+    "kish"
+   ],
+   "summary": "Israel's first king, chosen and anointed by Samuel. He began well but disobeyed the LORD, who rejected him and chose David. He died with his sons on Mount Gilboa.",
+   "refs": [
+    "1 Samuel 9-31",
+    "Acts 13:21-22"
+   ],
+   "era": "judges",
+   "atlas": "judges.html#leader:saul"
+  },
+  {
+   "id": "jonathan",
+   "name": "Jonathan",
+   "sex": "m",
+   "parents": [
+    "saul"
+   ],
+   "summary": "Saul's son, a brave warrior and David's closest friend, who loved him as his own soul and gave up his claim to the throne.",
+   "refs": [
+    "1 Samuel 14",
+    "1 Samuel 18:1-4",
+    "1 Samuel 20",
+    "2 Samuel 1:17-27"
+   ],
+   "era": "judges"
+  },
+  {
+   "id": "michal",
+   "name": "Michal",
+   "sex": "f",
+   "parents": [
+    "saul"
+   ],
+   "summary": "Saul's daughter, who loved David and saved his life. She later despised him for dancing before the ark, and had no children.",
+   "refs": [
+    "1 Samuel 18:20-28",
+    "1 Samuel 19:11-17",
+    "2 Samuel 6:16-23"
+   ],
+   "spouses": [
+    "david"
+   ],
+   "era": "judges"
+  },
+  {
+   "id": "mephibosheth",
+   "name": "Mephibosheth",
+   "sex": "m",
+   "parents": [
+    "jonathan"
+   ],
+   "summary": "Jonathan's son, lame in both feet, to whom David showed kindness for Jonathan's sake, giving him a place at the king's table.",
+   "refs": [
+    "2 Samuel 4:4",
+    "2 Samuel 9",
+    "2 Samuel 19:24-30"
+   ],
+   "era": "kings"
+  },
+  {
+   "id": "david",
+   "name": "David",
+   "sex": "m",
+   "parents": [
+    "jesse"
+   ],
+   "summary": "The shepherd boy anointed by Samuel, who killed Goliath and became Israel's greatest king, \"a man after God's own heart\". God promised that his throne would be established forever, a promise fulfilled in Jesus, the Son of David. He wrote many of the psalms.",
+   "refs": [
+    "1 Samuel 16-31",
+    "2 Samuel 1-24",
+    "2 Samuel 7:12-16",
+    "Psalm 51",
+    "Acts 13:22-23",
+    "Matthew 1:1"
+   ],
+   "age": 70,
+   "era": "kings",
+   "atlas": "judges.html#leader:david",
+   "line": true
+  },
+  {
+   "id": "bathsheba",
+   "name": "Bathsheba",
+   "sex": "f",
+   "parents": [],
+   "summary": "Wife of Uriah the Hittite, taken by David in adultery. After David repented, she became the mother of Solomon and secured his succession. Matthew names her as \"the wife of Uriah\".",
+   "refs": [
+    "2 Samuel 11-12",
+    "1 Kings 1:11-31",
+    "Matthew 1:6"
+   ],
+   "spouses": [
+    "david"
+   ],
+   "era": "kings",
+   "matthew": true
+  },
+  {
+   "id": "amnon",
+   "name": "Amnon",
+   "sex": "m",
+   "parents": [
+    "david"
+   ],
+   "summary": "David's firstborn (by Ahinoam), who violated his half-sister Tamar and was killed by Absalom.",
+   "refs": [
+    "2 Samuel 3:2",
+    "2 Samuel 13"
+   ],
+   "era": "kings"
+  },
+  {
+   "id": "absalom",
+   "name": "Absalom",
+   "sex": "m",
+   "parents": [
+    "david"
+   ],
+   "summary": "David's son (by Maacah), handsome and ambitious, who rebelled against his father and was killed. David mourned, \"O my son Absalom!\"",
+   "refs": [
+    "2 Samuel 3:3",
+    "2 Samuel 13-18"
+   ],
+   "era": "kings"
+  },
+  {
+   "id": "adonijah",
+   "name": "Adonijah",
+   "sex": "m",
+   "parents": [
+    "david"
+   ],
+   "summary": "David's son (by Haggith), who tried to seize the throne before Solomon was crowned.",
+   "refs": [
+    "2 Samuel 3:4",
+    "1 Kings 1-2"
+   ],
+   "era": "kings"
+  },
+  {
+   "id": "nathan-d",
+   "name": "Nathan",
+   "sex": "m",
+   "parents": [
+    "david",
+    "bathsheba"
+   ],
+   "summary": "A son of David and Bathsheba. Luke traces Jesus' genealogy through him.",
+   "refs": [
+    "2 Samuel 5:14",
+    "1 Chronicles 3:5",
+    "Luke 3:31"
+   ],
+   "era": "kings",
+   "note": "Not the prophet Nathan. Luke 3 follows Nathan's line down to Heli; Matthew 1 follows Solomon's line down to Joseph. Many think Luke gives Mary's line and Matthew Joseph's legal, royal line; others think both trace Joseph, one by natural and one by legal descent."
+  },
+  {
+   "id": "solomon",
+   "name": "Solomon",
+   "sex": "m",
+   "parents": [
+    "david",
+    "bathsheba"
+   ],
+   "summary": "David's son and successor, who asked God for wisdom and built the temple in Jerusalem. His many foreign wives turned his heart to other gods, and after his death the kingdom divided.",
+   "refs": [
+    "2 Samuel 12:24-25",
+    "1 Kings 3",
+    "1 Kings 6-8",
+    "1 Kings 11",
+    "Matthew 6:29",
+    "Matthew 12:42"
+   ],
+   "also": "Jedidiah",
+   "meaning": {
+    "text": "Peace; God named him Jedidiah, \"beloved of the LORD\"",
+    "ref": "1 Chronicles 22:9; 2 Samuel 12:25"
+   },
+   "era": "kings",
+   "atlas": "judges.html#leader:solomon",
+   "line": true
+  },
+  {
+   "id": "naamah",
+   "name": "Naamah",
+   "sex": "f",
+   "parents": [],
+   "summary": "An Ammonite wife of Solomon, mother of Rehoboam.",
+   "refs": [
+    "1 Kings 14:21, 31"
+   ],
+   "spouses": [
+    "solomon"
+   ],
+   "era": "kings"
+  },
+  {
+   "id": "rehoboam",
+   "name": "Rehoboam",
+   "sex": "m",
+   "parents": [
+    "solomon",
+    "naamah"
+   ],
+   "summary": "Solomon's son. His harsh answer to the people split the kingdom; he ruled only Judah and Benjamin.",
+   "refs": [
+    "1 Kings 12:1-24",
+    "1 Kings 14:21-31",
+    "2 Chronicles 10-12"
+   ],
+   "era": "kings",
+   "atlas": "kings.html#king:rehoboam",
+   "line": true
+  },
+  {
+   "id": "abijah",
+   "name": "Abijah",
+   "sex": "m",
+   "parents": [
+    "rehoboam"
+   ],
+   "summary": "King of Judah for three years.",
+   "refs": [
+    "1 Kings 15:1-8",
+    "2 Chronicles 13"
+   ],
+   "also": "Abijam",
+   "era": "kings",
+   "atlas": "kings.html#king:abijah",
+   "line": true
+  },
+  {
+   "id": "asa",
+   "name": "Asa",
+   "sex": "m",
+   "parents": [
+    "abijah"
+   ],
+   "summary": "A reforming king of Judah who removed idols and relied on the LORD, though he later trusted in Aram and in doctors rather than God.",
+   "refs": [
+    "1 Kings 15:9-24",
+    "2 Chronicles 14-16"
+   ],
+   "era": "kings",
+   "atlas": "kings.html#king:asa",
+   "line": true
+  },
+  {
+   "id": "jehoshaphat",
+   "name": "Jehoshaphat",
+   "sex": "m",
+   "parents": [
+    "asa"
+   ],
+   "summary": "A godly king of Judah who sent teachers through the land with the Book of the Law, but allied himself with Ahab.",
+   "refs": [
+    "1 Kings 22",
+    "2 Chronicles 17-20"
+   ],
+   "era": "kings",
+   "atlas": "kings.html#king:jehoshaphat",
+   "line": true
+  },
+  {
+   "id": "athaliah",
+   "name": "Athaliah",
+   "sex": "f",
+   "parents": [],
+   "summary": "Daughter of Ahab, wife of King Jehoram. After her son Ahaziah's death she killed the royal family and seized the throne, but the infant Joash was hidden and later crowned.",
+   "refs": [
+    "2 Kings 8:18, 26",
+    "2 Kings 11"
+   ],
+   "spouses": [
+    "jehoram"
+   ],
+   "era": "kings",
+   "atlas": "kings.html#king:athaliah"
+  },
+  {
+   "id": "jehoram",
+   "name": "Jehoram",
+   "sex": "m",
+   "parents": [
+    "jehoshaphat"
+   ],
+   "summary": "King of Judah who married Ahab's daughter and walked in the ways of Israel's kings.",
+   "refs": [
+    "2 Kings 8:16-24",
+    "2 Chronicles 21"
+   ],
+   "also": "Joram",
+   "era": "kings",
+   "atlas": "kings.html#king:jehoram-j",
+   "line": true
+  },
+  {
+   "id": "ahaziah",
+   "name": "Ahaziah",
+   "sex": "m",
+   "parents": [
+    "jehoram",
+    "athaliah"
+   ],
+   "summary": "King of Judah for one year, killed by Jehu.",
+   "refs": [
+    "2 Kings 8:25-29",
+    "2 Kings 9:27-29"
+   ],
+   "era": "kings",
+   "atlas": "kings.html#king:ahaziah-j",
+   "skipped": true,
+   "line": true
+  },
+  {
+   "id": "joash",
+   "name": "Joash",
+   "sex": "m",
+   "parents": [
+    "ahaziah"
+   ],
+   "summary": "Hidden as a baby from Athaliah and crowned at seven, he repaired the temple while the priest Jehoiada guided him, but later turned away.",
+   "refs": [
+    "2 Kings 11-12",
+    "2 Chronicles 22:10-24:27"
+   ],
+   "also": "Jehoash",
+   "era": "kings",
+   "atlas": "kings.html#king:joash-j",
+   "skipped": true,
+   "line": true
+  },
+  {
+   "id": "amaziah",
+   "name": "Amaziah",
+   "sex": "m",
+   "parents": [
+    "joash"
+   ],
+   "summary": "King of Judah who defeated Edom, then worshipped Edom's gods and was defeated by Israel.",
+   "refs": [
+    "2 Kings 14:1-20",
+    "2 Chronicles 25"
+   ],
+   "era": "kings",
+   "atlas": "kings.html#king:amaziah",
+   "skipped": true,
+   "line": true
+  },
+  {
+   "id": "uzziah",
+   "name": "Uzziah",
+   "sex": "m",
+   "parents": [
+    "amaziah"
+   ],
+   "summary": "A long-reigning, successful king of Judah, struck with leprosy when he proudly burned incense in the temple. Isaiah saw the Lord in the year he died.",
+   "refs": [
+    "2 Kings 15:1-7",
+    "2 Chronicles 26",
+    "Isaiah 6:1"
+   ],
+   "also": "Azariah",
+   "era": "kings",
+   "atlas": "kings.html#king:uzziah",
+   "line": true
+  },
+  {
+   "id": "jotham",
+   "name": "Jotham",
+   "sex": "m",
+   "parents": [
+    "uzziah"
+   ],
+   "summary": "A king of Judah who did right in the eyes of the LORD.",
+   "refs": [
+    "2 Kings 15:32-38",
+    "2 Chronicles 27"
+   ],
+   "era": "kings",
+   "atlas": "kings.html#king:jotham",
+   "line": true
+  },
+  {
+   "id": "ahaz",
+   "name": "Ahaz",
+   "sex": "m",
+   "parents": [
+    "jotham"
+   ],
+   "summary": "An idolatrous king of Judah who refused Isaiah's offer of a sign and appealed to Assyria. To him Isaiah gave the sign of the virgin's son, Immanuel.",
+   "refs": [
+    "2 Kings 16",
+    "Isaiah 7:1-14",
+    "Matthew 1:23"
+   ],
+   "era": "kings",
+   "atlas": "kings.html#king:ahaz",
+   "line": true
+  },
+  {
+   "id": "hezekiah",
+   "name": "Hezekiah",
+   "sex": "m",
+   "parents": [
+    "ahaz"
+   ],
+   "summary": "One of Judah's greatest kings, who trusted the LORD, reformed worship and was delivered from the Assyrian army of Sennacherib.",
+   "refs": [
+    "2 Kings 18-20",
+    "2 Chronicles 29-32",
+    "Isaiah 36-39"
+   ],
+   "era": "kings",
+   "atlas": "kings.html#king:hezekiah",
+   "line": true
+  },
+  {
+   "id": "manasseh-k",
+   "name": "Manasseh",
+   "sex": "m",
+   "parents": [
+    "hezekiah"
+   ],
+   "summary": "Judah's longest-reigning and most wicked king, who filled Jerusalem with idols and innocent blood. Chronicles records that he humbled himself in exile and was restored.",
+   "refs": [
+    "2 Kings 21:1-18",
+    "2 Chronicles 33:1-20"
+   ],
+   "era": "kings",
+   "atlas": "kings.html#king:manasseh",
+   "line": true
+  },
+  {
+   "id": "amon",
+   "name": "Amon",
+   "sex": "m",
+   "parents": [
+    "manasseh-k"
+   ],
+   "summary": "An evil king of Judah, murdered by his servants after two years.",
+   "refs": [
+    "2 Kings 21:19-26"
+   ],
+   "era": "kings",
+   "atlas": "kings.html#king:amon",
+   "line": true
+  },
+  {
+   "id": "josiah",
+   "name": "Josiah",
+   "sex": "m",
+   "parents": [
+    "amon"
+   ],
+   "summary": "Crowned at eight, he sought the LORD, found the Book of the Law in the temple and led a great reform. No king before or after turned to the LORD with all his heart as he did.",
+   "refs": [
+    "2 Kings 22-23",
+    "2 Chronicles 34-35"
+   ],
+   "era": "kings",
+   "atlas": "kings.html#king:josiah",
+   "line": true
+  },
+  {
+   "id": "jehoahaz",
+   "name": "Jehoahaz",
+   "sex": "m",
+   "parents": [
+    "josiah"
+   ],
+   "summary": "Josiah's son, who reigned three months before Pharaoh Neco took him to Egypt.",
+   "refs": [
+    "2 Kings 23:31-34"
+   ],
+   "also": "Shallum",
+   "era": "kings",
+   "atlas": "kings.html#king:jehoahaz-j"
+  },
+  {
+   "id": "jehoiakim",
+   "name": "Jehoiakim",
+   "sex": "m",
+   "parents": [
+    "josiah"
+   ],
+   "summary": "Josiah's son, put on the throne by Egypt. He burned Jeremiah's scroll and rebelled against Babylon.",
+   "refs": [
+    "2 Kings 23:34-24:7",
+    "Jeremiah 36"
+   ],
+   "also": "Eliakim",
+   "era": "kings",
+   "atlas": "kings.html#king:jehoiakim",
+   "skipped": true,
+   "line": true
+  },
+  {
+   "id": "zedekiah",
+   "name": "Zedekiah",
+   "sex": "m",
+   "parents": [
+    "josiah"
+   ],
+   "summary": "Josiah's son and Judah's last king. He rebelled against Babylon, and Jerusalem and the temple were destroyed in his eleventh year.",
+   "refs": [
+    "2 Kings 24:17-25:7",
+    "Jeremiah 52:1-11"
+   ],
+   "also": "Mattaniah",
+   "era": "kings",
+   "atlas": "kings.html#king:zedekiah"
+  },
+  {
+   "id": "jehoiachin",
+   "name": "Jehoiachin",
+   "sex": "m",
+   "parents": [
+    "jehoiakim"
+   ],
+   "summary": "King for three months before he was taken captive to Babylon. Released from prison there 37 years later, he ate at the king of Babylon's table.",
+   "refs": [
+    "2 Kings 24:8-17",
+    "2 Kings 25:27-30",
+    "Matthew 1:11-12"
+   ],
+   "also": "Jeconiah, Coniah",
+   "era": "kings",
+   "atlas": "kings.html#king:jehoiachin",
+   "line": true
+  },
+  {
+   "id": "shealtiel",
+   "name": "Shealtiel",
+   "sex": "m",
+   "parents": [
+    "jehoiachin"
+   ],
+   "summary": "Son of Jehoiachin, born in exile.",
+   "refs": [
+    "1 Chronicles 3:17",
+    "Ezra 3:2",
+    "Matthew 1:12"
+   ],
+   "also": "Salathiel",
+   "era": "return",
+   "line": true
+  },
+  {
+   "id": "zerubbabel",
+   "name": "Zerubbabel",
+   "sex": "m",
+   "parents": [
+    "shealtiel"
+   ],
+   "summary": "Governor of Judah who led the first return from Babylon and rebuilt the temple. God called him his signet ring.",
+   "refs": [
+    "Ezra 3-6",
+    "Haggai 2:20-23",
+    "Zechariah 4:6-10",
+    "Matthew 1:12-13"
+   ],
+   "era": "return",
+   "atlas": "kings.html#leader:zerubbabel",
+   "note": "Usually called the son of Shealtiel; 1 Chronicles 3:19 names his father as Pedaiah, Shealtiel's brother, perhaps through a levirate marriage.",
+   "line": true
+  },
+  {
+   "id": "abiud",
+   "name": "Abiud",
+   "sex": "m",
+   "parents": [
+    "zerubbabel"
+   ],
+   "summary": "Named in Matthew's genealogy of Jesus between the return from exile and Joseph. Nothing else is known of him.",
+   "refs": [
+    "Matthew 1:13-16"
+   ],
+   "era": "return",
+   "line": true
+  },
+  {
+   "id": "eliakim",
+   "name": "Eliakim",
+   "sex": "m",
+   "parents": [
+    "abiud"
+   ],
+   "summary": "Named in Matthew's genealogy of Jesus between the return from exile and Joseph. Nothing else is known of him.",
+   "refs": [
+    "Matthew 1:13-16"
+   ],
+   "era": "return",
+   "note": "Not the same as others of this name in the Old Testament.",
+   "line": true
+  },
+  {
+   "id": "azor",
+   "name": "Azor",
+   "sex": "m",
+   "parents": [
+    "eliakim"
+   ],
+   "summary": "Named in Matthew's genealogy of Jesus between the return from exile and Joseph. Nothing else is known of him.",
+   "refs": [
+    "Matthew 1:13-16"
+   ],
+   "era": "return",
+   "line": true
+  },
+  {
+   "id": "zadok",
+   "name": "Zadok",
+   "sex": "m",
+   "parents": [
+    "azor"
+   ],
+   "summary": "Named in Matthew's genealogy of Jesus between the return from exile and Joseph. Nothing else is known of him.",
+   "refs": [
+    "Matthew 1:13-16"
+   ],
+   "era": "return",
+   "note": "Not the same as others of this name in the Old Testament.",
+   "line": true
+  },
+  {
+   "id": "achim",
+   "name": "Achim",
+   "sex": "m",
+   "parents": [
+    "zadok"
+   ],
+   "summary": "Named in Matthew's genealogy of Jesus between the return from exile and Joseph. Nothing else is known of him.",
+   "refs": [
+    "Matthew 1:13-16"
+   ],
+   "era": "return",
+   "line": true
+  },
+  {
+   "id": "eliud",
+   "name": "Eliud",
+   "sex": "m",
+   "parents": [
+    "achim"
+   ],
+   "summary": "Named in Matthew's genealogy of Jesus between the return from exile and Joseph. Nothing else is known of him.",
+   "refs": [
+    "Matthew 1:13-16"
+   ],
+   "era": "return",
+   "line": true
+  },
+  {
+   "id": "eleazar-m",
+   "name": "Eleazar",
+   "sex": "m",
+   "parents": [
+    "eliud"
+   ],
+   "summary": "Named in Matthew's genealogy of Jesus between the return from exile and Joseph. Nothing else is known of him.",
+   "refs": [
+    "Matthew 1:13-16"
+   ],
+   "era": "return",
+   "note": "Not the same as others of this name in the Old Testament.",
+   "line": true
+  },
+  {
+   "id": "matthan",
+   "name": "Matthan",
+   "sex": "m",
+   "parents": [
+    "eleazar-m"
+   ],
+   "summary": "Named in Matthew's genealogy of Jesus between the return from exile and Joseph. Nothing else is known of him.",
+   "refs": [
+    "Matthew 1:13-16"
+   ],
+   "era": "return",
+   "line": true
+  },
+  {
+   "id": "jacob-m",
+   "name": "Jacob",
+   "sex": "m",
+   "parents": [
+    "matthan"
+   ],
+   "summary": "Named in Matthew's genealogy of Jesus between the return from exile and Joseph. Nothing else is known of him.",
+   "refs": [
+    "Matthew 1:13-16"
+   ],
+   "era": "return",
+   "note": "Not the same as others of this name in the Old Testament.",
+   "line": true
+  },
+  {
+   "id": "joseph-m",
+   "name": "Joseph",
+   "sex": "m",
+   "parents": [
+    "jacob-m"
+   ],
+   "summary": "A righteous carpenter of Nazareth, of the house of David, betrothed to Mary. Told by an angel that her child was conceived by the Holy Spirit, he took her as his wife and named the child Jesus, becoming his legal father.",
+   "refs": [
+    "Matthew 1:16-25",
+    "Matthew 2:13-23",
+    "Luke 1:26-27",
+    "Luke 2:1-51"
+   ],
+   "era": "gospels",
+   "note": "Luke 3:23 calls Joseph \"the son of Heli\". See the note on Nathan for the two genealogies.",
+   "line": true
+  },
+  {
+   "id": "mary",
+   "name": "Mary",
+   "sex": "f",
+   "parents": [],
+   "summary": "The virgin of Nazareth chosen to bear the Son of God: \"Behold, I am the servant of the Lord.\" She was at the cross and with the disciples in prayer after the ascension.",
+   "refs": [
+    "Luke 1:26-56",
+    "Luke 2",
+    "John 2:1-11",
+    "John 19:25-27",
+    "Acts 1:14"
+   ],
+   "spouses": [
+    "joseph-m"
+   ],
+   "era": "gospels",
+   "matthew": true
+  },
+  {
+   "id": "jesus",
+   "name": "Jesus",
+   "sex": "m",
+   "parents": [
+    "joseph-m",
+    "mary"
+   ],
+   "summary": "The eternal Son of God, born of the virgin Mary, the promised offspring of Eve, Abraham and David. He lived without sin, died for sinners, rose from the dead and reigns forever. In him all the promises of God find their Yes.",
+   "refs": [
+    "Matthew 1:1-25",
+    "Luke 1:30-35",
+    "Luke 3:23-38",
+    "John 1:1-14",
+    "Romans 1:3-4",
+    "2 Corinthians 1:20"
+   ],
+   "meaning": {
+    "text": "The LORD saves: \"he will save his people from their sins\"",
+    "ref": "Matthew 1:21"
+   },
+   "era": "gospels",
+   "note": "Joseph was his legal father, not his natural father: Jesus was conceived by the Holy Spirit (Matthew 1:18-20; Luke 1:35).",
+   "line": true
+  },
+  {
+   "id": "zechariah",
+   "name": "Zechariah",
+   "sex": "m",
+   "parents": [
+    "aaron"
+   ],
+   "summary": "A priest of the division of Abijah, who was struck mute for doubting the angel's message until his son John was born.",
+   "refs": [
+    "Luke 1:5-25, 57-79"
+   ],
+   "gap": true,
+   "era": "gospels",
+   "note": "A descendant of Aaron through the priestly divisions of 1 Chronicles 24."
+  },
+  {
+   "id": "elizabeth",
+   "name": "Elizabeth",
+   "sex": "f",
+   "parents": [
+    "aaron"
+   ],
+   "summary": "A relative of Mary, \"of the daughters of Aaron\", who conceived John in her old age. Filled with the Holy Spirit, she called Mary \"the mother of my Lord\".",
+   "refs": [
+    "Luke 1:5-7, 24-25, 36, 39-45"
+   ],
+   "gap": true,
+   "spouses": [
+    "zechariah"
+   ],
+   "era": "gospels"
+  },
+  {
+   "id": "john-baptist",
+   "name": "John the Baptist",
+   "sex": "m",
+   "parents": [
+    "zechariah",
+    "elizabeth"
+   ],
+   "summary": "The forerunner who prepared the way for the Lord, baptised Jesus and pointed to him: \"Behold, the Lamb of God, who takes away the sin of the world!\"",
+   "refs": [
+    "Luke 1:57-80",
+    "Matthew 3",
+    "John 1:19-36",
+    "Malachi 3:1",
+    "Matthew 11:11"
+   ],
+   "era": "gospels"
+  }
+ ]
+}

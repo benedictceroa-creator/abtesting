@@ -1,0 +1,1241 @@
+{
+ "sections": {
+  "law": {
+   "label": "Law",
+   "t": "OT",
+   "color": "#8C6A3E",
+   "about": "The five books of Moses: creation, the patriarchs, the Exodus and God's covenant law."
+  },
+  "history": {
+   "label": "History",
+   "t": "OT",
+   "color": "#A8402E",
+   "about": "Israel's story from the conquest of Canaan to the return from exile."
+  },
+  "poetry": {
+   "label": "Poetry & Wisdom",
+   "t": "OT",
+   "color": "#6E5A8C",
+   "about": "Songs, prayers and wisdom for life before God."
+  },
+  "major": {
+   "label": "Major Prophets",
+   "t": "OT",
+   "color": "#2F7F86",
+   "about": "The longer prophetic books (\"major\" means longer, not more important)."
+  },
+  "minor": {
+   "label": "Minor Prophets",
+   "t": "OT",
+   "color": "#3F5E8C",
+   "about": "Twelve shorter prophetic books, one scroll in the Hebrew Bible."
+  },
+  "gospels": {
+   "label": "Gospels",
+   "t": "NT",
+   "color": "#E72C47",
+   "about": "Four accounts of the life, death and resurrection of Jesus."
+  },
+  "acts": {
+   "label": "Acts",
+   "t": "NT",
+   "color": "#C8702A",
+   "about": "The birth and spread of the church."
+  },
+  "paul": {
+   "label": "Paul's Letters",
+   "t": "NT",
+   "color": "#4F7A5A",
+   "about": "Thirteen letters from the apostle Paul to churches and co-workers."
+  },
+  "general": {
+   "label": "General Letters",
+   "t": "NT",
+   "color": "#7A5A3A",
+   "about": "Letters from other apostles and leaders to the wider church."
+  },
+  "prophecy": {
+   "label": "Prophecy",
+   "t": "NT",
+   "color": "#141414",
+   "about": "John's vision of Christ's victory and the new creation."
+  }
+ },
+ "books": [
+  {
+   "id": "genesis",
+   "name": "Genesis",
+   "abbr": "Gen",
+   "section": "law",
+   "chapters": 50,
+   "author": "Moses",
+   "written": "c. 1446–1406 BC",
+   "theme": "Beginnings: creation, fall and God's promise",
+   "summary": "God creates the world good, and humanity falls into sin. Through the flood and the scattering at Babel, God keeps a line of promise, then calls Abraham and promises that through his offspring all nations will be blessed. The book follows that promise through Isaac, Jacob and Joseph, ending with Israel in Egypt.",
+   "keyVerse": {
+    "ref": "Genesis 1:1",
+    "text": "In the beginning, God created the heavens and the earth."
+   },
+   "christ": "The offspring of the woman who will crush the serpent's head (3:15), the offspring of Abraham in whom all nations are blessed (Galatians 3:16), and the ruler from Judah (49:10).",
+   "atlas": "patriarchs.html",
+   "note": "Moses is the traditional author of the five books of the Law (the Pentateuch), drawing on earlier records; some details, like the account of his death, were added later.",
+   "n": 1
+  },
+  {
+   "id": "exodus",
+   "name": "Exodus",
+   "abbr": "Exod",
+   "section": "law",
+   "chapters": 40,
+   "author": "Moses",
+   "written": "c. 1446–1406 BC",
+   "theme": "Redemption from slavery and God dwelling with his people",
+   "summary": "God hears Israel's cry in Egypt, calls Moses, sends ten plagues and brings his people out through the sea. At Sinai he makes his covenant with them, gives the Ten Commandments, and comes to live among them in the tabernacle.",
+   "keyVerse": {
+    "ref": "Exodus 20:2-3",
+    "text": "I am the LORD your God, who brought you out of the land of Egypt, out of the house of slavery. You shall have no other gods before me."
+   },
+   "christ": "Christ is our Passover lamb (1 Corinthians 5:7), and in him the Word \"dwelt\" (literally \"tabernacled\") among us (John 1:14).",
+   "atlas": "exodus.html",
+   "n": 2
+  },
+  {
+   "id": "leviticus",
+   "name": "Leviticus",
+   "abbr": "Lev",
+   "section": "law",
+   "chapters": 27,
+   "author": "Moses",
+   "written": "c. 1445 BC",
+   "theme": "How a holy God can live among sinful people",
+   "summary": "The laws given at Sinai for sacrifices, priests, clean and unclean, and the Day of Atonement show Israel how to approach a holy God and how to live as his holy people.",
+   "keyVerse": {
+    "ref": "Leviticus 19:2",
+    "text": "You shall be holy, for I the LORD your God am holy."
+   },
+   "christ": "Christ is both the perfect sacrifice and the great high priest, who entered the holy place once for all by his own blood (Hebrews 9:11-14).",
+   "atlas": "exodus.html",
+   "n": 3
+  },
+  {
+   "id": "numbers",
+   "name": "Numbers",
+   "abbr": "Num",
+   "section": "law",
+   "chapters": 36,
+   "author": "Moses",
+   "written": "c. 1406 BC",
+   "theme": "Faithlessness in the wilderness and God's faithfulness",
+   "summary": "Israel is counted and organised at Sinai and sets out for Canaan, but refuses to enter the land. That generation wanders forty years and dies in the wilderness, while God keeps caring for his people and prepares the next generation on the plains of Moab.",
+   "keyVerse": {
+    "ref": "Numbers 6:24-26",
+    "text": "The LORD bless you and keep you; the LORD make his face to shine upon you and be gracious to you; the LORD lift up his countenance upon you and give you peace."
+   },
+   "christ": "As the bronze serpent was lifted up for the dying to look at and live, so the Son of Man was lifted up (21:4-9; John 3:14-15).",
+   "atlas": "exodus.html",
+   "n": 4
+  },
+  {
+   "id": "deuteronomy",
+   "name": "Deuteronomy",
+   "abbr": "Deut",
+   "section": "law",
+   "chapters": 34,
+   "author": "Moses",
+   "written": "c. 1406 BC",
+   "theme": "Remember, love and obey the LORD",
+   "summary": "On the plains of Moab, Moses reminds the new generation of all God has done, restates the law and calls them to love the LORD with all their heart before they enter the land. The book ends with Moses' death.",
+   "keyVerse": {
+    "ref": "Deuteronomy 6:4-5",
+    "text": "Hear, O Israel: The LORD our God, the LORD is one. You shall love the LORD your God with all your heart and with all your soul and with all your might."
+   },
+   "christ": "Jesus answered each of Satan's temptations from Deuteronomy, and he is the prophet like Moses whom God promised to raise up (18:15; Acts 3:22).",
+   "atlas": "exodus.html",
+   "n": 5
+  },
+  {
+   "id": "joshua",
+   "name": "Joshua",
+   "abbr": "Josh",
+   "section": "history",
+   "chapters": 24,
+   "author": "Joshua (mostly)",
+   "written": "c. 1400–1370 BC",
+   "theme": "God gives his people the land he promised",
+   "summary": "Joshua leads Israel across the Jordan, takes Jericho and defeats the kings of Canaan. The land is divided among the tribes, and Joshua calls Israel to choose whom they will serve.",
+   "keyVerse": {
+    "ref": "Joshua 1:9",
+    "text": "Have I not commanded you? Be strong and courageous. Do not be frightened, and do not be dismayed, for the LORD your God is with you wherever you go."
+   },
+   "christ": "Jesus bears the same name as Joshua (\"the LORD saves\") and brings his people into the true rest that Joshua could not give (Hebrews 4:8-10).",
+   "atlas": "exodus.html",
+   "note": "Joshua probably wrote most of the book (24:26); the account of his death and some later details were added afterwards.",
+   "n": 6
+  },
+  {
+   "id": "judges",
+   "name": "Judges",
+   "abbr": "Judg",
+   "section": "history",
+   "chapters": 21,
+   "author": "Unknown (perhaps Samuel)",
+   "written": "c. 1050–1000 BC",
+   "theme": "A downward cycle of sin, oppression and rescue",
+   "summary": "After Joshua, Israel repeatedly turns to idols, falls to enemies, cries out, and is rescued by a judge God raises up, such as Deborah, Gideon or Samson. Each cycle is worse, and the book ends in chaos.",
+   "keyVerse": {
+    "ref": "Judges 21:25",
+    "text": "In those days there was no king in Israel. Everyone did what was right in his own eyes."
+   },
+   "christ": "Israel's flawed deliverers point to the one perfect Saviour and the righteous King the book longs for.",
+   "atlas": "judges.html",
+   "note": "The repeated line \"there was no king in Israel\" suggests it was written early in the monarchy. Jewish tradition names Samuel.",
+   "n": 7
+  },
+  {
+   "id": "ruth",
+   "name": "Ruth",
+   "abbr": "Ruth",
+   "section": "history",
+   "chapters": 4,
+   "author": "Unknown",
+   "written": "c. 1000 BC or later",
+   "theme": "Loyal love and God's quiet providence",
+   "summary": "In the days of the judges, the Moabite widow Ruth stays with her mother-in-law Naomi and comes to Bethlehem, where Boaz acts as their kinsman-redeemer and marries her. Their son Obed is David's grandfather.",
+   "keyVerse": {
+    "ref": "Ruth 1:16",
+    "text": "Where you go I will go, and where you lodge I will lodge. Your people shall be my people, and your God my God."
+   },
+   "christ": "Boaz the kinsman-redeemer pictures Christ, who redeems his people at his own cost; and Ruth, a foreigner, is in his family line (Matthew 1:5).",
+   "atlas": "judges.html#event:e-ruth",
+   "n": 8
+  },
+  {
+   "id": "1-samuel",
+   "name": "1 Samuel",
+   "abbr": "1 Sam",
+   "section": "history",
+   "chapters": 31,
+   "author": "Unknown (Samuel's records, with Nathan and Gad)",
+   "written": "c. 930 BC or later",
+   "theme": "Israel asks for a king",
+   "summary": "Hannah's prayer is answered with Samuel, the last judge. Israel demands a king, and Saul is anointed, but he disobeys and is rejected. God chooses David, a shepherd after his own heart, who must flee from Saul until Saul dies at Gilboa.",
+   "keyVerse": {
+    "ref": "1 Samuel 16:7",
+    "text": "For the LORD sees not as man sees: man looks on the outward appearance, but the LORD looks on the heart."
+   },
+   "christ": "David, the anointed shepherd-king from Bethlehem, foreshadows Jesus, the Christ (\"anointed one\") and good shepherd.",
+   "atlas": "judges.html",
+   "note": "1 and 2 Samuel were one book. 1 Chronicles 29:29 mentions the records of Samuel, Nathan and Gad.",
+   "n": 9
+  },
+  {
+   "id": "2-samuel",
+   "name": "2 Samuel",
+   "abbr": "2 Sam",
+   "section": "history",
+   "chapters": 24,
+   "author": "Unknown (Samuel's records, with Nathan and Gad)",
+   "written": "c. 930 BC or later",
+   "theme": "David's kingdom and God's covenant with David",
+   "summary": "David becomes king over all Israel, takes Jerusalem and brings up the ark. God promises him a house and a throne forever. Then David sins with Bathsheba, and the sword never leaves his house, though God remains faithful.",
+   "keyVerse": {
+    "ref": "2 Samuel 7:16",
+    "text": "And your house and your kingdom shall be made sure forever before me. Your throne shall be established forever."
+   },
+   "christ": "God's covenant with David is fulfilled in Jesus, the Son of David, whose kingdom will have no end (Luke 1:32-33).",
+   "atlas": "judges.html",
+   "n": 10
+  },
+  {
+   "id": "1-kings",
+   "name": "1 Kings",
+   "abbr": "1 Kgs",
+   "section": "history",
+   "chapters": 22,
+   "author": "Unknown (Jewish tradition: Jeremiah)",
+   "written": "c. 560–540 BC",
+   "theme": "From Solomon's glory to a divided kingdom",
+   "summary": "Solomon builds the temple, but his heart turns to other gods and the kingdom splits into Israel and Judah. The book follows their kings, and Elijah's stand against Baal in the days of Ahab.",
+   "keyVerse": {
+    "ref": "1 Kings 18:21",
+    "text": "How long will you go limping between two different opinions? If the LORD is God, follow him; but if Baal, then follow him."
+   },
+   "christ": "\"Something greater than Solomon is here\" (Matthew 12:42): Jesus is the wise king and the true temple.",
+   "atlas": "kings.html",
+   "note": "1 and 2 Kings were one book, finished during the exile (it ends in about 560 BC), using earlier court records.",
+   "n": 11
+  },
+  {
+   "id": "2-kings",
+   "name": "2 Kings",
+   "abbr": "2 Kgs",
+   "section": "history",
+   "chapters": 25,
+   "author": "Unknown (Jewish tradition: Jeremiah)",
+   "written": "c. 560–540 BC",
+   "theme": "The road to exile",
+   "summary": "Elisha succeeds Elijah. Israel's kings lead it into idolatry until Assyria destroys Samaria. Judah has reforming kings like Hezekiah and Josiah, but falls to Babylon. The book ends with a glimmer of hope as King Jehoiachin is released.",
+   "keyVerse": {
+    "ref": "2 Kings 23:25",
+    "text": "Before him there was no king like him, who turned to the LORD with all his heart and with all his soul and with all his might, according to all the Law of Moses, nor did any like him arise after him."
+   },
+   "christ": "Even in exile the line of David survives, waiting for the promised King.",
+   "atlas": "kings.html",
+   "n": 12
+  },
+  {
+   "id": "1-chronicles",
+   "name": "1 Chronicles",
+   "abbr": "1 Chr",
+   "section": "history",
+   "chapters": 29,
+   "author": "Unknown (Jewish tradition: Ezra)",
+   "written": "c. 450–400 BC",
+   "theme": "Israel's story retold for those who returned",
+   "summary": "Genealogies from Adam to the return from exile, then the reign of David, especially his care for the ark and his preparations for the temple, written to remind the returned exiles of who they were.",
+   "keyVerse": {
+    "ref": "1 Chronicles 29:11",
+    "text": "Yours, O LORD, is the greatness and the power and the glory and the victory and the majesty, for all that is in the heavens and in the earth is yours."
+   },
+   "christ": "The genealogies trace the line of David toward the Messiah, and David's son is promised a throne forever (17:11-14).",
+   "atlas": "judges.html",
+   "n": 13
+  },
+  {
+   "id": "2-chronicles",
+   "name": "2 Chronicles",
+   "abbr": "2 Chr",
+   "section": "history",
+   "chapters": 36,
+   "author": "Unknown (Jewish tradition: Ezra)",
+   "written": "c. 450–400 BC",
+   "theme": "The temple, the kings of Judah, and the call to seek God",
+   "summary": "Solomon's temple and the kings of Judah, showing how God blessed those who sought him and judged those who did not. It ends with the decree of Cyrus allowing the exiles to return.",
+   "keyVerse": {
+    "ref": "2 Chronicles 7:14",
+    "text": "If my people who are called by my name humble themselves, and pray and seek my face and turn from their wicked ways, then I will hear from heaven and will forgive their sin and heal their land."
+   },
+   "christ": "Jesus is the true temple where God meets his people (John 2:19-21).",
+   "atlas": "kings.html",
+   "n": 14
+  },
+  {
+   "id": "ezra",
+   "name": "Ezra",
+   "abbr": "Ezra",
+   "section": "history",
+   "chapters": 10,
+   "author": "Ezra",
+   "written": "c. 440 BC",
+   "theme": "Return and rebuilding",
+   "summary": "The first exiles return under Zerubbabel and rebuild the temple despite opposition. Decades later Ezra the scribe comes to teach God's law and call the people to repentance.",
+   "keyVerse": {
+    "ref": "Ezra 7:10",
+    "text": "For Ezra had set his heart to study the Law of the LORD, and to do it and to teach his statutes and rules in Israel."
+   },
+   "christ": "God keeps his promise to bring his people home, and preserves the line of David through Zerubbabel (Matthew 1:12).",
+   "atlas": "kings.html#map:t538",
+   "n": 15
+  },
+  {
+   "id": "nehemiah",
+   "name": "Nehemiah",
+   "abbr": "Neh",
+   "section": "history",
+   "chapters": 13,
+   "author": "Nehemiah (with Ezra)",
+   "written": "c. 430 BC",
+   "theme": "Rebuilding the walls and renewing the covenant",
+   "summary": "Nehemiah, cupbearer to the Persian king, returns to rebuild Jerusalem's walls in 52 days in the face of fierce opposition. Ezra reads the law, and the people confess their sin and renew the covenant.",
+   "keyVerse": {
+    "ref": "Nehemiah 8:10",
+    "text": "Do not be grieved, for the joy of the LORD is your strength."
+   },
+   "christ": "Nehemiah's prayerful, costly leadership for the sake of God's people foreshadows Christ, who builds his church.",
+   "atlas": "kings.html#map:t445",
+   "note": "Ezra and Nehemiah were one book in the Hebrew Bible. Much of Nehemiah is his own first-person memoir.",
+   "n": 16
+  },
+  {
+   "id": "esther",
+   "name": "Esther",
+   "abbr": "Esth",
+   "section": "history",
+   "chapters": 10,
+   "author": "Unknown",
+   "written": "c. 470–400 BC",
+   "theme": "God's hidden providence protects his people",
+   "summary": "In Persia, the Jewish orphan Esther becomes queen. When Haman plots to destroy all the Jews, she risks her life to plead with the king, and the plot is reversed. God is never named, yet he is clearly at work.",
+   "keyVerse": {
+    "ref": "Esther 4:14",
+    "text": "And who knows whether you have not come to the kingdom for such a time as this?"
+   },
+   "christ": "Esther risks death to intercede for her people; Christ gave his life to save his.",
+   "atlas": "kings.html#leader:esther",
+   "n": 17
+  },
+  {
+   "id": "job",
+   "name": "Job",
+   "abbr": "Job",
+   "section": "poetry",
+   "chapters": 42,
+   "author": "Unknown",
+   "written": "Unknown (set in the time of the patriarchs)",
+   "theme": "Suffering, faith and the wisdom of God",
+   "summary": "Job, a righteous man, loses everything. His friends insist he must have sinned; Job protests his innocence and longs to meet God. God answers from the whirlwind, revealing his wisdom and power, and Job worships.",
+   "keyVerse": {
+    "ref": "Job 19:25",
+    "text": "For I know that my Redeemer lives, and at the last he will stand upon the earth."
+   },
+   "christ": "Job longs for a mediator between himself and God (9:33) and a living Redeemer, fulfilled in Christ.",
+   "note": "The setting appears to be the time of the patriarchs; the date of writing is unknown.",
+   "n": 18
+  },
+  {
+   "id": "psalms",
+   "name": "Psalms",
+   "abbr": "Ps",
+   "section": "poetry",
+   "chapters": 150,
+   "author": "David and others",
+   "written": "c. 1440–450 BC",
+   "theme": "Israel's songbook of praise, lament and trust",
+   "summary": "150 songs and prayers for every season of life: praise, thanksgiving, confession, lament, wisdom and royal psalms. David wrote about half of them; others are by Asaph, the sons of Korah, Solomon and Moses.",
+   "keyVerse": {
+    "ref": "Psalm 23:1",
+    "text": "The LORD is my shepherd; I shall not want."
+   },
+   "christ": "Jesus said the Psalms speak of him (Luke 24:44): the anointed King (Psalm 2), the suffering one (Psalm 22) and the risen Lord (Psalm 16, 110).",
+   "note": "The Psalms were written over about a thousand years, from Moses (Psalm 90) to after the exile (Psalm 137).",
+   "n": 19
+  },
+  {
+   "id": "proverbs",
+   "name": "Proverbs",
+   "abbr": "Prov",
+   "section": "poetry",
+   "chapters": 31,
+   "author": "Solomon and others",
+   "written": "c. 950–700 BC",
+   "theme": "Wisdom for everyday life, rooted in the fear of the LORD",
+   "summary": "Short, memorable sayings about work, words, money, friendship, family and justice, introduced by a father's appeal to his son to seek wisdom. It ends with the portrait of a woman of strength.",
+   "keyVerse": {
+    "ref": "Proverbs 1:7",
+    "text": "The fear of the LORD is the beginning of knowledge; fools despise wisdom and instruction."
+   },
+   "christ": "Christ is the wisdom of God, in whom are hidden all the treasures of wisdom and knowledge (1 Corinthians 1:24; Colossians 2:3).",
+   "note": "Most of the proverbs are Solomon's; others are by Agur and King Lemuel, and Hezekiah's men collected some (25:1).",
+   "n": 20
+  },
+  {
+   "id": "ecclesiastes",
+   "name": "Ecclesiastes",
+   "abbr": "Eccl",
+   "section": "poetry",
+   "chapters": 12,
+   "author": "The Preacher (traditionally Solomon)",
+   "written": "c. 935 BC",
+   "theme": "Life \"under the sun\" without God is vapour",
+   "summary": "The Preacher searches for meaning in wisdom, pleasure, work and wealth, and finds it all fleeting. He concludes that life is God's gift to be enjoyed, and that we should fear God and keep his commandments.",
+   "keyVerse": {
+    "ref": "Ecclesiastes 12:13",
+    "text": "The end of the matter; all has been heard. Fear God and keep his commandments, for this is the whole duty of man."
+   },
+   "christ": "Christ gives lasting meaning to a fleeting life, and in him our labour is not in vain (1 Corinthians 15:58).",
+   "note": "Traditionally Solomon (\"son of David, king in Jerusalem\"). Some evangelical scholars think a later writer speaks in Solomon's voice.",
+   "n": 21
+  },
+  {
+   "id": "song-of-solomon",
+   "name": "Song of Solomon",
+   "abbr": "Song",
+   "section": "poetry",
+   "chapters": 8,
+   "author": "Solomon",
+   "written": "c. 950 BC",
+   "theme": "The beauty of love between husband and wife",
+   "summary": "A series of love poems celebrating the love, longing and delight between a bride and her beloved, and the goodness of married love as God's gift.",
+   "keyVerse": {
+    "ref": "Song of Solomon 8:7",
+    "text": "Many waters cannot quench love, neither can floods drown it."
+   },
+   "christ": "Scripture often pictures God's love for his people as a marriage, fulfilled in Christ and his bride, the church (Ephesians 5:25-32).",
+   "n": 22
+  },
+  {
+   "id": "isaiah",
+   "name": "Isaiah",
+   "abbr": "Isa",
+   "section": "major",
+   "chapters": 66,
+   "author": "Isaiah",
+   "written": "c. 740–680 BC",
+   "theme": "The Holy One of Israel judges and saves",
+   "summary": "Isaiah warns Judah of judgement for its sin, comforts it with promises of return from exile, and looks ahead to the Servant of the LORD who will bear the sins of many and to new heavens and a new earth.",
+   "keyVerse": {
+    "ref": "Isaiah 53:5",
+    "text": "But he was pierced for our transgressions; he was crushed for our iniquities; upon him was the chastisement that brought us peace, and with his wounds we are healed."
+   },
+   "christ": "Isaiah is quoted in the New Testament more than any other prophet: the virgin's son Immanuel (7:14), the child born to rule (9:6) and the suffering Servant (53).",
+   "atlas": "kings.html#prophet:isaiah",
+   "note": "Many scholars divide the book between two or three authors; most evangelical scholars hold that Isaiah wrote the whole book, as the New Testament assumes (John 12:38-41).",
+   "n": 23
+  },
+  {
+   "id": "jeremiah",
+   "name": "Jeremiah",
+   "abbr": "Jer",
+   "section": "major",
+   "chapters": 52,
+   "author": "Jeremiah (with Baruch)",
+   "written": "c. 627–580 BC",
+   "theme": "Judgement on Judah and the promise of a new covenant",
+   "summary": "For forty years the \"weeping prophet\" warns Judah to repent, is rejected and persecuted, and sees Jerusalem fall to Babylon. Yet he promises restoration after seventy years and a new covenant written on the heart.",
+   "keyVerse": {
+    "ref": "Jeremiah 31:33",
+    "text": "I will put my law within them, and I will write it on their hearts. And I will be their God, and they shall be my people."
+   },
+   "christ": "Jesus inaugurates the new covenant in his blood (Luke 22:20; Hebrews 8:8-12).",
+   "atlas": "kings.html#prophet:jeremiah",
+   "n": 24
+  },
+  {
+   "id": "lamentations",
+   "name": "Lamentations",
+   "abbr": "Lam",
+   "section": "major",
+   "chapters": 5,
+   "author": "Jeremiah (traditionally)",
+   "written": "c. 586 BC",
+   "theme": "Grief over Jerusalem, and hope in God's mercy",
+   "summary": "Five poems mourning the destruction of Jerusalem by Babylon, honest about sin and suffering, with a turn to hope at their centre.",
+   "keyVerse": {
+    "ref": "Lamentations 3:22-23",
+    "text": "The steadfast love of the LORD never ceases; his mercies never come to an end; they are new every morning; great is your faithfulness."
+   },
+   "christ": "Jesus wept over Jerusalem (Luke 19:41-44) and bore God's judgement so that his mercies would never end for his people.",
+   "atlas": "kings.html#map:t586",
+   "n": 25
+  },
+  {
+   "id": "ezekiel",
+   "name": "Ezekiel",
+   "abbr": "Ezek",
+   "section": "major",
+   "chapters": 48,
+   "author": "Ezekiel",
+   "written": "c. 593–570 BC",
+   "theme": "The glory of the LORD departs and returns",
+   "summary": "A priest among the exiles in Babylon sees visions of God's glory leaving the temple because of Judah's sin. After Jerusalem falls, he promises new hearts, dry bones living again, a good shepherd and a new temple.",
+   "keyVerse": {
+    "ref": "Ezekiel 36:26",
+    "text": "And I will give you a new heart, and a new spirit I will put within you. And I will remove the heart of stone from your flesh and give you a heart of flesh."
+   },
+   "christ": "Jesus is the good shepherd of Ezekiel 34 (John 10:11), and gives the Spirit who brings new life.",
+   "atlas": "kings.html#prophet:ezekiel",
+   "n": 26
+  },
+  {
+   "id": "daniel",
+   "name": "Daniel",
+   "abbr": "Dan",
+   "section": "major",
+   "chapters": 12,
+   "author": "Daniel",
+   "written": "c. 536–530 BC",
+   "theme": "God rules over the kingdoms of the world",
+   "summary": "Daniel and his friends stay faithful in Babylon's court: the fiery furnace, the writing on the wall and the lions' den. Daniel's visions show world empires rising and falling until God's everlasting kingdom comes.",
+   "keyVerse": {
+    "ref": "Daniel 2:20",
+    "text": "Blessed be the name of God forever and ever, to whom belong wisdom and might."
+   },
+   "christ": "Jesus called himself the Son of Man, who in Daniel's vision receives an everlasting kingdom (7:13-14; Mark 14:62).",
+   "atlas": "kings.html#prophet:daniel",
+   "note": "Many critical scholars date Daniel to about 165 BC; evangelical scholars generally hold that Daniel wrote it in the 6th century BC, as Jesus treats him as its author (Matthew 24:15).",
+   "n": 27
+  },
+  {
+   "id": "hosea",
+   "name": "Hosea",
+   "abbr": "Hos",
+   "section": "minor",
+   "chapters": 14,
+   "author": "Hosea",
+   "written": "c. 755–715 BC",
+   "theme": "God's faithful love for an unfaithful people",
+   "summary": "God tells Hosea to marry Gomer, who is unfaithful to him, as a living picture of Israel's spiritual adultery. Yet as Hosea buys her back, God will love and restore his people.",
+   "keyVerse": {
+    "ref": "Hosea 6:6",
+    "text": "For I desire steadfast love and not sacrifice, the knowledge of God rather than burnt offerings."
+   },
+   "christ": "\"Out of Egypt I called my son\" (11:1) is fulfilled in Jesus (Matthew 2:15), and Christ loves his unfaithful bride and makes her his own.",
+   "atlas": "kings.html#prophet:hosea",
+   "n": 28
+  },
+  {
+   "id": "joel",
+   "name": "Joel",
+   "abbr": "Joel",
+   "section": "minor",
+   "chapters": 3,
+   "author": "Joel",
+   "written": "Uncertain (c. 835 or c. 500 BC)",
+   "theme": "The day of the LORD and the outpoured Spirit",
+   "summary": "A devastating locust plague is a warning of the coming day of the LORD. Joel calls the people to return to God with all their hearts and promises that God will pour out his Spirit on all flesh.",
+   "keyVerse": {
+    "ref": "Joel 2:28",
+    "text": "And it shall come to pass afterward, that I will pour out my Spirit on all flesh; your sons and your daughters shall prophesy."
+   },
+   "christ": "Peter declared Joel's promise fulfilled at Pentecost, when the risen Christ poured out the Spirit (Acts 2:16-21, 33).",
+   "note": "Joel gives no date; evangelical scholars suggest either the 9th century or after the exile.",
+   "n": 29
+  },
+  {
+   "id": "amos",
+   "name": "Amos",
+   "abbr": "Amos",
+   "section": "minor",
+   "chapters": 9,
+   "author": "Amos",
+   "written": "c. 760 BC",
+   "theme": "Justice, and the end of empty religion",
+   "summary": "A shepherd from Tekoa in Judah goes north to prosperous Israel and condemns its oppression of the poor and its empty worship. Judgement is coming, but he ends with the promise that David's fallen tent will be rebuilt.",
+   "keyVerse": {
+    "ref": "Amos 5:24",
+    "text": "But let justice roll down like waters, and righteousness like an ever-flowing stream."
+   },
+   "christ": "James saw the rebuilding of David's tent (9:11-12) fulfilled as Gentiles came to Christ (Acts 15:15-17).",
+   "atlas": "kings.html#prophet:amos",
+   "n": 30
+  },
+  {
+   "id": "obadiah",
+   "name": "Obadiah",
+   "abbr": "Obad",
+   "section": "minor",
+   "chapters": 1,
+   "author": "Obadiah",
+   "written": "c. 586 BC (some suggest c. 845 BC)",
+   "theme": "Judgement on proud Edom",
+   "summary": "The shortest book of the Old Testament announces judgement on Edom for gloating and joining in when Jerusalem fell, and promises that the kingdom will be the LORD's.",
+   "keyVerse": {
+    "ref": "Obadiah 15",
+    "text": "For the day of the LORD is near upon all the nations. As you have done, it shall be done to you."
+   },
+   "christ": "The kingdom promised in verse 21 comes in Christ, the King who saves.",
+   "n": 31
+  },
+  {
+   "id": "jonah",
+   "name": "Jonah",
+   "abbr": "Jonah",
+   "section": "minor",
+   "chapters": 4,
+   "author": "Unknown (about Jonah)",
+   "written": "c. 760 BC (events)",
+   "theme": "God's compassion reaches even Israel's enemies",
+   "summary": "Jonah runs from God's call to preach to Nineveh, is swallowed by a great fish and spat out. When Nineveh repents and is spared, Jonah is angry, and God asks why he should not have pity on that great city.",
+   "keyVerse": {
+    "ref": "Jonah 2:9",
+    "text": "Salvation belongs to the LORD!"
+   },
+   "christ": "Jesus pointed to the sign of Jonah: three days in the fish foreshadowed his three days in the tomb (Matthew 12:39-41).",
+   "atlas": "kings.html#prophet:jonah",
+   "n": 32
+  },
+  {
+   "id": "micah",
+   "name": "Micah",
+   "abbr": "Mic",
+   "section": "minor",
+   "chapters": 7,
+   "author": "Micah",
+   "written": "c. 735–700 BC",
+   "theme": "Judgement for injustice, and a ruler from Bethlehem",
+   "summary": "A contemporary of Isaiah condemns the corrupt leaders of Samaria and Jerusalem, and promises a remnant, a coming ruler from Bethlehem, and a God who delights in steadfast love.",
+   "keyVerse": {
+    "ref": "Micah 6:8",
+    "text": "He has told you, O man, what is good; and what does the LORD require of you but to do justice, and to love kindness, and to walk humbly with your God?"
+   },
+   "christ": "The ruler from Bethlehem whose origin is from of old (5:2) is Jesus (Matthew 2:5-6).",
+   "atlas": "kings.html#prophet:micah",
+   "n": 33
+  },
+  {
+   "id": "nahum",
+   "name": "Nahum",
+   "abbr": "Nah",
+   "section": "minor",
+   "chapters": 3,
+   "author": "Nahum",
+   "written": "c. 663–612 BC",
+   "theme": "The fall of cruel Nineveh",
+   "summary": "A century after Jonah, Nineveh has returned to violence. Nahum announces its downfall, which came in 612 BC, as comfort to Judah that God is a refuge and will judge the oppressor.",
+   "keyVerse": {
+    "ref": "Nahum 1:7",
+    "text": "The LORD is good, a stronghold in the day of trouble; he knows those who take refuge in him."
+   },
+   "christ": "\"Behold, upon the mountains, the feet of him who brings good news\" (1:15) points to the gospel of peace in Christ (Romans 10:15).",
+   "atlas": "kings.html#prophet:nahum",
+   "n": 34
+  },
+  {
+   "id": "habakkuk",
+   "name": "Habakkuk",
+   "abbr": "Hab",
+   "section": "minor",
+   "chapters": 3,
+   "author": "Habakkuk",
+   "written": "c. 609–605 BC",
+   "theme": "Living by faith when God's ways are hard to understand",
+   "summary": "Habakkuk asks why God tolerates evil in Judah, then why he would use the more wicked Babylonians to judge it. God answers, and Habakkuk ends with a song of trust even if everything fails.",
+   "keyVerse": {
+    "ref": "Habakkuk 2:4",
+    "text": "but the righteous shall live by his faith."
+   },
+   "christ": "Paul built the gospel of justification by faith on this verse (Romans 1:17; Galatians 3:11).",
+   "atlas": "kings.html#prophet:habakkuk",
+   "n": 35
+  },
+  {
+   "id": "zephaniah",
+   "name": "Zephaniah",
+   "abbr": "Zeph",
+   "section": "minor",
+   "chapters": 3,
+   "author": "Zephaniah",
+   "written": "c. 640–621 BC",
+   "theme": "The great day of the LORD",
+   "summary": "In the early years of Josiah, Zephaniah warns of a day of wrath on Judah and the nations, then promises a humble remnant and a God who rejoices over his people with singing.",
+   "keyVerse": {
+    "ref": "Zephaniah 3:17",
+    "text": "The LORD your God is in your midst, a mighty one who will save; he will rejoice over you with gladness; he will quiet you by his love; he will exult over you with loud singing."
+   },
+   "christ": "In Christ, God came to be \"in the midst\" of his people as a mighty Saviour.",
+   "atlas": "kings.html#prophet:zephaniah",
+   "n": 36
+  },
+  {
+   "id": "haggai",
+   "name": "Haggai",
+   "abbr": "Hag",
+   "section": "minor",
+   "chapters": 2,
+   "author": "Haggai",
+   "written": "520 BC",
+   "theme": "Put God first: rebuild the temple",
+   "summary": "The returned exiles have built their own houses but left the temple in ruins. Haggai calls them to rebuild, promises that the latter glory of this house will be greater than the former, and that God will shake the nations.",
+   "keyVerse": {
+    "ref": "Haggai 1:8",
+    "text": "Go up to the hills and bring wood and build the house, that I may take pleasure in it and that I may be glorified, says the LORD."
+   },
+   "christ": "The greater glory came when Christ himself entered the rebuilt temple; Zerubbabel, God's signet ring (2:23), is in Jesus' line.",
+   "atlas": "kings.html#prophet:haggai",
+   "n": 37
+  },
+  {
+   "id": "zechariah",
+   "name": "Zechariah",
+   "abbr": "Zech",
+   "section": "minor",
+   "chapters": 14,
+   "author": "Zechariah",
+   "written": "c. 520–480 BC",
+   "theme": "The LORD will return to Zion, and his King is coming",
+   "summary": "Alongside Haggai, Zechariah encourages the rebuilding with night visions, then looks ahead to Zion's King coming humbly, the shepherd struck, a fountain opened for sin, and the LORD reigning over all the earth.",
+   "keyVerse": {
+    "ref": "Zechariah 9:9",
+    "text": "Rejoice greatly, O daughter of Zion! Shout aloud, O daughter of Jerusalem! Behold, your king is coming to you; righteous and having salvation is he, humble and mounted on a donkey, on a colt, the foal of a donkey."
+   },
+   "christ": "Fulfilled on Palm Sunday (Matthew 21:4-5); the thirty pieces of silver and the pierced one also point to Jesus (11:12-13; 12:10).",
+   "atlas": "kings.html#prophet:zechariah",
+   "n": 38
+  },
+  {
+   "id": "malachi",
+   "name": "Malachi",
+   "abbr": "Mal",
+   "section": "minor",
+   "chapters": 4,
+   "author": "Malachi",
+   "written": "c. 430 BC",
+   "theme": "Return to me, and the messenger who prepares the way",
+   "summary": "In a series of disputes, God confronts the careless priests and people of the restored community. He promises a messenger to prepare his way, and the coming of the Lord to his temple.",
+   "keyVerse": {
+    "ref": "Malachi 3:1",
+    "text": "Behold, I send my messenger, and he will prepare the way before me."
+   },
+   "christ": "John the Baptist was the promised messenger and Elijah, preparing the way for Jesus (Mark 1:2; Matthew 11:10-14).",
+   "atlas": "kings.html#prophet:malachi",
+   "n": 39
+  },
+  {
+   "id": "matthew",
+   "name": "Matthew",
+   "abbr": "Matt",
+   "section": "gospels",
+   "chapters": 28,
+   "author": "Matthew (Levi), the apostle",
+   "written": "c. AD 50–65",
+   "theme": "Jesus is the promised King, the Son of David",
+   "summary": "Written with Jewish readers in mind, Matthew shows how Jesus fulfils the Old Testament. It gathers his teaching into five great sermons, including the Sermon on the Mount, and ends with the Great Commission.",
+   "keyVerse": {
+    "ref": "Matthew 28:19",
+    "text": "Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit."
+   },
+   "christ": "Jesus is the Messiah, the son of David and son of Abraham (1:1), Immanuel, God with us (1:23).",
+   "atlas": "family-tree.html#jesus",
+   "n": 40
+  },
+  {
+   "id": "mark",
+   "name": "Mark",
+   "abbr": "Mark",
+   "section": "gospels",
+   "chapters": 16,
+   "author": "John Mark (with Peter)",
+   "written": "c. AD 55–65",
+   "theme": "Jesus the Servant who came to give his life",
+   "summary": "The shortest and most fast-moving Gospel, traditionally based on Peter's preaching. Jesus' powerful deeds reveal who he is, and the second half moves to the cross.",
+   "keyVerse": {
+    "ref": "Mark 10:45",
+    "text": "For even the Son of Man came not to be served but to serve, and to give his life as a ransom for many."
+   },
+   "christ": "The centurion's words at the cross sum it up: \"Truly this man was the Son of God!\" (15:39).",
+   "n": 41
+  },
+  {
+   "id": "luke",
+   "name": "Luke",
+   "abbr": "Luke",
+   "section": "gospels",
+   "chapters": 24,
+   "author": "Luke, the doctor",
+   "written": "c. AD 60–62",
+   "theme": "Jesus the Saviour of all, seeking the lost",
+   "summary": "A careful, orderly account for Theophilus, with special attention to the poor, women, outcasts and Gentiles, and many parables found only here, such as the good Samaritan and the prodigal son.",
+   "keyVerse": {
+    "ref": "Luke 19:10",
+    "text": "For the Son of Man came to seek and to save the lost."
+   },
+   "christ": "Luke traces Jesus' genealogy back to Adam (3:38), showing him as the Saviour of all humanity.",
+   "atlas": "family-tree.html#jesus",
+   "n": 42
+  },
+  {
+   "id": "john",
+   "name": "John",
+   "abbr": "John",
+   "section": "gospels",
+   "chapters": 21,
+   "author": "John, the apostle",
+   "written": "c. AD 85–95",
+   "theme": "Believe that Jesus is the Christ, the Son of God",
+   "summary": "John's Gospel records seven signs and seven \"I am\" sayings that reveal Jesus as the eternal Word made flesh, and gives the fullest account of his words to his disciples on the night before he died.",
+   "keyVerse": {
+    "ref": "John 20:31",
+    "text": "but these are written so that you may believe that Jesus is the Christ, the Son of God, and that by believing you may have life in his name."
+   },
+   "christ": "\"In the beginning was the Word, and the Word was with God, and the Word was God\" (1:1).",
+   "n": 43
+  },
+  {
+   "id": "acts",
+   "name": "Acts",
+   "abbr": "Acts",
+   "section": "acts",
+   "chapters": 28,
+   "author": "Luke",
+   "written": "c. AD 62",
+   "theme": "The gospel spreads from Jerusalem to Rome",
+   "summary": "The sequel to Luke. The risen Jesus ascends, the Spirit comes at Pentecost, and the church grows from Jerusalem through Judea and Samaria to the Gentiles, following Peter and then Paul's journeys, until Paul preaches in Rome.",
+   "keyVerse": {
+    "ref": "Acts 1:8",
+    "text": "But you will receive power when the Holy Spirit has come upon you, and you will be my witnesses in Jerusalem and in all Judea and Samaria, and to the end of the earth."
+   },
+   "christ": "The risen and ascended Christ continues his work by his Spirit through his church (1:1).",
+   "note": "It ends with Paul under house arrest in Rome (about AD 62), probably because that is when it was written.",
+   "n": 44
+  },
+  {
+   "id": "romans",
+   "name": "Romans",
+   "abbr": "Rom",
+   "section": "paul",
+   "chapters": 16,
+   "author": "Paul",
+   "written": "c. AD 57",
+   "theme": "The gospel of God's righteousness by faith",
+   "summary": "Paul's fullest explanation of the gospel: all have sinned, sinners are justified by grace through faith in Christ, believers are freed from sin by the Spirit, God is faithful to Israel, and the gospel transforms daily life.",
+   "keyVerse": {
+    "ref": "Romans 1:16",
+    "text": "For I am not ashamed of the gospel, for it is the power of God for salvation to everyone who believes, to the Jew first and also to the Greek."
+   },
+   "christ": "God put Christ forward as a propitiation by his blood, to be received by faith (3:25).",
+   "n": 45
+  },
+  {
+   "id": "1-corinthians",
+   "name": "1 Corinthians",
+   "abbr": "1 Cor",
+   "section": "paul",
+   "chapters": 16,
+   "author": "Paul",
+   "written": "c. AD 55",
+   "theme": "Christ crucified, for a divided church",
+   "summary": "Paul addresses a gifted but proud and divided church: factions, immorality, lawsuits, marriage, food offered to idols, worship and spiritual gifts. At its heart are the chapter on love and the resurrection.",
+   "keyVerse": {
+    "ref": "1 Corinthians 13:13",
+    "text": "So now faith, hope, and love abide, these three; but the greatest of these is love."
+   },
+   "christ": "Christ died for our sins, was raised on the third day, and is the firstfruits of the resurrection (15:3-4, 20).",
+   "n": 46
+  },
+  {
+   "id": "2-corinthians",
+   "name": "2 Corinthians",
+   "abbr": "2 Cor",
+   "section": "paul",
+   "chapters": 13,
+   "author": "Paul",
+   "written": "c. AD 56",
+   "theme": "Strength in weakness",
+   "summary": "Paul's most personal letter defends his ministry against false apostles, explains the glory of the new covenant, urges generous giving for the poor in Jerusalem, and shows that God's power is made perfect in weakness.",
+   "keyVerse": {
+    "ref": "2 Corinthians 5:17",
+    "text": "Therefore, if anyone is in Christ, he is a new creation. The old has passed away; behold, the new has come."
+   },
+   "christ": "\"For our sake he made him to be sin who knew no sin, so that in him we might become the righteousness of God\" (5:21).",
+   "n": 47
+  },
+  {
+   "id": "galatians",
+   "name": "Galatians",
+   "abbr": "Gal",
+   "section": "paul",
+   "chapters": 6,
+   "author": "Paul",
+   "written": "c. AD 48–55",
+   "theme": "Free in Christ: justified by faith, not by works of the law",
+   "summary": "Paul writes urgently to churches tempted to add circumcision and the law to faith in Christ. There is no other gospel: we are justified by faith, adopted as sons, and set free to walk by the Spirit.",
+   "keyVerse": {
+    "ref": "Galatians 2:20",
+    "text": "I have been crucified with Christ. It is no longer I who live, but Christ who lives in me."
+   },
+   "christ": "Christ redeemed us from the curse of the law by becoming a curse for us (3:13).",
+   "note": "Evangelical scholars differ on whether it was written before the Jerusalem council (about AD 48) or later (about AD 53-55).",
+   "n": 48
+  },
+  {
+   "id": "ephesians",
+   "name": "Ephesians",
+   "abbr": "Eph",
+   "section": "paul",
+   "chapters": 6,
+   "author": "Paul",
+   "written": "c. AD 60–62",
+   "theme": "One new people in Christ",
+   "summary": "Written from prison, Ephesians celebrates every spiritual blessing in Christ, salvation by grace through faith, and Jews and Gentiles made one body. Then it shows how the church walks in love, at home and at work, and stands firm in the armour of God.",
+   "keyVerse": {
+    "ref": "Ephesians 2:8-9",
+    "text": "For by grace you have been saved through faith. And this is not your own doing; it is the gift of God, not a result of works, so that no one may boast."
+   },
+   "christ": "God's plan is to unite all things in Christ (1:10), the head of the church.",
+   "n": 49
+  },
+  {
+   "id": "philippians",
+   "name": "Philippians",
+   "abbr": "Phil",
+   "section": "paul",
+   "chapters": 4,
+   "author": "Paul",
+   "written": "c. AD 62",
+   "theme": "Joy in Christ in every circumstance",
+   "summary": "A warm thank-you letter from prison to a church that supported Paul, full of joy. It calls believers to humility like Christ's, to press on toward the goal, and to be content in all circumstances.",
+   "keyVerse": {
+    "ref": "Philippians 4:4",
+    "text": "Rejoice in the Lord always; again I will say, rejoice."
+   },
+   "christ": "Christ, though in the form of God, humbled himself to death on a cross, and God has highly exalted him (2:5-11).",
+   "n": 50
+  },
+  {
+   "id": "colossians",
+   "name": "Colossians",
+   "abbr": "Col",
+   "section": "paul",
+   "chapters": 4,
+   "author": "Paul",
+   "written": "c. AD 60–62",
+   "theme": "Christ is supreme and sufficient",
+   "summary": "Against teaching that added philosophy, rules and spiritual experiences to Christ, Paul shows that Christ is the image of God, creator and head of all, and that believers are complete in him.",
+   "keyVerse": {
+    "ref": "Colossians 1:15",
+    "text": "He is the image of the invisible God, the firstborn of all creation."
+   },
+   "christ": "In him the whole fullness of deity dwells bodily (2:9).",
+   "n": 51
+  },
+  {
+   "id": "1-thessalonians",
+   "name": "1 Thessalonians",
+   "abbr": "1 Thess",
+   "section": "paul",
+   "chapters": 5,
+   "author": "Paul",
+   "written": "c. AD 50–51",
+   "theme": "Faith, love and hope as we wait for Christ's return",
+   "summary": "One of Paul's earliest letters, to a young church facing persecution. He thanks God for their faith, urges holy living, and comforts them about believers who have died: the Lord himself will return.",
+   "keyVerse": {
+    "ref": "1 Thessalonians 5:16-18",
+    "text": "Rejoice always, pray without ceasing, give thanks in all circumstances; for this is the will of God in Christ Jesus for you."
+   },
+   "christ": "Jesus died and rose again, and will come again for his people (4:14-17).",
+   "n": 52
+  },
+  {
+   "id": "2-thessalonians",
+   "name": "2 Thessalonians",
+   "abbr": "2 Thess",
+   "section": "paul",
+   "chapters": 3,
+   "author": "Paul",
+   "written": "c. AD 51",
+   "theme": "Stand firm until the day of the Lord",
+   "summary": "Paul corrects a mistaken belief that the day of the Lord had already come, encourages the church under persecution, and warns idle believers to work.",
+   "keyVerse": {
+    "ref": "2 Thessalonians 3:3",
+    "text": "But the Lord is faithful. He will establish you and guard you against the evil one."
+   },
+   "christ": "The Lord Jesus will be revealed from heaven and will defeat the lawless one by the breath of his mouth (1:7; 2:8).",
+   "n": 53
+  },
+  {
+   "id": "1-timothy",
+   "name": "1 Timothy",
+   "abbr": "1 Tim",
+   "section": "paul",
+   "chapters": 6,
+   "author": "Paul",
+   "written": "c. AD 62–64",
+   "theme": "Order and sound teaching in God's household",
+   "summary": "Paul instructs his young co-worker Timothy, leading the church in Ephesus, on false teaching, prayer and worship, the qualifications for overseers and deacons, care for widows, and godliness with contentment.",
+   "keyVerse": {
+    "ref": "1 Timothy 1:15",
+    "text": "The saying is trustworthy and deserving of full acceptance, that Christ Jesus came into the world to save sinners, of whom I am the foremost."
+   },
+   "christ": "There is one mediator between God and men, the man Christ Jesus (2:5).",
+   "note": "Many critical scholars doubt that Paul wrote the letters to Timothy and Titus; evangelical scholars hold that he did, as the letters say.",
+   "n": 54
+  },
+  {
+   "id": "2-timothy",
+   "name": "2 Timothy",
+   "abbr": "2 Tim",
+   "section": "paul",
+   "chapters": 4,
+   "author": "Paul",
+   "written": "c. AD 64–67",
+   "theme": "Guard the gospel and pass it on",
+   "summary": "Paul's last letter, from a Roman prison as he faces death. He urges Timothy not to be ashamed, to endure suffering, to hold to the Scriptures and to preach the word.",
+   "keyVerse": {
+    "ref": "2 Timothy 3:16-17",
+    "text": "All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness, that the man of God may be complete, equipped for every good work."
+   },
+   "christ": "Christ Jesus abolished death and brought life and immortality to light through the gospel (1:10).",
+   "n": 55
+  },
+  {
+   "id": "titus",
+   "name": "Titus",
+   "abbr": "Titus",
+   "section": "paul",
+   "chapters": 3,
+   "author": "Paul",
+   "written": "c. AD 62–64",
+   "theme": "Sound doctrine that produces good works",
+   "summary": "Paul instructs Titus to appoint elders in the churches of Crete, silence false teachers, and teach every group in the church to live in a way that adorns the gospel.",
+   "keyVerse": {
+    "ref": "Titus 2:11",
+    "text": "For the grace of God has appeared, bringing salvation for all people"
+   },
+   "christ": "We wait for the appearing of the glory of our great God and Saviour Jesus Christ (2:13).",
+   "n": 56
+  },
+  {
+   "id": "philemon",
+   "name": "Philemon",
+   "abbr": "Phlm",
+   "section": "paul",
+   "chapters": 1,
+   "author": "Paul",
+   "written": "c. AD 60–62",
+   "theme": "Reconciliation in Christ",
+   "summary": "A short personal letter asking Philemon to welcome back his runaway slave Onesimus, now a believer, not as a slave but as a beloved brother. Paul offers to pay whatever Onesimus owes.",
+   "keyVerse": {
+    "ref": "Philemon 16",
+    "text": "no longer as a bondservant but more than a bondservant, as a beloved brother"
+   },
+   "christ": "As Paul offers to pay Onesimus' debt, Christ paid our debt to reconcile us to God.",
+   "n": 57
+  },
+  {
+   "id": "hebrews",
+   "name": "Hebrews",
+   "abbr": "Heb",
+   "section": "general",
+   "chapters": 13,
+   "author": "Unknown",
+   "written": "c. AD 60–69",
+   "theme": "Jesus is better: don't turn back",
+   "summary": "A sermon in letter form to Jewish believers tempted to go back. Jesus is greater than angels, Moses and the priests, and his once-for-all sacrifice inaugurates a better covenant. Hold fast, looking to Jesus.",
+   "keyVerse": {
+    "ref": "Hebrews 1:1-2",
+    "text": "Long ago, at many times and in many ways, God spoke to our fathers by the prophets, but in these last days he has spoken to us by his Son"
+   },
+   "christ": "Christ is the great high priest and the final sacrifice, \"the founder and perfecter of our faith\" (12:2).",
+   "note": "The author is not named. Suggestions include Paul, Barnabas, Apollos and Luke. It was probably written before the temple was destroyed in AD 70.",
+   "n": 58
+  },
+  {
+   "id": "james",
+   "name": "James",
+   "abbr": "Jas",
+   "section": "general",
+   "chapters": 5,
+   "author": "James, the brother of Jesus",
+   "written": "c. AD 45–49",
+   "theme": "Faith that works",
+   "summary": "Probably the earliest New Testament letter. James, leader of the Jerusalem church, writes practical wisdom about trials, taming the tongue, favouritism, wealth and prayer: faith without works is dead.",
+   "keyVerse": {
+    "ref": "James 1:22",
+    "text": "But be doers of the word, and not hearers only, deceiving yourselves."
+   },
+   "christ": "James, once an unbeliever, calls himself \"a servant of God and of the Lord Jesus Christ\" (1:1) and echoes Jesus' Sermon on the Mount.",
+   "n": 59
+  },
+  {
+   "id": "1-peter",
+   "name": "1 Peter",
+   "abbr": "1 Pet",
+   "section": "general",
+   "chapters": 5,
+   "author": "Peter",
+   "written": "c. AD 62–64",
+   "theme": "Hope and holiness in suffering",
+   "summary": "Peter writes to scattered believers in Asia Minor facing hostility. They have a living hope through the resurrection, are God's chosen people, and should follow Christ's example in suffering.",
+   "keyVerse": {
+    "ref": "1 Peter 2:9",
+    "text": "But you are a chosen race, a royal priesthood, a holy nation, a people for his own possession"
+   },
+   "christ": "Christ suffered once for sins, the righteous for the unrighteous, to bring us to God (3:18).",
+   "n": 60
+  },
+  {
+   "id": "2-peter",
+   "name": "2 Peter",
+   "abbr": "2 Pet",
+   "section": "general",
+   "chapters": 3,
+   "author": "Peter",
+   "written": "c. AD 64–68",
+   "theme": "Grow in grace and beware false teachers",
+   "summary": "Shortly before his death, Peter urges believers to grow in godliness, trust the prophetic word, reject false teachers, and wait for the day of the Lord, which will come like a thief.",
+   "keyVerse": {
+    "ref": "2 Peter 1:21",
+    "text": "For no prophecy was ever produced by the will of man, but men spoke from God as they were carried along by the Holy Spirit."
+   },
+   "christ": "Peter was an eyewitness of Christ's majesty at the transfiguration (1:16-18).",
+   "note": "Many critical scholars doubt Peter wrote it; evangelical scholars generally accept the letter's own claim.",
+   "n": 61
+  },
+  {
+   "id": "1-john",
+   "name": "1 John",
+   "abbr": "1 John",
+   "section": "general",
+   "chapters": 5,
+   "author": "John, the apostle",
+   "written": "c. AD 85–95",
+   "theme": "Assurance: walk in the light, love one another",
+   "summary": "John writes so that believers may know they have eternal life: they walk in the light, confess that Jesus Christ has come in the flesh, and love one another, for God is love.",
+   "keyVerse": {
+    "ref": "1 John 4:8",
+    "text": "Anyone who does not love does not know God, because God is love."
+   },
+   "christ": "Jesus Christ the righteous is our advocate with the Father and the propitiation for our sins (2:1-2).",
+   "n": 62
+  },
+  {
+   "id": "2-john",
+   "name": "2 John",
+   "abbr": "2 John",
+   "section": "general",
+   "chapters": 1,
+   "author": "John (\"the elder\")",
+   "written": "c. AD 85–95",
+   "theme": "Walk in truth and love",
+   "summary": "A short letter to \"the elect lady and her children\", probably a church, urging love and warning against welcoming teachers who deny that Jesus Christ came in the flesh.",
+   "keyVerse": {
+    "ref": "2 John 6",
+    "text": "And this is love, that we walk according to his commandments"
+   },
+   "christ": "Whoever abides in the teaching of Christ has both the Father and the Son (verse 9).",
+   "n": 63
+  },
+  {
+   "id": "3-john",
+   "name": "3 John",
+   "abbr": "3 John",
+   "section": "general",
+   "chapters": 1,
+   "author": "John (\"the elder\")",
+   "written": "c. AD 85–95",
+   "theme": "Support those who serve the truth",
+   "summary": "A personal note to Gaius, commending his hospitality to travelling missionaries and warning about Diotrephes, who loves to be first.",
+   "keyVerse": {
+    "ref": "3 John 4",
+    "text": "I have no greater joy than to hear that my children are walking in the truth."
+   },
+   "christ": "The missionaries went out \"for the sake of the name\" (verse 7), the name of Jesus.",
+   "n": 64
+  },
+  {
+   "id": "jude",
+   "name": "Jude",
+   "abbr": "Jude",
+   "section": "general",
+   "chapters": 1,
+   "author": "Jude, the brother of Jesus",
+   "written": "c. AD 65–80",
+   "theme": "Contend for the faith",
+   "summary": "Jude had planned to write about salvation but instead urgently warns against ungodly people who have crept into the church, and calls believers to contend for the faith once for all delivered to the saints.",
+   "keyVerse": {
+    "ref": "Jude 24",
+    "text": "Now to him who is able to keep you from stumbling and to present you blameless before the presence of his glory with great joy"
+   },
+   "christ": "Our only Master and Lord, Jesus Christ (verse 4), keeps his people to the end.",
+   "n": 65
+  },
+  {
+   "id": "revelation",
+   "name": "Revelation",
+   "abbr": "Rev",
+   "section": "prophecy",
+   "chapters": 22,
+   "author": "John, the apostle",
+   "written": "c. AD 95",
+   "theme": "The Lamb wins: Jesus is coming soon",
+   "summary": "John, exiled on Patmos, receives visions of the risen Christ, letters to seven churches, the Lamb on the throne, judgements on a rebellious world, the fall of Babylon, Christ's return, and the new heavens and new earth where God dwells with his people.",
+   "keyVerse": {
+    "ref": "Revelation 21:4",
+    "text": "He will wipe away every tear from their eyes, and death shall be no more, neither shall there be mourning, nor crying, nor pain anymore, for the former things have passed away."
+   },
+   "christ": "Jesus is the Alpha and the Omega, the Lamb who was slain and the King of kings (1:8; 5:6-12; 19:16).",
+   "note": "Evangelicals hold several views on how its visions relate to history and the future (preterist, historicist, futurist and idealist). Some date it to the 60s AD.",
+   "n": 66
+  }
+ ]
+}
