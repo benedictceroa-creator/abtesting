@@ -1,0 +1,2926 @@
+{
+ "meta": {
+  "note": "Routes and borders are approximate. Most wilderness stopping places cannot be located with certainty, and tribal borders are reconstructed from the town lists in Joshua 13-19. Treat this as a guide to the journey, not a precise survey.",
+  "status": "DRAFT: awaiting review against a printed Bible atlas",
+  "views": {
+   "core": [
+    [
+     29.0,
+     32.0
+    ],
+    [
+     33.4,
+     36.6
+    ]
+   ],
+   "coreLabel": "Egypt to Canaan",
+   "region": [
+    [
+     27.5,
+     30.5
+    ],
+    [
+     34.5,
+     38.5
+    ]
+   ],
+   "regionLabel": "Whole region"
+  },
+  "mapKind": "Map \u00b7",
+  "toggleLabel": "Show route & territories",
+  "mapShows": "Map shows",
+  "snapRule": "latest"
+ },
+ "statuses": {
+  "kingdom": "Independent / settled",
+  "subject": "Under another power, or not yet taken",
+  "province": "Province of an empire",
+  "empire": "Empire"
+ },
+ "routeStyles": {
+  "current": {
+   "label": "Journey (traditional route)",
+   "color": "#C82035",
+   "weight": 3.5
+  },
+  "past": {
+   "label": "Earlier journey",
+   "color": "#6b6b6b",
+   "weight": 2,
+   "dashArray": "6 5"
+  },
+  "spies": {
+   "label": "The spies",
+   "color": "#1A1A1A",
+   "weight": 2,
+   "dashArray": "2 5"
+  },
+  "campaign": {
+   "label": "Joshua's campaigns",
+   "color": "#A81A2C",
+   "weight": 2.5,
+   "dashArray": "8 4"
+  }
+ },
+ "colors": {
+  "egypt": "#B08A3E",
+  "israel": "#3A6EA5",
+  "canaan": "#8F8270",
+  "amalek": "#A8906E",
+  "edom": "#9C6B4E",
+  "moab": "#8C7A9C",
+  "ammon": "#6F8F9C",
+  "amorites": "#7D7D5E",
+  "midian": "#B49A6A",
+  "remain": "#6E6E6E",
+  "reuben": "#C4573A",
+  "gad": "#D98E2B",
+  "manasseh": "#2F6DB5",
+  "ephraim": "#1F4E79",
+  "judah": "#B8860B",
+  "simeon": "#D9B23A",
+  "benjamin": "#7E57A8",
+  "dan": "#2E8B74",
+  "issachar": "#6B8E23",
+  "zebulun": "#2A8FA8",
+  "naphtali": "#B0476E",
+  "asher": "#8F7A2E"
+ },
+ "shapes": {
+  "egypt": [
+   [
+    31.3,
+    29.6
+   ],
+   [
+    31.5,
+    31.0
+   ],
+   [
+    31.25,
+    32.3
+   ],
+   [
+    30.6,
+    32.35
+   ],
+   [
+    30.0,
+    32.55
+   ],
+   [
+    29.0,
+    32.7
+   ],
+   [
+    27.9,
+    33.5
+   ],
+   [
+    27.2,
+    33.85
+   ],
+   [
+    26.0,
+    34.25
+   ],
+   [
+    24.1,
+    35.4
+   ],
+   [
+    24.0,
+    32.7
+   ],
+   [
+    25.8,
+    32.3
+   ],
+   [
+    27.4,
+    30.7
+   ],
+   [
+    29.4,
+    30.5
+   ],
+   [
+    30.4,
+    29.4
+   ]
+  ],
+  "goshen": [
+   [
+    31.1,
+    31.55
+   ],
+   [
+    31.05,
+    32.05
+   ],
+   [
+    30.8,
+    32.25
+   ],
+   [
+    30.45,
+    32.2
+   ],
+   [
+    30.4,
+    31.75
+   ],
+   [
+    30.75,
+    31.45
+   ]
+  ],
+  "canaan": [
+   [
+    31.25,
+    34.22
+   ],
+   [
+    31.52,
+    34.43
+   ],
+   [
+    32.05,
+    34.75
+   ],
+   [
+    32.62,
+    34.91
+   ],
+   [
+    32.83,
+    34.97
+   ],
+   [
+    32.92,
+    35.07
+   ],
+   [
+    33.27,
+    35.19
+   ],
+   [
+    33.46,
+    35.26
+   ],
+   [
+    33.56,
+    35.37
+   ],
+   [
+    33.9,
+    35.48
+   ],
+   [
+    33.8,
+    35.7
+   ],
+   [
+    33.35,
+    35.72
+   ],
+   [
+    33.05,
+    35.66
+   ],
+   [
+    32.88,
+    35.62
+   ],
+   [
+    32.7,
+    35.57
+   ],
+   [
+    32.4,
+    35.575
+   ],
+   [
+    32.1,
+    35.55
+   ],
+   [
+    31.86,
+    35.52
+   ],
+   [
+    31.76,
+    35.5
+   ],
+   [
+    31.5,
+    35.45
+   ],
+   [
+    31.25,
+    35.4
+   ],
+   [
+    31.05,
+    35.42
+   ],
+   [
+    31.0,
+    35.1
+   ],
+   [
+    31.1,
+    34.6
+   ]
+  ],
+  "amalek": [
+   [
+    31.1,
+    34.6
+   ],
+   [
+    31.0,
+    35.1
+   ],
+   [
+    30.85,
+    35.15
+   ],
+   [
+    30.75,
+    34.7
+   ],
+   [
+    30.85,
+    34.3
+   ],
+   [
+    31.1,
+    34.2
+   ]
+  ],
+  "edom": [
+   [
+    31.05,
+    35.45
+   ],
+   [
+    30.98,
+    35.8
+   ],
+   [
+    30.97,
+    36.05
+   ],
+   [
+    30.6,
+    36.0
+   ],
+   [
+    30.1,
+    35.85
+   ],
+   [
+    29.75,
+    35.4
+   ],
+   [
+    29.48,
+    34.96
+   ],
+   [
+    29.8,
+    35.02
+   ],
+   [
+    30.3,
+    35.15
+   ],
+   [
+    30.7,
+    35.25
+   ],
+   [
+    30.95,
+    35.36
+   ]
+  ],
+  "moab": [
+   [
+    31.45,
+    35.58
+   ],
+   [
+    31.48,
+    35.85
+   ],
+   [
+    31.5,
+    36.15
+   ],
+   [
+    31.38,
+    36.4
+   ],
+   [
+    31.1,
+    36.28
+   ],
+   [
+    30.97,
+    36.05
+   ],
+   [
+    30.98,
+    35.8
+   ],
+   [
+    31.05,
+    35.5
+   ],
+   [
+    31.25,
+    35.55
+   ]
+  ],
+  "moab_n": [
+   [
+    31.76,
+    35.58
+   ],
+   [
+    31.78,
+    35.78
+   ],
+   [
+    31.68,
+    35.92
+   ],
+   [
+    31.62,
+    36.15
+   ],
+   [
+    31.5,
+    36.15
+   ],
+   [
+    31.48,
+    35.85
+   ],
+   [
+    31.45,
+    35.58
+   ]
+  ],
+  "ammon": [
+   [
+    32.12,
+    35.92
+   ],
+   [
+    32.25,
+    36.15
+   ],
+   [
+    32.1,
+    36.45
+   ],
+   [
+    31.8,
+    36.45
+   ],
+   [
+    31.62,
+    36.15
+   ],
+   [
+    31.68,
+    35.92
+   ],
+   [
+    31.88,
+    35.83
+   ]
+  ],
+  "sihon": [
+   [
+    31.45,
+    35.58
+   ],
+   [
+    31.76,
+    35.58
+   ],
+   [
+    32.1,
+    35.57
+   ],
+   [
+    32.22,
+    35.575
+   ],
+   [
+    32.22,
+    35.75
+   ],
+   [
+    32.12,
+    35.88
+   ],
+   [
+    31.88,
+    35.83
+   ],
+   [
+    31.68,
+    35.97
+   ],
+   [
+    31.48,
+    35.95
+   ]
+  ],
+  "og": [
+   [
+    32.22,
+    35.575
+   ],
+   [
+    32.4,
+    35.58
+   ],
+   [
+    32.7,
+    35.62
+   ],
+   [
+    32.88,
+    35.65
+   ],
+   [
+    33.05,
+    35.66
+   ],
+   [
+    33.3,
+    35.7
+   ],
+   [
+    33.4,
+    35.9
+   ],
+   [
+    33.2,
+    36.4
+   ],
+   [
+    32.7,
+    36.5
+   ],
+   [
+    32.25,
+    36.15
+   ],
+   [
+    32.12,
+    35.88
+   ],
+   [
+    32.22,
+    35.75
+   ]
+  ],
+  "midian": [
+   [
+    29.5,
+    34.97
+   ],
+   [
+    29.3,
+    35.2
+   ],
+   [
+    28.8,
+    35.4
+   ],
+   [
+    27.8,
+    35.8
+   ],
+   [
+    27.5,
+    35.3
+   ],
+   [
+    28.0,
+    34.8
+   ],
+   [
+    28.6,
+    34.7
+   ],
+   [
+    29.2,
+    34.9
+   ]
+  ],
+  "philistia": [
+   [
+    31.95,
+    34.72
+   ],
+   [
+    31.93,
+    34.9
+   ],
+   [
+    31.85,
+    34.9
+   ],
+   [
+    31.75,
+    34.92
+   ],
+   [
+    31.62,
+    34.86
+   ],
+   [
+    31.55,
+    34.8
+   ],
+   [
+    31.35,
+    34.65
+   ],
+   [
+    31.1,
+    34.45
+   ],
+   [
+    31.18,
+    34.27
+   ],
+   [
+    31.28,
+    34.22
+   ],
+   [
+    31.52,
+    34.43
+   ],
+   [
+    31.67,
+    34.55
+   ],
+   [
+    31.8,
+    34.63
+   ]
+  ],
+  "remaining_north": [
+   [
+    33.08,
+    35.11
+   ],
+   [
+    33.27,
+    35.19
+   ],
+   [
+    33.46,
+    35.26
+   ],
+   [
+    33.56,
+    35.37
+   ],
+   [
+    33.9,
+    35.48
+   ],
+   [
+    34.12,
+    35.64
+   ],
+   [
+    34.3,
+    35.8
+   ],
+   [
+    34.32,
+    36.4
+   ],
+   [
+    34.1,
+    36.45
+   ],
+   [
+    33.9,
+    36.2
+   ],
+   [
+    33.45,
+    35.85
+   ],
+   [
+    33.35,
+    35.72
+   ],
+   [
+    33.35,
+    35.5
+   ],
+   [
+    33.25,
+    35.35
+   ],
+   [
+    33.1,
+    35.28
+   ]
+  ],
+  "reuben": [
+   [
+    31.45,
+    35.58
+   ],
+   [
+    31.76,
+    35.58
+   ],
+   [
+    31.82,
+    35.75
+   ],
+   [
+    31.8,
+    36.0
+   ],
+   [
+    31.6,
+    36.1
+   ],
+   [
+    31.47,
+    36.05
+   ]
+  ],
+  "gad": [
+   [
+    31.76,
+    35.58
+   ],
+   [
+    32.1,
+    35.57
+   ],
+   [
+    32.4,
+    35.58
+   ],
+   [
+    32.7,
+    35.62
+   ],
+   [
+    32.72,
+    35.66
+   ],
+   [
+    32.55,
+    35.8
+   ],
+   [
+    32.58,
+    36.12
+   ],
+   [
+    32.3,
+    36.18
+   ],
+   [
+    32.05,
+    36.0
+   ],
+   [
+    31.8,
+    36.0
+   ],
+   [
+    31.82,
+    35.75
+   ]
+  ],
+  "manasseh_e": [
+   [
+    32.72,
+    35.66
+   ],
+   [
+    32.88,
+    35.65
+   ],
+   [
+    33.05,
+    35.66
+   ],
+   [
+    33.3,
+    35.7
+   ],
+   [
+    33.4,
+    35.9
+   ],
+   [
+    33.2,
+    36.4
+   ],
+   [
+    32.7,
+    36.5
+   ],
+   [
+    32.58,
+    36.12
+   ],
+   [
+    32.55,
+    35.8
+   ]
+  ],
+  "judah": [
+   [
+    31.76,
+    35.5
+   ],
+   [
+    31.765,
+    35.4
+   ],
+   [
+    31.765,
+    35.23
+   ],
+   [
+    31.81,
+    35.1
+   ],
+   [
+    31.75,
+    34.98
+   ],
+   [
+    31.785,
+    34.91
+   ],
+   [
+    31.78,
+    34.85
+   ],
+   [
+    31.92,
+    34.7
+   ],
+   [
+    31.8,
+    34.63
+   ],
+   [
+    31.67,
+    34.55
+   ],
+   [
+    31.52,
+    34.43
+   ],
+   [
+    31.28,
+    34.22
+   ],
+   [
+    31.13,
+    33.8
+   ],
+   [
+    30.75,
+    34.1
+   ],
+   [
+    30.6,
+    34.4
+   ],
+   [
+    30.55,
+    34.6
+   ],
+   [
+    30.6,
+    34.95
+   ],
+   [
+    30.85,
+    35.15
+   ],
+   [
+    30.95,
+    35.33
+   ],
+   [
+    31.05,
+    35.42
+   ],
+   [
+    31.25,
+    35.4
+   ],
+   [
+    31.5,
+    35.45
+   ]
+  ],
+  "simeon": [
+   [
+    31.4,
+    34.55
+   ],
+   [
+    31.4,
+    35.0
+   ],
+   [
+    31.15,
+    35.1
+   ],
+   [
+    30.95,
+    35.0
+   ],
+   [
+    30.95,
+    34.55
+   ],
+   [
+    31.2,
+    34.45
+   ]
+  ],
+  "benjamin": [
+   [
+    31.9,
+    35.53
+   ],
+   [
+    31.9,
+    35.45
+   ],
+   [
+    31.935,
+    35.25
+   ],
+   [
+    31.9,
+    35.12
+   ],
+   [
+    31.895,
+    35.07
+   ],
+   [
+    31.81,
+    35.1
+   ],
+   [
+    31.765,
+    35.23
+   ],
+   [
+    31.765,
+    35.4
+   ],
+   [
+    31.76,
+    35.52
+   ]
+  ],
+  "dan": [
+   [
+    32.1,
+    34.78
+   ],
+   [
+    32.07,
+    34.95
+   ],
+   [
+    31.96,
+    35.03
+   ],
+   [
+    31.895,
+    35.07
+   ],
+   [
+    31.81,
+    35.1
+   ],
+   [
+    31.75,
+    34.98
+   ],
+   [
+    31.785,
+    34.91
+   ],
+   [
+    31.78,
+    34.85
+   ],
+   [
+    31.92,
+    34.7
+   ]
+  ],
+  "ephraim": [
+   [
+    32.1,
+    34.78
+   ],
+   [
+    32.13,
+    34.8
+   ],
+   [
+    32.15,
+    35.0
+   ],
+   [
+    32.17,
+    35.25
+   ],
+   [
+    32.12,
+    35.4
+   ],
+   [
+    32.08,
+    35.55
+   ],
+   [
+    31.9,
+    35.53
+   ],
+   [
+    31.9,
+    35.45
+   ],
+   [
+    31.935,
+    35.25
+   ],
+   [
+    31.9,
+    35.12
+   ],
+   [
+    31.895,
+    35.07
+   ],
+   [
+    31.96,
+    35.03
+   ],
+   [
+    32.07,
+    34.95
+   ]
+  ],
+  "manasseh_w": [
+   [
+    32.13,
+    34.8
+   ],
+   [
+    32.62,
+    34.91
+   ],
+   [
+    32.72,
+    34.96
+   ],
+   [
+    32.665,
+    35.11
+   ],
+   [
+    32.585,
+    35.185
+   ],
+   [
+    32.5,
+    35.3
+   ],
+   [
+    32.48,
+    35.45
+   ],
+   [
+    32.45,
+    35.565
+   ],
+   [
+    32.4,
+    35.575
+   ],
+   [
+    32.08,
+    35.55
+   ],
+   [
+    32.12,
+    35.4
+   ],
+   [
+    32.17,
+    35.25
+   ],
+   [
+    32.15,
+    35.0
+   ]
+  ],
+  "issachar": [
+   [
+    32.5,
+    35.3
+   ],
+   [
+    32.6,
+    35.22
+   ],
+   [
+    32.66,
+    35.3
+   ],
+   [
+    32.69,
+    35.4
+   ],
+   [
+    32.72,
+    35.55
+   ],
+   [
+    32.7,
+    35.57
+   ],
+   [
+    32.45,
+    35.565
+   ],
+   [
+    32.48,
+    35.45
+   ]
+  ],
+  "zebulun": [
+   [
+    32.665,
+    35.11
+   ],
+   [
+    32.75,
+    35.13
+   ],
+   [
+    32.83,
+    35.2
+   ],
+   [
+    32.86,
+    35.33
+   ],
+   [
+    32.8,
+    35.45
+   ],
+   [
+    32.72,
+    35.47
+   ],
+   [
+    32.69,
+    35.4
+   ],
+   [
+    32.66,
+    35.3
+   ],
+   [
+    32.6,
+    35.22
+   ],
+   [
+    32.585,
+    35.185
+   ]
+  ],
+  "naphtali": [
+   [
+    32.69,
+    35.4
+   ],
+   [
+    32.72,
+    35.47
+   ],
+   [
+    32.8,
+    35.45
+   ],
+   [
+    32.86,
+    35.33
+   ],
+   [
+    33.0,
+    35.3
+   ],
+   [
+    33.1,
+    35.28
+   ],
+   [
+    33.25,
+    35.35
+   ],
+   [
+    33.35,
+    35.5
+   ],
+   [
+    33.25,
+    35.62
+   ],
+   [
+    33.05,
+    35.62
+   ],
+   [
+    32.88,
+    35.62
+   ],
+   [
+    32.72,
+    35.55
+   ]
+  ],
+  "asher": [
+   [
+    32.72,
+    34.96
+   ],
+   [
+    32.83,
+    34.97
+   ],
+   [
+    32.92,
+    35.07
+   ],
+   [
+    33.27,
+    35.19
+   ],
+   [
+    33.46,
+    35.26
+   ],
+   [
+    33.56,
+    35.37
+   ],
+   [
+    33.55,
+    35.5
+   ],
+   [
+    33.35,
+    35.5
+   ],
+   [
+    33.25,
+    35.35
+   ],
+   [
+    33.1,
+    35.28
+   ],
+   [
+    33.0,
+    35.3
+   ],
+   [
+    32.86,
+    35.33
+   ],
+   [
+    32.83,
+    35.2
+   ],
+   [
+    32.75,
+    35.13
+   ],
+   [
+    32.665,
+    35.11
+   ]
+  ],
+  "dan_north": [
+   [
+    33.17,
+    35.58
+   ],
+   [
+    33.33,
+    35.55
+   ],
+   [
+    33.36,
+    35.72
+   ],
+   [
+    33.22,
+    35.76
+   ],
+   [
+    33.13,
+    35.66
+   ]
+  ]
+ },
+ "routes": {
+  "egypt_sea": {
+   "name": "Rameses to the sea and Elim",
+   "via": [
+    "rameses",
+    "succoth-2",
+    [
+     30.3,
+     32.42
+    ],
+    "shur",
+    "marah",
+    "elim"
+   ]
+  },
+  "elim_sinai": {
+   "name": "Elim to Mount Sinai",
+   "via": [
+    "elim",
+    [
+     29.05,
+     33.1
+    ],
+    "dophkah",
+    "alush",
+    "rephidim",
+    "mount-sinai"
+   ]
+  },
+  "sinai_kadesh": {
+   "name": "Sinai to Kadesh-barnea",
+   "via": [
+    "mount-sinai",
+    "kibroth-hattaavah",
+    "hazeroth",
+    [
+     29.7,
+     34.55
+    ],
+    "kadesh-barnea"
+   ]
+  },
+  "spies": {
+   "name": "The spies' journey",
+   "via": [
+    "kadesh-barnea",
+    "hebron",
+    [
+     32.4,
+     35.4
+    ],
+    [
+     33.2,
+     35.62
+    ],
+    "rehob-1"
+   ]
+  },
+  "kadesh_moab": {
+   "name": "Around Edom to the plains of Moab",
+   "via": [
+    "kadesh-barnea",
+    "mount-hor-1",
+    [
+     30.2,
+     35.15
+    ],
+    "elath",
+    [
+     29.9,
+     35.55
+    ],
+    [
+     30.5,
+     36.1
+    ],
+    "iye-abarim",
+    [
+     31.15,
+     36.05
+    ],
+    [
+     31.47,
+     35.98
+    ],
+    "jahaz",
+    "heshbon",
+    "pisgah",
+    "shittim"
+   ]
+  },
+  "jordan": {
+   "name": "Across the Jordan",
+   "via": [
+    "shittim",
+    "gilgal-1"
+   ]
+  },
+  "central": {
+   "name": "Central campaign",
+   "via": [
+    "gilgal-1",
+    "jericho-1",
+    "ai-1",
+    "mount-ebal"
+   ]
+  },
+  "southern": {
+   "name": "Southern campaign",
+   "via": [
+    "gilgal-1",
+    "gibeon",
+    "beth-horon",
+    "makkedah",
+    "libnah-1",
+    "lachish",
+    "eglon",
+    "hebron",
+    "debir-1",
+    [
+     31.7,
+     35.3
+    ],
+    "gilgal-1"
+   ]
+  },
+  "northern": {
+   "name": "Northern campaign",
+   "via": [
+    "gilgal-1",
+    [
+     32.45,
+     35.5
+    ],
+    "waters-of-merom",
+    "hazor-1"
+   ]
+  },
+  "dan_moves": {
+   "name": "Dan's migration",
+   "via": [
+    "zorah",
+    [
+     32.25,
+     35.25
+    ],
+    [
+     32.8,
+     35.48
+    ],
+    "dan"
+   ]
+  }
+ },
+ "snapshots": [
+  {
+   "id": "x-egypt",
+   "year": -1446.15,
+   "title": "Israel in Egypt",
+   "refs": [
+    "Genesis 47:27",
+    "Exodus 1:7-14",
+    "Exodus 2:23-25"
+   ],
+   "summary": "Jacob's family has grown into a great people in the land of Goshen, in the eastern Nile Delta, but a new Pharaoh has made them slaves. Egypt dominates Canaan, a patchwork of city-states each with its own king. East of the Jordan lie Edom, Moab, Ammon and the Amorite kingdom of Bashan; Moses' father-in-law Jethro lives in Midian.",
+   "regions": [
+    {
+     "name": "Israel in Goshen",
+     "shapes": [
+      "goshen"
+     ],
+     "color": "israel",
+     "status": "subject",
+     "label": [
+      30.78,
+      31.85
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "empire",
+     "label": [
+      27.6,
+      31.2
+     ]
+    },
+    {
+     "name": "Canaanite city-states",
+     "shapes": [
+      "canaan"
+     ],
+     "color": "canaan",
+     "status": "subject",
+     "label": [
+      32.3,
+      35.15
+     ]
+    },
+    {
+     "name": "Amalekites",
+     "shapes": [
+      "amalek"
+     ],
+     "color": "amalek",
+     "status": "kingdom",
+     "label": [
+      30.95,
+      34.65
+     ]
+    },
+    {
+     "name": "Edom",
+     "shapes": [
+      "edom"
+     ],
+     "color": "edom",
+     "status": "kingdom",
+     "label": [
+      30.4,
+      35.55
+     ]
+    },
+    {
+     "name": "Moab",
+     "shapes": [
+      "moab",
+      "moab_n"
+     ],
+     "color": "moab",
+     "status": "kingdom",
+     "label": [
+      31.35,
+      35.95
+     ]
+    },
+    {
+     "name": "Ammon",
+     "shapes": [
+      "ammon"
+     ],
+     "color": "ammon",
+     "status": "kingdom",
+     "label": [
+      31.95,
+      36.2
+     ]
+    },
+    {
+     "name": "Bashan (Amorites)",
+     "shapes": [
+      "og"
+     ],
+     "color": "amorites",
+     "status": "kingdom",
+     "label": [
+      32.85,
+      36.05
+     ]
+    },
+    {
+     "name": "Midian",
+     "shapes": [
+      "midian"
+     ],
+     "color": "midian",
+     "status": "kingdom",
+     "label": [
+      28.6,
+      35.2
+     ]
+    }
+   ],
+   "routes": [],
+   "tick": "Egypt",
+   "view": [
+    [
+     29.0,
+     30.8
+    ],
+    [
+     33.4,
+     36.6
+    ]
+   ]
+  },
+  {
+   "id": "x-sea",
+   "year": -1445.9639,
+   "title": "Out of Egypt and through the sea",
+   "refs": [
+    "Exodus 12:37",
+    "Exodus 13:17-22",
+    "Exodus 14",
+    "Exodus 15:22-27"
+   ],
+   "summary": "God leads Israel out of Rameses, not by the short coast road through Philistine country, but toward the wilderness by the Red Sea. The sea is crossed, Pharaoh's army destroyed, and the people travel three days to the bitter waters of Marah and then to the springs of Elim.",
+   "note": "The route is uncertain. This map follows the traditional southern route found in most Bible atlases. Other proposals include a northern route along the Mediterranean coast and a crossing of the Gulf of Aqaba into Arabia. The crossing point itself is unknown.",
+   "regions": [
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "empire",
+     "label": [
+      27.6,
+      31.2
+     ]
+    },
+    {
+     "name": "Canaanite city-states",
+     "shapes": [
+      "canaan"
+     ],
+     "color": "canaan",
+     "status": "subject",
+     "label": [
+      32.3,
+      35.15
+     ]
+    },
+    {
+     "name": "Amalekites",
+     "shapes": [
+      "amalek"
+     ],
+     "color": "amalek",
+     "status": "kingdom",
+     "label": [
+      30.95,
+      34.65
+     ]
+    },
+    {
+     "name": "Edom",
+     "shapes": [
+      "edom"
+     ],
+     "color": "edom",
+     "status": "kingdom",
+     "label": [
+      30.4,
+      35.55
+     ]
+    },
+    {
+     "name": "Moab",
+     "shapes": [
+      "moab",
+      "moab_n"
+     ],
+     "color": "moab",
+     "status": "kingdom",
+     "label": [
+      31.35,
+      35.95
+     ]
+    },
+    {
+     "name": "Ammon",
+     "shapes": [
+      "ammon"
+     ],
+     "color": "ammon",
+     "status": "kingdom",
+     "label": [
+      31.95,
+      36.2
+     ]
+    },
+    {
+     "name": "Bashan (Amorites)",
+     "shapes": [
+      "og"
+     ],
+     "color": "amorites",
+     "status": "kingdom",
+     "label": [
+      32.85,
+      36.05
+     ]
+    },
+    {
+     "name": "Midian",
+     "shapes": [
+      "midian"
+     ],
+     "color": "midian",
+     "status": "kingdom",
+     "label": [
+      28.6,
+      35.2
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "egypt_sea",
+     "style": "current"
+    }
+   ],
+   "tick": "Sea",
+   "view": [
+    [
+     28.3,
+     31.0
+    ],
+    [
+     31.3,
+     34.6
+    ]
+   ]
+  },
+  {
+   "id": "x-sinai",
+   "year": -1445.8778,
+   "title": "To Mount Sinai",
+   "refs": [
+    "Exodus 16:1",
+    "Exodus 17:1",
+    "Exodus 19:1-2",
+    "Numbers 33:10-15"
+   ],
+   "summary": "Through the Wilderness of Sin, where God gives manna, past Dophkah and Alush, to Rephidim, where water comes from the rock and Amalek is defeated. In the third month Israel camps before Mount Sinai.",
+   "note": "Jebel Musa in the southern Sinai has been the traditional site of Mount Sinai since at least the 4th century AD. Other proposals include Har Karkom in the Negev and Jebel al-Lawz in north-west Arabia, in ancient Midian.",
+   "regions": [
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "empire",
+     "label": [
+      27.6,
+      31.2
+     ]
+    },
+    {
+     "name": "Canaanite city-states",
+     "shapes": [
+      "canaan"
+     ],
+     "color": "canaan",
+     "status": "subject",
+     "label": [
+      32.3,
+      35.15
+     ]
+    },
+    {
+     "name": "Amalekites",
+     "shapes": [
+      "amalek"
+     ],
+     "color": "amalek",
+     "status": "kingdom",
+     "label": [
+      30.95,
+      34.65
+     ]
+    },
+    {
+     "name": "Edom",
+     "shapes": [
+      "edom"
+     ],
+     "color": "edom",
+     "status": "kingdom",
+     "label": [
+      30.4,
+      35.55
+     ]
+    },
+    {
+     "name": "Moab",
+     "shapes": [
+      "moab",
+      "moab_n"
+     ],
+     "color": "moab",
+     "status": "kingdom",
+     "label": [
+      31.35,
+      35.95
+     ]
+    },
+    {
+     "name": "Ammon",
+     "shapes": [
+      "ammon"
+     ],
+     "color": "ammon",
+     "status": "kingdom",
+     "label": [
+      31.95,
+      36.2
+     ]
+    },
+    {
+     "name": "Bashan (Amorites)",
+     "shapes": [
+      "og"
+     ],
+     "color": "amorites",
+     "status": "kingdom",
+     "label": [
+      32.85,
+      36.05
+     ]
+    },
+    {
+     "name": "Midian",
+     "shapes": [
+      "midian"
+     ],
+     "color": "midian",
+     "status": "kingdom",
+     "label": [
+      28.6,
+      35.2
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "egypt_sea",
+     "style": "past"
+    },
+    {
+     "route": "elim_sinai",
+     "style": "current"
+    }
+   ],
+   "tick": "Sinai",
+   "view": [
+    [
+     28.2,
+     31.0
+    ],
+    [
+     31.3,
+     35.0
+    ]
+   ]
+  },
+  {
+   "id": "x-kadesh",
+   "year": -1444.8639,
+   "title": "Kadesh-barnea and the spies",
+   "refs": [
+    "Numbers 10:11-12",
+    "Numbers 13:17-25",
+    "Numbers 14:26-35",
+    "Deuteronomy 1:2, 19-25"
+   ],
+   "summary": "From Sinai to Kadesh-barnea, an eleven days' journey. From there twelve spies search the land from the Wilderness of Zin as far as Rehob near Lebo-hamath, and return after forty days with the grapes of Eshcol. The people believe the fearful report and refuse to go in.",
+   "regions": [
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "empire",
+     "label": [
+      27.6,
+      31.2
+     ]
+    },
+    {
+     "name": "Canaanite city-states",
+     "shapes": [
+      "canaan"
+     ],
+     "color": "canaan",
+     "status": "subject",
+     "label": [
+      32.3,
+      35.15
+     ]
+    },
+    {
+     "name": "Amalekites",
+     "shapes": [
+      "amalek"
+     ],
+     "color": "amalek",
+     "status": "kingdom",
+     "label": [
+      30.95,
+      34.65
+     ]
+    },
+    {
+     "name": "Edom",
+     "shapes": [
+      "edom"
+     ],
+     "color": "edom",
+     "status": "kingdom",
+     "label": [
+      30.4,
+      35.55
+     ]
+    },
+    {
+     "name": "Moab",
+     "shapes": [
+      "moab",
+      "moab_n"
+     ],
+     "color": "moab",
+     "status": "kingdom",
+     "label": [
+      31.35,
+      35.95
+     ]
+    },
+    {
+     "name": "Ammon",
+     "shapes": [
+      "ammon"
+     ],
+     "color": "ammon",
+     "status": "kingdom",
+     "label": [
+      31.95,
+      36.2
+     ]
+    },
+    {
+     "name": "Bashan (Amorites)",
+     "shapes": [
+      "og"
+     ],
+     "color": "amorites",
+     "status": "kingdom",
+     "label": [
+      32.85,
+      36.05
+     ]
+    },
+    {
+     "name": "Midian",
+     "shapes": [
+      "midian"
+     ],
+     "color": "midian",
+     "status": "kingdom",
+     "label": [
+      28.6,
+      35.2
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "egypt_sea",
+     "style": "past"
+    },
+    {
+     "route": "elim_sinai",
+     "style": "past"
+    },
+    {
+     "route": "sinai_kadesh",
+     "style": "current"
+    },
+    {
+     "route": "spies",
+     "style": "spies"
+    }
+   ],
+   "tick": "Kadesh",
+   "view": [
+    [
+     28.3,
+     32.5
+    ],
+    [
+     34.2,
+     36.6
+    ]
+   ]
+  },
+  {
+   "id": "x-edom",
+   "year": -1407.0,
+   "title": "Around Edom to the plains of Moab",
+   "refs": [
+    "Numbers 20:14-21",
+    "Numbers 21:4",
+    "Numbers 21:10-35",
+    "Numbers 22:1",
+    "Deuteronomy 2"
+   ],
+   "summary": "Forty years later a new generation sets out from Kadesh. Edom refuses passage, so Israel goes around it. Sihon king of the Amorites, who had taken Moab's land north of the Arnon, and Og king of Bashan both come out to fight and are defeated. Israel camps on the plains of Moab across from Jericho.",
+   "note": "Numbers 33:41-44 names Zalmonah, Punon and Oboth, which some read as a route north through the Arabah, west of Edom's highlands, rather than right around Edom's eastern side as shown here.",
+   "regions": [
+    {
+     "name": "Sihon (Amorites)",
+     "shapes": [
+      "sihon"
+     ],
+     "color": "amorites",
+     "status": "kingdom",
+     "label": [
+      31.8,
+      35.72
+     ]
+    },
+    {
+     "name": "Og (Bashan)",
+     "shapes": [
+      "og"
+     ],
+     "color": "amorites",
+     "status": "kingdom",
+     "label": [
+      32.85,
+      36.05
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "empire",
+     "label": [
+      27.6,
+      31.2
+     ]
+    },
+    {
+     "name": "Canaanite city-states",
+     "shapes": [
+      "canaan"
+     ],
+     "color": "canaan",
+     "status": "subject",
+     "label": [
+      32.3,
+      35.15
+     ]
+    },
+    {
+     "name": "Edom",
+     "shapes": [
+      "edom"
+     ],
+     "color": "edom",
+     "status": "kingdom",
+     "label": [
+      30.4,
+      35.55
+     ]
+    },
+    {
+     "name": "Moab (Balak)",
+     "shapes": [
+      "moab"
+     ],
+     "color": "moab",
+     "status": "kingdom",
+     "label": [
+      31.25,
+      35.95
+     ]
+    },
+    {
+     "name": "Ammon",
+     "shapes": [
+      "ammon"
+     ],
+     "color": "ammon",
+     "status": "kingdom",
+     "label": [
+      31.95,
+      36.2
+     ]
+    },
+    {
+     "name": "Midian",
+     "shapes": [
+      "midian"
+     ],
+     "color": "midian",
+     "status": "kingdom",
+     "label": [
+      28.6,
+      35.2
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "egypt_sea",
+     "style": "past"
+    },
+    {
+     "route": "elim_sinai",
+     "style": "past"
+    },
+    {
+     "route": "sinai_kadesh",
+     "style": "past"
+    },
+    {
+     "route": "kadesh_moab",
+     "style": "current"
+    }
+   ],
+   "tick": "Edom",
+   "view": [
+    [
+     29.2,
+     33.8
+    ],
+    [
+     32.4,
+     36.6
+    ]
+   ]
+  },
+  {
+   "id": "x-east",
+   "year": -1406.3333,
+   "title": "The first inheritance, east of the Jordan",
+   "refs": [
+    "Numbers 32",
+    "Deuteronomy 3:12-20",
+    "Joshua 13:8-32"
+   ],
+   "summary": "Sihon's and Og's lands become the first part of the promised inheritance. Reuben and Gad, with their large flocks, and half the tribe of Manasseh settle east of the Jordan, promising to cross over and fight alongside their brothers.",
+   "regions": [
+    {
+     "name": "Reuben",
+     "shapes": [
+      "reuben"
+     ],
+     "color": "reuben",
+     "status": "kingdom",
+     "label": [
+      31.62,
+      35.85
+     ]
+    },
+    {
+     "name": "Gad",
+     "shapes": [
+      "gad"
+     ],
+     "color": "gad",
+     "status": "kingdom",
+     "label": [
+      32.0,
+      35.75
+     ]
+    },
+    {
+     "name": "Manasseh (half-tribe, east of the Jordan)",
+     "shapes": [
+      "manasseh_e"
+     ],
+     "color": "manasseh",
+     "status": "kingdom",
+     "label": [
+      32.95,
+      36.0
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "empire",
+     "label": [
+      27.6,
+      31.2
+     ]
+    },
+    {
+     "name": "Canaanite city-states",
+     "shapes": [
+      "canaan"
+     ],
+     "color": "canaan",
+     "status": "subject",
+     "label": [
+      32.3,
+      35.15
+     ]
+    },
+    {
+     "name": "Edom",
+     "shapes": [
+      "edom"
+     ],
+     "color": "edom",
+     "status": "kingdom",
+     "label": [
+      30.4,
+      35.55
+     ]
+    },
+    {
+     "name": "Moab (Balak)",
+     "shapes": [
+      "moab"
+     ],
+     "color": "moab",
+     "status": "kingdom",
+     "label": [
+      31.25,
+      35.95
+     ]
+    },
+    {
+     "name": "Ammon",
+     "shapes": [
+      "ammon"
+     ],
+     "color": "ammon",
+     "status": "kingdom",
+     "label": [
+      31.95,
+      36.2
+     ]
+    },
+    {
+     "name": "Midian",
+     "shapes": [
+      "midian"
+     ],
+     "color": "midian",
+     "status": "kingdom",
+     "label": [
+      28.6,
+      35.2
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "egypt_sea",
+     "style": "past"
+    },
+    {
+     "route": "elim_sinai",
+     "style": "past"
+    },
+    {
+     "route": "sinai_kadesh",
+     "style": "past"
+    },
+    {
+     "route": "kadesh_moab",
+     "style": "past"
+    }
+   ],
+   "tick": "East",
+   "view": [
+    [
+     30.9,
+     34.6
+    ],
+    [
+     33.5,
+     36.8
+    ]
+   ]
+  },
+  {
+   "id": "x-conquest",
+   "year": -1405.975,
+   "title": "The conquest under Joshua",
+   "refs": [
+    "Joshua 6-12",
+    "Joshua 11:16-23",
+    "Joshua 13:1-6",
+    "Judges 1:19-36"
+   ],
+   "summary": "Israel crosses the Jordan to Gilgal. Joshua's central campaign takes Jericho and Ai and renews the covenant at Mount Ebal. The southern campaign follows the battle for Gibeon; the northern campaign breaks Hazor's coalition. Joshua 11:23 says Joshua took the whole land, yet 13:1 says very much land remains.",
+   "note": "The two statements fit together: the Canaanites' power was broken, but many cities, the Philistine coast and the north were still to be taken by each tribe (Judges 1). Jerusalem (Jebus) also stayed in Canaanite hands (Joshua 15:63).",
+   "regions": [
+    {
+     "name": "Reuben",
+     "shapes": [
+      "reuben"
+     ],
+     "color": "reuben",
+     "status": "kingdom",
+     "label": [
+      31.62,
+      35.85
+     ]
+    },
+    {
+     "name": "Gad",
+     "shapes": [
+      "gad"
+     ],
+     "color": "gad",
+     "status": "kingdom",
+     "label": [
+      32.0,
+      35.75
+     ]
+    },
+    {
+     "name": "Manasseh (half-tribe, east of the Jordan)",
+     "shapes": [
+      "manasseh_e"
+     ],
+     "color": "manasseh",
+     "status": "kingdom",
+     "label": [
+      32.95,
+      36.0
+     ]
+    },
+    {
+     "name": "Taken under Joshua",
+     "shapes": [
+      "canaan"
+     ],
+     "color": "israel",
+     "status": "kingdom",
+     "label": [
+      32.25,
+      35.12
+     ]
+    },
+    {
+     "name": "Land that remained (Joshua 13:2-6)",
+     "shapes": [
+      "philistia",
+      "remaining_north"
+     ],
+     "color": "remain",
+     "status": "subject",
+     "label": [
+      33.75,
+      35.75
+     ]
+    },
+    {
+     "name": "Edom",
+     "shapes": [
+      "edom"
+     ],
+     "color": "edom",
+     "status": "kingdom",
+     "label": [
+      30.4,
+      35.55
+     ]
+    },
+    {
+     "name": "Moab (Balak)",
+     "shapes": [
+      "moab"
+     ],
+     "color": "moab",
+     "status": "kingdom",
+     "label": [
+      31.25,
+      35.95
+     ]
+    },
+    {
+     "name": "Ammon",
+     "shapes": [
+      "ammon"
+     ],
+     "color": "ammon",
+     "status": "kingdom",
+     "label": [
+      31.95,
+      36.2
+     ]
+    },
+    {
+     "name": "Midian",
+     "shapes": [
+      "midian"
+     ],
+     "color": "midian",
+     "status": "kingdom",
+     "label": [
+      28.6,
+      35.2
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "kadesh_moab",
+     "style": "past"
+    },
+    {
+     "route": "jordan",
+     "style": "current"
+    },
+    {
+     "route": "central",
+     "style": "campaign"
+    },
+    {
+     "route": "southern",
+     "style": "campaign"
+    },
+    {
+     "route": "northern",
+     "style": "campaign"
+    }
+   ],
+   "tick": "Conquest",
+   "view": [
+    [
+     30.9,
+     34.2
+    ],
+    [
+     33.6,
+     36.6
+    ]
+   ]
+  },
+  {
+   "id": "x-tribes",
+   "year": -1399,
+   "title": "The tribes receive their inheritance",
+   "refs": [
+    "Joshua 13:7",
+    "Joshua 14:1-5",
+    "Joshua 15-19",
+    "Joshua 18:1-10",
+    "Joshua 21:43-45"
+   ],
+   "summary": "Joshua and Eleazar divide the land by lot: Judah and Joseph's tribes first, then the remaining seven at Shiloh. Simeon's towns lie within Judah. Levi receives no territory, \"the LORD God of Israel is their inheritance\", but 48 towns scattered among all the tribes.",
+   "note": "Joshua describes most tribal borders town by town, and many of those towns can be located, but some boundary points are uncertain, especially in Galilee. Dan's coastal allotment and the Philistine and Phoenician coasts were never fully taken (Judges 1:31-34).",
+   "regions": [
+    {
+     "name": "Judah",
+     "shapes": [
+      "judah"
+     ],
+     "color": "judah",
+     "status": "kingdom",
+     "label": [
+      31.45,
+      35.05
+     ]
+    },
+    {
+     "name": "Simeon (within Judah)",
+     "shapes": [
+      "simeon"
+     ],
+     "color": "simeon",
+     "status": "kingdom",
+     "label": [
+      31.15,
+      34.78
+     ]
+    },
+    {
+     "name": "Benjamin",
+     "shapes": [
+      "benjamin"
+     ],
+     "color": "benjamin",
+     "status": "kingdom",
+     "label": [
+      31.85,
+      35.33
+     ]
+    },
+    {
+     "name": "Dan",
+     "shapes": [
+      "dan"
+     ],
+     "color": "dan",
+     "status": "kingdom",
+     "label": [
+      31.93,
+      34.88
+     ]
+    },
+    {
+     "name": "Ephraim",
+     "shapes": [
+      "ephraim"
+     ],
+     "color": "ephraim",
+     "status": "kingdom",
+     "label": [
+      32.05,
+      35.22
+     ]
+    },
+    {
+     "name": "Manasseh",
+     "shapes": [
+      "manasseh_w"
+     ],
+     "color": "manasseh",
+     "status": "kingdom",
+     "label": [
+      32.38,
+      35.15
+     ]
+    },
+    {
+     "name": "Issachar",
+     "shapes": [
+      "issachar"
+     ],
+     "color": "issachar",
+     "status": "kingdom",
+     "label": [
+      32.6,
+      35.45
+     ]
+    },
+    {
+     "name": "Zebulun",
+     "shapes": [
+      "zebulun"
+     ],
+     "color": "zebulun",
+     "status": "kingdom",
+     "label": [
+      32.76,
+      35.28
+     ]
+    },
+    {
+     "name": "Naphtali",
+     "shapes": [
+      "naphtali"
+     ],
+     "color": "naphtali",
+     "status": "kingdom",
+     "label": [
+      33.0,
+      35.48
+     ]
+    },
+    {
+     "name": "Asher",
+     "shapes": [
+      "asher"
+     ],
+     "color": "asher",
+     "status": "kingdom",
+     "label": [
+      33.05,
+      35.17
+     ]
+    },
+    {
+     "name": "Reuben",
+     "shapes": [
+      "reuben"
+     ],
+     "color": "reuben",
+     "status": "kingdom",
+     "label": [
+      31.62,
+      35.85
+     ]
+    },
+    {
+     "name": "Gad",
+     "shapes": [
+      "gad"
+     ],
+     "color": "gad",
+     "status": "kingdom",
+     "label": [
+      32.0,
+      35.75
+     ]
+    },
+    {
+     "name": "Manasseh (half-tribe, east of the Jordan)",
+     "shapes": [
+      "manasseh_e"
+     ],
+     "color": "manasseh",
+     "status": "kingdom",
+     "label": [
+      32.95,
+      36.0
+     ]
+    },
+    {
+     "name": "Land that remained (Joshua 13:2-6)",
+     "shapes": [
+      "philistia",
+      "remaining_north"
+     ],
+     "color": "remain",
+     "status": "subject",
+     "label": [
+      33.75,
+      35.75
+     ]
+    },
+    {
+     "name": "Edom",
+     "shapes": [
+      "edom"
+     ],
+     "color": "edom",
+     "status": "kingdom",
+     "label": [
+      30.4,
+      35.55
+     ]
+    },
+    {
+     "name": "Moab (Balak)",
+     "shapes": [
+      "moab"
+     ],
+     "color": "moab",
+     "status": "kingdom",
+     "label": [
+      31.25,
+      35.95
+     ]
+    },
+    {
+     "name": "Ammon",
+     "shapes": [
+      "ammon"
+     ],
+     "color": "ammon",
+     "status": "kingdom",
+     "label": [
+      31.95,
+      36.2
+     ]
+    }
+   ],
+   "routes": [],
+   "tick": "Tribes",
+   "view": [
+    [
+     30.9,
+     34.2
+    ],
+    [
+     33.6,
+     36.6
+    ]
+   ]
+  },
+  {
+   "id": "x-dan",
+   "year": -1370,
+   "title": "Dan moves north: every tribe settled",
+   "refs": [
+    "Joshua 19:47",
+    "Judges 1:34",
+    "Judges 18:1-31"
+   ],
+   "summary": "Hemmed in by the Amorites, the Danites send spies from Zorah and Eshtaol. They take the quiet city of Laish near the springs of the Jordan and rename it Dan. Every tribe now has its home: from Dan to Beersheba.",
+   "note": "Judges 18 gives no date. It is usually placed early in the time of the judges because the priest there was Moses' grandson (Judges 18:30).",
+   "regions": [
+    {
+     "name": "Dan (new home)",
+     "shapes": [
+      "dan_north"
+     ],
+     "color": "dan",
+     "status": "kingdom",
+     "label": [
+      33.27,
+      35.66
+     ]
+    },
+    {
+     "name": "Judah",
+     "shapes": [
+      "judah"
+     ],
+     "color": "judah",
+     "status": "kingdom",
+     "label": [
+      31.45,
+      35.05
+     ]
+    },
+    {
+     "name": "Simeon (within Judah)",
+     "shapes": [
+      "simeon"
+     ],
+     "color": "simeon",
+     "status": "kingdom",
+     "label": [
+      31.15,
+      34.78
+     ]
+    },
+    {
+     "name": "Benjamin",
+     "shapes": [
+      "benjamin"
+     ],
+     "color": "benjamin",
+     "status": "kingdom",
+     "label": [
+      31.85,
+      35.33
+     ]
+    },
+    {
+     "name": "Dan (first allotment)",
+     "shapes": [
+      "dan"
+     ],
+     "color": "dan",
+     "status": "subject",
+     "label": [
+      31.93,
+      34.88
+     ]
+    },
+    {
+     "name": "Ephraim",
+     "shapes": [
+      "ephraim"
+     ],
+     "color": "ephraim",
+     "status": "kingdom",
+     "label": [
+      32.05,
+      35.22
+     ]
+    },
+    {
+     "name": "Manasseh",
+     "shapes": [
+      "manasseh_w"
+     ],
+     "color": "manasseh",
+     "status": "kingdom",
+     "label": [
+      32.38,
+      35.15
+     ]
+    },
+    {
+     "name": "Issachar",
+     "shapes": [
+      "issachar"
+     ],
+     "color": "issachar",
+     "status": "kingdom",
+     "label": [
+      32.6,
+      35.45
+     ]
+    },
+    {
+     "name": "Zebulun",
+     "shapes": [
+      "zebulun"
+     ],
+     "color": "zebulun",
+     "status": "kingdom",
+     "label": [
+      32.76,
+      35.28
+     ]
+    },
+    {
+     "name": "Naphtali",
+     "shapes": [
+      "naphtali"
+     ],
+     "color": "naphtali",
+     "status": "kingdom",
+     "label": [
+      33.0,
+      35.48
+     ]
+    },
+    {
+     "name": "Asher",
+     "shapes": [
+      "asher"
+     ],
+     "color": "asher",
+     "status": "kingdom",
+     "label": [
+      33.05,
+      35.17
+     ]
+    },
+    {
+     "name": "Reuben",
+     "shapes": [
+      "reuben"
+     ],
+     "color": "reuben",
+     "status": "kingdom",
+     "label": [
+      31.62,
+      35.85
+     ]
+    },
+    {
+     "name": "Gad",
+     "shapes": [
+      "gad"
+     ],
+     "color": "gad",
+     "status": "kingdom",
+     "label": [
+      32.0,
+      35.75
+     ]
+    },
+    {
+     "name": "Manasseh (half-tribe, east of the Jordan)",
+     "shapes": [
+      "manasseh_e"
+     ],
+     "color": "manasseh",
+     "status": "kingdom",
+     "label": [
+      32.95,
+      36.0
+     ]
+    },
+    {
+     "name": "Land that remained (Joshua 13:2-6)",
+     "shapes": [
+      "philistia",
+      "remaining_north"
+     ],
+     "color": "remain",
+     "status": "subject",
+     "label": [
+      33.75,
+      35.75
+     ]
+    },
+    {
+     "name": "Edom",
+     "shapes": [
+      "edom"
+     ],
+     "color": "edom",
+     "status": "kingdom",
+     "label": [
+      30.4,
+      35.55
+     ]
+    },
+    {
+     "name": "Moab (Balak)",
+     "shapes": [
+      "moab"
+     ],
+     "color": "moab",
+     "status": "kingdom",
+     "label": [
+      31.25,
+      35.95
+     ]
+    },
+    {
+     "name": "Ammon",
+     "shapes": [
+      "ammon"
+     ],
+     "color": "ammon",
+     "status": "kingdom",
+     "label": [
+      31.95,
+      36.2
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "dan_moves",
+     "style": "current"
+    }
+   ],
+   "tick": "Dan",
+   "view": [
+    [
+     30.9,
+     34.2
+    ],
+    [
+     33.6,
+     36.6
+    ]
+   ]
+  }
+ ]
+}

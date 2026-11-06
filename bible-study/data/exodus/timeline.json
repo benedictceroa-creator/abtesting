@@ -1,0 +1,1147 @@
+{
+ "meta": {
+  "title": "Exodus to the Promised Land",
+  "range": [
+   -1530,
+   -1365
+  ],
+  "lanes": [
+   {
+    "key": "stages",
+    "label": "Stages of the journey",
+    "type": "stage",
+    "color": "#8C6A3E",
+    "kind": "Stage of the journey"
+   },
+   {
+    "key": "leaders",
+    "label": "Leaders",
+    "type": "leader",
+    "color": "#2F7F86",
+    "kind": "Leader"
+   },
+   {
+    "key": "events",
+    "label": "Key events",
+    "type": "event",
+    "kind": "Event"
+   }
+  ],
+  "phases": [
+   {
+    "label": "Whole story",
+    "range": [
+     -1530,
+     -1365
+    ]
+   },
+   {
+    "label": "Moses' early life",
+    "range": [
+     -1530,
+     -1443
+    ]
+   },
+   {
+    "label": "Egypt to Sinai",
+    "range": [
+     -1446.02,
+     -1445.6667
+    ]
+   },
+   {
+    "label": "A year at Sinai",
+    "range": [
+     -1445.8533,
+     -1444.5833
+    ]
+   },
+   {
+    "label": "Forty years",
+    "range": [
+     -1447,
+     -1404
+    ]
+   },
+   {
+    "label": "The final year",
+    "range": [
+     -1407.03,
+     -1405.8333
+    ]
+   },
+   {
+    "label": "Conquest & settlement",
+    "range": [
+     -1407,
+     -1365
+    ]
+   }
+  ],
+  "defaultPhase": "Egypt to Sinai",
+  "chronology": "Dates follow the early date of the Exodus, 1446 BC. 1 Kings 6:1 places the Exodus 480 years before Solomon began the temple in his fourth year (966 BC), and Judges 11:26 fits this. Months and days are the Bible's own, counted from the Passover month (Exodus 12:2).",
+  "chronologyShort": "Early date of the Exodus, 1446 BC (1 Kings 6:1).",
+  "status": "DRAFT: awaiting theological review",
+  "alternative": "Many evangelical scholars instead date the Exodus around 1260 BC, under Rameses II, reading the 480 years of 1 Kings 6:1 as twelve generations and pointing to the city name Rameses (Exodus 1:11). On that view every date on this page moves about 180 years later. The order of events and the Bible's own months and days stay the same.",
+  "coLabel": "Joshua as Moses' assistant",
+  "coPhrase": "Moses' assistant from",
+  "introTitle": "Follow the journey from Egypt to the promised land"
+ },
+ "certainty": {
+  "fixed": "Fixed: confirmed by a dated record outside the Bible.",
+  "calculated": "Calculated: worked out from the Bible's own numbers (1 Kings 6:1 and the dates given in Exodus, Numbers, Deuteronomy and Joshua), on the early date of the Exodus.",
+  "approx": "Approximate: the Bible places it in sequence but gives no exact date.",
+  "disputed": "Disputed: Bible-believing scholars hold different views."
+ },
+ "stages": [
+  {
+   "id": "egypt",
+   "name": "Slavery in Egypt",
+   "start": -1530,
+   "end": -1445.9611,
+   "certainty": "calculated",
+   "refs": [
+    "Exodus 1:8-14",
+    "Exodus 12:40-41",
+    "Genesis 15:13-14"
+   ],
+   "places": [
+    "goshen-1",
+    "pithom",
+    "rameses"
+   ],
+   "summary": "After Joseph's death a new Pharaoh enslaves the Israelites and sets them to build the store cities Pithom and Rameses. God had told Abraham his offspring would be afflicted in a land not their own, and then come out with great possessions.",
+   "basis": "Israel lived in Egypt 430 years (Exodus 12:40), so Jacob's family arrived about 1876 BC. The bar is cut off at the left edge of the timeline."
+  },
+  {
+   "id": "to-sinai",
+   "name": "Egypt to Mount Sinai",
+   "start": -1445.9611,
+   "end": -1445.8333,
+   "certainty": "calculated",
+   "refs": [
+    "Exodus 12:37-19:2",
+    "Numbers 33:3-15"
+   ],
+   "places": [
+    "rameses",
+    "succoth-2",
+    "red-sea-1",
+    "marah",
+    "elim",
+    "rephidim",
+    "mount-sinai"
+   ],
+   "summary": "From Rameses through the sea, past Marah and Elim, through the Wilderness of Sin where the manna began, to Rephidim and on to Sinai, arriving in the third month.",
+   "basis": "Left on the 15th of the 1st month (Numbers 33:3); reached Sinai in the 3rd month (Exodus 19:1)."
+  },
+  {
+   "id": "at-sinai",
+   "name": "Encamped at Sinai",
+   "start": -1445.8333,
+   "end": -1444.8639,
+   "certainty": "calculated",
+   "refs": [
+    "Exodus 19-40",
+    "Leviticus 1:1",
+    "Numbers 1-10"
+   ],
+   "places": [
+    "mount-sinai"
+   ],
+   "summary": "Almost a year at the mountain of God: the covenant and the Ten Commandments, the golden calf and the covenant renewed, the building of the tabernacle, the laws of Leviticus, and the census of the tribes.",
+   "basis": "Arrived in the 3rd month (Exodus 19:1); left on the 20th of the 2nd month of the 2nd year (Numbers 10:11)."
+  },
+  {
+   "id": "to-kadesh",
+   "name": "Sinai to Kadesh",
+   "start": -1444.8639,
+   "end": -1444.6667,
+   "certainty": "approx",
+   "refs": [
+    "Numbers 10:11-13:26",
+    "Deuteronomy 1:2, 19"
+   ],
+   "places": [
+    "kibroth-hattaavah",
+    "hazeroth",
+    "kadesh-barnea"
+   ],
+   "summary": "An eleven days' journey (Deuteronomy 1:2), slowed by complaining at Taberah and Kibroth-hattaavah and Miriam's rebellion at Hazeroth, to Kadesh-barnea on the edge of the promised land.",
+   "basis": "The spies went out at the season of the first ripe grapes (Numbers 13:20), around the 5th month."
+  },
+  {
+   "id": "wandering",
+   "name": "Forty years in the wilderness",
+   "start": -1444.6667,
+   "end": -1406.6667,
+   "certainty": "calculated",
+   "refs": [
+    "Numbers 14:26-35",
+    "Numbers 33:19-36",
+    "Deuteronomy 2:14",
+    "Deuteronomy 8:2-4"
+   ],
+   "places": [
+    "kadesh-barnea",
+    "ezion-geber"
+   ],
+   "summary": "Because the people refused to enter the land, the LORD sentenced that generation to wander until they had died, one year for each of the forty days the spies were in the land. Yet their clothes did not wear out and he fed them with manna, to teach them that man does not live by bread alone.",
+   "basis": "38 years from Kadesh-barnea to crossing the Zered (Deuteronomy 2:14)."
+  },
+  {
+   "id": "to-moab",
+   "name": "Around Edom to the plains of Moab",
+   "start": -1406.6667,
+   "end": -1405.975,
+   "certainty": "calculated",
+   "refs": [
+    "Numbers 20:14-22:1",
+    "Numbers 33:37-49",
+    "Deuteronomy 2:1-3:11"
+   ],
+   "places": [
+    "mount-hor-1",
+    "elath",
+    "iye-abarim",
+    "zered",
+    "arnon",
+    "heshbon",
+    "shittim"
+   ],
+   "summary": "Refused passage by Edom, Israel goes around it, defeats Sihon and Og, and camps on the plains of Moab across the Jordan from Jericho, where Moses gives his final words.",
+   "basis": "After Aaron's death on the 1st of the 5th month of the 40th year (Numbers 33:38) until the Jordan crossing."
+  },
+  {
+   "id": "conquest",
+   "name": "Conquest of Canaan",
+   "start": -1405.975,
+   "end": -1400,
+   "certainty": "calculated",
+   "refs": [
+    "Joshua 1-12",
+    "Joshua 11:18",
+    "Joshua 14:7-10"
+   ],
+   "places": [
+    "jericho-1",
+    "ai-1",
+    "gibeon",
+    "hazor-1"
+   ],
+   "summary": "Joshua leads Israel across the Jordan and through three campaigns: central (Jericho and Ai), southern (after the Gibeonite alliance) and northern (Hazor). Joshua made war a long time with all those kings (Joshua 11:18).",
+   "basis": "Caleb was 40 at Kadesh and 85 when he received Hebron (Joshua 14:7-10): 45 years after the spies, so the main conquest lasted about seven years."
+  },
+  {
+   "id": "settlement",
+   "name": "The tribes settle the land",
+   "start": -1400,
+   "end": -1380,
+   "certainty": "approx",
+   "refs": [
+    "Joshua 13-22",
+    "Joshua 21:43-45",
+    "Judges 1"
+   ],
+   "places": [
+    "shiloh",
+    "shechem",
+    "timnath-heres"
+   ],
+   "summary": "The land is divided by lot, first at Gilgal and then at Shiloh, where the tabernacle is set up. The tribes go to their inheritances, though much land remains to be possessed."
+  }
+ ],
+ "leaders": [
+  {
+   "id": "moses",
+   "name": "Moses",
+   "start": -1526,
+   "end": -1406.0833,
+   "certainty": "calculated",
+   "refs": [
+    "Exodus 2:1-10",
+    "Exodus 7:7",
+    "Deuteronomy 34:5-12",
+    "Acts 7:20-36",
+    "Hebrews 11:23-29"
+   ],
+   "places": [
+    "midian",
+    "mount-sinai",
+    "mount-nebo"
+   ],
+   "summary": "Rescued from the Nile and raised in Pharaoh's house, he fled to Midian, met God at the burning bush, and led Israel out of Egypt and through the wilderness. There arose no prophet like him, whom the LORD knew face to face (Deuteronomy 34:10).",
+   "basis": "80 years old when he spoke to Pharaoh (Exodus 7:7) and 120 when he died (Deuteronomy 34:7). Stephen divides his life into three forties (Acts 7:23, 30, 36)."
+  },
+  {
+   "id": "aaron",
+   "name": "Aaron",
+   "start": -1529,
+   "end": -1406.6667,
+   "certainty": "calculated",
+   "refs": [
+    "Exodus 4:14-16",
+    "Exodus 28:1",
+    "Leviticus 8",
+    "Numbers 20:22-29",
+    "Hebrews 5:4-5"
+   ],
+   "places": [
+    "mount-sinai",
+    "mount-hor-1"
+   ],
+   "summary": "Moses' older brother and spokesman, consecrated as Israel's first high priest. He made the golden calf, yet God kept him in the priesthood. He died on Mount Hor.",
+   "basis": "83 when he spoke to Pharaoh (Exodus 7:7); died aged 123 on the 1st of the 5th month of the 40th year (Numbers 33:38-39)."
+  },
+  {
+   "id": "miriam",
+   "name": "Miriam",
+   "start": -1535,
+   "end": -1407.0,
+   "certainty": "approx",
+   "refs": [
+    "Exodus 2:4-8",
+    "Exodus 15:20-21",
+    "Numbers 12",
+    "Numbers 20:1",
+    "Micah 6:4"
+   ],
+   "places": [
+    "red-sea-1",
+    "hazeroth",
+    "kadesh-barnea"
+   ],
+   "summary": "Sister of Moses and Aaron, who watched over baby Moses and led the women in song after the sea crossing. Micah names her with Moses and Aaron as leaders God sent before his people.",
+   "basis": "Her age is not given; she was older than Moses (Exodus 2:4). She died at Kadesh in the 1st month of the 40th year (Numbers 20:1)."
+  },
+  {
+   "id": "joshua",
+   "name": "Joshua",
+   "start": -1406.1,
+   "end": -1380,
+   "coStart": -1445.85,
+   "certainty": "approx",
+   "refs": [
+    "Exodus 17:8-14",
+    "Exodus 33:11",
+    "Numbers 14:6-9",
+    "Numbers 27:18-23",
+    "Joshua 1:1-9",
+    "Joshua 24:29"
+   ],
+   "places": [
+    "rephidim",
+    "kadesh-barnea",
+    "jericho-1",
+    "timnath-heres",
+    "shechem"
+   ],
+   "summary": "Moses' assistant from Rephidim onward, one of only two spies who trusted the LORD, and his successor who led Israel into the land. The lighter part of the bar is his time as Moses' assistant.",
+   "basis": "First appears at Rephidim (Exodus 17:9); succeeds Moses at the Jordan; dies aged 110 (Joshua 24:29). The year of his death is not given."
+  },
+  {
+   "id": "caleb",
+   "name": "Caleb",
+   "start": -1485,
+   "end": -1399,
+   "certainty": "calculated",
+   "refs": [
+    "Numbers 13:30",
+    "Numbers 14:24",
+    "Joshua 14:6-15",
+    "Joshua 15:13-19"
+   ],
+   "places": [
+    "kadesh-barnea",
+    "hebron",
+    "debir-1"
+   ],
+   "summary": "The spy who \"wholly followed the LORD\". At 85 he asked for the hill country of Hebron, where the giants lived, and took it.",
+   "basis": "40 years old at Kadesh-barnea and 85 when he received Hebron (Joshua 14:7, 10). His death is not recorded; the bar ends with his last appearance."
+  },
+  {
+   "id": "eleazar",
+   "name": "Eleazar",
+   "start": -1406.6667,
+   "end": -1380,
+   "certainty": "approx",
+   "refs": [
+    "Numbers 20:25-28",
+    "Numbers 34:17",
+    "Joshua 14:1",
+    "Joshua 24:33"
+   ],
+   "places": [
+    "mount-hor-1",
+    "shiloh"
+   ],
+   "summary": "Aaron's son, who became high priest when Aaron died and divided the land by lot together with Joshua.",
+   "basis": "High priest from Aaron's death; died around the same time as Joshua (Joshua 24:33)."
+  }
+ ],
+ "events": [
+  {
+   "id": "e-moses-born",
+   "title": "Moses born and rescued",
+   "year": -1526,
+   "certainty": "calculated",
+   "refs": [
+    "Exodus 1:22-2:10",
+    "Hebrews 11:23"
+   ],
+   "places": [
+    "goshen-1"
+   ],
+   "summary": "Pharaoh orders every Hebrew baby boy thrown into the Nile. Moses' parents hide him by faith, and Pharaoh's daughter draws him out of the water and raises him as her son."
+  },
+  {
+   "id": "e-moses-flees",
+   "title": "Moses flees to Midian",
+   "year": -1486,
+   "certainty": "calculated",
+   "refs": [
+    "Exodus 2:11-22",
+    "Acts 7:23-29",
+    "Hebrews 11:24-27"
+   ],
+   "places": [
+    "midian"
+   ],
+   "summary": "At forty, Moses kills an Egyptian who was beating a Hebrew, and flees to Midian. He marries Zipporah, daughter of Jethro the priest of Midian, and keeps his flocks for forty years."
+  },
+  {
+   "id": "e-burning-bush",
+   "title": "The burning bush",
+   "year": -1446.25,
+   "certainty": "approx",
+   "refs": [
+    "Exodus 3:1-4:17",
+    "Acts 7:30-35",
+    "Mark 12:26"
+   ],
+   "places": [
+    "mount-sinai",
+    "midian"
+   ],
+   "summary": "At Horeb, the mountain of God, the LORD speaks to Moses from a bush that burns but is not consumed, and reveals his name: \"I AM WHO I AM.\" He sends Moses to bring his people out of Egypt."
+  },
+  {
+   "id": "e-plagues",
+   "title": "The ten plagues",
+   "year": -1446.12,
+   "certainty": "approx",
+   "refs": [
+    "Exodus 7:14-11:10",
+    "Exodus 12:12",
+    "Romans 9:17"
+   ],
+   "places": [
+    "goshen-1",
+    "rameses"
+   ],
+   "summary": "Pharaoh hardens his heart, and the LORD strikes Egypt with ten plagues, executing judgments on all the gods of Egypt while sparing Israel in the land of Goshen."
+  },
+  {
+   "id": "e-passover",
+   "title": "The first Passover",
+   "year": -1445.9639,
+   "certainty": "calculated",
+   "refs": [
+    "Exodus 12:1-30",
+    "1 Corinthians 5:7",
+    "John 1:29"
+   ],
+   "places": [
+    "goshen-1",
+    "rameses"
+   ],
+   "summary": "Each household kills a spotless lamb and puts its blood on the doorposts, and the LORD passes over them when he strikes the firstborn of Egypt. Paul writes: \"Christ, our Passover lamb, has been sacrificed.\"",
+   "date": "14th day of the 1st month (Exodus 12:6)"
+  },
+  {
+   "id": "e-depart",
+   "title": "Israel leaves Egypt",
+   "year": -1445.9611,
+   "certainty": "disputed",
+   "refs": [
+    "Exodus 12:31-42",
+    "Exodus 13:17-22",
+    "Numbers 33:3-5"
+   ],
+   "places": [
+    "rameses",
+    "succoth-2"
+   ],
+   "summary": "About 600,000 men on foot, besides women and children, set out from Rameses to Succoth, with a mixed multitude and the bones of Joseph. God leads them by a pillar of cloud by day and fire by night, not by the short coast road through Philistine country.",
+   "date": "15th day of the 1st month (Numbers 33:3)",
+   "note": "This is the date the early and late chronologies disagree on: 1446 BC on the early date, about 1260 BC on the late date."
+  },
+  {
+   "id": "e-red-sea",
+   "title": "Crossing the sea",
+   "year": -1445.9444,
+   "certainty": "approx",
+   "refs": [
+    "Exodus 14",
+    "Exodus 15:1-21",
+    "1 Corinthians 10:1-2",
+    "Hebrews 11:29"
+   ],
+   "places": [
+    "pi-hahiroth",
+    "red-sea-1",
+    "migdol-1",
+    "baal-zephon"
+   ],
+   "summary": "Hemmed in between Pharaoh's army and the sea at Pi-hahiroth, Israel is told to stand firm and see the salvation of the LORD. The sea divides, Israel walks through on dry ground, and the waters return over the Egyptian chariots. Moses and Miriam lead the people in song.",
+   "note": "The crossing point is unknown. Proposals include the Gulf of Suez, the Bitter Lakes, Lake Timsah, the Ballah Lakes and the Gulf of Aqaba. The Hebrew Yam Suph can mean 'Sea of Reeds'."
+  },
+  {
+   "id": "e-marah",
+   "title": "Bitter water made sweet",
+   "year": -1445.9361,
+   "certainty": "approx",
+   "refs": [
+    "Exodus 15:22-27"
+   ],
+   "places": [
+    "shur",
+    "marah",
+    "elim"
+   ],
+   "summary": "After three days without water in the Wilderness of Shur, the water at Marah is bitter. The LORD shows Moses a log that makes it sweet and reveals himself as \"the LORD, your healer.\" Then they reach the twelve springs and seventy palms of Elim."
+  },
+  {
+   "id": "e-manna",
+   "title": "Manna and quail",
+   "year": -1445.8778,
+   "certainty": "calculated",
+   "refs": [
+    "Exodus 16",
+    "Deuteronomy 8:3",
+    "John 6:31-35"
+   ],
+   "places": [
+    "elim",
+    "mount-sinai"
+   ],
+   "summary": "In the Wilderness of Sin the people grumble for food. The LORD sends quail in the evening and manna each morning, a double portion before the Sabbath. Jesus later calls himself the true bread from heaven.",
+   "date": "15th day of the 2nd month (Exodus 16:1)"
+  },
+  {
+   "id": "e-rephidim",
+   "title": "Water from the rock; Amalek defeated",
+   "year": -1445.85,
+   "certainty": "approx",
+   "refs": [
+    "Exodus 17",
+    "1 Corinthians 10:4"
+   ],
+   "places": [
+    "rephidim"
+   ],
+   "summary": "At Rephidim Moses strikes the rock at Horeb and water flows. Amalek attacks; Joshua leads the fight while Aaron and Hur hold up Moses' hands until sunset, and Moses builds an altar called \"The LORD is my banner.\""
+  },
+  {
+   "id": "e-jethro",
+   "title": "Jethro's counsel",
+   "year": -1445.8417,
+   "certainty": "approx",
+   "refs": [
+    "Exodus 18"
+   ],
+   "places": [
+    "mount-sinai",
+    "midian"
+   ],
+   "summary": "Moses' father-in-law Jethro rejoices at all the LORD has done, and advises Moses to appoint capable, God-fearing men to judge the people's smaller cases."
+  },
+  {
+   "id": "e-sinai",
+   "title": "Israel arrives at Sinai",
+   "year": -1445.8333,
+   "certainty": "calculated",
+   "refs": [
+    "Exodus 19:1-25"
+   ],
+   "places": [
+    "mount-sinai"
+   ],
+   "summary": "In the third month Israel camps before the mountain. The LORD calls them to be his treasured possession, a kingdom of priests and a holy nation, and descends on the mountain in fire, smoke and thunder.",
+   "date": "3rd month (Exodus 19:1)"
+  },
+  {
+   "id": "e-commandments",
+   "title": "The Ten Commandments",
+   "year": -1445.825,
+   "certainty": "approx",
+   "refs": [
+    "Exodus 20:1-21",
+    "Exodus 24:1-11",
+    "Deuteronomy 5:1-22",
+    "Matthew 22:36-40"
+   ],
+   "places": [
+    "mount-sinai"
+   ],
+   "summary": "God speaks the Ten Commandments to all Israel, and the covenant is sealed with blood. Moses goes up the mountain for forty days to receive the tablets and the pattern for the tabernacle."
+  },
+  {
+   "id": "e-golden-calf",
+   "title": "The golden calf",
+   "year": -1445.7111,
+   "certainty": "approx",
+   "refs": [
+    "Exodus 32-34",
+    "Deuteronomy 9:7-21",
+    "1 Corinthians 10:7"
+   ],
+   "places": [
+    "mount-sinai"
+   ],
+   "summary": "While Moses is on the mountain the people make a golden calf. Moses breaks the tablets, intercedes for the people, and the LORD renews the covenant, proclaiming his name: \"merciful and gracious, slow to anger, and abounding in steadfast love and faithfulness.\"",
+   "note": "Moses had been on the mountain forty days (Exodus 24:18), so this was around the 4th month."
+  },
+  {
+   "id": "e-tabernacle",
+   "title": "The tabernacle set up",
+   "year": -1445.0,
+   "certainty": "calculated",
+   "refs": [
+    "Exodus 40",
+    "Hebrews 9:1-12",
+    "John 1:14"
+   ],
+   "places": [
+    "mount-sinai"
+   ],
+   "summary": "On the first day of the first month of the second year the tabernacle is raised, and the glory of the LORD fills it. God now dwells in the midst of his people.",
+   "date": "1st day of the 1st month, 2nd year (Exodus 40:17)"
+  },
+  {
+   "id": "e-census",
+   "title": "The census of the tribes",
+   "year": -1444.9167,
+   "certainty": "calculated",
+   "refs": [
+    "Numbers 1:1-46",
+    "Numbers 2"
+   ],
+   "places": [
+    "mount-sinai"
+   ],
+   "summary": "Moses counts every man of twenty and over able to go to war: 603,550. The tribes are arranged around the tabernacle, with the Levites camped closest to it.",
+   "date": "1st day of the 2nd month, 2nd year (Numbers 1:1)"
+  },
+  {
+   "id": "e-leave-sinai",
+   "title": "Israel leaves Sinai",
+   "year": -1444.8639,
+   "certainty": "calculated",
+   "refs": [
+    "Numbers 10:11-36"
+   ],
+   "places": [
+    "mount-sinai"
+   ],
+   "summary": "The cloud lifts from the tabernacle and Israel sets out in order, the ark of the covenant going before them.",
+   "date": "20th day of the 2nd month, 2nd year (Numbers 10:11)"
+  },
+  {
+   "id": "e-quail",
+   "title": "Graves of craving",
+   "year": -1444.7944,
+   "certainty": "approx",
+   "refs": [
+    "Numbers 11",
+    "Psalm 78:26-31"
+   ],
+   "places": [
+    "kibroth-hattaavah"
+   ],
+   "summary": "The people weep for the meat of Egypt. The LORD sends quail until it comes out of their nostrils, then a plague; the place is named Kibroth-hattaavah, \"graves of craving\". God also puts his Spirit on seventy elders."
+  },
+  {
+   "id": "e-miriam-aaron",
+   "title": "Miriam and Aaron oppose Moses",
+   "year": -1444.75,
+   "certainty": "approx",
+   "refs": [
+    "Numbers 12"
+   ],
+   "places": [
+    "hazeroth"
+   ],
+   "summary": "At Hazeroth Miriam and Aaron speak against Moses. The LORD defends Moses as faithful in all his house; Miriam is struck with leprosy for seven days and healed when Moses prays."
+  },
+  {
+   "id": "e-spies",
+   "title": "The twelve spies",
+   "year": -1444.6667,
+   "certainty": "approx",
+   "refs": [
+    "Numbers 13-14",
+    "Deuteronomy 1:19-46",
+    "Hebrews 3:16-19"
+   ],
+   "places": [
+    "kadesh-barnea",
+    "hebron",
+    "rehob-1"
+   ],
+   "summary": "Twelve spies search the land for forty days, as far as Rehob. Ten bring a fearful report; only Joshua and Caleb urge the people to trust the LORD. The people rebel, and the LORD sentences that generation to forty years in the wilderness.",
+   "note": "The spies went at the season of the first ripe grapes (Numbers 13:20), around July/August."
+  },
+  {
+   "id": "e-hormah",
+   "title": "Defeat at Hormah",
+   "year": -1444.6278,
+   "certainty": "approx",
+   "refs": [
+    "Numbers 14:39-45",
+    "Deuteronomy 1:41-46"
+   ],
+   "places": [
+    "hormah"
+   ],
+   "summary": "Too late, the people try to go up into the hill country without the LORD and are routed by the Amalekites and Canaanites as far as Hormah."
+  },
+  {
+   "id": "e-korah",
+   "title": "Korah's rebellion",
+   "year": -1430,
+   "certainty": "approx",
+   "refs": [
+    "Numbers 16-17",
+    "Jude 11"
+   ],
+   "places": [
+    "kadesh-barnea"
+   ],
+   "summary": "Korah, Dathan, Abiram and 250 leaders challenge Moses and Aaron. The earth swallows the rebels, and Aaron's staff buds, confirming his priesthood.",
+   "note": "Numbers gives no date. It is placed somewhere in the wilderness years."
+  },
+  {
+   "id": "e-miriam-dies",
+   "title": "Miriam dies at Kadesh",
+   "year": -1407.0,
+   "certainty": "calculated",
+   "refs": [
+    "Numbers 20:1"
+   ],
+   "places": [
+    "kadesh-barnea"
+   ],
+   "summary": "In the first month of the fortieth year the people are back at Kadesh, and Miriam dies and is buried there.",
+   "date": "1st month, 40th year (Numbers 20:1 with 33:36-38)"
+  },
+  {
+   "id": "e-meribah",
+   "title": "Moses strikes the rock",
+   "year": -1406.975,
+   "certainty": "approx",
+   "refs": [
+    "Numbers 20:2-13",
+    "Deuteronomy 32:48-52",
+    "Psalm 106:32-33"
+   ],
+   "places": [
+    "kadesh-barnea"
+   ],
+   "summary": "Told to speak to the rock, Moses strikes it twice in anger. Water flows, but because Moses and Aaron did not uphold the LORD as holy, neither will lead the people into the land."
+  },
+  {
+   "id": "e-edom-refuses",
+   "title": "Edom refuses passage",
+   "year": -1406.8333,
+   "certainty": "approx",
+   "refs": [
+    "Numbers 20:14-21",
+    "Deuteronomy 2:1-8"
+   ],
+   "places": [
+    "kadesh-barnea"
+   ],
+   "summary": "Moses asks the king of Edom, Israel's 'brother', to let them pass along the King's Highway. Edom refuses and comes out against them, so Israel turns away."
+  },
+  {
+   "id": "e-aaron-dies",
+   "title": "Aaron dies on Mount Hor",
+   "year": -1406.6667,
+   "certainty": "calculated",
+   "refs": [
+    "Numbers 20:22-29",
+    "Numbers 33:37-39"
+   ],
+   "places": [
+    "mount-hor-1"
+   ],
+   "summary": "Moses strips Aaron of his priestly garments and puts them on his son Eleazar, and Aaron dies on the top of the mountain at 123. All Israel mourns thirty days.",
+   "date": "1st day of the 5th month, 40th year (Numbers 33:38)"
+  },
+  {
+   "id": "e-arad",
+   "title": "Victory over Arad",
+   "year": -1406.6389,
+   "certainty": "approx",
+   "refs": [
+    "Numbers 21:1-3",
+    "Numbers 33:40"
+   ],
+   "places": [
+    "arad-1",
+    "hormah"
+   ],
+   "summary": "The Canaanite king of Arad attacks Israel. Israel vows to devote his cities to the LORD, and the LORD gives them victory; the place is called Hormah, \"destruction\", reversing the defeat there 38 years before."
+  },
+  {
+   "id": "e-serpent",
+   "title": "The bronze serpent",
+   "year": -1406.5833,
+   "certainty": "approx",
+   "refs": [
+    "Numbers 21:4-9",
+    "John 3:14-15"
+   ],
+   "places": [
+    "zalmonah",
+    "punon"
+   ],
+   "summary": "Going around Edom the people grow impatient and speak against God. Fiery serpents bite them; whoever looks at the bronze serpent Moses lifts on a pole lives. Jesus: \"as Moses lifted up the serpent in the wilderness, so must the Son of Man be lifted up.\""
+  },
+  {
+   "id": "e-sihon-og",
+   "title": "Sihon and Og defeated",
+   "year": -1406.5,
+   "certainty": "approx",
+   "refs": [
+    "Numbers 21:21-35",
+    "Deuteronomy 2:24-3:11",
+    "Psalm 136:17-22"
+   ],
+   "places": [
+    "jahaz",
+    "heshbon",
+    "edrei-1"
+   ],
+   "summary": "Sihon king of the Amorites refuses passage and attacks; Israel defeats him at Jahaz and takes his land from the Arnon to the Jabbok. Then Og king of Bashan is defeated at Edrei."
+  },
+  {
+   "id": "e-balaam",
+   "title": "Balaam blesses Israel",
+   "year": -1406.4167,
+   "certainty": "approx",
+   "refs": [
+    "Numbers 22-24",
+    "Deuteronomy 23:4-5",
+    "2 Peter 2:15-16"
+   ],
+   "places": [
+    "pethor",
+    "pisgah",
+    "shittim"
+   ],
+   "summary": "Balak king of Moab hires the seer Balaam from Pethor to curse Israel, but God turns every curse into blessing. Balaam foresees that \"a star shall come out of Jacob, and a scepter shall rise out of Israel\" (Numbers 24:17)."
+  },
+  {
+   "id": "e-baal-peor",
+   "title": "Sin at Baal-peor",
+   "year": -1406.3778,
+   "certainty": "approx",
+   "refs": [
+    "Numbers 25",
+    "Numbers 31:16",
+    "1 Corinthians 10:8"
+   ],
+   "places": [
+    "shittim",
+    "beth-peor"
+   ],
+   "summary": "At Shittim, on Balaam's advice, Moabite and Midianite women lure Israel into idolatry with the Baal of Peor. A plague strikes, and Phinehas' zeal turns away God's wrath."
+  },
+  {
+   "id": "e-transjordan",
+   "title": "Land east of the Jordan given",
+   "year": -1406.3333,
+   "certainty": "approx",
+   "refs": [
+    "Numbers 32",
+    "Deuteronomy 3:12-20",
+    "Joshua 13:8-32"
+   ],
+   "places": [
+    "heshbon",
+    "dibon-1",
+    "mahanaim",
+    "edrei-1"
+   ],
+   "summary": "Reuben, Gad and half the tribe of Manasseh ask for the conquered pastureland east of the Jordan. Moses agrees, on condition that their fighting men cross over and help the other tribes take their land."
+  },
+  {
+   "id": "e-deuteronomy",
+   "title": "Moses' final words",
+   "year": -1406.1667,
+   "certainty": "calculated",
+   "refs": [
+    "Deuteronomy 1:1-5",
+    "Deuteronomy 6:4-9",
+    "Deuteronomy 30:15-20",
+    "Deuteronomy 18:15"
+   ],
+   "places": [
+    "shittim"
+   ],
+   "summary": "On the plains of Moab Moses explains the law to the new generation: \"Hear, O Israel: The LORD our God, the LORD is one.\" He sets before them life and death, and promises a prophet like himself, whom the New Testament identifies as Christ.",
+   "date": "1st day of the 11th month, 40th year (Deuteronomy 1:3)"
+  },
+  {
+   "id": "e-moses-dies",
+   "title": "Moses dies on Mount Nebo",
+   "year": -1406.0833,
+   "certainty": "approx",
+   "refs": [
+    "Deuteronomy 34",
+    "Jude 9",
+    "Matthew 17:1-3"
+   ],
+   "places": [
+    "mount-nebo",
+    "pisgah"
+   ],
+   "summary": "From the top of Pisgah the LORD shows Moses the whole land. Moses dies there at 120, his eye undimmed, and the LORD buries him. Centuries later he appears with Elijah, talking with Jesus on the mount of transfiguration.",
+   "note": "The people mourned 30 days (Deuteronomy 34:8) before crossing on the 10th of the 1st month, so Moses died about the 11th month."
+  },
+  {
+   "id": "e-jordan",
+   "title": "Crossing the Jordan",
+   "year": -1405.975,
+   "certainty": "calculated",
+   "refs": [
+    "Joshua 3-4",
+    "Psalm 114"
+   ],
+   "places": [
+    "shittim",
+    "adam",
+    "gilgal-1"
+   ],
+   "summary": "At harvest flood, as soon as the priests carrying the ark step into the Jordan, the waters stop and stand in a heap far upstream at Adam. Israel crosses on dry ground, and twelve stones from the river are set up at Gilgal as a memorial.",
+   "date": "10th day of the 1st month, 41st year (Joshua 4:19)"
+  },
+  {
+   "id": "e-gilgal",
+   "title": "Passover at Gilgal; the manna stops",
+   "year": -1405.9639,
+   "certainty": "calculated",
+   "refs": [
+    "Joshua 5"
+   ],
+   "places": [
+    "gilgal-1"
+   ],
+   "summary": "The new generation is circumcised and keeps the Passover in the land. The next day the manna stops. Near Jericho Joshua meets the commander of the army of the LORD and is told to remove his sandals, for the place is holy.",
+   "date": "14th day of the 1st month, 41st year (Joshua 5:10)"
+  },
+  {
+   "id": "e-jericho",
+   "title": "The fall of Jericho",
+   "year": -1405.9333,
+   "certainty": "approx",
+   "refs": [
+    "Joshua 2",
+    "Joshua 6",
+    "Hebrews 11:30-31",
+    "James 2:25"
+   ],
+   "places": [
+    "jericho-1"
+   ],
+   "summary": "Israel marches around Jericho once a day for six days and seven times on the seventh. At the trumpet blast and the shout, the wall falls down flat. Rahab, who hid the spies, is spared with her family, and later appears in the line of Jesus (Matthew 1:5).",
+   "evidence": "Archaeologists disagree about Jericho. John Garstang (1930s) and Bryant Wood (1990) dated a destroyed, burned city with collapsed walls to about 1400 BC; Kathleen Kenyon (1950s) dated that destruction to about 1550 BC. The debate continues."
+  },
+  {
+   "id": "e-ai",
+   "title": "Achan's sin; Ai taken",
+   "year": -1405.8917,
+   "certainty": "approx",
+   "refs": [
+    "Joshua 7-8:29"
+   ],
+   "places": [
+    "ai-1",
+    "bethel-1"
+   ],
+   "summary": "Israel is routed at Ai because Achan secretly kept plunder devoted to the LORD. After his sin is exposed and judged, Joshua takes Ai by ambush.",
+   "note": "Et-Tell, the usual identification of Ai, was unoccupied at this time; some evangelical archaeologists favour other sites such as Khirbet el-Maqatir."
+  },
+  {
+   "id": "e-ebal",
+   "title": "The covenant renewed at Mount Ebal",
+   "year": -1405.8639,
+   "certainty": "approx",
+   "refs": [
+    "Joshua 8:30-35",
+    "Deuteronomy 27"
+   ],
+   "places": [
+    "mount-ebal",
+    "mount-gerizim",
+    "shechem"
+   ],
+   "summary": "As Moses commanded, Joshua builds an altar on Mount Ebal and reads all the words of the law, the blessings and the curses, before the whole assembly standing on Mount Ebal and Mount Gerizim.",
+   "evidence": "Adam Zertal excavated a large stone structure on Mount Ebal in the 1980s, which he identified as Joshua's altar; other archaeologists disagree."
+  },
+  {
+   "id": "e-gibeon",
+   "title": "Gibeon's treaty; the sun stands still",
+   "year": -1405.7944,
+   "certainty": "approx",
+   "refs": [
+    "Joshua 9-10",
+    "Joshua 10:12-14"
+   ],
+   "places": [
+    "gibeon",
+    "beth-horon",
+    "valley-of-aijalon",
+    "makkedah",
+    "libnah-1",
+    "lachish",
+    "eglon",
+    "hebron",
+    "debir-1",
+    "jerusalem"
+   ],
+   "summary": "The Gibeonites trick Israel into a treaty. When five Amorite kings led by Adoni-zedek of Jerusalem attack Gibeon, Joshua marches all night, the LORD fights for Israel, and the sun stands still over Gibeon. The southern cities fall one by one."
+  },
+  {
+   "id": "e-hazor",
+   "title": "Northern campaign: Hazor burned",
+   "year": -1403,
+   "certainty": "approx",
+   "refs": [
+    "Joshua 11:1-15"
+   ],
+   "places": [
+    "waters-of-merom",
+    "hazor-1"
+   ],
+   "summary": "Jabin king of Hazor gathers the northern kings at the waters of Merom with horses and chariots as many as the sand on the seashore. Joshua surprises them, and burns Hazor, the head of all those kingdoms.",
+   "evidence": "Hazor's Late Bronze Age city was destroyed by a great fire. Its excavators date this to the 13th century BC, which supporters of the late date cite; supporters of the early date link Joshua's burning to an earlier layer."
+  },
+  {
+   "id": "e-caleb",
+   "title": "Caleb receives Hebron",
+   "year": -1400,
+   "certainty": "calculated",
+   "refs": [
+    "Joshua 14:6-15",
+    "Joshua 15:13-19"
+   ],
+   "places": [
+    "hebron",
+    "debir-1",
+    "gilgal-1"
+   ],
+   "summary": "At 85 and as strong as ever, Caleb asks for the hill country God promised him 45 years earlier. He drives out the sons of Anak from Hebron, and his nephew Othniel takes Debir.",
+   "date": "45 years after the spies (Joshua 14:10)"
+  },
+  {
+   "id": "e-shiloh",
+   "title": "The tabernacle at Shiloh; the land divided",
+   "year": -1399,
+   "certainty": "approx",
+   "refs": [
+    "Joshua 18:1-10",
+    "Joshua 19:51"
+   ],
+   "places": [
+    "shiloh",
+    "gilgal-1"
+   ],
+   "summary": "The whole congregation assembles at Shiloh and sets up the tent of meeting there. Joshua sends out surveyors and casts lots before the LORD for the seven tribes still without an inheritance."
+  },
+  {
+   "id": "e-refuge",
+   "title": "Cities of refuge and Levite towns",
+   "year": -1398,
+   "certainty": "approx",
+   "refs": [
+    "Joshua 20-21",
+    "Numbers 35:9-34",
+    "Hebrews 6:18"
+   ],
+   "places": [
+    "kedesh-1",
+    "shechem",
+    "hebron",
+    "bezer",
+    "ramoth-gilead",
+    "golan"
+   ],
+   "summary": "Six cities of refuge are set apart, three on each side of the Jordan, and the Levites receive 48 towns among all the tribes. \"Not one word of all the good promises that the LORD had made to the house of Israel had failed; all came to pass\" (Joshua 21:45)."
+  },
+  {
+   "id": "e-altar-ed",
+   "title": "The altar by the Jordan",
+   "year": -1398,
+   "certainty": "approx",
+   "refs": [
+    "Joshua 22"
+   ],
+   "places": [
+    "shiloh",
+    "gilgal-1"
+   ],
+   "summary": "The eastern tribes return home and build a large altar by the Jordan. The other tribes nearly go to war, until they learn it is a witness that the eastern tribes also belong to the LORD, not an altar for sacrifice."
+  },
+  {
+   "id": "e-joshua-farewell",
+   "title": "\"As for me and my house\"",
+   "year": -1382,
+   "certainty": "approx",
+   "refs": [
+    "Joshua 23-24:28"
+   ],
+   "places": [
+    "shechem"
+   ],
+   "summary": "In old age Joshua gathers the tribes at Shechem, recounts all God has done from Abraham onward, and calls them to choose whom they will serve: \"But as for me and my house, we will serve the LORD.\" The people renew the covenant."
+  },
+  {
+   "id": "e-joshua-dies",
+   "title": "Joshua dies; Joseph's bones buried",
+   "year": -1380,
+   "certainty": "approx",
+   "refs": [
+    "Joshua 24:29-33",
+    "Genesis 50:24-25",
+    "Hebrews 11:22"
+   ],
+   "places": [
+    "timnath-heres",
+    "shechem"
+   ],
+   "summary": "Joshua dies at 110 and is buried at Timnath-serah. The bones of Joseph, carried out of Egypt as he had asked, are buried at Shechem. The promise to Abraham's family has come full circle.",
+   "note": "The year of Joshua's death is not given in Scripture."
+  },
+  {
+   "id": "e-dan",
+   "title": "Dan moves north to Laish",
+   "year": -1370,
+   "certainty": "disputed",
+   "refs": [
+    "Joshua 19:47",
+    "Judges 1:34",
+    "Judges 18"
+   ],
+   "places": [
+    "zorah",
+    "eshtaol",
+    "dan"
+   ],
+   "summary": "Unable to hold its allotted land against the Amorites, the tribe of Dan sends spies from Zorah and Eshtaol, captures the quiet city of Laish in the far north, and renames it Dan. With this, every tribe has its home.",
+   "note": "Judges 18 is undated. Because the priest there is Moses' grandson (Judges 18:30), it is usually placed early in the time of the judges."
+  }
+ ]
+}

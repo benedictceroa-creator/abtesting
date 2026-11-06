@@ -1,0 +1,896 @@
+[
+ {
+  "id": "abel-meholah",
+  "name": "Abel-meholah",
+  "lat": 32.3743,
+  "lon": 35.56089,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 656,
+  "site": "Tell Abu Sus",
+  "alternatives": [],
+  "verseCount": 3,
+  "source": "https://www.openbible.info/geo/ancient/a5a1bdd/abel-meholah"
+ },
+ {
+  "id": "ahava",
+  "name": "Ahava",
+  "lat": 32.54333,
+  "lon": 44.42222,
+  "types": [
+   "canal",
+   "settlement"
+  ],
+  "confidence": 708,
+  "site": "within 250 km of Babylon 1",
+  "alternatives": [],
+  "verseCount": 3,
+  "source": "https://www.openbible.info/geo/ancient/a6c3859/ahava"
+ },
+ {
+  "id": "anathoth",
+  "name": "Anathoth",
+  "lat": 31.80752,
+  "lon": 35.25758,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 420,
+  "site": "Ras el Kharruba",
+  "alternatives": [
+   {
+    "site": "Anata",
+    "confidence": 216,
+    "lat": 31.81319,
+    "lon": 35.26187
+   },
+   {
+    "site": "Khirbet Deir es Sidd",
+    "confidence": 105,
+    "lat": 31.81092,
+    "lon": 35.2756
+   }
+  ],
+  "verseCount": 18,
+  "source": "https://www.openbible.info/geo/ancient/ab34789/anathoth"
+ },
+ {
+  "id": "aphek-3",
+  "name": "Aphek",
+  "lat": 32.78368,
+  "lon": 35.63729,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 435,
+  "site": "Tel Ein Gev",
+  "alternatives": [
+   {
+    "site": "Fiq",
+    "confidence": 245,
+    "lat": 32.76667,
+    "lon": 35.7
+   }
+  ],
+  "verseCount": 3,
+  "source": "https://www.openbible.info/geo/ancient/a6fc60d/aphek-3"
+ },
+ {
+  "id": "ashdod",
+  "name": "Ashdod",
+  "lat": 31.7572,
+  "lon": 34.6578,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Tel Ashdod",
+  "alternatives": [],
+  "verseCount": 21,
+  "source": "https://www.openbible.info/geo/ancient/a30c937/ashdod"
+ },
+ {
+  "id": "babylon-1",
+  "name": "Babylon",
+  "lat": 32.54333,
+  "lon": 44.42222,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Babylon",
+  "alternatives": [],
+  "verseCount": 296,
+  "source": "https://www.openbible.info/geo/ancient/a217d18/babylon-1"
+ },
+ {
+  "id": "beersheba-1",
+  "name": "Beersheba",
+  "lat": 31.24472,
+  "lon": 34.84083,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 823,
+  "site": "Tel Beer Sheva",
+  "alternatives": [],
+  "verseCount": 23,
+  "source": "https://www.openbible.info/geo/ancient/ad2f6c2/beersheba-1"
+ },
+ {
+  "id": "beth-zur",
+  "name": "Beth-zur",
+  "lat": 31.58938,
+  "lon": 35.09416,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 842,
+  "site": "Khirbet et Tubeiqa",
+  "alternatives": [],
+  "verseCount": 4,
+  "source": "https://www.openbible.info/geo/ancient/addba2a/beth-zur"
+ },
+ {
+  "id": "bethel-1",
+  "name": "Bethel",
+  "lat": 31.92278,
+  "lon": 35.24139,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 716,
+  "site": "Beitin",
+  "alternatives": [
+   {
+    "site": "Al Bira",
+    "confidence": 99,
+    "lat": 31.90514,
+    "lon": 35.21496
+   }
+  ],
+  "verseCount": 69,
+  "source": "https://www.openbible.info/geo/ancient/a64f355/bethel-1"
+ },
+ {
+  "id": "cherith",
+  "name": "Brook Cherith",
+  "lat": 32.39472,
+  "lon": 35.59139,
+  "types": [
+   "settlement",
+   "wadi"
+  ],
+  "confidence": 335,
+  "site": "Wadi al Yabis",
+  "alternatives": [
+   {
+    "site": "Wadi Qelt",
+    "confidence": 182,
+    "lat": 31.8443,
+    "lon": 35.4143
+   },
+   {
+    "site": "Khirbet Fasayil",
+    "confidence": 56,
+    "lat": 32.02819,
+    "lon": 35.44124
+   }
+  ],
+  "verseCount": 2,
+  "source": "https://www.openbible.info/geo/ancient/aa7bee8/cherith"
+ },
+ {
+  "id": "carchemish",
+  "name": "Carchemish",
+  "lat": 36.82972,
+  "lon": 38.015,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 880,
+  "site": "Jerabis",
+  "alternatives": [],
+  "verseCount": 3,
+  "source": "https://www.openbible.info/geo/ancient/af6c730/carchemish"
+ },
+ {
+  "id": "chebar",
+  "name": "Chebar Canal",
+  "lat": 32.12694,
+  "lon": 45.23083,
+  "types": [
+   "river"
+  ],
+  "confidence": 696,
+  "site": "Shatt en Nil",
+  "alternatives": [],
+  "verseCount": 8,
+  "source": "https://www.openbible.info/geo/ancient/a3d2f0a/chebar"
+ },
+ {
+  "id": "damascus",
+  "name": "Damascus",
+  "lat": 33.51111,
+  "lon": 36.30639,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Damascus",
+  "alternatives": [],
+  "verseCount": 58,
+  "source": "https://www.openbible.info/geo/ancient/a69c1d4/damascus"
+ },
+ {
+  "id": "dan",
+  "name": "Dan",
+  "lat": 33.249,
+  "lon": 35.652,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Tel Dan",
+  "alternatives": [],
+  "verseCount": 25,
+  "source": "https://www.openbible.info/geo/ancient/a513646/dan"
+ },
+ {
+  "id": "dothan",
+  "name": "Dothan",
+  "lat": 32.41353,
+  "lon": 35.23986,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 877,
+  "site": "Tel Dotan",
+  "alternatives": [],
+  "verseCount": 2,
+  "source": "https://www.openbible.info/geo/ancient/ab635e4/dothan"
+ },
+ {
+  "id": "ecbatana",
+  "name": "Ecbatana",
+  "lat": 34.8065,
+  "lon": 48.51625,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Tell Hagmatana",
+  "alternatives": [],
+  "verseCount": 1,
+  "source": "https://www.openbible.info/geo/ancient/a212ef7/ecbatana"
+ },
+ {
+  "id": "elath",
+  "name": "Elath",
+  "lat": 29.53068,
+  "lon": 35.0,
+  "types": [
+   "island",
+   "settlement"
+  ],
+  "confidence": 527,
+  "site": "Aqaba",
+  "alternatives": [
+   {
+    "site": "Tell el Kheleifeh",
+    "confidence": 103,
+    "lat": 29.54718,
+    "lon": 34.98026
+   },
+   {
+    "site": "another name for Ezion-geber",
+    "confidence": 78,
+    "lat": 29.46284,
+    "lon": 34.86005
+   }
+  ],
+  "verseCount": 6,
+  "source": "https://www.openbible.info/geo/ancient/af0ac29/elath"
+ },
+ {
+  "id": "gath-hepher",
+  "name": "Gath-hepher",
+  "lat": 32.73806,
+  "lon": 35.31972,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 789,
+  "site": "Tel Gat Hefer",
+  "alternatives": [],
+  "verseCount": 2,
+  "source": "https://www.openbible.info/geo/ancient/ac51cec/gath-hepher"
+ },
+ {
+  "id": "gaza",
+  "name": "Gaza",
+  "lat": 31.504,
+  "lon": 34.4644,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Tell Harube",
+  "alternatives": [],
+  "verseCount": 22,
+  "source": "https://www.openbible.info/geo/ancient/aa8edd2/gaza"
+ },
+ {
+  "id": "gibbethon",
+  "name": "Gibbethon",
+  "lat": 31.85639,
+  "lon": 34.86556,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 530,
+  "site": "Tell Melat",
+  "alternatives": [
+   {
+    "site": "Ras Abu Hamid",
+    "confidence": 179,
+    "lat": 31.90302,
+    "lon": 34.88994
+   }
+  ],
+  "verseCount": 5,
+  "source": "https://www.openbible.info/geo/ancient/a6f048c/gibbethon"
+ },
+ {
+  "id": "gozan",
+  "name": "Gozan",
+  "lat": 36.82679,
+  "lon": 40.03967,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 829,
+  "site": "Tell Halaf",
+  "alternatives": [],
+  "verseCount": 5,
+  "source": "https://www.openbible.info/geo/ancient/a924b16/gozan"
+ },
+ {
+  "id": "halah",
+  "name": "Halah",
+  "lat": 36.43173,
+  "lon": 43.19459,
+  "types": [
+   "region",
+   "settlement"
+  ],
+  "confidence": 710,
+  "site": "about 60 km around Halahha",
+  "alternatives": [
+   {
+    "site": "within 10 km of Gozan",
+    "confidence": 92,
+    "lat": 36.82679,
+    "lon": 40.03967
+   },
+   {
+    "site": "along the Habor",
+    "confidence": 59,
+    "lat": 35.1303,
+    "lon": 40.42728
+   },
+   {
+    "site": "another name for Calah",
+    "confidence": 50,
+    "lat": 36.09806,
+    "lon": 43.32889
+   }
+  ],
+  "verseCount": 4,
+  "source": "https://www.openbible.info/geo/ancient/abf176f/halah"
+ },
+ {
+  "id": "hamath-1",
+  "name": "Hamath",
+  "lat": 35.1365,
+  "lon": 36.75,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 957,
+  "site": "Hama",
+  "alternatives": [],
+  "verseCount": 21,
+  "source": "https://www.openbible.info/geo/ancient/ac62cbc/hamath-1"
+ },
+ {
+  "id": "jericho-1",
+  "name": "Jericho",
+  "lat": 31.87172,
+  "lon": 35.44456,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Tell es Sultan",
+  "alternatives": [],
+  "verseCount": 63,
+  "source": "https://www.openbible.info/geo/ancient/a231f80/jericho-1"
+ },
+ {
+  "id": "jerusalem",
+  "name": "Jerusalem",
+  "lat": 31.77667,
+  "lon": 35.23417,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Jerusalem",
+  "alternatives": [],
+  "verseCount": 955,
+  "source": "https://www.openbible.info/geo/ancient/a15257a/jerusalem"
+ },
+ {
+  "id": "jezreel-2",
+  "name": "Jezreel",
+  "lat": 32.55785,
+  "lon": 35.32795,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 806,
+  "site": "Tel Yizre’el",
+  "alternatives": [],
+  "verseCount": 29,
+  "source": "https://www.openbible.info/geo/ancient/ae0bf4a/jezreel-2"
+ },
+ {
+  "id": "joppa",
+  "name": "Joppa",
+  "lat": 32.05448,
+  "lon": 34.75304,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Jaffa",
+  "alternatives": [],
+  "verseCount": 14,
+  "source": "https://www.openbible.info/geo/ancient/ae023a9/joppa"
+ },
+ {
+  "id": "kir-hareseth",
+  "name": "Kir-hareseth",
+  "lat": 31.18056,
+  "lon": 35.70139,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 805,
+  "site": "Kerak",
+  "alternatives": [],
+  "verseCount": 5,
+  "source": "https://www.openbible.info/geo/ancient/ab55371/kir-hareseth"
+ },
+ {
+  "id": "lachish",
+  "name": "Lachish",
+  "lat": 31.56528,
+  "lon": 34.84917,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Tell ed Duweir",
+  "alternatives": [],
+  "verseCount": 22,
+  "source": "https://www.openbible.info/geo/ancient/a3cc590/lachish"
+ },
+ {
+  "id": "lebo-hamath",
+  "name": "Lebo-hamath",
+  "lat": 34.19491,
+  "lon": 36.34956,
+  "types": [
+   "settlement",
+   "special"
+  ],
+  "confidence": 738,
+  "site": "Labweh",
+  "alternatives": [],
+  "verseCount": 12,
+  "source": "https://www.openbible.info/geo/ancient/a5eb047/lebo-hamath"
+ },
+ {
+  "id": "libnah-1",
+  "name": "Libnah",
+  "lat": 31.6299,
+  "lon": 34.87347,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 381,
+  "site": "Tell Bornat",
+  "alternatives": [
+   {
+    "site": "Tel Goded",
+    "confidence": 94,
+    "lat": 31.63336,
+    "lon": 34.91661
+   },
+   {
+    "site": "Tel el Beida",
+    "confidence": 92,
+    "lat": 31.64207,
+    "lon": 34.95302
+   },
+   {
+    "site": "Tel Zayit",
+    "confidence": 55,
+    "lat": 31.6292,
+    "lon": 34.8303
+   }
+  ],
+  "verseCount": 16,
+  "source": "https://www.openbible.info/geo/ancient/a97b595/libnah-1"
+ },
+ {
+  "id": "megiddo",
+  "name": "Megiddo",
+  "lat": 32.58528,
+  "lon": 35.18444,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Tel Megiddo",
+  "alternatives": [],
+  "verseCount": 12,
+  "source": "https://www.openbible.info/geo/ancient/a8554e3/megiddo"
+ },
+ {
+  "id": "mizpah-3",
+  "name": "Mizpah",
+  "lat": 31.88514,
+  "lon": 35.21642,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 781,
+  "site": "Tell en Nasbeh",
+  "alternatives": [
+   {
+    "site": "Nabi Samwil",
+    "confidence": 51,
+    "lat": 31.83273,
+    "lon": 35.18015
+   }
+  ],
+  "verseCount": 32,
+  "source": "https://www.openbible.info/geo/ancient/a736f6c/mizpah-3"
+ },
+ {
+  "id": "moresheth-gath",
+  "name": "Moresheth-gath",
+  "lat": 31.63336,
+  "lon": 34.91661,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 467,
+  "site": "Tel Goded",
+  "alternatives": [],
+  "verseCount": 3,
+  "source": "https://www.openbible.info/geo/ancient/a6ac675/moresheth-gath"
+ },
+ {
+  "id": "mount-carmel",
+  "name": "Mount Carmel",
+  "lat": 32.6725,
+  "lon": 35.02333,
+  "types": [
+   "mountain"
+  ],
+  "confidence": 1000,
+  "site": "Mount Carmel",
+  "alternatives": [],
+  "verseCount": 18,
+  "source": "https://www.openbible.info/geo/ancient/a3e21c6/mount-carmel"
+ },
+ {
+  "id": "mount-sinai",
+  "name": "Mount Horeb (Sinai)",
+  "lat": 28.53972,
+  "lon": 33.97333,
+  "types": [
+   "mountain"
+  ],
+  "confidence": 465,
+  "site": "Jebel Musa",
+  "alternatives": [
+   {
+    "site": "Har Karkom",
+    "confidence": 103,
+    "lat": 30.28333,
+    "lon": 34.75
+   },
+   {
+    "site": "Jebel Sin Bishar",
+    "confidence": 89,
+    "lat": 29.671,
+    "lon": 32.961
+   },
+   {
+    "site": "Ras es Safsafeh",
+    "confidence": 55,
+    "lat": 28.55556,
+    "lon": 33.96722
+   }
+  ],
+  "verseCount": 30,
+  "source": "https://www.openbible.info/geo/ancient/abfba2a/mount-sinai"
+ },
+ {
+  "id": "nineveh",
+  "name": "Nineveh",
+  "lat": 36.3594,
+  "lon": 43.1528,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Nineveh",
+  "alternatives": [],
+  "verseCount": 30,
+  "source": "https://www.openbible.info/geo/ancient/a70fd5d/nineveh"
+ },
+ {
+  "id": "ono",
+  "name": "Ono",
+  "lat": 32.02722,
+  "lon": 34.86806,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 758,
+  "site": "Kafr Ana",
+  "alternatives": [],
+  "verseCount": 5,
+  "source": "https://www.openbible.info/geo/ancient/ae6bfe2/ono"
+ },
+ {
+  "id": "penuel",
+  "name": "Penuel",
+  "lat": 32.18702,
+  "lon": 35.69211,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 694,
+  "site": "Tell edh Dhahab esh Sherqiyeh",
+  "alternatives": [
+   {
+    "site": "Tell edh Dhahab el Gharbi",
+    "confidence": 61,
+    "lat": 32.18575,
+    "lon": 35.68667
+   }
+  ],
+  "verseCount": 6,
+  "source": "https://www.openbible.info/geo/ancient/a8a9ff9/penuel"
+ },
+ {
+  "id": "ramoth-gilead",
+  "name": "Ramoth-gilead",
+  "lat": 32.49985,
+  "lon": 36.01499,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 808,
+  "site": "Tall er Rumeith",
+  "alternatives": [],
+  "verseCount": 20,
+  "source": "https://www.openbible.info/geo/ancient/a2fe63c/ramoth-gilead"
+ },
+ {
+  "id": "riblah-1",
+  "name": "Riblah",
+  "lat": 34.45955,
+  "lon": 36.57262,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 948,
+  "site": "Rableh",
+  "alternatives": [],
+  "verseCount": 11,
+  "source": "https://www.openbible.info/geo/ancient/ab2bde8/riblah-1"
+ },
+ {
+  "id": "samaria-1",
+  "name": "Samaria",
+  "lat": 32.27611,
+  "lon": 35.195,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Samaria",
+  "alternatives": [],
+  "verseCount": 113,
+  "source": "https://www.openbible.info/geo/ancient/a041bb3/samaria-1"
+ },
+ {
+  "id": "shechem",
+  "name": "Shechem",
+  "lat": 32.21361,
+  "lon": 35.28194,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Tell Balatah",
+  "alternatives": [],
+  "verseCount": 45,
+  "source": "https://www.openbible.info/geo/ancient/adf74d4/shechem"
+ },
+ {
+  "id": "shunem",
+  "name": "Shunem",
+  "lat": 32.60563,
+  "lon": 35.33431,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Sulam",
+  "alternatives": [],
+  "verseCount": 9,
+  "source": "https://www.openbible.info/geo/ancient/ac86af5/shunem"
+ },
+ {
+  "id": "sidon",
+  "name": "Sidon",
+  "lat": 33.56099,
+  "lon": 35.37194,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Sandikli archaeological site in Sidon",
+  "alternatives": [],
+  "verseCount": 37,
+  "source": "https://www.openbible.info/geo/ancient/a98e4d7/sidon"
+ },
+ {
+  "id": "susa",
+  "name": "Susa (Shushan)",
+  "lat": 32.18922,
+  "lon": 48.25778,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Shush",
+  "alternatives": [],
+  "verseCount": 20,
+  "source": "https://www.openbible.info/geo/ancient/a033b84/susa"
+ },
+ {
+  "id": "tahpanhes",
+  "name": "Tahpanhes",
+  "lat": 30.86056,
+  "lon": 32.17139,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Tell Defenneh",
+  "alternatives": [],
+  "verseCount": 7,
+  "source": "https://www.openbible.info/geo/ancient/adb008c/tahpanhes"
+ },
+ {
+  "id": "tarshish-1",
+  "name": "Tarshish",
+  "lat": 37.27194,
+  "lon": -6.94417,
+  "types": [
+   "island",
+   "region",
+   "settlement",
+   "special"
+  ],
+  "confidence": 418,
+  "site": "another name for Tartessos",
+  "alternatives": [
+   {
+    "site": "Sardinia",
+    "confidence": 165,
+    "lat": 40.05,
+    "lon": 9.08333
+   },
+   {
+    "site": "another name for Carthage",
+    "confidence": 51,
+    "lat": 36.85256,
+    "lon": 10.32346
+   }
+  ],
+  "verseCount": 16,
+  "source": "https://www.openbible.info/geo/ancient/a5f43dd/tarshish-1"
+ },
+ {
+  "id": "tekoa",
+  "name": "Tekoa",
+  "lat": 31.63247,
+  "lon": 35.21048,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Khirbet Teku’a",
+  "alternatives": [],
+  "verseCount": 14,
+  "source": "https://www.openbible.info/geo/ancient/a2e3aa0/tekoa"
+ },
+ {
+  "id": "thebes",
+  "name": "Thebes (No-Amon)",
+  "lat": 25.72056,
+  "lon": 32.61028,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Thebes",
+  "alternatives": [],
+  "verseCount": 6,
+  "source": "https://www.openbible.info/geo/ancient/a9674fc/thebes"
+ },
+ {
+  "id": "tirzah",
+  "name": "Tirzah",
+  "lat": 32.2874,
+  "lon": 35.3378,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 834,
+  "site": "Tell el Farah",
+  "alternatives": [],
+  "verseCount": 13,
+  "source": "https://www.openbible.info/geo/ancient/a80d317/tirzah"
+ },
+ {
+  "id": "tyre",
+  "name": "Tyre",
+  "lat": 33.27083,
+  "lon": 35.19611,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Tyre",
+  "alternatives": [],
+  "verseCount": 64,
+  "source": "https://www.openbible.info/geo/ancient/a160272/tyre"
+ },
+ {
+  "id": "zarephath",
+  "name": "Zarephath",
+  "lat": 33.46423,
+  "lon": 35.29514,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Sarepta",
+  "alternatives": [],
+  "verseCount": 4,
+  "source": "https://www.openbible.info/geo/ancient/a6fa2d3/zarephath"
+ }
+]

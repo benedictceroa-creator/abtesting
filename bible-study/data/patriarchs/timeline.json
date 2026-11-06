@@ -1,0 +1,1358 @@
+{
+ "meta": {
+  "title": "Abraham to the Exodus",
+  "range": [
+   -2180,
+   -1440
+  ],
+  "lanes": [
+   {
+    "key": "periods",
+    "label": "Periods",
+    "type": "stage",
+    "color": "#8C6A3E",
+    "kind": "Period"
+   },
+   {
+    "key": "patriarchs",
+    "label": "Patriarchs & Moses",
+    "type": "leader",
+    "color": "#2F7F86",
+    "kind": "Patriarch"
+   },
+   {
+    "key": "family",
+    "label": "Their families",
+    "type": "leader",
+    "color": "#6E5A8C",
+    "kind": "Family of the patriarchs"
+   },
+   {
+    "key": "nations",
+    "label": "Nations & rulers",
+    "type": "ruler",
+    "kind": "Neighbouring power"
+   },
+   {
+    "key": "events",
+    "label": "Key events",
+    "type": "event",
+    "kind": "Event"
+   }
+  ],
+  "phases": [
+   {
+    "label": "Whole story",
+    "range": [
+     -2180,
+     -1440
+    ]
+   },
+   {
+    "label": "Abraham",
+    "range": [
+     -2105,
+     -2020
+    ]
+   },
+   {
+    "label": "Isaac",
+    "range": [
+     -2035,
+     -1925
+    ]
+   },
+   {
+    "label": "Jacob",
+    "range": [
+     -1935,
+     -1880
+    ]
+   },
+   {
+    "label": "Joseph",
+    "range": [
+     -1902,
+     -1800
+    ]
+   },
+   {
+    "label": "Slavery & Moses",
+    "range": [
+     -1600,
+     -1440
+    ]
+   }
+  ],
+  "defaultPhase": "Abraham",
+  "chronology": "Dates are counted back from the early date of the Exodus, 1446 BC (1 Kings 6:1). Israel lived in Egypt 430 years (Exodus 12:40-41), so Jacob went down to Egypt in 1876 BC, aged 130 (Genesis 47:9). From there the ages Genesis gives fix the rest: Isaac was 60 when Jacob was born (Genesis 25:26) and Abraham 100 when Isaac was born (Genesis 21:5). Events Genesis does not date are placed in the order the text gives them.",
+  "chronologyShort": "Counted back from the Exodus, 1446 BC, with 430 years in Egypt (Exodus 12:40).",
+  "status": "DRAFT: awaiting theological review",
+  "alternative": "Some evangelical scholars follow the Greek Septuagint and Samaritan Pentateuch of Exodus 12:40, which count the 430 years from Abraham's arrival in Canaan to the Exodus (compare Galatians 3:17). On that view Israel was in Egypt about 215 years, and every date on this page before Moses moves 215 years later (Abraham born about 1951 BC, Jacob to Egypt about 1661 BC). On the late date of the Exodus (about 1260 BC), all the dates move about 180 years later again. The order of events and the ages in Genesis stay the same on every view.",
+  "introTitle": "Follow Abraham's family from Ur to Egypt"
+ },
+ "certainty": {
+  "fixed": "Fixed: confirmed by a dated record outside the Bible.",
+  "calculated": "Calculated: worked out from the ages and years Genesis and Exodus give, counting back from the early date of the Exodus (1446 BC) with 430 years in Egypt.",
+  "approx": "Approximate: the Bible places it in sequence but gives no exact date. Dates of other nations follow standard Egyptian and Mesopotamian chronologies, which can vary by a few decades.",
+  "disputed": "Disputed: Bible-believing scholars hold different views."
+ },
+ "periods": [
+  {
+   "id": "ur-haran",
+   "name": "From Ur to Haran",
+   "start": -2180,
+   "end": -2091,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 11:27-32",
+    "Acts 7:2-4",
+    "Joshua 24:2-3"
+   ],
+   "places": [
+    "ur-1",
+    "haran"
+   ],
+   "summary": "Abram grows up in Ur of the Chaldeans, a great city of southern Mesopotamia. His father Terah's family served other gods (Joshua 24:2). The God of glory appears to Abram while he is still in Mesopotamia, and the family travels up the Euphrates to Haran.",
+   "basis": "Abram was born in 2166 BC and left Haran at 75 (Genesis 12:4). The bar is cut off at the left edge of the timeline."
+  },
+  {
+   "id": "canaan",
+   "name": "Sojourners in Canaan",
+   "start": -2091,
+   "end": -1876,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 12:1-9",
+    "Genesis 47:9",
+    "Hebrews 11:8-16",
+    "Galatians 3:17"
+   ],
+   "places": [
+    "shechem",
+    "bethel-1",
+    "hebron",
+    "beersheba-1"
+   ],
+   "summary": "For 215 years Abraham, Isaac and Jacob live in the land God promised them as strangers and tent-dwellers, owning only a burial cave and a field. Hebrews says they were looking for a better country, a heavenly one, and so God is not ashamed to be called their God.",
+   "basis": "From Abram's arrival at 75 (Genesis 12:4) to Jacob's move to Egypt at 130 (Genesis 47:9): 25 + 60 + 130 = 215 years."
+  },
+  {
+   "id": "jacob-haran",
+   "name": "Jacob in Haran",
+   "start": -1929,
+   "end": -1909,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 29-31",
+    "Genesis 31:38-41"
+   ],
+   "places": [
+    "haran"
+   ],
+   "summary": "Jacob serves his uncle Laban twenty years: fourteen for Leah and Rachel and six for his flocks. Eleven of his twelve sons are born there.",
+   "basis": "Twenty years (Genesis 31:38, 41). Jacob's age when he arrived (77) is worked out from Joseph's age; see the event \"Jacob takes the blessing\"."
+  },
+  {
+   "id": "egypt",
+   "name": "Israel in Egypt",
+   "start": -1876,
+   "end": -1446,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 15:13-14",
+    "Genesis 46:1-7",
+    "Exodus 1:1-14",
+    "Exodus 12:40-41",
+    "Acts 7:6"
+   ],
+   "places": [
+    "goshen-1",
+    "rameses",
+    "pithom"
+   ],
+   "summary": "Jacob's family of seventy goes down to Egypt in the famine and settles in Goshen under Joseph's protection. There they become a great nation, until a new king who does not know Joseph makes them slaves. God had told Abraham his offspring would be afflicted in a land not theirs, and then come out with great possessions.",
+   "basis": "430 years, ending \"on that very day\" with the Exodus (Exodus 12:40-41). Genesis 15:13 and Acts 7:6 round this to 400.",
+   "note": "The Septuagint and Samaritan Pentateuch read Exodus 12:40 as the time in Egypt and Canaan together, giving about 215 years in Egypt. See \"How sure are the dates?\" on the start panel."
+  }
+ ],
+ "patriarchs": [
+  {
+   "id": "abraham",
+   "name": "Abraham",
+   "start": -2166,
+   "end": -1991,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 11:26-25:11",
+    "Romans 4:1-25",
+    "Galatians 3:6-9",
+    "Hebrews 11:8-19",
+    "James 2:21-23"
+   ],
+   "places": [
+    "ur-1",
+    "haran",
+    "shechem",
+    "bethel-1",
+    "mamre",
+    "beersheba-1",
+    "moriah",
+    "machpelah"
+   ],
+   "summary": "Called by God to leave his country for a land he would be shown, Abraham believed the LORD, who counted it to him as righteousness (Genesis 15:6). God promised him a land, countless offspring, and that in him all the families of the earth would be blessed: the gospel announced beforehand (Galatians 3:8). He is called the friend of God and the father of all who believe.",
+   "basis": "75 when he left Haran (Genesis 12:4), 86 at Ishmael's birth (16:16), 99 at the covenant of circumcision (17:1), 100 at Isaac's birth (21:5), died aged 175 (25:7)."
+  },
+  {
+   "id": "isaac",
+   "name": "Isaac",
+   "start": -2066,
+   "end": -1886,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 21:1-7",
+    "Genesis 22",
+    "Genesis 24-27",
+    "Genesis 35:27-29",
+    "Hebrews 11:17-20"
+   ],
+   "places": [
+    "beer-lahai-roi",
+    "moriah",
+    "gerar",
+    "beersheba-1",
+    "mamre",
+    "machpelah"
+   ],
+   "summary": "The son of promise, born when Abraham was 100 and Sarah 90. He was bound on the altar at Moriah and spared when God provided a ram. The covenant passed to him (Genesis 26:3-5). He lived in the Negeb, digging again his father's wells, and blessed Jacob and Esau.",
+   "basis": "Abraham was 100 at his birth (Genesis 21:5); Isaac was 40 at his marriage (25:20), 60 when the twins were born (25:26), and died aged 180 (35:28)."
+  },
+  {
+   "id": "jacob",
+   "name": "Jacob (Israel)",
+   "start": -2006,
+   "end": -1859,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 25:19-34",
+    "Genesis 27-35",
+    "Genesis 46-50",
+    "Hosea 12:2-4",
+    "Malachi 1:2-3",
+    "Romans 9:10-13"
+   ],
+   "places": [
+    "beersheba-1",
+    "bethel-1",
+    "haran",
+    "penuel",
+    "shechem",
+    "goshen-1",
+    "machpelah"
+   ],
+   "summary": "The younger twin, chosen before birth (Romans 9:11-13). He took Esau's blessing by deceit and fled to Haran, met God at Bethel, served Laban twenty years, and wrestled with God at Peniel, where he was named Israel. His twelve sons became the tribes of Israel.",
+   "basis": "Isaac was 60 at his birth (Genesis 25:26); he was 130 when he stood before Pharaoh (47:9) and died at 147 after 17 years in Egypt (47:28)."
+  },
+  {
+   "id": "joseph",
+   "name": "Joseph",
+   "start": -1915,
+   "end": -1805,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 37",
+    "Genesis 39-50",
+    "Psalm 105:16-22",
+    "Acts 7:9-16",
+    "Hebrews 11:22"
+   ],
+   "places": [
+    "dothan",
+    "egypt",
+    "goshen-1"
+   ],
+   "summary": "Jacob's favoured son, sold into Egypt by his brothers. Through slavery and prison God raised him to rule Egypt under Pharaoh and save many lives in the famine. \"You meant evil against me, but God meant it for good\" (Genesis 50:20).",
+   "basis": "17 when sold (Genesis 37:2), 30 when he stood before Pharaoh (41:46), 39 when he made himself known after two years of famine (45:6), died aged 110 (50:26)."
+  },
+  {
+   "id": "moses",
+   "name": "Moses",
+   "start": -1526,
+   "end": -1406,
+   "certainty": "calculated",
+   "refs": [
+    "Exodus 2-4",
+    "Exodus 7:7",
+    "Acts 7:20-36",
+    "Hebrews 11:23-27"
+   ],
+   "places": [
+    "nile",
+    "midian",
+    "mount-sinai"
+   ],
+   "summary": "Born under Pharaoh's death sentence on Hebrew boys, hidden in the Nile and raised in Pharaoh's house. He fled to Midian at 40, and at 80 the LORD called him from the burning bush to bring Israel out of Egypt. His story continues on the Exodus page.",
+   "basis": "80 when he spoke to Pharaoh (Exodus 7:7); Stephen divides his life into three forties (Acts 7:23, 30, 36). The bar is cut off at the right edge of the timeline."
+  }
+ ],
+ "family": [
+  {
+   "id": "terah",
+   "name": "Terah",
+   "start": -2296,
+   "end": -2091,
+   "certainty": "disputed",
+   "refs": [
+    "Genesis 11:24-32",
+    "Acts 7:4",
+    "Joshua 24:2"
+   ],
+   "places": [
+    "ur-1",
+    "haran"
+   ],
+   "summary": "Abram's father, who led his family from Ur toward Canaan but settled in Haran and died there. Joshua 24:2 says he served other gods.",
+   "basis": "Terah died in Haran aged 205 (Genesis 11:32), and Stephen says Abram left after his father died (Acts 7:4). Abram was 75 then, so Terah was 130 at Abram's birth. Genesis 11:26 (\"when Terah had lived 70 years, he fathered Abram, Nahor and Haran\") is read as the age he began to have sons, with Abram named first for his importance. Some scholars read it differently and take Acts 7:4 more loosely."
+  },
+  {
+   "id": "sarah",
+   "name": "Sarah",
+   "start": -2156,
+   "end": -2029,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 11:29-30",
+    "Genesis 17:15-21",
+    "Genesis 18:9-15",
+    "Genesis 21:1-7",
+    "Genesis 23:1-2",
+    "Hebrews 11:11",
+    "1 Peter 3:6"
+   ],
+   "places": [
+    "ur-1",
+    "egypt",
+    "gerar",
+    "mamre",
+    "machpelah"
+   ],
+   "summary": "Abraham's wife, barren until God gave her Isaac at 90. Her name was changed from Sarai to Sarah, for she would be a mother of nations. Hebrews commends her faith: she considered him faithful who had promised.",
+   "basis": "Ten years younger than Abraham (Genesis 17:17); died aged 127 (23:1)."
+  },
+  {
+   "id": "ishmael",
+   "name": "Ishmael",
+   "start": -2080,
+   "end": -1943,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 16",
+    "Genesis 17:18-26",
+    "Genesis 21:8-21",
+    "Genesis 25:9, 12-18",
+    "Galatians 4:21-31"
+   ],
+   "places": [
+    "beer-lahai-roi",
+    "paran",
+    "shur"
+   ],
+   "summary": "Abraham's son by Hagar, Sarah's Egyptian servant. God heard his cry in the wilderness and made him a great nation, father of twelve princes, though the covenant was established with Isaac. He and Isaac buried their father together.",
+   "basis": "Abraham was 86 at his birth (Genesis 16:16); Ishmael died aged 137 (25:17)."
+  },
+  {
+   "id": "levi",
+   "name": "Levi",
+   "start": -1919,
+   "end": -1782,
+   "certainty": "approx",
+   "refs": [
+    "Genesis 29:34",
+    "Genesis 34:25-31",
+    "Genesis 49:5-7",
+    "Exodus 6:16-20"
+   ],
+   "places": [
+    "haran",
+    "shechem",
+    "goshen-1"
+   ],
+   "summary": "Jacob's third son by Leah. With Simeon he took violent revenge on Shechem, and Jacob's dying words scatter both tribes in Israel. Yet from Levi came Moses and Aaron, and his tribe was later set apart for the LORD's service.",
+   "basis": "Born in Haran in the seven years after Jacob married Leah (Genesis 29:31-34); died aged 137 (Exodus 6:16). Exodus 6:16-20 traces Moses' line as Levi, Kohath, Amram, Moses. Over 430 years this is usually read as naming the key ancestors rather than every generation, as Hebrew genealogies often do; on the 215-year view it may be complete."
+  },
+  {
+   "id": "aaron",
+   "name": "Aaron",
+   "start": -1529,
+   "end": -1406,
+   "certainty": "calculated",
+   "refs": [
+    "Exodus 4:14-16, 27-31",
+    "Exodus 6:20",
+    "Exodus 7:7"
+   ],
+   "places": [
+    "goshen-1",
+    "mount-sinai"
+   ],
+   "summary": "Moses' older brother, sent by God to meet Moses in the wilderness and speak for him before Israel and Pharaoh. He became Israel's first high priest.",
+   "basis": "83 when he spoke to Pharaoh (Exodus 7:7). The bar is cut off at the right edge of the timeline."
+  }
+ ],
+ "nations": [
+  {
+   "id": "ur3",
+   "name": "Third Dynasty of Ur",
+   "start": -2112,
+   "end": -2004,
+   "certainty": "approx",
+   "refs": [
+    "Genesis 11:28-31",
+    "Genesis 15:7"
+   ],
+   "places": [
+    "ur-1",
+    "shinar"
+   ],
+   "summary": "The last great Sumerian kingdom, ruled from Ur. Ur-Nammu built the great ziggurat and issued one of the oldest law codes known. If Abram left Ur around 2100 BC, he left one of the richest cities in the world at the height of its power. Ur fell to the Elamites about 2004 BC.",
+   "role": "Kingdom of Sumer and Akkad",
+   "datePrefix": "Ruled",
+   "evidence": "Leonard Woolley's excavations at Ur (Tell el-Muqayyar) in 1922-34 uncovered the ziggurat, temples, houses and thousands of tablets from this period.",
+   "note": "Dates follow the standard (\"middle\") Mesopotamian chronology. A few scholars place Abraham's Ur further north, near Haran (Urfa), but most identify it with the great city in the south."
+  },
+  {
+   "id": "mk-egypt",
+   "name": "Egypt's Middle Kingdom",
+   "start": -2055,
+   "end": -1650,
+   "certainty": "approx",
+   "refs": [
+    "Genesis 12:10-20",
+    "Genesis 41",
+    "Genesis 47:13-26"
+   ],
+   "places": [
+    "egypt"
+   ],
+   "summary": "Egypt reunited under the 11th and 12th Dynasties: a strong, well-organised state that built canals, fortresses and irrigation works in the Faiyum. On the dates used here, Abraham's visit, Joseph's rise and Jacob's move to Goshen all fall in this period.",
+   "role": "Kingdom of Egypt",
+   "datePrefix": "Ruled",
+   "evidence": "A wall painting in the tomb of Khnumhotep II at Beni Hasan (about 1890 BC) shows a party of 37 Asiatics in colourful robes, led by a chief named Abishai, coming to Egypt to trade. It shows the kind of visitors Genesis describes, not Jacob's family itself.",
+   "note": "Pharaohs in Genesis are not named, so no particular king can be linked to Abraham or Joseph. Egyptian dates follow the Oxford History of Ancient Egypt and can vary by a few decades."
+  },
+  {
+   "id": "hammurabi",
+   "name": "Hammurabi of Babylon",
+   "start": -1792,
+   "end": -1750,
+   "certainty": "approx",
+   "refs": [],
+   "places": [
+    "shinar"
+   ],
+   "summary": "The most famous king of the Old Babylonian period, who united Mesopotamia and issued a famous law code. He is not mentioned in the Bible.",
+   "role": "King of Babylon",
+   "datePrefix": "Reigned",
+   "evidence": "Letters from Mari and the laws of Hammurabi describe a world of Amorite tribes, herdsmen and city-states much like the one in Genesis, with customs such as a childless wife giving her servant to her husband (compare Genesis 16:1-4).",
+   "note": "Older books sometimes identified Hammurabi with Amraphel king of Shinar (Genesis 14:1). This is now generally rejected."
+  },
+  {
+   "id": "hyksos",
+   "name": "The Hyksos in the Delta",
+   "start": -1650,
+   "end": -1550,
+   "certainty": "approx",
+   "refs": [
+    "Exodus 1:8-11"
+   ],
+   "places": [
+    "rameses"
+   ],
+   "summary": "Rulers of Asiatic (Semitic) origin who took control of northern Egypt from their capital Avaris in the eastern Delta, in the region of Goshen, until Ahmose drove them out.",
+   "role": "15th Dynasty of Egypt",
+   "datePrefix": "Ruled the Delta",
+   "evidence": "Excavations at Tell el-Dab'a (ancient Avaris) show a large Semitic-speaking population living in the eastern Delta from the Middle Kingdom onward.",
+   "note": "Which king \"did not know Joseph\" (Exodus 1:8) is debated. Some evangelical scholars suggest a Hyksos ruler, wary of another Asiatic people in the Delta; others suggest Ahmose or a later Pharaoh of the 18th Dynasty, after the Hyksos were expelled."
+  },
+  {
+   "id": "nk-egypt",
+   "name": "Egypt's New Kingdom",
+   "start": -1550,
+   "end": -1440,
+   "certainty": "approx",
+   "refs": [
+    "Exodus 1:8-22",
+    "Exodus 2:23"
+   ],
+   "places": [
+    "egypt",
+    "pithom",
+    "rameses"
+   ],
+   "summary": "Under the 18th Dynasty Egypt became an empire ruling Canaan and reaching to the Euphrates. On the early date of the Exodus, Israel's hardest years of slavery, Moses' birth and his flight to Midian all fall in this dynasty.",
+   "role": "Egyptian Empire (18th Dynasty)",
+   "datePrefix": "Ruled",
+   "note": "On the early date many evangelical scholars suggest Thutmose III as the Pharaoh of the oppression, whose death is recorded in Exodus 2:23, and Amenhotep II as the Pharaoh of the Exodus. Some suggest Hatshepsut as the Pharaoh's daughter who raised Moses. None of these is named in the Bible, and they depend on which Egyptian chronology is used."
+  }
+ ],
+ "events": [
+  {
+   "id": "e-abram-born",
+   "title": "Abram born in Ur",
+   "year": -2166,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 11:26-28"
+   ],
+   "places": [
+    "ur-1"
+   ],
+   "summary": "Abram, son of Terah, is born in Ur of the Chaldeans, a descendant of Shem through Eber. His brother Haran dies there, leaving a son, Lot.",
+   "basis": "175 years before his death (Genesis 25:7), counted back from Jacob's move to Egypt in 1876 BC."
+  },
+  {
+   "id": "e-to-haran",
+   "title": "Terah's family leaves Ur",
+   "year": -2095,
+   "certainty": "approx",
+   "refs": [
+    "Genesis 11:31",
+    "Genesis 15:7",
+    "Acts 7:2-4",
+    "Nehemiah 9:7"
+   ],
+   "places": [
+    "ur-1",
+    "haran"
+   ],
+   "summary": "\"The God of glory appeared to our father Abraham when he was in Mesopotamia, before he lived in Haran\" (Acts 7:2). Terah takes Abram, Sarai and Lot to go to Canaan, but they settle in Haran.",
+   "note": "How long the family stayed in Haran is not recorded.",
+   "evidence": "Letters from Mari (18th century BC) mention a town called Nahur near Haran, matching \"the city of Nahor\" where Abraham's relatives lived (Genesis 24:10)."
+  },
+  {
+   "id": "e-call",
+   "title": "The call of Abram",
+   "year": -2091,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 12:1-5",
+    "Galatians 3:8",
+    "Hebrews 11:8"
+   ],
+   "places": [
+    "haran"
+   ],
+   "summary": "\"Go from your country to the land that I will show you. I will make of you a great nation, and in you all the families of the earth shall be blessed.\" Abram goes, as the LORD told him, not knowing where he was going.",
+   "date": "Abram aged 75 (Genesis 12:4)"
+  },
+  {
+   "id": "e-shechem",
+   "title": "The promise of the land at Shechem",
+   "year": -2091,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 12:6-9"
+   ],
+   "places": [
+    "shechem",
+    "bethel-1",
+    "ai-1"
+   ],
+   "summary": "At the oak of Moreh at Shechem the LORD appears to Abram: \"To your offspring I will give this land.\" Abram builds altars there and between Bethel and Ai, and journeys on toward the Negeb.",
+   "date": "Same year as his call"
+  },
+  {
+   "id": "e-egypt",
+   "title": "Abram in Egypt",
+   "year": -2090,
+   "certainty": "approx",
+   "refs": [
+    "Genesis 12:10-13:4"
+   ],
+   "places": [
+    "egypt",
+    "bethel-1"
+   ],
+   "summary": "A famine drives Abram to Egypt. Afraid, he passes Sarai off as his sister and Pharaoh takes her, until the LORD strikes Pharaoh's house with plagues. Abram is sent away with great wealth and returns to his altar at Bethel."
+  },
+  {
+   "id": "e-lot",
+   "title": "Abram and Lot part",
+   "year": -2088,
+   "certainty": "approx",
+   "refs": [
+    "Genesis 13:5-18"
+   ],
+   "places": [
+    "bethel-1",
+    "sodom",
+    "mamre"
+   ],
+   "summary": "Their herds are too large to live together. Abram lets Lot choose, and Lot takes the well-watered Jordan valley and moves his tent as far as Sodom, whose men were very wicked. God promises Abram all the land he can see, and Abram settles by the oaks of Mamre at Hebron."
+  },
+  {
+   "id": "e-kings",
+   "title": "The war of the kings",
+   "year": -2085,
+   "certainty": "approx",
+   "refs": [
+    "Genesis 14:1-16"
+   ],
+   "places": [
+    "elam",
+    "ashteroth-karnaim",
+    "shaveh-kiriathaim",
+    "mount-seir-1",
+    "el-paran",
+    "kadesh-barnea",
+    "sodom",
+    "dan",
+    "damascus",
+    "hobah"
+   ],
+   "summary": "Four eastern kings led by Chedorlaomer of Elam sweep down through Transjordan, defeat the five kings of the cities of the plain and carry Lot away. Abram pursues them with 318 trained men as far as Dan, routs them by night and chases them to Hobah, north of Damascus.",
+   "note": "None of the four kings has yet been identified outside the Bible. Their names fit known name types of the period (Chedorlaomer is Elamite in form, Tidal is like the Hittite name Tudhaliya)."
+  },
+  {
+   "id": "e-melchizedek",
+   "title": "Melchizedek blesses Abram",
+   "year": -2085,
+   "certainty": "approx",
+   "refs": [
+    "Genesis 14:17-24",
+    "Psalm 110:4",
+    "Hebrews 7:1-17"
+   ],
+   "places": [
+    "salem"
+   ],
+   "summary": "Melchizedek, king of Salem and priest of God Most High, brings out bread and wine and blesses Abram, who gives him a tenth of everything. Psalm 110 and Hebrews 7 show him as a picture of Christ, a priest for ever after the order of Melchizedek."
+  },
+  {
+   "id": "e-covenant",
+   "title": "The covenant between the pieces",
+   "year": -2085,
+   "certainty": "approx",
+   "refs": [
+    "Genesis 15",
+    "Romans 4:1-5, 18-22",
+    "Galatians 3:6"
+   ],
+   "places": [
+    "mamre"
+   ],
+   "summary": "Childless Abram is told his offspring will be as many as the stars, \"and he believed the LORD, and he counted it to him as righteousness.\" A smoking fire pot and flaming torch pass between the pieces of the sacrifice as God alone binds himself to give the land. Abram is told his descendants will be afflicted for 400 years before they return.",
+   "note": "Genesis 15 is not dated. It comes after the war of the kings (\"after these things\") and before Ishmael's birth."
+  },
+  {
+   "id": "e-ishmael",
+   "title": "Hagar and the birth of Ishmael",
+   "year": -2080,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 16"
+   ],
+   "places": [
+    "mamre",
+    "shur",
+    "beer-lahai-roi"
+   ],
+   "summary": "After ten years in Canaan, Sarai gives her Egyptian servant Hagar to Abram. Hagar conceives, is mistreated and flees toward Shur. The angel of the LORD finds her at a spring and she names him \"You are a God of seeing\". Ishmael is born.",
+   "date": "Abram aged 86 (Genesis 16:16)"
+  },
+  {
+   "id": "e-circumcision",
+   "title": "Abraham and Sarah: new names, and circumcision",
+   "year": -2067,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 17",
+    "Romans 4:9-12"
+   ],
+   "places": [
+    "mamre"
+   ],
+   "summary": "God appears to Abram: \"I am God Almighty; walk before me, and be blameless.\" He becomes Abraham, \"father of a multitude\", and Sarai becomes Sarah. Circumcision is given as the sign of the everlasting covenant, and Isaac's birth is promised within a year. Paul notes that Abraham was counted righteous before he was circumcised.",
+   "date": "Abraham aged 99 (Genesis 17:1, 24)"
+  },
+  {
+   "id": "e-sodom",
+   "title": "Sodom and Gomorrah destroyed",
+   "year": -2067,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 18-19",
+    "Luke 17:28-32",
+    "2 Peter 2:6-9",
+    "Jude 7"
+   ],
+   "places": [
+    "mamre",
+    "sodom",
+    "zoar"
+   ],
+   "summary": "Three visitors eat with Abraham at Mamre and promise Sarah a son. Abraham pleads for Sodom, and God agrees to spare it for ten righteous people. Ten are not found. Lot and his daughters escape to Zoar, Lot's wife looks back, and the LORD rains sulphur and fire on the cities of the plain.",
+   "date": "The same year as Genesis 17 (Genesis 18:10, 14)",
+   "note": "The site of Sodom is disputed. Many locate the cities of the plain at the southern end of the Dead Sea (near Bab edh-Dhra); others argue for the plain north of the Dead Sea, at Tall el-Hammam. The map follows the southern view, as OpenBible.info does."
+  },
+  {
+   "id": "e-gerar",
+   "title": "Abraham at Gerar",
+   "year": -2067,
+   "certainty": "approx",
+   "refs": [
+    "Genesis 20"
+   ],
+   "places": [
+    "kadesh-barnea",
+    "shur",
+    "gerar"
+   ],
+   "summary": "Abraham moves south to Gerar and again calls Sarah his sister. God warns King Abimelech in a dream, and Abraham prays for him and his household.",
+   "note": "Genesis 20 comes between the promise of Isaac and his birth, but it may not be in strict time order."
+  },
+  {
+   "id": "e-isaac",
+   "title": "Isaac born",
+   "year": -2066,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 21:1-7",
+    "Romans 4:18-21",
+    "Hebrews 11:11-12"
+   ],
+   "places": [
+    "beersheba-1"
+   ],
+   "summary": "\"The LORD visited Sarah as he had said.\" Sarah bears Abraham a son in his old age and he names him Isaac, \"he laughs\": \"God has made laughter for me.\"",
+   "date": "Abraham aged 100 (Genesis 21:5)"
+  },
+  {
+   "id": "e-hagar-sent",
+   "title": "Hagar and Ishmael sent away",
+   "year": -2063,
+   "certainty": "approx",
+   "refs": [
+    "Genesis 21:8-21",
+    "Galatians 4:21-31"
+   ],
+   "places": [
+    "beersheba-1",
+    "paran"
+   ],
+   "summary": "At the feast for Isaac's weaning Ishmael is seen mocking. Hagar and her son are sent away into the wilderness of Beersheba, where God opens Hagar's eyes to a well. Ishmael grows up in the wilderness of Paran. Paul uses the two mothers as a picture of two covenants.",
+   "note": "Children were often weaned at about two or three years old."
+  },
+  {
+   "id": "e-beersheba",
+   "title": "The covenant at Beersheba",
+   "year": -2060,
+   "certainty": "approx",
+   "refs": [
+    "Genesis 21:22-34"
+   ],
+   "places": [
+    "beersheba-1",
+    "gerar"
+   ],
+   "summary": "Abimelech and his commander Phicol make a treaty with Abraham over a well his servants dug. Abraham names the place Beersheba, \"well of the oath\", plants a tamarisk and calls on the name of the LORD, the Everlasting God.",
+   "note": "Genesis calls Abimelech's people Philistines. They may have been an early Aegean group in the region, or the name may be the one later readers knew; Bible-believing scholars differ."
+  },
+  {
+   "id": "e-moriah",
+   "title": "Abraham offers Isaac on Moriah",
+   "year": -2045,
+   "certainty": "disputed",
+   "refs": [
+    "Genesis 22:1-19",
+    "2 Chronicles 3:1",
+    "Hebrews 11:17-19",
+    "James 2:21-23",
+    "John 3:16"
+   ],
+   "places": [
+    "beersheba-1",
+    "moriah"
+   ],
+   "summary": "God tests Abraham: \"Take your son, your only son Isaac, whom you love,\" and offer him on a mountain in the land of Moriah. Abraham obeys, trusting that \"God will provide for himself the lamb\". The angel of the LORD stops him, a ram is offered instead, and the place is called \"The LORD will provide\". Hebrews says Abraham reasoned that God could raise Isaac from the dead.",
+   "note": "Isaac's age is not given; he is called a \"young man\" and carries the wood (Genesis 22:5-6). Estimates range from his teens to about 25 (Josephus). 2 Chronicles 3:1 places Solomon's temple on Mount Moriah."
+  },
+  {
+   "id": "e-sarah-dies",
+   "title": "Sarah dies; the cave of Machpelah",
+   "year": -2029,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 23",
+    "Acts 7:16",
+    "Hebrews 11:13"
+   ],
+   "places": [
+    "hebron",
+    "machpelah"
+   ],
+   "summary": "Sarah dies at Kiriath-arba (Hebron). Abraham insists on paying Ephron the Hittite full price for the field and cave of Machpelah: the only part of the promised land he ever owned. Abraham, Isaac, Rebekah, Jacob and Leah were all later buried there.",
+   "date": "Sarah aged 127 (Genesis 23:1)",
+   "evidence": "The traditional site, the Cave of the Patriarchs in Hebron, is enclosed by a great wall built by Herod the Great."
+  },
+  {
+   "id": "e-rebekah",
+   "title": "A bride for Isaac",
+   "year": -2026,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 24",
+    "Genesis 25:20"
+   ],
+   "places": [
+    "hebron",
+    "haran",
+    "beer-lahai-roi"
+   ],
+   "summary": "Abraham sends his servant back to his relatives in Mesopotamia to find a wife for Isaac. At the well outside the city of Nahor he prays, and Rebekah comes out and waters his camels. She agrees to go, and Isaac takes her into Sarah's tent near Beer-lahai-roi and loves her.",
+   "date": "Isaac aged 40 (Genesis 25:20)"
+  },
+  {
+   "id": "e-twins",
+   "title": "Esau and Jacob born",
+   "year": -2006,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 25:19-26",
+    "Romans 9:10-13"
+   ],
+   "places": [
+    "beer-lahai-roi"
+   ],
+   "summary": "Rebekah is barren for twenty years until Isaac prays for her. The twins struggle in her womb, and the LORD tells her \"the older shall serve the younger\". Esau is born first, with Jacob holding his heel.",
+   "date": "Isaac aged 60 (Genesis 25:26)"
+  },
+  {
+   "id": "e-abraham-dies",
+   "title": "Abraham dies",
+   "year": -1991,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 25:1-11",
+    "Hebrews 11:13-16"
+   ],
+   "places": [
+    "machpelah"
+   ],
+   "summary": "Abraham dies \"in a good old age, an old man and full of years\". Isaac and Ishmael bury him with Sarah in the cave of Machpelah. Before his death he gave gifts to the sons of his later wife Keturah, among them Midian, and sent them east, away from Isaac.",
+   "date": "Abraham aged 175 (Genesis 25:7); Jacob was 15"
+  },
+  {
+   "id": "e-birthright",
+   "title": "Esau sells his birthright",
+   "year": -1985,
+   "certainty": "approx",
+   "refs": [
+    "Genesis 25:27-34",
+    "Hebrews 12:16-17"
+   ],
+   "places": [
+    "beer-lahai-roi"
+   ],
+   "summary": "Esau, a skilful hunter, comes in famished, and sells his birthright to Jacob for a bowl of red stew. \"Thus Esau despised his birthright.\" Hebrews warns believers not to be like him.",
+   "note": "Not dated: the twins are grown men (Genesis 25:27)."
+  },
+  {
+   "id": "e-isaac-gerar",
+   "title": "Isaac in Gerar; the wells",
+   "year": -1980,
+   "certainty": "approx",
+   "refs": [
+    "Genesis 26:1-33"
+   ],
+   "places": [
+    "gerar",
+    "rehoboth-1",
+    "beersheba-1"
+   ],
+   "summary": "In a famine the LORD tells Isaac not to go down to Egypt and confirms to him the promise made to Abraham. Isaac prospers in Gerar, reopens his father's wells, and after quarrels over Esek and Sitnah finds room at Rehoboth. At Beersheba the LORD appears to him and Abimelech makes peace with him.",
+   "note": "Not dated. It comes before Esau's marriages at 40 (Genesis 26:34)."
+  },
+  {
+   "id": "e-esau-wives",
+   "title": "Esau marries Hittite wives",
+   "year": -1966,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 26:34-35",
+    "Genesis 27:46"
+   ],
+   "places": [
+    "beersheba-1"
+   ],
+   "summary": "Esau marries two Hittite women, who make life bitter for Isaac and Rebekah.",
+   "date": "Esau aged 40 (Genesis 26:34)"
+  },
+  {
+   "id": "e-ishmael-dies",
+   "title": "Ishmael dies",
+   "year": -1943,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 25:12-18"
+   ],
+   "places": [
+    "shur"
+   ],
+   "summary": "Ishmael dies aged 137. His twelve sons became princes of tribes living from Havilah to Shur, opposite Egypt.",
+   "date": "Ishmael aged 137 (Genesis 25:17)"
+  },
+  {
+   "id": "e-blessing",
+   "title": "Jacob takes the blessing",
+   "year": -1929,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 27:1-28:9",
+    "Hebrews 11:20"
+   ],
+   "places": [
+    "beersheba-1"
+   ],
+   "summary": "Rebekah and Jacob deceive the blind Isaac, and Jacob receives the blessing meant for Esau. Esau plans to kill him, so Rebekah sends Jacob to her brother Laban in Haran, and Isaac blesses him again with the blessing of Abraham.",
+   "basis": "Not stated directly. Joseph was 39 when Jacob, aged 130, came to Egypt (Genesis 41:46; 45:6; 47:9), so Jacob was 91 at Joseph's birth. Joseph was born at the end of Jacob's fourteen years' service (Genesis 30:25; 31:41), so Jacob was 77 when he reached Haran. Isaac was then 137 and lived another 43 years."
+  },
+  {
+   "id": "e-ladder",
+   "title": "Jacob's dream at Bethel",
+   "year": -1929,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 28:10-22",
+    "John 1:51"
+   ],
+   "places": [
+    "beersheba-1",
+    "bethel-1"
+   ],
+   "summary": "On the way to Haran Jacob dreams of a stairway reaching to heaven with angels going up and down on it. The LORD renews to him the promises made to Abraham and Isaac. Jacob names the place Bethel, \"house of God\". Jesus told Nathanael he was himself the true meeting-place of heaven and earth.",
+   "date": "On the journey to Haran"
+  },
+  {
+   "id": "e-marriages",
+   "title": "Jacob marries Leah and Rachel",
+   "year": -1922,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 29:1-30"
+   ],
+   "places": [
+    "haran"
+   ],
+   "summary": "Jacob loves Rachel and serves Laban seven years for her, \"and they seemed to him but a few days\". Laban gives him Leah instead, and Jacob serves another seven years for Rachel.",
+   "date": "After seven years' service (Genesis 29:20-21)"
+  },
+  {
+   "id": "e-sons",
+   "title": "Jacob's sons born in Haran",
+   "year": -1918,
+   "certainty": "approx",
+   "refs": [
+    "Genesis 29:31-30:24",
+    "Genesis 35:23-26"
+   ],
+   "places": [
+    "haran"
+   ],
+   "summary": "Leah bears Reuben, Simeon, Levi and Judah. In a contest between the sisters, their servants Bilhah and Zilpah bear Dan, Naphtali, Gad and Asher, and Leah bears Issachar, Zebulun and a daughter, Dinah. At last God remembers Rachel, and she bears Joseph.",
+   "note": "Eleven sons and a daughter in about seven years means some of the births overlapped."
+  },
+  {
+   "id": "e-joseph-born",
+   "title": "Joseph born",
+   "year": -1915,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 30:22-26"
+   ],
+   "places": [
+    "haran"
+   ],
+   "summary": "Rachel bears Joseph, saying \"May the LORD add to me another son.\" Jacob asks Laban to let him go home.",
+   "date": "At the end of Jacob's fourteen years' service"
+  },
+  {
+   "id": "e-leaves-haran",
+   "title": "Jacob leaves Laban",
+   "year": -1909,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 30:25-31:55"
+   ],
+   "places": [
+    "haran",
+    "mizpah-4"
+   ],
+   "summary": "After six more years in which God makes his flocks great, Jacob slips away to Canaan. Rachel steals her father's household gods. Laban overtakes him in the hill country of Gilead, and they set up a heap of stones as a witness between them: Mizpah, \"The LORD watch between you and me.\"",
+   "date": "After twenty years in Haran (Genesis 31:38, 41)",
+   "evidence": "Tablets from Nuzi and other sites (15th century BC and earlier) link household gods with family property and inheritance, which may help explain why Rachel took them. Scholars now apply these parallels more cautiously than they once did."
+  },
+  {
+   "id": "e-peniel",
+   "title": "Jacob wrestles with God at Peniel",
+   "year": -1909,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 32",
+    "Hosea 12:3-4"
+   ],
+   "places": [
+    "mahanaim",
+    "jabbok",
+    "penuel"
+   ],
+   "summary": "Afraid to meet Esau, Jacob prays, sends gifts ahead, and is left alone by the Jabbok. A man wrestles with him until daybreak and will not let him go without blessing him. He is renamed Israel, \"for you have striven with God and with men, and have prevailed\". He names the place Peniel: \"I have seen God face to face, and yet my life has been delivered.\"",
+   "date": "On the journey home"
+  },
+  {
+   "id": "e-esau-meets",
+   "title": "Jacob and Esau reconciled",
+   "year": -1909,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 33"
+   ],
+   "places": [
+    "mount-seir-1",
+    "succoth-1",
+    "shechem"
+   ],
+   "summary": "Esau runs to meet Jacob, embraces him and weeps. Esau goes back to Seir; Jacob builds a house at Succoth and then buys land at Shechem, where he sets up an altar to El-Elohe-Israel, \"God, the God of Israel\".",
+   "date": "On the journey home"
+  },
+  {
+   "id": "e-dinah",
+   "title": "Dinah and the revenge on Shechem",
+   "year": -1902,
+   "certainty": "approx",
+   "refs": [
+    "Genesis 34",
+    "Genesis 49:5-7"
+   ],
+   "places": [
+    "shechem"
+   ],
+   "summary": "Shechem, son of the local ruler, seizes and violates Jacob's daughter Dinah. Simeon and Levi deceive the city with a false agreement and kill its men. Jacob rebukes them, and on his deathbed curses their anger.",
+   "note": "Not dated. Dinah, born late in the Haran years, must be in her teens, so this is some years after the return."
+  },
+  {
+   "id": "e-benjamin",
+   "title": "Bethel again; Rachel dies as Benjamin is born",
+   "year": -1900,
+   "certainty": "approx",
+   "refs": [
+    "Genesis 35:1-20",
+    "Genesis 48:7",
+    "Jeremiah 31:15",
+    "Matthew 2:18"
+   ],
+   "places": [
+    "shechem",
+    "bethel-1",
+    "ephrath",
+    "eder-1"
+   ],
+   "summary": "God calls Jacob back to Bethel. The household puts away its foreign gods, and God confirms the name Israel and the promises. On the way to Ephrath (Bethlehem) Rachel dies giving birth to Benjamin, the only son born in Canaan. Jacob sets up a pillar over her tomb and moves on beyond the tower of Eder.",
+   "note": "Not dated, but before Joseph is sold, since Benjamin is at home in Genesis 42."
+  },
+  {
+   "id": "e-joseph-sold",
+   "title": "Joseph sold into Egypt",
+   "year": -1898,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 37",
+    "Acts 7:9",
+    "Psalm 105:17"
+   ],
+   "places": [
+    "hebron",
+    "shechem",
+    "dothan",
+    "egypt"
+   ],
+   "summary": "Jacob's favouritism and Joseph's dreams make his brothers hate him. Sent to find them at Shechem, he finds them at Dothan. They throw him into a pit, and at Judah's suggestion sell him for twenty shekels of silver to Ishmaelite traders going down to Egypt. They show Jacob his robe dipped in goat's blood.",
+   "date": "Joseph aged 17 (Genesis 37:2)",
+   "evidence": "Twenty shekels matches the price of a slave in texts from about the 18th century BC; the price rose in later centuries (K. A. Kitchen, On the Reliability of the Old Testament)."
+  },
+  {
+   "id": "e-tamar",
+   "title": "Judah and Tamar",
+   "year": -1897,
+   "certainty": "disputed",
+   "refs": [
+    "Genesis 38",
+    "Ruth 4:12, 18-22",
+    "Matthew 1:3"
+   ],
+   "places": [
+    "adullam",
+    "timnah-3"
+   ],
+   "summary": "Judah leaves his brothers and marries a Canaanite. When he fails to give his widowed daughter-in-law Tamar to his youngest son, she disguises herself and conceives by Judah himself. \"She is more righteous than I,\" he admits. Her son Perez is an ancestor of David and of Christ.",
+   "note": "Genesis 38 begins \"at that time\". Fitting Judah's grown sons, and Perez's sons who go down to Egypt (Genesis 46:12), into the 22 years before 1876 is difficult, so some scholars think the chapter begins earlier, or that Genesis 46 lists the family that came to be counted under Jacob rather than only those born by then."
+  },
+  {
+   "id": "e-prison",
+   "title": "Joseph in Potiphar's house and in prison",
+   "year": -1893,
+   "certainty": "approx",
+   "refs": [
+    "Genesis 39-40",
+    "Psalm 105:18-19"
+   ],
+   "places": [
+    "egypt"
+   ],
+   "summary": "The LORD is with Joseph and he prospers as steward of Potiphar, captain of Pharaoh's guard. He refuses Potiphar's wife, \"How can I do this great wickedness and sin against God?\", and is thrown into prison on her false charge. There he interprets the dreams of Pharaoh's cupbearer and baker, but the cupbearer forgets him for two years.",
+   "note": "Thirteen years pass between his sale (17) and his release (30); how they divide between Potiphar's house and the prison is not stated."
+  },
+  {
+   "id": "e-pharaoh",
+   "title": "Joseph made ruler of Egypt",
+   "year": -1885,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 41",
+    "Acts 7:10",
+    "Psalm 105:20-22"
+   ],
+   "places": [
+    "egypt"
+   ],
+   "summary": "Pharaoh's dreams of fat and thin cows mean seven years of plenty and seven of famine. \"It is not in me; God will give Pharaoh a favourable answer.\" Pharaoh sets Joseph over all Egypt and gives him Asenath, daughter of the priest of On. In the good years he stores grain, and his sons Manasseh and Ephraim are born.",
+   "date": "Joseph aged 30 (Genesis 41:46)"
+  },
+  {
+   "id": "e-isaac-dies",
+   "title": "Isaac dies",
+   "year": -1886,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 35:27-29",
+    "Genesis 49:31"
+   ],
+   "places": [
+    "mamre",
+    "machpelah"
+   ],
+   "summary": "Jacob has come to his father at Mamre. Isaac dies \"old and full of days\", and Esau and Jacob bury him. He is buried in the cave of Machpelah with Abraham, Sarah and Rebekah.",
+   "date": "Isaac aged 180 (Genesis 35:28)",
+   "note": "Genesis records his death before Joseph's story, but by the ages given he died about 12 years after Joseph was sold."
+  },
+  {
+   "id": "e-brothers",
+   "title": "Joseph's brothers come for grain",
+   "year": -1877,
+   "certainty": "approx",
+   "refs": [
+    "Genesis 42-44"
+   ],
+   "places": [
+    "hebron",
+    "egypt"
+   ],
+   "summary": "The famine reaches Canaan, and ten brothers go down to buy grain. They bow before Joseph without knowing him, as his dreams foretold. He tests them, keeps Simeon, and demands Benjamin. On the second journey Judah offers himself as a slave in Benjamin's place.",
+   "note": "The famine began in 1878 BC; the second journey was in its second year (Genesis 45:6)."
+  },
+  {
+   "id": "e-reveal",
+   "title": "\"I am Joseph\"",
+   "year": -1876,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 45",
+    "Genesis 50:20"
+   ],
+   "places": [
+    "egypt"
+   ],
+   "summary": "Joseph breaks down and makes himself known. \"Do not be distressed or angry with yourselves because you sold me here, for God sent me before you to preserve life.\" Pharaoh invites the whole family to come and live in the best of the land.",
+   "date": "After two years of famine (Genesis 45:6, 11)"
+  },
+  {
+   "id": "e-descent",
+   "title": "Jacob's family goes down to Egypt",
+   "year": -1876,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 46:1-47:12",
+    "Exodus 1:1-5",
+    "Acts 7:14-15"
+   ],
+   "places": [
+    "hebron",
+    "beersheba-1",
+    "goshen-1"
+   ],
+   "summary": "At Beersheba God tells Jacob, \"Do not be afraid to go down to Egypt, for there I will make you into a great nation.\" Seventy members of the family settle in Goshen. Jacob meets Joseph again, and blesses Pharaoh: \"Few and evil have been the days of the years of my life.\"",
+   "date": "Jacob aged 130 (Genesis 47:9), 430 years before the Exodus",
+   "evidence": "The Beni Hasan tomb painting (about 1890 BC) shows Asiatic families with their donkeys and goods arriving in Egypt in this period."
+  },
+  {
+   "id": "e-blessings",
+   "title": "Jacob blesses his sons",
+   "year": -1859,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 48-49",
+    "Hebrews 11:21"
+   ],
+   "places": [
+    "goshen-1"
+   ],
+   "summary": "Jacob adopts Joseph's sons Ephraim and Manasseh, crossing his hands to put the younger first. On his deathbed he blesses his twelve sons, promising Judah that \"the sceptre shall not depart from Judah\" until he comes to whom it belongs, a promise fulfilled in David and in Christ.",
+   "date": "Jacob aged 147 (Genesis 47:28)"
+  },
+  {
+   "id": "e-jacob-buried",
+   "title": "Jacob buried in Canaan",
+   "year": -1859,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 49:29-50:14"
+   ],
+   "places": [
+    "goshen-1",
+    "atad",
+    "machpelah"
+   ],
+   "summary": "Egypt mourns Jacob seventy days. Joseph and his brothers, with Pharaoh's officials and chariots, carry him to Canaan, mourn seven days at the threshing floor of Atad, and bury him at Machpelah as he made them swear.",
+   "note": "The route of the funeral procession is not given. Atad was \"beyond the Jordan\", which may mean they went round the Dead Sea, or may be said from Canaan's side; scholars differ."
+  },
+  {
+   "id": "e-joseph-dies",
+   "title": "Joseph dies",
+   "year": -1805,
+   "certainty": "calculated",
+   "refs": [
+    "Genesis 50:15-26",
+    "Exodus 13:19",
+    "Joshua 24:32",
+    "Hebrews 11:22"
+   ],
+   "places": [
+    "goshen-1"
+   ],
+   "summary": "Joseph reassures his brothers that he will provide for them. Before he dies he tells them, \"God will surely visit you and bring you up out of this land,\" and makes them swear to carry his bones to Canaan. He is embalmed and put in a coffin in Egypt; at the Exodus Moses takes his bones with him.",
+   "date": "Joseph aged 110 (Genesis 50:26)"
+  },
+  {
+   "id": "e-new-king",
+   "title": "A new king who did not know Joseph",
+   "year": -1580,
+   "certainty": "disputed",
+   "refs": [
+    "Exodus 1:6-14",
+    "Acts 7:17-19"
+   ],
+   "places": [
+    "pithom",
+    "rameses"
+   ],
+   "summary": "The people of Israel multiply until the land is full of them. A new king fears them and sets taskmasters over them to afflict them with heavy burdens. They build the store cities Pithom and Rameses, \"but the more they were oppressed, the more they multiplied\".",
+   "note": "The Bible does not say when the slavery began. Proposals range from a Hyksos king (after about 1650 BC) to Ahmose (about 1550 BC) or a later 18th-Dynasty Pharaoh. The name Rameses (also used of Jacob's time in Genesis 47:11) is usually explained on the early date as a later name for the city, used for later readers; late-date scholars take it as evidence for Rameses II."
+  },
+  {
+   "id": "e-midwives",
+   "title": "The Hebrew midwives defy Pharaoh",
+   "year": -1527,
+   "certainty": "approx",
+   "refs": [
+    "Exodus 1:15-22"
+   ],
+   "places": [
+    "goshen-1",
+    "nile"
+   ],
+   "summary": "Pharaoh orders the midwives Shiphrah and Puah to kill every Hebrew boy at birth. They fear God and let the boys live, and God gives them families of their own. Pharaoh then commands that every son born to the Hebrews be thrown into the Nile.",
+   "evidence": "An Egyptian papyrus from about 1740 BC (Brooklyn Papyrus 35.1446) lists Asiatic household servants with Semitic names, one of them Shiphrah."
+  },
+  {
+   "id": "e-moses-born",
+   "title": "Moses born and drawn from the Nile",
+   "year": -1526,
+   "certainty": "calculated",
+   "refs": [
+    "Exodus 2:1-10",
+    "Acts 7:20-22",
+    "Hebrews 11:23"
+   ],
+   "places": [
+    "nile"
+   ],
+   "summary": "A Levite couple, Amram and Jochebed, hide their beautiful baby for three months, then place him in a basket among the reeds of the Nile. Pharaoh's daughter finds him, his sister Miriam fetches his own mother to nurse him, and he grows up as the princess's son, instructed in all the wisdom of the Egyptians.",
+   "date": "80 years before the Exodus (Exodus 7:7)"
+  },
+  {
+   "id": "e-moses-flees",
+   "title": "Moses flees to Midian",
+   "year": -1486,
+   "certainty": "calculated",
+   "refs": [
+    "Exodus 2:11-22",
+    "Acts 7:23-29",
+    "Hebrews 11:24-27"
+   ],
+   "places": [
+    "goshen-1",
+    "midian"
+   ],
+   "summary": "Moses goes out to his own people, kills an Egyptian who is beating a Hebrew, and flees when it becomes known. In Midian he defends the daughters of Reuel (Jethro), the priest of Midian, marries Zipporah and lives as a shepherd for forty years. Hebrews says he chose to be mistreated with the people of God rather than enjoy the fleeting pleasures of sin.",
+   "date": "Moses aged 40 (Acts 7:23)"
+  },
+  {
+   "id": "e-israel-cries",
+   "title": "Israel cries out, and God remembers",
+   "year": -1450,
+   "certainty": "approx",
+   "refs": [
+    "Exodus 2:23-25"
+   ],
+   "places": [
+    "goshen-1"
+   ],
+   "summary": "During those many days the king of Egypt dies. The people groan under their slavery and cry out, and God hears, remembers his covenant with Abraham, Isaac and Jacob, and sees them."
+  },
+  {
+   "id": "e-bush",
+   "title": "The burning bush",
+   "year": -1447,
+   "certainty": "approx",
+   "refs": [
+    "Exodus 3-4",
+    "Acts 7:30-35",
+    "Mark 12:26"
+   ],
+   "places": [
+    "midian",
+    "mount-sinai"
+   ],
+   "summary": "At Horeb, the mountain of God, Moses sees a bush that burns but is not consumed. God calls to him: \"I am the God of your father, the God of Abraham, the God of Isaac, and the God of Jacob.\" He reveals his name, I AM WHO I AM, and sends Moses to bring his people out of Egypt to the land he promised their fathers. Jesus cited these words as proof of the resurrection.",
+   "date": "Forty years after Moses fled (Acts 7:30)"
+  },
+  {
+   "id": "e-exodus",
+   "title": "The Exodus: the promise kept",
+   "year": -1445.9611,
+   "certainty": "calculated",
+   "refs": [
+    "Exodus 12:40-42",
+    "Exodus 13:19",
+    "Genesis 15:13-16",
+    "Hebrews 11:28-29"
+   ],
+   "places": [
+    "rameses",
+    "goshen-1"
+   ],
+   "summary": "After the ten plagues and the first Passover, Israel leaves Egypt with great possessions, as God promised Abraham, carrying Joseph's bones. \"At the end of 430 years, on that very day, all the hosts of the LORD went out from the land of Egypt.\" The journey continues on the Exodus to the Promised Land page.",
+   "date": "15th day of the 1st month (Numbers 33:3)"
+  }
+ ]
+}

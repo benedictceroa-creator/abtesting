@@ -1,0 +1,2287 @@
+{
+ "meta": {
+  "title": "From the Divided Kingdom to Ezra and Nehemiah",
+  "range": [
+   -940,
+   -420
+  ],
+  "chronology": "Kings' dates follow Edwin R. Thiele, The Mysterious Numbers of the Hebrew Kings (3rd ed., 1983), as tabulated in the Wikipedia article 'Kings of Israel and Judah' (sole reigns). Where the Bible's reign length includes a co-regency, the co-regency is shown as a lighter extension of the bar.",
+  "chronologyShort": "Edwin R. Thiele, The Mysterious Numbers of the Hebrew Kings.",
+  "status": "DRAFT: awaiting theological review"
+ },
+ "certainty": {
+  "fixed": "Fixed: confirmed by a dated record outside the Bible (Assyrian, Babylonian or Egyptian).",
+  "calculated": "Calculated: worked out from the Bible's own dating (reign lengths, or 'in the Nth year of King X'), anchored to fixed dates. Kings of Israel and Judah follow Thiele's chronology.",
+  "approx": "Approximate: the Bible places it within a reign or period but gives no exact year.",
+  "disputed": "Disputed: Bible-believing scholars hold different views on the date."
+ },
+ "empires": [
+  {
+   "id": "egypt",
+   "name": "Egypt",
+   "start": -940,
+   "end": -525,
+   "color": "#B08A3E"
+  },
+  {
+   "id": "aram",
+   "name": "Aram-Damascus",
+   "start": -950,
+   "end": -732,
+   "color": "#7A8B5C"
+  },
+  {
+   "id": "assyria",
+   "name": "Assyrian Empire",
+   "start": -911,
+   "end": -609,
+   "color": "#8C5A4A"
+  },
+  {
+   "id": "babylon",
+   "name": "Babylonian Empire",
+   "start": -626,
+   "end": -539,
+   "color": "#4F6D8C"
+  },
+  {
+   "id": "persia",
+   "name": "Persian Empire",
+   "start": -550,
+   "end": -330,
+   "color": "#6E5A8C"
+  }
+ ],
+ "rulers": [
+  {
+   "id": "shishak",
+   "name": "Shishak (Shoshenq I)",
+   "empire": "egypt",
+   "start": -945,
+   "end": -924,
+   "certainty": "approx",
+   "refs": [
+    "1 Kings 14:25-26",
+    "2 Chronicles 12:2-9"
+   ],
+   "places": [
+    "thebes",
+    "jerusalem",
+    "megiddo"
+   ],
+   "summary": "Founder of Egypt's 22nd dynasty. Invaded Judah and Israel in Rehoboam's fifth year and carried off the temple treasures."
+  },
+  {
+   "id": "shalmaneser3",
+   "name": "Shalmaneser III",
+   "empire": "assyria",
+   "start": -859,
+   "end": -824,
+   "certainty": "fixed",
+   "refs": [],
+   "places": [
+    "nineveh"
+   ],
+   "summary": "Not named in the Bible, but his inscriptions name two kings of Israel: Ahab at the Battle of Qarqar (853 BC) and Jehu paying tribute (841 BC). These two dates anchor the whole chronology of the kings."
+  },
+  {
+   "id": "hazael",
+   "name": "Hazael of Damascus",
+   "empire": "aram",
+   "start": -842,
+   "end": -800,
+   "certainty": "approx",
+   "refs": [
+    "1 Kings 19:15",
+    "2 Kings 8:7-15",
+    "2 Kings 10:32-33",
+    "2 Kings 12:17-18",
+    "2 Kings 13:3, 22"
+   ],
+   "places": [
+    "damascus"
+   ],
+   "summary": "Elijah was told to anoint him (1 Kings 19:15); Elisha wept over the harm he would do to Israel. He took much of Israel's territory east of the Jordan."
+  },
+  {
+   "id": "tiglath",
+   "name": "Tiglath-pileser III (Pul)",
+   "empire": "assyria",
+   "start": -745,
+   "end": -727,
+   "certainty": "fixed",
+   "refs": [
+    "2 Kings 15:19-20",
+    "2 Kings 15:29",
+    "2 Kings 16:7-10",
+    "1 Chronicles 5:26"
+   ],
+   "places": [
+    "nineveh",
+    "damascus"
+   ],
+   "summary": "Revived Assyria's power. Took tribute from Menahem and Ahaz, captured Damascus and deported the people of Galilee and Gilead."
+  },
+  {
+   "id": "rezin",
+   "name": "Rezin of Damascus",
+   "empire": "aram",
+   "start": -750,
+   "end": -732,
+   "certainty": "approx",
+   "refs": [
+    "2 Kings 15:37",
+    "2 Kings 16:5-9",
+    "Isaiah 7:1-9"
+   ],
+   "places": [
+    "damascus"
+   ],
+   "summary": "Last king of Aram-Damascus. Allied with Pekah of Israel against Ahaz; killed when Assyria took Damascus."
+  },
+  {
+   "id": "shalmaneser5",
+   "name": "Shalmaneser V",
+   "empire": "assyria",
+   "start": -727,
+   "end": -722,
+   "certainty": "fixed",
+   "refs": [
+    "2 Kings 17:3-5",
+    "2 Kings 18:9-10"
+   ],
+   "places": [
+    "samaria-1"
+   ],
+   "summary": "Besieged Samaria after Hoshea stopped paying tribute."
+  },
+  {
+   "id": "sargon2",
+   "name": "Sargon II",
+   "empire": "assyria",
+   "start": -722,
+   "end": -705,
+   "certainty": "fixed",
+   "refs": [
+    "Isaiah 20:1"
+   ],
+   "places": [
+    "samaria-1"
+   ],
+   "summary": "Claimed the capture of Samaria in his inscriptions. Named in the Bible only in Isaiah 20:1; his existence was doubted by critics until his palace was excavated in the 1840s."
+  },
+  {
+   "id": "merodach",
+   "name": "Merodach-baladan",
+   "empire": "babylon",
+   "start": -721,
+   "end": -710,
+   "certainty": "fixed",
+   "refs": [
+    "2 Kings 20:12-19",
+    "Isaiah 39"
+   ],
+   "places": [
+    "babylon-1"
+   ],
+   "summary": "Babylonian king who sent envoys to Hezekiah. Isaiah warned that Babylon would one day carry off everything Hezekiah showed them."
+  },
+  {
+   "id": "sennacherib",
+   "name": "Sennacherib",
+   "empire": "assyria",
+   "start": -705,
+   "end": -681,
+   "certainty": "fixed",
+   "refs": [
+    "2 Kings 18:13-19:37",
+    "2 Chronicles 32",
+    "Isaiah 36-37"
+   ],
+   "places": [
+    "nineveh",
+    "lachish",
+    "jerusalem"
+   ],
+   "summary": "Invaded Judah in 701 BC and took Lachish, but Jerusalem was delivered. Killed by his sons in Nineveh, as Isaiah foretold."
+  },
+  {
+   "id": "tirhakah",
+   "name": "Tirhakah (Taharqa)",
+   "empire": "egypt",
+   "start": -690,
+   "end": -664,
+   "certainty": "fixed",
+   "refs": [
+    "2 Kings 19:9",
+    "Isaiah 37:9"
+   ],
+   "places": [
+    "thebes"
+   ],
+   "summary": "Cushite ruler of Egypt who marched out against Sennacherib. His dates as pharaoh are 690-664 BC; in 701 BC he led the army as a prince."
+  },
+  {
+   "id": "esarhaddon",
+   "name": "Esarhaddon",
+   "empire": "assyria",
+   "start": -681,
+   "end": -669,
+   "certainty": "fixed",
+   "refs": [
+    "2 Kings 19:37",
+    "Ezra 4:2"
+   ],
+   "places": [
+    "nineveh"
+   ],
+   "summary": "Son and successor of Sennacherib. His inscriptions list Manasseh of Judah among his vassal kings."
+  },
+  {
+   "id": "nabopolassar",
+   "name": "Nabopolassar",
+   "empire": "babylon",
+   "start": -626,
+   "end": -605,
+   "certainty": "fixed",
+   "refs": [],
+   "places": [
+    "babylon-1",
+    "nineveh"
+   ],
+   "summary": "Founder of the Neo-Babylonian Empire; destroyed Nineveh with the Medes in 612 BC. Father of Nebuchadnezzar."
+  },
+  {
+   "id": "neco",
+   "name": "Pharaoh Neco II",
+   "empire": "egypt",
+   "start": -610,
+   "end": -595,
+   "certainty": "fixed",
+   "refs": [
+    "2 Kings 23:29-35",
+    "2 Chronicles 35:20-36:4",
+    "Jeremiah 46:2"
+   ],
+   "places": [
+    "megiddo",
+    "riblah-1",
+    "carchemish"
+   ],
+   "summary": "Killed Josiah at Megiddo, deposed Jehoahaz and installed Jehoiakim. Defeated by Nebuchadnezzar at Carchemish."
+  },
+  {
+   "id": "nebuchadnezzar",
+   "name": "Nebuchadnezzar II",
+   "empire": "babylon",
+   "start": -605,
+   "end": -562,
+   "certainty": "fixed",
+   "refs": [
+    "2 Kings 24-25",
+    "Jeremiah 27:6",
+    "Daniel 1-4"
+   ],
+   "places": [
+    "babylon-1",
+    "carchemish",
+    "jerusalem",
+    "riblah-1"
+   ],
+   "summary": "Greatest king of Babylon. Took Daniel and Jehoiachin captive and destroyed Jerusalem and the temple in 586 BC. Jeremiah calls him the LORD's servant in judging the nations (Jeremiah 27:6)."
+  },
+  {
+   "id": "hophra",
+   "name": "Pharaoh Hophra (Apries)",
+   "empire": "egypt",
+   "start": -589,
+   "end": -570,
+   "certainty": "fixed",
+   "refs": [
+    "Jeremiah 37:5-7",
+    "Jeremiah 44:30"
+   ],
+   "places": [
+    "tahpanhes"
+   ],
+   "summary": "His army briefly drew the Babylonians away from Jerusalem. Jeremiah foretold he would be handed over to his enemies."
+  },
+  {
+   "id": "evilmerodach",
+   "name": "Evil-merodach (Amel-Marduk)",
+   "empire": "babylon",
+   "start": -562,
+   "end": -560,
+   "certainty": "fixed",
+   "refs": [
+    "2 Kings 25:27-30",
+    "Jeremiah 52:31-34"
+   ],
+   "places": [
+    "babylon-1"
+   ],
+   "summary": "Released Jehoiachin from prison in Babylon."
+  },
+  {
+   "id": "belshazzar",
+   "name": "Nabonidus & Belshazzar",
+   "empire": "babylon",
+   "start": -556,
+   "end": -539,
+   "certainty": "fixed",
+   "refs": [
+    "Daniel 5",
+    "Daniel 7:1",
+    "Daniel 8:1"
+   ],
+   "places": [
+    "babylon-1"
+   ],
+   "summary": "Nabonidus was the last king of Babylon; his son Belshazzar ruled in Babylon on his behalf. Critics once said Belshazzar never existed. Babylonian texts later confirmed him, which also explains why he could only offer Daniel the third place in the kingdom (Daniel 5:16)."
+  },
+  {
+   "id": "cyrus",
+   "name": "Cyrus the Great",
+   "empire": "persia",
+   "start": -559,
+   "end": -530,
+   "certainty": "fixed",
+   "refs": [
+    "Isaiah 44:28-45:1",
+    "Ezra 1:1-4",
+    "2 Chronicles 36:22-23"
+   ],
+   "places": [
+    "babylon-1",
+    "jerusalem"
+   ],
+   "summary": "Named by Isaiah long before his birth as the LORD's shepherd who would rebuild Jerusalem. Conquered Babylon and allowed the exiles to return."
+  },
+  {
+   "id": "cambyses",
+   "name": "Cambyses II",
+   "empire": "persia",
+   "start": -530,
+   "end": -522,
+   "certainty": "fixed",
+   "refs": [],
+   "places": [
+    "susa"
+   ],
+   "summary": "Son of Cyrus; added Egypt to the Persian Empire in 525 BC. Not named in the Bible."
+  },
+  {
+   "id": "darius1",
+   "name": "Darius I (the Great)",
+   "empire": "persia",
+   "start": -522,
+   "end": -486,
+   "certainty": "fixed",
+   "refs": [
+    "Ezra 4:24-6:15",
+    "Haggai 1:1",
+    "Zechariah 1:1"
+   ],
+   "places": [
+    "susa",
+    "ecbatana",
+    "jerusalem"
+   ],
+   "summary": "Confirmed Cyrus's decree after it was found in the archives at Ecbatana, and paid for the temple to be finished. Haggai and Zechariah date their prophecies by his reign."
+  },
+  {
+   "id": "xerxes",
+   "name": "Xerxes I (Ahasuerus)",
+   "empire": "persia",
+   "start": -486,
+   "end": -465,
+   "certainty": "fixed",
+   "refs": [
+    "Ezra 4:6",
+    "Esther 1:1-3"
+   ],
+   "places": [
+    "susa"
+   ],
+   "summary": "The king of the book of Esther, reigning from Susa over 127 provinces from India to Cush."
+  },
+  {
+   "id": "artaxerxes1",
+   "name": "Artaxerxes I",
+   "empire": "persia",
+   "start": -465,
+   "end": -424,
+   "certainty": "fixed",
+   "refs": [
+    "Ezra 7:1-26",
+    "Nehemiah 2:1-8",
+    "Nehemiah 13:6"
+   ],
+   "places": [
+    "susa",
+    "jerusalem"
+   ],
+   "summary": "Sent Ezra to teach the Law in Jerusalem (his 7th year) and Nehemiah to rebuild its walls (his 20th year)."
+  }
+ ],
+ "kings": [
+  {
+   "id": "jeroboam1",
+   "name": "Jeroboam I",
+   "kingdom": "israel",
+   "start": -931,
+   "end": -910,
+   "verdict": "evil",
+   "verdictRef": "1 Kings 14:9",
+   "refs": [
+    "1 Kings 11:26-40",
+    "1 Kings 12:1-14:20"
+   ],
+   "places": [
+    "shechem",
+    "penuel",
+    "tirzah",
+    "bethel-1",
+    "dan"
+   ],
+   "summary": "Solomon's official who led the ten northern tribes away from the house of David. Set up golden calves at Bethel and Dan: \"the sin of Jeroboam\" that later northern kings are measured by."
+  },
+  {
+   "id": "nadab",
+   "name": "Nadab",
+   "kingdom": "israel",
+   "start": -910,
+   "end": -909,
+   "verdict": "evil",
+   "verdictRef": "1 Kings 15:26",
+   "refs": [
+    "1 Kings 15:25-31"
+   ],
+   "places": [
+    "gibbethon"
+   ],
+   "summary": "Son of Jeroboam. Killed by Baasha while besieging Gibbethon, ending Jeroboam's dynasty as the prophet Ahijah had foretold."
+  },
+  {
+   "id": "baasha",
+   "name": "Baasha",
+   "kingdom": "israel",
+   "start": -909,
+   "end": -886,
+   "verdict": "evil",
+   "verdictRef": "1 Kings 15:34",
+   "refs": [
+    "1 Kings 15:27-16:7",
+    "2 Chronicles 16:1-6"
+   ],
+   "places": [
+    "tirzah",
+    "gibbethon"
+   ],
+   "summary": "Seized the throne and destroyed Jeroboam's family. Reigned from Tirzah and fought Asa of Judah."
+  },
+  {
+   "id": "elah",
+   "name": "Elah",
+   "kingdom": "israel",
+   "start": -886,
+   "end": -885,
+   "verdict": "evil",
+   "verdictRef": "1 Kings 16:13",
+   "refs": [
+    "1 Kings 16:8-14"
+   ],
+   "places": [
+    "tirzah"
+   ],
+   "summary": "Son of Baasha. Murdered while drunk in Tirzah by Zimri, one of his chariot commanders."
+  },
+  {
+   "id": "zimri",
+   "name": "Zimri",
+   "kingdom": "israel",
+   "start": -885,
+   "end": -885,
+   "verdict": "evil",
+   "verdictRef": "1 Kings 16:19",
+   "refs": [
+    "1 Kings 16:9-20"
+   ],
+   "places": [
+    "tirzah",
+    "gibbethon"
+   ],
+   "summary": "Reigned seven days. When the army made Omri king, Zimri burned the palace in Tirzah down on himself."
+  },
+  {
+   "id": "tibni",
+   "name": "Tibni",
+   "kingdom": "israel",
+   "start": -885,
+   "end": -880,
+   "verdict": null,
+   "refs": [
+    "1 Kings 16:21-22"
+   ],
+   "places": [],
+   "summary": "Rival king followed by half the people after Zimri's death. Omri's side prevailed."
+  },
+  {
+   "id": "omri",
+   "name": "Omri",
+   "kingdom": "israel",
+   "start": -885,
+   "end": -874,
+   "verdict": "evil",
+   "verdictRef": "1 Kings 16:25",
+   "refs": [
+    "1 Kings 16:15-28"
+   ],
+   "places": [
+    "tirzah",
+    "samaria-1"
+   ],
+   "summary": "Army commander who founded a powerful dynasty and built Samaria as Israel's new capital.",
+   "evidence": "The Moabite Mesha Stele names \"Omri king of Israel\", and Assyrian records call Israel \"the house of Omri\" long after his death."
+  },
+  {
+   "id": "ahab",
+   "name": "Ahab",
+   "kingdom": "israel",
+   "start": -874,
+   "end": -853,
+   "verdict": "evil",
+   "verdictRef": "1 Kings 16:30-33",
+   "refs": [
+    "1 Kings 16:29-22:40"
+   ],
+   "places": [
+    "samaria-1",
+    "sidon",
+    "jezreel-2",
+    "mount-carmel",
+    "aphek-3",
+    "ramoth-gilead"
+   ],
+   "summary": "Married Jezebel of Sidon and promoted Baal worship, opposed by Elijah. Killed in battle at Ramoth-gilead.",
+   "evidence": "Shalmaneser III's Kurkh Monolith lists \"Ahab the Israelite\" with 2,000 chariots at the Battle of Qarqar, 853 BC."
+  },
+  {
+   "id": "ahaziah-i",
+   "name": "Ahaziah",
+   "kingdom": "israel",
+   "start": -853,
+   "end": -852,
+   "verdict": "evil",
+   "verdictRef": "1 Kings 22:52",
+   "refs": [
+    "1 Kings 22:51-53",
+    "2 Kings 1"
+   ],
+   "places": [
+    "samaria-1"
+   ],
+   "summary": "Son of Ahab. Injured in a fall, he sent to ask Baal-zebub instead of the LORD, and died as Elijah foretold."
+  },
+  {
+   "id": "joram-i",
+   "name": "Joram (Jehoram)",
+   "kingdom": "israel",
+   "start": -852,
+   "end": -841,
+   "verdict": "evil",
+   "verdictRef": "2 Kings 3:2-3",
+   "refs": [
+    "2 Kings 3",
+    "2 Kings 6-7",
+    "2 Kings 9:14-26"
+   ],
+   "places": [
+    "samaria-1",
+    "kir-hareseth",
+    "jezreel-2",
+    "ramoth-gilead"
+   ],
+   "summary": "Son of Ahab. Fought Moab alongside Jehoshaphat; Samaria survived an Aramean siege in his reign. Killed by Jehu at Jezreel."
+  },
+  {
+   "id": "jehu",
+   "name": "Jehu",
+   "kingdom": "israel",
+   "start": -841,
+   "end": -814,
+   "verdict": "mixed",
+   "verdictRef": "2 Kings 10:30-31",
+   "refs": [
+    "2 Kings 9-10"
+   ],
+   "places": [
+    "ramoth-gilead",
+    "jezreel-2",
+    "samaria-1"
+   ],
+   "summary": "Anointed at Elisha's command to judge the house of Ahab. Wiped out Baal worship in Israel, but kept Jeroboam's golden calves.",
+   "evidence": "The Black Obelisk of Shalmaneser III shows Jehu bowing with tribute in 841 BC. It is the only known picture of an Israelite king."
+  },
+  {
+   "id": "jehoahaz-i",
+   "name": "Jehoahaz",
+   "kingdom": "israel",
+   "start": -814,
+   "end": -798,
+   "verdict": "evil",
+   "verdictRef": "2 Kings 13:2",
+   "refs": [
+    "2 Kings 13:1-9"
+   ],
+   "places": [
+    "samaria-1"
+   ],
+   "summary": "Israel was crushed by Hazael of Aram. Jehoahaz sought the LORD, who gave Israel a deliverer."
+  },
+  {
+   "id": "jehoash-i",
+   "name": "Jehoash (Joash)",
+   "kingdom": "israel",
+   "start": -798,
+   "end": -782,
+   "verdict": "evil",
+   "verdictRef": "2 Kings 13:11",
+   "refs": [
+    "2 Kings 13:10-25",
+    "2 Kings 14:8-16"
+   ],
+   "places": [
+    "samaria-1",
+    "jerusalem"
+   ],
+   "summary": "Visited the dying Elisha and won back towns from Aram, as Elisha foretold. Defeated Amaziah of Judah and broke down Jerusalem's wall."
+  },
+  {
+   "id": "jeroboam2",
+   "name": "Jeroboam II",
+   "kingdom": "israel",
+   "start": -782,
+   "end": -753,
+   "coStart": -793,
+   "verdict": "evil",
+   "verdictRef": "2 Kings 14:24",
+   "refs": [
+    "2 Kings 14:23-29"
+   ],
+   "places": [
+    "samaria-1",
+    "hamath-1",
+    "damascus"
+   ],
+   "summary": "Restored Israel's borders as Jonah had prophesied. A time of wealth and injustice condemned by Amos and Hosea.",
+   "note": "2 Kings 14:23 gives him 41 years. Thiele counts them from 793 BC, when he began ruling alongside his father."
+  },
+  {
+   "id": "zechariah-i",
+   "name": "Zechariah",
+   "kingdom": "israel",
+   "start": -753,
+   "end": -753,
+   "verdict": "evil",
+   "verdictRef": "2 Kings 15:9",
+   "refs": [
+    "2 Kings 15:8-12"
+   ],
+   "places": [
+    "samaria-1"
+   ],
+   "summary": "Last of Jehu's dynasty, fulfilling the promise of four generations (2 Kings 10:30). Assassinated after six months."
+  },
+  {
+   "id": "shallum",
+   "name": "Shallum",
+   "kingdom": "israel",
+   "start": -752,
+   "end": -752,
+   "verdict": null,
+   "refs": [
+    "2 Kings 15:13-15"
+   ],
+   "places": [
+    "samaria-1"
+   ],
+   "summary": "Assassinated Zechariah and reigned one month before being killed by Menahem."
+  },
+  {
+   "id": "menahem",
+   "name": "Menahem",
+   "kingdom": "israel",
+   "start": -752,
+   "end": -742,
+   "verdict": "evil",
+   "verdictRef": "2 Kings 15:18",
+   "refs": [
+    "2 Kings 15:14-22"
+   ],
+   "places": [
+    "tirzah",
+    "samaria-1"
+   ],
+   "summary": "Seized Samaria by force. Paid a thousand talents of silver to Pul (Tiglath-pileser III) of Assyria.",
+   "evidence": "Tiglath-pileser III's annals list \"Menahem of Samaria\" among the kings who paid him tribute."
+  },
+  {
+   "id": "pekahiah",
+   "name": "Pekahiah",
+   "kingdom": "israel",
+   "start": -742,
+   "end": -740,
+   "verdict": "evil",
+   "verdictRef": "2 Kings 15:24",
+   "refs": [
+    "2 Kings 15:23-26"
+   ],
+   "places": [
+    "samaria-1"
+   ],
+   "summary": "Son of Menahem. Assassinated in his palace by his officer Pekah."
+  },
+  {
+   "id": "pekah",
+   "name": "Pekah",
+   "kingdom": "israel",
+   "start": -740,
+   "end": -732,
+   "coStart": -752,
+   "verdict": "evil",
+   "verdictRef": "2 Kings 15:28",
+   "refs": [
+    "2 Kings 15:25-31",
+    "2 Kings 16:5",
+    "Isaiah 7:1-9"
+   ],
+   "places": [
+    "samaria-1",
+    "damascus"
+   ],
+   "summary": "Allied with Rezin of Damascus against Judah. Lost Galilee and Gilead to Assyria and was killed by Hoshea.",
+   "note": "2 Kings 15:27 gives him 20 years. Thiele counts them from 752 BC as a rival reign east of the Jordan, overlapping Menahem and Pekahiah."
+  },
+  {
+   "id": "hoshea",
+   "name": "Hoshea",
+   "kingdom": "israel",
+   "start": -732,
+   "end": -722,
+   "verdict": "evil",
+   "verdictRef": "2 Kings 17:2",
+   "refs": [
+    "2 Kings 15:30",
+    "2 Kings 17:1-6"
+   ],
+   "places": [
+    "samaria-1",
+    "halah",
+    "gozan"
+   ],
+   "summary": "Last king of Israel. Rebelled against Assyria; Samaria fell after a three-year siege and the people were deported.",
+   "evidence": "Tiglath-pileser III's annals claim he put Hoshea on the throne after Pekah was overthrown."
+  },
+  {
+   "id": "rehoboam",
+   "name": "Rehoboam",
+   "kingdom": "judah",
+   "start": -931,
+   "end": -913,
+   "verdict": "evil",
+   "verdictRef": "2 Chronicles 12:14",
+   "refs": [
+    "1 Kings 12:1-24",
+    "1 Kings 14:21-31",
+    "2 Chronicles 10-12"
+   ],
+   "places": [
+    "shechem",
+    "jerusalem"
+   ],
+   "summary": "Solomon's son. His harsh answer at Shechem split the kingdom. Shishak of Egypt plundered Jerusalem in his fifth year."
+  },
+  {
+   "id": "abijah",
+   "name": "Abijah (Abijam)",
+   "kingdom": "judah",
+   "start": -913,
+   "end": -911,
+   "verdict": "evil",
+   "verdictRef": "1 Kings 15:3",
+   "refs": [
+    "1 Kings 15:1-8",
+    "2 Chronicles 13"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "Fought Jeroboam. Chronicles records his speech appealing to the LORD's covenant with David."
+  },
+  {
+   "id": "asa",
+   "name": "Asa",
+   "kingdom": "judah",
+   "start": -911,
+   "end": -870,
+   "verdict": "right",
+   "verdictRef": "1 Kings 15:11",
+   "refs": [
+    "1 Kings 15:9-24",
+    "2 Chronicles 14-16"
+   ],
+   "places": [
+    "jerusalem",
+    "mizpah-3"
+   ],
+   "summary": "Removed idols and reformed worship. Later relied on the king of Aram instead of the LORD against Baasha."
+  },
+  {
+   "id": "jehoshaphat",
+   "name": "Jehoshaphat",
+   "kingdom": "judah",
+   "start": -870,
+   "end": -848,
+   "coStart": -873,
+   "verdict": "right",
+   "verdictRef": "1 Kings 22:43",
+   "refs": [
+    "1 Kings 22:41-50",
+    "2 Chronicles 17-20"
+   ],
+   "places": [
+    "jerusalem",
+    "ramoth-gilead",
+    "kir-hareseth"
+   ],
+   "summary": "Strengthened Judah and sent officials to teach the Law. Unwisely allied himself with Ahab's family.",
+   "note": "Thiele places a co-regency with his father Asa from 873 BC (Asa was diseased in his feet, 1 Kings 15:23)."
+  },
+  {
+   "id": "jehoram-j",
+   "name": "Jehoram",
+   "kingdom": "judah",
+   "start": -848,
+   "end": -841,
+   "coStart": -853,
+   "verdict": "evil",
+   "verdictRef": "2 Kings 8:18",
+   "refs": [
+    "2 Kings 8:16-24",
+    "2 Chronicles 21"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "Married Ahab's daughter Athaliah and followed the ways of Ahab. Edom revolted in his reign.",
+   "note": "Thiele places a co-regency with Jehoshaphat from 853 BC."
+  },
+  {
+   "id": "ahaziah-j",
+   "name": "Ahaziah",
+   "kingdom": "judah",
+   "start": -841,
+   "end": -841,
+   "verdict": "evil",
+   "verdictRef": "2 Kings 8:27",
+   "refs": [
+    "2 Kings 8:25-29",
+    "2 Kings 9:27-29",
+    "2 Chronicles 22:1-9"
+   ],
+   "places": [
+    "jezreel-2",
+    "megiddo"
+   ],
+   "summary": "Son of Athaliah. Killed by Jehu while visiting Joram of Israel; died at Megiddo."
+  },
+  {
+   "id": "athaliah",
+   "name": "Athaliah (queen)",
+   "kingdom": "judah",
+   "start": -841,
+   "end": -835,
+   "verdict": null,
+   "refs": [
+    "2 Kings 11",
+    "2 Chronicles 22:10-23:21"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "Ahab's daughter. Seized the throne and tried to wipe out David's royal line; overthrown by Jehoiada the priest."
+  },
+  {
+   "id": "joash-j",
+   "name": "Joash (Jehoash)",
+   "kingdom": "judah",
+   "start": -835,
+   "end": -796,
+   "verdict": "mixed",
+   "verdictRef": "2 Kings 12:2-3",
+   "refs": [
+    "2 Kings 11:21-12:21",
+    "2 Chronicles 24"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "Hidden as a baby in the temple and crowned at seven. Repaired the temple under Jehoiada, but after Jehoiada died he turned away and had Jehoiada's son Zechariah stoned."
+  },
+  {
+   "id": "amaziah",
+   "name": "Amaziah",
+   "kingdom": "judah",
+   "start": -796,
+   "end": -767,
+   "verdict": "mixed",
+   "verdictRef": "2 Kings 14:3-4",
+   "refs": [
+    "2 Kings 14:1-20",
+    "2 Chronicles 25"
+   ],
+   "places": [
+    "jerusalem",
+    "lachish"
+   ],
+   "summary": "Defeated Edom but then worshipped Edom's gods. Defeated by Jehoash of Israel and later murdered at Lachish."
+  },
+  {
+   "id": "uzziah",
+   "name": "Uzziah (Azariah)",
+   "kingdom": "judah",
+   "start": -767,
+   "end": -740,
+   "coStart": -792,
+   "verdict": "mixed",
+   "verdictRef": "2 Kings 15:3-4",
+   "refs": [
+    "2 Kings 15:1-7",
+    "2 Chronicles 26",
+    "Isaiah 6:1"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "Long and prosperous reign. Struck with leprosy for burning incense in the temple, so his son Jotham governed for him.",
+   "note": "2 Kings 15:2 gives him 52 years. Thiele counts them from 792 BC, when he began ruling alongside his father Amaziah."
+  },
+  {
+   "id": "jotham",
+   "name": "Jotham",
+   "kingdom": "judah",
+   "start": -740,
+   "end": -732,
+   "coStart": -750,
+   "verdict": "right",
+   "verdictRef": "2 Kings 15:34",
+   "refs": [
+    "2 Kings 15:32-38",
+    "2 Chronicles 27"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "Built the upper gate of the temple and grew powerful because he walked steadily before the LORD.",
+   "note": "Governed for his father Uzziah from about 750 BC (2 Kings 15:5)."
+  },
+  {
+   "id": "ahaz",
+   "name": "Ahaz",
+   "kingdom": "judah",
+   "start": -732,
+   "end": -716,
+   "verdict": "evil",
+   "verdictRef": "2 Kings 16:2-3",
+   "refs": [
+    "2 Kings 16",
+    "2 Chronicles 28",
+    "Isaiah 7"
+   ],
+   "places": [
+    "jerusalem",
+    "damascus"
+   ],
+   "summary": "Refused Isaiah's call to trust the LORD and paid Assyria for help instead. Copied a pagan altar from Damascus and sacrificed his own son.",
+   "evidence": "Tiglath-pileser III's annals list \"Jehoahaz [Ahaz] of Judah\" among the kings paying tribute."
+  },
+  {
+   "id": "hezekiah",
+   "name": "Hezekiah",
+   "kingdom": "judah",
+   "start": -716,
+   "end": -687,
+   "verdict": "right",
+   "verdictRef": "2 Kings 18:3-5",
+   "refs": [
+    "2 Kings 18-20",
+    "2 Chronicles 29-32",
+    "Isaiah 36-39"
+   ],
+   "places": [
+    "jerusalem",
+    "lachish",
+    "libnah-1"
+   ],
+   "summary": "Trusted the LORD like no other king of Judah. Restored temple worship, was delivered from Sennacherib, and was granted fifteen more years of life.",
+   "evidence": "Hezekiah's water tunnel (2 Kings 20:20) still runs under Jerusalem, and a clay seal impression bearing his name was found there in 2015."
+  },
+  {
+   "id": "manasseh",
+   "name": "Manasseh",
+   "kingdom": "judah",
+   "start": -687,
+   "end": -643,
+   "coStart": -696,
+   "verdict": "evil",
+   "verdictRef": "2 Kings 21:2",
+   "refs": [
+    "2 Kings 21:1-18",
+    "2 Chronicles 33:1-20"
+   ],
+   "places": [
+    "jerusalem",
+    "babylon-1"
+   ],
+   "summary": "Reigned longest of all and rebuilt pagan shrines, shedding much innocent blood. Chronicles records his captivity, repentance and restoration (2 Chronicles 33:11-13).",
+   "note": "Thiele places a co-regency with Hezekiah from 696 BC.",
+   "evidence": "Inscriptions of Esarhaddon and Ashurbanipal list \"Manasseh king of Judah\" among their vassals."
+  },
+  {
+   "id": "amon",
+   "name": "Amon",
+   "kingdom": "judah",
+   "start": -643,
+   "end": -641,
+   "verdict": "evil",
+   "verdictRef": "2 Kings 21:20",
+   "refs": [
+    "2 Kings 21:19-26",
+    "2 Chronicles 33:21-25"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "Followed his father's idolatry. Murdered by his servants after two years."
+  },
+  {
+   "id": "josiah",
+   "name": "Josiah",
+   "kingdom": "judah",
+   "start": -641,
+   "end": -609,
+   "verdict": "right",
+   "verdictRef": "2 Kings 22:2",
+   "refs": [
+    "2 Kings 22:1-23:30",
+    "2 Chronicles 34-35"
+   ],
+   "places": [
+    "jerusalem",
+    "bethel-1",
+    "megiddo"
+   ],
+   "summary": "Became king at eight. When the Book of the Law was found he led Judah's deepest reform, of whom it is said no king turned to the LORD as he did (2 Kings 23:25). Killed at Megiddo opposing Pharaoh Neco."
+  },
+  {
+   "id": "jehoahaz-j",
+   "name": "Jehoahaz",
+   "kingdom": "judah",
+   "start": -609,
+   "end": -609,
+   "verdict": "evil",
+   "verdictRef": "2 Kings 23:32",
+   "refs": [
+    "2 Kings 23:31-34",
+    "2 Chronicles 36:1-4"
+   ],
+   "places": [
+    "riblah-1"
+   ],
+   "summary": "Reigned three months before Pharaoh Neco imprisoned him at Riblah and took him to Egypt."
+  },
+  {
+   "id": "jehoiakim",
+   "name": "Jehoiakim",
+   "kingdom": "judah",
+   "start": -609,
+   "end": -598,
+   "verdict": "evil",
+   "verdictRef": "2 Kings 23:37",
+   "refs": [
+    "2 Kings 23:34-24:7",
+    "2 Chronicles 36:5-8",
+    "Jeremiah 36"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "Put on the throne by Neco. Burned Jeremiah's scroll and rebelled against Nebuchadnezzar."
+  },
+  {
+   "id": "jehoiachin",
+   "name": "Jehoiachin",
+   "kingdom": "judah",
+   "start": -598,
+   "end": -597,
+   "verdict": "evil",
+   "verdictRef": "2 Kings 24:9",
+   "refs": [
+    "2 Kings 24:8-17",
+    "2 Kings 25:27-30"
+   ],
+   "places": [
+    "jerusalem",
+    "babylon-1"
+   ],
+   "summary": "Surrendered to Nebuchadnezzar after three months and was taken to Babylon. Released from prison 37 years later.",
+   "evidence": "Ration tablets from Babylon list oil given to \"Jehoiachin, king of Judah\" and his sons."
+  },
+  {
+   "id": "zedekiah",
+   "name": "Zedekiah",
+   "kingdom": "judah",
+   "start": -597,
+   "end": -586,
+   "verdict": "evil",
+   "verdictRef": "2 Kings 24:19",
+   "refs": [
+    "2 Kings 24:17-25:7",
+    "2 Chronicles 36:11-21",
+    "Jeremiah 39",
+    "Jeremiah 52"
+   ],
+   "places": [
+    "jerusalem",
+    "riblah-1",
+    "babylon-1"
+   ],
+   "summary": "Last king of Judah. Ignored Jeremiah's warnings and rebelled. Jerusalem fell; he was blinded at Riblah and taken to Babylon."
+  }
+ ],
+ "prophets": [
+  {
+   "id": "elijah",
+   "name": "Elijah",
+   "start": -860,
+   "end": -848,
+   "certainty": "approx",
+   "refs": [
+    "1 Kings 17-19",
+    "1 Kings 21:17-29",
+    "2 Kings 1:1-2:11"
+   ],
+   "places": [
+    "cherith",
+    "zarephath",
+    "mount-carmel",
+    "jezreel-2",
+    "beersheba-1",
+    "mount-sinai",
+    "jericho-1"
+   ],
+   "summary": "Prophet to the northern kingdom in the days of Ahab and Ahaziah. Confronted Baal worship on Mount Carmel and was taken up to heaven in a whirlwind.",
+   "basis": "Active in the reigns of Ahab and Ahaziah of Israel."
+  },
+  {
+   "id": "elisha",
+   "name": "Elisha",
+   "start": -850,
+   "end": -798,
+   "certainty": "approx",
+   "refs": [
+    "1 Kings 19:16-21",
+    "2 Kings 2-8",
+    "2 Kings 13:14-21"
+   ],
+   "places": [
+    "abel-meholah",
+    "jericho-1",
+    "shunem",
+    "dothan",
+    "samaria-1",
+    "damascus"
+   ],
+   "summary": "Elijah's successor, who received a double portion of his spirit. His ministry was marked by many miracles of provision, healing and deliverance.",
+   "basis": "Called in Ahab's reign; died in the reign of Jehoash of Israel (2 Kings 13:14)."
+  },
+  {
+   "id": "jonah",
+   "name": "Jonah",
+   "start": -782,
+   "end": -753,
+   "certainty": "approx",
+   "refs": [
+    "2 Kings 14:25",
+    "Jonah 1-4",
+    "Matthew 12:39-41"
+   ],
+   "places": [
+    "gath-hepher",
+    "joppa",
+    "tarshish-1",
+    "nineveh"
+   ],
+   "summary": "From Gath-hepher in Galilee. Fled toward Tarshish rather than preach to Nineveh, but the city repented at his message. Jesus pointed to Jonah as a sign of his own death and resurrection.",
+   "basis": "Prophesied in the reign of Jeroboam II (2 Kings 14:25)."
+  },
+  {
+   "id": "amos",
+   "name": "Amos",
+   "start": -767,
+   "end": -753,
+   "certainty": "approx",
+   "refs": [
+    "Amos 1:1",
+    "Amos 7:10-17"
+   ],
+   "places": [
+    "tekoa",
+    "bethel-1"
+   ],
+   "summary": "A shepherd from Tekoa in Judah sent to the northern kingdom. Denounced injustice and empty religion at Bethel.",
+   "basis": "Amos 1:1: in the days of Uzziah and Jeroboam II, two years before the earthquake."
+  },
+  {
+   "id": "hosea",
+   "name": "Hosea",
+   "start": -755,
+   "end": -715,
+   "certainty": "approx",
+   "refs": [
+    "Hosea 1:1",
+    "Hosea 3",
+    "Hosea 11:1-9"
+   ],
+   "places": [
+    "samaria-1"
+   ],
+   "summary": "Prophet to Israel whose marriage to an unfaithful wife pictured the LORD's faithful love for unfaithful Israel.",
+   "basis": "Hosea 1:1: Uzziah, Jotham, Ahaz and Hezekiah of Judah, and Jeroboam II of Israel."
+  },
+  {
+   "id": "isaiah",
+   "name": "Isaiah",
+   "start": -740,
+   "end": -681,
+   "certainty": "calculated",
+   "refs": [
+    "Isaiah 1:1",
+    "Isaiah 6:1-8",
+    "Isaiah 7:14",
+    "Isaiah 53"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "Prophet in Jerusalem through four reigns. Called in a vision of the LORD's holiness; foretold the virgin-born Immanuel and the suffering Servant.",
+   "basis": "Called in the year Uzziah died (Isaiah 6:1); records Sennacherib's death in 681 BC (Isaiah 37:38)."
+  },
+  {
+   "id": "micah",
+   "name": "Micah",
+   "start": -740,
+   "end": -700,
+   "certainty": "approx",
+   "refs": [
+    "Micah 1:1",
+    "Micah 5:2",
+    "Micah 6:8",
+    "Jeremiah 26:18-19"
+   ],
+   "places": [
+    "moresheth-gath",
+    "jerusalem",
+    "samaria-1"
+   ],
+   "summary": "From Moresheth in Judah's lowlands. Spoke against Samaria and Jerusalem, and foretold that the ruler of Israel would come from Bethlehem.",
+   "basis": "Micah 1:1: in the days of Jotham, Ahaz and Hezekiah."
+  },
+  {
+   "id": "nahum",
+   "name": "Nahum",
+   "start": -663,
+   "end": -612,
+   "certainty": "approx",
+   "refs": [
+    "Nahum 1:1",
+    "Nahum 3:8-10"
+   ],
+   "places": [
+    "nineveh",
+    "thebes"
+   ],
+   "summary": "Announced the fall of Nineveh, capital of Assyria.",
+   "basis": "Written after the fall of Thebes (663 BC, Nahum 3:8) and before Nineveh fell (612 BC)."
+  },
+  {
+   "id": "zephaniah",
+   "name": "Zephaniah",
+   "start": -640,
+   "end": -609,
+   "certainty": "approx",
+   "refs": [
+    "Zephaniah 1:1",
+    "Zephaniah 3:14-17"
+   ],
+   "places": [
+    "jerusalem",
+    "nineveh"
+   ],
+   "summary": "Warned of the day of the LORD, and promised the LORD would rejoice over a restored remnant.",
+   "basis": "Zephaniah 1:1: in the days of Josiah."
+  },
+  {
+   "id": "jeremiah",
+   "name": "Jeremiah",
+   "start": -627,
+   "end": -582,
+   "certainty": "calculated",
+   "refs": [
+    "Jeremiah 1:1-3",
+    "Jeremiah 29:10-14",
+    "Jeremiah 31:31-34",
+    "Jeremiah 43:4-7"
+   ],
+   "places": [
+    "anathoth",
+    "jerusalem",
+    "mizpah-3",
+    "tahpanhes"
+   ],
+   "summary": "Priest's son from Anathoth who warned Judah for forty years before and after Jerusalem's fall. Promised a new covenant written on the heart.",
+   "basis": "Called in Josiah's 13th year (Jeremiah 1:2), 627 BC; last seen taken to Egypt after 586 BC."
+  },
+  {
+   "id": "habakkuk",
+   "name": "Habakkuk",
+   "start": -609,
+   "end": -598,
+   "certainty": "approx",
+   "refs": [
+    "Habakkuk 1:5-6",
+    "Habakkuk 2:4",
+    "Habakkuk 3:17-19"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "Wrestled with God over the rise of Babylon, and learned that the righteous shall live by faith.",
+   "basis": "Speaks of the Chaldeans (Babylonians) as a rising power (Habakkuk 1:6)."
+  },
+  {
+   "id": "daniel",
+   "name": "Daniel",
+   "start": -605,
+   "end": -536,
+   "certainty": "calculated",
+   "refs": [
+    "Daniel 1:1-6",
+    "Daniel 2",
+    "Daniel 6",
+    "Daniel 10:1"
+   ],
+   "places": [
+    "jerusalem",
+    "babylon-1"
+   ],
+   "summary": "Taken to Babylon as a young man. Served kings of Babylon and Persia while staying faithful to God; received visions of the kingdoms to come.",
+   "basis": "Taken in 605 BC (Daniel 1:1); last dated vision in the third year of Cyrus (Daniel 10:1)."
+  },
+  {
+   "id": "ezekiel",
+   "name": "Ezekiel",
+   "start": -593,
+   "end": -571,
+   "certainty": "calculated",
+   "refs": [
+    "Ezekiel 1:1-3",
+    "Ezekiel 29:17",
+    "Ezekiel 36:26-27",
+    "Ezekiel 26:1-14",
+    "Ezekiel 37:1-14"
+   ],
+   "places": [
+    "chebar",
+    "babylon-1",
+    "jerusalem",
+    "tyre"
+   ],
+   "summary": "Priest among the exiles by the Chebar canal. Saw the glory of the LORD leave the temple, and the vision of dry bones brought back to life.",
+   "basis": "Called in the 5th year of Jehoiachin's exile (Ezekiel 1:2); last dated oracle in the 27th year (Ezekiel 29:17)."
+  },
+  {
+   "id": "haggai",
+   "name": "Haggai",
+   "start": -520,
+   "end": -520,
+   "certainty": "calculated",
+   "refs": [
+    "Haggai 1:1-15",
+    "Haggai 2:6-9",
+    "Ezra 5:1-2"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "Rebuked the returned exiles for living in panelled houses while the LORD's house lay in ruins, and promised that the latter glory of this house would be greater than the former.",
+   "basis": "All four messages are dated to the 2nd year of Darius (Haggai 1:1; 2:10)."
+  },
+  {
+   "id": "zechariah",
+   "name": "Zechariah",
+   "start": -520,
+   "end": -518,
+   "certainty": "calculated",
+   "refs": [
+    "Zechariah 1:1-6",
+    "Zechariah 4:6",
+    "Zechariah 9:9",
+    "Zechariah 12:10"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "Encouraged the temple builders: \"Not by might, nor by power, but by my Spirit, says the LORD.\" Foretold the King coming to Jerusalem humble and riding on a donkey.",
+   "basis": "Dated messages from the 2nd to the 4th year of Darius (Zechariah 1:1; 7:1)."
+  },
+  {
+   "id": "malachi",
+   "name": "Malachi",
+   "start": -433,
+   "end": -420,
+   "certainty": "approx",
+   "refs": [
+    "Malachi 1:1",
+    "Malachi 3:1",
+    "Malachi 4:5-6"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "The last of the Old Testament prophets. Confronted careless worship and broken marriages, and promised the messenger who would prepare the way of the LORD.",
+   "basis": "The book is undated, but the sins it addresses (corrupt priests, marriage to foreign wives, neglect of tithes) match Nehemiah 13, so it is usually placed in Nehemiah's time."
+  }
+ ],
+ "events": [
+  {
+   "id": "e-divide",
+   "title": "The kingdom divides",
+   "year": -931,
+   "certainty": "calculated",
+   "refs": [
+    "1 Kings 11:29-39",
+    "1 Kings 12:1-20",
+    "2 Chronicles 10"
+   ],
+   "places": [
+    "shechem",
+    "jerusalem"
+   ],
+   "summary": "At Shechem the northern tribes reject Solomon's son Rehoboam and make Jeroboam king. The prophet Ahijah had foretold this as the LORD's judgment on Solomon's idolatry. Judah and Benjamin stay with the house of David."
+  },
+  {
+   "id": "e-calves",
+   "title": "Golden calves at Bethel and Dan",
+   "year": -931,
+   "certainty": "calculated",
+   "refs": [
+    "1 Kings 12:25-33",
+    "1 Kings 13:1-5"
+   ],
+   "places": [
+    "bethel-1",
+    "dan",
+    "shechem",
+    "penuel"
+   ],
+   "summary": "To stop his people going up to the temple in Jerusalem, Jeroboam sets up two golden calves and his own priesthood. A man of God foretells that a king named Josiah will one day burn the bones of these priests on the Bethel altar."
+  },
+  {
+   "id": "e-shishak",
+   "title": "Shishak invades Judah",
+   "year": -926,
+   "certainty": "approx",
+   "refs": [
+    "1 Kings 14:25-28",
+    "2 Chronicles 12:1-12"
+   ],
+   "places": [
+    "jerusalem",
+    "megiddo",
+    "thebes"
+   ],
+   "summary": "In Rehoboam's fifth year Pharaoh Shishak comes against Jerusalem and takes the treasures of the temple and palace. When Judah's leaders humble themselves, the LORD spares the city from destruction.",
+   "evidence": "Shoshenq I's victory relief at Karnak (Thebes) lists towns he conquered in Israel and Judah, and a fragment of his monument was found at Megiddo."
+  },
+  {
+   "id": "e-samaria-built",
+   "title": "Omri builds Samaria",
+   "year": -880,
+   "certainty": "approx",
+   "refs": [
+    "1 Kings 16:23-24"
+   ],
+   "places": [
+    "tirzah",
+    "samaria-1"
+   ],
+   "summary": "After six years in Tirzah, Omri buys the hill of Samaria and builds a new capital. It remains Israel's capital until its fall in 722 BC."
+  },
+  {
+   "id": "e-carmel",
+   "title": "Elijah on Mount Carmel",
+   "year": -860,
+   "certainty": "approx",
+   "refs": [
+    "1 Kings 17:1-16",
+    "1 Kings 18:17-40"
+   ],
+   "places": [
+    "mount-carmel",
+    "cherith",
+    "zarephath",
+    "jezreel-2"
+   ],
+   "summary": "After three years of drought, Elijah challenges 450 prophets of Baal. The LORD answers by fire and the people fall on their faces, confessing that the LORD is God."
+  },
+  {
+   "id": "e-horeb",
+   "title": "Elijah at Horeb",
+   "year": -859,
+   "certainty": "approx",
+   "refs": [
+    "1 Kings 19:1-18"
+   ],
+   "places": [
+    "jezreel-2",
+    "beersheba-1",
+    "mount-sinai"
+   ],
+   "summary": "Fleeing Jezebel, Elijah travels to Horeb, the mountain of God. The LORD speaks to him in a low whisper and tells him seven thousand in Israel have not bowed to Baal.",
+   "note": "The location of Horeb (Sinai) is uncertain; Jebel Musa is the traditional site, but several others have been proposed."
+  },
+  {
+   "id": "e-qarqar",
+   "title": "Battle of Qarqar",
+   "year": -853,
+   "certainty": "fixed",
+   "refs": [],
+   "places": [],
+   "summary": "Ahab joins a coalition of western kings against Shalmaneser III of Assyria at Qarqar, on the Orontes River in Syria. The battle is not recorded in the Bible.",
+   "evidence": "Shalmaneser III's Kurkh Monolith lists \"Ahab the Israelite\" with 2,000 chariots and 10,000 soldiers. This is one of the two fixed points from which the kings' dates are calculated."
+  },
+  {
+   "id": "e-ahab-death",
+   "title": "Ahab dies at Ramoth-gilead",
+   "year": -853,
+   "certainty": "fixed",
+   "refs": [
+    "1 Kings 22:1-40",
+    "2 Chronicles 18"
+   ],
+   "places": [
+    "ramoth-gilead",
+    "samaria-1"
+   ],
+   "summary": "Ignoring the prophet Micaiah's warning, Ahab and Jehoshaphat attack Ramoth-gilead. Ahab disguises himself, but an arrow shot at random strikes him and he dies, as the LORD had said."
+  },
+  {
+   "id": "e-moab",
+   "title": "Moab rebels",
+   "year": -850,
+   "certainty": "approx",
+   "refs": [
+    "2 Kings 1:1",
+    "2 Kings 3:4-27"
+   ],
+   "places": [
+    "kir-hareseth",
+    "samaria-1"
+   ],
+   "summary": "Mesha king of Moab stops paying tribute. Joram of Israel, Jehoshaphat of Judah and the king of Edom march against him, and Elisha promises water in the desert.",
+   "evidence": "The Mesha Stele (Moabite Stone), now in the Louvre, is Mesha's own account of throwing off Israel's rule."
+  },
+  {
+   "id": "e-elijah-taken",
+   "title": "Elijah taken up; Elisha succeeds",
+   "year": -848,
+   "certainty": "approx",
+   "refs": [
+    "2 Kings 2:1-15"
+   ],
+   "places": [
+    "jericho-1"
+   ],
+   "summary": "Elijah is taken up to heaven in a whirlwind beyond the Jordan near Jericho. Elisha takes up his cloak and receives a double portion of his spirit.",
+   "note": "2 Chronicles 21:12 records a letter from Elijah to Jehoram of Judah, so some scholars place this event a few years later."
+  },
+  {
+   "id": "e-shunem",
+   "title": "Elisha and the Shunammite's son",
+   "year": -846,
+   "certainty": "approx",
+   "refs": [
+    "2 Kings 4:8-37",
+    "2 Kings 8:1-6"
+   ],
+   "places": [
+    "shunem"
+   ],
+   "summary": "A woman of Shunem gives Elisha a room. The LORD gives her a son, and when the boy dies Elisha raises him to life."
+  },
+  {
+   "id": "e-dothan",
+   "title": "Chariots of fire at Dothan",
+   "year": -844,
+   "certainty": "approx",
+   "refs": [
+    "2 Kings 6:8-23"
+   ],
+   "places": [
+    "dothan",
+    "samaria-1",
+    "damascus"
+   ],
+   "summary": "The king of Aram surrounds Dothan to capture Elisha. Elisha prays, and his servant sees the hills full of horses and chariots of fire."
+  },
+  {
+   "id": "e-jehu",
+   "title": "Jehu's revolt",
+   "year": -841,
+   "certainty": "fixed",
+   "refs": [
+    "2 Kings 9:1-10:31"
+   ],
+   "places": [
+    "ramoth-gilead",
+    "jezreel-2",
+    "megiddo",
+    "samaria-1"
+   ],
+   "summary": "A prophet sent by Elisha anoints Jehu at Ramoth-gilead. Jehu kills Joram of Israel, Ahaziah of Judah and Jezebel, and destroys Baal worship in Israel.",
+   "evidence": "The Black Obelisk of Shalmaneser III shows \"Jehu son of Omri\" paying tribute in 841 BC, the second fixed point for the kings' dates."
+  },
+  {
+   "id": "e-joash-crowned",
+   "title": "Joash crowned in the temple",
+   "year": -835,
+   "certainty": "calculated",
+   "refs": [
+    "2 Kings 11",
+    "2 Chronicles 23"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "Athaliah had tried to destroy the royal family, but the infant Joash was hidden in the temple for six years. Jehoiada the priest crowns him, and David's line is preserved."
+  },
+  {
+   "id": "e-jonah",
+   "title": "Jonah preaches in Nineveh",
+   "year": -770,
+   "certainty": "approx",
+   "refs": [
+    "Jonah 1-4",
+    "2 Kings 14:25",
+    "Matthew 12:39-41"
+   ],
+   "places": [
+    "gath-hepher",
+    "joppa",
+    "tarshish-1",
+    "nineveh"
+   ],
+   "summary": "Jonah flees from Joppa toward Tarshish, is swallowed by a great fish, and finally preaches in Nineveh. The city repents and God shows mercy."
+  },
+  {
+   "id": "e-eclipse",
+   "title": "Assyrian eclipse",
+   "year": -763,
+   "certainty": "fixed",
+   "refs": [],
+   "places": [
+    "nineveh"
+   ],
+   "summary": "The Assyrian list of yearly officials records a solar eclipse. Astronomers date it to 15 June 763 BC. Not a biblical event, but it fixes Assyrian chronology, and through it the dates of Israel's and Judah's kings.",
+   "evidence": "Assyrian Eponym List: eclipse in the month Simanu, in the year of Bur-Sagale."
+  },
+  {
+   "id": "e-earthquake",
+   "title": "Amos at Bethel; the great earthquake",
+   "year": -760,
+   "certainty": "approx",
+   "refs": [
+    "Amos 1:1",
+    "Amos 7:10-17",
+    "Zechariah 14:5"
+   ],
+   "places": [
+    "tekoa",
+    "bethel-1"
+   ],
+   "summary": "Amos, a shepherd from Tekoa, prophesies against Israel at Bethel two years before an earthquake still remembered centuries later (Zechariah 14:5).",
+   "evidence": "Excavations at Hazor and other sites show damage from a major earthquake around 760 BC."
+  },
+  {
+   "id": "e-isaiah-call",
+   "title": "Isaiah's vision",
+   "year": -740,
+   "certainty": "calculated",
+   "refs": [
+    "Isaiah 6:1-8"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "In the year King Uzziah dies, Isaiah sees the Lord high and lifted up, hears the seraphim cry \"Holy, holy, holy\", and answers, \"Here am I. Send me.\""
+  },
+  {
+   "id": "e-syro-ephraim",
+   "title": "Ahaz turns to Assyria; Damascus falls",
+   "year": -732,
+   "certainty": "fixed",
+   "refs": [
+    "2 Kings 15:29",
+    "2 Kings 16:5-9",
+    "Isaiah 7:1-17"
+   ],
+   "places": [
+    "damascus",
+    "jerusalem",
+    "samaria-1"
+   ],
+   "summary": "Rezin of Damascus and Pekah of Israel attack Jerusalem. Isaiah urges Ahaz to trust the LORD and gives the sign of Immanuel, but Ahaz pays Tiglath-pileser instead. Assyria takes Damascus and deports the people of Galilee."
+  },
+  {
+   "id": "e-samaria-falls",
+   "title": "Fall of Samaria",
+   "year": -722,
+   "certainty": "fixed",
+   "refs": [
+    "2 Kings 17:1-23",
+    "2 Kings 18:9-12"
+   ],
+   "places": [
+    "samaria-1",
+    "halah",
+    "gozan"
+   ],
+   "summary": "After a three-year siege Assyria captures Samaria and deports Israel to Halah, Gozan and the cities of the Medes. Scripture explains why: Israel had sinned against the LORD and refused to listen to his prophets.",
+   "evidence": "Sargon II's inscriptions claim the capture of Samaria and the deportation of over 27,000 people."
+  },
+  {
+   "id": "e-sennacherib",
+   "title": "Sennacherib invades Judah",
+   "year": -701,
+   "certainty": "fixed",
+   "refs": [
+    "2 Kings 18:13-19:37",
+    "2 Chronicles 32:1-23",
+    "Isaiah 36-37"
+   ],
+   "places": [
+    "lachish",
+    "libnah-1",
+    "jerusalem",
+    "nineveh"
+   ],
+   "summary": "Assyria captures Judah's fortified cities, including Lachish, and threatens Jerusalem. Hezekiah spreads the letter before the LORD and prays; the angel of the LORD strikes the Assyrian camp and Sennacherib returns home.",
+   "evidence": "Sennacherib's prism boasts he shut Hezekiah up in Jerusalem \"like a bird in a cage\", but does not claim to have taken the city. Reliefs of the siege of Lachish lined his palace in Nineveh."
+  },
+  {
+   "id": "e-sennacherib-death",
+   "title": "Sennacherib assassinated",
+   "year": -681,
+   "certainty": "fixed",
+   "refs": [
+    "2 Kings 19:36-37",
+    "Isaiah 37:37-38"
+   ],
+   "places": [
+    "nineveh"
+   ],
+   "summary": "Sennacherib is killed by his sons while worshipping in Nineveh, as Isaiah had foretold.",
+   "evidence": "The Babylonian Chronicle records Sennacherib's murder by his son in 681 BC."
+  },
+  {
+   "id": "e-law-found",
+   "title": "The Book of the Law found",
+   "year": -622,
+   "certainty": "calculated",
+   "refs": [
+    "2 Kings 22:3-23:25",
+    "2 Chronicles 34"
+   ],
+   "places": [
+    "jerusalem",
+    "bethel-1"
+   ],
+   "summary": "During temple repairs in Josiah's 18th year the Book of the Law is found. Josiah renews the covenant, removes idolatry and destroys the altar at Bethel, fulfilling the prophecy made 300 years earlier (1 Kings 13:2)."
+  },
+  {
+   "id": "e-nineveh-falls",
+   "title": "Fall of Nineveh",
+   "year": -612,
+   "certainty": "fixed",
+   "refs": [
+    "Nahum 1-3",
+    "Zephaniah 2:13-15"
+   ],
+   "places": [
+    "nineveh"
+   ],
+   "summary": "Babylonians and Medes destroy Nineveh, as Nahum and Zephaniah had foretold.",
+   "evidence": "The Babylonian Chronicle records the capture of Nineveh in 612 BC."
+  },
+  {
+   "id": "e-josiah-death",
+   "title": "Josiah killed at Megiddo",
+   "year": -609,
+   "certainty": "fixed",
+   "refs": [
+    "2 Kings 23:29-30",
+    "2 Chronicles 35:20-25"
+   ],
+   "places": [
+    "megiddo",
+    "carchemish"
+   ],
+   "summary": "Pharaoh Neco marches north to help Assyria. Josiah goes out to stop him at Megiddo and is killed. Jeremiah composes a lament for him."
+  },
+  {
+   "id": "e-carchemish",
+   "title": "Battle of Carchemish; Daniel taken",
+   "year": -605,
+   "certainty": "fixed",
+   "refs": [
+    "Jeremiah 46:2",
+    "Daniel 1:1-7"
+   ],
+   "places": [
+    "carchemish",
+    "jerusalem",
+    "babylon-1"
+   ],
+   "summary": "Nebuchadnezzar defeats Egypt at Carchemish and becomes master of the region. Daniel and his friends are among the first young men taken to Babylon.",
+   "note": "Daniel 1:1 calls this Jehoiakim's third year and Jeremiah 46:2 his fourth: the same year counted in the Babylonian and Judean ways.",
+   "evidence": "The Babylonian Chronicle records the battle of Carchemish in 605 BC."
+  },
+  {
+   "id": "e-597",
+   "title": "Jehoiachin and Ezekiel exiled",
+   "year": -597,
+   "certainty": "fixed",
+   "refs": [
+    "2 Kings 24:10-17",
+    "Ezekiel 1:1-3"
+   ],
+   "places": [
+    "jerusalem",
+    "babylon-1",
+    "chebar"
+   ],
+   "summary": "Nebuchadnezzar captures Jerusalem and takes King Jehoiachin, the temple treasures and ten thousand captives to Babylon, including the young priest Ezekiel.",
+   "evidence": "The Babylonian Chronicle dates the capture of \"the city of Judah\" to 2 Adar, which is 16 March 597 BC."
+  },
+  {
+   "id": "e-ezekiel-call",
+   "title": "Ezekiel's vision by the Chebar",
+   "year": -593,
+   "certainty": "calculated",
+   "refs": [
+    "Ezekiel 1"
+   ],
+   "places": [
+    "chebar"
+   ],
+   "summary": "In the fifth year of the exile Ezekiel sees the glory of the LORD among the exiles in Babylonia: God has not abandoned his people."
+  },
+  {
+   "id": "e-586",
+   "title": "Jerusalem and the temple destroyed",
+   "year": -586,
+   "certainty": "fixed",
+   "refs": [
+    "2 Kings 25:1-21",
+    "2 Chronicles 36:15-21",
+    "Jeremiah 39:1-10",
+    "Lamentations 1"
+   ],
+   "places": [
+    "jerusalem",
+    "riblah-1",
+    "babylon-1"
+   ],
+   "summary": "After a long siege, Babylon breaks through Jerusalem's walls. Zedekiah is captured and judged at Riblah; the temple Solomon built is burned and the people are carried into exile.",
+   "note": "Many scholars date this to 587 BC; the one-year difference depends on how Judah's regnal years were counted."
+  },
+  {
+   "id": "e-jeremiah-egypt",
+   "title": "Jeremiah taken to Egypt",
+   "year": -585,
+   "certainty": "approx",
+   "refs": [
+    "Jeremiah 40:5-41:3",
+    "Jeremiah 43:1-7"
+   ],
+   "places": [
+    "mizpah-3",
+    "tahpanhes"
+   ],
+   "summary": "After the governor Gedaliah is murdered at Mizpah, the remaining people flee to Egypt against the LORD's word, taking Jeremiah with them to Tahpanhes."
+  },
+  {
+   "id": "e-jehoiachin-freed",
+   "title": "Jehoiachin released",
+   "year": -562,
+   "certainty": "fixed",
+   "refs": [
+    "2 Kings 25:27-30",
+    "Jeremiah 52:31-34"
+   ],
+   "places": [
+    "babylon-1"
+   ],
+   "summary": "Evil-merodach releases Jehoiachin and gives him a place at the king's table. The books of Kings end on this note of hope for David's line."
+  },
+  {
+   "id": "e-babylon-falls",
+   "title": "Fall of Babylon",
+   "year": -539,
+   "certainty": "fixed",
+   "refs": [
+    "Daniel 5",
+    "Isaiah 45:1-3",
+    "Jeremiah 51"
+   ],
+   "places": [
+    "babylon-1"
+   ],
+   "summary": "On the night of Belshazzar's feast, Babylon falls to the Medes and Persians.",
+   "evidence": "The Nabonidus Chronicle and the Cyrus Cylinder record Cyrus's capture of Babylon in October 539 BC."
+  },
+  {
+   "id": "e-cyrus-decree",
+   "title": "Cyrus's decree: the return",
+   "year": -538,
+   "certainty": "fixed",
+   "refs": [
+    "Ezra 1:1-4",
+    "2 Chronicles 36:22-23",
+    "Isaiah 44:28",
+    "Jeremiah 29:10"
+   ],
+   "places": [
+    "babylon-1",
+    "jerusalem"
+   ],
+   "summary": "In his first year over Babylon, Cyrus allows the Jews to return and rebuild the temple, fulfilling the word of the LORD through Jeremiah and Isaiah.",
+   "evidence": "The Cyrus Cylinder describes his policy of returning exiled peoples to their homelands."
+  },
+  {
+   "id": "e-return",
+   "title": "The first return from exile",
+   "year": -537,
+   "certainty": "approx",
+   "refs": [
+    "Ezra 1:5-11",
+    "Ezra 2:64-70"
+   ],
+   "places": [
+    "babylon-1",
+    "jerusalem"
+   ],
+   "summary": "Nearly 50,000 people return to Judah with the temple vessels Nebuchadnezzar had taken, led by Sheshbazzar, Zerubbabel and Jeshua the high priest."
+  },
+  {
+   "id": "e-altar",
+   "title": "Altar rebuilt; temple foundation laid",
+   "year": -536,
+   "certainty": "calculated",
+   "refs": [
+    "Ezra 3",
+    "Haggai 2:3"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "The altar is rebuilt and the foundation of the second temple laid. The people shout for joy, while old men who had seen Solomon's temple weep aloud."
+  },
+  {
+   "id": "e-work-stops",
+   "title": "Opposition halts the building",
+   "year": -530,
+   "certainty": "approx",
+   "refs": [
+    "Ezra 4:1-5",
+    "Ezra 4:24"
+   ],
+   "places": [
+    "jerusalem",
+    "samaria-1"
+   ],
+   "summary": "When the returned exiles refuse help from the mixed peoples of the land, those people discourage and frighten them. Work on the temple stops until the second year of Darius."
+  },
+  {
+   "id": "e-haggai",
+   "title": "Haggai and Zechariah: build again",
+   "year": -520,
+   "certainty": "calculated",
+   "refs": [
+    "Haggai 1:1-15",
+    "Zechariah 1:1-6",
+    "Ezra 5:1-2"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "The LORD stirs up Zerubbabel, Jeshua and the people through Haggai and Zechariah, and work on the temple resumes.",
+   "evidence": "Babylonian tablets fix the reign of Darius I, so Haggai 1:1 can be dated precisely: 29 August 520 BC."
+  },
+  {
+   "id": "e-decree-found",
+   "title": "Cyrus's decree found at Ecbatana",
+   "year": -519,
+   "certainty": "approx",
+   "refs": [
+    "Ezra 5:3-6:12"
+   ],
+   "places": [
+    "ecbatana",
+    "jerusalem"
+   ],
+   "summary": "Tattenai, the Persian governor, questions the building. Darius orders a search, and Cyrus's original decree is found in the archives at Ecbatana. Darius confirms it and orders the cost paid from royal revenue."
+  },
+  {
+   "id": "e-temple-done",
+   "title": "The second temple completed",
+   "year": -515,
+   "certainty": "calculated",
+   "refs": [
+    "Ezra 6:13-22"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "The temple is finished on the 3rd of Adar in Darius's 6th year (March 515 BC), about seventy years after Solomon's temple was destroyed. The people dedicate it with joy and keep the Passover."
+  },
+  {
+   "id": "e-esther-queen",
+   "title": "Esther becomes queen",
+   "year": -479,
+   "certainty": "calculated",
+   "refs": [
+    "Esther 2:5-18"
+   ],
+   "places": [
+    "susa"
+   ],
+   "summary": "In the 7th year of King Ahasuerus (Xerxes), Esther is chosen as queen in Susa. On Mordecai's advice she keeps her Jewish identity hidden."
+  },
+  {
+   "id": "e-purim",
+   "title": "Haman's plot defeated; Purim",
+   "year": -473,
+   "certainty": "calculated",
+   "refs": [
+    "Esther 3:7-15",
+    "Esther 4:13-16",
+    "Esther 9:20-32"
+   ],
+   "places": [
+    "susa"
+   ],
+   "summary": "Haman plots to destroy every Jew in the empire. Esther risks her life to plead with the king (\"who knows whether you have not come to the kingdom for such a time as this?\") and the Jews are delivered. The feast of Purim remembers it.",
+   "evidence": "Persian administrative tablets mention an official at Susa named Marduka; some scholars suggest he is Mordecai, though this is not certain."
+  },
+  {
+   "id": "e-ezra-return",
+   "title": "Ezra returns to teach the Law",
+   "year": -458,
+   "certainty": "calculated",
+   "refs": [
+    "Ezra 7:1-10",
+    "Ezra 8:15-32"
+   ],
+   "places": [
+    "babylon-1",
+    "ahava",
+    "jerusalem"
+   ],
+   "summary": "Ezra gathers the returning exiles at the Ahava canal, proclaims a fast, and travels to Jerusalem without a royal escort, trusting that \"the hand of our God is for good on all who seek him\" (Ezra 8:22).",
+   "note": "Dated to the 7th year of Artaxerxes I. Some scholars prefer 398 BC under Artaxerxes II."
+  },
+  {
+   "id": "e-nehemiah-sent",
+   "title": "Nehemiah sent to Jerusalem",
+   "year": -445,
+   "certainty": "calculated",
+   "refs": [
+    "Nehemiah 1:1-2:9"
+   ],
+   "places": [
+    "susa",
+    "jerusalem"
+   ],
+   "summary": "In the citadel of Susa, Nehemiah hears that Jerusalem's walls lie in ruins. He fasts and prays, and in the month of Nisan of Artaxerxes' 20th year the king grants his request to rebuild the city."
+  },
+  {
+   "id": "e-walls",
+   "title": "Jerusalem's walls rebuilt in 52 days",
+   "year": -445,
+   "certainty": "calculated",
+   "refs": [
+    "Nehemiah 2:11-20",
+    "Nehemiah 4",
+    "Nehemiah 6:1-16"
+   ],
+   "places": [
+    "jerusalem",
+    "samaria-1",
+    "ono"
+   ],
+   "summary": "Despite ridicule and threats from Sanballat, Tobiah and Geshem, the people build with one hand and hold a weapon in the other. The wall is finished in 52 days, and even their enemies see that the work was done with the help of God.",
+   "evidence": "Papyri from the Jewish community at Elephantine in Egypt (407 BC) mention \"the sons of Sanballat, governor of Samaria\" and Johanan the high priest (Nehemiah 12:22), fitting Nehemiah's time under Artaxerxes I."
+  },
+  {
+   "id": "e-law-read",
+   "title": "Ezra reads the Law; covenant renewed",
+   "year": -445,
+   "certainty": "calculated",
+   "refs": [
+    "Nehemiah 8:1-12",
+    "Nehemiah 9:1-3",
+    "Nehemiah 10:28-39"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "Ezra reads the Book of the Law from early morning until midday while the Levites explain its meaning. The people weep, then celebrate the Feast of Booths, confess their sins, and sign a covenant to keep God's law."
+  },
+  {
+   "id": "e-nehemiah-reforms",
+   "title": "Nehemiah's second term and reforms",
+   "year": -432,
+   "certainty": "approx",
+   "refs": [
+    "Nehemiah 13:6-31"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "After returning to the king in Artaxerxes' 32nd year, Nehemiah comes back to find Tobiah living in a temple storeroom, the Levites unpaid, the Sabbath broken and mixed marriages. He sets each one right."
+  },
+  {
+   "id": "e-ot-close",
+   "title": "Malachi: the Old Testament closes",
+   "year": -430,
+   "certainty": "approx",
+   "refs": [
+    "Malachi 3:1",
+    "Malachi 4:5-6",
+    "Matthew 11:10-14",
+    "Mark 1:1-4"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "The last Old Testament prophet promises a messenger to prepare the way of the LORD, and Elijah before the great day of the LORD. Four hundred years later the Gospels open with John the Baptist, the messenger Malachi foretold."
+  }
+ ],
+ "leaders": [
+  {
+   "id": "gedaliah",
+   "name": "Gedaliah",
+   "start": -586,
+   "end": -585,
+   "certainty": "approx",
+   "refs": [
+    "2 Kings 25:22-26",
+    "Jeremiah 40:5-41:3"
+   ],
+   "places": [
+    "mizpah-3"
+   ],
+   "summary": "Appointed governor of Judah by Nebuchadnezzar after Jerusalem fell. Ruled from Mizpah and urged the people to serve Babylon, as Jeremiah counselled. Murdered by Ishmael, a member of the royal family.",
+   "basis": "Appointed after the fall of Jerusalem; murdered in the seventh month (Jeremiah 41:1), probably the same year or soon after."
+  },
+  {
+   "id": "zerubbabel",
+   "name": "Zerubbabel & Jeshua",
+   "start": -538,
+   "end": -515,
+   "certainty": "approx",
+   "refs": [
+    "Ezra 2:2",
+    "Ezra 3:1-13",
+    "Ezra 5:1-2",
+    "Haggai 2:20-23",
+    "Zechariah 4:6-10"
+   ],
+   "places": [
+    "babylon-1",
+    "jerusalem"
+   ],
+   "summary": "Zerubbabel, grandson of King Jehoiachin, and Jeshua the high priest led the first return and rebuilt the altar and temple. Through Haggai the LORD called Zerubbabel his signet ring, a sign that David's line was not forgotten (Haggai 2:23).",
+   "basis": "Led the return under Cyrus; finished the temple in the 6th year of Darius (Ezra 6:15).",
+   "note": "Ezra 1:8-11 and 5:14-16 also name Sheshbazzar as the first governor who brought the temple vessels back. Scholars differ on whether he and Zerubbabel were the same person."
+  },
+  {
+   "id": "esther",
+   "name": "Esther & Mordecai",
+   "start": -479,
+   "end": -473,
+   "certainty": "calculated",
+   "refs": [
+    "Esther 2:5-17",
+    "Esther 4:13-16",
+    "Esther 8-9"
+   ],
+   "places": [
+    "susa"
+   ],
+   "summary": "A Jewish orphan raised by her cousin Mordecai, Esther became queen of Persia and risked her life to save her people from Haman's plot. God is never named in the book, yet his providence runs through every chapter.",
+   "basis": "Made queen in Xerxes' 7th year (Esther 2:16); the deliverance in his 12th year (Esther 3:7)."
+  },
+  {
+   "id": "ezra",
+   "name": "Ezra",
+   "start": -458,
+   "end": -445,
+   "certainty": "calculated",
+   "refs": [
+    "Ezra 7:6-10",
+    "Ezra 9-10",
+    "Nehemiah 8:1-12"
+   ],
+   "places": [
+    "babylon-1",
+    "ahava",
+    "jerusalem"
+   ],
+   "summary": "A priest and scribe skilled in the Law of Moses, who \"set his heart to study the Law of the LORD, and to do it and to teach\" it in Israel (Ezra 7:10).",
+   "basis": "Came to Jerusalem in the 7th year of Artaxerxes (Ezra 7:7-8); still there when the Law was read in 445 BC (Nehemiah 8).",
+   "note": "Most evangelical scholars take this as Artaxerxes I (458 BC). Some date Ezra's journey to 398 BC under Artaxerxes II."
+  },
+  {
+   "id": "nehemiah",
+   "name": "Nehemiah",
+   "start": -445,
+   "end": -432,
+   "certainty": "calculated",
+   "refs": [
+    "Nehemiah 1:1-2:8",
+    "Nehemiah 5:14",
+    "Nehemiah 13:6-7"
+   ],
+   "places": [
+    "susa",
+    "jerusalem"
+   ],
+   "summary": "Cupbearer to Artaxerxes, who prayed, then asked the king for leave to rebuild Jerusalem. As governor he finished the walls in 52 days despite fierce opposition, and led reforms among the people.",
+   "basis": "Governor from the 20th to the 32nd year of Artaxerxes (Nehemiah 5:14; 13:6), then returned for a second term."
+  }
+ ]
+}

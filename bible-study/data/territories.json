@@ -1,0 +1,246 @@
+{
+  "meta": {
+    "note": "Borders are approximate. Ancient frontiers were rarely fixed lines, and no exact maps survive. These areas are drawn from the Bible's own descriptions (cited for each map) and the general agreement of standard Bible atlases, so treat them as a guide to who controlled what, not as precise borders.",
+    "status": "DRAFT: awaiting review against a printed Bible atlas"
+  },
+  "statuses": {
+    "kingdom": "Independent kingdom",
+    "subject": "Under another power (vassal or paying tribute)",
+    "province": "Province of an empire",
+    "empire": "Empire"
+  },
+  "colors": {
+    "israel": "#3A6EA5",
+    "judah": "#A8741A",
+    "aram": "#6F8A4E",
+    "hamath": "#8E8A5C",
+    "phoenicia": "#7B4F8E",
+    "philistia": "#3F8C7A",
+    "ammon": "#4F8A9C",
+    "moab": "#A0617F",
+    "edom": "#B5643C",
+    "assyria": "#8C5A4A",
+    "babylon": "#4F6D8C",
+    "egypt": "#B08A3E",
+    "media": "#5C7A6E",
+    "persia": "#6E5A8C"
+  },
+  "shapes": {
+    "israel_west": [[32.05,34.77],[32.62,34.91],[32.83,34.97],[32.90,35.07],[32.95,35.20],[33.10,35.30],[33.20,35.45],[33.33,35.55],[33.30,35.70],[33.05,35.65],[32.88,35.62],[32.70,35.57],[32.40,35.575],[32.10,35.55],[31.86,35.52],[31.86,35.35],[31.905,35.22],[31.90,35.05],[31.93,34.90]],
+    "galilee_coast": [[32.05,34.77],[32.62,34.91],[32.83,34.97],[32.90,35.07],[32.95,35.20],[33.10,35.30],[33.20,35.45],[33.33,35.55],[33.30,35.70],[33.05,35.65],[32.88,35.62],[32.70,35.57],[32.45,35.55],[32.48,35.30],[32.42,35.05],[32.15,34.95],[32.00,34.88]],
+    "samaria_hills": [[32.00,34.88],[32.15,34.95],[32.42,35.05],[32.48,35.30],[32.45,35.55],[32.40,35.575],[32.10,35.55],[31.86,35.52],[31.86,35.35],[31.905,35.22],[31.90,35.05],[31.93,34.90]],
+    "judah": [[31.93,34.90],[31.90,35.05],[31.905,35.22],[31.86,35.35],[31.86,35.52],[31.76,35.50],[31.50,35.45],[31.25,35.40],[31.05,35.42],[30.95,35.33],[30.85,35.15],[30.60,34.95],[30.55,34.60],[30.80,34.40],[31.10,34.45],[31.35,34.65],[31.55,34.80],[31.62,34.86],[31.75,34.92],[31.85,34.90]],
+    "yehud": [[31.93,35.20],[31.90,35.45],[31.80,35.48],[31.66,35.35],[31.59,35.20],[31.58,35.05],[31.70,34.98],[31.85,34.95],[31.95,35.05]],
+    "idumea": [[31.58,35.05],[31.59,35.20],[31.66,35.35],[31.50,35.45],[31.25,35.40],[31.05,35.42],[30.95,35.33],[30.85,35.15],[30.60,34.95],[30.55,34.60],[30.80,34.40],[31.10,34.45],[31.35,34.65],[31.55,34.80],[31.62,34.86],[31.70,34.98]],
+    "philistia": [[31.95,34.72],[31.93,34.90],[31.85,34.90],[31.75,34.92],[31.62,34.86],[31.55,34.80],[31.35,34.65],[31.10,34.45],[31.18,34.27],[31.28,34.22],[31.52,34.43],[31.67,34.55],[31.80,34.63]],
+    "phoenicia": [[32.90,35.07],[33.05,35.10],[33.27,35.19],[33.46,35.26],[33.56,35.37],[33.90,35.48],[34.12,35.64],[34.45,35.82],[34.86,35.88],[34.90,36.05],[34.50,36.10],[34.45,36.00],[34.05,35.90],[33.60,35.70],[33.33,35.55],[33.20,35.45],[33.10,35.30],[32.95,35.20]],
+    "aram": [[32.88,35.65],[33.05,35.66],[33.30,35.70],[33.60,35.70],[34.05,35.90],[34.45,36.00],[34.50,36.10],[34.50,36.40],[34.30,36.90],[33.70,37.30],[33.10,37.10],[32.70,36.60],[32.70,36.10],[32.85,35.90]],
+    "hamath": [[34.50,36.10],[34.90,36.05],[35.40,36.30],[35.80,36.55],[35.75,37.20],[35.10,37.40],[34.50,37.10],[34.30,36.90],[34.50,36.40]],
+    "gilead": [[32.88,35.65],[32.85,35.90],[32.70,36.10],[32.35,36.12],[32.12,35.92],[31.88,35.83],[31.68,35.92],[31.48,35.85],[31.45,35.58],[31.76,35.58],[31.86,35.57],[32.10,35.57],[32.40,35.58],[32.70,35.62]],
+    "gilead_n": [[32.88,35.65],[32.85,35.90],[32.70,36.10],[32.35,36.12],[32.12,35.92],[31.88,35.83],[31.78,35.78],[31.76,35.58],[31.86,35.57],[32.10,35.57],[32.40,35.58],[32.70,35.62]],
+    "ammon": [[32.12,35.92],[32.25,36.15],[32.10,36.45],[31.80,36.45],[31.62,36.15],[31.68,35.92],[31.88,35.83]],
+    "moab": [[31.45,35.58],[31.48,35.85],[31.50,36.15],[31.38,36.40],[31.10,36.28],[30.97,36.05],[30.98,35.80],[31.05,35.50],[31.25,35.55]],
+    "moab_n": [[31.76,35.58],[31.78,35.78],[31.68,35.92],[31.62,36.15],[31.50,36.15],[31.48,35.85],[31.45,35.58]],
+    "edom": [[31.05,35.45],[30.98,35.80],[30.97,36.05],[30.60,36.00],[30.10,35.85],[29.75,35.40],[29.48,34.96],[29.80,35.02],[30.30,35.15],[30.70,35.25],[30.95,35.36]],
+
+    "egypt": [[31.30,29.60],[31.50,31.00],[31.20,32.30],[31.13,33.80],[30.30,34.50],[29.50,34.85],[28.00,34.40],[27.80,33.60],[26.00,34.25],[24.10,35.40],[24.00,32.70],[25.80,32.30],[27.40,30.70],[29.40,30.50],[30.40,29.40]],
+    "assyria_931": [[36.95,41.90],[37.25,43.40],[36.60,44.90],[35.50,44.70],[35.00,43.50],[35.50,42.20],[36.30,41.50]],
+    "assyria_853": [[36.83,38.00],[37.30,39.50],[37.60,41.00],[37.40,42.60],[36.90,44.30],[35.80,45.40],[34.60,45.60],[33.60,44.90],[33.90,43.60],[34.50,41.20],[35.50,40.00],[36.20,38.20]],
+    "assyria_700": [[31.13,33.80],[31.52,34.43],[32.05,34.75],[32.83,34.97],[33.27,35.19],[33.90,35.48],[34.86,35.88],[35.60,35.78],[36.20,35.90],[36.60,36.15],[36.80,35.70],[36.70,34.70],[37.10,34.60],[37.40,35.80],[37.50,38.50],[37.60,40.50],[37.40,42.50],[37.00,44.50],[35.80,45.60],[34.30,46.00],[32.50,47.00],[31.00,47.60],[30.00,48.00],[30.50,46.50],[31.50,44.50],[32.30,42.00],[32.50,39.50],[31.50,37.80],[30.50,36.60],[29.60,35.10],[30.30,34.50]],
+    "babylon_620": [[34.10,43.60],[33.90,44.90],[32.80,46.40],[31.00,47.60],[30.00,48.00],[30.50,46.50],[31.60,45.00],[32.70,43.90]],
+    "babylon_586": [[31.13,33.80],[31.52,34.43],[32.05,34.75],[32.83,34.97],[33.27,35.19],[33.90,35.48],[34.86,35.88],[35.60,35.78],[36.20,35.90],[36.60,36.15],[36.90,36.90],[36.95,38.50],[36.70,40.50],[36.10,42.60],[35.10,44.50],[33.90,45.70],[32.50,46.80],[31.00,47.60],[30.00,48.00],[30.50,46.50],[31.50,44.50],[32.30,42.00],[32.50,39.50],[31.50,37.80],[30.50,36.60],[29.60,35.10],[30.30,34.50]],
+    "media_586": [[36.70,40.50],[38.20,41.50],[39.60,44.50],[38.80,48.30],[36.80,51.50],[34.50,51.80],[33.30,48.50],[33.90,45.70],[35.10,44.50],[36.10,42.60]],
+    "persia": [[30.30,34.50],[31.13,33.80],[31.52,34.43],[32.05,34.75],[32.83,34.97],[33.27,35.19],[33.90,35.48],[34.86,35.88],[35.60,35.78],[36.60,36.15],[36.70,34.70],[36.20,32.50],[36.30,30.00],[36.80,28.20],[37.80,27.20],[38.80,26.60],[39.80,26.10],[40.30,26.60],[41.00,28.50],[41.20,31.50],[41.90,34.00],[41.30,37.50],[41.00,41.50],[41.50,45.00],[40.50,48.50],[38.50,48.90],[37.00,50.30],[36.80,53.50],[37.50,56.00],[40.50,61.00],[39.50,66.50],[38.00,70.00],[35.50,71.50],[33.00,71.00],[30.00,70.00],[25.30,66.80],[25.40,62.00],[25.80,57.30],[27.20,52.50],[29.50,50.20],[30.00,48.50],[30.50,46.50],[31.50,44.50],[32.30,42.00],[32.50,39.50],[31.50,37.80],[30.50,36.60],[29.60,35.10]]
+  },
+  "snapshots": [
+    {
+      "id": "t931", "year": -931, "title": "The kingdom divides",
+      "refs": ["1 Kings 11:14-25", "1 Kings 12:16-24", "2 Kings 8:20"],
+      "summary": "Ten tribes follow Jeroboam as the kingdom of Israel; Judah and Benjamin stay with Rehoboam. Around them are Aram-Damascus, which broke free in Solomon's day, the Phoenician cities, the Philistines, and Ammon and Moab east of the Jordan. Edom seems to have stayed under Judah's control until Jehoram's reign.",
+      "regions": [
+        { "name": "Egypt", "shapes": ["egypt"], "color": "egypt", "status": "empire", "label": [27.5, 31.6] },
+        { "name": "Assyria", "shapes": ["assyria_931"], "color": "assyria", "status": "empire", "label": [36.0, 43.3] },
+        { "name": "Israel", "shapes": ["israel_west", "gilead"], "color": "israel", "status": "kingdom", "label": [32.35, 35.25] },
+        { "name": "Judah", "shapes": ["judah"], "color": "judah", "status": "kingdom", "label": [31.4, 35.0] },
+        { "name": "Edom (under Judah)", "shapes": ["edom"], "color": "edom", "status": "subject", "label": [30.4, 35.55] },
+        { "name": "Moab", "shapes": ["moab"], "color": "moab", "status": "kingdom", "label": [31.25, 35.95] },
+        { "name": "Ammon", "shapes": ["ammon"], "color": "ammon", "status": "kingdom", "label": [31.95, 36.2] },
+        { "name": "Aram-Damascus", "shapes": ["aram"], "color": "aram", "status": "kingdom", "label": [33.4, 36.5] },
+        { "name": "Hamath", "shapes": ["hamath"], "color": "hamath", "status": "kingdom", "label": [35.0, 36.9] },
+        { "name": "Tyre & Sidon", "shapes": ["phoenicia"], "color": "phoenicia", "status": "kingdom", "label": [33.75, 35.62] },
+        { "name": "Philistines", "shapes": ["philistia"], "color": "philistia", "status": "kingdom", "label": [31.5, 34.55] }
+      ]
+    },
+    {
+      "id": "t853", "year": -853, "title": "Ahab and the house of Omri",
+      "refs": ["1 Kings 16:23-24", "1 Kings 22:47", "2 Kings 3:4"],
+      "summary": "Omri's dynasty makes Israel a regional power with a new capital at Samaria. Moab pays Israel a heavy tribute of lambs and wool, and Edom has no king of its own, only a deputy under Judah. Aram is Israel's chief rival, and Assyria is pushing west: at Qarqar in 853 BC Ahab fights alongside Aram against it.",
+      "regions": [
+        { "name": "Egypt", "shapes": ["egypt"], "color": "egypt", "status": "empire", "label": [27.5, 31.6] },
+        { "name": "Assyria", "shapes": ["assyria_853"], "color": "assyria", "status": "empire", "label": [35.6, 42.5] },
+        { "name": "Israel", "shapes": ["israel_west", "gilead"], "color": "israel", "status": "kingdom", "label": [32.35, 35.25] },
+        { "name": "Moab (pays tribute to Israel)", "shapes": ["moab"], "color": "moab", "status": "subject", "label": [31.25, 35.95] },
+        { "name": "Judah", "shapes": ["judah"], "color": "judah", "status": "kingdom", "label": [31.4, 35.0] },
+        { "name": "Edom (under Judah)", "shapes": ["edom"], "color": "edom", "status": "subject", "label": [30.4, 35.55] },
+        { "name": "Ammon", "shapes": ["ammon"], "color": "ammon", "status": "kingdom", "label": [31.95, 36.2] },
+        { "name": "Aram-Damascus", "shapes": ["aram"], "color": "aram", "status": "kingdom", "label": [33.4, 36.5] },
+        { "name": "Hamath", "shapes": ["hamath"], "color": "hamath", "status": "kingdom", "label": [35.0, 36.9] },
+        { "name": "Tyre & Sidon", "shapes": ["phoenicia"], "color": "phoenicia", "status": "kingdom", "label": [33.75, 35.62] },
+        { "name": "Philistines", "shapes": ["philistia"], "color": "philistia", "status": "kingdom", "label": [31.5, 34.55] }
+      ]
+    },
+    {
+      "id": "t810", "year": -810, "title": "Hazael of Aram strikes Israel",
+      "refs": ["2 Kings 10:32-33", "2 Kings 12:17-18", "2 Kings 13:3-7", "2 Kings 3:5", "2 Kings 8:20-22"],
+      "summary": "The LORD begins to cut off parts of Israel. Hazael of Damascus takes all of Gilead and Bashan east of the Jordan and marches as far as Gath. Moab has rebelled against Israel and Edom against Judah, and both have their own kings again.",
+      "note": "Mesha of Moab's own inscription claims he took back the land north of the Arnon, while 2 Kings 10:33 says Hazael took Gilead down to the Arnon. The border between them is uncertain.",
+      "regions": [
+        { "name": "Egypt", "shapes": ["egypt"], "color": "egypt", "status": "empire", "label": [27.5, 31.6] },
+        { "name": "Assyria", "shapes": ["assyria_853"], "color": "assyria", "status": "empire", "label": [35.6, 42.5] },
+        { "name": "Israel", "shapes": ["israel_west"], "color": "israel", "status": "kingdom", "label": [32.35, 35.2] },
+        { "name": "Aram (Hazael)", "shapes": ["aram", "gilead_n"], "color": "aram", "status": "kingdom", "label": [33.2, 36.4] },
+        { "name": "Moab", "shapes": ["moab", "moab_n"], "color": "moab", "status": "kingdom", "label": [31.3, 35.95] },
+        { "name": "Judah", "shapes": ["judah"], "color": "judah", "status": "kingdom", "label": [31.4, 35.0] },
+        { "name": "Edom", "shapes": ["edom"], "color": "edom", "status": "kingdom", "label": [30.4, 35.55] },
+        { "name": "Ammon", "shapes": ["ammon"], "color": "ammon", "status": "kingdom", "label": [31.95, 36.2] },
+        { "name": "Hamath", "shapes": ["hamath"], "color": "hamath", "status": "kingdom", "label": [35.0, 36.9] },
+        { "name": "Tyre & Sidon", "shapes": ["phoenicia"], "color": "phoenicia", "status": "kingdom", "label": [33.75, 35.62] },
+        { "name": "Philistines", "shapes": ["philistia"], "color": "philistia", "status": "kingdom", "label": [31.5, 34.55] }
+      ]
+    },
+    {
+      "id": "t760", "year": -760, "title": "Jeroboam II and Uzziah",
+      "refs": ["2 Kings 14:7", "2 Kings 14:22", "2 Kings 14:25-28", "2 Chronicles 26:6-8"],
+      "summary": "With Aram weakened by Assyria, Jeroboam II restores Israel's border \"from Lebo-hamath as far as the Sea of the Arabah\", as Jonah had prophesied, and recovers Damascus. In the south Uzziah rebuilds Elath, breaks down the walls of Gath and Ashdod, and receives tribute from the Ammonites. It is the widest extent of the two kingdoms since Solomon, and the time when Amos and Hosea warn that judgment is coming.",
+      "regions": [
+        { "name": "Egypt", "shapes": ["egypt"], "color": "egypt", "status": "empire", "label": [27.5, 31.6] },
+        { "name": "Assyria", "shapes": ["assyria_853"], "color": "assyria", "status": "empire", "label": [35.6, 42.5] },
+        { "name": "Israel", "shapes": ["israel_west", "gilead"], "color": "israel", "status": "kingdom", "label": [32.35, 35.25] },
+        { "name": "Damascus (recovered by Israel)", "shapes": ["aram"], "color": "israel", "status": "subject", "label": [33.4, 36.5] },
+        { "name": "Judah", "shapes": ["judah"], "color": "judah", "status": "kingdom", "label": [31.4, 35.0] },
+        { "name": "Edom (Elath restored to Judah)", "shapes": ["edom"], "color": "edom", "status": "subject", "label": [30.4, 35.55] },
+        { "name": "Ammon (tribute to Uzziah)", "shapes": ["ammon"], "color": "ammon", "status": "subject", "label": [31.95, 36.2] },
+        { "name": "Philistines (Uzziah takes Gath)", "shapes": ["philistia"], "color": "philistia", "status": "subject", "label": [31.5, 34.55] },
+        { "name": "Moab", "shapes": ["moab"], "color": "moab", "status": "kingdom", "label": [31.25, 35.95] },
+        { "name": "Hamath", "shapes": ["hamath"], "color": "hamath", "status": "kingdom", "label": [35.0, 36.9] },
+        { "name": "Tyre & Sidon", "shapes": ["phoenicia"], "color": "phoenicia", "status": "kingdom", "label": [33.75, 35.62] }
+      ]
+    },
+    {
+      "id": "t732", "year": -732, "title": "Assyria takes Damascus and Galilee",
+      "refs": ["2 Kings 15:29", "2 Kings 16:7-9", "1 Chronicles 5:26", "Isaiah 9:1-2", "Matthew 4:13-16"],
+      "summary": "Tiglath-pileser III turns Damascus, Galilee, the coast and Gilead into Assyrian provinces and deports their people. Israel is reduced to the hill country around Samaria. Ahaz of Judah, the Philistines, Ammon, Moab and Edom all pay tribute. Isaiah promised that this humbled \"Galilee of the nations\" would one day see a great light, which Matthew says was fulfilled when Jesus began his ministry there.",
+      "regions": [
+        { "name": "Egypt", "shapes": ["egypt"], "color": "egypt", "status": "empire", "label": [27.5, 31.6] },
+        { "name": "Assyrian Empire", "shapes": ["assyria_700"], "color": "assyria", "status": "empire", "label": [35.5, 41.5] },
+        { "name": "Assyrian provinces", "shapes": ["galilee_coast", "gilead", "aram", "hamath"], "color": "assyria", "status": "province", "label": [33.3, 36.6] },
+        { "name": "Israel (Hoshea)", "shapes": ["samaria_hills"], "color": "israel", "status": "subject", "label": [32.2, 35.2] },
+        { "name": "Judah (Assyrian vassal)", "shapes": ["judah"], "color": "judah", "status": "subject", "label": [31.4, 35.0] },
+        { "name": "Moab", "shapes": ["moab", "moab_n"], "color": "moab", "status": "subject", "label": [31.3, 35.95] },
+        { "name": "Ammon", "shapes": ["ammon"], "color": "ammon", "status": "subject", "label": [31.95, 36.2] },
+        { "name": "Edom", "shapes": ["edom"], "color": "edom", "status": "subject", "label": [30.4, 35.55] },
+        { "name": "Philistines", "shapes": ["philistia"], "color": "philistia", "status": "subject", "label": [31.5, 34.55] },
+        { "name": "Tyre & Sidon", "shapes": ["phoenicia"], "color": "phoenicia", "status": "subject", "label": [33.75, 35.62] }
+      ]
+    },
+    {
+      "id": "t722", "year": -722, "title": "Samaria falls",
+      "refs": ["2 Kings 17:5-6", "2 Kings 17:24", "2 Kings 18:9-12"],
+      "summary": "After a three-year siege Samaria falls and the northern kingdom becomes an Assyrian province. Its people are deported, and people from Babylon, Cuthah, Hamath and elsewhere are settled in their place: the beginnings of the Samaritans. Judah, now an Assyrian vassal under Hezekiah, is all that remains of David's kingdom.",
+      "regions": [
+        { "name": "Egypt", "shapes": ["egypt"], "color": "egypt", "status": "empire", "label": [27.5, 31.6] },
+        { "name": "Assyrian Empire", "shapes": ["assyria_700"], "color": "assyria", "status": "empire", "label": [35.5, 41.5] },
+        { "name": "Assyrian provinces", "shapes": ["galilee_coast", "samaria_hills", "gilead", "aram", "hamath"], "color": "assyria", "status": "province", "label": [33.3, 36.6] },
+        { "name": "Judah (Assyrian vassal)", "shapes": ["judah"], "color": "judah", "status": "subject", "label": [31.4, 35.0] },
+        { "name": "Moab", "shapes": ["moab", "moab_n"], "color": "moab", "status": "subject", "label": [31.3, 35.95] },
+        { "name": "Ammon", "shapes": ["ammon"], "color": "ammon", "status": "subject", "label": [31.95, 36.2] },
+        { "name": "Edom", "shapes": ["edom"], "color": "edom", "status": "subject", "label": [30.4, 35.55] },
+        { "name": "Philistines", "shapes": ["philistia"], "color": "philistia", "status": "subject", "label": [31.5, 34.55] },
+        { "name": "Tyre & Sidon", "shapes": ["phoenicia"], "color": "phoenicia", "status": "subject", "label": [33.75, 35.62] }
+      ]
+    },
+    {
+      "id": "t663", "year": -663, "title": "Assyria at its height",
+      "refs": ["2 Chronicles 33:10-13", "Nahum 3:8-10", "Ezra 4:2"],
+      "summary": "Esarhaddon and Ashurbanipal conquer Egypt, sacking Thebes in 663 BC; Nahum later points to Thebes' fall as a warning to Nineveh. Manasseh of Judah is an Assyrian vassal, and Chronicles records that he was taken to Babylon in chains, where he humbled himself before God.",
+      "regions": [
+        { "name": "Assyrian Empire", "shapes": ["assyria_700"], "color": "assyria", "status": "empire", "label": [35.5, 41.5] },
+        { "name": "Egypt (under Assyria)", "shapes": ["egypt"], "color": "egypt", "status": "subject", "label": [27.5, 31.6] },
+        { "name": "Assyrian provinces", "shapes": ["galilee_coast", "samaria_hills", "gilead", "aram", "hamath"], "color": "assyria", "status": "province", "label": [33.3, 36.6] },
+        { "name": "Judah (Manasseh, vassal)", "shapes": ["judah"], "color": "judah", "status": "subject", "label": [31.4, 35.0] },
+        { "name": "Moab", "shapes": ["moab", "moab_n"], "color": "moab", "status": "subject", "label": [31.3, 35.95] },
+        { "name": "Ammon", "shapes": ["ammon"], "color": "ammon", "status": "subject", "label": [31.95, 36.2] },
+        { "name": "Edom", "shapes": ["edom"], "color": "edom", "status": "subject", "label": [30.4, 35.55] },
+        { "name": "Philistines", "shapes": ["philistia"], "color": "philistia", "status": "subject", "label": [31.5, 34.55] },
+        { "name": "Tyre & Sidon", "shapes": ["phoenicia"], "color": "phoenicia", "status": "subject", "label": [33.75, 35.62] }
+      ]
+    },
+    {
+      "id": "t622", "year": -622, "title": "Assyria collapses; Josiah's reform",
+      "refs": ["2 Kings 23:15-20", "2 Chronicles 34:6-7", "2 Chronicles 34:33"],
+      "summary": "After Ashurbanipal, Assyria crumbles. Babylon breaks free in 626 BC and Egypt is independent again. Josiah carries his reform beyond Judah into the old northern kingdom: to Bethel, the towns of Samaria, and in Chronicles as far as Naphtali.",
+      "note": "Scripture describes Josiah's religious reform in the north. How far his political control reached is uncertain, so that area is shown as dependent rather than as part of Judah.",
+      "regions": [
+        { "name": "Egypt", "shapes": ["egypt"], "color": "egypt", "status": "empire", "label": [27.5, 31.6] },
+        { "name": "Assyria (collapsing)", "shapes": ["assyria_853"], "color": "assyria", "status": "empire", "label": [35.6, 42.0] },
+        { "name": "Babylon", "shapes": ["babylon_620"], "color": "babylon", "status": "empire", "label": [32.2, 45.6] },
+        { "name": "Judah (Josiah)", "shapes": ["judah"], "color": "judah", "status": "kingdom", "label": [31.4, 35.0] },
+        { "name": "Reached by Josiah's reform", "shapes": ["samaria_hills", "galilee_coast"], "color": "judah", "status": "subject", "label": [32.55, 35.2] },
+        { "name": "Assyrian provinces (losing control)", "shapes": ["gilead", "aram", "hamath"], "color": "assyria", "status": "province", "label": [33.3, 36.6] },
+        { "name": "Moab", "shapes": ["moab", "moab_n"], "color": "moab", "status": "kingdom", "label": [31.3, 35.95] },
+        { "name": "Ammon", "shapes": ["ammon"], "color": "ammon", "status": "kingdom", "label": [31.95, 36.2] },
+        { "name": "Edom", "shapes": ["edom"], "color": "edom", "status": "kingdom", "label": [30.4, 35.55] },
+        { "name": "Philistines", "shapes": ["philistia"], "color": "philistia", "status": "kingdom", "label": [31.5, 34.55] },
+        { "name": "Tyre & Sidon", "shapes": ["phoenicia"], "color": "phoenicia", "status": "kingdom", "label": [33.75, 35.62] }
+      ]
+    },
+    {
+      "id": "t586", "year": -586, "title": "Babylon destroys Jerusalem",
+      "refs": ["2 Kings 25:8-12", "2 Kings 25:22", "Jeremiah 40:5-6", "Obadiah 10-14", "Ezekiel 35:10-15"],
+      "summary": "Nebuchadnezzar's empire covers the whole Fertile Crescent from the Persian Gulf to the border of Egypt. Judah becomes a Babylonian province, governed from Mizpah. Edom gloats over Jerusalem's fall and moves into the south of Judah, as Obadiah and Ezekiel condemn. Media rules to the north and east.",
+      "regions": [
+        { "name": "Babylonian Empire", "shapes": ["babylon_586"], "color": "babylon", "status": "empire", "label": [33.0, 41.0] },
+        { "name": "Media", "shapes": ["media_586"], "color": "media", "status": "empire", "label": [36.5, 47.5] },
+        { "name": "Egypt", "shapes": ["egypt"], "color": "egypt", "status": "empire", "label": [27.5, 31.6] },
+        { "name": "Judah (Babylonian province)", "shapes": ["yehud"], "color": "judah", "status": "province", "label": [31.75, 35.2] },
+        { "name": "Edomites move into the Negev", "shapes": ["idumea"], "color": "edom", "status": "subject", "label": [31.1, 34.9] },
+        { "name": "Samaria (province)", "shapes": ["samaria_hills", "galilee_coast"], "color": "babylon", "status": "province", "label": [32.5, 35.2] },
+        { "name": "Edom", "shapes": ["edom"], "color": "edom", "status": "subject", "label": [30.4, 35.55] },
+        { "name": "Moab", "shapes": ["moab", "moab_n"], "color": "moab", "status": "subject", "label": [31.3, 35.95] },
+        { "name": "Ammon", "shapes": ["ammon"], "color": "ammon", "status": "subject", "label": [31.95, 36.2] },
+        { "name": "Philistine coast", "shapes": ["philistia"], "color": "babylon", "status": "province", "label": [31.5, 34.55] },
+        { "name": "Tyre & Sidon", "shapes": ["phoenicia"], "color": "phoenicia", "status": "subject", "label": [33.75, 35.62] }
+      ]
+    },
+    {
+      "id": "t538", "year": -538, "title": "Cyrus and the return",
+      "refs": ["Ezra 1:1-4", "Isaiah 45:1-6", "Daniel 5:30-31"],
+      "summary": "Persia conquers Babylon and takes over its whole empire. Judah, now the small Persian province of Yehud around Jerusalem, welcomes the first exiles home. Egypt remains independent until Cambyses conquers it in 525 BC.",
+      "regions": [
+        { "name": "Persian Empire", "shapes": ["persia"], "color": "persia", "status": "empire", "label": [34.0, 40.5] },
+        { "name": "Egypt", "shapes": ["egypt"], "color": "egypt", "status": "empire", "label": [27.5, 31.6] },
+        { "name": "Yehud (Judah)", "shapes": ["yehud"], "color": "judah", "status": "province", "label": [31.75, 35.2] },
+        { "name": "Samaria", "shapes": ["samaria_hills"], "color": "israel", "status": "province", "label": [32.2, 35.2] },
+        { "name": "Edomites (Idumea)", "shapes": ["idumea"], "color": "edom", "status": "province", "label": [31.1, 34.9] },
+        { "name": "Ammon", "shapes": ["ammon"], "color": "ammon", "status": "province", "label": [31.95, 36.2] },
+        { "name": "Moab", "shapes": ["moab", "moab_n"], "color": "moab", "status": "province", "label": [31.3, 35.95] },
+        { "name": "Ashdod & Gaza", "shapes": ["philistia"], "color": "philistia", "status": "province", "label": [31.5, 34.55] },
+        { "name": "Tyre & Sidon", "shapes": ["phoenicia"], "color": "phoenicia", "status": "province", "label": [33.75, 35.62] }
+      ]
+    },
+    {
+      "id": "t445", "year": -445, "title": "Nehemiah's Jerusalem",
+      "refs": ["Esther 1:1", "Nehemiah 2:19", "Nehemiah 4:7-8", "Nehemiah 6:1-2"],
+      "summary": "Persia now rules from India to Cush (Esther 1:1), including Egypt. The little province of Yehud is ringed by hostile neighbours, all named in Nehemiah 4:7: Sanballat, governor of Samaria; Tobiah the Ammonite; Geshem the Arab; and the people of Ashdod.",
+      "regions": [
+        { "name": "Persian Empire", "shapes": ["persia", "egypt"], "color": "persia", "status": "empire", "label": [34.0, 40.5] },
+        { "name": "Yehud (Nehemiah)", "shapes": ["yehud"], "color": "judah", "status": "province", "label": [31.75, 35.2] },
+        { "name": "Samaria (Sanballat)", "shapes": ["samaria_hills"], "color": "israel", "status": "province", "label": [32.2, 35.2] },
+        { "name": "Ammon (Tobiah)", "shapes": ["ammon"], "color": "ammon", "status": "province", "label": [31.95, 36.2] },
+        { "name": "Arabs (Geshem)", "shapes": ["idumea", "edom"], "color": "edom", "status": "province", "label": [30.9, 35.2] },
+        { "name": "Ashdod", "shapes": ["philistia"], "color": "philistia", "status": "province", "label": [31.5, 34.55] },
+        { "name": "Tyre & Sidon", "shapes": ["phoenicia"], "color": "phoenicia", "status": "province", "label": [33.75, 35.62] }
+      ]
+    }
+  ]
+}

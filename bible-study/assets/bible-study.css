@@ -1,0 +1,253 @@
+/* Asha Books – Bible Timeline & Atlas
+   Everything is scoped under .bs-app so it can sit inside a Shopify theme. */
+
+.bs-app {
+  --bs-red: #C82035;
+  --bs-red-dark: #A81A2C;
+  --bs-text: #333;
+  --bs-dark: #1A1A1A;
+  --bs-muted: #6b6b6b;
+  --bs-border: #E0E0E0;
+  --bs-light: #F6F6F6;
+  --bs-bg: #FFFFFF;
+  --bs-israel: #3A6EA5;
+  --bs-judah: #A8741A;
+  --bs-prophet: #4E7A3A;
+  --bs-leader: #2F7F86;
+  --bs-event: #1A1A1A;
+  --bs-right: #3F8A4F;
+  --bs-mixed: #C99A2E;
+  --bs-evil: #9A4A4A;
+  --bs-none: #9a9a9a;
+
+  color: var(--bs-text);
+  background: var(--bs-bg);
+  font-size: 15px;
+  line-height: 1.5;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.bs-app *, .bs-app *::before, .bs-app *::after { box-sizing: border-box; }
+.bs-app button { font-family: inherit; color: inherit; }
+
+/* ---------- header ---------- */
+.bs-head { padding: 8px 0 16px; }
+.bs-eyebrow {
+  font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--bs-red); font-weight: 600; margin: 0 0 4px;
+}
+.bs-title { font-size: clamp(24px, 4vw, 34px); line-height: 1.15; color: var(--bs-dark); margin: 0 0 6px; }
+.bs-lede { margin: 0; color: var(--bs-muted); max-width: 70ch; }
+.bs-draft {
+  display: inline-block; margin-top: 10px; padding: 3px 10px; border-radius: 999px;
+  background: #FFF3D6; color: #7A5600; font-size: 12px; font-weight: 600;
+}
+
+/* ---------- toolbar ---------- */
+.bs-toolbar {
+  display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center;
+  padding: 10px 0; border-top: 1px solid var(--bs-border);
+}
+.bs-btn {
+  border: 1px solid var(--bs-border); background: var(--bs-bg); border-radius: 6px;
+  padding: 5px 11px; cursor: pointer; font-size: 14px; line-height: 1.2;
+}
+.bs-btn:hover { border-color: var(--bs-dark); }
+.bs-btn:focus-visible, .bs-item:focus-visible, .bs-chip:focus-visible { outline: 2px solid var(--bs-red); outline-offset: 2px; }
+.bs-zoom { display: inline-flex; gap: 4px; align-items: center; }
+.bs-toggle { display: inline-flex; gap: 6px; align-items: center; font-size: 14px; cursor: pointer; }
+.bs-legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 13px; color: var(--bs-muted); margin-left: auto; }
+.bs-legend i { display: inline-block; width: 12px; height: 12px; border-radius: 2px; vertical-align: -1px; margin-right: 5px; }
+
+/* ---------- timeline ---------- */
+.bs-tl {
+  position: relative; overflow-x: auto; overflow-y: hidden;
+  border: 1px solid var(--bs-border); border-radius: 8px; background: var(--bs-bg);
+  -webkit-overflow-scrolling: touch;
+}
+.bs-tl-canvas { position: relative; }
+.bs-lane { position: relative; border-top: 1px solid var(--bs-border); }
+.bs-lane:first-of-type { border-top: 0; }
+.bs-lane-label {
+  position: sticky; left: 0; z-index: 3; display: inline-block;
+  font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+  color: var(--bs-muted); background: rgba(255,255,255,.92); padding: 4px 8px 2px;
+}
+.bs-axis { position: relative; height: 26px; border-bottom: 1px solid var(--bs-border); background: var(--bs-light); }
+.bs-tick { position: absolute; top: 0; height: 100%; border-left: 1px solid #cfcfcf; font-size: 11px; color: var(--bs-muted); padding: 5px 0 0 4px; white-space: nowrap; }
+.bs-gridline { position: absolute; top: 26px; bottom: 0; border-left: 1px dashed #ececec; pointer-events: none; z-index: 0; }
+
+.bs-app .bs-item {
+  position: absolute; z-index: 1; height: 21px; border: 0; padding: 0 6px; margin: 0;
+  border-radius: 4px; font-size: 12px; line-height: 21px; text-align: left;
+  white-space: nowrap; overflow: visible; cursor: pointer;
+  transition: opacity .15s;
+}
+.bs-item .bs-bar { position: absolute; inset: 0; border-radius: 4px; }
+.bs-item .bs-co { position: absolute; top: 0; bottom: 0; border-radius: 4px 0 0 4px; opacity: .6;
+  background-image: repeating-linear-gradient(135deg, rgba(255,255,255,.6) 0 3px, transparent 3px 6px); }
+.bs-item .bs-lbl { position: relative; z-index: 1; font-weight: 600; }
+/* keep a long bar's name in view when its start is scrolled off to the left */
+.bs-item:not(.is-narrow):not(.bs-k-event) .bs-lbl { position: sticky; left: 6px; display: inline-block; }
+.bs-item.is-narrow .bs-lbl { color: var(--bs-dark) !important; }
+.bs-item.is-approx .bs-bar { opacity: .75; border: 1px dashed rgba(0,0,0,.35); }
+
+.bs-k-israel .bs-bar, .bs-k-israel .bs-co { background-color: var(--bs-israel); }
+.bs-k-judah .bs-bar, .bs-k-judah .bs-co { background-color: var(--bs-judah); }
+.bs-k-prophet .bs-bar { background-color: var(--bs-prophet); }
+.bs-k-leader .bs-bar { background-color: var(--bs-leader); }
+.bs-k-israel .bs-lbl, .bs-k-judah .bs-lbl, .bs-k-prophet .bs-lbl, .bs-k-leader .bs-lbl, .bs-k-empire .bs-lbl { color: #fff; }
+.bs-k-ruler .bs-bar { background: var(--bs-light); border: 1px solid var(--bs-border); }
+.bs-k-ruler .bs-lbl { color: var(--bs-dark); font-weight: 500; }
+.bs-k-empire { height: 20px; line-height: 20px; }
+.bs-k-empire .bs-bar { opacity: .9; }
+
+.bs-app.show-verdict .bs-v-right .bs-bar, .bs-app.show-verdict .bs-v-right .bs-co { background-color: var(--bs-right); }
+.bs-app.show-verdict .bs-v-mixed .bs-bar, .bs-app.show-verdict .bs-v-mixed .bs-co { background-color: var(--bs-mixed); }
+.bs-app.show-verdict .bs-v-evil .bs-bar, .bs-app.show-verdict .bs-v-evil .bs-co { background-color: var(--bs-evil); }
+.bs-app.show-verdict .bs-v-none .bs-bar { background-color: var(--bs-none); }
+
+/* events: a diamond at the year with the label to its right */
+.bs-app .bs-k-event { padding-left: 14px; background: transparent; color: var(--bs-dark); font-weight: 500; }
+.bs-k-event::before {
+  content: ""; position: absolute; left: -5px; top: 6px; width: 10px; height: 10px;
+  background: var(--bs-event); transform: rotate(45deg); border-radius: 1px;
+}
+.bs-k-event.c-fixed::before { background: var(--bs-red); }
+.bs-k-event.c-approx::before, .bs-k-event.c-disputed::before { background: #fff; border: 2px solid var(--bs-event); }
+.bs-k-event:hover .bs-lbl { text-decoration: underline; }
+
+.bs-item:hover { z-index: 2; }
+.bs-item.is-selected { z-index: 4; }
+.bs-item.is-selected .bs-bar { box-shadow: 0 0 0 2px var(--bs-bg), 0 0 0 4px var(--bs-red); }
+.bs-k-event.is-selected .bs-lbl { background: var(--bs-red); color: #fff; border-radius: 3px; padding: 1px 5px; }
+.bs-app.has-focus .bs-item:not(.is-related):not(.is-selected) { opacity: .22; }
+
+/* ---------- map + detail ---------- */
+.bs-main { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 16px; margin-top: 16px; }
+.bs-mapwrap { position: relative; }
+.bs-map { height: 520px; border: 1px solid var(--bs-border); border-radius: 8px; background: #e9e6dc; z-index: 0; }
+.bs-map-actions { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; font-size: 13px; color: var(--bs-muted); align-items: center; }
+.bs-map-legend { display: flex; gap: 12px; flex-wrap: wrap; margin-left: auto; }
+.bs-dot { display: inline-block; width: 11px; height: 11px; border-radius: 50%; vertical-align: -1px; margin-right: 4px; }
+.bs-dot.high { background: var(--bs-red); }
+.bs-dot.mid { background: #E88D9A; border: 1px solid var(--bs-red); }
+.bs-dot.low { background: #fff; border: 2px dashed var(--bs-red); }
+
+.bs-detail {
+  border: 1px solid var(--bs-border); border-radius: 8px; padding: 18px 20px;
+  max-height: 560px; overflow-y: auto; background: var(--bs-bg);
+}
+.bs-detail h2 { font-size: 22px; line-height: 1.2; margin: 2px 0 6px; color: var(--bs-dark); }
+.bs-detail h3 { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--bs-muted); margin: 18px 0 6px; }
+.bs-detail p { margin: 0 0 8px; }
+.bs-kind { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
+.bs-kind.israel { color: var(--bs-israel); } .bs-kind.judah { color: var(--bs-judah); }
+.bs-kind.prophet { color: var(--bs-prophet); } .bs-kind.leader { color: var(--bs-leader); } .bs-kind.event, .bs-kind.place, .bs-kind.ruler { color: var(--bs-red); }
+.bs-when { font-weight: 600; color: var(--bs-dark); margin-right: 8px; }
+.bs-badge { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; border: 1px solid; cursor: help; white-space: nowrap; }
+.bs-badge.fixed { color: #fff; background: var(--bs-dark); border-color: var(--bs-dark); }
+.bs-badge.calculated { color: var(--bs-israel); border-color: var(--bs-israel); }
+.bs-badge.approx { color: var(--bs-muted); border-style: dashed; }
+.bs-badge.disputed { color: #A0521D; border-color: #A0521D; }
+.bs-verdict { border-left: 4px solid var(--bs-none); padding: 6px 10px; background: var(--bs-light); border-radius: 0 6px 6px 0; margin: 12px 0 0; }
+.bs-verdict.right { border-color: var(--bs-right); } .bs-verdict.mixed { border-color: var(--bs-mixed); } .bs-verdict.evil { border-color: var(--bs-evil); }
+.bs-evidence { background: #F3F0E8; border-radius: 6px; padding: 10px 12px; margin-top: 12px; font-size: 14px; }
+.bs-evidence strong { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: #7A5A1A; margin-bottom: 2px; }
+.bs-note { font-size: 14px; color: var(--bs-muted); border-top: 1px dashed var(--bs-border); padding-top: 8px; margin-top: 12px; }
+.bs-refs { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 0; list-style: none; }
+.bs-refs a { display: inline-block; padding: 3px 9px; border-radius: 4px; background: #FBEAEC; color: var(--bs-red-dark); text-decoration: none; font-size: 14px; }
+.bs-refs a:hover { background: var(--bs-red); color: #fff; }
+.bs-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.bs-chip { border: 1px solid var(--bs-border); background: var(--bs-bg); border-radius: 999px; padding: 2px 10px; font-size: 13px; cursor: pointer; }
+.bs-chip:hover { border-color: var(--bs-red); color: var(--bs-red); }
+.bs-chip .bs-dot { width: 8px; height: 8px; }
+.bs-conf { height: 6px; background: var(--bs-light); border-radius: 3px; overflow: hidden; margin: 4px 0 2px; max-width: 220px; }
+.bs-conf span { display: block; height: 100%; background: var(--bs-red); }
+.bs-alt { font-size: 14px; margin: 0; padding-left: 18px; }
+.bs-source { font-size: 12px; color: var(--bs-muted); margin-top: 16px; }
+.bs-chips + .bs-source { margin-top: 12px; }
+.bs-source a { color: inherit; }
+.bs-cta { display: block; margin-top: 16px; padding: 10px 12px; border-radius: 6px; background: var(--bs-dark); color: #fff; text-decoration: none; font-size: 14px; }
+.bs-cta:hover { background: var(--bs-red); }
+.bs-intro ul { padding-left: 18px; margin: 6px 0 0; }
+
+/* leaflet bits */
+.bs-app .leaflet-tooltip.bs-maplabel {
+  background: rgba(255,255,255,.9); border: 0; box-shadow: none; padding: 0 4px;
+  font-weight: 600; font-size: 12px; color: var(--bs-dark);
+}
+.bs-app .leaflet-tooltip.bs-maplabel::before { display: none; }
+
+/* phase buttons (jump the timeline to one part of the story) */
+.bs-phases { display: inline-flex; flex-wrap: wrap; gap: 4px; }
+.bs-app .bs-phase { font-size: 13px; padding: 4px 9px; }
+.bs-app .bs-phase.is-active { background: var(--bs-dark); border-color: var(--bs-dark); color: #fff; }
+.bs-routekey { display: inline-block; width: 22px; height: 0; vertical-align: 3px; margin-right: 5px; }
+
+/* page switcher between the study pages */
+.bs-pages { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 14px; font-size: 14px; }
+.bs-pages a { padding: 4px 12px; border-radius: 999px; border: 1px solid var(--bs-border); color: var(--bs-text); text-decoration: none; }
+.bs-pages a:hover { border-color: var(--bs-red); color: var(--bs-red); }
+.bs-pages a[aria-current] { background: var(--bs-red); border-color: var(--bs-red); color: #fff; }
+
+/* timeline marker for the year shown on the kingdoms map */
+.bs-app .bs-now {
+  position: absolute; top: 0; bottom: 0; width: 2px; margin-left: -1px; padding: 0; border: 0;
+  background: var(--bs-red); opacity: .55; z-index: 2; cursor: pointer;
+}
+.bs-app .bs-now:hover { opacity: 1; }
+.bs-now-flag {
+  position: absolute; top: 3px; left: 2px; white-space: nowrap; font-size: 11px; font-weight: 700;
+  color: #fff; background: var(--bs-red); border-radius: 0 3px 3px 0; padding: 1px 6px;
+}
+
+/* kingdoms slider under the map */
+.bs-snapbar { margin-top: 10px; padding: 10px 12px 8px; border: 1px solid var(--bs-border); border-radius: 8px; background: var(--bs-light); }
+.bs-snapbar.is-off .bs-snap-ctrl, .bs-snapbar.is-off .bs-snap-ticks, .bs-snapbar.is-off .bs-snap-key { opacity: .4; pointer-events: none; }
+.bs-snap-head { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; }
+.bs-app .bs-snap-title { border: 0; background: none; padding: 0; font-size: 15px; font-weight: 700; color: var(--bs-dark); cursor: pointer; text-align: left; }
+.bs-app .bs-snap-title:hover { color: var(--bs-red); text-decoration: underline; }
+.bs-snap-ctrl { display: flex; gap: 8px; align-items: center; margin-top: 8px; }
+.bs-snap-ctrl input[type=range] { flex: 1; accent-color: var(--bs-red); min-width: 0; }
+.bs-snap-ticks { position: relative; height: 18px; margin: 0 44px 4px; }
+.bs-app .bs-snap-ticks button {
+  position: absolute; transform: translateX(-50%); border: 0; background: none; padding: 0 2px;
+  font-size: 11px; color: var(--bs-muted); cursor: pointer;
+}
+.bs-app .bs-snap-ticks button:hover { color: var(--bs-red); }
+.bs-snap-key { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12px; color: var(--bs-muted); }
+.bs-swatch { display: inline-block; width: 14px; height: 10px; vertical-align: -1px; margin-right: 5px; border: 1.5px solid #666; border-radius: 2px; }
+.bs-swatch.is-kingdom { background: rgba(102,102,102,.35); }
+.bs-swatch.is-subject { background: rgba(102,102,102,.15); border-style: dashed; }
+.bs-swatch.is-province { background: rgba(102,102,102,.25); border-style: dotted; }
+.bs-swatch.is-empire { background: rgba(102,102,102,.10); border-width: 1px; }
+.bs-regions { list-style: none; padding: 0; margin: 0; font-size: 14px; }
+.bs-regions li { margin: 3px 0; }
+
+/* territory labels: kingdom names when zoomed in, empire names when zoomed out */
+.bs-app .leaflet-tooltip.bs-terr-label {
+  background: none; border: 0; box-shadow: none; padding: 0;
+  font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+  color: rgba(26,26,26,.75); text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 2px #fff;
+  white-space: nowrap;
+}
+.bs-app .leaflet-tooltip.bs-terr-label::before { display: none; }
+.bs-app .leaflet-tooltip.bs-terr-label.is-empire { font-size: 13px; letter-spacing: .12em; color: rgba(26,26,26,.6); }
+.bs-map.bs-far .bs-terr-label.is-local { display: none; }
+.bs-map.bs-near .bs-terr-label.is-empire { display: none; }
+
+/* ---------- about ---------- */
+.bs-about { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--bs-border); font-size: 14px; color: var(--bs-muted); }
+.bs-about h2 { font-size: 16px; color: var(--bs-dark); margin: 0 0 6px; }
+.bs-about ul { padding-left: 18px; margin: 4px 0 12px; }
+.bs-about a { color: var(--bs-red-dark); }
+
+@media (max-width: 860px) {
+  .bs-main { grid-template-columns: 1fr; }
+  .bs-map { height: 380px; }
+  .bs-detail { max-height: none; }
+  .bs-legend { margin-left: 0; }
+}
+.bs-pages a.bs-home { border-color: transparent; color: var(--bs-red); font-weight: 600; padding-left: 4px; }
+.bs-pages a.bs-home:hover { text-decoration: underline; }

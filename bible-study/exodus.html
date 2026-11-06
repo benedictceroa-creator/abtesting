@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exodus to the Promised Land: Bible Timeline &amp; Atlas | Asha Books</title>
+  <meta name="description" content="Interactive Bible timeline and map following Israel from slavery in Egypt, through the Red Sea and Mount Sinai, forty years in the wilderness and Joshua's conquest, to every tribe settled in the promised land, with Scripture references for every step.">
+  <!-- Prototype: keep out of search results until the content has passed theological review -->
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="assets/bible-study.css">
+  <style>
+    body { margin: 0; padding: 24px 16px 48px; background: #fff; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  </style>
+</head>
+<body>
+  <div class="bs-app">
+    <nav class="bs-pages" aria-label="Bible study tools">
+      <a href="index.html" class="bs-home">&larr; All resources</a>
+      <a href="patriarchs.html">Abraham to the Exodus</a>
+      <a href="exodus.html" aria-current="page">Exodus to the Promised Land</a>
+      <a href="judges.html">Judges to Solomon</a>
+      <a href="kings.html">Kings, Prophets &amp; the Return</a>
+    </nav>
+    <header class="bs-head">
+      <p class="bs-eyebrow">Asha Books · Bible Study Tools</p>
+      <h1 class="bs-title">Exodus to the Promised Land: Bible Timeline &amp; Atlas</h1>
+      <p class="bs-lede">Follow Israel from slavery in Egypt, through the sea and the wilderness, to Mount Sinai, around Edom to the plains of Moab, across the Jordan with Joshua, until every tribe has received its inheritance. Every step is tied to the Scripture that records it.</p>
+      <span class="bs-draft">Prototype · awaiting theological review</span>
+    </header>
+  </div>
+
+  <div data-bible-study
+       data-timeline="data/exodus/timeline.json"
+       data-places="data/exodus/places.json"
+       data-territories="data/exodus/territories.json"
+       data-bible-version="ESV"
+       data-shop-url="https://ashabooks.com"></div>
+
+  <div class="bs-app">
+    <section class="bs-about">
+      <h2>Sources and method</h2>
+      <p>Every entry on this page lists the Scripture passages it is drawn from, and where Bible-believing scholars disagree, we say so.</p>
+      <ul>
+        <li><strong>Dates</strong> follow the early date of the Exodus, 1446 BC, from 1 Kings 6:1: the temple was begun in the 480th year after Israel came out of Egypt, in Solomon's fourth year (966 BC). Within the journey, the months and days are the Bible's own (Exodus 12:2; 16:1; 19:1; 40:17; Numbers 1:1; 10:11; 33:3, 38; Deuteronomy 1:3; Joshua 4:19).</li>
+        <li><strong>The late date.</strong> Many evangelical scholars place the Exodus around 1260 BC instead. On that view every year on this page moves about 180 years later, but the order of events and the Bible's months and days are unchanged.</li>
+        <li><strong>Places and their confidence levels</strong> come from the <a href="https://www.openbible.info/geo/" target="_blank" rel="noopener">OpenBible.info Bible Geocoding Data</a> (CC BY 4.0). Most wilderness stopping places cannot be located with certainty, so they appear as hollow markers.</li>
+        <li><strong>The route</strong> follows the traditional southern route found in most Bible atlases, with Mount Sinai at Jebel Musa. The crossing point of the sea, the location of Sinai, and the route around Edom are all debated; each map notes the main alternatives.</li>
+        <li><strong>Tribal territories</strong> are reconstructed from the boundary descriptions and town lists in Joshua 13–19, following the general agreement of standard Bible atlases. Many border towns can be located, but some lines, especially in Galilee, are approximate.</li>
+        <li><strong>Archaeology</strong> is mentioned where it bears on the text (Jericho, Ai, Mount Ebal, Hazor). Interpretations of these sites are debated, and we note that rather than claim more than the evidence shows.</li>
+        <li><strong>Base map</strong> from the <a href="https://cawm.lib.uiowa.edu/" target="_blank" rel="noopener">Consortium of Ancient World Mappers</a>.</li>
+      </ul>
+      <p>Scripture links open on Bible Gateway (ESV).</p>
+    </section>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="assets/bible-study.js"></script>
+</body>
+</html>

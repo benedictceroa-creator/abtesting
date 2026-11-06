@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bible Timeline &amp; Atlas: Kings, Prophets and the Return | Asha Books</title>
+  <meta name="description" content="Interactive Bible timeline and map from the divided kingdom to Ezra and Nehemiah: every king of Israel and Judah, the prophets, the exile and return, the empires of Assyria, Babylon and Persia, and maps of the kingdoms changing over time, with Scripture references.">
+  <!-- Prototype: keep out of search results until the content has passed theological review -->
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="assets/bible-study.css">
+  <style>
+    body { margin: 0; padding: 24px 16px 48px; background: #fff; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  </style>
+</head>
+<body>
+  <div class="bs-app">
+    <nav class="bs-pages" aria-label="Bible study tools">
+      <a href="index.html" class="bs-home">&larr; All resources</a>
+      <a href="patriarchs.html">Abraham to the Exodus</a>
+      <a href="exodus.html">Exodus to the Promised Land</a>
+      <a href="judges.html">Judges to Solomon</a>
+      <a href="kings.html" aria-current="page">Kings, Prophets &amp; the Return</a>
+    </nav>
+    <header class="bs-head">
+      <p class="bs-eyebrow">Asha Books · Bible Study Tools</p>
+      <h1 class="bs-title">Kings, Prophets &amp; the Return: Bible Timeline &amp; Atlas</h1>
+      <p class="bs-lede">From the split of Solomon's kingdom in 931 BC, through the exile in Babylon, to the rebuilding of Jerusalem under Ezra and Nehemiah, the close of Old Testament history. Every king of Israel and Judah, the prophets God sent, the empires around them, and maps of the kingdoms as they rose and fell.</p>
+      <span class="bs-draft">Prototype · awaiting theological review</span>
+    </header>
+  </div>
+
+  <div data-bible-study
+       data-timeline="data/timeline.json"
+       data-places="data/places.json"
+       data-territories="data/territories.json"
+       data-bible-version="ESV"
+       data-shop-url="https://ashabooks.com"></div>
+
+  <div class="bs-app">
+    <section class="bs-about">
+      <h2>Sources and method</h2>
+      <p>Every entry on this page comes from published scholarly data, not from guesswork, and every entry lists the Scripture passages it is drawn from. Where Bible-believing scholars disagree, we say so.</p>
+      <ul>
+        <li><strong>Kings' dates</strong> follow Edwin R. Thiele, <em>The Mysterious Numbers of the Hebrew Kings</em>, the chronology most widely used by evangelical scholars. It is anchored to Assyrian records: Ahab at the Battle of Qarqar (853 BC), Jehu's tribute to Shalmaneser III (841 BC), and the eclipse of 763 BC.</li>
+        <li><strong>Places and their confidence levels</strong> come from the <a href="https://www.openbible.info/geo/" target="_blank" rel="noopener">OpenBible.info Bible Geocoding Data</a> (CC BY 4.0), which records how confidently each biblical place can be matched to a modern site.</li>
+        <li><strong>Base map</strong> from the <a href="https://cawm.lib.uiowa.edu/" target="_blank" rel="noopener">Consortium of Ancient World Mappers</a>, which shows the ancient landscape without modern borders.</li>
+        <li><strong>Kingdom maps</strong> are drawn from the Bible's own descriptions of borders and conquests (cited for each map) and the general agreement of standard Bible atlases. Ancient borders were never precise lines, so these show approximately who controlled what.</li>
+        <li><strong>Persian-period dates</strong> (Haggai, Zechariah, Esther, Ezra, Nehemiah) come from the regnal years the books themselves give, which can be dated precisely because the Persian kings' reigns are fixed by Babylonian records.</li>
+        <li><strong>Prophets</strong> are placed using the kings named in each book's opening verse. Joel and Obadiah are not shown because their books give no dating information and scholars hold differing views.</li>
+      </ul>
+      <p>Scripture links open on Bible Gateway (ESV).</p>
+    </section>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="assets/bible-study.js"></script>
+</body>
+</html>

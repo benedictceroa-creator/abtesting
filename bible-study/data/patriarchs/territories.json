@@ -1,0 +1,2255 @@
+{
+ "meta": {
+  "note": "Borders are approximate. In the age of the patriarchs most of the region was a patchwork of city-states and tribes, not countries with fixed borders, and the routes are reconstructed from the places Genesis names. Treat the map as a guide to the journeys, not a precise survey.",
+  "status": "DRAFT: awaiting review against a printed Bible atlas",
+  "views": {
+   "core": [
+    [
+     30.4,
+     33.6
+    ],
+    [
+     33.6,
+     37.0
+    ]
+   ],
+   "coreLabel": "Canaan",
+   "region": [
+    [
+     24.5,
+     29.5
+    ],
+    [
+     38.5,
+     50.0
+    ]
+   ],
+   "regionLabel": "Ur to Egypt"
+  },
+  "mapKind": "Map ·",
+  "toggleLabel": "Show journeys & peoples",
+  "mapShows": "Map shows",
+  "snapRule": "latest"
+ },
+ "colors": {
+  "egypt": "#B08A3E",
+  "israel": "#3A6EA5",
+  "canaan": "#8F8270",
+  "edom": "#9C6B4E",
+  "midian": "#B49A6A",
+  "sumer": "#8C6A9C",
+  "elam": "#6F8F9C",
+  "aram": "#7D7D5E",
+  "gerar": "#A8906E",
+  "plain": "#C4573A"
+ },
+ "statuses": {
+  "kingdom": "Independent",
+  "subject": "Under another power",
+  "province": "Province of an empire",
+  "empire": "Empire or great kingdom"
+ },
+ "shapes": {
+  "egypt": [
+   [
+    31.3,
+    29.6
+   ],
+   [
+    31.5,
+    31.0
+   ],
+   [
+    31.25,
+    32.3
+   ],
+   [
+    30.6,
+    32.35
+   ],
+   [
+    30.0,
+    32.55
+   ],
+   [
+    29.0,
+    32.7
+   ],
+   [
+    27.9,
+    33.5
+   ],
+   [
+    27.2,
+    33.85
+   ],
+   [
+    26.0,
+    34.25
+   ],
+   [
+    24.1,
+    35.4
+   ],
+   [
+    24.0,
+    32.7
+   ],
+   [
+    25.8,
+    32.3
+   ],
+   [
+    27.4,
+    30.7
+   ],
+   [
+    29.4,
+    30.5
+   ],
+   [
+    30.4,
+    29.4
+   ]
+  ],
+  "goshen": [
+   [
+    31.1,
+    31.55
+   ],
+   [
+    31.05,
+    32.05
+   ],
+   [
+    30.8,
+    32.25
+   ],
+   [
+    30.45,
+    32.2
+   ],
+   [
+    30.4,
+    31.75
+   ],
+   [
+    30.75,
+    31.45
+   ]
+  ],
+  "canaan": [
+   [
+    31.25,
+    34.22
+   ],
+   [
+    31.52,
+    34.43
+   ],
+   [
+    32.05,
+    34.75
+   ],
+   [
+    32.62,
+    34.91
+   ],
+   [
+    32.83,
+    34.97
+   ],
+   [
+    32.92,
+    35.07
+   ],
+   [
+    33.27,
+    35.19
+   ],
+   [
+    33.46,
+    35.26
+   ],
+   [
+    33.56,
+    35.37
+   ],
+   [
+    33.9,
+    35.48
+   ],
+   [
+    33.8,
+    35.7
+   ],
+   [
+    33.35,
+    35.72
+   ],
+   [
+    33.05,
+    35.66
+   ],
+   [
+    32.88,
+    35.62
+   ],
+   [
+    32.7,
+    35.57
+   ],
+   [
+    32.4,
+    35.575
+   ],
+   [
+    32.1,
+    35.55
+   ],
+   [
+    31.86,
+    35.52
+   ],
+   [
+    31.76,
+    35.5
+   ],
+   [
+    31.5,
+    35.45
+   ],
+   [
+    31.25,
+    35.4
+   ],
+   [
+    31.05,
+    35.42
+   ],
+   [
+    31.0,
+    35.1
+   ],
+   [
+    31.1,
+    34.6
+   ]
+  ],
+  "edom": [
+   [
+    31.05,
+    35.45
+   ],
+   [
+    30.98,
+    35.8
+   ],
+   [
+    30.97,
+    36.05
+   ],
+   [
+    30.6,
+    36.0
+   ],
+   [
+    30.1,
+    35.85
+   ],
+   [
+    29.75,
+    35.4
+   ],
+   [
+    29.48,
+    34.96
+   ],
+   [
+    29.8,
+    35.02
+   ],
+   [
+    30.3,
+    35.15
+   ],
+   [
+    30.7,
+    35.25
+   ],
+   [
+    30.95,
+    35.36
+   ]
+  ],
+  "midian": [
+   [
+    29.5,
+    34.97
+   ],
+   [
+    29.3,
+    35.2
+   ],
+   [
+    28.8,
+    35.4
+   ],
+   [
+    27.8,
+    35.8
+   ],
+   [
+    27.5,
+    35.3
+   ],
+   [
+    28.0,
+    34.8
+   ],
+   [
+    28.6,
+    34.7
+   ],
+   [
+    29.2,
+    34.9
+   ]
+  ],
+  "ur3": [
+   [
+    34.4,
+    42.6
+   ],
+   [
+    34.6,
+    43.6
+   ],
+   [
+    33.8,
+    44.8
+   ],
+   [
+    33.0,
+    46.0
+   ],
+   [
+    32.0,
+    47.4
+   ],
+   [
+    31.0,
+    48.0
+   ],
+   [
+    30.0,
+    48.0
+   ],
+   [
+    29.9,
+    47.4
+   ],
+   [
+    30.6,
+    46.3
+   ],
+   [
+    31.4,
+    45.2
+   ],
+   [
+    32.4,
+    44.0
+   ],
+   [
+    33.4,
+    43.0
+   ]
+  ],
+  "elam": [
+   [
+    33.8,
+    46.6
+   ],
+   [
+    32.9,
+    47.4
+   ],
+   [
+    32.0,
+    47.9
+   ],
+   [
+    31.3,
+    48.4
+   ],
+   [
+    30.6,
+    49.2
+   ],
+   [
+    30.0,
+    50.6
+   ],
+   [
+    29.4,
+    51.6
+   ],
+   [
+    30.4,
+    52.2
+   ],
+   [
+    31.6,
+    51.0
+   ],
+   [
+    32.8,
+    49.6
+   ],
+   [
+    33.8,
+    48.2
+   ]
+  ],
+  "aram": [
+   [
+    37.6,
+    37.6
+   ],
+   [
+    37.7,
+    40.2
+   ],
+   [
+    37.0,
+    41.8
+   ],
+   [
+    36.0,
+    41.6
+   ],
+   [
+    35.3,
+    40.4
+   ],
+   [
+    35.5,
+    38.6
+   ],
+   [
+    36.3,
+    37.6
+   ]
+  ],
+  "gerar": [
+   [
+    31.52,
+    34.43
+   ],
+   [
+    31.5,
+    34.7
+   ],
+   [
+    31.3,
+    34.76
+   ],
+   [
+    31.12,
+    34.62
+   ],
+   [
+    31.15,
+    34.42
+   ],
+   [
+    31.28,
+    34.25
+   ]
+  ],
+  "plain": [
+   [
+    31.33,
+    35.38
+   ],
+   [
+    31.3,
+    35.56
+   ],
+   [
+    31.0,
+    35.56
+   ],
+   [
+    30.98,
+    35.4
+   ]
+  ]
+ },
+ "routes": {
+  "ur_haran": {
+   "name": "Ur to Haran, up the Euphrates",
+   "via": [
+    "ur-1",
+    [
+     31.95,
+     45.3
+    ],
+    "shinar",
+    [
+     33.4,
+     43.3
+    ],
+    [
+     34.45,
+     40.92
+    ],
+    [
+     35.95,
+     39.4
+    ],
+    "haran"
+   ]
+  },
+  "haran_canaan": {
+   "name": "Haran to Shechem",
+   "via": [
+    "haran",
+    [
+     36.8,
+     38.0
+    ],
+    [
+     36.2,
+     37.15
+    ],
+    [
+     35.1,
+     36.75
+    ],
+    [
+     34.4,
+     36.5
+    ],
+    "damascus",
+    [
+     32.75,
+     35.65
+    ],
+    "shechem"
+   ]
+  },
+  "to_negeb": {
+   "name": "Shechem to Bethel and the Negeb",
+   "via": [
+    "shechem",
+    "bethel-1",
+    "hebron",
+    "beersheba-1"
+   ]
+  },
+  "to_egypt": {
+   "name": "Down to Egypt in the famine",
+   "via": [
+    "beersheba-1",
+    [
+     31.05,
+     34.3
+    ],
+    [
+     30.95,
+     33.6
+    ],
+    [
+     30.7,
+     32.4
+    ],
+    [
+     30.4,
+     31.8
+    ],
+    "egypt"
+   ]
+  },
+  "lot": {
+   "name": "Lot moves to Sodom",
+   "via": [
+    "bethel-1",
+    [
+     31.85,
+     35.48
+    ],
+    [
+     31.5,
+     35.4
+    ],
+    "sodom"
+   ]
+  },
+  "to_mamre": {
+   "name": "Abram settles at Mamre",
+   "via": [
+    "bethel-1",
+    "salem",
+    "mamre"
+   ]
+  },
+  "invasion": {
+   "name": "The eastern kings' campaign",
+   "via": [
+    "ashteroth-karnaim",
+    "shaveh-kiriathaim",
+    "mount-seir-1",
+    "el-paran",
+    "kadesh-barnea",
+    [
+     30.9,
+     35.1
+    ],
+    "sodom"
+   ]
+  },
+  "pursuit": {
+   "name": "Abram's pursuit",
+   "via": [
+    "mamre",
+    "salem",
+    "shechem",
+    [
+     32.7,
+     35.55
+    ],
+    [
+     33.0,
+     35.62
+    ],
+    "dan",
+    [
+     33.5,
+     36.0
+    ],
+    "damascus",
+    "hobah"
+   ]
+  },
+  "hagar": {
+   "name": "Hagar's flight",
+   "via": [
+    "mamre",
+    "beersheba-1",
+    "beer-lahai-roi",
+    [
+     30.6,
+     33.6
+    ],
+    "shur"
+   ]
+  },
+  "to_gerar": {
+   "name": "Abraham moves south",
+   "via": [
+    "mamre",
+    "gerar",
+    "beersheba-1"
+   ]
+  },
+  "hagar_sent": {
+   "name": "Hagar and Ishmael sent away",
+   "via": [
+    "beersheba-1",
+    [
+     30.85,
+     34.6
+    ],
+    "paran"
+   ]
+  },
+  "moriah": {
+   "name": "Beersheba to Moriah, three days' journey",
+   "via": [
+    "beersheba-1",
+    "hebron",
+    "moriah"
+   ]
+  },
+  "rebekah": {
+   "name": "Abraham's servant brings Rebekah to Isaac",
+   "via": [
+    "haran",
+    [
+     36.8,
+     38.0
+    ],
+    [
+     36.2,
+     37.15
+    ],
+    [
+     35.1,
+     36.75
+    ],
+    [
+     34.4,
+     36.5
+    ],
+    "damascus",
+    [
+     32.75,
+     35.65
+    ],
+    "shechem",
+    "salem",
+    "hebron",
+    "beersheba-1",
+    "beer-lahai-roi"
+   ]
+  },
+  "isaac_wells": {
+   "name": "Isaac at Gerar and the wells",
+   "via": [
+    "beer-lahai-roi",
+    "gerar",
+    "rehoboth-1",
+    "beersheba-1"
+   ]
+  },
+  "jacob_flees": {
+   "name": "Jacob flees to Haran",
+   "via": [
+    "beersheba-1",
+    "hebron",
+    "bethel-1",
+    "shechem",
+    [
+     32.75,
+     35.65
+    ],
+    "damascus",
+    [
+     34.4,
+     36.5
+    ],
+    [
+     35.1,
+     36.75
+    ],
+    [
+     36.2,
+     37.15
+    ],
+    [
+     36.8,
+     38.0
+    ],
+    "haran"
+   ]
+  },
+  "jacob_returns": {
+   "name": "Jacob returns to Canaan",
+   "via": [
+    "haran",
+    [
+     36.8,
+     38.0
+    ],
+    [
+     36.2,
+     37.15
+    ],
+    [
+     35.1,
+     36.75
+    ],
+    [
+     34.4,
+     36.5
+    ],
+    "damascus",
+    [
+     32.75,
+     36.1
+    ],
+    "mizpah-4",
+    "mahanaim",
+    "penuel",
+    "succoth-1",
+    "shechem",
+    "bethel-1",
+    "ephrath",
+    "eder-1",
+    "mamre"
+   ]
+  },
+  "esau": {
+   "name": "Esau returns to Seir",
+   "via": [
+    "penuel",
+    [
+     31.6,
+     35.75
+    ],
+    [
+     31.0,
+     35.62
+    ],
+    "mount-seir-1"
+   ]
+  },
+  "joseph_sold": {
+   "name": "Joseph taken to Egypt",
+   "via": [
+    "hebron",
+    "shechem",
+    "dothan",
+    [
+     32.1,
+     34.95
+    ],
+    [
+     31.5,
+     34.45
+    ],
+    [
+     31.1,
+     33.8
+    ],
+    [
+     30.95,
+     32.5
+    ],
+    [
+     30.4,
+     31.8
+    ],
+    "egypt"
+   ]
+  },
+  "descent": {
+   "name": "Jacob's family goes down to Egypt",
+   "via": [
+    "hebron",
+    "beersheba-1",
+    [
+     31.05,
+     34.3
+    ],
+    [
+     30.95,
+     33.6
+    ],
+    [
+     30.85,
+     32.4
+    ],
+    "goshen-1"
+   ]
+  },
+  "burial": {
+   "name": "Jacob's funeral procession",
+   "via": [
+    "goshen-1",
+    [
+     30.85,
+     32.4
+    ],
+    [
+     30.9,
+     33.6
+    ],
+    [
+     30.7,
+     34.6
+    ],
+    [
+     30.9,
+     35.38
+    ],
+    [
+     31.45,
+     35.62
+    ],
+    "atad",
+    "machpelah"
+   ]
+  },
+  "moses_flees": {
+   "name": "Moses flees to Midian",
+   "via": [
+    "goshen-1",
+    [
+     30.3,
+     32.5
+    ],
+    [
+     29.95,
+     33.9
+    ],
+    [
+     29.6,
+     34.85
+    ],
+    "midian"
+   ]
+  },
+  "to_horeb": {
+   "name": "Moses leads the flock to Horeb",
+   "via": [
+    "midian",
+    [
+     28.3,
+     34.6
+    ],
+    "mount-sinai"
+   ]
+  },
+  "moses_returns": {
+   "name": "Moses returns to Egypt",
+   "via": [
+    "mount-sinai",
+    [
+     29.0,
+     33.1
+    ],
+    [
+     29.95,
+     32.6
+    ],
+    [
+     30.45,
+     32.3
+    ],
+    "goshen-1"
+   ]
+  }
+ },
+ "routeStyles": {
+  "current": {
+   "label": "Journey",
+   "color": "#C82035",
+   "weight": 3.5
+  },
+  "past": {
+   "label": "Earlier journeys",
+   "color": "#6b6b6b",
+   "weight": 2,
+   "dashArray": "6 5"
+  },
+  "other": {
+   "label": "Others' journeys",
+   "color": "#2F7F86",
+   "weight": 2.5,
+   "dashArray": "6 5"
+  },
+  "battle": {
+   "label": "Armies",
+   "color": "#A81A2C",
+   "weight": 2.5,
+   "dashArray": "8 4"
+  },
+  "flight": {
+   "label": "Flight",
+   "color": "#1A1A1A",
+   "weight": 2,
+   "dashArray": "2 5"
+  }
+ },
+ "snapshots": [
+  {
+   "id": "p-ur",
+   "year": -2095,
+   "tick": "Ur",
+   "title": "Abram leaves Ur",
+   "refs": [
+    "Genesis 11:27-32",
+    "Acts 7:2-4"
+   ],
+   "summary": "Abram's family lives in Ur, a great city of the Kingdom of Ur, which rules Sumer and Akkad in southern Mesopotamia. God appears to Abram there, and the family travels about 1,000 km up the Euphrates to Haran, in the land of the Amorite towns. Far to the west lie the Canaanite city-states and Egypt.",
+   "note": "Mesopotamian borders are drawn very roughly. Ur's empire at times reached further, to Assyria and Susa.",
+   "regions": [
+    {
+     "name": "Kingdom of Ur (Sumer and Akkad)",
+     "shapes": [
+      "ur3"
+     ],
+     "color": "sumer",
+     "status": "empire",
+     "label": [
+      32.0,
+      45.6
+     ]
+    },
+    {
+     "name": "Elam",
+     "shapes": [
+      "elam"
+     ],
+     "color": "elam",
+     "status": "kingdom",
+     "label": [
+      31.6,
+      49.6
+     ]
+    },
+    {
+     "name": "Upper Mesopotamia (Amorite towns)",
+     "shapes": [
+      "aram"
+     ],
+     "color": "aram",
+     "status": "kingdom",
+     "label": [
+      36.5,
+      40.4
+     ]
+    },
+    {
+     "name": "Canaanite city-states",
+     "shapes": [
+      "canaan"
+     ],
+     "color": "canaan",
+     "status": "kingdom",
+     "label": [
+      32.3,
+      35.15
+     ]
+    },
+    {
+     "name": "Seir (Horites)",
+     "shapes": [
+      "edom"
+     ],
+     "color": "edom",
+     "status": "kingdom",
+     "label": [
+      30.4,
+      35.55
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "empire",
+     "label": [
+      27.6,
+      31.2
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "ur_haran",
+     "style": "current"
+    }
+   ],
+   "view": [
+    [
+     29.0,
+     33.5
+    ],
+    [
+     38.2,
+     49.5
+    ]
+   ]
+  },
+  {
+   "id": "p-call",
+   "year": -2091,
+   "tick": "Canaan",
+   "title": "Abram goes to Canaan",
+   "refs": [
+    "Genesis 12:1-9",
+    "Hebrews 11:8-10"
+   ],
+   "summary": "At 75 Abram leaves Haran with Sarai, Lot and all their household, crosses the Euphrates and travels about 650 km south to Canaan. At Shechem God promises the land to his offspring. He camps between Bethel and Ai and moves on toward the Negeb.",
+   "note": "Genesis does not give the route. This line follows the main road south through Aleppo, Hamath and Damascus, the way most atlases draw it.",
+   "regions": [
+    {
+     "name": "Kingdom of Ur (Sumer and Akkad)",
+     "shapes": [
+      "ur3"
+     ],
+     "color": "sumer",
+     "status": "empire",
+     "label": [
+      32.0,
+      45.6
+     ]
+    },
+    {
+     "name": "Upper Mesopotamia (Amorite towns)",
+     "shapes": [
+      "aram"
+     ],
+     "color": "aram",
+     "status": "kingdom",
+     "label": [
+      36.5,
+      40.4
+     ]
+    },
+    {
+     "name": "Canaanite city-states",
+     "shapes": [
+      "canaan"
+     ],
+     "color": "canaan",
+     "status": "kingdom",
+     "label": [
+      32.3,
+      35.15
+     ]
+    },
+    {
+     "name": "Seir (Horites)",
+     "shapes": [
+      "edom"
+     ],
+     "color": "edom",
+     "status": "kingdom",
+     "label": [
+      30.4,
+      35.55
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "empire",
+     "label": [
+      27.6,
+      31.2
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "ur_haran",
+     "style": "past"
+    },
+    {
+     "route": "haran_canaan",
+     "style": "current"
+    },
+    {
+     "route": "to_negeb",
+     "style": "current"
+    }
+   ],
+   "view": [
+    [
+     30.6,
+     33.2
+    ],
+    [
+     37.6,
+     41.0
+    ]
+   ]
+  },
+  {
+   "id": "p-egypt",
+   "year": -2090,
+   "tick": "Egypt",
+   "title": "Abram in Egypt",
+   "refs": [
+    "Genesis 12:10-13:4"
+   ],
+   "summary": "Famine drives Abram from the Negeb down to Egypt, the land the Nile kept fed when rains failed in Canaan. Sent away by Pharaoh, he returns the same way to his altar between Bethel and Ai.",
+   "regions": [
+    {
+     "name": "Canaanite city-states",
+     "shapes": [
+      "canaan"
+     ],
+     "color": "canaan",
+     "status": "kingdom",
+     "label": [
+      32.3,
+      35.15
+     ]
+    },
+    {
+     "name": "Seir (Horites)",
+     "shapes": [
+      "edom"
+     ],
+     "color": "edom",
+     "status": "kingdom",
+     "label": [
+      30.4,
+      35.55
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "empire",
+     "label": [
+      27.6,
+      31.2
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "haran_canaan",
+     "style": "past"
+    },
+    {
+     "route": "to_negeb",
+     "style": "past"
+    },
+    {
+     "route": "to_egypt",
+     "style": "current"
+    }
+   ],
+   "view": [
+    [
+     29.3,
+     30.0
+    ],
+    [
+     33.0,
+     36.4
+    ]
+   ]
+  },
+  {
+   "id": "p-kings",
+   "year": -2085,
+   "tick": "Kings",
+   "title": "Lot, Sodom and the war of the kings",
+   "refs": [
+    "Genesis 13",
+    "Genesis 14"
+   ],
+   "summary": "Lot settles near Sodom in the Jordan valley and Abram at Mamre. Four kings from the east, led by Chedorlaomer of Elam, march down the King's Highway through Transjordan, around by El-paran and Kadesh, and defeat the five kings of the plain. Abram pursues them north to Dan and beyond Damascus, and meets Melchizedek, king of Salem, on his return.",
+   "note": "The route of the eastern kings is traced from the peoples and places they struck in Genesis 14:5-7. How these kings were related to the powers of Mesopotamia at the time is not known.",
+   "regions": [
+    {
+     "name": "Shinar (Babylonia)",
+     "shapes": [
+      "ur3"
+     ],
+     "color": "sumer",
+     "status": "kingdom",
+     "label": [
+      32.0,
+      45.6
+     ]
+    },
+    {
+     "name": "Elam",
+     "shapes": [
+      "elam"
+     ],
+     "color": "elam",
+     "status": "kingdom",
+     "label": [
+      31.6,
+      49.6
+     ]
+    },
+    {
+     "name": "Canaanite city-states",
+     "shapes": [
+      "canaan"
+     ],
+     "color": "canaan",
+     "status": "kingdom",
+     "label": [
+      32.3,
+      35.15
+     ]
+    },
+    {
+     "name": "Cities of the plain (Sodom, Gomorrah)",
+     "shapes": [
+      "plain"
+     ],
+     "color": "plain",
+     "status": "kingdom",
+     "label": [
+      31.15,
+      35.62
+     ]
+    },
+    {
+     "name": "Seir (Horites)",
+     "shapes": [
+      "edom"
+     ],
+     "color": "edom",
+     "status": "kingdom",
+     "label": [
+      30.4,
+      35.55
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "empire",
+     "label": [
+      27.6,
+      31.2
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "lot",
+     "style": "other"
+    },
+    {
+     "route": "to_mamre",
+     "style": "current"
+    },
+    {
+     "route": "invasion",
+     "style": "battle"
+    },
+    {
+     "route": "pursuit",
+     "style": "battle"
+    }
+   ],
+   "view": [
+    [
+     29.3,
+     33.8
+    ],
+    [
+     34.6,
+     38.0
+    ]
+   ]
+  },
+  {
+   "id": "p-sodom",
+   "year": -2067,
+   "tick": "Sodom",
+   "title": "Mamre, Sodom and Gerar",
+   "refs": [
+    "Genesis 16",
+    "Genesis 18-20"
+   ],
+   "summary": "Abraham lives at the oaks of Mamre near Hebron. Hagar has fled toward Shur and returned to bear Ishmael. Now the LORD promises Isaac within a year, and the cities of the plain are destroyed. Abraham moves south to Gerar, in the land of King Abimelech, and on to Beersheba.",
+   "note": "The cities of the plain are shown at the south end of the Dead Sea, the most common view. Some scholars place them north of the Dead Sea.",
+   "regions": [
+    {
+     "name": "Canaanite city-states",
+     "shapes": [
+      "canaan"
+     ],
+     "color": "canaan",
+     "status": "kingdom",
+     "label": [
+      32.3,
+      35.15
+     ]
+    },
+    {
+     "name": "Gerar (Abimelech)",
+     "shapes": [
+      "gerar"
+     ],
+     "color": "gerar",
+     "status": "kingdom",
+     "label": [
+      31.3,
+      34.5
+     ]
+    },
+    {
+     "name": "Cities of the plain (Sodom, Gomorrah)",
+     "shapes": [
+      "plain"
+     ],
+     "color": "plain",
+     "status": "kingdom",
+     "label": [
+      31.15,
+      35.62
+     ]
+    },
+    {
+     "name": "Seir (Horites)",
+     "shapes": [
+      "edom"
+     ],
+     "color": "edom",
+     "status": "kingdom",
+     "label": [
+      30.4,
+      35.55
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "empire",
+     "label": [
+      27.6,
+      31.2
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "hagar",
+     "style": "other"
+    },
+    {
+     "route": "to_gerar",
+     "style": "current"
+    }
+   ],
+   "view": [
+    [
+     30.2,
+     32.6
+    ],
+    [
+     32.0,
+     36.2
+    ]
+   ]
+  },
+  {
+   "id": "p-moriah",
+   "year": -2045,
+   "tick": "Moriah",
+   "title": "Isaac, Ishmael and Moriah",
+   "refs": [
+    "Genesis 21-22"
+   ],
+   "summary": "Isaac is born, probably at Beersheba. Hagar and Ishmael are sent away into the wilderness of Beersheba, and Ishmael grows up in the wilderness of Paran. Later God sends Abraham with Isaac on a three days' journey to a mountain in the land of Moriah.",
+   "regions": [
+    {
+     "name": "Canaanite city-states",
+     "shapes": [
+      "canaan"
+     ],
+     "color": "canaan",
+     "status": "kingdom",
+     "label": [
+      32.3,
+      35.15
+     ]
+    },
+    {
+     "name": "Gerar (Abimelech)",
+     "shapes": [
+      "gerar"
+     ],
+     "color": "gerar",
+     "status": "kingdom",
+     "label": [
+      31.3,
+      34.5
+     ]
+    },
+    {
+     "name": "Seir (Horites)",
+     "shapes": [
+      "edom"
+     ],
+     "color": "edom",
+     "status": "kingdom",
+     "label": [
+      30.4,
+      35.55
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "empire",
+     "label": [
+      27.6,
+      31.2
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "hagar_sent",
+     "style": "other"
+    },
+    {
+     "route": "moriah",
+     "style": "current"
+    }
+   ],
+   "view": [
+    [
+     30.0,
+     33.6
+    ],
+    [
+     32.0,
+     36.2
+    ]
+   ]
+  },
+  {
+   "id": "p-rebekah",
+   "year": -2026,
+   "tick": "Rebekah",
+   "title": "A bride from Nahor",
+   "refs": [
+    "Genesis 23-24"
+   ],
+   "summary": "Sarah is buried in the cave of Machpelah, the first ground Abraham owns in Canaan. Abraham's servant travels with ten camels to his master's relatives in Aram-naharaim, near Haran, and brings Rebekah back to Isaac in the Negeb.",
+   "note": "The servant's route is not given. The line follows the same main road as Abram's journey from Haran, on to Isaac at Beer-lahai-roi.",
+   "regions": [
+    {
+     "name": "Upper Mesopotamia (Amorite towns)",
+     "shapes": [
+      "aram"
+     ],
+     "color": "aram",
+     "status": "kingdom",
+     "label": [
+      36.5,
+      40.4
+     ]
+    },
+    {
+     "name": "Canaanite city-states",
+     "shapes": [
+      "canaan"
+     ],
+     "color": "canaan",
+     "status": "kingdom",
+     "label": [
+      32.3,
+      35.15
+     ]
+    },
+    {
+     "name": "Gerar (Abimelech)",
+     "shapes": [
+      "gerar"
+     ],
+     "color": "gerar",
+     "status": "kingdom",
+     "label": [
+      31.3,
+      34.5
+     ]
+    },
+    {
+     "name": "Seir (Horites)",
+     "shapes": [
+      "edom"
+     ],
+     "color": "edom",
+     "status": "kingdom",
+     "label": [
+      30.4,
+      35.55
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "empire",
+     "label": [
+      27.6,
+      31.2
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "haran_canaan",
+     "style": "past"
+    },
+    {
+     "route": "rebekah",
+     "style": "current"
+    }
+   ],
+   "view": [
+    [
+     30.2,
+     33.4
+    ],
+    [
+     37.6,
+     41.0
+    ]
+   ]
+  },
+  {
+   "id": "p-isaac",
+   "year": -1980,
+   "tick": "Isaac",
+   "title": "Isaac in the Negeb",
+   "refs": [
+    "Genesis 25:11",
+    "Genesis 26"
+   ],
+   "summary": "After Abraham's death Isaac lives at Beer-lahai-roi. In a famine God tells him to stay in the land, not go down to Egypt. He lives in Gerar, reopens his father's wells, and moves on to Rehoboth and Beersheba, where the LORD appears to him.",
+   "regions": [
+    {
+     "name": "Canaanite city-states",
+     "shapes": [
+      "canaan"
+     ],
+     "color": "canaan",
+     "status": "kingdom",
+     "label": [
+      32.3,
+      35.15
+     ]
+    },
+    {
+     "name": "Gerar (Abimelech)",
+     "shapes": [
+      "gerar"
+     ],
+     "color": "gerar",
+     "status": "kingdom",
+     "label": [
+      31.3,
+      34.5
+     ]
+    },
+    {
+     "name": "Seir (Horites)",
+     "shapes": [
+      "edom"
+     ],
+     "color": "edom",
+     "status": "kingdom",
+     "label": [
+      30.4,
+      35.55
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "empire",
+     "label": [
+      27.6,
+      31.2
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "isaac_wells",
+     "style": "current"
+    }
+   ],
+   "view": [
+    [
+     30.3,
+     33.6
+    ],
+    [
+     31.9,
+     35.8
+    ]
+   ]
+  },
+  {
+   "id": "p-flight",
+   "year": -1929,
+   "tick": "Flight",
+   "title": "Jacob flees to Haran",
+   "refs": [
+    "Genesis 27:41-29:14"
+   ],
+   "summary": "Jacob flees from Esau's anger to his uncle Laban in Haran. On the way, at Bethel, God promises to be with him and bring him back to this land.",
+   "regions": [
+    {
+     "name": "Paddan-aram (Laban's people)",
+     "shapes": [
+      "aram"
+     ],
+     "color": "aram",
+     "status": "kingdom",
+     "label": [
+      36.5,
+      40.4
+     ]
+    },
+    {
+     "name": "Canaanite city-states",
+     "shapes": [
+      "canaan"
+     ],
+     "color": "canaan",
+     "status": "kingdom",
+     "label": [
+      32.3,
+      35.15
+     ]
+    },
+    {
+     "name": "Seir (Horites)",
+     "shapes": [
+      "edom"
+     ],
+     "color": "edom",
+     "status": "kingdom",
+     "label": [
+      30.4,
+      35.55
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "empire",
+     "label": [
+      27.6,
+      31.2
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "jacob_flees",
+     "style": "flight"
+    }
+   ],
+   "view": [
+    [
+     30.8,
+     33.4
+    ],
+    [
+     37.6,
+     41.0
+    ]
+   ]
+  },
+  {
+   "id": "p-return",
+   "year": -1909,
+   "tick": "Return",
+   "title": "Jacob returns to Canaan",
+   "refs": [
+    "Genesis 31-35"
+   ],
+   "summary": "After twenty years Jacob returns with his family and flocks, crossing the Euphrates and making for the hill country of Gilead. He parts from Laban at Mizpah, wrestles with God by the Jabbok at Peniel, and meets Esau, who has settled in Seir. He stays at Succoth and Shechem, returns to Bethel, buries Rachel near Ephrath, and comes at last to his father at Mamre.",
+   "regions": [
+    {
+     "name": "Paddan-aram (Laban's people)",
+     "shapes": [
+      "aram"
+     ],
+     "color": "aram",
+     "status": "kingdom",
+     "label": [
+      36.5,
+      40.4
+     ]
+    },
+    {
+     "name": "Canaanite city-states",
+     "shapes": [
+      "canaan"
+     ],
+     "color": "canaan",
+     "status": "kingdom",
+     "label": [
+      32.3,
+      35.15
+     ]
+    },
+    {
+     "name": "Edom (Esau in Seir)",
+     "shapes": [
+      "edom"
+     ],
+     "color": "edom",
+     "status": "kingdom",
+     "label": [
+      30.4,
+      35.55
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "empire",
+     "label": [
+      27.6,
+      31.2
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "jacob_flees",
+     "style": "past"
+    },
+    {
+     "route": "jacob_returns",
+     "style": "current"
+    },
+    {
+     "route": "esau",
+     "style": "other"
+    }
+   ],
+   "view": [
+    [
+     30.0,
+     33.4
+    ],
+    [
+     37.6,
+     41.0
+    ]
+   ]
+  },
+  {
+   "id": "p-joseph",
+   "year": -1898,
+   "tick": "Joseph",
+   "title": "Joseph sold into Egypt",
+   "refs": [
+    "Genesis 37",
+    "Genesis 39"
+   ],
+   "summary": "Joseph is sent from the Valley of Hebron to his brothers at Shechem and finds them at Dothan, near the trade route from Gilead to Egypt. Ishmaelite traders carry him down the coast road to Egypt, where he is sold to Potiphar.",
+   "note": "The traders' route is not given; the line follows the main coast road, the Way of the Sea.",
+   "regions": [
+    {
+     "name": "Canaanite city-states",
+     "shapes": [
+      "canaan"
+     ],
+     "color": "canaan",
+     "status": "kingdom",
+     "label": [
+      32.3,
+      35.15
+     ]
+    },
+    {
+     "name": "Edom (Esau in Seir)",
+     "shapes": [
+      "edom"
+     ],
+     "color": "edom",
+     "status": "kingdom",
+     "label": [
+      30.4,
+      35.55
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "empire",
+     "label": [
+      27.6,
+      31.2
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "joseph_sold",
+     "style": "flight"
+    }
+   ],
+   "view": [
+    [
+     29.4,
+     30.0
+    ],
+    [
+     32.9,
+     36.2
+    ]
+   ]
+  },
+  {
+   "id": "p-descent",
+   "year": -1876,
+   "tick": "Descent",
+   "title": "Israel goes down to Egypt",
+   "refs": [
+    "Genesis 46:1-47:12"
+   ],
+   "summary": "In the second year of famine Jacob sets out from Hebron. At Beersheba God promises to go down with him and bring him up again. The family of seventy settles in the land of Goshen in the eastern Nile Delta, good pasture near the border, where Joseph can provide for them.",
+   "regions": [
+    {
+     "name": "Israel in Goshen",
+     "shapes": [
+      "goshen"
+     ],
+     "color": "israel",
+     "status": "subject",
+     "label": [
+      30.78,
+      31.85
+     ]
+    },
+    {
+     "name": "Canaanite city-states",
+     "shapes": [
+      "canaan"
+     ],
+     "color": "canaan",
+     "status": "kingdom",
+     "label": [
+      32.3,
+      35.15
+     ]
+    },
+    {
+     "name": "Edom (Esau in Seir)",
+     "shapes": [
+      "edom"
+     ],
+     "color": "edom",
+     "status": "kingdom",
+     "label": [
+      30.4,
+      35.55
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "empire",
+     "label": [
+      27.6,
+      31.2
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "descent",
+     "style": "current"
+    }
+   ],
+   "view": [
+    [
+     29.6,
+     30.4
+    ],
+    [
+     32.0,
+     36.0
+    ]
+   ]
+  },
+  {
+   "id": "p-burial",
+   "year": -1859,
+   "tick": "Burial",
+   "title": "Jacob buried at Machpelah",
+   "refs": [
+    "Genesis 50:1-14"
+   ],
+   "summary": "Joseph and his brothers, with a great company of Pharaoh's officials, chariots and horsemen, carry Jacob's body to Canaan and bury him in the cave of Machpelah, then return to Egypt.",
+   "note": "The procession's route is uncertain. Because Atad was \"beyond the Jordan\" (Genesis 50:10-11), it is drawn round the south of the Dead Sea; it may simply have gone by Beersheba.",
+   "regions": [
+    {
+     "name": "Israel in Goshen",
+     "shapes": [
+      "goshen"
+     ],
+     "color": "israel",
+     "status": "subject",
+     "label": [
+      30.78,
+      31.85
+     ]
+    },
+    {
+     "name": "Canaanite city-states",
+     "shapes": [
+      "canaan"
+     ],
+     "color": "canaan",
+     "status": "kingdom",
+     "label": [
+      32.3,
+      35.15
+     ]
+    },
+    {
+     "name": "Edom (Esau in Seir)",
+     "shapes": [
+      "edom"
+     ],
+     "color": "edom",
+     "status": "kingdom",
+     "label": [
+      30.4,
+      35.55
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "empire",
+     "label": [
+      27.6,
+      31.2
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "descent",
+     "style": "past"
+    },
+    {
+     "route": "burial",
+     "style": "current"
+    }
+   ],
+   "view": [
+    [
+     29.6,
+     30.4
+    ],
+    [
+     32.2,
+     36.0
+    ]
+   ]
+  },
+  {
+   "id": "p-slavery",
+   "year": -1526,
+   "tick": "Slavery",
+   "title": "Slavery in Egypt",
+   "refs": [
+    "Exodus 1",
+    "Exodus 2:1-10"
+   ],
+   "summary": "Israel has grown into a great people in Goshen, but a new king has made them slaves, building the store cities Pithom and Rameses. Egypt's New Kingdom now rules an empire that includes the city-states of Canaan. Moses is born under Pharaoh's order to throw every Hebrew boy into the Nile.",
+   "note": "Egypt's control of Canaan, from about 1500 BC, is shown by marking the Canaanite city-states as subject to it.",
+   "regions": [
+    {
+     "name": "Israel in Goshen",
+     "shapes": [
+      "goshen"
+     ],
+     "color": "israel",
+     "status": "subject",
+     "label": [
+      30.78,
+      31.85
+     ]
+    },
+    {
+     "name": "Canaanite city-states (under Egypt)",
+     "shapes": [
+      "canaan"
+     ],
+     "color": "canaan",
+     "status": "subject",
+     "label": [
+      32.3,
+      35.15
+     ]
+    },
+    {
+     "name": "Edom (Esau in Seir)",
+     "shapes": [
+      "edom"
+     ],
+     "color": "edom",
+     "status": "kingdom",
+     "label": [
+      30.4,
+      35.55
+     ]
+    },
+    {
+     "name": "Midian",
+     "shapes": [
+      "midian"
+     ],
+     "color": "midian",
+     "status": "kingdom",
+     "label": [
+      28.6,
+      35.2
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "empire",
+     "label": [
+      27.6,
+      31.2
+     ]
+    }
+   ],
+   "routes": [],
+   "view": [
+    [
+     28.4,
+     29.5
+    ],
+    [
+     33.6,
+     36.8
+    ]
+   ]
+  },
+  {
+   "id": "p-midian",
+   "year": -1447,
+   "tick": "Midian",
+   "title": "Moses in Midian and the burning bush",
+   "refs": [
+    "Exodus 2:11-4:31",
+    "Acts 7:29-34"
+   ],
+   "summary": "Moses flees to Midian and lives there forty years. Leading Jethro's flock to Horeb, the mountain of God, he meets the LORD in the burning bush and is sent back to Egypt, where Aaron comes to meet him. From here the story continues on the Exodus page.",
+   "note": "Midian lay east of the Gulf of Aqaba, but Midianites ranged widely. The map follows the traditional site of Horeb (Jebel Musa) in southern Sinai; other proposals include Har Karkom and Jebel al-Lawz in Arabia.",
+   "regions": [
+    {
+     "name": "Israel in Goshen",
+     "shapes": [
+      "goshen"
+     ],
+     "color": "israel",
+     "status": "subject",
+     "label": [
+      30.78,
+      31.85
+     ]
+    },
+    {
+     "name": "Canaanite city-states (under Egypt)",
+     "shapes": [
+      "canaan"
+     ],
+     "color": "canaan",
+     "status": "subject",
+     "label": [
+      32.3,
+      35.15
+     ]
+    },
+    {
+     "name": "Edom (Esau in Seir)",
+     "shapes": [
+      "edom"
+     ],
+     "color": "edom",
+     "status": "kingdom",
+     "label": [
+      30.4,
+      35.55
+     ]
+    },
+    {
+     "name": "Midian",
+     "shapes": [
+      "midian"
+     ],
+     "color": "midian",
+     "status": "kingdom",
+     "label": [
+      28.6,
+      35.2
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "empire",
+     "label": [
+      27.6,
+      31.2
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "moses_flees",
+     "style": "flight"
+    },
+    {
+     "route": "to_horeb",
+     "style": "other"
+    },
+    {
+     "route": "moses_returns",
+     "style": "current"
+    }
+   ],
+   "view": [
+    [
+     27.6,
+     30.0
+    ],
+    [
+     32.0,
+     36.4
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,2005 @@
+{
+ "meta": {
+  "title": "Judges to Solomon",
+  "range": [
+   -1395,
+   -925
+  ],
+  "lanes": [
+   {
+    "key": "periods",
+    "label": "Periods",
+    "type": "stage",
+    "color": "#8C6A3E",
+    "kind": "Period"
+   },
+   {
+    "key": "judges",
+    "label": "Judges",
+    "type": "leader",
+    "color": "#2F7F86",
+    "kind": "Judge"
+   },
+   {
+    "key": "monarchs",
+    "label": "Kings",
+    "type": "leader",
+    "color": "#A8402E",
+    "kind": "King of Israel"
+   },
+   {
+    "key": "priests",
+    "label": "Priests & prophets",
+    "type": "leader",
+    "color": "#6E5A8C",
+    "kind": "Priest or prophet"
+   },
+   {
+    "key": "foes",
+    "label": "Oppressors & neighbours",
+    "type": "ruler",
+    "kind": "Foreign power"
+   },
+   {
+    "key": "events",
+    "label": "Key events",
+    "type": "event",
+    "kind": "Event"
+   }
+  ],
+  "phases": [
+   {
+    "label": "Whole story",
+    "range": [
+     -1395,
+     -925
+    ]
+   },
+   {
+    "label": "Othniel to Gideon",
+    "range": [
+     -1385,
+     -1160
+    ]
+   },
+   {
+    "label": "Jephthah, Samson & Eli",
+    "range": [
+     -1155,
+     -1070
+    ]
+   },
+   {
+    "label": "Samuel & Saul",
+    "range": [
+     -1112,
+     -1005
+    ]
+   },
+   {
+    "label": "David",
+    "range": [
+     -1045,
+     -966
+    ]
+   },
+   {
+    "label": "Solomon",
+    "range": [
+     -975,
+     -925
+    ]
+   }
+  ],
+  "defaultPhase": "Othniel to Gideon",
+  "chronology": "David and Solomon each reigned 40 years (1 Kings 2:11; 11:42), so their dates are counted back from the division of the kingdom in 931 BC (Thiele's chronology). Saul's reign of about 40 years comes from Acts 13:21. The judges' dates are approximate: the years given in Judges add up to about 410, but only about 330 years separate Joshua's death from Saul, so some judges must have served at the same time in different regions. Two anchors help: Jephthah's \"300 years\" since Israel took Heshbon (Judges 11:26, about 1106 BC on the early Exodus date), and Judges 10:7, where the Ammonite and Philistine oppressions begin together.",
+  "chronologyShort": "Counted back from 931 BC (Thiele); judges approximate.",
+  "status": "DRAFT: awaiting theological review",
+  "alternative": "On the late date of the Exodus (about 1260 BC), the judges must fit into about 150 years (about 1200-1050 BC), so even more of them overlap, and Jephthah's 300 years is read as a round figure. Saul, David and Solomon's dates are the same on either view.",
+  "introTitle": "From the judges to Solomon's temple"
+ },
+ "certainty": {
+  "fixed": "Fixed: confirmed by a dated record outside the Bible.",
+  "calculated": "Calculated: worked out from the Bible's own numbers, counting back from the division of the kingdom in 931 BC.",
+  "approx": "Approximate: the Bible places it in sequence but gives no exact date, or its numbers must be fitted together with overlaps.",
+  "disputed": "Disputed: Bible-believing scholars hold different views."
+ },
+ "periods": [
+  {
+   "id": "elders",
+   "name": "Joshua and the elders",
+   "start": -1406,
+   "end": -1373,
+   "certainty": "approx",
+   "refs": [
+    "Joshua 24:29-31",
+    "Judges 2:6-10"
+   ],
+   "places": [
+    "shiloh",
+    "shechem"
+   ],
+   "summary": "Israel served the LORD all the days of Joshua and of the elders who outlived him. When that generation died, \"there arose another generation after them who did not know the LORD or the work that he had done for Israel\" (Judges 2:10).",
+   "basis": "Begins with the crossing of the Jordan (1406 BC). How long the elders outlived Joshua is not stated."
+  },
+  {
+   "id": "judges-era",
+   "name": "The time of the judges",
+   "start": -1373,
+   "end": -1051,
+   "certainty": "approx",
+   "refs": [
+    "Judges 2:11-19",
+    "Judges 21:25",
+    "Ruth 1:1",
+    "1 Samuel 7:15"
+   ],
+   "places": [
+    "shiloh"
+   ],
+   "summary": "A repeating cycle: Israel does evil and serves the Baals; the LORD gives them into the hands of their enemies; they cry out; the LORD raises up a judge who saves them; then, when the judge dies, they turn back again. \"In those days there was no king in Israel. Everyone did what was right in his own eyes\" (Judges 21:25).",
+   "basis": "From the first oppression to the anointing of Saul. Acts 13:20 in some translations (such as the KJV) gives 450 years for the judges, but the best manuscripts, followed by the ESV and NIV, attach the 450 years to the period before the judges (Egypt, wilderness and conquest)."
+  },
+  {
+   "id": "united",
+   "name": "The united kingdom",
+   "start": -1051,
+   "end": -931,
+   "certainty": "calculated",
+   "refs": [
+    "1 Samuel 8-31",
+    "2 Samuel",
+    "1 Kings 1-11",
+    "1 Chronicles 10-29",
+    "2 Chronicles 1-9"
+   ],
+   "places": [
+    "gibeah-1",
+    "hebron",
+    "jerusalem"
+   ],
+   "summary": "Israel asks for a king \"like all the nations\". Saul, David and Solomon each reign about 40 years over all twelve tribes. Under David and Solomon the kingdom reaches its greatest extent and the temple is built in Jerusalem.",
+   "basis": "Saul about 40 years (Acts 13:21), David 40 (1 Kings 2:11), Solomon 40 (1 Kings 11:42), ending in 931 BC."
+  }
+ ],
+ "judges": [
+  {
+   "id": "othniel",
+   "name": "Othniel",
+   "start": -1365,
+   "end": -1325,
+   "certainty": "approx",
+   "refs": [
+    "Judges 1:11-15",
+    "Judges 3:7-11",
+    "Joshua 15:15-19"
+   ],
+   "places": [
+    "debir-1"
+   ],
+   "summary": "Caleb's younger kinsman, who had captured Debir (Kiriath-sepher). \"The Spirit of the LORD was upon him\", and he delivered Israel from Cushan-rishathaim, king of Mesopotamia. The land had rest forty years. He is the model judge: no flaw is recorded.",
+   "basis": "After 8 years of oppression came 40 years of rest (Judges 3:8, 11). The bar shows the deliverance and the rest that followed."
+  },
+  {
+   "id": "ehud",
+   "name": "Ehud",
+   "start": -1307,
+   "end": -1227,
+   "certainty": "approx",
+   "refs": [
+    "Judges 3:12-30"
+   ],
+   "places": [
+    "jericho-1",
+    "gilgal-1",
+    "seirah"
+   ],
+   "summary": "A left-handed Benjamite who brought Israel's tribute to Eglon, king of Moab, and killed him with a hidden sword. He escaped to Seirah, rallied Ephraim and seized the fords of the Jordan, so that no Moabite escaped. The land had rest eighty years.",
+   "basis": "After 18 years under Moab came 80 years of rest (Judges 3:14, 30). That rest probably applied to Benjamin and the Jordan valley, and overlaps Deborah's time in the north."
+  },
+  {
+   "id": "shamgar",
+   "name": "Shamgar",
+   "start": -1290,
+   "end": -1280,
+   "certainty": "approx",
+   "refs": [
+    "Judges 3:31",
+    "Judges 5:6"
+   ],
+   "places": [],
+   "summary": "Son of Anath, who struck down 600 Philistines with an oxgoad, \"and he too saved Israel\". The Song of Deborah remembers his days as a time when the highways were abandoned and travellers kept to the byways.",
+   "basis": "No years are given. Judges 5:6 places him shortly before Deborah."
+  },
+  {
+   "id": "deborah",
+   "name": "Deborah & Barak",
+   "start": -1259,
+   "end": -1219,
+   "certainty": "approx",
+   "role": "Prophetess and judge, with Barak",
+   "refs": [
+    "Judges 4-5",
+    "Hebrews 11:32"
+   ],
+   "places": [
+    "bethel-1",
+    "kedesh-4",
+    "mount-tabor",
+    "kishon"
+   ],
+   "summary": "Deborah, a prophetess, judged Israel under her palm tree between Ramah and Bethel. She summoned Barak of Kedesh to gather 10,000 men at Mount Tabor, and the LORD routed Sisera's chariots at the Kishon. Hebrews 11 names Barak among the heroes of faith.",
+   "basis": "After 20 years under Jabin came 40 years of rest (Judges 4:3; 5:31)."
+  },
+  {
+   "id": "gideon",
+   "name": "Gideon",
+   "start": -1212,
+   "end": -1172,
+   "certainty": "approx",
+   "refs": [
+    "Judges 6-8",
+    "Hebrews 11:32",
+    "Isaiah 9:4"
+   ],
+   "places": [
+    "ophrah-2",
+    "harod-1",
+    "moreh-2"
+   ],
+   "summary": "Called while threshing wheat in a winepress to hide it from Midian: \"The LORD is with you, O mighty man of valor.\" He tore down his father's altar to Baal, asked for the sign of the fleece, and with 300 men routed the Midianites. He refused to be king, but his gold ephod became a snare to Israel.",
+   "basis": "After 7 years under Midian, \"the land had rest forty years in the days of Gideon\" (Judges 6:1; 8:28)."
+  },
+  {
+   "id": "abimelech",
+   "name": "Abimelech",
+   "start": -1172,
+   "end": -1169,
+   "certainty": "approx",
+   "role": "Self-made king at Shechem (not a judge)",
+   "refs": [
+    "Judges 9"
+   ],
+   "places": [
+    "shechem",
+    "thebez"
+   ],
+   "summary": "Gideon's son by a concubine from Shechem. He murdered seventy of his brothers on one stone and was made king by the men of Shechem. Jotham's fable from Mount Gerizim foretold the end, and God \"returned the evil\" on Abimelech and Shechem alike.",
+   "basis": "Ruled over Israel 3 years (Judges 9:22)."
+  },
+  {
+   "id": "tola",
+   "name": "Tola",
+   "start": -1169,
+   "end": -1146,
+   "certainty": "approx",
+   "refs": [
+    "Judges 10:1-2"
+   ],
+   "places": [
+    "shamir-2"
+   ],
+   "summary": "Of the tribe of Issachar, he \"arose to save Israel\" after Abimelech and lived at Shamir in the hill country of Ephraim.",
+   "basis": "Judged 23 years (Judges 10:2)."
+  },
+  {
+   "id": "jair",
+   "name": "Jair",
+   "start": -1146,
+   "end": -1124,
+   "certainty": "approx",
+   "refs": [
+    "Judges 10:3-5"
+   ],
+   "places": [
+    "kamon"
+   ],
+   "summary": "A Gileadite with thirty sons who rode thirty donkeys and had thirty towns, called Havvoth-jair. He was buried at Kamon.",
+   "basis": "Judged 22 years (Judges 10:3). His death is followed by the Ammonite and Philistine oppressions (10:6-7)."
+  },
+  {
+   "id": "eli",
+   "name": "Eli",
+   "start": -1144,
+   "end": -1104,
+   "certainty": "approx",
+   "role": "High priest and judge",
+   "refs": [
+    "1 Samuel 1-4",
+    "1 Samuel 2:27-36",
+    "1 Kings 2:27"
+   ],
+   "places": [
+    "shiloh"
+   ],
+   "summary": "High priest at Shiloh, where Hannah prayed and Samuel grew up. He failed to restrain his sons Hophni and Phinehas, and a man of God foretold the fall of his house. When the ark was captured and his sons killed, he fell and died.",
+   "basis": "Judged Israel 40 years and died aged 98 (1 Samuel 4:15, 18). These years overlap the later judges, who served elsewhere."
+  },
+  {
+   "id": "jephthah",
+   "name": "Jephthah",
+   "start": -1106,
+   "end": -1100,
+   "certainty": "approx",
+   "refs": [
+    "Judges 11:1-12:7",
+    "Hebrews 11:32"
+   ],
+   "places": [
+    "tob",
+    "mizpah-1"
+   ],
+   "summary": "Driven out by his half-brothers, he lived in the land of Tob until the elders of Gilead begged him to lead them against Ammon. He answered the Ammonite king from Israel's history, defeated Ammon, and then fought Ephraim at the Jordan fords. His rash vow concerning his daughter is one of the saddest passages in Judges.",
+   "basis": "Judged 6 years (Judges 12:7). He tells the king of Ammon that Israel had held Heshbon for 300 years (11:26), about 1106 BC on the early date."
+  },
+  {
+   "id": "ibzan",
+   "name": "Ibzan",
+   "start": -1100,
+   "end": -1093,
+   "certainty": "approx",
+   "refs": [
+    "Judges 12:8-10"
+   ],
+   "places": [],
+   "summary": "Of Bethlehem, he had thirty sons and thirty daughters and arranged marriages for them all outside his clan. Whether this Bethlehem is the one in Judah or in Zebulun (Joshua 19:15) is not certain.",
+   "basis": "Judged 7 years (Judges 12:9)."
+  },
+  {
+   "id": "elon",
+   "name": "Elon",
+   "start": -1093,
+   "end": -1083,
+   "certainty": "approx",
+   "refs": [
+    "Judges 12:11-12"
+   ],
+   "places": [],
+   "summary": "Of the tribe of Zebulun; he was buried at Aijalon in the land of Zebulun.",
+   "basis": "Judged 10 years (Judges 12:11)."
+  },
+  {
+   "id": "abdon",
+   "name": "Abdon",
+   "start": -1083,
+   "end": -1075,
+   "certainty": "approx",
+   "refs": [
+    "Judges 12:13-15"
+   ],
+   "places": [
+    "pirathon"
+   ],
+   "summary": "Of Pirathon in Ephraim, with forty sons and thirty grandsons who rode seventy donkeys, a sign of wealth and standing.",
+   "basis": "Judged 8 years (Judges 12:14)."
+  },
+  {
+   "id": "samson",
+   "name": "Samson",
+   "start": -1105,
+   "end": -1085,
+   "certainty": "approx",
+   "refs": [
+    "Judges 13-16",
+    "Hebrews 11:32"
+   ],
+   "places": [
+    "zorah",
+    "timnah-1",
+    "gaza"
+   ],
+   "summary": "A Nazirite from birth, of the tribe of Dan, who would \"begin to save Israel from the hand of the Philistines\". The Spirit of the LORD rushed upon him again and again, yet he followed his own eyes. Betrayed by Delilah, blinded and imprisoned in Gaza, he prayed once more and killed more Philistines in his death than in his life.",
+   "basis": "Judged 20 years \"in the days of the Philistines\" (Judges 15:20), within their 40-year rule (13:1)."
+  },
+  {
+   "id": "samuel",
+   "name": "Samuel",
+   "start": -1107,
+   "end": -1015,
+   "certainty": "approx",
+   "role": "Prophet and judge",
+   "refs": [
+    "1 Samuel 1-16",
+    "1 Samuel 25:1",
+    "Acts 3:24",
+    "Acts 13:20",
+    "Hebrews 11:32"
+   ],
+   "places": [
+    "ramah-4",
+    "shiloh",
+    "mizpah-3"
+   ],
+   "summary": "Given to the LORD by his mother Hannah, he grew up at Shiloh and was called by God as a boy. \"All Israel from Dan to Beersheba knew that Samuel was established as a prophet of the LORD.\" He judged Israel from Ramah, anointed both Saul and David, and is the last of the judges and the first of the prophets after Moses.",
+   "basis": "Called while Eli was old (1 Samuel 3); judged Israel all the days of his life (7:15); died while David was a fugitive (25:1). All dates approximate."
+  }
+ ],
+ "monarchs": [
+  {
+   "id": "saul",
+   "name": "Saul",
+   "start": -1050,
+   "end": -1010,
+   "certainty": "approx",
+   "refs": [
+    "1 Samuel 9-31",
+    "1 Chronicles 10",
+    "Acts 13:21"
+   ],
+   "places": [
+    "gibeah-1",
+    "jabesh-gilead",
+    "mount-gilboa"
+   ],
+   "summary": "A Benjamite, \"a handsome young man\" who stood head and shoulders above everyone. He began well, rescuing Jabesh-gilead, but disobeyed the LORD at Gilgal and again over Amalek, and the LORD rejected him as king. He spent his last years pursuing David, consulted a medium at En-dor, and died on Mount Gilboa.",
+   "basis": "About 40 years (Acts 13:21). The Hebrew of 1 Samuel 13:1, which gives his age and the length of his reign, has numbers missing, so his dates are approximate."
+  },
+  {
+   "id": "ish-bosheth",
+   "name": "Ish-bosheth",
+   "start": -1010,
+   "end": -1008,
+   "certainty": "approx",
+   "role": "King of Israel (the northern tribes), at Mahanaim",
+   "refs": [
+    "2 Samuel 2:8-11",
+    "2 Samuel 3-4"
+   ],
+   "places": [
+    "mahanaim"
+   ],
+   "summary": "Saul's surviving son, made king over Israel by Saul's commander Abner while Judah followed David. When Abner went over to David, Ish-bosheth's power collapsed, and he was murdered by two of his own captains.",
+   "basis": "Reigned 2 years (2 Samuel 2:10), during David's 7½ years at Hebron. How the two figures fit together is not stated."
+  },
+  {
+   "id": "david",
+   "name": "David",
+   "start": -1010,
+   "end": -970,
+   "certainty": "calculated",
+   "refs": [
+    "1 Samuel 16-31",
+    "2 Samuel",
+    "1 Kings 1:1-2:12",
+    "1 Chronicles 11-29",
+    "Acts 13:22"
+   ],
+   "places": [
+    "bethlehem-1",
+    "hebron",
+    "jerusalem"
+   ],
+   "summary": "The shepherd from Bethlehem whom God called \"a man after my own heart\". King over Judah at Hebron, then over all Israel from Jerusalem, which he captured and made the city of God. God promised him a house and a throne established forever, fulfilled in Jesus, the Son of David. He sinned grievously with Bathsheba and repented (Psalm 51).",
+   "basis": "Reigned 40 years: 7½ at Hebron and 33 at Jerusalem (2 Samuel 5:4-5; 1 Kings 2:11). Counted back from 931 BC.",
+   "evidence": "The Tel Dan Stele (9th century BC) refers to the \"house of David\", the earliest mention of David outside the Bible."
+  },
+  {
+   "id": "solomon",
+   "name": "Solomon",
+   "start": -970,
+   "end": -931,
+   "certainty": "calculated",
+   "refs": [
+    "1 Kings 1-11",
+    "2 Chronicles 1-9",
+    "Proverbs 1:1",
+    "Matthew 6:29",
+    "Matthew 12:42"
+   ],
+   "places": [
+    "jerusalem",
+    "gibeon"
+   ],
+   "summary": "David's son by Bathsheba, who asked God for \"an understanding mind\" and was given wisdom, riches and honour besides. He built the temple, ruled from the Euphrates to the border of Egypt, and wrote proverbs and songs. But his many foreign wives turned his heart after other gods, and God said the kingdom would be torn from his son.",
+   "basis": "Reigned 40 years (1 Kings 11:42), ending in 931 BC. The temple was begun in his 4th year, 966 BC (1 Kings 6:1)."
+  }
+ ],
+ "priests": [
+  {
+   "id": "phinehas",
+   "name": "Phinehas",
+   "start": -1406,
+   "end": -1370,
+   "certainty": "approx",
+   "role": "High priest",
+   "refs": [
+    "Numbers 25:7-13",
+    "Joshua 22:13-34",
+    "Judges 20:27-28",
+    "Psalm 106:30-31"
+   ],
+   "places": [
+    "shiloh"
+   ],
+   "summary": "Aaron's grandson, given \"a covenant of a perpetual priesthood\" for his zeal at Peor. He was still ministering before the ark when Israel fought Benjamin (Judges 20:28), which shows that story comes from early in the period of the judges.",
+   "basis": "Active from the plains of Moab (Numbers 25), high priest after his father Eleazar died (about 1380). His last mention is Judges 20:28; the end of his life is not recorded."
+  },
+  {
+   "id": "abiathar",
+   "name": "Abiathar",
+   "start": -1018,
+   "end": -970,
+   "certainty": "approx",
+   "role": "Priest",
+   "refs": [
+    "1 Samuel 22:20-23",
+    "2 Samuel 15:24-29",
+    "1 Kings 1:7",
+    "1 Kings 2:26-27"
+   ],
+   "places": [
+    "nob",
+    "jerusalem"
+   ],
+   "summary": "The only priest to escape when Saul massacred the priests of Nob. He served David throughout his life but supported Adonijah, and Solomon banished him to Anathoth, \"fulfilling the word of the LORD that he had spoken concerning the house of Eli in Shiloh\".",
+   "basis": "From the massacre at Nob during David's flight to his banishment at Solomon's accession."
+  },
+  {
+   "id": "gad",
+   "name": "Gad",
+   "start": -1018,
+   "end": -975,
+   "certainty": "approx",
+   "role": "Prophet, David's seer",
+   "refs": [
+    "1 Samuel 22:5",
+    "2 Samuel 24:11-19",
+    "1 Chronicles 29:29",
+    "2 Chronicles 29:25"
+   ],
+   "places": [
+    "hereth",
+    "jerusalem"
+   ],
+   "summary": "He told David to leave the stronghold and go into Judah during his flight from Saul, and years later brought God's word after the census, directing David to build an altar on Araunah's threshing floor. He kept records of David's reign.",
+   "basis": "From David's flight to the census. Dates approximate."
+  },
+  {
+   "id": "nathan",
+   "name": "Nathan",
+   "start": -1000,
+   "end": -970,
+   "certainty": "approx",
+   "role": "Prophet",
+   "refs": [
+    "2 Samuel 7:1-17",
+    "2 Samuel 12:1-15",
+    "1 Kings 1:11-45",
+    "1 Chronicles 29:29"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "He brought God's covenant promise to David, confronted him after Bathsheba with the parable of the poor man's lamb (\"You are the man!\"), and helped secure Solomon's succession.",
+   "basis": "From the covenant (after the ark came to Jerusalem) to Solomon's anointing. Dates approximate."
+  },
+  {
+   "id": "zadok",
+   "name": "Zadok",
+   "start": -1003,
+   "end": -960,
+   "certainty": "approx",
+   "role": "Priest",
+   "refs": [
+    "2 Samuel 8:17",
+    "2 Samuel 15:24-29",
+    "1 Kings 1:32-45",
+    "1 Kings 2:35",
+    "1 Chronicles 6:1-8",
+    "Ezekiel 44:15"
+   ],
+   "places": [
+    "gibeon",
+    "jerusalem"
+   ],
+   "summary": "Descended from Aaron through Eleazar, he served alongside Abiathar under David, stayed loyal during Absalom's revolt and anointed Solomon at Gihon. His line held the high priesthood from then on.",
+   "basis": "First appears among David's officials; last mentioned early in Solomon's reign. Dates approximate."
+  },
+  {
+   "id": "ahijah",
+   "name": "Ahijah of Shiloh",
+   "start": -938,
+   "end": -925,
+   "certainty": "approx",
+   "role": "Prophet",
+   "refs": [
+    "1 Kings 11:29-39",
+    "1 Kings 14:1-18",
+    "2 Chronicles 9:29"
+   ],
+   "places": [
+    "shiloh",
+    "zeredah-1"
+   ],
+   "summary": "He tore his new cloak into twelve pieces and gave ten to Jeroboam: the LORD would tear the kingdom from Solomon's son because of Solomon's idolatry, but leave one tribe for David's sake.",
+   "basis": "Late in Solomon's reign. He was still alive, old and blind, in Jeroboam's reign (1 Kings 14:4)."
+  }
+ ],
+ "foes": [
+  {
+   "id": "cushan",
+   "name": "Cushan-rishathaim",
+   "start": -1373,
+   "end": -1365,
+   "certainty": "approx",
+   "datePrefix": "Oppressed Israel",
+   "role": "King of Mesopotamia (Aram-naharaim)",
+   "refs": [
+    "Judges 3:8-10"
+   ],
+   "places": [
+    "aram-naharaim"
+   ],
+   "summary": "The first oppressor, who ruled Israel for eight years until Othniel defeated him. His name means \"Cushan of double wickedness\", perhaps a mocking nickname. He has not been identified outside the Bible, and some scholars suggest he came from Edom rather than distant Mesopotamia."
+  },
+  {
+   "id": "eglon",
+   "name": "Eglon of Moab",
+   "start": -1325,
+   "end": -1307,
+   "certainty": "approx",
+   "datePrefix": "Oppressed Israel",
+   "role": "King of Moab",
+   "refs": [
+    "Judges 3:12-25"
+   ],
+   "places": [
+    "jericho-1"
+   ],
+   "summary": "With Ammon and Amalek he defeated Israel and took the City of Palms (Jericho), ruling Israel for eighteen years until Ehud killed him."
+  },
+  {
+   "id": "jabin",
+   "name": "Jabin & Sisera",
+   "start": -1279,
+   "end": -1259,
+   "certainty": "approx",
+   "datePrefix": "Oppressed Israel",
+   "role": "King of Canaan at Hazor, and his commander",
+   "refs": [
+    "Judges 4:2-3",
+    "Judges 4:23-24",
+    "Psalm 83:9"
+   ],
+   "places": [
+    "hazor-1",
+    "harosheth-hagoyim"
+   ],
+   "summary": "Jabin reigned in Hazor; his commander Sisera, with 900 iron chariots, \"oppressed the people of Israel cruelly for twenty years\". A Jabin of Hazor had also led the northern coalition against Joshua (Joshua 11), so Jabin may have been a royal name or title, as Pharaoh was."
+  },
+  {
+   "id": "midian",
+   "name": "Midian & Amalek",
+   "start": -1219,
+   "end": -1212,
+   "certainty": "approx",
+   "datePrefix": "Oppressed Israel",
+   "role": "Desert raiders: Oreb, Zeeb, Zebah and Zalmunna",
+   "refs": [
+    "Judges 6:1-6",
+    "Judges 7:25",
+    "Judges 8:5-21",
+    "Psalm 83:11"
+   ],
+   "places": [
+    "moreh-2",
+    "karkor"
+   ],
+   "summary": "Each harvest the Midianites, Amalekites and \"people of the East\" swept in with their camels \"like locusts in number\", destroying crops as far as Gaza, so that Israel hid in caves and strongholds for seven years."
+  },
+  {
+   "id": "ammon",
+   "name": "Ammon",
+   "start": -1124,
+   "end": -1106,
+   "certainty": "approx",
+   "datePrefix": "Oppressed Israel",
+   "role": "The Ammonites",
+   "refs": [
+    "Judges 10:7-9",
+    "Judges 11:4-33"
+   ],
+   "places": [
+    "mizpah-1",
+    "rabbah-1"
+   ],
+   "summary": "For eighteen years the Ammonites crushed Israel in Gilead and even crossed the Jordan to fight Judah, Benjamin and Ephraim, until Jephthah defeated them. Their king claimed the land between the Arnon and the Jabbok."
+  },
+  {
+   "id": "philistines",
+   "name": "The Philistines",
+   "start": -1124,
+   "end": -1084,
+   "certainty": "approx",
+   "datePrefix": "Ruled over Israel",
+   "role": "The Philistines",
+   "refs": [
+    "Judges 10:7",
+    "Judges 13:1",
+    "Judges 15:11",
+    "1 Samuel 4-7"
+   ],
+   "places": [
+    "gaza",
+    "ashdod",
+    "ashkelon",
+    "gath-1",
+    "ekron"
+   ],
+   "summary": "Five city-states on the coast (Gaza, Ashdod, Ashkelon, Gath and Ekron), skilled in iron. The LORD gave Israel into their hand for forty years: the time of Samson and of the ark's capture. Samuel's victory at Mizpah broke their hold, but they remained Israel's chief enemy until David subdued them.",
+   "evidence": "Egyptian records of Rameses III (about 1175 BC) describe the \"Peleset\" among the Sea Peoples who settled the southern coast, and excavations at Ashdod, Ashkelon, Ekron and Gath have uncovered Philistine cities of this period."
+  },
+  {
+   "id": "nahash",
+   "name": "Nahash of Ammon",
+   "start": -1052,
+   "end": -995,
+   "certainty": "approx",
+   "role": "King of Ammon",
+   "refs": [
+    "1 Samuel 11:1-11",
+    "2 Samuel 10:1-2",
+    "2 Samuel 17:27"
+   ],
+   "places": [
+    "jabesh-gilead",
+    "rabbah-1"
+   ],
+   "summary": "He besieged Jabesh-gilead and offered peace only if he could gouge out every man's right eye; Saul's rescue of the city confirmed Saul as king. Later he showed kindness to David, and David's insulted envoys to his son Hanun started the Ammonite war."
+  },
+  {
+   "id": "achish",
+   "name": "Achish of Gath",
+   "start": -1018,
+   "end": -967,
+   "certainty": "approx",
+   "role": "Philistine king of Gath",
+   "refs": [
+    "1 Samuel 21:10-15",
+    "1 Samuel 27-29",
+    "1 Kings 2:39-40"
+   ],
+   "places": [
+    "gath-1",
+    "ziklag"
+   ],
+   "summary": "David fled to him and feigned madness. Later Achish gave David Ziklag and trusted him, but the other Philistine lords would not let David fight against Saul at Gilboa. An Achish was still king of Gath early in Solomon's reign; this may be the same man or a successor of the same name.",
+   "basis": "From David's flight to Shimei's journey to Gath (1 Kings 2:39). Dates approximate."
+  },
+  {
+   "id": "hadadezer",
+   "name": "Hadadezer of Zobah",
+   "start": -1000,
+   "end": -990,
+   "certainty": "approx",
+   "role": "King of Zobah (Aram)",
+   "refs": [
+    "2 Samuel 8:3-12",
+    "2 Samuel 10:15-19",
+    "1 Kings 11:23"
+   ],
+   "places": [
+    "zobah",
+    "helam"
+   ],
+   "summary": "The most powerful Aramean king of his day, whose rule reached toward the Euphrates. David defeated him twice, and his vassals made peace with Israel. His servant Rezon later fled and founded a hostile kingdom at Damascus."
+  },
+  {
+   "id": "hiram",
+   "name": "Hiram of Tyre",
+   "start": -980,
+   "end": -947,
+   "certainty": "approx",
+   "role": "King of Tyre",
+   "refs": [
+    "2 Samuel 5:11",
+    "1 Kings 5",
+    "1 Kings 9:10-14",
+    "1 Kings 9:26-28",
+    "1 Kings 10:22"
+   ],
+   "places": [
+    "tyre",
+    "lebanon"
+   ],
+   "summary": "\"Always a friend of David\", he sent cedar and craftsmen for David's palace and Solomon's temple, and his sailors manned Solomon's fleet to Ophir.",
+   "evidence": "Josephus (Against Apion 1.17-18), quoting Phoenician king lists via Menander of Ephesus, records Hiram son of Abibaal reigning 34 years.",
+   "basis": "34 years (Josephus). Fitting this to the Bible suggests 2 Samuel 5:11 is placed by topic rather than date, or that Hiram's reign began earlier."
+  },
+  {
+   "id": "pharaoh",
+   "name": "Pharaoh, Solomon's father-in-law",
+   "start": -978,
+   "end": -959,
+   "certainty": "disputed",
+   "role": "King of Egypt (not named)",
+   "refs": [
+    "1 Kings 3:1",
+    "1 Kings 7:8",
+    "1 Kings 9:16-24"
+   ],
+   "places": [
+    "gezer"
+   ],
+   "summary": "He made an alliance with Solomon, gave him his daughter in marriage, and captured Gezer and gave it to her as a dowry. A pharaoh giving a daughter to a foreign king was rare, a sign of Israel's standing at the time.",
+   "basis": "Not named in the Bible. Often identified with Siamun of Egypt's 21st Dynasty, whose dates are approximate."
+  },
+  {
+   "id": "rezon",
+   "name": "Rezon of Damascus",
+   "start": -965,
+   "end": -931,
+   "certainty": "approx",
+   "role": "King of Damascus (Aram)",
+   "refs": [
+    "1 Kings 11:23-25"
+   ],
+   "places": [
+    "damascus",
+    "zobah"
+   ],
+   "summary": "A former servant of Hadadezer who gathered a band, seized Damascus and \"was an adversary of Israel all the days of Solomon\". The kingdom of Aram-Damascus he founded became Israel's great enemy in the time of the kings."
+  },
+  {
+   "id": "hadad",
+   "name": "Hadad the Edomite",
+   "start": -970,
+   "end": -931,
+   "certainty": "approx",
+   "role": "Edomite prince",
+   "refs": [
+    "1 Kings 11:14-22"
+   ],
+   "places": [
+    "valley-of-salt"
+   ],
+   "summary": "A royal child of Edom who escaped Joab's slaughter and grew up in Pharaoh's court. After David's death he returned to Edom as an adversary God raised up against Solomon."
+  },
+  {
+   "id": "shishak",
+   "name": "Shishak (Shoshenq I)",
+   "start": -945,
+   "end": -924,
+   "certainty": "approx",
+   "role": "King of Egypt",
+   "refs": [
+    "1 Kings 11:40",
+    "1 Kings 14:25-26",
+    "2 Chronicles 12:2-9"
+   ],
+   "places": [
+    "zeredah-1"
+   ],
+   "summary": "Founder of Egypt's 22nd Dynasty. He sheltered Jeroboam when Solomon tried to kill him, and five years after Solomon's death invaded Judah and carried off the temple treasures.",
+   "evidence": "His victory relief at Karnak lists towns he took in Israel and Judah, and a fragment of a stela with his name was found at Megiddo."
+  }
+ ],
+ "events": [
+  {
+   "id": "e-judah",
+   "title": "The tribes fight on alone",
+   "year": -1379,
+   "certainty": "approx",
+   "refs": [
+    "Judges 1:1-36"
+   ],
+   "places": [
+    "hebron",
+    "debir-1",
+    "jerusalem",
+    "gezer",
+    "megiddo",
+    "taanach",
+    "beth-shan"
+   ],
+   "summary": "After Joshua's death Judah and Simeon go up first. Caleb takes Hebron and Othniel takes Debir. But tribe after tribe fails to drive out the Canaanites: Jerusalem, Gezer, Megiddo, Taanach, Beth-shan, the coast and much of Galilee stay in Canaanite hands, and Dan is pressed back into the hills."
+  },
+  {
+   "id": "e-bochim",
+   "title": "The angel at Bochim",
+   "year": -1377,
+   "certainty": "approx",
+   "refs": [
+    "Judges 2:1-5"
+   ],
+   "places": [
+    "bethel-1"
+   ],
+   "summary": "The angel of the LORD rebukes Israel for making covenants with the Canaanites: they will remain as thorns in Israel's sides. The people weep and name the place Bochim (\"weepers\").",
+   "note": "Bochim's location is unknown. The Greek Old Testament places it at Bethel, so the map shows Bethel."
+  },
+  {
+   "id": "e-gibeah",
+   "title": "The outrage at Gibeah and war with Benjamin",
+   "year": -1375,
+   "certainty": "disputed",
+   "refs": [
+    "Judges 19-21",
+    "Hosea 9:9",
+    "Hosea 10:9"
+   ],
+   "places": [
+    "gibeah-1",
+    "mizpah-3",
+    "bethel-1",
+    "shiloh",
+    "jabesh-gilead"
+   ],
+   "summary": "A Levite's concubine is abused and killed at Gibeah. All Israel gathers at Mizpah and almost wipes out the tribe of Benjamin. The book closes: \"Everyone did what was right in his own eyes.\"",
+   "note": "Told at the end of Judges, but Phinehas, Aaron's grandson, is still priest (20:28), so it probably happened early in the period. Dan's move north (Judges 17-18) is also early; see the Exodus page."
+  },
+  {
+   "id": "e-cushan",
+   "title": "Israel serves Cushan-rishathaim",
+   "year": -1373,
+   "certainty": "approx",
+   "refs": [
+    "Judges 3:7-8"
+   ],
+   "places": [
+    "aram-naharaim"
+   ],
+   "summary": "Israel forgets the LORD and serves the Baals and the Asheroth, and the LORD sells them into the hand of the king of Mesopotamia for eight years. The cycle of Judges begins."
+  },
+  {
+   "id": "e-othniel",
+   "title": "Othniel delivers Israel",
+   "year": -1365,
+   "certainty": "approx",
+   "refs": [
+    "Judges 3:9-11"
+   ],
+   "places": [
+    "debir-1"
+   ],
+   "summary": "Israel cries out, and the LORD raises up Othniel. The Spirit of the LORD comes upon him, he defeats Cushan-rishathaim, and the land has rest forty years."
+  },
+  {
+   "id": "e-eglon",
+   "title": "Moab takes the City of Palms",
+   "year": -1325,
+   "certainty": "approx",
+   "refs": [
+    "Judges 3:12-14"
+   ],
+   "places": [
+    "jericho-1"
+   ],
+   "summary": "The LORD strengthens Eglon king of Moab against Israel. With Ammon and Amalek he takes the City of Palms (Jericho) and rules Israel eighteen years."
+  },
+  {
+   "id": "e-ehud",
+   "title": "Ehud kills Eglon",
+   "year": -1307,
+   "certainty": "approx",
+   "refs": [
+    "Judges 3:15-30"
+   ],
+   "places": [
+    "jericho-1",
+    "gilgal-1",
+    "seirah"
+   ],
+   "summary": "Ehud, a left-handed Benjamite, brings the tribute, then returns from the idols near Gilgal with \"a message from God\" and kills Eglon. He escapes to Seirah, rallies Ephraim, and seizes the Jordan fords; 10,000 Moabites fall and the land has rest eighty years."
+  },
+  {
+   "id": "e-shamgar",
+   "title": "Shamgar strikes 600 Philistines",
+   "year": -1285,
+   "certainty": "approx",
+   "refs": [
+    "Judges 3:31",
+    "Judges 5:6"
+   ],
+   "places": [],
+   "summary": "Shamgar son of Anath kills 600 Philistines with an oxgoad: the first appearance of the Philistines as Israel's enemy in Judges."
+  },
+  {
+   "id": "e-jabin",
+   "title": "Jabin of Hazor oppresses Israel",
+   "year": -1279,
+   "certainty": "approx",
+   "refs": [
+    "Judges 4:1-3"
+   ],
+   "places": [
+    "hazor-1",
+    "harosheth-hagoyim"
+   ],
+   "summary": "After Ehud's death Israel again does evil, and the LORD sells them into the hand of Jabin king of Canaan. His general Sisera, with 900 iron chariots, oppresses Israel cruelly for twenty years."
+  },
+  {
+   "id": "e-deborah",
+   "title": "Deborah and Barak defeat Sisera",
+   "year": -1259,
+   "certainty": "approx",
+   "refs": [
+    "Judges 4:4-16",
+    "Judges 5:19-21"
+   ],
+   "places": [
+    "kedesh-4",
+    "mount-tabor",
+    "kishon",
+    "taanach",
+    "megiddo",
+    "harosheth-hagoyim"
+   ],
+   "summary": "Barak gathers 10,000 men of Naphtali and Zebulun on Mount Tabor. The LORD routs Sisera's chariots \"at Taanach, by the waters of Megiddo\"; the torrent Kishon sweeps them away. Barak pursues the army to Harosheth-hagoyim."
+  },
+  {
+   "id": "e-jael",
+   "title": "Jael kills Sisera",
+   "year": -1259,
+   "certainty": "approx",
+   "refs": [
+    "Judges 4:17-22",
+    "Judges 5:24-27"
+   ],
+   "places": [
+    "kedesh-4"
+   ],
+   "summary": "Sisera flees on foot to the tent of Jael, wife of Heber the Kenite, near Kedesh. She gives him milk, and as he sleeps she drives a tent peg through his temple. As Deborah foretold, the honour goes to a woman."
+  },
+  {
+   "id": "e-song",
+   "title": "The Song of Deborah",
+   "year": -1259,
+   "certainty": "approx",
+   "refs": [
+    "Judges 5"
+   ],
+   "places": [
+    "mount-tabor",
+    "kishon"
+   ],
+   "summary": "One of the oldest poems in the Bible celebrates the victory, praises the tribes that came and shames those that stayed home. \"So may all your enemies perish, O LORD! But your friends be like the sun as he rises in his might.\""
+  },
+  {
+   "id": "e-midian",
+   "title": "Midian's raids",
+   "year": -1219,
+   "certainty": "approx",
+   "refs": [
+    "Judges 6:1-10"
+   ],
+   "places": [
+    "moreh-2"
+   ],
+   "summary": "For seven years Midianites, Amalekites and the people of the East invade at harvest time \"like locusts in number\" and strip the land. Israel hides in caves. A prophet reminds them that God brought them out of Egypt, but they have not obeyed his voice."
+  },
+  {
+   "id": "e-gideon-call",
+   "title": "The LORD calls Gideon",
+   "year": -1213,
+   "certainty": "approx",
+   "refs": [
+    "Judges 6:11-40"
+   ],
+   "places": [
+    "ophrah-2"
+   ],
+   "summary": "The angel of the LORD finds Gideon threshing wheat in a winepress at Ophrah: \"The LORD is with you, O mighty man of valor.\" Gideon pulls down his father's altar to Baal, and asks for the sign of the fleece, wet and then dry."
+  },
+  {
+   "id": "e-gideon-300",
+   "title": "Gideon's 300",
+   "year": -1212,
+   "certainty": "approx",
+   "refs": [
+    "Judges 7:1-23",
+    "Isaiah 9:4"
+   ],
+   "places": [
+    "harod-1",
+    "moreh-2",
+    "abel-meholah"
+   ],
+   "summary": "God reduces Gideon's army from 32,000 to 300, \"lest Israel boast over me\". At night they blow trumpets, smash jars and shout \"A sword for the LORD and for Gideon!\" The Midianite camp by the hill of Moreh turns on itself and flees toward Abel-meholah."
+  },
+  {
+   "id": "e-gideon-pursuit",
+   "title": "Gideon pursues the kings of Midian",
+   "year": -1212,
+   "certainty": "approx",
+   "refs": [
+    "Judges 7:24-8:21"
+   ],
+   "places": [
+    "succoth-1",
+    "penuel",
+    "karkor"
+   ],
+   "summary": "Ephraim captures the princes Oreb and Zeeb at the Jordan. Gideon crosses over, is refused bread at Succoth and Penuel, and surprises the kings Zebah and Zalmunna at Karkor, far out in the desert."
+  },
+  {
+   "id": "e-ephod",
+   "title": "Gideon refuses the crown",
+   "year": -1211,
+   "certainty": "approx",
+   "refs": [
+    "Judges 8:22-35"
+   ],
+   "places": [
+    "ophrah-2"
+   ],
+   "summary": "\"I will not rule over you... the LORD will rule over you.\" But Gideon makes a gold ephod from the plunder, and \"all Israel whored after it there, and it became a snare to Gideon and to his family.\""
+  },
+  {
+   "id": "e-abimelech",
+   "title": "Abimelech made king at Shechem",
+   "year": -1172,
+   "certainty": "approx",
+   "refs": [
+    "Judges 9:1-21"
+   ],
+   "places": [
+    "shechem",
+    "mount-gerizim"
+   ],
+   "summary": "Abimelech murders seventy of his brothers and is crowned by the men of Shechem. The youngest, Jotham, escapes and from Mount Gerizim tells the fable of the trees who chose a bramble as king."
+  },
+  {
+   "id": "e-thebez",
+   "title": "Abimelech killed at Thebez",
+   "year": -1169,
+   "certainty": "approx",
+   "refs": [
+    "Judges 9:22-57",
+    "2 Samuel 11:21"
+   ],
+   "places": [
+    "thebez",
+    "shechem"
+   ],
+   "summary": "God sends an evil spirit between Abimelech and Shechem. He destroys Shechem, but at Thebez a woman drops an upper millstone on his head. \"Thus God returned the evil of Abimelech.\""
+  },
+  {
+   "id": "e-ruth",
+   "title": "Ruth and Boaz",
+   "year": -1140,
+   "certainty": "disputed",
+   "refs": [
+    "Ruth 1-4",
+    "Matthew 1:5-6"
+   ],
+   "places": [
+    "bethlehem-1"
+   ],
+   "summary": "In a famine \"in the days when the judges ruled\", Naomi's family goes to Moab. Widowed, she returns to Bethlehem with her Moabite daughter-in-law Ruth: \"Your people shall be my people, and your God my God.\" Boaz, the kinsman-redeemer, marries Ruth; their great-grandson is David.",
+   "note": "Ruth gives no date. Placing it three generations before David puts it around this time, but Hebrew genealogies sometimes skip generations, and some place it earlier."
+  },
+  {
+   "id": "e-ammon-phil",
+   "title": "Ammon and the Philistines oppress Israel",
+   "year": -1124,
+   "certainty": "approx",
+   "refs": [
+    "Judges 10:6-16"
+   ],
+   "places": [
+    "mizpah-1"
+   ],
+   "summary": "Israel serves the gods of Aram, Sidon, Moab, Ammon and the Philistines, and the LORD sells them \"into the hand of the Philistines and into the hand of the Ammonites\". This time Israel puts away the foreign gods, \"and he became impatient over the misery of Israel\"."
+  },
+  {
+   "id": "e-samson-born",
+   "title": "Samson's birth announced",
+   "year": -1123,
+   "certainty": "approx",
+   "refs": [
+    "Judges 13"
+   ],
+   "places": [
+    "zorah",
+    "eshtaol"
+   ],
+   "summary": "The angel of the LORD tells Manoah's barren wife at Zorah that she will bear a son, a Nazirite from the womb, who will begin to save Israel from the Philistines."
+  },
+  {
+   "id": "e-hannah",
+   "title": "Hannah prays; Samuel born",
+   "year": -1120,
+   "certainty": "approx",
+   "refs": [
+    "1 Samuel 1:1-2:11"
+   ],
+   "places": [
+    "ramah-4",
+    "shiloh"
+   ],
+   "summary": "Childless Hannah pours out her soul before the LORD at Shiloh. God gives her a son, Samuel, and she brings him to serve under Eli. Her song (\"The LORD makes poor and makes rich; he brings low and he exalts\") foretells the LORD's anointed king."
+  },
+  {
+   "id": "e-samuel-call",
+   "title": "The LORD calls Samuel",
+   "year": -1107,
+   "certainty": "approx",
+   "refs": [
+    "1 Samuel 3"
+   ],
+   "places": [
+    "shiloh"
+   ],
+   "summary": "\"The word of the LORD was rare in those days.\" The LORD calls the boy Samuel by night, and he answers, \"Speak, for your servant hears.\" God reveals the judgment coming on Eli's house."
+  },
+  {
+   "id": "e-jephthah",
+   "title": "Jephthah defeats Ammon",
+   "year": -1106,
+   "certainty": "approx",
+   "refs": [
+    "Judges 11:1-33"
+   ],
+   "places": [
+    "tob",
+    "mizpah-1",
+    "aroer-2",
+    "minnith"
+   ],
+   "summary": "The elders of Gilead fetch Jephthah from the land of Tob. He reminds the king of Ammon that Israel has held the land for 300 years, then, with the Spirit of the LORD upon him, strikes twenty cities from Aroer to Minnith.",
+   "note": "Jephthah's \"300 years\" (11:26) is one of the anchors for the dates of the judges."
+  },
+  {
+   "id": "e-vow",
+   "title": "Jephthah's vow",
+   "year": -1106,
+   "certainty": "disputed",
+   "refs": [
+    "Judges 11:30-40",
+    "Leviticus 27:1-8",
+    "Deuteronomy 12:31"
+   ],
+   "places": [
+    "mizpah-1"
+   ],
+   "summary": "Jephthah vows to offer up whatever comes out of his house to meet him, and his only daughter comes out dancing. \"He did with her according to his vow.\"",
+   "note": "Evangelical interpreters differ: many hold that he sacrificed her, a terrible act that God's law forbade; others that he devoted her to lifelong service at the tabernacle, noting that she mourns her virginity, not her death. Either way the text presents it as a tragedy born of a rash vow."
+  },
+  {
+   "id": "e-shibboleth",
+   "title": "\"Shibboleth\": war with Ephraim",
+   "year": -1105,
+   "certainty": "approx",
+   "refs": [
+    "Judges 12:1-7"
+   ],
+   "places": [
+    "zaphon-1"
+   ],
+   "summary": "Ephraim threatens Jephthah for not calling them to the battle. Gilead holds the Jordan fords, and anyone who cannot say \"Shibboleth\" is killed: 42,000 Ephraimites fall."
+  },
+  {
+   "id": "e-timnah",
+   "title": "Samson against the Philistines",
+   "year": -1104,
+   "certainty": "approx",
+   "refs": [
+    "Judges 14-15"
+   ],
+   "places": [
+    "timnah-1",
+    "ashkelon",
+    "etam-1",
+    "lehi"
+   ],
+   "summary": "Samson marries a Philistine woman of Timnah, \"from the LORD, for he was seeking an opportunity against the Philistines\". He kills thirty men at Ashkelon, burns the Philistine crops with foxes, and strikes 1,000 at Lehi with a donkey's jawbone."
+  },
+  {
+   "id": "e-ark-taken",
+   "title": "The ark captured; Eli dies",
+   "year": -1104,
+   "certainty": "approx",
+   "refs": [
+    "1 Samuel 4",
+    "Psalm 78:60-64",
+    "Jeremiah 7:12"
+   ],
+   "places": [
+    "ebenezer-1",
+    "aphek-2",
+    "shiloh"
+   ],
+   "summary": "Israel carries the ark into battle at Ebenezer as a charm. The Philistines win, Hophni and Phinehas are killed and the ark is taken. Eli falls and dies; his daughter-in-law names her son Ichabod: \"The glory has departed from Israel.\"",
+   "note": "Psalm 78 and Jeremiah 7 recall God forsaking Shiloh, which probably followed this defeat."
+  },
+  {
+   "id": "e-ark-philistia",
+   "title": "The ark among the Philistines",
+   "year": -1104,
+   "certainty": "approx",
+   "refs": [
+    "1 Samuel 5-6",
+    "1 Samuel 7:1-2"
+   ],
+   "places": [
+    "ashdod",
+    "gath-1",
+    "ekron",
+    "beth-shemesh-1",
+    "kiriath-jearim"
+   ],
+   "summary": "In Ashdod, Dagon falls on his face before the ark. Tumours strike Ashdod, Gath and Ekron. After seven months the Philistines send it back on a cart drawn by two cows, which go straight to Beth-shemesh. It rests at Kiriath-jearim for twenty years."
+  },
+  {
+   "id": "e-samson-dies",
+   "title": "Samson's death at Gaza",
+   "year": -1085,
+   "certainty": "approx",
+   "refs": [
+    "Judges 16",
+    "Hebrews 11:32-34"
+   ],
+   "places": [
+    "valley-of-sorek",
+    "gaza"
+   ],
+   "summary": "Delilah of the Valley of Sorek betrays Samson for silver. Blinded and grinding in prison at Gaza, he is brought out to entertain the Philistines in Dagon's temple. \"Strengthen me only this once,\" he prays, and brings the house down."
+  },
+  {
+   "id": "e-mizpah",
+   "title": "Samuel's victory at Mizpah",
+   "year": -1084,
+   "certainty": "approx",
+   "refs": [
+    "1 Samuel 7:3-17"
+   ],
+   "places": [
+    "mizpah-3",
+    "ramah-4"
+   ],
+   "summary": "Samuel calls Israel to put away the Baals and serve the LORD only. As the Philistines attack the assembly at Mizpah, the LORD thunders against them. Samuel sets up a stone, Ebenezer: \"Till now the LORD has helped us.\" He judges Israel on a yearly circuit to Bethel, Gilgal and Mizpah."
+  },
+  {
+   "id": "e-king-demand",
+   "title": "Israel asks for a king",
+   "year": -1051,
+   "certainty": "approx",
+   "refs": [
+    "1 Samuel 8",
+    "Deuteronomy 17:14-20"
+   ],
+   "places": [
+    "ramah-4"
+   ],
+   "summary": "Samuel's sons take bribes, and the elders come to Ramah: \"Appoint for us a king to judge us like all the nations.\" The LORD tells Samuel, \"they have not rejected you, but they have rejected me from being king over them.\""
+  },
+  {
+   "id": "e-saul-anointed",
+   "title": "Saul anointed and chosen king",
+   "year": -1050,
+   "certainty": "approx",
+   "refs": [
+    "1 Samuel 9-10"
+   ],
+   "places": [
+    "ramah-4",
+    "mizpah-3",
+    "gibeah-1"
+   ],
+   "summary": "Searching for lost donkeys, Saul comes to Samuel, who anoints him privately. At Mizpah the lot falls on Saul, who is found hiding among the baggage. \"Long live the king!\""
+  },
+  {
+   "id": "e-jabesh",
+   "title": "Saul rescues Jabesh-gilead",
+   "year": -1050,
+   "certainty": "approx",
+   "refs": [
+    "1 Samuel 11",
+    "1 Samuel 12"
+   ],
+   "places": [
+    "bezek-2",
+    "jabesh-gilead",
+    "gilgal-1"
+   ],
+   "summary": "Nahash the Ammonite threatens to gouge out the right eye of every man in Jabesh-gilead. The Spirit of God rushes upon Saul; he musters Israel at Bezek and relieves the city. At Gilgal the kingdom is renewed, and Samuel gives his farewell speech."
+  },
+  {
+   "id": "e-michmash",
+   "title": "Jonathan at Michmash; Saul's rash sacrifice",
+   "year": -1048,
+   "certainty": "approx",
+   "refs": [
+    "1 Samuel 13-14"
+   ],
+   "places": [
+    "gilgal-1",
+    "michmash",
+    "geba-1"
+   ],
+   "summary": "Waiting at Gilgal for Samuel, Saul offers the burnt offering himself, and Samuel tells him his kingdom will not continue. Jonathan and his armour-bearer climb to the Philistine outpost at Michmash (\"nothing can hinder the LORD from saving by many or by few\"), and the Philistines are routed."
+  },
+  {
+   "id": "e-amalek",
+   "title": "Saul spares Agag; the LORD rejects Saul",
+   "year": -1030,
+   "certainty": "approx",
+   "refs": [
+    "1 Samuel 15"
+   ],
+   "places": [
+    "carmel-1",
+    "gilgal-1"
+   ],
+   "summary": "Sent to devote the Amalekites to destruction, Saul spares King Agag and the best of the livestock and sets up a monument to himself at Carmel. \"To obey is better than sacrifice.\" Samuel tells him the LORD has rejected him from being king."
+  },
+  {
+   "id": "e-david-anointed",
+   "title": "Samuel anoints David",
+   "year": -1025,
+   "certainty": "approx",
+   "refs": [
+    "1 Samuel 16:1-13",
+    "Psalm 78:70-72"
+   ],
+   "places": [
+    "bethlehem-1"
+   ],
+   "summary": "Sent to Jesse of Bethlehem, Samuel passes over seven sons: \"Man looks on the outward appearance, but the LORD looks on the heart.\" He anoints David, the youngest, keeping the sheep, and the Spirit of the LORD rushes upon David from that day.",
+   "note": "David was 30 when he became king (2 Samuel 5:4), so born about 1040. His age at his anointing is not stated."
+  },
+  {
+   "id": "e-goliath",
+   "title": "David and Goliath",
+   "year": -1024,
+   "certainty": "approx",
+   "refs": [
+    "1 Samuel 17"
+   ],
+   "places": [
+    "valley-of-elah",
+    "socoh-1",
+    "azekah"
+   ],
+   "summary": "The Philistines camp between Socoh and Azekah; for forty days Goliath of Gath defies the armies of the living God. David goes out with a sling: \"the battle is the LORD's\". Goliath falls, and Jonathan makes a covenant with David."
+  },
+  {
+   "id": "e-david-flees",
+   "title": "David flees from Saul",
+   "year": -1018,
+   "certainty": "approx",
+   "refs": [
+    "1 Samuel 19-22",
+    "Psalm 34",
+    "Psalm 52",
+    "Psalm 57",
+    "Psalm 59"
+   ],
+   "places": [
+    "gibeah-1",
+    "ramah-4",
+    "nob",
+    "gath-1",
+    "adullam",
+    "mizpeh-3",
+    "hereth"
+   ],
+   "summary": "Saul's jealousy drives David from court. He flees to Samuel at Ramah, gets bread and Goliath's sword at Nob, feigns madness before Achish at Gath, and gathers 400 men at the cave of Adullam. Saul has the priests of Nob massacred."
+  },
+  {
+   "id": "e-engedi",
+   "title": "David spares Saul's life",
+   "year": -1015,
+   "certainty": "approx",
+   "refs": [
+    "1 Samuel 23-24",
+    "1 Samuel 26",
+    "Psalm 54",
+    "Psalm 63"
+   ],
+   "places": [
+    "keilah",
+    "ziph-1",
+    "maon",
+    "engedi"
+   ],
+   "summary": "David rescues Keilah, then is hunted through the wildernesses of Ziph and Maon. Twice, in a cave near En-gedi and in Saul's camp at night, he could kill Saul but will not lift his hand \"against the LORD's anointed\"."
+  },
+  {
+   "id": "e-samuel-dies",
+   "title": "Samuel dies",
+   "year": -1015,
+   "certainty": "approx",
+   "refs": [
+    "1 Samuel 25:1"
+   ],
+   "places": [
+    "ramah-4"
+   ],
+   "summary": "\"All Israel assembled and mourned for him, and they buried him in his house at Ramah.\""
+  },
+  {
+   "id": "e-ziklag",
+   "title": "David at Ziklag",
+   "year": -1012,
+   "certainty": "approx",
+   "refs": [
+    "1 Samuel 27",
+    "1 Samuel 29-30"
+   ],
+   "places": [
+    "gath-1",
+    "ziklag",
+    "besor"
+   ],
+   "summary": "Despairing of escape, David serves Achish of Gath, who gives him Ziklag. He lives there a year and four months. When Amalekites burn Ziklag, \"David strengthened himself in the LORD his God\", pursues them past the Brook Besor and recovers everything."
+  },
+  {
+   "id": "e-gilboa",
+   "title": "Saul and Jonathan die on Mount Gilboa",
+   "year": -1010,
+   "certainty": "calculated",
+   "refs": [
+    "1 Samuel 28",
+    "1 Samuel 31",
+    "2 Samuel 1",
+    "1 Chronicles 10:13-14"
+   ],
+   "places": [
+    "shunem",
+    "en-dor",
+    "mount-gilboa",
+    "beth-shan",
+    "jabesh-gilead"
+   ],
+   "summary": "The Philistines camp at Shunem. Receiving no answer from the LORD, Saul consults the medium at En-dor. The next day Israel is routed on Mount Gilboa; Jonathan dies and Saul falls on his sword. The men of Jabesh-gilead rescue their bodies from the wall of Beth-shan. David laments: \"How the mighty have fallen!\""
+  },
+  {
+   "id": "e-hebron",
+   "title": "David king of Judah at Hebron",
+   "year": -1010,
+   "certainty": "calculated",
+   "refs": [
+    "2 Samuel 2:1-11"
+   ],
+   "places": [
+    "hebron",
+    "mahanaim"
+   ],
+   "summary": "At the LORD's direction David goes up to Hebron, and the men of Judah anoint him king. Abner makes Saul's son Ish-bosheth king over the rest of Israel at Mahanaim."
+  },
+  {
+   "id": "e-civil-war",
+   "title": "War between the houses of Saul and David",
+   "year": -1009,
+   "certainty": "approx",
+   "refs": [
+    "2 Samuel 2:12-4:12"
+   ],
+   "places": [
+    "gibeon",
+    "mahanaim",
+    "hebron"
+   ],
+   "summary": "Fighting breaks out at the pool of Gibeon. \"David grew stronger and stronger, while the house of Saul became weaker and weaker.\" Abner comes over to David but is murdered by Joab; Ish-bosheth is murdered by his own men."
+  },
+  {
+   "id": "e-jerusalem",
+   "title": "David king over all Israel; Jerusalem taken",
+   "year": -1003,
+   "certainty": "calculated",
+   "refs": [
+    "2 Samuel 5:1-12",
+    "1 Chronicles 11:1-9",
+    "Psalm 2"
+   ],
+   "places": [
+    "hebron",
+    "jerusalem"
+   ],
+   "summary": "All the tribes come to Hebron and anoint David king over Israel. He captures the Jebusite stronghold of Zion and makes it his capital, the City of David.",
+   "date": "After 7½ years at Hebron (2 Samuel 5:5)",
+   "evidence": "The Tel Dan Stele (9th century BC) names Judah's royal line as the \"house of David\"."
+  },
+  {
+   "id": "e-philistines",
+   "title": "David defeats the Philistines",
+   "year": -1002,
+   "certainty": "approx",
+   "refs": [
+    "2 Samuel 5:17-25",
+    "1 Chronicles 14:8-17"
+   ],
+   "places": [
+    "valley-of-rephaim",
+    "baal-perazim",
+    "gezer"
+   ],
+   "summary": "The Philistines twice spread out in the Valley of Rephaim. David asks the LORD and attacks: at Baal-perazim, and then from behind when he hears \"the sound of marching in the tops of the balsam trees\". He strikes them all the way to Gezer."
+  },
+  {
+   "id": "e-ark-jerusalem",
+   "title": "The ark brought to Jerusalem",
+   "year": -1000,
+   "certainty": "approx",
+   "refs": [
+    "2 Samuel 6",
+    "1 Chronicles 13",
+    "1 Chronicles 15-16",
+    "Psalm 24",
+    "Psalm 132"
+   ],
+   "places": [
+    "kiriath-jearim",
+    "jerusalem"
+   ],
+   "summary": "David's first attempt ends when Uzzah touches the ark and dies. Three months later the Levites carry it up properly, and David dances before the LORD with all his might as the ark enters the City of David."
+  },
+  {
+   "id": "e-covenant",
+   "title": "God's covenant with David",
+   "year": -997,
+   "certainty": "approx",
+   "refs": [
+    "2 Samuel 7",
+    "1 Chronicles 17",
+    "Psalm 89",
+    "Luke 1:32-33",
+    "Acts 2:29-36"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "David wants to build God a house. Instead God promises to build David a house: his offspring will build the temple, and \"your throne shall be established forever.\" The New Testament proclaims Jesus as the promised Son of David."
+  },
+  {
+   "id": "e-wars",
+   "title": "David's wars: Philistia, Moab, Zobah, Edom",
+   "year": -995,
+   "certainty": "approx",
+   "refs": [
+    "2 Samuel 8",
+    "1 Chronicles 18",
+    "Psalm 60"
+   ],
+   "places": [
+    "zobah",
+    "damascus",
+    "hamath-1",
+    "valley-of-salt"
+   ],
+   "summary": "David subdues the Philistines and Moab, defeats Hadadezer of Zobah and the Arameans of Damascus, receives gifts from Toi of Hamath, and puts garrisons in Edom after a victory in the Valley of Salt. \"The LORD gave victory to David wherever he went.\""
+  },
+  {
+   "id": "e-mephibosheth",
+   "title": "Kindness to Mephibosheth",
+   "year": -994,
+   "certainty": "approx",
+   "refs": [
+    "2 Samuel 9"
+   ],
+   "places": [
+    "lo-debar",
+    "jerusalem"
+   ],
+   "summary": "For Jonathan's sake David brings Jonathan's lame son Mephibosheth from Lo-debar, restores Saul's land to him, and has him eat at the king's table always."
+  },
+  {
+   "id": "e-ammon-war",
+   "title": "War with Ammon and the Arameans",
+   "year": -991,
+   "certainty": "approx",
+   "refs": [
+    "2 Samuel 10",
+    "2 Samuel 12:26-31",
+    "1 Chronicles 19-20"
+   ],
+   "places": [
+    "rabbah-1",
+    "helam"
+   ],
+   "summary": "Hanun of Ammon humiliates David's envoys and hires Aramean armies. Joab defeats them; David crushes the Arameans at Helam, and Rabbah is besieged and taken."
+  },
+  {
+   "id": "e-bathsheba",
+   "title": "David and Bathsheba; Nathan's rebuke",
+   "year": -991,
+   "certainty": "approx",
+   "refs": [
+    "2 Samuel 11-12",
+    "Psalm 51",
+    "Psalm 32"
+   ],
+   "places": [
+    "jerusalem",
+    "rabbah-1"
+   ],
+   "summary": "While Joab besieges Rabbah, David takes Bathsheba and arranges the death of her husband Uriah. Nathan tells him the parable of the poor man's lamb: \"You are the man!\" David confesses, and the LORD puts away his sin, but the sword will never depart from his house. Solomon is born."
+  },
+  {
+   "id": "e-absalom",
+   "title": "Absalom's rebellion",
+   "year": -979,
+   "certainty": "approx",
+   "refs": [
+    "2 Samuel 13-18",
+    "Psalm 3"
+   ],
+   "places": [
+    "hebron",
+    "mount-of-olives",
+    "mahanaim",
+    "geshur"
+   ],
+   "summary": "After Amnon wrongs Tamar, Absalom kills him and flees to Geshur. Back in Jerusalem he steals the hearts of Israel and has himself proclaimed king at Hebron. David flees weeping up the Mount of Olives and across the Jordan to Mahanaim. Absalom is killed in the forest of Ephraim: \"O my son Absalom, my son, my son!\"",
+   "note": "2 Samuel 15:7 reads \"forty years\" in the Hebrew; some ancient versions read \"four\", which most modern translations follow. The date here is approximate."
+  },
+  {
+   "id": "e-sheba-revolt",
+   "title": "Sheba's revolt",
+   "year": -978,
+   "certainty": "approx",
+   "refs": [
+    "2 Samuel 19:40-20:22"
+   ],
+   "places": [
+    "abel-beth-maacah"
+   ],
+   "summary": "A quarrel between Judah and the northern tribes over who would bring the king home sparks a revolt by Sheba son of Bichri, a Benjamite: \"We have no portion in David.\" It ends at Abel-beth-maacah: a foreshadowing of the split to come."
+  },
+  {
+   "id": "e-census",
+   "title": "David's census and the threshing floor",
+   "year": -975,
+   "certainty": "approx",
+   "refs": [
+    "2 Samuel 24",
+    "1 Chronicles 21-22",
+    "2 Chronicles 3:1"
+   ],
+   "places": [
+    "jerusalem",
+    "dan",
+    "beersheba-1"
+   ],
+   "summary": "David orders Israel counted \"from Dan to Beersheba\". God sends a plague, which stops at the threshing floor of Araunah the Jebusite. David buys it and builds an altar there; it becomes the site of the temple, on Mount Moriah."
+  },
+  {
+   "id": "e-solomon-king",
+   "title": "Solomon anointed king",
+   "year": -970,
+   "certainty": "calculated",
+   "refs": [
+    "1 Kings 1",
+    "1 Chronicles 23:1",
+    "1 Chronicles 29:22-25"
+   ],
+   "places": [
+    "en-rogel",
+    "gihon-2",
+    "jerusalem"
+   ],
+   "summary": "While Adonijah holds a feast at En-rogel to claim the throne, Nathan and Bathsheba remind David of his oath. Zadok anoints Solomon at the Gihon Spring, and the city rings with \"Long live King Solomon!\""
+  },
+  {
+   "id": "e-david-dies",
+   "title": "David dies",
+   "year": -970,
+   "certainty": "calculated",
+   "refs": [
+    "1 Kings 2:1-12",
+    "1 Chronicles 29:26-28",
+    "Acts 2:29",
+    "Acts 13:36"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "David charges Solomon: \"Be strong, and show yourself a man, and keep the charge of the LORD your God.\" He dies \"in a good old age, full of days\" and is buried in the City of David.",
+   "note": "David was 70 (2 Samuel 5:4)."
+  },
+  {
+   "id": "e-wisdom",
+   "title": "Solomon asks for wisdom",
+   "year": -969,
+   "certainty": "approx",
+   "refs": [
+    "1 Kings 3",
+    "2 Chronicles 1:1-13",
+    "James 1:5"
+   ],
+   "places": [
+    "gibeon",
+    "jerusalem"
+   ],
+   "summary": "At Gibeon God appears to Solomon in a dream: \"Ask what I shall give you.\" He asks for \"an understanding mind to govern your people\", and God gives him wisdom, and riches and honour besides. His judgment between two mothers shows it."
+  },
+  {
+   "id": "e-pharaoh",
+   "title": "Solomon marries Pharaoh's daughter",
+   "year": -969,
+   "certainty": "approx",
+   "refs": [
+    "1 Kings 3:1",
+    "1 Kings 9:16-17",
+    "1 Kings 11:1-2"
+   ],
+   "places": [
+    "gezer"
+   ],
+   "summary": "Solomon makes a marriage alliance with Pharaoh, who later captures Gezer, burns it and gives it to his daughter as a dowry. Solomon rebuilds it."
+  },
+  {
+   "id": "e-temple-begun",
+   "title": "The temple begun",
+   "year": -965.9166666666666,
+   "certainty": "calculated",
+   "refs": [
+    "1 Kings 5",
+    "1 Kings 6:1",
+    "2 Chronicles 2-3"
+   ],
+   "places": [
+    "jerusalem",
+    "lebanon",
+    "tyre",
+    "joppa"
+   ],
+   "summary": "With cedar and cypress from Hiram's Lebanon, floated by sea to Joppa (2 Chronicles 2:16), and stone dressed at the quarry so that no hammer was heard at the site, Solomon begins the house of the LORD on Mount Moriah.",
+   "date": "2nd month (Ziv), 4th year of Solomon; 480th year after the Exodus"
+  },
+  {
+   "id": "e-temple-done",
+   "title": "The temple finished",
+   "year": -958.4166666666666,
+   "certainty": "calculated",
+   "refs": [
+    "1 Kings 6:37-38",
+    "1 Kings 7:13-51"
+   ],
+   "places": [
+    "jerusalem",
+    "succoth-1"
+   ],
+   "summary": "After seven years the temple is finished in all its parts. Hiram the bronze worker from Tyre casts the pillars Jachin and Boaz and the bronze sea in the clay ground of the Jordan valley near Succoth.",
+   "date": "8th month (Bul), 11th year of Solomon"
+  },
+  {
+   "id": "e-dedication",
+   "title": "The temple dedicated",
+   "year": -957.5,
+   "certainty": "approx",
+   "refs": [
+    "1 Kings 8",
+    "2 Chronicles 5-7",
+    "Psalm 132"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "The ark is brought into the Most Holy Place and the glory of the LORD fills the house. Solomon prays: \"heaven and the highest heaven cannot contain you; how much less this house that I have built!\" God answers that if his people humble themselves and pray, he will hear from heaven and heal their land.",
+   "date": "7th month (Ethanim)",
+   "note": "The year is not stated. Most date it to the 7th month after the temple was finished; others to 13 years later, after Solomon's palace was built (1 Kings 9:1)."
+  },
+  {
+   "id": "e-palace",
+   "title": "Solomon's palace finished",
+   "year": -946,
+   "certainty": "calculated",
+   "refs": [
+    "1 Kings 7:1-12",
+    "1 Kings 9:10"
+   ],
+   "places": [
+    "jerusalem",
+    "lebanon"
+   ],
+   "summary": "Solomon spends thirteen years on his own house, the House of the Forest of Lebanon, the hall of judgment and a house for Pharaoh's daughter.",
+   "date": "20 years after the temple was begun (1 Kings 9:10)"
+  },
+  {
+   "id": "e-cities",
+   "title": "Solomon builds Hazor, Megiddo and Gezer",
+   "year": -950,
+   "certainty": "approx",
+   "refs": [
+    "1 Kings 9:15-23",
+    "2 Chronicles 8:1-6"
+   ],
+   "places": [
+    "hazor-1",
+    "megiddo",
+    "gezer",
+    "beth-horon",
+    "tadmor"
+   ],
+   "summary": "Using forced labour, Solomon fortifies Hazor, Megiddo and Gezer, builds store cities and chariot cities, and builds Tadmor in the wilderness.",
+   "evidence": "Excavators found almost identical six-chambered gates at Hazor, Megiddo and Gezer and linked them to this verse. Whether they belong to Solomon's time or a little later is debated among archaeologists."
+  },
+  {
+   "id": "e-fleet",
+   "title": "Solomon's fleet sails to Ophir",
+   "year": -950,
+   "certainty": "approx",
+   "refs": [
+    "1 Kings 9:26-28",
+    "1 Kings 10:11-12",
+    "1 Kings 10:22"
+   ],
+   "places": [
+    "ezion-geber",
+    "ophir"
+   ],
+   "summary": "Solomon builds ships at Ezion-geber on the Red Sea, and Hiram's sailors bring back gold from Ophir: 420 talents. Every three years the ships of Tarshish bring gold, silver, ivory, apes and peacocks.",
+   "note": "Ophir's location is unknown; suggestions include southwest Arabia, the Horn of Africa and India."
+  },
+  {
+   "id": "e-queen-sheba",
+   "title": "The queen of Sheba visits",
+   "year": -948,
+   "certainty": "approx",
+   "refs": [
+    "1 Kings 10:1-13",
+    "2 Chronicles 9:1-12",
+    "Matthew 12:42"
+   ],
+   "places": [
+    "sheba-1",
+    "jerusalem"
+   ],
+   "summary": "Hearing of Solomon's fame, the queen of Sheba comes with camels bearing spices, gold and precious stones to test him with hard questions. \"The half was not told me.\" Jesus later says \"something greater than Solomon is here.\"",
+   "note": "Sheba is usually identified with the kingdom of Saba in southwest Arabia (Yemen)."
+  },
+  {
+   "id": "e-apostasy",
+   "title": "Solomon's heart turns away",
+   "year": -940,
+   "certainty": "approx",
+   "refs": [
+    "1 Kings 11:1-13",
+    "Deuteronomy 17:16-17",
+    "Nehemiah 13:26"
+   ],
+   "places": [
+    "jerusalem",
+    "mount-of-olives"
+   ],
+   "summary": "Solomon loves many foreign women, and in his old age \"his wives turned away his heart after other gods\". He builds high places for Chemosh and Molech on the mountain east of Jerusalem. The LORD tells him he will tear the kingdom from his son, except one tribe, for David's sake."
+  },
+  {
+   "id": "e-adversaries",
+   "title": "God raises adversaries against Solomon",
+   "year": -938,
+   "certainty": "approx",
+   "refs": [
+    "1 Kings 11:14-25"
+   ],
+   "places": [
+    "damascus",
+    "valley-of-salt"
+   ],
+   "summary": "Hadad the Edomite returns from Egypt, and Rezon seizes Damascus and reigns over Aram, \"an adversary of Israel all the days of Solomon\"."
+  },
+  {
+   "id": "e-ahijah",
+   "title": "Ahijah tears his cloak",
+   "year": -935,
+   "certainty": "approx",
+   "refs": [
+    "1 Kings 11:26-40"
+   ],
+   "places": [
+    "zeredah-1",
+    "shiloh"
+   ],
+   "summary": "The prophet Ahijah meets Solomon's official Jeroboam, tears his new cloak into twelve pieces and gives him ten: God will give him ten tribes. Solomon seeks to kill Jeroboam, who flees to Shishak in Egypt."
+  },
+  {
+   "id": "e-solomon-dies",
+   "title": "Solomon dies; the kingdom divides",
+   "year": -931,
+   "certainty": "calculated",
+   "refs": [
+    "1 Kings 11:41-12:20",
+    "2 Chronicles 9:29-10:19"
+   ],
+   "places": [
+    "jerusalem",
+    "shechem"
+   ],
+   "summary": "Solomon dies after forty years and is buried in the City of David. At Shechem his son Rehoboam refuses to lighten the people's yoke, and ten tribes make Jeroboam king. The story continues on the Kings, Prophets & the Return page.",
+   "evidence": "931/930 BC is Thiele's date, fixed by working back from Assyrian records."
+  }
+ ]
+}

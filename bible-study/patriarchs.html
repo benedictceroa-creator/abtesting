@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abraham to the Exodus: Bible Timeline &amp; Atlas | Asha Books</title>
+  <meta name="description" content="Interactive Bible timeline and map of the patriarchs: Abraham's call from Ur, Isaac, Jacob and his twelve sons, Joseph in Egypt, Israel's slavery and the birth and call of Moses, with maps of every journey and Scripture references for every entry.">
+  <!-- Prototype: keep out of search results until the content has passed theological review -->
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="assets/bible-study.css">
+  <style>
+    body { margin: 0; padding: 24px 16px 48px; background: #fff; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  </style>
+</head>
+<body>
+  <div class="bs-app">
+    <nav class="bs-pages" aria-label="Bible study tools">
+      <a href="index.html" class="bs-home">&larr; All resources</a>
+      <a href="patriarchs.html" aria-current="page">Abraham to the Exodus</a>
+      <a href="exodus.html">Exodus to the Promised Land</a>
+      <a href="judges.html">Judges to Solomon</a>
+      <a href="kings.html">Kings, Prophets &amp; the Return</a>
+    </nav>
+    <header class="bs-head">
+      <p class="bs-eyebrow">Asha Books · Bible Study Tools</p>
+      <h1 class="bs-title">Abraham to the Exodus: Bible Timeline &amp; Atlas</h1>
+      <p class="bs-lede">Follow God's promise to Abraham through four generations: from Ur to Haran and into Canaan, Isaac and the wells of the Negeb, Jacob's flight and return, Joseph sold into Egypt and raised to rule it, and Israel's long years in Egypt until God calls Moses from the burning bush. Every entry is tied to the Scripture that records it.</p>
+      <span class="bs-draft">Prototype · awaiting theological review</span>
+    </header>
+  </div>
+
+  <div data-bible-study
+       data-timeline="data/patriarchs/timeline.json"
+       data-places="data/patriarchs/places.json"
+       data-territories="data/patriarchs/territories.json"
+       data-bible-version="ESV"
+       data-shop-url="https://ashabooks.com"></div>
+
+  <div class="bs-app">
+    <section class="bs-about">
+      <h2>Sources and method</h2>
+      <p>Every entry on this page lists the Scripture passages it is drawn from, and where Bible-believing scholars disagree, we say so.</p>
+      <ul>
+        <li><strong>Dates</strong> are counted back from the early date of the Exodus, 1446 BC (1 Kings 6:1). Israel lived in Egypt 430 years (Exodus 12:40-41), so Jacob went down in 1876 BC, aged 130 (Genesis 47:9). The ages Genesis gives then fix the patriarchs' lives: Isaac was 60 at Jacob's birth (Genesis 25:26) and Abraham 100 at Isaac's (Genesis 21:5), so Abraham was born in 2166 BC.</li>
+        <li><strong>The 430 years.</strong> The Greek Septuagint and the Samaritan Pentateuch read Exodus 12:40 as Israel's time in Canaan and Egypt together (compare Galatians 3:17). On that view Israel was in Egypt about 215 years and every date before Moses moves 215 years later. Scholars who date the Exodus around 1260 BC move every date about 180 years later again.</li>
+        <li><strong>Undated events</strong> (for example the war of the kings, the binding of Isaac, Judah and Tamar) are placed in the order Genesis gives them and marked approximate or disputed.</li>
+        <li><strong>Egypt and Mesopotamia.</strong> The Bible does not name the Pharaohs of Genesis and Exodus. Dates for Egypt's dynasties follow the Oxford History of Ancient Egypt, and Mesopotamian dates the standard &ldquo;middle&rdquo; chronology. Both can vary by a few decades.</li>
+        <li><strong>Places and their confidence levels</strong> come from the <a href="https://www.openbible.info/geo/" target="_blank" rel="noopener">OpenBible.info Bible Geocoding Data</a> (CC BY 4.0). The sites of Sodom, Beer-lahai-roi and Mount Horeb are uncertain, and the map notes the alternatives.</li>
+        <li><strong>Maps.</strong> In this period the region was a patchwork of city-states and tribes, so the shaded areas show roughly who lived where, not fixed borders. Genesis rarely names the roads travelled, so most routes follow the main ancient roads that standard Bible atlases draw.</li>
+        <li><strong>Archaeology</strong> is mentioned where it illustrates the world Genesis describes (Ur, Mari, Beni Hasan, the price of a slave, the Brooklyn Papyrus). None of it names the patriarchs, and we say so rather than claim more than the evidence shows.</li>
+        <li><strong>Base map</strong> from the <a href="https://cawm.lib.uiowa.edu/" target="_blank" rel="noopener">Consortium of Ancient World Mappers</a>.</li>
+      </ul>
+      <p>Scripture links open on Bible Gateway (ESV).</p>
+    </section>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="assets/bible-study.js"></script>
+</body>
+</html>

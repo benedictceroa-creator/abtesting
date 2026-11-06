@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Judges to Solomon: Bible Timeline &amp; Atlas | Asha Books</title>
+  <meta name="description" content="Interactive Bible timeline and map from the judges to King Solomon: Othniel, Deborah, Gideon, Samson, Ruth, Samuel, Saul, David and the building of the temple, with maps of the tribes, their oppressors and David and Solomon's kingdom, and Scripture references for every entry.">
+  <!-- Prototype: keep out of search results until the content has passed theological review -->
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="assets/bible-study.css">
+  <style>
+    body { margin: 0; padding: 24px 16px 48px; background: #fff; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  </style>
+</head>
+<body>
+  <div class="bs-app">
+    <nav class="bs-pages" aria-label="Bible study tools">
+      <a href="index.html" class="bs-home">&larr; All resources</a>
+      <a href="patriarchs.html">Abraham to the Exodus</a>
+      <a href="exodus.html">Exodus to the Promised Land</a>
+      <a href="judges.html" aria-current="page">Judges to Solomon</a>
+      <a href="kings.html">Kings, Prophets &amp; the Return</a>
+    </nav>
+    <header class="bs-head">
+      <p class="bs-eyebrow">Asha Books · Bible Study Tools</p>
+      <h1 class="bs-title">Judges to Solomon: Bible Timeline &amp; Atlas</h1>
+      <p class="bs-lede">From the generation after Joshua, through the cycle of the judges, to Samuel, Saul and David, and Solomon's temple. Follow the oppressors God raised up and the deliverers he sent, the ark's capture and return, David's flight from Saul, and the kingdom at its height, with every entry tied to the Scripture that records it.</p>
+      <span class="bs-draft">Prototype · awaiting theological review</span>
+    </header>
+  </div>
+
+  <div data-bible-study
+       data-timeline="data/judges/timeline.json"
+       data-places="data/judges/places.json"
+       data-territories="data/judges/territories.json"
+       data-bible-version="ESV"
+       data-shop-url="https://ashabooks.com"></div>
+
+  <div class="bs-app">
+    <section class="bs-about">
+      <h2>Sources and method</h2>
+      <p>Every entry on this page lists the Scripture passages it is drawn from, and where Bible-believing scholars disagree, we say so.</p>
+      <ul>
+        <li><strong>David and Solomon</strong> each reigned 40 years (1 Kings 2:11; 11:42). Their dates are counted back from the division of the kingdom in 931 BC, following Edwin R. Thiele's chronology, as on the Kings page. Solomon began the temple in his fourth year, 966 BC, which 1 Kings 6:1 places 480 years after the Exodus.</li>
+        <li><strong>Saul</strong> reigned about 40 years (Acts 13:21). The numbers in 1 Samuel 13:1 have not survived intact in the Hebrew text, so his dates are approximate.</li>
+        <li><strong>The judges.</strong> Added together, the years in Judges come to about 410, but only about 330 years separate Joshua's death from Saul. Most evangelical scholars conclude that some judges served at the same time in different regions: Ehud's long rest in the south overlaps Deborah's victory in the north, and Eli's years at Shiloh overlap Jephthah and Samson. The dates shown follow this approach, anchored on Jephthah's &ldquo;300 years&rdquo; (Judges 11:26) and on the Ammonite and Philistine oppressions beginning together (Judges 10:7). Treat them as approximate.</li>
+        <li><strong>The late date.</strong> Scholars who date the Exodus around 1260 BC fit the judges into about 150 years, with more overlap. The dates from Saul onward are the same on either view.</li>
+        <li><strong>Ruth and the last chapters of Judges</strong> (Micah's idol, Dan's migration, the war with Benjamin) are not dated in the text. Phinehas's presence (Judges 20:28) places the war with Benjamin early in the period; Ruth is placed by David's genealogy.</li>
+        <li><strong>Places and their confidence levels</strong> come from the <a href="https://www.openbible.info/geo/" target="_blank" rel="noopener">OpenBible.info Bible Geocoding Data</a> (CC BY 4.0).</li>
+        <li><strong>Maps.</strong> Tribal territories follow Joshua 13-19, as on the Exodus page. From Saul onward the kingdoms are drawn as on the Kings page. Which tribes each oppressor ruled, and how far David and Solomon's rule reached in the north, are approximate.</li>
+        <li><strong>Base map</strong> from the <a href="https://cawm.lib.uiowa.edu/" target="_blank" rel="noopener">Consortium of Ancient World Mappers</a>.</li>
+      </ul>
+      <p>Scripture links open on Bible Gateway (ESV).</p>
+    </section>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="assets/bible-study.js"></script>
+</body>
+</html>
