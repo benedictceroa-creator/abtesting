@@ -2474,7 +2474,8 @@
    },
    "era": "gospels",
    "note": "Joseph was his legal father, not his natural father: Jesus was conceived by the Holy Spirit (Matthew 1:18-20; Luke 1:35).",
-   "line": true
+   "line": true,
+   "atlas": "jesus-and-paul.html#leader:jesus"
   },
   {
    "id": "zechariah",
@@ -2524,7 +2525,8 @@
     "Malachi 3:1",
     "Matthew 11:11"
    ],
-   "era": "gospels"
+   "era": "gospels",
+   "atlas": "jesus-and-paul.html#leader:john-baptist"
   }
  ]
 }

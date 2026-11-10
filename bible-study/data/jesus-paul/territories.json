@@ -1,0 +1,3833 @@
+{
+ "meta": {
+  "note": "Borders are approximate. Roman provinces and client kingdoms changed often in this period, and the lines drawn here are a simplified guide. Most routes are reconstructed from the places the Gospels and Acts name.",
+  "status": "DRAFT: awaiting review against a printed Bible atlas",
+  "views": {
+   "core": [
+    [
+     31.3,
+     34.4
+    ],
+    [
+     33.4,
+     36.3
+    ]
+   ],
+   "coreLabel": "Galilee & Judea",
+   "region": [
+    [
+     30.0,
+     11.0
+    ],
+    [
+     44.5,
+     38.0
+    ]
+   ],
+   "regionLabel": "Roman world"
+  },
+  "mapKind": "Map ·",
+  "toggleLabel": "Show journeys & provinces",
+  "mapShows": "Map shows",
+  "snapRule": "latest"
+ },
+ "colors": {
+  "herod": "#B08A3E",
+  "judea": "#3A6EA5",
+  "galilee": "#4F7A5A",
+  "philip": "#6E5A8C",
+  "decapolis": "#8C7A9C",
+  "nabataea": "#9C6B4E",
+  "rome": "#A8402E",
+  "egypt": "#C8A45E",
+  "agrippa": "#6E5A8C"
+ },
+ "statuses": {
+  "kingdom": "Independent",
+  "subject": "Client kingdom under Rome",
+  "province": "Roman province",
+  "empire": "Heart of the empire"
+ },
+ "shapes": {
+  "egypt": [
+   [
+    31.3,
+    29.6
+   ],
+   [
+    31.5,
+    31.0
+   ],
+   [
+    31.25,
+    32.3
+   ],
+   [
+    30.6,
+    32.35
+   ],
+   [
+    30.0,
+    32.55
+   ],
+   [
+    29.0,
+    32.7
+   ],
+   [
+    27.9,
+    33.5
+   ],
+   [
+    27.2,
+    33.85
+   ],
+   [
+    26.0,
+    34.25
+   ],
+   [
+    24.1,
+    35.4
+   ],
+   [
+    24.0,
+    32.7
+   ],
+   [
+    25.8,
+    32.3
+   ],
+   [
+    27.4,
+    30.7
+   ],
+   [
+    29.4,
+    30.5
+   ],
+   [
+    30.4,
+    29.4
+   ]
+  ],
+  "judea": [
+   [
+    32.55,
+    35.55
+   ],
+   [
+    32.6,
+    35.25
+   ],
+   [
+    32.75,
+    35.05
+   ],
+   [
+    32.5,
+    34.88
+   ],
+   [
+    32.05,
+    34.74
+   ],
+   [
+    31.75,
+    34.62
+   ],
+   [
+    31.45,
+    34.4
+   ],
+   [
+    31.2,
+    34.4
+   ],
+   [
+    31.0,
+    34.75
+   ],
+   [
+    31.0,
+    35.15
+   ],
+   [
+    31.2,
+    35.4
+   ],
+   [
+    31.5,
+    35.42
+   ],
+   [
+    31.78,
+    35.5
+   ],
+   [
+    32.1,
+    35.53
+   ],
+   [
+    32.4,
+    35.56
+   ]
+  ],
+  "galilee": [
+   [
+    33.1,
+    35.12
+   ],
+   [
+    33.1,
+    35.58
+   ],
+   [
+    32.95,
+    35.605
+   ],
+   [
+    32.86,
+    35.6
+   ],
+   [
+    32.7,
+    35.57
+   ],
+   [
+    32.55,
+    35.55
+   ],
+   [
+    32.6,
+    35.25
+   ],
+   [
+    32.75,
+    35.05
+   ],
+   [
+    32.95,
+    35.1
+   ]
+  ],
+  "perea": [
+   [
+    32.3,
+    35.56
+   ],
+   [
+    32.25,
+    35.8
+   ],
+   [
+    32.05,
+    35.95
+   ],
+   [
+    31.65,
+    35.85
+   ],
+   [
+    31.45,
+    35.62
+   ],
+   [
+    31.5,
+    35.48
+   ],
+   [
+    31.78,
+    35.52
+   ],
+   [
+    32.1,
+    35.54
+   ]
+  ],
+  "decapolis": [
+   [
+    32.82,
+    35.64
+   ],
+   [
+    32.75,
+    36.1
+   ],
+   [
+    32.4,
+    36.2
+   ],
+   [
+    32.2,
+    35.95
+   ],
+   [
+    32.3,
+    35.56
+   ],
+   [
+    32.55,
+    35.55
+   ],
+   [
+    32.7,
+    35.58
+   ]
+  ],
+  "philip": [
+   [
+    33.4,
+    35.6
+   ],
+   [
+    33.45,
+    36.1
+   ],
+   [
+    33.1,
+    36.75
+   ],
+   [
+    32.7,
+    36.7
+   ],
+   [
+    32.75,
+    36.1
+   ],
+   [
+    32.82,
+    35.64
+   ],
+   [
+    32.95,
+    35.61
+   ],
+   [
+    33.1,
+    35.59
+   ]
+  ],
+  "nabataea": [
+   [
+    32.7,
+    36.7
+   ],
+   [
+    32.4,
+    36.2
+   ],
+   [
+    32.05,
+    35.95
+   ],
+   [
+    31.65,
+    35.85
+   ],
+   [
+    31.45,
+    35.62
+   ],
+   [
+    31.0,
+    35.45
+   ],
+   [
+    30.5,
+    35.2
+   ],
+   [
+    29.55,
+    35.0
+   ],
+   [
+    28.0,
+    35.3
+   ],
+   [
+    27.0,
+    35.8
+   ],
+   [
+    27.0,
+    38.0
+   ],
+   [
+    30.0,
+    38.5
+   ],
+   [
+    32.0,
+    37.8
+   ],
+   [
+    32.9,
+    37.2
+   ],
+   [
+    33.1,
+    36.75
+   ]
+  ],
+  "syria": [
+   [
+    32.82,
+    35.03
+   ],
+   [
+    33.1,
+    35.08
+   ],
+   [
+    33.5,
+    35.25
+   ],
+   [
+    34.1,
+    35.62
+   ],
+   [
+    34.9,
+    35.85
+   ],
+   [
+    35.5,
+    35.85
+   ],
+   [
+    36.2,
+    35.8
+   ],
+   [
+    36.65,
+    36.15
+   ],
+   [
+    37.05,
+    36.6
+   ],
+   [
+    37.0,
+    38.0
+   ],
+   [
+    36.1,
+    38.3
+   ],
+   [
+    35.0,
+    38.8
+   ],
+   [
+    34.0,
+    38.2
+   ],
+   [
+    33.3,
+    37.4
+   ],
+   [
+    32.9,
+    37.2
+   ],
+   [
+    33.1,
+    36.75
+   ],
+   [
+    33.45,
+    36.1
+   ],
+   [
+    33.4,
+    35.6
+   ],
+   [
+    33.1,
+    35.59
+   ],
+   [
+    33.1,
+    35.13
+   ],
+   [
+    32.95,
+    35.11
+   ]
+  ],
+  "cilicia": [
+   [
+    36.55,
+    32.6
+   ],
+   [
+    36.15,
+    33.2
+   ],
+   [
+    36.2,
+    33.9
+   ],
+   [
+    36.55,
+    34.3
+   ],
+   [
+    36.8,
+    34.9
+   ],
+   [
+    36.6,
+    35.5
+   ],
+   [
+    36.85,
+    36.2
+   ],
+   [
+    37.3,
+    36.4
+   ],
+   [
+    37.5,
+    35.4
+   ],
+   [
+    37.3,
+    34.0
+   ],
+   [
+    37.0,
+    33.0
+   ]
+  ],
+  "cyprus": [
+   [
+    35.18,
+    32.27
+   ],
+   [
+    35.4,
+    32.9
+   ],
+   [
+    35.35,
+    33.55
+   ],
+   [
+    35.68,
+    34.6
+   ],
+   [
+    35.4,
+    34.1
+   ],
+   [
+    34.95,
+    33.95
+   ],
+   [
+    34.6,
+    33.0
+   ],
+   [
+    34.7,
+    32.4
+   ]
+  ],
+  "galatia": [
+   [
+    40.9,
+    31.8
+   ],
+   [
+    41.0,
+    34.5
+   ],
+   [
+    39.5,
+    35.5
+   ],
+   [
+    38.0,
+    34.5
+   ],
+   [
+    37.3,
+    34.0
+   ],
+   [
+    37.0,
+    33.0
+   ],
+   [
+    37.05,
+    31.5
+   ],
+   [
+    37.6,
+    30.6
+   ],
+   [
+    38.6,
+    30.6
+   ],
+   [
+    39.6,
+    31.0
+   ]
+  ],
+  "lycia": [
+   [
+    36.62,
+    28.95
+   ],
+   [
+    36.25,
+    29.3
+   ],
+   [
+    36.2,
+    30.1
+   ],
+   [
+    36.45,
+    30.55
+   ],
+   [
+    36.85,
+    30.62
+   ],
+   [
+    36.85,
+    31.4
+   ],
+   [
+    36.55,
+    32.6
+   ],
+   [
+    37.0,
+    33.0
+   ],
+   [
+    37.05,
+    31.5
+   ],
+   [
+    37.6,
+    30.6
+   ],
+   [
+    37.2,
+    29.3
+   ]
+  ],
+  "asia": [
+   [
+    40.3,
+    26.6
+   ],
+   [
+    40.15,
+    28.2
+   ],
+   [
+    39.6,
+    29.6
+   ],
+   [
+    38.6,
+    30.6
+   ],
+   [
+    37.6,
+    30.6
+   ],
+   [
+    37.2,
+    29.3
+   ],
+   [
+    36.62,
+    28.95
+   ],
+   [
+    36.8,
+    28.1
+   ],
+   [
+    36.6,
+    27.3
+   ],
+   [
+    36.8,
+    27.25
+   ],
+   [
+    37.0,
+    27.6
+   ],
+   [
+    37.3,
+    27.2
+   ],
+   [
+    37.8,
+    27.05
+   ],
+   [
+    38.3,
+    26.3
+   ],
+   [
+    38.7,
+    26.9
+   ],
+   [
+    39.1,
+    26.8
+   ],
+   [
+    39.45,
+    26.1
+   ],
+   [
+    39.75,
+    26.05
+   ],
+   [
+    40.05,
+    26.2
+   ]
+  ],
+  "bithynia": [
+   [
+    41.2,
+    29.1
+   ],
+   [
+    41.2,
+    30.5
+   ],
+   [
+    41.6,
+    32.2
+   ],
+   [
+    42.0,
+    33.8
+   ],
+   [
+    41.75,
+    35.6
+   ],
+   [
+    41.3,
+    36.4
+   ],
+   [
+    40.7,
+    36.0
+   ],
+   [
+    41.0,
+    34.5
+   ],
+   [
+    40.9,
+    31.8
+   ],
+   [
+    40.4,
+    30.4
+   ],
+   [
+    40.15,
+    28.2
+   ],
+   [
+    40.4,
+    29.0
+   ]
+  ],
+  "cappadocia": [
+   [
+    41.0,
+    34.5
+   ],
+   [
+    40.7,
+    36.0
+   ],
+   [
+    40.3,
+    38.4
+   ],
+   [
+    38.4,
+    38.8
+   ],
+   [
+    37.5,
+    35.4
+   ],
+   [
+    38.0,
+    34.5
+   ],
+   [
+    39.5,
+    35.5
+   ]
+  ],
+  "macedonia": [
+   [
+    41.0,
+    19.45
+   ],
+   [
+    41.85,
+    20.55
+   ],
+   [
+    41.75,
+    22.6
+   ],
+   [
+    41.55,
+    24.1
+   ],
+   [
+    41.15,
+    25.2
+   ],
+   [
+    40.92,
+    24.55
+   ],
+   [
+    40.78,
+    23.85
+   ],
+   [
+    40.45,
+    23.6
+   ],
+   [
+    40.6,
+    22.95
+   ],
+   [
+    40.35,
+    22.6
+   ],
+   [
+    39.9,
+    22.65
+   ],
+   [
+    39.8,
+    21.5
+   ],
+   [
+    40.1,
+    20.6
+   ],
+   [
+    40.6,
+    19.45
+   ]
+  ],
+  "achaia": [
+   [
+    39.8,
+    21.5
+   ],
+   [
+    39.9,
+    22.65
+   ],
+   [
+    39.2,
+    23.3
+   ],
+   [
+    38.4,
+    24.1
+   ],
+   [
+    38.0,
+    24.05
+   ],
+   [
+    37.65,
+    23.2
+   ],
+   [
+    37.0,
+    23.0
+   ],
+   [
+    36.45,
+    22.48
+   ],
+   [
+    36.85,
+    21.7
+   ],
+   [
+    37.6,
+    21.3
+   ],
+   [
+    38.2,
+    21.65
+   ],
+   [
+    38.4,
+    21.2
+   ],
+   [
+    38.9,
+    20.8
+   ],
+   [
+    39.3,
+    20.5
+   ]
+  ],
+  "crete": [
+   [
+    35.45,
+    23.55
+   ],
+   [
+    35.6,
+    24.3
+   ],
+   [
+    35.35,
+    25.4
+   ],
+   [
+    35.3,
+    26.3
+   ],
+   [
+    35.0,
+    26.2
+   ],
+   [
+    34.9,
+    24.8
+   ],
+   [
+    35.2,
+    23.55
+   ]
+  ],
+  "italy": [
+   [
+    44.0,
+    10.0
+   ],
+   [
+    43.6,
+    13.5
+   ],
+   [
+    42.0,
+    15.5
+   ],
+   [
+    41.9,
+    16.1
+   ],
+   [
+    40.6,
+    18.0
+   ],
+   [
+    40.1,
+    18.5
+   ],
+   [
+    40.5,
+    17.2
+   ],
+   [
+    39.6,
+    16.5
+   ],
+   [
+    39.0,
+    17.1
+   ],
+   [
+    38.5,
+    16.5
+   ],
+   [
+    37.92,
+    15.55
+   ],
+   [
+    38.3,
+    15.6
+   ],
+   [
+    38.6,
+    15.8
+   ],
+   [
+    39.5,
+    15.8
+   ],
+   [
+    40.2,
+    15.4
+   ],
+   [
+    40.8,
+    14.05
+   ],
+   [
+    41.0,
+    13.85
+   ],
+   [
+    41.25,
+    13.15
+   ],
+   [
+    41.45,
+    12.62
+   ],
+   [
+    41.75,
+    12.25
+   ],
+   [
+    42.6,
+    11.0
+   ],
+   [
+    43.5,
+    10.3
+   ]
+  ],
+  "sicily": [
+   [
+    38.27,
+    15.65
+   ],
+   [
+    37.0,
+    15.35
+   ],
+   [
+    36.7,
+    15.05
+   ],
+   [
+    37.5,
+    12.45
+   ],
+   [
+    38.2,
+    12.7
+   ],
+   [
+    38.1,
+    13.4
+   ]
+  ],
+  "malta": [
+   [
+    36.08,
+    14.2
+   ],
+   [
+    36.05,
+    14.6
+   ],
+   [
+    35.8,
+    14.6
+   ],
+   [
+    35.8,
+    14.3
+   ]
+  ],
+  "dalmatia": [
+   [
+    45.3,
+    14.3
+   ],
+   [
+    45.5,
+    16.5
+   ],
+   [
+    44.5,
+    19.0
+   ],
+   [
+    42.5,
+    21.0
+   ],
+   [
+    41.85,
+    20.55
+   ],
+   [
+    41.0,
+    19.45
+   ],
+   [
+    42.0,
+    19.3
+   ],
+   [
+    43.0,
+    17.5
+   ],
+   [
+    44.0,
+    15.5
+   ]
+  ]
+ },
+ "routes": {
+  "to_bethlehem": {
+   "name": "Nazareth to Bethlehem",
+   "via": [
+    "nazareth",
+    [
+     32.45,
+     35.25
+    ],
+    [
+     32.2,
+     35.25
+    ],
+    "jerusalem",
+    "bethlehem-1"
+   ]
+  },
+  "to_egypt": {
+   "name": "Flight to Egypt",
+   "via": [
+    "bethlehem-1",
+    "gaza",
+    [
+     31.1,
+     33.8
+    ],
+    [
+     30.95,
+     32.5
+    ],
+    [
+     30.45,
+     31.75
+    ],
+    "egypt"
+   ]
+  },
+  "from_egypt": {
+   "name": "Return to Nazareth",
+   "via": [
+    "egypt",
+    [
+     30.45,
+     31.75
+    ],
+    [
+     30.95,
+     32.5
+    ],
+    [
+     31.1,
+     33.8
+    ],
+    "gaza",
+    [
+     32.05,
+     34.72
+    ],
+    "caesarea",
+    "nazareth"
+   ]
+  },
+  "to_jordan": {
+   "name": "To John at the Jordan",
+   "via": [
+    "nazareth",
+    [
+     32.45,
+     35.52
+    ],
+    [
+     32.0,
+     35.53
+    ],
+    "bethany-2"
+   ]
+  },
+  "wilderness": {
+   "name": "Into the wilderness",
+   "via": [
+    "bethany-2",
+    [
+     31.72,
+     35.38
+    ]
+   ]
+  },
+  "back_galilee": {
+   "name": "Back to Galilee",
+   "via": [
+    "bethany-2",
+    [
+     32.0,
+     35.53
+    ],
+    [
+     32.45,
+     35.52
+    ],
+    "cana",
+    "capernaum"
+   ]
+  },
+  "passover_28": {
+   "name": "First Passover, and home through Samaria",
+   "via": [
+    "capernaum",
+    [
+     32.45,
+     35.53
+    ],
+    "jericho-2",
+    "jerusalem",
+    "sychar",
+    [
+     32.55,
+     35.3
+    ],
+    "cana"
+   ]
+  },
+  "galilee": {
+   "name": "Around Galilee",
+   "via": [
+    "nazareth",
+    "cana",
+    "magadan",
+    "capernaum",
+    "chorazin",
+    "bethsaida-1"
+   ]
+  },
+  "nain": {
+   "name": "To Nain",
+   "via": [
+    "capernaum",
+    [
+     32.75,
+     35.45
+    ],
+    "nain"
+   ]
+  },
+  "east_shore": {
+   "name": "Across the lake",
+   "via": [
+    "capernaum",
+    [
+     32.84,
+     35.62
+    ],
+    [
+     32.83,
+     35.65
+    ]
+   ]
+  },
+  "north": {
+   "name": "Tyre, Sidon and the Decapolis",
+   "via": [
+    "capernaum",
+    [
+     33.1,
+     35.4
+    ],
+    "tyre",
+    "sidon",
+    [
+     33.25,
+     35.65
+    ],
+    [
+     32.75,
+     35.68
+    ]
+   ]
+  },
+  "to_caesarea_ph": {
+   "name": "To Caesarea Philippi",
+   "via": [
+    "bethsaida-1",
+    "caesarea-philippi",
+    "mount-hermon"
+   ]
+  },
+  "last_journey": {
+   "name": "The last journey to Jerusalem",
+   "via": [
+    "capernaum",
+    [
+     32.55,
+     35.6
+    ],
+    [
+     32.1,
+     35.6
+    ],
+    "jericho-2",
+    "bethany-1",
+    "mount-of-olives",
+    "jerusalem"
+   ]
+  },
+  "emmaus": {
+   "name": "The road to Emmaus",
+   "via": [
+    "jerusalem",
+    "emmaus"
+   ]
+  },
+  "philip": {
+   "name": "Philip to Samaria and the Gaza road",
+   "via": [
+    "jerusalem",
+    "samaria-2"
+   ]
+  },
+  "philip_gaza": {
+   "name": "Philip and the Ethiopian",
+   "via": [
+    "jerusalem",
+    [
+     31.62,
+     34.9
+    ],
+    "gaza",
+    [
+     31.78,
+     34.65
+    ],
+    "joppa",
+    "caesarea"
+   ]
+  },
+  "damascus": {
+   "name": "Saul to Damascus",
+   "via": [
+    "jerusalem",
+    [
+     32.5,
+     35.53
+    ],
+    [
+     32.95,
+     35.95
+    ],
+    "damascus"
+   ]
+  },
+  "arabia": {
+   "name": "Into Arabia and back",
+   "via": [
+    "damascus",
+    [
+     32.0,
+     36.6
+    ],
+    "arabia-2"
+   ]
+  },
+  "to_tarsus": {
+   "name": "Jerusalem to Tarsus",
+   "via": [
+    "damascus",
+    [
+     32.95,
+     35.95
+    ],
+    [
+     32.5,
+     35.53
+    ],
+    "jerusalem",
+    "caesarea",
+    [
+     33.9,
+     35.0
+    ],
+    [
+     35.7,
+     35.4
+    ],
+    [
+     36.6,
+     34.9
+    ],
+    "tarsus"
+   ]
+  },
+  "peter": {
+   "name": "Peter at Lydda, Joppa and Caesarea",
+   "via": [
+    "jerusalem",
+    "lod",
+    "joppa",
+    "caesarea"
+   ]
+  },
+  "j1": {
+   "name": "First journey",
+   "via": [
+    "antioch-1",
+    "seleucia",
+    [
+     35.7,
+     34.6
+    ],
+    "salamis",
+    [
+     35.0,
+     33.3
+    ],
+    "paphos",
+    [
+     36.0,
+     31.3
+    ],
+    "perga",
+    [
+     37.6,
+     30.9
+    ],
+    "antioch-2",
+    "iconium",
+    "lystra",
+    "derbe"
+   ]
+  },
+  "j1_back": {
+   "name": "First journey: the return",
+   "via": [
+    "derbe",
+    "lystra",
+    "iconium",
+    "antioch-2",
+    [
+     37.6,
+     30.9
+    ],
+    "perga",
+    "attalia",
+    [
+     36.3,
+     31.6
+    ],
+    [
+     35.95,
+     33.0
+    ],
+    [
+     35.95,
+     35.3
+    ],
+    "seleucia",
+    "antioch-1"
+   ]
+  },
+  "to_tarsus_land": {
+   "name": "To Antioch from Tarsus",
+   "via": [
+    "tarsus",
+    [
+     36.85,
+     36.15
+    ],
+    "antioch-1"
+   ]
+  },
+  "j2": {
+   "name": "Second journey",
+   "via": [
+    "antioch-1",
+    [
+     36.85,
+     36.15
+    ],
+    "tarsus",
+    [
+     37.3,
+     34.6
+    ],
+    "derbe",
+    "lystra",
+    "iconium",
+    "antioch-2",
+    [
+     39.0,
+     30.0
+    ],
+    [
+     39.9,
+     27.9
+    ],
+    "troas",
+    "samothrace",
+    "neapolis",
+    "philippi",
+    "amphipolis",
+    "apollonia",
+    "thessalonica",
+    "berea",
+    [
+     39.3,
+     23.3
+    ],
+    [
+     38.2,
+     24.1
+    ],
+    "athens",
+    "corinth"
+   ]
+  },
+  "j2_back": {
+   "name": "Second journey: the return",
+   "via": [
+    "corinth",
+    "cenchreae",
+    [
+     37.6,
+     25.0
+    ],
+    [
+     37.8,
+     26.6
+    ],
+    "ephesus",
+    [
+     37.0,
+     27.1
+    ],
+    [
+     36.2,
+     28.0
+    ],
+    [
+     34.8,
+     32.0
+    ],
+    "caesarea",
+    [
+     33.6,
+     35.33
+    ],
+    [
+     34.9,
+     35.82
+    ],
+    "antioch-1"
+   ]
+  },
+  "j3": {
+   "name": "Third journey",
+   "via": [
+    "antioch-1",
+    [
+     36.85,
+     36.15
+    ],
+    "tarsus",
+    [
+     37.3,
+     34.6
+    ],
+    "derbe",
+    "lystra",
+    "iconium",
+    "antioch-2",
+    [
+     38.2,
+     29.5
+    ],
+    "ephesus"
+   ]
+  },
+  "j3_greece": {
+   "name": "Third journey: Macedonia and Greece",
+   "via": [
+    "ephesus",
+    [
+     38.9,
+     26.4
+    ],
+    "troas",
+    [
+     40.6,
+     25.3
+    ],
+    "neapolis",
+    "philippi",
+    "thessalonica",
+    "berea",
+    [
+     39.3,
+     22.5
+    ],
+    [
+     38.4,
+     22.4
+    ],
+    "corinth"
+   ]
+  },
+  "j3_back": {
+   "name": "Third journey: to Jerusalem",
+   "via": [
+    "corinth",
+    [
+     39.0,
+     22.9
+    ],
+    "berea",
+    "thessalonica",
+    "philippi",
+    "neapolis",
+    [
+     40.6,
+     25.3
+    ],
+    "troas",
+    "assos",
+    "mitylene",
+    [
+     38.4,
+     26.3
+    ],
+    [
+     37.75,
+     26.9
+    ],
+    "miletus",
+    "cos",
+    "rhodes-1",
+    "patara",
+    [
+     34.6,
+     32.6
+    ],
+    "tyre",
+    "ptolemais",
+    "caesarea",
+    "jerusalem"
+   ]
+  },
+  "rome": {
+   "name": "The voyage to Rome",
+   "via": [
+    "caesarea",
+    "sidon",
+    [
+     35.9,
+     34.0
+    ],
+    [
+     36.1,
+     32.0
+    ],
+    "myra",
+    "cnidus",
+    [
+     35.3,
+     26.35
+    ],
+    "fair-havens",
+    [
+     34.6,
+     22.0
+    ],
+    [
+     35.3,
+     17.0
+    ],
+    "malta",
+    "syracuse",
+    "rhegium",
+    "puteoli",
+    "forum-of-appius",
+    "three-taverns",
+    "rome"
+   ]
+  },
+  "later": {
+   "name": "Possible later travels (from the letters)",
+   "via": [
+    "rome",
+    [
+     37.5,
+     18.5
+    ],
+    "fair-havens",
+    [
+     36.4,
+     25.6
+    ],
+    "miletus",
+    "ephesus",
+    "troas",
+    "neapolis",
+    "philippi",
+    "thessalonica",
+    [
+     40.0,
+     21.5
+    ],
+    "nicopolis",
+    [
+     39.4,
+     18.8
+    ],
+    [
+     40.6,
+     17.2
+    ],
+    "rome"
+   ]
+  }
+ },
+ "routeStyles": {
+  "current": {
+   "label": "Journey",
+   "color": "#C82035",
+   "weight": 3.5
+  },
+  "past": {
+   "label": "Earlier journeys",
+   "color": "#6b6b6b",
+   "weight": 2,
+   "dashArray": "6 5"
+  },
+  "other": {
+   "label": "Other journeys",
+   "color": "#2F7F86",
+   "weight": 2.5,
+   "dashArray": "6 5"
+  },
+  "flight": {
+   "label": "Flight",
+   "color": "#1A1A1A",
+   "weight": 2,
+   "dashArray": "2 5"
+  }
+ },
+ "snapshots": [
+  {
+   "id": "n-birth",
+   "year": -5,
+   "tick": "Birth",
+   "title": "The birth of Jesus",
+   "refs": [
+    "Luke 2:1-7",
+    "Matthew 2:13-23"
+   ],
+   "summary": "Herod the Great rules a kingdom covering most of the land of Israel as a client king of Rome. Joseph and Mary travel from Nazareth to Bethlehem for the census. After the wise men's visit they flee to Egypt, then return to Nazareth after Herod's death.",
+   "note": "The Gospels don't give the route to Bethlehem; many pilgrims went down the Jordan valley to avoid Samaria. The return is drawn by the coast road.",
+   "regions": [
+    {
+     "name": "Herod's kingdom",
+     "shapes": [
+      "judea",
+      "galilee",
+      "perea",
+      "philip"
+     ],
+     "color": "herod",
+     "status": "subject",
+     "label": [
+      32.0,
+      35.25
+     ]
+    },
+    {
+     "name": "Decapolis (free cities)",
+     "shapes": [
+      "decapolis"
+     ],
+     "color": "decapolis",
+     "status": "province",
+     "label": [
+      32.5,
+      35.95
+     ]
+    },
+    {
+     "name": "Syria",
+     "shapes": [
+      "syria"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      35.2,
+      37.3
+     ]
+    },
+    {
+     "name": "Nabataean kingdom",
+     "shapes": [
+      "nabataea"
+     ],
+     "color": "nabataea",
+     "status": "subject",
+     "label": [
+      30.4,
+      36.4
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "province",
+     "label": [
+      27.6,
+      31.2
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "to_bethlehem",
+     "style": "current"
+    },
+    {
+     "route": "to_egypt",
+     "style": "flight"
+    },
+    {
+     "route": "from_egypt",
+     "style": "other"
+    }
+   ],
+   "view": [
+    [
+     29.6,
+     30.6
+    ],
+    [
+     33.6,
+     36.8
+    ]
+   ]
+  },
+  {
+   "id": "n-baptism",
+   "year": 27.85,
+   "tick": "Baptism",
+   "title": "Baptism and the first disciples",
+   "refs": [
+    "Luke 3:1-2",
+    "Mark 1:9-13",
+    "John 1:28-2:12"
+   ],
+   "summary": "Herod's kingdom is now divided. Judea is ruled by the Roman prefect Pontius Pilate, Galilee and Perea by Herod Antipas, and the lands north-east of the lake by Philip. Jesus comes from Nazareth to be baptised by John at Bethany beyond the Jordan, is tempted in the wilderness, and returns to Galilee, where he turns water into wine at Cana.",
+   "note": "Bethany beyond the Jordan is traditionally placed at al-Maghtas, near Jericho; some place it further north.",
+   "regions": [
+    {
+     "name": "Judea, Samaria & Idumea (Roman prefect)",
+     "shapes": [
+      "judea"
+     ],
+     "color": "judea",
+     "status": "province",
+     "label": [
+      31.75,
+      35.05
+     ]
+    },
+    {
+     "name": "Galilee & Perea (Herod Antipas)",
+     "shapes": [
+      "galilee",
+      "perea"
+     ],
+     "color": "galilee",
+     "status": "subject",
+     "label": [
+      32.85,
+      35.33
+     ]
+    },
+    {
+     "name": "Philip's tetrarchy",
+     "shapes": [
+      "philip"
+     ],
+     "color": "philip",
+     "status": "subject",
+     "label": [
+      33.1,
+      36.2
+     ]
+    },
+    {
+     "name": "Decapolis (free cities)",
+     "shapes": [
+      "decapolis"
+     ],
+     "color": "decapolis",
+     "status": "province",
+     "label": [
+      32.5,
+      35.95
+     ]
+    },
+    {
+     "name": "Syria",
+     "shapes": [
+      "syria"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      35.2,
+      37.3
+     ]
+    },
+    {
+     "name": "Nabataean kingdom",
+     "shapes": [
+      "nabataea"
+     ],
+     "color": "nabataea",
+     "status": "subject",
+     "label": [
+      30.4,
+      36.4
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "province",
+     "label": [
+      27.6,
+      31.2
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "to_jordan",
+     "style": "current"
+    },
+    {
+     "route": "wilderness",
+     "style": "other"
+    },
+    {
+     "route": "back_galilee",
+     "style": "current"
+    }
+   ],
+   "view": [
+    [
+     31.4,
+     34.6
+    ],
+    [
+     33.4,
+     36.3
+    ]
+   ]
+  },
+  {
+   "id": "n-passover28",
+   "year": 28.27,
+   "tick": "Passover",
+   "title": "The first Passover and Samaria",
+   "refs": [
+    "John 2:13-4:54"
+   ],
+   "summary": "Jesus goes up to Jerusalem for Passover, clears the temple and talks with Nicodemus. Returning to Galilee, he passes through Samaria and meets the woman at Jacob's well near Sychar.",
+   "regions": [
+    {
+     "name": "Judea, Samaria & Idumea (Roman prefect)",
+     "shapes": [
+      "judea"
+     ],
+     "color": "judea",
+     "status": "province",
+     "label": [
+      31.75,
+      35.05
+     ]
+    },
+    {
+     "name": "Galilee & Perea (Herod Antipas)",
+     "shapes": [
+      "galilee",
+      "perea"
+     ],
+     "color": "galilee",
+     "status": "subject",
+     "label": [
+      32.85,
+      35.33
+     ]
+    },
+    {
+     "name": "Philip's tetrarchy",
+     "shapes": [
+      "philip"
+     ],
+     "color": "philip",
+     "status": "subject",
+     "label": [
+      33.1,
+      36.2
+     ]
+    },
+    {
+     "name": "Decapolis (free cities)",
+     "shapes": [
+      "decapolis"
+     ],
+     "color": "decapolis",
+     "status": "province",
+     "label": [
+      32.5,
+      35.95
+     ]
+    },
+    {
+     "name": "Syria",
+     "shapes": [
+      "syria"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      35.2,
+      37.3
+     ]
+    },
+    {
+     "name": "Nabataean kingdom",
+     "shapes": [
+      "nabataea"
+     ],
+     "color": "nabataea",
+     "status": "subject",
+     "label": [
+      30.4,
+      36.4
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "province",
+     "label": [
+      27.6,
+      31.2
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "to_jordan",
+     "style": "past"
+    },
+    {
+     "route": "back_galilee",
+     "style": "past"
+    },
+    {
+     "route": "passover_28",
+     "style": "current"
+    }
+   ],
+   "view": [
+    [
+     31.4,
+     34.6
+    ],
+    [
+     33.2,
+     36.2
+    ]
+   ]
+  },
+  {
+   "id": "n-galilee",
+   "year": 29.0,
+   "tick": "Galilee",
+   "title": "The ministry in Galilee",
+   "refs": [
+    "Mark 1:14-39",
+    "Matthew 4:23-25",
+    "Luke 8:1-3"
+   ],
+   "summary": "Jesus makes Capernaum his base and goes throughout Galilee, teaching in the synagogues and healing. Crowds come from Galilee, the Decapolis, Jerusalem, Judea and beyond the Jordan. He crosses the lake to the Gentile eastern shore, and raises a widow's son at Nain.",
+   "note": "The places around the lake are mostly well known. The order of many Galilean events differs between the Gospels.",
+   "regions": [
+    {
+     "name": "Judea, Samaria & Idumea (Roman prefect)",
+     "shapes": [
+      "judea"
+     ],
+     "color": "judea",
+     "status": "province",
+     "label": [
+      31.75,
+      35.05
+     ]
+    },
+    {
+     "name": "Galilee & Perea (Herod Antipas)",
+     "shapes": [
+      "galilee",
+      "perea"
+     ],
+     "color": "galilee",
+     "status": "subject",
+     "label": [
+      32.85,
+      35.33
+     ]
+    },
+    {
+     "name": "Philip's tetrarchy",
+     "shapes": [
+      "philip"
+     ],
+     "color": "philip",
+     "status": "subject",
+     "label": [
+      33.1,
+      36.2
+     ]
+    },
+    {
+     "name": "Decapolis (free cities)",
+     "shapes": [
+      "decapolis"
+     ],
+     "color": "decapolis",
+     "status": "province",
+     "label": [
+      32.5,
+      35.95
+     ]
+    },
+    {
+     "name": "Syria",
+     "shapes": [
+      "syria"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      35.2,
+      37.3
+     ]
+    },
+    {
+     "name": "Nabataean kingdom",
+     "shapes": [
+      "nabataea"
+     ],
+     "color": "nabataea",
+     "status": "subject",
+     "label": [
+      30.4,
+      36.4
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "province",
+     "label": [
+      27.6,
+      31.2
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "galilee",
+     "style": "current"
+    },
+    {
+     "route": "nain",
+     "style": "current"
+    },
+    {
+     "route": "east_shore",
+     "style": "other"
+    }
+   ],
+   "view": [
+    [
+     32.45,
+     35.05
+    ],
+    [
+     33.05,
+     35.95
+    ]
+   ]
+  },
+  {
+   "id": "n-north",
+   "year": 29.5,
+   "tick": "North",
+   "title": "Tyre, Sidon and Caesarea Philippi",
+   "refs": [
+    "Mark 7:24-31",
+    "Mark 8:27-9:8"
+   ],
+   "summary": "Jesus withdraws north into Gentile territory around Tyre and Sidon, returns through the Decapolis, and then goes to the villages of Caesarea Philippi, where Peter confesses him as the Christ. Six days later he is transfigured on a high mountain.",
+   "regions": [
+    {
+     "name": "Judea, Samaria & Idumea (Roman prefect)",
+     "shapes": [
+      "judea"
+     ],
+     "color": "judea",
+     "status": "province",
+     "label": [
+      31.75,
+      35.05
+     ]
+    },
+    {
+     "name": "Galilee & Perea (Herod Antipas)",
+     "shapes": [
+      "galilee",
+      "perea"
+     ],
+     "color": "galilee",
+     "status": "subject",
+     "label": [
+      32.85,
+      35.33
+     ]
+    },
+    {
+     "name": "Philip's tetrarchy",
+     "shapes": [
+      "philip"
+     ],
+     "color": "philip",
+     "status": "subject",
+     "label": [
+      33.1,
+      36.2
+     ]
+    },
+    {
+     "name": "Decapolis (free cities)",
+     "shapes": [
+      "decapolis"
+     ],
+     "color": "decapolis",
+     "status": "province",
+     "label": [
+      32.5,
+      35.95
+     ]
+    },
+    {
+     "name": "Syria",
+     "shapes": [
+      "syria"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      35.2,
+      37.3
+     ]
+    },
+    {
+     "name": "Nabataean kingdom",
+     "shapes": [
+      "nabataea"
+     ],
+     "color": "nabataea",
+     "status": "subject",
+     "label": [
+      30.4,
+      36.4
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "province",
+     "label": [
+      27.6,
+      31.2
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "galilee",
+     "style": "past"
+    },
+    {
+     "route": "north",
+     "style": "current"
+    },
+    {
+     "route": "to_caesarea_ph",
+     "style": "current"
+    }
+   ],
+   "view": [
+    [
+     32.5,
+     34.9
+    ],
+    [
+     33.7,
+     36.2
+    ]
+   ]
+  },
+  {
+   "id": "n-passion",
+   "year": 30.2,
+   "tick": "Jerusalem",
+   "title": "The last journey to Jerusalem",
+   "refs": [
+    "Luke 9:51",
+    "Mark 10:1, 32-52",
+    "John 11",
+    "Luke 24:13-35"
+   ],
+   "summary": "Jesus sets his face to go to Jerusalem. He goes through Perea beyond the Jordan, raises Lazarus at Bethany, passes through Jericho and enters Jerusalem from the Mount of Olives. After the resurrection he walks with two disciples on the road to Emmaus.",
+   "regions": [
+    {
+     "name": "Judea, Samaria & Idumea (Roman prefect)",
+     "shapes": [
+      "judea"
+     ],
+     "color": "judea",
+     "status": "province",
+     "label": [
+      31.75,
+      35.05
+     ]
+    },
+    {
+     "name": "Galilee & Perea (Herod Antipas)",
+     "shapes": [
+      "galilee",
+      "perea"
+     ],
+     "color": "galilee",
+     "status": "subject",
+     "label": [
+      32.85,
+      35.33
+     ]
+    },
+    {
+     "name": "Philip's tetrarchy",
+     "shapes": [
+      "philip"
+     ],
+     "color": "philip",
+     "status": "subject",
+     "label": [
+      33.1,
+      36.2
+     ]
+    },
+    {
+     "name": "Decapolis (free cities)",
+     "shapes": [
+      "decapolis"
+     ],
+     "color": "decapolis",
+     "status": "province",
+     "label": [
+      32.5,
+      35.95
+     ]
+    },
+    {
+     "name": "Syria",
+     "shapes": [
+      "syria"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      35.2,
+      37.3
+     ]
+    },
+    {
+     "name": "Nabataean kingdom",
+     "shapes": [
+      "nabataea"
+     ],
+     "color": "nabataea",
+     "status": "subject",
+     "label": [
+      30.4,
+      36.4
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "province",
+     "label": [
+      27.6,
+      31.2
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "last_journey",
+     "style": "current"
+    },
+    {
+     "route": "emmaus",
+     "style": "other"
+    }
+   ],
+   "view": [
+    [
+     31.55,
+     34.8
+    ],
+    [
+     33.0,
+     36.0
+    ]
+   ]
+  },
+  {
+   "id": "n-church",
+   "year": 32.4,
+   "tick": "Damascus",
+   "title": "Judea, Samaria and Damascus",
+   "refs": [
+    "Acts 8-11"
+   ],
+   "summary": "Scattered by persecution, believers preach the word as they go. Philip takes the gospel to Samaria and to an Ethiopian on the Gaza road; Saul meets the risen Jesus near Damascus, goes into Arabia and is later sent home to Tarsus; Peter goes to Lydda, Joppa and the house of Cornelius at Caesarea.",
+   "regions": [
+    {
+     "name": "Judea, Samaria & Idumea (Roman prefect)",
+     "shapes": [
+      "judea"
+     ],
+     "color": "judea",
+     "status": "province",
+     "label": [
+      31.75,
+      35.05
+     ]
+    },
+    {
+     "name": "Galilee & Perea (Herod Antipas)",
+     "shapes": [
+      "galilee",
+      "perea"
+     ],
+     "color": "galilee",
+     "status": "subject",
+     "label": [
+      32.85,
+      35.33
+     ]
+    },
+    {
+     "name": "Philip's tetrarchy",
+     "shapes": [
+      "philip"
+     ],
+     "color": "philip",
+     "status": "subject",
+     "label": [
+      33.1,
+      36.2
+     ]
+    },
+    {
+     "name": "Decapolis (free cities)",
+     "shapes": [
+      "decapolis"
+     ],
+     "color": "decapolis",
+     "status": "province",
+     "label": [
+      32.5,
+      35.95
+     ]
+    },
+    {
+     "name": "Syria",
+     "shapes": [
+      "syria"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      35.2,
+      37.3
+     ]
+    },
+    {
+     "name": "Nabataean kingdom",
+     "shapes": [
+      "nabataea"
+     ],
+     "color": "nabataea",
+     "status": "subject",
+     "label": [
+      30.4,
+      36.4
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "province",
+     "label": [
+      27.6,
+      31.2
+     ]
+    },
+    {
+     "name": "Cilicia (part of Syria)",
+     "shapes": [
+      "cilicia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      36.95,
+      34.2
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "philip",
+     "style": "other"
+    },
+    {
+     "route": "philip_gaza",
+     "style": "other"
+    },
+    {
+     "route": "damascus",
+     "style": "current"
+    },
+    {
+     "route": "arabia",
+     "style": "current"
+    },
+    {
+     "route": "to_tarsus",
+     "style": "current"
+    },
+    {
+     "route": "peter",
+     "style": "other"
+    }
+   ],
+   "view": [
+    [
+     30.5,
+     33.5
+    ],
+    [
+     37.4,
+     37.6
+    ]
+   ]
+  },
+  {
+   "id": "n-j1",
+   "year": 46.3,
+   "tick": "1st",
+   "title": "Paul's first journey",
+   "refs": [
+    "Acts 13-14"
+   ],
+   "summary": "Sent out by the church at Antioch, Paul and Barnabas sail to Cyprus, then cross to the south coast of Asia Minor and travel inland into the province of Galatia, founding churches in Pisidian Antioch, Iconium, Lystra and Derbe, before returning the same way.",
+   "regions": [
+    {
+     "name": "Judea (Roman province)",
+     "shapes": [
+      "judea",
+      "galilee",
+      "perea",
+      "philip"
+     ],
+     "color": "judea",
+     "status": "province",
+     "label": [
+      32.0,
+      35.25
+     ]
+    },
+    {
+     "name": "Decapolis (free cities)",
+     "shapes": [
+      "decapolis"
+     ],
+     "color": "decapolis",
+     "status": "province",
+     "label": [
+      32.5,
+      35.95
+     ]
+    },
+    {
+     "name": "Syria",
+     "shapes": [
+      "syria"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      35.2,
+      37.3
+     ]
+    },
+    {
+     "name": "Nabataean kingdom",
+     "shapes": [
+      "nabataea"
+     ],
+     "color": "nabataea",
+     "status": "subject",
+     "label": [
+      30.4,
+      36.4
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "province",
+     "label": [
+      27.6,
+      31.2
+     ]
+    },
+    {
+     "name": "Cilicia",
+     "shapes": [
+      "cilicia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      36.95,
+      34.2
+     ]
+    },
+    {
+     "name": "Cyprus",
+     "shapes": [
+      "cyprus"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      35.05,
+      33.3
+     ]
+    },
+    {
+     "name": "Galatia",
+     "shapes": [
+      "galatia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      39.2,
+      32.8
+     ]
+    },
+    {
+     "name": "Lycia & Pamphylia",
+     "shapes": [
+      "lycia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      36.9,
+      30.2
+     ]
+    },
+    {
+     "name": "Asia",
+     "shapes": [
+      "asia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      38.7,
+      28.4
+     ]
+    },
+    {
+     "name": "Bithynia & Pontus",
+     "shapes": [
+      "bithynia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      41.1,
+      33.4
+     ]
+    },
+    {
+     "name": "Cappadocia",
+     "shapes": [
+      "cappadocia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      39.3,
+      36.9
+     ]
+    },
+    {
+     "name": "Macedonia",
+     "shapes": [
+      "macedonia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      41.2,
+      22.3
+     ]
+    },
+    {
+     "name": "Achaia",
+     "shapes": [
+      "achaia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      38.0,
+      22.2
+     ]
+    },
+    {
+     "name": "Crete",
+     "shapes": [
+      "crete"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      35.25,
+      24.9
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "to_tarsus_land",
+     "style": "past"
+    },
+    {
+     "route": "j1",
+     "style": "current"
+    },
+    {
+     "route": "j1_back",
+     "style": "other"
+    }
+   ],
+   "view": [
+    [
+     34.2,
+     29.5
+    ],
+    [
+     39.0,
+     37.0
+    ]
+   ]
+  },
+  {
+   "id": "n-j2",
+   "year": 49.5,
+   "tick": "2nd",
+   "title": "Paul's second journey",
+   "refs": [
+    "Acts 15:36-18:22"
+   ],
+   "summary": "Paul and Silas revisit the Galatian churches and are led by the Spirit to Troas, where Paul's vision calls them to Macedonia. The gospel reaches Europe: Philippi, Thessalonica, Berea, Athens and Corinth, where Paul stays eighteen months. He returns by Ephesus and Caesarea.",
+   "regions": [
+    {
+     "name": "Judea (Roman province)",
+     "shapes": [
+      "judea",
+      "galilee",
+      "perea",
+      "philip"
+     ],
+     "color": "judea",
+     "status": "province",
+     "label": [
+      32.0,
+      35.25
+     ]
+    },
+    {
+     "name": "Decapolis (free cities)",
+     "shapes": [
+      "decapolis"
+     ],
+     "color": "decapolis",
+     "status": "province",
+     "label": [
+      32.5,
+      35.95
+     ]
+    },
+    {
+     "name": "Syria",
+     "shapes": [
+      "syria"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      35.2,
+      37.3
+     ]
+    },
+    {
+     "name": "Nabataean kingdom",
+     "shapes": [
+      "nabataea"
+     ],
+     "color": "nabataea",
+     "status": "subject",
+     "label": [
+      30.4,
+      36.4
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "province",
+     "label": [
+      27.6,
+      31.2
+     ]
+    },
+    {
+     "name": "Cilicia",
+     "shapes": [
+      "cilicia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      36.95,
+      34.2
+     ]
+    },
+    {
+     "name": "Cyprus",
+     "shapes": [
+      "cyprus"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      35.05,
+      33.3
+     ]
+    },
+    {
+     "name": "Galatia",
+     "shapes": [
+      "galatia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      39.2,
+      32.8
+     ]
+    },
+    {
+     "name": "Lycia & Pamphylia",
+     "shapes": [
+      "lycia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      36.9,
+      30.2
+     ]
+    },
+    {
+     "name": "Asia",
+     "shapes": [
+      "asia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      38.7,
+      28.4
+     ]
+    },
+    {
+     "name": "Bithynia & Pontus",
+     "shapes": [
+      "bithynia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      41.1,
+      33.4
+     ]
+    },
+    {
+     "name": "Cappadocia",
+     "shapes": [
+      "cappadocia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      39.3,
+      36.9
+     ]
+    },
+    {
+     "name": "Macedonia",
+     "shapes": [
+      "macedonia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      41.2,
+      22.3
+     ]
+    },
+    {
+     "name": "Achaia",
+     "shapes": [
+      "achaia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      38.0,
+      22.2
+     ]
+    },
+    {
+     "name": "Crete",
+     "shapes": [
+      "crete"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      35.25,
+      24.9
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "j1",
+     "style": "past"
+    },
+    {
+     "route": "j2",
+     "style": "current"
+    },
+    {
+     "route": "j2_back",
+     "style": "other"
+    }
+   ],
+   "view": [
+    [
+     33.5,
+     21.0
+    ],
+    [
+     42.0,
+     37.0
+    ]
+   ]
+  },
+  {
+   "id": "n-j3",
+   "year": 52.8,
+   "tick": "3rd",
+   "title": "Paul's third journey",
+   "refs": [
+    "Acts 18:23-21:16"
+   ],
+   "summary": "Paul travels overland through Galatia to Ephesus, where he stays nearly three years. He then visits Macedonia and Greece, gathering the collection for Jerusalem, and sails back along the coast of Asia, saying farewell at Miletus, to Tyre, Caesarea and Jerusalem.",
+   "note": "From about AD 53 the lands north-east of the Sea of Galilee were given to King Agrippa II.",
+   "regions": [
+    {
+     "name": "Judea (Roman province)",
+     "shapes": [
+      "judea",
+      "galilee",
+      "perea"
+     ],
+     "color": "judea",
+     "status": "province",
+     "label": [
+      32.0,
+      35.25
+     ]
+    },
+    {
+     "name": "Agrippa II's kingdom",
+     "shapes": [
+      "philip"
+     ],
+     "color": "agrippa",
+     "status": "subject",
+     "label": [
+      33.1,
+      36.2
+     ]
+    },
+    {
+     "name": "Decapolis (free cities)",
+     "shapes": [
+      "decapolis"
+     ],
+     "color": "decapolis",
+     "status": "province",
+     "label": [
+      32.5,
+      35.95
+     ]
+    },
+    {
+     "name": "Syria",
+     "shapes": [
+      "syria"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      35.2,
+      37.3
+     ]
+    },
+    {
+     "name": "Nabataean kingdom",
+     "shapes": [
+      "nabataea"
+     ],
+     "color": "nabataea",
+     "status": "subject",
+     "label": [
+      30.4,
+      36.4
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "province",
+     "label": [
+      27.6,
+      31.2
+     ]
+    },
+    {
+     "name": "Cilicia",
+     "shapes": [
+      "cilicia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      36.95,
+      34.2
+     ]
+    },
+    {
+     "name": "Cyprus",
+     "shapes": [
+      "cyprus"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      35.05,
+      33.3
+     ]
+    },
+    {
+     "name": "Galatia",
+     "shapes": [
+      "galatia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      39.2,
+      32.8
+     ]
+    },
+    {
+     "name": "Lycia & Pamphylia",
+     "shapes": [
+      "lycia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      36.9,
+      30.2
+     ]
+    },
+    {
+     "name": "Asia",
+     "shapes": [
+      "asia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      38.7,
+      28.4
+     ]
+    },
+    {
+     "name": "Bithynia & Pontus",
+     "shapes": [
+      "bithynia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      41.1,
+      33.4
+     ]
+    },
+    {
+     "name": "Cappadocia",
+     "shapes": [
+      "cappadocia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      39.3,
+      36.9
+     ]
+    },
+    {
+     "name": "Macedonia",
+     "shapes": [
+      "macedonia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      41.2,
+      22.3
+     ]
+    },
+    {
+     "name": "Achaia",
+     "shapes": [
+      "achaia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      38.0,
+      22.2
+     ]
+    },
+    {
+     "name": "Crete",
+     "shapes": [
+      "crete"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      35.25,
+      24.9
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "j2",
+     "style": "past"
+    },
+    {
+     "route": "j3",
+     "style": "current"
+    },
+    {
+     "route": "j3_greece",
+     "style": "current"
+    },
+    {
+     "route": "j3_back",
+     "style": "current"
+    }
+   ],
+   "view": [
+    [
+     31.5,
+     21.0
+    ],
+    [
+     42.0,
+     37.0
+    ]
+   ]
+  },
+  {
+   "id": "n-rome",
+   "year": 59.7,
+   "tick": "Rome",
+   "title": "The voyage to Rome",
+   "refs": [
+    "Acts 27-28"
+   ],
+   "summary": "After two years in prison at Caesarea, Paul is sent to Rome under guard. The ship sails north of Cyprus to Myra, changes to a grain ship, and creeps along the south of Crete before a storm drives it west for two weeks to shipwreck on Malta. In spring Paul sails on by Syracuse to Puteoli and walks the Appian Way to Rome.",
+   "note": "The traditional site of the shipwreck is St Paul's Bay on Malta; the storm's route across the open sea is approximate.",
+   "regions": [
+    {
+     "name": "Judea (Roman province)",
+     "shapes": [
+      "judea",
+      "galilee",
+      "perea"
+     ],
+     "color": "judea",
+     "status": "province",
+     "label": [
+      32.0,
+      35.25
+     ]
+    },
+    {
+     "name": "Agrippa II's kingdom",
+     "shapes": [
+      "philip"
+     ],
+     "color": "agrippa",
+     "status": "subject",
+     "label": [
+      33.1,
+      36.2
+     ]
+    },
+    {
+     "name": "Decapolis (free cities)",
+     "shapes": [
+      "decapolis"
+     ],
+     "color": "decapolis",
+     "status": "province",
+     "label": [
+      32.5,
+      35.95
+     ]
+    },
+    {
+     "name": "Syria",
+     "shapes": [
+      "syria"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      35.2,
+      37.3
+     ]
+    },
+    {
+     "name": "Nabataean kingdom",
+     "shapes": [
+      "nabataea"
+     ],
+     "color": "nabataea",
+     "status": "subject",
+     "label": [
+      30.4,
+      36.4
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "province",
+     "label": [
+      27.6,
+      31.2
+     ]
+    },
+    {
+     "name": "Cilicia",
+     "shapes": [
+      "cilicia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      36.95,
+      34.2
+     ]
+    },
+    {
+     "name": "Cyprus",
+     "shapes": [
+      "cyprus"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      35.05,
+      33.3
+     ]
+    },
+    {
+     "name": "Galatia",
+     "shapes": [
+      "galatia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      39.2,
+      32.8
+     ]
+    },
+    {
+     "name": "Lycia & Pamphylia",
+     "shapes": [
+      "lycia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      36.9,
+      30.2
+     ]
+    },
+    {
+     "name": "Asia",
+     "shapes": [
+      "asia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      38.7,
+      28.4
+     ]
+    },
+    {
+     "name": "Bithynia & Pontus",
+     "shapes": [
+      "bithynia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      41.1,
+      33.4
+     ]
+    },
+    {
+     "name": "Cappadocia",
+     "shapes": [
+      "cappadocia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      39.3,
+      36.9
+     ]
+    },
+    {
+     "name": "Macedonia",
+     "shapes": [
+      "macedonia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      41.2,
+      22.3
+     ]
+    },
+    {
+     "name": "Achaia",
+     "shapes": [
+      "achaia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      38.0,
+      22.2
+     ]
+    },
+    {
+     "name": "Crete",
+     "shapes": [
+      "crete"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      35.25,
+      24.9
+     ]
+    },
+    {
+     "name": "Italy",
+     "shapes": [
+      "italy"
+     ],
+     "color": "rome",
+     "status": "empire",
+     "label": [
+      42.4,
+      13.6
+     ]
+    },
+    {
+     "name": "Sicily",
+     "shapes": [
+      "sicily"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      37.5,
+      14.2
+     ]
+    },
+    {
+     "name": "Malta (part of Sicily)",
+     "shapes": [
+      "malta"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      35.9,
+      14.4
+     ]
+    },
+    {
+     "name": "Dalmatia (Illyricum)",
+     "shapes": [
+      "dalmatia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      43.6,
+      17.4
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "j3_back",
+     "style": "past"
+    },
+    {
+     "route": "rome",
+     "style": "current"
+    }
+   ],
+   "view": [
+    [
+     33.0,
+     11.5
+    ],
+    [
+     42.5,
+     36.5
+    ]
+   ]
+  },
+  {
+   "id": "n-last",
+   "year": 62.5,
+   "tick": "Last",
+   "title": "Paul's last years",
+   "refs": [
+    "Romans 15:24",
+    "1 Timothy 1:3",
+    "Titus 1:5",
+    "Titus 3:12",
+    "2 Timothy 4:6-21"
+   ],
+   "summary": "Acts ends with Paul under house arrest in Rome. His letters to Timothy and Titus suggest that he was released and travelled again to Crete, Ephesus, Troas, Macedonia and Nicopolis, before a second imprisonment in Rome and his death under Nero.",
+   "note": "This route is reconstructed from the letters and is uncertain; the order of the places is not known. Some scholars think Paul was never released.",
+   "regions": [
+    {
+     "name": "Judea (Roman province)",
+     "shapes": [
+      "judea",
+      "galilee",
+      "perea"
+     ],
+     "color": "judea",
+     "status": "province",
+     "label": [
+      32.0,
+      35.25
+     ]
+    },
+    {
+     "name": "Agrippa II's kingdom",
+     "shapes": [
+      "philip"
+     ],
+     "color": "agrippa",
+     "status": "subject",
+     "label": [
+      33.1,
+      36.2
+     ]
+    },
+    {
+     "name": "Decapolis (free cities)",
+     "shapes": [
+      "decapolis"
+     ],
+     "color": "decapolis",
+     "status": "province",
+     "label": [
+      32.5,
+      35.95
+     ]
+    },
+    {
+     "name": "Syria",
+     "shapes": [
+      "syria"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      35.2,
+      37.3
+     ]
+    },
+    {
+     "name": "Nabataean kingdom",
+     "shapes": [
+      "nabataea"
+     ],
+     "color": "nabataea",
+     "status": "subject",
+     "label": [
+      30.4,
+      36.4
+     ]
+    },
+    {
+     "name": "Egypt",
+     "shapes": [
+      "egypt"
+     ],
+     "color": "egypt",
+     "status": "province",
+     "label": [
+      27.6,
+      31.2
+     ]
+    },
+    {
+     "name": "Cilicia",
+     "shapes": [
+      "cilicia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      36.95,
+      34.2
+     ]
+    },
+    {
+     "name": "Cyprus",
+     "shapes": [
+      "cyprus"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      35.05,
+      33.3
+     ]
+    },
+    {
+     "name": "Galatia",
+     "shapes": [
+      "galatia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      39.2,
+      32.8
+     ]
+    },
+    {
+     "name": "Lycia & Pamphylia",
+     "shapes": [
+      "lycia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      36.9,
+      30.2
+     ]
+    },
+    {
+     "name": "Asia",
+     "shapes": [
+      "asia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      38.7,
+      28.4
+     ]
+    },
+    {
+     "name": "Bithynia & Pontus",
+     "shapes": [
+      "bithynia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      41.1,
+      33.4
+     ]
+    },
+    {
+     "name": "Cappadocia",
+     "shapes": [
+      "cappadocia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      39.3,
+      36.9
+     ]
+    },
+    {
+     "name": "Macedonia",
+     "shapes": [
+      "macedonia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      41.2,
+      22.3
+     ]
+    },
+    {
+     "name": "Achaia",
+     "shapes": [
+      "achaia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      38.0,
+      22.2
+     ]
+    },
+    {
+     "name": "Crete",
+     "shapes": [
+      "crete"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      35.25,
+      24.9
+     ]
+    },
+    {
+     "name": "Italy",
+     "shapes": [
+      "italy"
+     ],
+     "color": "rome",
+     "status": "empire",
+     "label": [
+      42.4,
+      13.6
+     ]
+    },
+    {
+     "name": "Sicily",
+     "shapes": [
+      "sicily"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      37.5,
+      14.2
+     ]
+    },
+    {
+     "name": "Malta (part of Sicily)",
+     "shapes": [
+      "malta"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      35.9,
+      14.4
+     ]
+    },
+    {
+     "name": "Dalmatia (Illyricum)",
+     "shapes": [
+      "dalmatia"
+     ],
+     "color": "rome",
+     "status": "province",
+     "label": [
+      43.6,
+      17.4
+     ]
+    }
+   ],
+   "routes": [
+    {
+     "route": "rome",
+     "style": "past"
+    },
+    {
+     "route": "later",
+     "style": "other"
+    }
+   ],
+   "view": [
+    [
+     34.5,
+     11.5
+    ],
+    [
+     44.5,
+     30.0
+    ]
+   ]
+  }
+ ]
+}

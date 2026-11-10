@@ -785,7 +785,7 @@
     "text": "Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit."
    },
    "christ": "Jesus is the Messiah, the son of David and son of Abraham (1:1), Immanuel, God with us (1:23).",
-   "atlas": "family-tree.html#jesus",
+   "atlas": "jesus-and-paul.html#event:w-matthew",
    "n": 40
   },
   {
@@ -803,7 +803,8 @@
     "text": "For even the Son of Man came not to be served but to serve, and to give his life as a ransom for many."
    },
    "christ": "The centurion's words at the cross sum it up: \"Truly this man was the Son of God!\" (15:39).",
-   "n": 41
+   "n": 41,
+   "atlas": "jesus-and-paul.html#event:w-mark"
   },
   {
    "id": "luke",
@@ -820,7 +821,7 @@
     "text": "For the Son of Man came to seek and to save the lost."
    },
    "christ": "Luke traces Jesus' genealogy back to Adam (3:38), showing him as the Saviour of all humanity.",
-   "atlas": "family-tree.html#jesus",
+   "atlas": "jesus-and-paul.html#event:w-luke",
    "n": 42
   },
   {
@@ -838,7 +839,8 @@
     "text": "but these are written so that you may believe that Jesus is the Christ, the Son of God, and that by believing you may have life in his name."
    },
    "christ": "\"In the beginning was the Word, and the Word was with God, and the Word was God\" (1:1).",
-   "n": 43
+   "n": 43,
+   "atlas": "jesus-and-paul.html#leader:john-z"
   },
   {
    "id": "acts",
@@ -856,7 +858,8 @@
    },
    "christ": "The risen and ascended Christ continues his work by his Spirit through his church (1:1).",
    "note": "It ends with Paul under house arrest in Rome (about AD 62), probably because that is when it was written.",
-   "n": 44
+   "n": 44,
+   "atlas": "jesus-and-paul.html#event:w-acts"
   },
   {
    "id": "romans",
@@ -873,7 +876,8 @@
     "text": "For I am not ashamed of the gospel, for it is the power of God for salvation to everyone who believes, to the Jew first and also to the Greek."
    },
    "christ": "God put Christ forward as a propitiation by his blood, to be received by faith (3:25).",
-   "n": 45
+   "n": 45,
+   "atlas": "jesus-and-paul.html#event:w-romans"
   },
   {
    "id": "1-corinthians",
@@ -890,7 +894,8 @@
     "text": "So now faith, hope, and love abide, these three; but the greatest of these is love."
    },
    "christ": "Christ died for our sins, was raised on the third day, and is the firstfruits of the resurrection (15:3-4, 20).",
-   "n": 46
+   "n": 46,
+   "atlas": "jesus-and-paul.html#event:w-1-corinthians"
   },
   {
    "id": "2-corinthians",
@@ -907,7 +912,8 @@
     "text": "Therefore, if anyone is in Christ, he is a new creation. The old has passed away; behold, the new has come."
    },
    "christ": "\"For our sake he made him to be sin who knew no sin, so that in him we might become the righteousness of God\" (5:21).",
-   "n": 47
+   "n": 47,
+   "atlas": "jesus-and-paul.html#event:w-2-corinthians"
   },
   {
    "id": "galatians",
@@ -925,7 +931,8 @@
    },
    "christ": "Christ redeemed us from the curse of the law by becoming a curse for us (3:13).",
    "note": "Evangelical scholars differ on whether it was written before the Jerusalem council (about AD 48) or later (about AD 53-55).",
-   "n": 48
+   "n": 48,
+   "atlas": "jesus-and-paul.html#event:w-galatians"
   },
   {
    "id": "ephesians",
@@ -942,7 +949,8 @@
     "text": "For by grace you have been saved through faith. And this is not your own doing; it is the gift of God, not a result of works, so that no one may boast."
    },
    "christ": "God's plan is to unite all things in Christ (1:10), the head of the church.",
-   "n": 49
+   "n": 49,
+   "atlas": "jesus-and-paul.html#event:w-ephesians"
   },
   {
    "id": "philippians",
@@ -959,7 +967,8 @@
     "text": "Rejoice in the Lord always; again I will say, rejoice."
    },
    "christ": "Christ, though in the form of God, humbled himself to death on a cross, and God has highly exalted him (2:5-11).",
-   "n": 50
+   "n": 50,
+   "atlas": "jesus-and-paul.html#event:w-philippians"
   },
   {
    "id": "colossians",
@@ -976,7 +985,8 @@
     "text": "He is the image of the invisible God, the firstborn of all creation."
    },
    "christ": "In him the whole fullness of deity dwells bodily (2:9).",
-   "n": 51
+   "n": 51,
+   "atlas": "jesus-and-paul.html#event:w-colossians"
   },
   {
    "id": "1-thessalonians",
@@ -993,7 +1003,8 @@
     "text": "Rejoice always, pray without ceasing, give thanks in all circumstances; for this is the will of God in Christ Jesus for you."
    },
    "christ": "Jesus died and rose again, and will come again for his people (4:14-17).",
-   "n": 52
+   "n": 52,
+   "atlas": "jesus-and-paul.html#event:w-1-thessalonians"
   },
   {
    "id": "2-thessalonians",
@@ -1010,7 +1021,8 @@
     "text": "But the Lord is faithful. He will establish you and guard you against the evil one."
    },
    "christ": "The Lord Jesus will be revealed from heaven and will defeat the lawless one by the breath of his mouth (1:7; 2:8).",
-   "n": 53
+   "n": 53,
+   "atlas": "jesus-and-paul.html#event:w-2-thessalonians"
   },
   {
    "id": "1-timothy",
@@ -1028,7 +1040,8 @@
    },
    "christ": "There is one mediator between God and men, the man Christ Jesus (2:5).",
    "note": "Many critical scholars doubt that Paul wrote the letters to Timothy and Titus; evangelical scholars hold that he did, as the letters say.",
-   "n": 54
+   "n": 54,
+   "atlas": "jesus-and-paul.html#event:w-1-timothy"
   },
   {
    "id": "2-timothy",
@@ -1045,7 +1058,8 @@
     "text": "All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness, that the man of God may be complete, equipped for every good work."
    },
    "christ": "Christ Jesus abolished death and brought life and immortality to light through the gospel (1:10).",
-   "n": 55
+   "n": 55,
+   "atlas": "jesus-and-paul.html#event:w-2-timothy"
   },
   {
    "id": "titus",
@@ -1062,7 +1076,8 @@
     "text": "For the grace of God has appeared, bringing salvation for all people"
    },
    "christ": "We wait for the appearing of the glory of our great God and Saviour Jesus Christ (2:13).",
-   "n": 56
+   "n": 56,
+   "atlas": "jesus-and-paul.html#event:w-titus"
   },
   {
    "id": "philemon",
@@ -1079,7 +1094,8 @@
     "text": "no longer as a bondservant but more than a bondservant, as a beloved brother"
    },
    "christ": "As Paul offers to pay Onesimus' debt, Christ paid our debt to reconcile us to God.",
-   "n": 57
+   "n": 57,
+   "atlas": "jesus-and-paul.html#event:w-philemon"
   },
   {
    "id": "hebrews",
@@ -1097,7 +1113,8 @@
    },
    "christ": "Christ is the great high priest and the final sacrifice, \"the founder and perfecter of our faith\" (12:2).",
    "note": "The author is not named. Suggestions include Paul, Barnabas, Apollos and Luke. It was probably written before the temple was destroyed in AD 70.",
-   "n": 58
+   "n": 58,
+   "atlas": "jesus-and-paul.html#event:w-hebrews"
   },
   {
    "id": "james",
@@ -1114,7 +1131,8 @@
     "text": "But be doers of the word, and not hearers only, deceiving yourselves."
    },
    "christ": "James, once an unbeliever, calls himself \"a servant of God and of the Lord Jesus Christ\" (1:1) and echoes Jesus' Sermon on the Mount.",
-   "n": 59
+   "n": 59,
+   "atlas": "jesus-and-paul.html#event:w-james"
   },
   {
    "id": "1-peter",
@@ -1131,7 +1149,8 @@
     "text": "But you are a chosen race, a royal priesthood, a holy nation, a people for his own possession"
    },
    "christ": "Christ suffered once for sins, the righteous for the unrighteous, to bring us to God (3:18).",
-   "n": 60
+   "n": 60,
+   "atlas": "jesus-and-paul.html#event:w-1-peter"
   },
   {
    "id": "2-peter",
@@ -1149,7 +1168,8 @@
    },
    "christ": "Peter was an eyewitness of Christ's majesty at the transfiguration (1:16-18).",
    "note": "Many critical scholars doubt Peter wrote it; evangelical scholars generally accept the letter's own claim.",
-   "n": 61
+   "n": 61,
+   "atlas": "jesus-and-paul.html#event:w-2-peter"
   },
   {
    "id": "1-john",
@@ -1166,7 +1186,8 @@
     "text": "Anyone who does not love does not know God, because God is love."
    },
    "christ": "Jesus Christ the righteous is our advocate with the Father and the propitiation for our sins (2:1-2).",
-   "n": 62
+   "n": 62,
+   "atlas": "jesus-and-paul.html#leader:john-z"
   },
   {
    "id": "2-john",
@@ -1183,7 +1204,8 @@
     "text": "And this is love, that we walk according to his commandments"
    },
    "christ": "Whoever abides in the teaching of Christ has both the Father and the Son (verse 9).",
-   "n": 63
+   "n": 63,
+   "atlas": "jesus-and-paul.html#leader:john-z"
   },
   {
    "id": "3-john",
@@ -1200,7 +1222,8 @@
     "text": "I have no greater joy than to hear that my children are walking in the truth."
    },
    "christ": "The missionaries went out \"for the sake of the name\" (verse 7), the name of Jesus.",
-   "n": 64
+   "n": 64,
+   "atlas": "jesus-and-paul.html#leader:john-z"
   },
   {
    "id": "jude",
@@ -1217,7 +1240,8 @@
     "text": "Now to him who is able to keep you from stumbling and to present you blameless before the presence of his glory with great joy"
    },
    "christ": "Our only Master and Lord, Jesus Christ (verse 4), keeps his people to the end.",
-   "n": 65
+   "n": 65,
+   "atlas": "jesus-and-paul.html#event:w-jude"
   },
   {
    "id": "revelation",
@@ -1235,7 +1259,8 @@
    },
    "christ": "Jesus is the Alpha and the Omega, the Lamb who was slain and the King of kings (1:8; 5:6-12; 19:16).",
    "note": "Evangelicals hold several views on how its visions relate to history and the future (preterist, historicist, futurist and idealist). Some date it to the 60s AD.",
-   "n": 66
+   "n": 66,
+   "atlas": "jesus-and-paul.html#leader:john-z"
   }
  ]
 }

@@ -251,3 +251,5 @@
 }
 .bs-pages a.bs-home { border-color: transparent; color: var(--bs-red); font-weight: 600; padding-left: 4px; }
 .bs-pages a.bs-home:hover { text-decoration: underline; }
+.bs-app .bs-link { display: inline-block; font-weight: 600; color: var(--bs-red); text-decoration: none; }
+.bs-app .bs-link:hover { text-decoration: underline; }

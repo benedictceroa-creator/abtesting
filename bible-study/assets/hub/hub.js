@@ -24,11 +24,11 @@
     { ref: 'Exodus 3:14', text: 'God said to Moses, “I AM WHO I AM.”', link: 'patriarchs.html#event:e-bush' },
     { ref: 'Micah 6:8', text: 'He has told you, O man, what is good; and what does the LORD require of you but to do justice, and to love kindness, and to walk humbly with your God?', link: 'kings.html#prophet:micah' },
     { ref: 'Joshua 24:15', text: 'But as for me and my house, we will serve the LORD.', link: 'exodus.html#event:e-joshua-farewell' },
-    { ref: '2 Timothy 3:16-17', text: 'All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness, that the man of God may be complete, equipped for every good work.' },
+    { ref: '2 Timothy 3:16-17', text: 'All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness, that the man of God may be complete, equipped for every good work.', link: 'jesus-and-paul.html#event:w-2-timothy' },
     { ref: 'Numbers 6:24-26', text: 'The LORD bless you and keep you; the LORD make his face to shine upon you and be gracious to you; the LORD lift up his countenance upon you and give you peace.', link: 'exodus.html#leader:aaron' },
     { ref: 'Jeremiah 29:11', text: 'For I know the plans I have for you, declares the LORD, plans for welfare and not for evil, to give you a future and a hope.', link: 'kings.html#prophet:jeremiah' },
     { ref: '2 Chronicles 7:14', text: 'If my people who are called by my name humble themselves, and pray and seek my face and turn from their wicked ways, then I will hear from heaven and will forgive their sin and heal their land.', link: 'judges.html#event:e-dedication' },
-    { ref: 'Romans 15:4', text: 'For whatever was written in former days was written for our instruction, that through endurance and through the encouragement of the Scriptures we might have hope.' },
+    { ref: 'Romans 15:4', text: 'For whatever was written in former days was written for our instruction, that through endurance and through the encouragement of the Scriptures we might have hope.', link: 'jesus-and-paul.html#event:w-romans' },
     { ref: 'Nehemiah 8:10', text: 'Do not be grieved, for the joy of the LORD is your strength.', link: 'kings.html#event:e-law-read' }
   ];
 

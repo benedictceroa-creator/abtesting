@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jesus &amp; the Early Church: Bible Timeline &amp; Atlas | Asha Books</title>
+  <meta name="description" content="Interactive Bible timeline and map of the life of Jesus, the early church in Acts and Paul's missionary journeys, from Bethlehem to Rome, with the rulers of the time, when each New Testament book was written, and Scripture references for every entry.">
+  <!-- Prototype: keep out of search results until the content has passed theological review -->
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="assets/bible-study.css">
+  <style>
+    body { margin: 0; padding: 24px 16px 48px; background: #fff; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  </style>
+</head>
+<body>
+  <div class="bs-app">
+    <nav class="bs-pages" aria-label="Bible study tools">
+      <a href="index.html" class="bs-home">&larr; All resources</a>
+      <a href="patriarchs.html">Abraham to the Exodus</a>
+      <a href="exodus.html">Exodus to the Promised Land</a>
+      <a href="judges.html">Judges to Solomon</a>
+      <a href="kings.html">Kings, Prophets &amp; the Return</a>
+      <a href="jesus-and-paul.html" aria-current="page">Jesus &amp; the Early Church</a>
+    </nav>
+    <header class="bs-head">
+      <p class="bs-eyebrow">Asha Books · Bible Study Tools</p>
+      <h1 class="bs-title">Jesus &amp; the Early Church: Bible Timeline &amp; Atlas</h1>
+      <p class="bs-lede">From the birth of Jesus in Bethlehem, through his ministry in Galilee, his death and resurrection in Jerusalem, and the coming of the Spirit, to the church spreading through Judea, Samaria and the Roman world on Paul's journeys, until the gospel reaches Rome. Every entry is tied to the Scripture that records it.</p>
+      <span class="bs-draft">Prototype · awaiting theological review</span>
+    </header>
+  </div>
+
+  <div data-bible-study
+       data-timeline="data/jesus-paul/timeline.json"
+       data-places="data/jesus-paul/places.json"
+       data-territories="data/jesus-paul/territories.json"
+       data-bible-version="ESV"
+       data-shop-url="https://ashabooks.com"></div>
+
+  <div class="bs-app">
+    <section class="bs-about">
+      <h2>Sources and method</h2>
+      <p>Every entry on this page lists the Scripture passages it is drawn from, and where Bible-believing scholars disagree, we say so.</p>
+      <ul>
+        <li><strong>The birth of Jesus.</strong> Matthew places it before the death of Herod the Great (Matthew 2:1, 19), which most scholars date to 4 BC, so Jesus was born about 6&ndash;4 BC. (Our calendar's AD 1 was miscalculated in the 6th century.)</li>
+        <li><strong>The ministry and the cross.</strong> Luke dates John's preaching to the fifteenth year of Tiberius (Luke 3:1), and John mentions three Passovers (John 2:13; 6:4; 11:55). This page dates the crucifixion to Friday 7 April AD 30. Many evangelical scholars prefer 3 April AD 33; on that view Jesus' ministry and the first years of the church move about three years later.</li>
+        <li><strong>Paul.</strong> The order comes from Acts and from Galatians 1&ndash;2. Two Roman dates fix it: Gallio was proconsul of Achaia in AD 51&ndash;52 (the Delphi inscription), and Festus replaced Felix in about AD 59. Paul's later travels and the dates of his and Peter's deaths rest on his later letters and early Christian writers, and are marked disputed.</li>
+        <li><strong>When the books were written</strong> follows the traditional view held by most evangelical scholars, as in the Bible Book Explorer. John's Gospel, letters and Revelation were written later, about AD 85&ndash;95.</li>
+        <li><strong>Evidence outside the Bible</strong> is noted where it bears on the text: the Roman historians Tacitus and Suetonius, the Jewish historian Josephus, and inscriptions naming Pilate, Gallio and others.</li>
+        <li><strong>Places and their confidence levels</strong> come from the <a href="https://www.openbible.info/geo/" target="_blank" rel="noopener">OpenBible.info Bible Geocoding Data</a> (CC BY 4.0).</li>
+        <li><strong>Maps.</strong> The Roman provinces and client kingdoms are simplified outlines. Most routes follow the roads and sea lanes found in standard Bible atlases; the Gospels and Acts name the places but rarely the roads.</li>
+        <li><strong>Base map</strong> from the <a href="https://cawm.lib.uiowa.edu/" target="_blank" rel="noopener">Consortium of Ancient World Mappers</a>.</li>
+      </ul>
+      <p>Scripture links open on Bible Gateway (ESV).</p>
+    </section>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="assets/bible-study.js"></script>
+</body>
+</html>

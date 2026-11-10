@@ -1,0 +1,1173 @@
+[
+ {
+  "id": "amphipolis",
+  "name": "Amphipolis",
+  "lat": 40.82016,
+  "lon": 23.84721,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Amphipolis",
+  "alternatives": [],
+  "verseCount": 1,
+  "source": "https://www.openbible.info/geo/ancient/a4bdea7/amphipolis"
+ },
+ {
+  "id": "antioch-1",
+  "name": "Antioch (Syria)",
+  "lat": 36.22669,
+  "lon": 36.17174,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Antioch on the Orontes",
+  "alternatives": [],
+  "verseCount": 18,
+  "source": "https://www.openbible.info/geo/ancient/ae41ab4/antioch-1"
+ },
+ {
+  "id": "antioch-2",
+  "name": "Antioch in Pisidia",
+  "lat": 38.30611,
+  "lon": 31.18917,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Antioch in Pisidia",
+  "alternatives": [],
+  "verseCount": 4,
+  "source": "https://www.openbible.info/geo/ancient/a6c704a/antioch-2"
+ },
+ {
+  "id": "apollonia",
+  "name": "Apollonia",
+  "lat": 40.6237,
+  "lon": 23.46968,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Apollonia",
+  "alternatives": [],
+  "verseCount": 1,
+  "source": "https://www.openbible.info/geo/ancient/ab20df9/apollonia"
+ },
+ {
+  "id": "arabia-2",
+  "name": "Arabia (Nabataea)",
+  "lat": 30.07,
+  "lon": 35.35,
+  "types": [
+   "region"
+  ],
+  "confidence": 1000,
+  "site": "Arabia Petraea",
+  "alternatives": [],
+  "verseCount": 2,
+  "source": "https://www.openbible.info/geo/ancient/a0f4ea8/arabia-2"
+ },
+ {
+  "id": "assos",
+  "name": "Assos",
+  "lat": 39.49056,
+  "lon": 26.33667,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Assos",
+  "alternatives": [],
+  "verseCount": 2,
+  "source": "https://www.openbible.info/geo/ancient/a0a2ca7/assos"
+ },
+ {
+  "id": "athens",
+  "name": "Athens",
+  "lat": 37.97185,
+  "lon": 23.72674,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Athens",
+  "alternatives": [],
+  "verseCount": 6,
+  "source": "https://www.openbible.info/geo/ancient/a1fe6e7/athens"
+ },
+ {
+  "id": "attalia",
+  "name": "Attalia",
+  "lat": 36.88127,
+  "lon": 30.70361,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Antalya",
+  "alternatives": [],
+  "verseCount": 2,
+  "source": "https://www.openbible.info/geo/ancient/ac744c1/attalia"
+ },
+ {
+  "id": "berea",
+  "name": "Berea",
+  "lat": 40.51833,
+  "lon": 22.2,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Veria",
+  "alternatives": [],
+  "verseCount": 6,
+  "source": "https://www.openbible.info/geo/ancient/a62fe31/berea"
+ },
+ {
+  "id": "bethany-1",
+  "name": "Bethany (near Jerusalem)",
+  "lat": 31.77166,
+  "lon": 35.2559,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 889,
+  "site": "Al Eizariya",
+  "alternatives": [],
+  "verseCount": 12,
+  "source": "https://www.openbible.info/geo/ancient/a4f35bc/bethany-1"
+ },
+ {
+  "id": "bethany-2",
+  "name": "Bethany beyond the Jordan",
+  "lat": 31.83711,
+  "lon": 35.5503,
+  "types": [
+   "ford",
+   "region",
+   "settlement",
+   "special",
+   "wadi"
+  ],
+  "confidence": 320,
+  "site": "Al Maghtas",
+  "alternatives": [
+   {
+    "site": "another name for Batanea",
+    "confidence": 192,
+    "lat": 32.85203,
+    "lon": 36.19934
+   },
+   {
+    "site": "another name for Bethany 1",
+    "confidence": 75,
+    "lat": 31.77166,
+    "lon": 35.2559
+   }
+  ],
+  "verseCount": 1,
+  "source": "https://www.openbible.info/geo/ancient/a6e060d/bethany-2"
+ },
+ {
+  "id": "bethlehem-1",
+  "name": "Bethlehem",
+  "lat": 31.70431,
+  "lon": 35.20764,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Bethlehem",
+  "alternatives": [],
+  "verseCount": 52,
+  "source": "https://www.openbible.info/geo/ancient/a112427/bethlehem-1"
+ },
+ {
+  "id": "bethsaida-1",
+  "name": "Bethsaida",
+  "lat": 32.91038,
+  "lon": 35.63096,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 466,
+  "site": "At Tell",
+  "alternatives": [
+   {
+    "site": "Al Araj",
+    "confidence": 172,
+    "lat": 32.89353,
+    "lon": 35.619
+   },
+   {
+    "site": "El Mess’adiyye",
+    "confidence": 53,
+    "lat": 32.88422,
+    "lon": 35.63077
+   }
+  ],
+  "verseCount": 4,
+  "source": "https://www.openbible.info/geo/ancient/a91b732/bethsaida-1"
+ },
+ {
+  "id": "caesarea",
+  "name": "Caesarea (Maritima)",
+  "lat": 32.5,
+  "lon": 34.89167,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Caesarea Maritima",
+  "alternatives": [],
+  "verseCount": 18,
+  "source": "https://www.openbible.info/geo/ancient/a58735e/caesarea"
+ },
+ {
+  "id": "caesarea-philippi",
+  "name": "Caesarea Philippi",
+  "lat": 33.24611,
+  "lon": 35.69333,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Banias",
+  "alternatives": [],
+  "verseCount": 2,
+  "source": "https://www.openbible.info/geo/ancient/ab7bf48/caesarea-philippi"
+ },
+ {
+  "id": "cana",
+  "name": "Cana",
+  "lat": 32.8222,
+  "lon": 35.30269,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 690,
+  "site": "Horbat Qana",
+  "alternatives": [
+   {
+    "site": "Kefr Kenna",
+    "confidence": 80,
+    "lat": 32.74647,
+    "lon": 35.33921
+   }
+  ],
+  "verseCount": 4,
+  "source": "https://www.openbible.info/geo/ancient/a031bda/cana"
+ },
+ {
+  "id": "capernaum",
+  "name": "Capernaum",
+  "lat": 32.88111,
+  "lon": 35.575,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 842,
+  "site": "Tell Hum",
+  "alternatives": [],
+  "verseCount": 18,
+  "source": "https://www.openbible.info/geo/ancient/af2161c/capernaum"
+ },
+ {
+  "id": "cenchreae",
+  "name": "Cenchreae",
+  "lat": 37.88434,
+  "lon": 22.99682,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Kechries",
+  "alternatives": [],
+  "verseCount": 2,
+  "source": "https://www.openbible.info/geo/ancient/aa31dd3/cenchreae"
+ },
+ {
+  "id": "chorazin",
+  "name": "Chorazin",
+  "lat": 32.91139,
+  "lon": 35.56389,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 786,
+  "site": "Khirbet Karraza",
+  "alternatives": [],
+  "verseCount": 2,
+  "source": "https://www.openbible.info/geo/ancient/a593a48/chorazin"
+ },
+ {
+  "id": "cnidus",
+  "name": "Cnidus",
+  "lat": 36.68583,
+  "lon": 27.375,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Cnidus",
+  "alternatives": [],
+  "verseCount": 1,
+  "source": "https://www.openbible.info/geo/ancient/ab793ce/cnidus"
+ },
+ {
+  "id": "colossae",
+  "name": "Colossae",
+  "lat": 37.78664,
+  "lon": 29.25994,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Colossae",
+  "alternatives": [],
+  "verseCount": 1,
+  "source": "https://www.openbible.info/geo/ancient/a4e5a69/colossae"
+ },
+ {
+  "id": "corinth",
+  "name": "Corinth",
+  "lat": 37.90579,
+  "lon": 22.87874,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Corinth",
+  "alternatives": [],
+  "verseCount": 11,
+  "source": "https://www.openbible.info/geo/ancient/a6f437a/corinth"
+ },
+ {
+  "id": "cos",
+  "name": "Cos",
+  "lat": 36.81528,
+  "lon": 27.11028,
+  "types": [
+   "island"
+  ],
+  "confidence": 1000,
+  "site": "Kos",
+  "alternatives": [],
+  "verseCount": 1,
+  "source": "https://www.openbible.info/geo/ancient/a398e5d/cos"
+ },
+ {
+  "id": "damascus",
+  "name": "Damascus",
+  "lat": 33.51111,
+  "lon": 36.30639,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Damascus",
+  "alternatives": [],
+  "verseCount": 58,
+  "source": "https://www.openbible.info/geo/ancient/a69c1d4/damascus"
+ },
+ {
+  "id": "derbe",
+  "name": "Derbe",
+  "lat": 37.34857,
+  "lon": 33.36145,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 860,
+  "site": "Kerti Hüyük",
+  "alternatives": [],
+  "verseCount": 5,
+  "source": "https://www.openbible.info/geo/ancient/aa401a9/derbe"
+ },
+ {
+  "id": "egypt",
+  "name": "Egypt",
+  "lat": 30.12944,
+  "lon": 31.3075,
+  "types": [
+   "region"
+  ],
+  "confidence": 1000,
+  "site": "Egypt",
+  "alternatives": [],
+  "verseCount": 658,
+  "source": "https://www.openbible.info/geo/ancient/af301ca/egypt"
+ },
+ {
+  "id": "emmaus",
+  "name": "Emmaus",
+  "lat": 31.79289,
+  "lon": 35.16419,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 338,
+  "site": "Qalunya",
+  "alternatives": [
+   {
+    "site": "Emmaus Nicopolis",
+    "confidence": 240,
+    "lat": 31.8393,
+    "lon": 34.98946
+   },
+   {
+    "site": "El Qubeibeh",
+    "confidence": 60,
+    "lat": 31.83993,
+    "lon": 35.13685
+   }
+  ],
+  "verseCount": 3,
+  "source": "https://www.openbible.info/geo/ancient/ae7274b/emmaus"
+ },
+ {
+  "id": "ephesus",
+  "name": "Ephesus",
+  "lat": 37.93912,
+  "lon": 27.3407,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Ephesus",
+  "alternatives": [],
+  "verseCount": 20,
+  "source": "https://www.openbible.info/geo/ancient/a5feb15/ephesus"
+ },
+ {
+  "id": "ephraim-2",
+  "name": "Ephraim",
+  "lat": 31.95444,
+  "lon": 35.30028,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 936,
+  "site": "another name for Ephraim 1",
+  "alternatives": [
+   {
+    "site": "Ein Samia",
+    "confidence": 143,
+    "lat": 31.9878,
+    "lon": 35.3332
+   }
+  ],
+  "verseCount": 1,
+  "source": "https://www.openbible.info/geo/ancient/ad14500/ephraim-2"
+ },
+ {
+  "id": "fair-havens",
+  "name": "Fair Havens (Crete)",
+  "lat": 34.92969,
+  "lon": 24.80031,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Kaloi Limenes",
+  "alternatives": [],
+  "verseCount": 2,
+  "source": "https://www.openbible.info/geo/ancient/aae626a/fair-havens"
+ },
+ {
+  "id": "forum-of-appius",
+  "name": "Forum of Appius",
+  "lat": 41.46639,
+  "lon": 12.9975,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Forum Appii",
+  "alternatives": [],
+  "verseCount": 1,
+  "source": "https://www.openbible.info/geo/ancient/a121d5e/forum-of-appius"
+ },
+ {
+  "id": "gaza",
+  "name": "Gaza",
+  "lat": 31.504,
+  "lon": 34.4644,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Tell Harube",
+  "alternatives": [],
+  "verseCount": 22,
+  "source": "https://www.openbible.info/geo/ancient/aa8edd2/gaza"
+ },
+ {
+  "id": "gerasa",
+  "name": "Gerasa (country of the Gerasenes)",
+  "lat": 32.27228,
+  "lon": 35.8914,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Jerash",
+  "alternatives": [],
+  "verseCount": 3,
+  "source": "https://www.openbible.info/geo/ancient/ada6b64/gerasa"
+ },
+ {
+  "id": "gethsemane",
+  "name": "Gethsemane",
+  "lat": 31.77942,
+  "lon": 35.23942,
+  "types": [
+   "garden"
+  ],
+  "confidence": 1000,
+  "site": "Gethsemane",
+  "alternatives": [],
+  "verseCount": 2,
+  "source": "https://www.openbible.info/geo/ancient/a42418f/gethsemane"
+ },
+ {
+  "id": "golgotha",
+  "name": "Golgotha",
+  "lat": 31.77844,
+  "lon": 35.22975,
+  "types": [
+   "hill"
+  ],
+  "confidence": 426,
+  "site": "Church of the Holy Sepulchre",
+  "alternatives": [],
+  "verseCount": 4,
+  "source": "https://www.openbible.info/geo/ancient/a631d35/golgotha"
+ },
+ {
+  "id": "iconium",
+  "name": "Iconium",
+  "lat": 37.8722,
+  "lon": 32.49233,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Konya",
+  "alternatives": [],
+  "verseCount": 6,
+  "source": "https://www.openbible.info/geo/ancient/ae425aa/iconium"
+ },
+ {
+  "id": "jericho-2",
+  "name": "Jericho",
+  "lat": 31.85187,
+  "lon": 35.43624,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Tell el Alayiq",
+  "alternatives": [],
+  "verseCount": 5,
+  "source": "https://www.openbible.info/geo/ancient/aaf03fa/jericho-2"
+ },
+ {
+  "id": "jerusalem",
+  "name": "Jerusalem",
+  "lat": 31.77667,
+  "lon": 35.23417,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Jerusalem",
+  "alternatives": [],
+  "verseCount": 955,
+  "source": "https://www.openbible.info/geo/ancient/a15257a/jerusalem"
+ },
+ {
+  "id": "joppa",
+  "name": "Joppa",
+  "lat": 32.05448,
+  "lon": 34.75304,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Jaffa",
+  "alternatives": [],
+  "verseCount": 14,
+  "source": "https://www.openbible.info/geo/ancient/ae023a9/joppa"
+ },
+ {
+  "id": "jordan",
+  "name": "Jordan River",
+  "lat": 31.76139,
+  "lon": 35.55833,
+  "types": [
+   "river"
+  ],
+  "confidence": 1000,
+  "site": "Jordan River",
+  "alternatives": [],
+  "verseCount": 202,
+  "source": "https://www.openbible.info/geo/ancient/ae686c9/jordan"
+ },
+ {
+  "id": "laodicea",
+  "name": "Laodicea",
+  "lat": 37.83583,
+  "lon": 29.1075,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Laodicea on the Lycus",
+  "alternatives": [],
+  "verseCount": 6,
+  "source": "https://www.openbible.info/geo/ancient/a83fb1e/laodicea"
+ },
+ {
+  "id": "lod",
+  "name": "Lydda",
+  "lat": 31.95,
+  "lon": 34.9,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Lod",
+  "alternatives": [],
+  "verseCount": 7,
+  "source": "https://www.openbible.info/geo/ancient/a2c5cc7/lod"
+ },
+ {
+  "id": "lystra",
+  "name": "Lystra",
+  "lat": 37.6017,
+  "lon": 32.3384,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Tel Lystra",
+  "alternatives": [],
+  "verseCount": 6,
+  "source": "https://www.openbible.info/geo/ancient/af0719d/lystra"
+ },
+ {
+  "id": "magadan",
+  "name": "Magdala (Magadan)",
+  "lat": 32.82707,
+  "lon": 35.51355,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 616,
+  "site": "another name for Magdala",
+  "alternatives": [
+   {
+    "site": "along the eastern side of the Sea of Galilee",
+    "confidence": 59,
+    "lat": 32.86044,
+    "lon": 35.64637
+   }
+  ],
+  "verseCount": 1,
+  "source": "https://www.openbible.info/geo/ancient/ad14067/magadan"
+ },
+ {
+  "id": "malta",
+  "name": "Malta",
+  "lat": 35.93346,
+  "lon": 14.41173,
+  "types": [
+   "island"
+  ],
+  "confidence": 1000,
+  "site": "Malta",
+  "alternatives": [],
+  "verseCount": 1,
+  "source": "https://www.openbible.info/geo/ancient/a57835d/malta"
+ },
+ {
+  "id": "miletus",
+  "name": "Miletus",
+  "lat": 37.53111,
+  "lon": 27.27556,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Miletus",
+  "alternatives": [],
+  "verseCount": 3,
+  "source": "https://www.openbible.info/geo/ancient/a55027d/miletus"
+ },
+ {
+  "id": "mitylene",
+  "name": "Mitylene",
+  "lat": 39.11048,
+  "lon": 26.54705,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "ancient theater at Mitylene",
+  "alternatives": [],
+  "verseCount": 1,
+  "source": "https://www.openbible.info/geo/ancient/a33910d/mitylene"
+ },
+ {
+  "id": "mount-hermon",
+  "name": "Mount Hermon",
+  "lat": 33.4,
+  "lon": 35.85,
+  "types": [
+   "mountain"
+  ],
+  "confidence": 1000,
+  "site": "Mount Hermon",
+  "alternatives": [],
+  "verseCount": 16,
+  "source": "https://www.openbible.info/geo/ancient/a341fe8/mount-hermon"
+ },
+ {
+  "id": "mount-tabor",
+  "name": "Mount Tabor",
+  "lat": 32.68625,
+  "lon": 35.39292,
+  "types": [
+   "mountain"
+  ],
+  "confidence": 1000,
+  "site": "Jebel et Tur",
+  "alternatives": [],
+  "verseCount": 9,
+  "source": "https://www.openbible.info/geo/ancient/acd63ee/mount-tabor"
+ },
+ {
+  "id": "mount-of-olives",
+  "name": "Mount of Olives",
+  "lat": 31.77795,
+  "lon": 35.24569,
+  "types": [
+   "hill"
+  ],
+  "confidence": 1000,
+  "site": "Mount of Olives",
+  "alternatives": [],
+  "verseCount": 18,
+  "source": "https://www.openbible.info/geo/ancient/ac2c4c5/mount-of-olives"
+ },
+ {
+  "id": "myra",
+  "name": "Myra",
+  "lat": 36.25917,
+  "lon": 29.98528,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Myra",
+  "alternatives": [],
+  "verseCount": 1,
+  "source": "https://www.openbible.info/geo/ancient/aa4b3e2/myra"
+ },
+ {
+  "id": "nain",
+  "name": "Nain",
+  "lat": 32.63069,
+  "lon": 35.35014,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Nein",
+  "alternatives": [],
+  "verseCount": 1,
+  "source": "https://www.openbible.info/geo/ancient/aee679c/nain"
+ },
+ {
+  "id": "nazareth",
+  "name": "Nazareth",
+  "lat": 32.70214,
+  "lon": 35.29769,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Nazareth",
+  "alternatives": [],
+  "verseCount": 32,
+  "source": "https://www.openbible.info/geo/ancient/af5884f/nazareth"
+ },
+ {
+  "id": "neapolis",
+  "name": "Neapolis",
+  "lat": 40.935,
+  "lon": 24.415,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Kavala",
+  "alternatives": [],
+  "verseCount": 1,
+  "source": "https://www.openbible.info/geo/ancient/a6a7150/neapolis"
+ },
+ {
+  "id": "nicopolis",
+  "name": "Nicopolis",
+  "lat": 39.02349,
+  "lon": 20.73736,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Nicopolis",
+  "alternatives": [],
+  "verseCount": 1,
+  "source": "https://www.openbible.info/geo/ancient/af43cde/nicopolis"
+ },
+ {
+  "id": "paphos",
+  "name": "Paphos",
+  "lat": 34.75567,
+  "lon": 32.40417,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "New Paphos",
+  "alternatives": [],
+  "verseCount": 2,
+  "source": "https://www.openbible.info/geo/ancient/a314765/paphos"
+ },
+ {
+  "id": "patara",
+  "name": "Patara",
+  "lat": 36.26028,
+  "lon": 29.31417,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Patara",
+  "alternatives": [],
+  "verseCount": 1,
+  "source": "https://www.openbible.info/geo/ancient/ade301b/patara"
+ },
+ {
+  "id": "patmos",
+  "name": "Patmos",
+  "lat": 37.325,
+  "lon": 26.54167,
+  "types": [
+   "island"
+  ],
+  "confidence": 1000,
+  "site": "Patmos",
+  "alternatives": [],
+  "verseCount": 1,
+  "source": "https://www.openbible.info/geo/ancient/a8f60f3/patmos"
+ },
+ {
+  "id": "perga",
+  "name": "Perga",
+  "lat": 36.96035,
+  "lon": 30.85369,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Perga",
+  "alternatives": [],
+  "verseCount": 3,
+  "source": "https://www.openbible.info/geo/ancient/aff04b8/perga"
+ },
+ {
+  "id": "philippi",
+  "name": "Philippi",
+  "lat": 41.01207,
+  "lon": 24.28458,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Philippi",
+  "alternatives": [],
+  "verseCount": 4,
+  "source": "https://www.openbible.info/geo/ancient/a49e1d0/philippi"
+ },
+ {
+  "id": "ptolemais",
+  "name": "Ptolemais",
+  "lat": 32.9214,
+  "lon": 35.0692,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Acre",
+  "alternatives": [],
+  "verseCount": 1,
+  "source": "https://www.openbible.info/geo/ancient/abc2af0/ptolemais"
+ },
+ {
+  "id": "puteoli",
+  "name": "Puteoli",
+  "lat": 40.82611,
+  "lon": 14.12056,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Pozzuoli",
+  "alternatives": [],
+  "verseCount": 1,
+  "source": "https://www.openbible.info/geo/ancient/a4488e9/puteoli"
+ },
+ {
+  "id": "rhegium",
+  "name": "Rhegium",
+  "lat": 38.1088,
+  "lon": 15.64412,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Reggio Calabria",
+  "alternatives": [],
+  "verseCount": 1,
+  "source": "https://www.openbible.info/geo/ancient/a63bb26/rhegium"
+ },
+ {
+  "id": "rhodes-1",
+  "name": "Rhodes",
+  "lat": 36.4402,
+  "lon": 28.2109,
+  "types": [
+   "island",
+   "settlement"
+  ],
+  "confidence": 471,
+  "site": "Rhodes",
+  "alternatives": [
+   {
+    "site": "Acropolis of Rhodes",
+    "confidence": 464,
+    "lat": 36.4402,
+    "lon": 28.2109
+   }
+  ],
+  "verseCount": 1,
+  "source": "https://www.openbible.info/geo/ancient/a4218ee/rhodes-1"
+ },
+ {
+  "id": "rome",
+  "name": "Rome",
+  "lat": 41.8922,
+  "lon": 12.4852,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Rome",
+  "alternatives": [],
+  "verseCount": 15,
+  "source": "https://www.openbible.info/geo/ancient/afc8e7a/rome"
+ },
+ {
+  "id": "salamis",
+  "name": "Salamis",
+  "lat": 35.18494,
+  "lon": 33.90194,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Salamis",
+  "alternatives": [],
+  "verseCount": 1,
+  "source": "https://www.openbible.info/geo/ancient/afa863b/salamis"
+ },
+ {
+  "id": "samaria-2",
+  "name": "Samaria",
+  "lat": 32.27611,
+  "lon": 35.195,
+  "types": [
+   "region"
+  ],
+  "confidence": 1000,
+  "site": "Samaria 2",
+  "alternatives": [],
+  "verseCount": 13,
+  "source": "https://www.openbible.info/geo/ancient/a282dce/samaria-2"
+ },
+ {
+  "id": "samothrace",
+  "name": "Samothrace",
+  "lat": 40.45,
+  "lon": 25.58333,
+  "types": [
+   "island"
+  ],
+  "confidence": 1000,
+  "site": "Samothraki",
+  "alternatives": [],
+  "verseCount": 1,
+  "source": "https://www.openbible.info/geo/ancient/a68750d/samothrace"
+ },
+ {
+  "id": "sea-of-galilee",
+  "name": "Sea of Galilee",
+  "lat": 32.81891,
+  "lon": 35.59003,
+  "types": [
+   "body of water"
+  ],
+  "confidence": 1000,
+  "site": "Sea of Galilee",
+  "alternatives": [],
+  "verseCount": 10,
+  "source": "https://www.openbible.info/geo/ancient/a562fcc/sea-of-galilee"
+ },
+ {
+  "id": "seleucia",
+  "name": "Seleucia",
+  "lat": 36.124,
+  "lon": 35.922,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Seleucia Pieria",
+  "alternatives": [],
+  "verseCount": 1,
+  "source": "https://www.openbible.info/geo/ancient/a6d306d/seleucia"
+ },
+ {
+  "id": "sidon",
+  "name": "Sidon",
+  "lat": 33.56099,
+  "lon": 35.37194,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Sandikli archaeological site in Sidon",
+  "alternatives": [],
+  "verseCount": 37,
+  "source": "https://www.openbible.info/geo/ancient/a98e4d7/sidon"
+ },
+ {
+  "id": "sychar",
+  "name": "Sychar (Jacob's well)",
+  "lat": 32.21776,
+  "lon": 35.28897,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 620,
+  "site": "Askar",
+  "alternatives": [
+   {
+    "site": "another name for Shechem",
+    "confidence": 224,
+    "lat": 32.21361,
+    "lon": 35.28194
+   }
+  ],
+  "verseCount": 1,
+  "source": "https://www.openbible.info/geo/ancient/a27b472/sychar"
+ },
+ {
+  "id": "syracuse",
+  "name": "Syracuse",
+  "lat": 37.06389,
+  "lon": 15.29306,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Syracuse",
+  "alternatives": [],
+  "verseCount": 1,
+  "source": "https://www.openbible.info/geo/ancient/a1e3697/syracuse"
+ },
+ {
+  "id": "tarsus",
+  "name": "Tarsus",
+  "lat": 36.91303,
+  "lon": 34.89206,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Tarsus",
+  "alternatives": [],
+  "verseCount": 5,
+  "source": "https://www.openbible.info/geo/ancient/a666ea0/tarsus"
+ },
+ {
+  "id": "thessalonica",
+  "name": "Thessalonica",
+  "lat": 40.63777,
+  "lon": 22.94577,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Thessaloniki",
+  "alternatives": [],
+  "verseCount": 9,
+  "source": "https://www.openbible.info/geo/ancient/afa9d8e/thessalonica"
+ },
+ {
+  "id": "three-taverns",
+  "name": "Three Taverns",
+  "lat": 41.56194,
+  "lon": 12.87389,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Three Taverns",
+  "alternatives": [],
+  "verseCount": 1,
+  "source": "https://www.openbible.info/geo/ancient/afef438/three-taverns"
+ },
+ {
+  "id": "troas",
+  "name": "Troas",
+  "lat": 39.75194,
+  "lon": 26.15861,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Alexandria Troas",
+  "alternatives": [],
+  "verseCount": 6,
+  "source": "https://www.openbible.info/geo/ancient/a91c509/troas"
+ },
+ {
+  "id": "tyre",
+  "name": "Tyre",
+  "lat": 33.27083,
+  "lon": 35.19611,
+  "types": [
+   "settlement"
+  ],
+  "confidence": 1000,
+  "site": "Tyre",
+  "alternatives": [],
+  "verseCount": 64,
+  "source": "https://www.openbible.info/geo/ancient/a160272/tyre"
+ }
+]

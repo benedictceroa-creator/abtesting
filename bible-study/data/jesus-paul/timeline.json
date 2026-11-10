@@ -1,0 +1,2520 @@
+{
+ "meta": {
+  "title": "Jesus & the Early Church",
+  "range": [
+   -7,
+   72
+  ],
+  "lanes": [
+   {
+    "key": "periods",
+    "label": "Periods",
+    "type": "stage",
+    "color": "#8C6A3E",
+    "kind": "Period"
+   },
+   {
+    "key": "jesus",
+    "label": "Jesus & John the Baptist",
+    "type": "leader",
+    "color": "#C82035",
+    "kind": "Jesus"
+   },
+   {
+    "key": "apostles",
+    "label": "Apostles & leaders",
+    "type": "leader",
+    "color": "#2F7F86",
+    "kind": "Apostle"
+   },
+   {
+    "key": "rulers",
+    "label": "Rulers",
+    "type": "ruler",
+    "kind": "Ruler"
+   },
+   {
+    "key": "events",
+    "label": "Key events",
+    "type": "event",
+    "kind": "Event"
+   },
+   {
+    "key": "letters",
+    "label": "Books written",
+    "type": "event",
+    "kind": "Book of the New Testament"
+   }
+  ],
+  "phases": [
+   {
+    "label": "Whole story",
+    "range": [
+     -7,
+     72
+    ]
+   },
+   {
+    "label": "Birth & childhood",
+    "range": [
+     -7,
+     10
+    ]
+   },
+   {
+    "label": "Jesus' ministry",
+    "range": [
+     27.4,
+     30.6
+    ]
+   },
+   {
+    "label": "Holy Week to Pentecost",
+    "range": [
+     30.2,
+     30.47
+    ]
+   },
+   {
+    "label": "The early church",
+    "range": [
+     30,
+     47
+    ]
+   },
+   {
+    "label": "Paul's journeys",
+    "range": [
+     45.5,
+     58
+    ]
+   },
+   {
+    "label": "Prisoner in Rome",
+    "range": [
+     56.5,
+     72
+    ]
+   }
+  ],
+  "defaultPhase": "Jesus' ministry",
+  "monthNames": [
+   "January",
+   "February",
+   "March",
+   "April",
+   "May",
+   "June",
+   "July",
+   "August",
+   "September",
+   "October",
+   "November",
+   "December"
+  ],
+  "chronology": "Jesus was born before Herod the Great died in 4 BC (Matthew 2:1, 19), probably about 5 BC, and was \"about thirty\" when he began his ministry (Luke 3:23). John's Gospel mentions three Passovers during his ministry (John 2:13; 6:4; 11:55), and \"46 years\" of temple building (John 2:20) points to AD 28 for the first. This page dates the crucifixion to Friday 7 April AD 30. For Paul, Acts and Galatians give the sequence, and two dates outside the Bible fix it: Gallio was proconsul in Corinth in AD 51-52 and Festus replaced Felix in about AD 59.",
+  "chronologyShort": "Crucifixion AD 30; Paul anchored on Gallio (AD 51-52).",
+  "status": "DRAFT: awaiting theological review",
+  "alternative": "Many evangelical scholars date the crucifixion to Friday 3 April AD 33 instead, counting the \"fifteenth year of Tiberius\" (Luke 3:1) from AD 14 so that the ministry runs about AD 29-33. On that view the dates of Jesus' ministry and the first years of the church move about three years later. Paul's journeys and letters are dated the same way on either view.",
+  "coLabel": "Saul before his conversion",
+  "coPhrase": "born about",
+  "introTitle": "Follow Jesus, the apostles and Paul"
+ },
+ "certainty": {
+  "fixed": "Fixed: confirmed by a dated record outside the Bible (Roman or Jewish historians or inscriptions).",
+  "calculated": "Calculated: worked out from the Bible's own time notes, such as the feasts in John and the years Paul gives in Galatians.",
+  "approx": "Approximate: the Bible gives the order of events but no exact date.",
+  "disputed": "Disputed: Bible-believing scholars hold different views."
+ },
+ "periods": [
+  {
+   "id": "p-birth",
+   "name": "Birth and hidden years",
+   "start": -6,
+   "end": 27.6,
+   "certainty": "approx",
+   "refs": [
+    "Luke 1-2",
+    "Matthew 1-2"
+   ],
+   "places": [
+    "bethlehem-1",
+    "nazareth"
+   ],
+   "summary": "The births of John the Baptist and of Jesus, the visit of the wise men and the flight to Egypt, and Jesus' growing up in Nazareth, where he \"increased in wisdom and in stature and in favour with God and man\" (Luke 2:52)."
+  },
+  {
+   "id": "p-ministry",
+   "name": "Jesus' public ministry",
+   "start": 27.6,
+   "end": 30.25,
+   "certainty": "calculated",
+   "refs": [
+    "Mark 1:14-15",
+    "John 2:13",
+    "John 6:4",
+    "John 11:55"
+   ],
+   "places": [
+    "capernaum",
+    "jerusalem"
+   ],
+   "summary": "About two and a half years of preaching the kingdom of God, healing, and teaching his disciples, mostly in Galilee, with visits to Jerusalem for the feasts.",
+   "basis": "From John's ministry and Jesus' baptism (Luke 3:1-23) through three Passovers in John (AD 28, 29, 30)."
+  },
+  {
+   "id": "p-passion",
+   "name": "Death, resurrection and ascension",
+   "start": 30.25,
+   "end": 30.41,
+   "certainty": "calculated",
+   "refs": [
+    "Matthew 21-28",
+    "John 12-21",
+    "Acts 1:1-11"
+   ],
+   "places": [
+    "jerusalem",
+    "golgotha",
+    "mount-of-olives"
+   ],
+   "summary": "Jesus enters Jerusalem, is crucified at Passover, rises on the third day and appears to his disciples for forty days before ascending to the Father.",
+   "basis": "Passover week of AD 30, then 40 days (Acts 1:3) and Pentecost 50 days after Passover (Acts 2:1)."
+  },
+  {
+   "id": "p-church",
+   "name": "The church in Jerusalem, Judea and Samaria",
+   "start": 30.41,
+   "end": 46.3,
+   "certainty": "approx",
+   "refs": [
+    "Acts 1:8",
+    "Acts 2-12"
+   ],
+   "places": [
+    "jerusalem",
+    "samaria-2",
+    "caesarea",
+    "antioch-1"
+   ],
+   "summary": "The Spirit comes at Pentecost and the church grows in Jerusalem. Persecution scatters believers through Judea and Samaria, Saul is converted, Peter is sent to the Gentile Cornelius, and a mixed church grows up in Antioch."
+  },
+  {
+   "id": "p-journeys",
+   "name": "Paul's missionary journeys",
+   "start": 46.3,
+   "end": 57.4,
+   "certainty": "approx",
+   "refs": [
+    "Acts 13-21"
+   ],
+   "places": [
+    "antioch-1",
+    "ephesus",
+    "corinth"
+   ],
+   "summary": "Sent out from Antioch, Paul and his companions plant churches across Cyprus, Galatia, Macedonia, Greece and Asia, and write many of his letters.",
+   "basis": "The order comes from Acts; Gallio's year in Corinth (AD 51-52) fixes the second journey."
+  },
+  {
+   "id": "p-prisoner",
+   "name": "Paul the prisoner",
+   "start": 57.4,
+   "end": 62.2,
+   "certainty": "approx",
+   "refs": [
+    "Acts 21:27-28:31"
+   ],
+   "places": [
+    "caesarea",
+    "malta",
+    "rome"
+   ],
+   "summary": "Arrested in Jerusalem, Paul spends two years in prison at Caesarea, appeals to Caesar, survives shipwreck on Malta, and lives two years under guard in Rome, preaching the kingdom of God \"with all boldness and without hindrance\"."
+  },
+  {
+   "id": "p-last",
+   "name": "The last years of the apostles",
+   "start": 62.2,
+   "end": 72,
+   "certainty": "disputed",
+   "refs": [
+    "2 Timothy 4:6-8",
+    "2 Peter 1:13-15",
+    "Luke 21:20-24"
+   ],
+   "places": [
+    "rome",
+    "jerusalem"
+   ],
+   "summary": "Paul's later travels, Peter's and Paul's deaths under Nero, and the destruction of Jerusalem in AD 70, which Jesus had foretold.",
+   "basis": "Acts ends in about AD 62. What follows comes from Paul's later letters and early Christian writers."
+  }
+ ],
+ "jesus": [
+  {
+   "id": "jesus",
+   "name": "Jesus",
+   "start": -5,
+   "end": 30.377,
+   "certainty": "disputed",
+   "refs": [
+    "Matthew 1:18-25",
+    "Luke 2:1-52",
+    "Luke 3:23",
+    "John 1:1-18",
+    "Philippians 2:5-11",
+    "Hebrews 1:1-3"
+   ],
+   "places": [
+    "bethlehem-1",
+    "nazareth",
+    "capernaum",
+    "jerusalem"
+   ],
+   "summary": "The eternal Son of God, born of the virgin Mary in Bethlehem and raised in Nazareth. He proclaimed the kingdom of God, healed the sick, forgave sins, died on the cross for sinners, rose bodily on the third day and ascended to the Father, from where he will come again.",
+   "role": "The Son of God",
+   "basis": "Born before Herod's death in 4 BC; \"about thirty\" at his baptism (Luke 3:23); crucified at Passover AD 30 (or AD 33), ascended forty days later.",
+   "link": {
+    "href": "family-tree.html#jesus",
+    "label": "His family line in the Bible Family Tree"
+   }
+  },
+  {
+   "id": "john-baptist",
+   "name": "John the Baptist",
+   "start": -6,
+   "end": 29.2,
+   "certainty": "approx",
+   "refs": [
+    "Luke 1:5-25, 57-80",
+    "Luke 3:1-20",
+    "John 1:19-36",
+    "Mark 6:14-29",
+    "Matthew 11:7-15"
+   ],
+   "places": [
+    "bethany-2",
+    "jordan"
+   ],
+   "summary": "Son of the priest Zechariah and Elizabeth, the forerunner who prepared the way for the Lord, called Israel to repent and be baptised, and pointed to Jesus as \"the Lamb of God\". Herod Antipas imprisoned and beheaded him.",
+   "role": "Prophet",
+   "basis": "Six months older than Jesus (Luke 1:36); began preaching in the fifteenth year of Tiberius (Luke 3:1); killed before the feeding of the five thousand (Mark 6).",
+   "evidence": "The Jewish historian Josephus describes John as a good man who called Jews to righteousness and baptism, and says Herod Antipas executed him at the fortress of Machaerus.",
+   "link": {
+    "href": "family-tree.html#john-baptist",
+    "label": "John in the Bible Family Tree"
+   }
+  }
+ ],
+ "apostles": [
+  {
+   "id": "peter",
+   "name": "Peter",
+   "start": 28,
+   "end": 66,
+   "certainty": "approx",
+   "refs": [
+    "Matthew 16:13-19",
+    "John 21:15-19",
+    "Acts 2",
+    "Acts 10",
+    "Galatians 2:7-9",
+    "1 Peter 1:1"
+   ],
+   "places": [
+    "bethsaida-1",
+    "capernaum",
+    "jerusalem",
+    "joppa",
+    "caesarea",
+    "rome"
+   ],
+   "summary": "Simon, a fisherman of Bethsaida and Capernaum, renamed Peter (\"rock\"). He confessed Jesus as the Christ, denied him three times and was restored. He preached at Pentecost, opened the door to the Gentiles at Cornelius' house, and led the church in Jerusalem.",
+   "role": "Apostle",
+   "basis": "From his call (about AD 28) to his death in Rome under Nero, about AD 64-67 (John 21:18-19; early church tradition).",
+   "note": "Early Christian writers (1 Clement, Irenaeus, Eusebius) say Peter was martyred in Rome; the exact year is not known.",
+   "link": {
+    "href": "books.html#1-peter",
+    "label": "About 1 Peter in the Book Explorer"
+   }
+  },
+  {
+   "id": "james-z",
+   "name": "James son of Zebedee",
+   "start": 28,
+   "end": 44,
+   "certainty": "calculated",
+   "refs": [
+    "Mark 1:19-20",
+    "Mark 9:2",
+    "Acts 12:1-2"
+   ],
+   "places": [
+    "capernaum",
+    "jerusalem"
+   ],
+   "summary": "A fisherman called with his brother John, one of the three closest to Jesus. He was the first of the twelve to be martyred, killed with the sword by Herod Agrippa I.",
+   "role": "Apostle",
+   "basis": "Killed shortly before Herod Agrippa I died in AD 44 (Acts 12)."
+  },
+  {
+   "id": "john-z",
+   "name": "John son of Zebedee",
+   "start": 28,
+   "end": 72,
+   "certainty": "approx",
+   "refs": [
+    "Mark 1:19-20",
+    "John 13:23",
+    "John 19:26-27",
+    "Acts 3-4",
+    "Galatians 2:9",
+    "Revelation 1:9"
+   ],
+   "places": [
+    "capernaum",
+    "jerusalem",
+    "ephesus",
+    "patmos"
+   ],
+   "summary": "\"The disciple whom Jesus loved\", who took Mary into his home after the crucifixion and was a pillar of the Jerusalem church. He wrote the Gospel of John, three letters and Revelation, the last while in exile on Patmos.",
+   "role": "Apostle",
+   "basis": "Early writers say he lived in Ephesus to old age, dying about AD 98. The bar is cut off at the right edge.",
+   "link": {
+    "href": "books.html#john",
+    "label": "About John in the Book Explorer"
+   }
+  },
+  {
+   "id": "james-l",
+   "name": "James the Lord's brother",
+   "start": 30.3,
+   "end": 62,
+   "certainty": "fixed",
+   "refs": [
+    "Mark 6:3",
+    "1 Corinthians 15:7",
+    "Acts 15:13-21",
+    "Galatians 1:19",
+    "James 1:1"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "One of Jesus' brothers, who did not believe until the risen Lord appeared to him. He became leader of the Jerusalem church, spoke at the Jerusalem Council and wrote the letter of James.",
+   "role": "Leader of the Jerusalem church",
+   "evidence": "Josephus records that \"James, the brother of Jesus who was called Christ\" was stoned in Jerusalem in AD 62, after Festus died.",
+   "link": {
+    "href": "books.html#james",
+    "label": "About James in the Book Explorer"
+   }
+  },
+  {
+   "id": "stephen",
+   "name": "Stephen",
+   "start": 30.6,
+   "end": 32,
+   "certainty": "approx",
+   "refs": [
+    "Acts 6-7"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "One of the seven chosen to serve the church's widows, \"full of grace and power\". His defence before the council ended with his stoning, the first Christian martyr, as Saul looked on.",
+   "role": "Deacon and martyr"
+  },
+  {
+   "id": "philip-e",
+   "name": "Philip the evangelist",
+   "start": 30.6,
+   "end": 57.5,
+   "certainty": "approx",
+   "refs": [
+    "Acts 6:5",
+    "Acts 8",
+    "Acts 21:8-9"
+   ],
+   "places": [
+    "samaria-2",
+    "gaza",
+    "caesarea"
+   ],
+   "summary": "Another of the seven, who preached Christ in Samaria and baptised the Ethiopian official on the desert road to Gaza. Paul stayed at his home in Caesarea years later.",
+   "role": "Evangelist",
+   "basis": "From Acts 6 to his last mention when Paul visits in AD 57 (Acts 21:8)."
+  },
+  {
+   "id": "barnabas",
+   "name": "Barnabas",
+   "start": 30.6,
+   "end": 55,
+   "certainty": "approx",
+   "refs": [
+    "Acts 4:36-37",
+    "Acts 9:27",
+    "Acts 11:22-26",
+    "Acts 13-15",
+    "1 Corinthians 9:6"
+   ],
+   "places": [
+    "salamis",
+    "antioch-1",
+    "jerusalem"
+   ],
+   "summary": "Joseph of Cyprus, nicknamed \"son of encouragement\". He vouched for the newly converted Saul, led the church at Antioch, and went with Paul on the first journey before they parted over John Mark.",
+   "role": "Apostle and encourager",
+   "basis": "From Acts 4 to Paul's mention of him in about AD 55 (1 Corinthians 9:6)."
+  },
+  {
+   "id": "paul",
+   "name": "Paul",
+   "start": 33,
+   "end": 66,
+   "certainty": "approx",
+   "refs": [
+    "Acts 9:1-30",
+    "Acts 13-28",
+    "Galatians 1:11-2:10",
+    "Philippians 3:4-11",
+    "2 Corinthians 11:22-33",
+    "2 Timothy 4:6-8"
+   ],
+   "places": [
+    "tarsus",
+    "damascus",
+    "antioch-1",
+    "ephesus",
+    "corinth",
+    "rome"
+   ],
+   "summary": "Saul of Tarsus, a Pharisee who persecuted the church until the risen Jesus met him on the road to Damascus. As the apostle to the Gentiles he planted churches across the Roman world and wrote thirteen New Testament letters. He was executed in Rome under Nero.",
+   "role": "Apostle to the Gentiles",
+   "coStart": 5,
+   "basis": "A \"young man\" at Stephen's death (Acts 7:58), so born about AD 5. Converted about AD 33; died about AD 64-67 (2 Timothy 4:6; early church tradition).",
+   "note": "The striped part of the bar is his life before his conversion."
+  },
+  {
+   "id": "silas",
+   "name": "Silas (Silvanus)",
+   "start": 49,
+   "end": 64,
+   "certainty": "approx",
+   "refs": [
+    "Acts 15:22-40",
+    "Acts 16-18",
+    "2 Corinthians 1:19",
+    "1 Thessalonians 1:1",
+    "1 Peter 5:12"
+   ],
+   "places": [
+    "jerusalem",
+    "philippi",
+    "corinth"
+   ],
+   "summary": "A leader of the Jerusalem church and a prophet, Paul's partner on the second journey. He sang hymns with Paul in the Philippian jail and later helped Peter write his first letter.",
+   "role": "Missionary"
+  },
+  {
+   "id": "timothy",
+   "name": "Timothy",
+   "start": 49.6,
+   "end": 67,
+   "certainty": "approx",
+   "refs": [
+    "Acts 16:1-3",
+    "Philippians 2:19-22",
+    "1 Timothy 1:2",
+    "2 Timothy 1:5"
+   ],
+   "places": [
+    "lystra",
+    "ephesus"
+   ],
+   "summary": "Son of a Jewish mother and a Greek father from Lystra, taught the Scriptures from childhood. He became Paul's closest co-worker, \"my true child in the faith\", and led the church in Ephesus.",
+   "role": "Paul's co-worker",
+   "link": {
+    "href": "books.html#1-timothy",
+    "label": "About 1 Timothy in the Book Explorer"
+   }
+  },
+  {
+   "id": "luke",
+   "name": "Luke",
+   "start": 49.75,
+   "end": 67,
+   "certainty": "approx",
+   "refs": [
+    "Colossians 4:14",
+    "2 Timothy 4:11",
+    "Philemon 24",
+    "Acts 16:10"
+   ],
+   "places": [
+    "troas",
+    "philippi",
+    "rome"
+   ],
+   "summary": "\"The beloved physician\", Paul's companion on many journeys and on the voyage to Rome. He wrote the Gospel of Luke and Acts; the \"we\" passages in Acts show where he was with Paul.",
+   "role": "Doctor and historian",
+   "basis": "Acts switches to \"we\" at Troas (Acts 16:10); he was with Paul at the end (2 Timothy 4:11).",
+   "link": {
+    "href": "books.html#luke",
+    "label": "About Luke in the Book Explorer"
+   }
+  }
+ ],
+ "rulers": [
+  {
+   "id": "augustus",
+   "name": "Augustus",
+   "start": -27,
+   "end": 14,
+   "certainty": "fixed",
+   "refs": [
+    "Luke 2:1"
+   ],
+   "places": [
+    "rome"
+   ],
+   "summary": "The first Roman emperor, whose decree that all the world should be registered brought Joseph and Mary to Bethlehem.",
+   "role": "Roman emperor",
+   "datePrefix": "Reigned"
+  },
+  {
+   "id": "tiberius",
+   "name": "Tiberius",
+   "start": 14,
+   "end": 37,
+   "certainty": "fixed",
+   "refs": [
+    "Luke 3:1",
+    "Luke 20:22-25"
+   ],
+   "places": [
+    "rome"
+   ],
+   "summary": "Emperor during Jesus' ministry. John's preaching began \"in the fifteenth year of the reign of Tiberius Caesar\"; his image was on the denarius Jesus asked for.",
+   "role": "Roman emperor",
+   "datePrefix": "Reigned"
+  },
+  {
+   "id": "caligula",
+   "name": "Caligula",
+   "start": 37,
+   "end": 41,
+   "certainty": "fixed",
+   "refs": [],
+   "places": [
+    "rome"
+   ],
+   "summary": "Emperor who ordered his statue set up in the Jerusalem temple; he was killed before it was done. Not named in the Bible.",
+   "role": "Roman emperor",
+   "datePrefix": "Reigned"
+  },
+  {
+   "id": "claudius",
+   "name": "Claudius",
+   "start": 41,
+   "end": 54,
+   "certainty": "fixed",
+   "refs": [
+    "Acts 11:28",
+    "Acts 18:2"
+   ],
+   "places": [
+    "rome"
+   ],
+   "summary": "Emperor during Paul's first journeys. A great famine came in his reign, and he expelled the Jews from Rome, which brought Aquila and Priscilla to Corinth.",
+   "role": "Roman emperor",
+   "datePrefix": "Reigned",
+   "evidence": "The Roman historian Suetonius says Claudius expelled the Jews from Rome because of disturbances \"at the instigation of Chrestus\", probably a garbled reference to disputes over Christ (about AD 49)."
+  },
+  {
+   "id": "nero",
+   "name": "Nero",
+   "start": 54,
+   "end": 68,
+   "certainty": "fixed",
+   "refs": [
+    "Acts 25:10-12",
+    "Philippians 4:22"
+   ],
+   "places": [
+    "rome"
+   ],
+   "summary": "The Caesar to whom Paul appealed. After the great fire of Rome in AD 64 he blamed and cruelly persecuted the Christians, and by tradition Peter and Paul were executed in his reign.",
+   "role": "Roman emperor",
+   "datePrefix": "Reigned"
+  },
+  {
+   "id": "herod-great",
+   "name": "Herod the Great",
+   "start": -37,
+   "end": -4,
+   "certainty": "fixed",
+   "refs": [
+    "Matthew 2:1-22",
+    "Luke 1:5"
+   ],
+   "places": [
+    "jerusalem",
+    "bethlehem-1"
+   ],
+   "summary": "King of Judea under Rome, a great builder and a ruthless ruler. He rebuilt the temple on a grand scale, and ordered the killing of Bethlehem's boys after the wise men came.",
+   "role": "King of Judea",
+   "datePrefix": "Reigned",
+   "evidence": "Remains of his building survive at the temple platform in Jerusalem, Caesarea, Masada and the Herodium, where his tomb was found in 2007.",
+   "note": "Most scholars date his death to 4 BC, following Josephus; a minority argue for 1 BC, which would put Jesus' birth a little later."
+  },
+  {
+   "id": "archelaus",
+   "name": "Archelaus",
+   "start": -4,
+   "end": 6,
+   "certainty": "fixed",
+   "refs": [
+    "Matthew 2:22"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "Herod's son who ruled Judea so badly that Rome deposed him and made Judea a province under a Roman prefect. Joseph avoided Judea because of him and settled in Nazareth.",
+   "role": "Ethnarch of Judea",
+   "datePrefix": "Ruled"
+  },
+  {
+   "id": "antipas",
+   "name": "Herod Antipas",
+   "start": -4,
+   "end": 39,
+   "certainty": "fixed",
+   "refs": [
+    "Mark 6:14-29",
+    "Luke 3:1",
+    "Luke 13:31-32",
+    "Luke 23:6-12"
+   ],
+   "places": [
+    "sea-of-galilee"
+   ],
+   "summary": "Herod's son who ruled Galilee and Perea throughout Jesus' life. He beheaded John the Baptist, and Jesus called him \"that fox\". Pilate sent Jesus to him during his trial.",
+   "role": "Tetrarch of Galilee and Perea",
+   "datePrefix": "Ruled"
+  },
+  {
+   "id": "philip-t",
+   "name": "Philip the tetrarch",
+   "start": -4,
+   "end": 34,
+   "certainty": "fixed",
+   "refs": [
+    "Luke 3:1"
+   ],
+   "places": [
+    "caesarea-philippi",
+    "bethsaida-1"
+   ],
+   "summary": "Herod's son who ruled the lands north-east of the Sea of Galilee and rebuilt Caesarea Philippi.",
+   "role": "Tetrarch of Iturea and Trachonitis",
+   "datePrefix": "Ruled"
+  },
+  {
+   "id": "pilate",
+   "name": "Pontius Pilate",
+   "start": 26,
+   "end": 36,
+   "certainty": "fixed",
+   "refs": [
+    "Luke 3:1",
+    "Luke 13:1",
+    "John 18:28-19:22",
+    "1 Timothy 6:13"
+   ],
+   "places": [
+    "jerusalem",
+    "caesarea"
+   ],
+   "summary": "Roman prefect of Judea who found no guilt in Jesus yet handed him over to be crucified. The creeds name him so that Jesus' death is anchored in real history.",
+   "role": "Prefect of Judea",
+   "datePrefix": "Governed",
+   "evidence": "A stone found at Caesarea in 1961 bears his name and title: \"Pontius Pilatus, Prefect of Judea\". Tacitus also records that Christ was executed under Pilate."
+  },
+  {
+   "id": "caiaphas",
+   "name": "Caiaphas",
+   "start": 18,
+   "end": 36,
+   "certainty": "fixed",
+   "refs": [
+    "Matthew 26:3, 57-68",
+    "John 11:49-53",
+    "John 18:13-28",
+    "Acts 4:6"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "High priest who said it was better that one man should die for the people, and presided at Jesus' trial before the council.",
+   "role": "High priest",
+   "datePrefix": "High priest",
+   "evidence": "An ornate ossuary found in Jerusalem in 1990 is inscribed \"Joseph son of Caiaphas\", very probably his family tomb."
+  },
+  {
+   "id": "agrippa-1",
+   "name": "Herod Agrippa I",
+   "start": 37,
+   "end": 44,
+   "certainty": "fixed",
+   "refs": [
+    "Acts 12"
+   ],
+   "places": [
+    "jerusalem",
+    "caesarea"
+   ],
+   "summary": "Grandson of Herod the Great, king over all his grandfather's lands from AD 41. He killed James and imprisoned Peter, and died at Caesarea after accepting worship as a god.",
+   "role": "King of Judea",
+   "datePrefix": "Reigned",
+   "evidence": "Josephus also describes his sudden death at Caesarea in AD 44 after he was hailed as a god."
+  },
+  {
+   "id": "gallio",
+   "name": "Gallio",
+   "start": 51,
+   "end": 52,
+   "certainty": "fixed",
+   "refs": [
+    "Acts 18:12-17"
+   ],
+   "places": [
+    "corinth"
+   ],
+   "summary": "Proconsul of Achaia who refused to judge the Jews' case against Paul in Corinth. Brother of the philosopher Seneca.",
+   "role": "Proconsul of Achaia",
+   "datePrefix": "Proconsul",
+   "evidence": "An inscription at Delphi (the Gallio inscription) dates his year as proconsul to AD 51-52, the most important fixed point in Paul's chronology."
+  },
+  {
+   "id": "felix",
+   "name": "Felix",
+   "start": 52,
+   "end": 59.5,
+   "certainty": "approx",
+   "refs": [
+    "Acts 23:24-24:27"
+   ],
+   "places": [
+    "caesarea"
+   ],
+   "summary": "Roman governor who kept Paul in prison at Caesarea for two years, hoping for a bribe, and trembled when Paul spoke of righteousness and judgement.",
+   "role": "Governor of Judea",
+   "datePrefix": "Governed"
+  },
+  {
+   "id": "festus",
+   "name": "Porcius Festus",
+   "start": 59.5,
+   "end": 62,
+   "certainty": "approx",
+   "refs": [
+    "Acts 25-26"
+   ],
+   "places": [
+    "caesarea"
+   ],
+   "summary": "Felix's successor, who heard Paul's case and sent him to Rome when Paul appealed to Caesar.",
+   "role": "Governor of Judea",
+   "datePrefix": "Governed",
+   "note": "The year Festus arrived is debated (AD 58-60); most scholars favour about AD 59."
+  },
+  {
+   "id": "agrippa-2",
+   "name": "Herod Agrippa II",
+   "start": 50,
+   "end": 72,
+   "certainty": "fixed",
+   "refs": [
+    "Acts 25:13-26:32"
+   ],
+   "places": [
+    "caesarea"
+   ],
+   "summary": "Last of the Herods, who heard Paul's defence with his sister Bernice and said, \"In a short time would you persuade me to be a Christian?\"",
+   "role": "King",
+   "datePrefix": "Ruled",
+   "note": "He ruled parts of the region until about AD 92-100; the bar is cut off at the right edge."
+  },
+  {
+   "id": "aretas",
+   "name": "Aretas IV",
+   "start": -9,
+   "end": 40,
+   "certainty": "fixed",
+   "refs": [
+    "2 Corinthians 11:32-33"
+   ],
+   "places": [
+    "damascus",
+    "arabia-2"
+   ],
+   "summary": "King of the Nabataeans, whose governor in Damascus tried to seize Paul, who escaped in a basket through a window in the wall.",
+   "role": "King of the Nabataeans",
+   "datePrefix": "Reigned"
+  }
+ ],
+ "events": [
+  {
+   "id": "e-annunciation",
+   "title": "The angel Gabriel comes to Mary",
+   "year": -6,
+   "certainty": "approx",
+   "refs": [
+    "Luke 1:26-38"
+   ],
+   "places": [
+    "nazareth"
+   ],
+   "summary": "Gabriel tells Mary, a virgin betrothed to Joseph, that she will conceive by the Holy Spirit and bear a son, Jesus, who will be called the Son of the Most High and reign on David's throne forever. \"Let it be to me according to your word.\""
+  },
+  {
+   "id": "e-john-born",
+   "title": "John the Baptist born",
+   "year": -6,
+   "certainty": "approx",
+   "refs": [
+    "Luke 1:5-25",
+    "Luke 1:57-80"
+   ],
+   "places": [],
+   "summary": "After the angel's announcement to the aged priest Zechariah, Elizabeth bears a son. Zechariah's tongue is loosed and he prophesies that John will go before the Lord to prepare his ways."
+  },
+  {
+   "id": "e-birth",
+   "title": "Jesus born in Bethlehem",
+   "year": -5,
+   "certainty": "disputed",
+   "refs": [
+    "Luke 2:1-20",
+    "Matthew 1:18-25",
+    "Micah 5:2",
+    "Galatians 4:4"
+   ],
+   "places": [
+    "nazareth",
+    "bethlehem-1"
+   ],
+   "summary": "A census decreed by Caesar Augustus brings Joseph and Mary to Bethlehem, the town of David, where Mary gives birth and lays her son in a manger. Angels announce good news of great joy to shepherds: \"Unto you is born this day in the city of David a Saviour, who is Christ the Lord.\"",
+   "basis": "Before Herod the Great's death in 4 BC (Matthew 2:1, 19); Herod killed the boys of two years old and under (Matthew 2:16).",
+   "note": "Luke 2:2 links the census with Quirinius, whose known census was in AD 6. Evangelical scholars suggest an earlier registration under him, or translate \"before Quirinius was governor\". The year of Herod's death is also debated (4 BC or 1 BC)."
+  },
+  {
+   "id": "e-presentation",
+   "title": "Presented in the temple",
+   "year": -5,
+   "certainty": "approx",
+   "refs": [
+    "Luke 2:21-38"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "Forty days after the birth, Jesus is presented to the Lord. The aged Simeon takes him in his arms: \"My eyes have seen your salvation\", and the prophetess Anna speaks of him to all waiting for redemption."
+  },
+  {
+   "id": "e-magi",
+   "title": "The wise men",
+   "year": -5,
+   "certainty": "approx",
+   "refs": [
+    "Matthew 2:1-12"
+   ],
+   "places": [
+    "jerusalem",
+    "bethlehem-1"
+   ],
+   "summary": "Wise men from the east follow a star to Jerusalem asking for the newborn king of the Jews, are directed to Bethlehem, and worship the child with gold, frankincense and myrrh. Warned in a dream, they avoid Herod."
+  },
+  {
+   "id": "e-flight",
+   "title": "Flight to Egypt",
+   "year": -5,
+   "certainty": "approx",
+   "refs": [
+    "Matthew 2:13-18",
+    "Hosea 11:1",
+    "Jeremiah 31:15"
+   ],
+   "places": [
+    "bethlehem-1",
+    "egypt"
+   ],
+   "summary": "Warned by an angel, Joseph takes the child and his mother to Egypt by night. Herod has the boys of Bethlehem killed. \"Out of Egypt I called my son.\""
+  },
+  {
+   "id": "e-to-nazareth",
+   "title": "Home to Nazareth",
+   "year": -4,
+   "certainty": "calculated",
+   "refs": [
+    "Matthew 2:19-23",
+    "Luke 2:39-40"
+   ],
+   "places": [
+    "egypt",
+    "nazareth"
+   ],
+   "summary": "After Herod's death an angel sends the family back. Hearing that Archelaus rules Judea, Joseph settles in Nazareth in Galilee, where Jesus grows up.",
+   "basis": "Herod died in 4 BC (Josephus)."
+  },
+  {
+   "id": "e-twelve",
+   "title": "Jesus at twelve in the temple",
+   "year": 8,
+   "certainty": "approx",
+   "refs": [
+    "Luke 2:41-52"
+   ],
+   "places": [
+    "jerusalem",
+    "nazareth"
+   ],
+   "summary": "On the family's Passover pilgrimage, the boy Jesus stays behind, listening to the teachers and asking them questions. \"Did you not know that I must be in my Father's house?\"",
+   "basis": "Twelve years after his birth (Luke 2:42)."
+  },
+  {
+   "id": "e-john-preaches",
+   "title": "John the Baptist preaches in the wilderness",
+   "year": 27.6,
+   "certainty": "calculated",
+   "refs": [
+    "Luke 3:1-18",
+    "Matthew 3:1-12",
+    "Isaiah 40:3"
+   ],
+   "places": [
+    "jordan",
+    "bethany-2"
+   ],
+   "summary": "The word of God comes to John in the wilderness. He calls Israel to repent and be baptised for the forgiveness of sins: \"Prepare the way of the Lord.\"",
+   "basis": "\"In the fifteenth year of the reign of Tiberius Caesar\" (Luke 3:1), probably reckoned from AD 13, when he began to share power with Augustus; counted from AD 14 it would be AD 28-29."
+  },
+  {
+   "id": "e-baptism",
+   "title": "Jesus baptised in the Jordan",
+   "year": 27.85,
+   "certainty": "approx",
+   "refs": [
+    "Matthew 3:13-17",
+    "Mark 1:9-11",
+    "Luke 3:21-23",
+    "John 1:29-34"
+   ],
+   "places": [
+    "jordan",
+    "bethany-2"
+   ],
+   "summary": "Jesus is baptised by John. The Spirit descends on him like a dove and the Father's voice says, \"You are my beloved Son; with you I am well pleased.\" John points him out: \"Behold, the Lamb of God, who takes away the sin of the world!\"",
+   "date": "Jesus \"about thirty years of age\" (Luke 3:23)"
+  },
+  {
+   "id": "e-temptation",
+   "title": "Tempted in the wilderness",
+   "year": 27.9,
+   "certainty": "approx",
+   "refs": [
+    "Matthew 4:1-11",
+    "Luke 4:1-13",
+    "Hebrews 4:15"
+   ],
+   "places": [],
+   "summary": "Led by the Spirit, Jesus fasts forty days and is tempted by the devil. He answers each temptation with Scripture from Deuteronomy, succeeding where Israel failed.",
+   "note": "The traditional site is the wilderness of Judea near Jericho."
+  },
+  {
+   "id": "e-first-disciples",
+   "title": "The first disciples",
+   "year": 27.98,
+   "certainty": "approx",
+   "refs": [
+    "John 1:35-51"
+   ],
+   "places": [
+    "bethany-2",
+    "bethsaida-1"
+   ],
+   "summary": "Andrew and another of John's disciples follow Jesus. Andrew brings his brother Simon, whom Jesus names Cephas (Peter); Philip and Nathanael follow. \"We have found the Messiah.\""
+  },
+  {
+   "id": "e-cana",
+   "title": "Water into wine at Cana",
+   "year": 28.05,
+   "certainty": "approx",
+   "refs": [
+    "John 2:1-11"
+   ],
+   "places": [
+    "cana"
+   ],
+   "summary": "At a wedding, Jesus turns about 150 gallons of water into fine wine, the first of his signs, which \"manifested his glory. And his disciples believed in him.\""
+  },
+  {
+   "id": "e-temple-1",
+   "title": "Clearing the temple; Nicodemus",
+   "year": 28.27,
+   "certainty": "calculated",
+   "refs": [
+    "John 2:13-3:21"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "At Passover Jesus drives the traders from the temple: \"Destroy this temple, and in three days I will raise it up.\" By night Nicodemus comes to him and hears, \"You must be born again ... For God so loved the world, that he gave his only Son.\"",
+   "date": "The first Passover of his ministry (John 2:13)",
+   "basis": "The temple had been \"46 years\" in building (John 2:20); Herod began it in 20/19 BC, giving AD 27/28.",
+   "note": "Matthew, Mark and Luke record a clearing of the temple in the last week; many think there were two, others that John places one event by theme."
+  },
+  {
+   "id": "e-samaria",
+   "title": "The woman at the well",
+   "year": 28.9,
+   "certainty": "approx",
+   "refs": [
+    "John 4:1-42"
+   ],
+   "places": [
+    "sychar"
+   ],
+   "summary": "Travelling back to Galilee through Samaria, Jesus asks a Samaritan woman for water at Jacob's well and offers her living water. He tells her plainly, \"I who speak to you am he\", and many in her town believe.",
+   "basis": "\"There are yet four months, then comes the harvest\" (John 4:35) suggests about December."
+  },
+  {
+   "id": "e-nazareth",
+   "title": "Rejected at Nazareth; home in Capernaum",
+   "year": 29.0,
+   "certainty": "approx",
+   "refs": [
+    "Luke 4:14-31",
+    "Matthew 4:12-17"
+   ],
+   "places": [
+    "nazareth",
+    "capernaum"
+   ],
+   "summary": "In the Nazareth synagogue Jesus reads Isaiah 61, \"The Spirit of the Lord is upon me\", and says, \"Today this Scripture has been fulfilled in your hearing.\" The townspeople try to throw him off a cliff, and he makes Capernaum his base."
+  },
+  {
+   "id": "e-fishers",
+   "title": "\"Follow me, and I will make you fishers of men\"",
+   "year": 29.03,
+   "certainty": "approx",
+   "refs": [
+    "Mark 1:16-20",
+    "Luke 5:1-11"
+   ],
+   "places": [
+    "sea-of-galilee",
+    "capernaum"
+   ],
+   "summary": "By the Sea of Galilee Jesus calls Simon and Andrew, James and John, who leave their nets and their father's boat to follow him."
+  },
+  {
+   "id": "e-healing",
+   "title": "Healing in Capernaum",
+   "year": 29.08,
+   "certainty": "approx",
+   "refs": [
+    "Mark 1:21-2:12"
+   ],
+   "places": [
+    "capernaum"
+   ],
+   "summary": "Jesus teaches with authority in the synagogue, drives out an unclean spirit, heals Peter's mother-in-law and many others, and forgives and heals a paralysed man let down through the roof."
+  },
+  {
+   "id": "e-twelve-chosen",
+   "title": "The twelve apostles chosen",
+   "year": 29.2,
+   "certainty": "approx",
+   "refs": [
+    "Mark 3:13-19",
+    "Luke 6:12-16"
+   ],
+   "places": [
+    "capernaum"
+   ],
+   "summary": "After a night in prayer on a mountain, Jesus chooses twelve to be with him and to be sent out to preach."
+  },
+  {
+   "id": "e-sermon",
+   "title": "The Sermon on the Mount",
+   "year": 29.22,
+   "certainty": "approx",
+   "refs": [
+    "Matthew 5-7",
+    "Luke 6:17-49"
+   ],
+   "places": [
+    "capernaum",
+    "sea-of-galilee"
+   ],
+   "summary": "Jesus' great sermon: the Beatitudes, salt and light, the law fulfilled, the Lord's Prayer, treasure in heaven, and the wise man who built his house on the rock.",
+   "note": "The traditional site, the Mount of Beatitudes, is above the north shore of the lake near Capernaum."
+  },
+  {
+   "id": "e-john-killed",
+   "title": "John the Baptist beheaded",
+   "year": 29.2,
+   "certainty": "approx",
+   "refs": [
+    "Mark 6:14-29",
+    "Matthew 14:1-12"
+   ],
+   "places": [],
+   "summary": "Imprisoned for rebuking Herod Antipas for marrying his brother's wife, John is beheaded at the request of Herodias' daughter."
+  },
+  {
+   "id": "e-5000",
+   "title": "Feeding the five thousand; walking on the water",
+   "year": 29.25,
+   "certainty": "calculated",
+   "refs": [
+    "John 6:1-21",
+    "Mark 6:30-52"
+   ],
+   "places": [
+    "bethsaida-1",
+    "sea-of-galilee"
+   ],
+   "summary": "With five loaves and two fish Jesus feeds five thousand men near Bethsaida, then walks on the water to his disciples in the storm. The next day he teaches, \"I am the bread of life.\"",
+   "date": "\"The Passover ... was at hand\" (John 6:4)"
+  },
+  {
+   "id": "e-women",
+   "title": "The women who followed Jesus",
+   "year": 29.35,
+   "certainty": "approx",
+   "refs": [
+    "Luke 8:1-3",
+    "Mark 15:40-41"
+   ],
+   "places": [
+    "magadan"
+   ],
+   "summary": "Jesus goes through the towns and villages with the twelve and with women who provided for them, among them Mary called Magdalene (from Magdala on the lake), Joanna and Susanna. They stayed with him to the cross and were first to the empty tomb."
+  },
+  {
+   "id": "e-woes",
+   "title": "Woe to the unrepentant towns",
+   "year": 29.7,
+   "certainty": "approx",
+   "refs": [
+    "Matthew 11:20-24",
+    "Luke 10:13-15"
+   ],
+   "places": [
+    "chorazin",
+    "bethsaida-1",
+    "capernaum"
+   ],
+   "summary": "Jesus denounces the towns where most of his mighty works were done, because they did not repent: \"Woe to you, Chorazin! Woe to you, Bethsaida!\""
+  },
+  {
+   "id": "e-parables",
+   "title": "Parables by the lake",
+   "year": 29.4,
+   "certainty": "approx",
+   "refs": [
+    "Matthew 13",
+    "Mark 4:1-34"
+   ],
+   "places": [
+    "sea-of-galilee"
+   ],
+   "summary": "From a boat Jesus teaches the crowds in parables of the kingdom: the sower, the weeds, the mustard seed, the hidden treasure and the pearl of great price."
+  },
+  {
+   "id": "e-storm",
+   "title": "Calming the storm; the man with a legion",
+   "year": 29.45,
+   "certainty": "approx",
+   "refs": [
+    "Mark 4:35-5:20"
+   ],
+   "places": [
+    "sea-of-galilee",
+    "gerasa"
+   ],
+   "summary": "Jesus rebukes the wind and waves: \"Who then is this, that even the wind and the sea obey him?\" On the eastern shore he frees a man possessed by a legion of demons, who goes and proclaims in the Decapolis what Jesus has done.",
+   "note": "The Gospels name the place as the country of the Gerasenes, Gadarenes or Gergesenes. Many locate it at Kursi on the east shore, within the wider territory of Gerasa or Gadara."
+  },
+  {
+   "id": "e-nain",
+   "title": "A widow's son raised at Nain",
+   "year": 29.3,
+   "certainty": "approx",
+   "refs": [
+    "Luke 7:11-17"
+   ],
+   "places": [
+    "nain"
+   ],
+   "summary": "Meeting a funeral procession, Jesus has compassion on the widowed mother, touches the bier and says, \"Young man, I say to you, arise.\""
+  },
+  {
+   "id": "e-tyre",
+   "title": "In the region of Tyre and Sidon",
+   "year": 29.5,
+   "certainty": "approx",
+   "refs": [
+    "Mark 7:24-37",
+    "Matthew 15:21-31"
+   ],
+   "places": [
+    "tyre",
+    "sidon"
+   ],
+   "summary": "Jesus withdraws to Gentile territory, where a Syrophoenician woman's faith wins healing for her daughter. He returns by way of the Decapolis, healing a deaf man."
+  },
+  {
+   "id": "e-confession",
+   "title": "Peter's confession at Caesarea Philippi",
+   "year": 29.6,
+   "certainty": "approx",
+   "refs": [
+    "Matthew 16:13-28",
+    "Mark 8:27-9:1"
+   ],
+   "places": [
+    "caesarea-philippi"
+   ],
+   "summary": "\"Who do you say that I am?\" Peter answers, \"You are the Christ, the Son of the living God.\" From then on Jesus teaches that he must suffer, be killed and rise on the third day."
+  },
+  {
+   "id": "e-transfiguration",
+   "title": "The transfiguration",
+   "year": 29.62,
+   "certainty": "approx",
+   "refs": [
+    "Matthew 17:1-13",
+    "Mark 9:2-13",
+    "2 Peter 1:16-18"
+   ],
+   "places": [
+    "mount-hermon",
+    "mount-tabor"
+   ],
+   "summary": "On a high mountain Jesus is transfigured before Peter, James and John. Moses and Elijah talk with him about his coming departure, and the Father says, \"This is my beloved Son; listen to him.\"",
+   "note": "The mountain is not named. Tradition points to Mount Tabor; many scholars prefer Mount Hermon, near Caesarea Philippi."
+  },
+  {
+   "id": "e-booths",
+   "title": "At the Feast of Booths",
+   "year": 29.75,
+   "certainty": "approx",
+   "refs": [
+    "John 7-9"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "In Jerusalem Jesus cries out, \"If anyone thirsts, let him come to me and drink\", declares \"I am the light of the world\", and heals a man born blind."
+  },
+  {
+   "id": "e-dedication",
+   "title": "At the Feast of Dedication",
+   "year": 29.97,
+   "certainty": "calculated",
+   "refs": [
+    "John 10:22-42"
+   ],
+   "places": [
+    "jerusalem",
+    "bethany-2"
+   ],
+   "summary": "In the winter feast (Hanukkah) Jesus says, \"I and the Father are one.\" They try to stone him, and he withdraws across the Jordan."
+  },
+  {
+   "id": "e-lazarus",
+   "title": "Lazarus raised from the dead",
+   "year": 30.15,
+   "certainty": "approx",
+   "refs": [
+    "John 11:1-54"
+   ],
+   "places": [
+    "bethany-1",
+    "ephraim-2"
+   ],
+   "summary": "\"I am the resurrection and the life.\" Four days after Lazarus' death Jesus calls him out of the tomb. The council resolves to kill Jesus, and he withdraws to Ephraim."
+  },
+  {
+   "id": "e-jericho",
+   "title": "Bartimaeus and Zacchaeus at Jericho",
+   "year": 30.24,
+   "certainty": "approx",
+   "refs": [
+    "Mark 10:46-52",
+    "Luke 19:1-10"
+   ],
+   "places": [
+    "jericho-2"
+   ],
+   "summary": "On the way up to Jerusalem Jesus gives sight to blind Bartimaeus and stays with the tax collector Zacchaeus: \"The Son of Man came to seek and to save the lost.\""
+  },
+  {
+   "id": "e-anointing",
+   "title": "Mary anoints Jesus at Bethany",
+   "year": 30.249,
+   "certainty": "calculated",
+   "refs": [
+    "John 12:1-8",
+    "Mark 14:3-9"
+   ],
+   "places": [
+    "bethany-1"
+   ],
+   "summary": "At a dinner in his honour, Mary pours costly perfume on Jesus' feet. He says she has kept it for the day of his burial.",
+   "date": "Six days before the Passover (John 12:1)"
+  },
+  {
+   "id": "e-entry",
+   "title": "The triumphal entry",
+   "year": 30.252,
+   "certainty": "calculated",
+   "refs": [
+    "Matthew 21:1-11",
+    "John 12:12-19",
+    "Zechariah 9:9"
+   ],
+   "places": [
+    "bethany-1",
+    "mount-of-olives",
+    "jerusalem"
+   ],
+   "summary": "Jesus rides into Jerusalem on a donkey, fulfilling Zechariah's prophecy, as crowds spread cloaks and palm branches: \"Hosanna to the Son of David!\"",
+   "date": "Sunday, 2 April"
+  },
+  {
+   "id": "e-temple-2",
+   "title": "Clearing the temple",
+   "year": 30.255,
+   "certainty": "calculated",
+   "refs": [
+    "Mark 11:15-19",
+    "Isaiah 56:7"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "Jesus drives out those buying and selling: \"My house shall be called a house of prayer for all the nations.\"",
+   "date": "Monday"
+  },
+  {
+   "id": "e-olivet",
+   "title": "Teaching in the temple and on the Mount of Olives",
+   "year": 30.258,
+   "certainty": "calculated",
+   "refs": [
+    "Matthew 21:23-25:46",
+    "Mark 12-13"
+   ],
+   "places": [
+    "jerusalem",
+    "mount-of-olives"
+   ],
+   "summary": "Jesus answers his challengers, gives the greatest commandment, weeps over Jerusalem, and foretells the temple's destruction and his return in glory.",
+   "date": "Tuesday and Wednesday"
+  },
+  {
+   "id": "e-supper",
+   "title": "The Last Supper",
+   "year": 30.263,
+   "certainty": "calculated",
+   "refs": [
+    "Luke 22:7-38",
+    "John 13-17",
+    "1 Corinthians 11:23-26"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "Jesus washes his disciples' feet, gives them the bread and cup: \"This is my body ... This cup is the new covenant in my blood\", foretells Judas' betrayal and Peter's denial, and prays for all who will believe.",
+   "date": "Thursday evening"
+  },
+  {
+   "id": "e-gethsemane",
+   "title": "Gethsemane and the arrest",
+   "year": 30.264,
+   "certainty": "calculated",
+   "refs": [
+    "Mark 14:32-52",
+    "John 18:1-12"
+   ],
+   "places": [
+    "gethsemane"
+   ],
+   "summary": "In anguish Jesus prays, \"Not my will, but yours, be done.\" Judas arrives with soldiers and betrays him with a kiss, and the disciples flee.",
+   "date": "Thursday night"
+  },
+  {
+   "id": "e-trials",
+   "title": "Trials before the council and Pilate",
+   "year": 30.265,
+   "certainty": "calculated",
+   "refs": [
+    "Mark 14:53-15:15",
+    "Luke 23:1-25",
+    "John 18:13-19:16"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "Jesus is tried by night before Caiaphas and the council, denied three times by Peter, sent by Pilate to Herod Antipas and back, and handed over to be crucified though Pilate finds no guilt in him.",
+   "date": "Thursday night to Friday morning"
+  },
+  {
+   "id": "e-cross",
+   "title": "The crucifixion",
+   "year": 30.266,
+   "certainty": "disputed",
+   "refs": [
+    "Matthew 27:27-56",
+    "Mark 15:16-41",
+    "Luke 23:26-49",
+    "John 19:16-37",
+    "Isaiah 53",
+    "1 Peter 2:24"
+   ],
+   "places": [
+    "golgotha"
+   ],
+   "summary": "Jesus is crucified at Golgotha between two criminals. He prays for those who crucify him, promises paradise to the repentant thief, and cries \"It is finished\" before giving up his spirit. The temple curtain is torn in two. He is buried in Joseph of Arimathea's new tomb.",
+   "date": "Friday 7 April AD 30, at Passover",
+   "basis": "A Friday (Mark 15:42) at Passover (John 19:14) while Pilate and Caiaphas held office (AD 26-36). Astronomy allows Passover on a Friday in AD 30 or AD 33.",
+   "note": "Many evangelical scholars prefer Friday 3 April AD 33. The traditional site of Golgotha and the tomb is the Church of the Holy Sepulchre.",
+   "evidence": "The Roman historian Tacitus writes that \"Christus ... suffered the extreme penalty during the reign of Tiberius at the hands of one of our procurators, Pontius Pilatus\"."
+  },
+  {
+   "id": "e-resurrection",
+   "title": "\"He is not here, for he has risen\"",
+   "year": 30.271,
+   "certainty": "calculated",
+   "refs": [
+    "Matthew 28:1-10",
+    "Luke 24",
+    "John 20",
+    "1 Corinthians 15:3-8"
+   ],
+   "places": [
+    "golgotha",
+    "emmaus",
+    "jerusalem"
+   ],
+   "summary": "On the first day of the week the women find the tomb empty and angels announce that Jesus has risen. He appears to Mary Magdalene, to two disciples on the road to Emmaus, to Peter, and to the disciples behind locked doors, and later to Thomas: \"My Lord and my God!\"",
+   "date": "Sunday, the third day"
+  },
+  {
+   "id": "e-galilee",
+   "title": "Appearances in Galilee; the Great Commission",
+   "year": 30.32,
+   "certainty": "approx",
+   "refs": [
+    "John 21",
+    "Matthew 28:16-20",
+    "1 Corinthians 15:6"
+   ],
+   "places": [
+    "sea-of-galilee"
+   ],
+   "summary": "By the lake Jesus restores Peter: \"Feed my sheep.\" On a mountain in Galilee he sends the eleven: \"Go therefore and make disciples of all nations.\" He appears to more than five hundred at one time."
+  },
+  {
+   "id": "e-ascension",
+   "title": "The ascension",
+   "year": 30.377,
+   "certainty": "calculated",
+   "refs": [
+    "Acts 1:1-11",
+    "Luke 24:50-53"
+   ],
+   "places": [
+    "mount-of-olives",
+    "bethany-1"
+   ],
+   "summary": "After forty days of appearances, Jesus promises the Holy Spirit and is taken up into heaven before his disciples' eyes. Angels say he will come again in the same way.",
+   "date": "Forty days after the resurrection (Acts 1:3)"
+  },
+  {
+   "id": "e-pentecost",
+   "title": "Pentecost: the Holy Spirit comes",
+   "year": 30.405,
+   "certainty": "calculated",
+   "refs": [
+    "Acts 2",
+    "Joel 2:28-32"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "The Spirit comes with wind and tongues of fire, and the disciples speak in many languages. Peter preaches the crucified and risen Christ, and about three thousand are baptised. The church is born.",
+   "date": "Fifty days after Passover"
+  },
+  {
+   "id": "e-council-1",
+   "title": "Peter and John before the council",
+   "year": 31,
+   "certainty": "approx",
+   "refs": [
+    "Acts 3-4"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "After a lame man is healed at the temple gate, Peter and John are arrested and ordered not to speak in Jesus' name. \"There is salvation in no one else.\""
+  },
+  {
+   "id": "e-stephen",
+   "title": "Stephen martyred; the church scattered",
+   "year": 32,
+   "certainty": "approx",
+   "refs": [
+    "Acts 6:8-8:3"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "Stephen is stoned, praying \"Lord, do not hold this sin against them.\" Saul approves, and a great persecution scatters the believers through Judea and Samaria."
+  },
+  {
+   "id": "e-philip",
+   "title": "Philip in Samaria; the Ethiopian official",
+   "year": 32.4,
+   "certainty": "approx",
+   "refs": [
+    "Acts 8:4-40",
+    "Isaiah 53:7-8"
+   ],
+   "places": [
+    "samaria-2",
+    "gaza",
+    "caesarea"
+   ],
+   "summary": "Philip preaches Christ in Samaria and many believe. On the desert road to Gaza he explains Isaiah 53 to an Ethiopian court official, who is baptised and goes on his way rejoicing."
+  },
+  {
+   "id": "e-damascus",
+   "title": "Saul meets the risen Jesus",
+   "year": 33,
+   "certainty": "approx",
+   "refs": [
+    "Acts 9:1-19",
+    "Acts 22:3-16",
+    "Galatians 1:13-16",
+    "1 Corinthians 15:8-10"
+   ],
+   "places": [
+    "jerusalem",
+    "damascus"
+   ],
+   "summary": "On the road to Damascus to arrest Christians, Saul is blinded by a light from heaven: \"Saul, Saul, why are you persecuting me?\" Ananias baptises him, and he immediately proclaims Jesus as the Son of God.",
+   "note": "Dates suggested for Paul's conversion range from AD 31 to 36."
+  },
+  {
+   "id": "e-arabia",
+   "title": "Saul in Arabia; escape from Damascus",
+   "year": 33.5,
+   "certainty": "approx",
+   "refs": [
+    "Galatians 1:17",
+    "Acts 9:19-25",
+    "2 Corinthians 11:32-33"
+   ],
+   "places": [
+    "arabia-2",
+    "damascus"
+   ],
+   "summary": "Saul goes away into Arabia (the Nabataean kingdom), then returns to Damascus. When the Jews and King Aretas' governor plot against him, he is let down through the wall in a basket."
+  },
+  {
+   "id": "e-paul-jerusalem",
+   "title": "Saul's first visit to Jerusalem",
+   "year": 36,
+   "certainty": "calculated",
+   "refs": [
+    "Galatians 1:18-24",
+    "Acts 9:26-30"
+   ],
+   "places": [
+    "jerusalem",
+    "caesarea",
+    "tarsus"
+   ],
+   "summary": "Barnabas introduces Saul to the apostles, and he spends fifteen days with Peter. When the Hellenists try to kill him, the believers send him home to Tarsus.",
+   "basis": "\"After three years\" (Galatians 1:18), counting from his conversion."
+  },
+  {
+   "id": "e-lydda",
+   "title": "Peter at Lydda and Joppa",
+   "year": 37,
+   "certainty": "approx",
+   "refs": [
+    "Acts 9:32-43"
+   ],
+   "places": [
+    "lod",
+    "joppa"
+   ],
+   "summary": "Peter heals the paralysed Aeneas at Lydda and raises Tabitha (Dorcas) from the dead at Joppa."
+  },
+  {
+   "id": "e-cornelius",
+   "title": "Cornelius: the gospel for the Gentiles",
+   "year": 38,
+   "certainty": "approx",
+   "refs": [
+    "Acts 10-11:18"
+   ],
+   "places": [
+    "joppa",
+    "caesarea"
+   ],
+   "summary": "In a vision Peter learns that God shows no partiality. At the house of the Roman centurion Cornelius in Caesarea, the Holy Spirit falls on Gentiles as they hear the gospel, and they are baptised."
+  },
+  {
+   "id": "e-antioch",
+   "title": "\"Christians\" in Antioch",
+   "year": 43,
+   "certainty": "approx",
+   "refs": [
+    "Acts 11:19-26"
+   ],
+   "places": [
+    "antioch-1",
+    "tarsus"
+   ],
+   "summary": "Believers from Cyprus and Cyrene preach to Greeks in Antioch and a great number believe. Barnabas fetches Saul from Tarsus and they teach there a whole year. \"In Antioch the disciples were first called Christians.\""
+  },
+  {
+   "id": "e-agrippa",
+   "title": "James killed; Peter freed; Herod dies",
+   "year": 44,
+   "certainty": "fixed",
+   "refs": [
+    "Acts 12"
+   ],
+   "places": [
+    "jerusalem",
+    "caesarea"
+   ],
+   "summary": "Herod Agrippa I kills James son of Zebedee and imprisons Peter, but an angel leads Peter out. Soon after, Herod accepts acclaim as a god at Caesarea and is struck down.",
+   "evidence": "Josephus dates Agrippa's death at Caesarea to AD 44, describing the crowd hailing him as a god."
+  },
+  {
+   "id": "e-famine",
+   "title": "Famine relief for Jerusalem",
+   "year": 45.5,
+   "certainty": "approx",
+   "refs": [
+    "Acts 11:27-30",
+    "Acts 12:25",
+    "Galatians 2:1-10"
+   ],
+   "places": [
+    "antioch-1",
+    "jerusalem"
+   ],
+   "summary": "The prophet Agabus foretells a famine, and the church in Antioch sends help to Judea by Barnabas and Saul.",
+   "evidence": "Josephus describes a severe famine in Judea in about AD 45-47, in the reign of Claudius.",
+   "note": "Many identify this visit with the one in Galatians 2:1 (\"after fourteen years\"); others identify Galatians 2 with the Jerusalem Council."
+  },
+  {
+   "id": "e-sent",
+   "title": "First journey: sent out from Antioch",
+   "year": 46.3,
+   "certainty": "approx",
+   "refs": [
+    "Acts 13:1-12"
+   ],
+   "places": [
+    "antioch-1",
+    "seleucia",
+    "salamis",
+    "paphos"
+   ],
+   "summary": "The Holy Spirit says, \"Set apart for me Barnabas and Saul.\" They sail to Cyprus and cross the island to Paphos, where the proconsul Sergius Paulus believes. From here Luke calls Saul by his Roman name, Paul.",
+   "evidence": "Inscriptions mention a Lucius Sergius Paullus, a Roman official of this period, though whether he is the proconsul of Acts 13 is debated."
+  },
+  {
+   "id": "e-galatia",
+   "title": "Pisidian Antioch, Iconium, Lystra and Derbe",
+   "year": 46.7,
+   "certainty": "approx",
+   "refs": [
+    "Acts 13:13-14:20"
+   ],
+   "places": [
+    "perga",
+    "antioch-2",
+    "iconium",
+    "lystra",
+    "derbe"
+   ],
+   "summary": "Paul preaches in the synagogue at Pisidian Antioch and turns to the Gentiles. Driven from city to city, he is hailed as a god at Lystra, then stoned and left for dead, but rises and goes on to Derbe."
+  },
+  {
+   "id": "e-return-1",
+   "title": "Back to Antioch",
+   "year": 47.8,
+   "certainty": "approx",
+   "refs": [
+    "Acts 14:21-28"
+   ],
+   "places": [
+    "lystra",
+    "iconium",
+    "antioch-2",
+    "attalia",
+    "antioch-1"
+   ],
+   "summary": "Paul and Barnabas retrace their steps, strengthening the disciples and appointing elders, and report to the church in Antioch how God \"had opened a door of faith to the Gentiles\"."
+  },
+  {
+   "id": "e-jerusalem-council",
+   "title": "The Jerusalem Council",
+   "year": 49,
+   "certainty": "approx",
+   "refs": [
+    "Acts 15:1-35",
+    "Galatians 2:1-10"
+   ],
+   "places": [
+    "antioch-1",
+    "jerusalem"
+   ],
+   "summary": "When some teach that Gentile believers must be circumcised, the apostles and elders meet in Jerusalem. Peter and James agree: \"We believe that we will be saved through the grace of the Lord Jesus, just as they will.\""
+  },
+  {
+   "id": "e-timothy-joins",
+   "title": "Second journey: Timothy joins Paul",
+   "year": 49.5,
+   "certainty": "approx",
+   "refs": [
+    "Acts 15:36-16:5"
+   ],
+   "places": [
+    "antioch-1",
+    "derbe",
+    "lystra"
+   ],
+   "summary": "Paul and Barnabas part over John Mark. Paul takes Silas through Syria and Cilicia to the Galatian churches, and Timothy joins them at Lystra."
+  },
+  {
+   "id": "e-macedonian",
+   "title": "\"Come over to Macedonia and help us\"",
+   "year": 49.7,
+   "certainty": "approx",
+   "refs": [
+    "Acts 16:6-10"
+   ],
+   "places": [
+    "troas"
+   ],
+   "summary": "Prevented by the Spirit from preaching in Asia and Bithynia, they reach Troas, where Paul sees a vision of a man of Macedonia. Luke joins them (\"we\")."
+  },
+  {
+   "id": "e-philippi",
+   "title": "Lydia and the jailer at Philippi",
+   "year": 49.8,
+   "certainty": "approx",
+   "refs": [
+    "Acts 16:11-40",
+    "Philippians 1:3-5"
+   ],
+   "places": [
+    "troas",
+    "samothrace",
+    "neapolis",
+    "philippi"
+   ],
+   "summary": "In Philippi, the first church in Europe, Lydia believes. Paul and Silas are beaten and jailed, sing hymns at midnight, and after an earthquake the jailer asks, \"What must I do to be saved?\""
+  },
+  {
+   "id": "e-thessalonica",
+   "title": "Thessalonica and Berea",
+   "year": 50,
+   "certainty": "approx",
+   "refs": [
+    "Acts 17:1-15",
+    "1 Thessalonians 1:5-10"
+   ],
+   "places": [
+    "amphipolis",
+    "apollonia",
+    "thessalonica",
+    "berea"
+   ],
+   "summary": "Paul reasons from the Scriptures that the Christ had to suffer and rise. A church forms in Thessalonica, but a mob drives Paul out. The Bereans examine the Scriptures daily to see if these things are so."
+  },
+  {
+   "id": "e-athens",
+   "title": "Paul at Athens: the Areopagus",
+   "year": 50.3,
+   "certainty": "approx",
+   "refs": [
+    "Acts 17:16-34"
+   ],
+   "places": [
+    "athens"
+   ],
+   "summary": "Distressed by the city's idols, Paul proclaims to the philosophers the \"unknown god\" who made the world and has fixed a day of judgement by the man he raised from the dead."
+  },
+  {
+   "id": "e-corinth",
+   "title": "Eighteen months in Corinth",
+   "year": 50.4,
+   "certainty": "calculated",
+   "refs": [
+    "Acts 18:1-17",
+    "1 Corinthians 2:1-5"
+   ],
+   "places": [
+    "corinth",
+    "cenchreae"
+   ],
+   "summary": "Paul works as a tentmaker with Aquila and Priscilla. The Lord tells him in a vision, \"I have many in this city who are my people\", and the church grows. The Jews bring him before the proconsul Gallio, who dismisses the case.",
+   "basis": "Gallio was proconsul in AD 51-52 (Delphi inscription), near the end of Paul's 18 months (Acts 18:11-12).",
+   "evidence": "The Delphi inscription dates Gallio's term; a stone in Corinth also names Erastus, perhaps the city treasurer of Romans 16:23."
+  },
+  {
+   "id": "e-return-2",
+   "title": "Back to Antioch by Ephesus and Jerusalem",
+   "year": 52.2,
+   "certainty": "approx",
+   "refs": [
+    "Acts 18:18-22"
+   ],
+   "places": [
+    "cenchreae",
+    "ephesus",
+    "caesarea",
+    "antioch-1"
+   ],
+   "summary": "Paul sails with Priscilla and Aquila to Ephesus, leaves them there, lands at Caesarea, greets the church and returns to Antioch."
+  },
+  {
+   "id": "e-ephesus",
+   "title": "Third journey: nearly three years in Ephesus",
+   "year": 52.8,
+   "certainty": "approx",
+   "refs": [
+    "Acts 18:23-19:20",
+    "Acts 20:31"
+   ],
+   "places": [
+    "ephesus"
+   ],
+   "summary": "After strengthening the Galatian churches, Paul teaches daily in the hall of Tyrannus, \"so that all the residents of Asia heard the word of the Lord\". Former magicians burn their books."
+  },
+  {
+   "id": "e-riot",
+   "title": "The riot in Ephesus",
+   "year": 55.3,
+   "certainty": "approx",
+   "refs": [
+    "Acts 19:21-41",
+    "2 Corinthians 1:8-10"
+   ],
+   "places": [
+    "ephesus"
+   ],
+   "summary": "Demetrius the silversmith stirs up a riot against the gospel, which threatens the trade in shrines of Artemis. The crowd shouts for two hours, \"Great is Artemis of the Ephesians!\"",
+   "evidence": "The great theatre where the crowd gathered still stands at Ephesus, as do remains of the temple of Artemis."
+  },
+  {
+   "id": "e-greece",
+   "title": "Macedonia and Greece; the collection",
+   "year": 55.7,
+   "certainty": "approx",
+   "refs": [
+    "Acts 20:1-3",
+    "2 Corinthians 8-9",
+    "Romans 15:25-28"
+   ],
+   "places": [
+    "philippi",
+    "corinth"
+   ],
+   "summary": "Paul travels through Macedonia to Greece, collecting the churches' gift for the poor in Jerusalem, and spends three months in Corinth."
+  },
+  {
+   "id": "e-miletus",
+   "title": "Eutychus at Troas; farewell at Miletus",
+   "year": 57.3,
+   "certainty": "approx",
+   "refs": [
+    "Acts 20:4-38"
+   ],
+   "places": [
+    "troas",
+    "assos",
+    "mitylene",
+    "miletus"
+   ],
+   "summary": "At Troas Paul raises Eutychus, who fell from a window during his long sermon. At Miletus he says farewell to the Ephesian elders: \"Pay careful attention to ... the church of God, which he obtained with his own blood.\""
+  },
+  {
+   "id": "e-arrest",
+   "title": "Arrested in the temple",
+   "year": 57.4,
+   "certainty": "approx",
+   "refs": [
+    "Acts 21:1-23:35"
+   ],
+   "places": [
+    "cos",
+    "rhodes-1",
+    "patara",
+    "tyre",
+    "ptolemais",
+    "caesarea",
+    "jerusalem"
+   ],
+   "summary": "Warned along the way, Paul says he is ready to die for the name of the Lord Jesus. In Jerusalem a mob seizes him in the temple; the Roman tribune rescues him, and after a plot against his life he is taken by night to Caesarea.",
+   "date": "Around Pentecost (Acts 20:16)"
+  },
+  {
+   "id": "e-caesarea",
+   "title": "Two years in prison at Caesarea",
+   "year": 57.5,
+   "certainty": "approx",
+   "refs": [
+    "Acts 24-26"
+   ],
+   "places": [
+    "caesarea"
+   ],
+   "summary": "Paul defends himself before Felix, who leaves him in prison two years, then before Festus. When Festus proposes a trial in Jerusalem, Paul appeals to Caesar, and tells his story before King Agrippa II."
+  },
+  {
+   "id": "e-voyage",
+   "title": "The voyage and shipwreck",
+   "year": 59.7,
+   "certainty": "calculated",
+   "refs": [
+    "Acts 27"
+   ],
+   "places": [
+    "caesarea",
+    "sidon",
+    "myra",
+    "cnidus",
+    "fair-havens",
+    "malta"
+   ],
+   "summary": "Sailing late in the season, the ship is caught by a north-east gale off Crete and driven for fourteen days. Paul encourages the 276 on board, and all reach land safely when the ship runs aground on Malta.",
+   "basis": "After \"the Fast\" (the Day of Atonement, Acts 27:9), so in the autumn after Festus arrived."
+  },
+  {
+   "id": "e-malta",
+   "title": "Winter on Malta",
+   "year": 59.85,
+   "certainty": "approx",
+   "refs": [
+    "Acts 28:1-10"
+   ],
+   "places": [
+    "malta"
+   ],
+   "summary": "A viper fastens on Paul's hand but does him no harm. He heals the father of Publius, the island's chief man, and many others."
+  },
+  {
+   "id": "e-rome",
+   "title": "Paul arrives in Rome",
+   "year": 60.2,
+   "certainty": "approx",
+   "refs": [
+    "Acts 28:11-16"
+   ],
+   "places": [
+    "syracuse",
+    "rhegium",
+    "puteoli",
+    "forum-of-appius",
+    "three-taverns",
+    "rome"
+   ],
+   "summary": "In spring the journey resumes by Syracuse and Rhegium to Puteoli. Believers come out along the Appian Way to the Forum of Appius and Three Taverns to meet him, \"and on seeing them Paul thanked God and took courage\"."
+  },
+  {
+   "id": "e-house-arrest",
+   "title": "Two years under house arrest",
+   "year": 60.3,
+   "certainty": "approx",
+   "refs": [
+    "Acts 28:16-31",
+    "Philippians 1:12-14"
+   ],
+   "places": [
+    "rome"
+   ],
+   "summary": "Paul lives in his own rented house under guard, welcoming all who come, \"proclaiming the kingdom of God and teaching about the Lord Jesus Christ with all boldness and without hindrance\". Acts ends here."
+  },
+  {
+   "id": "e-james-killed",
+   "title": "James the Lord's brother killed",
+   "year": 62,
+   "certainty": "fixed",
+   "refs": [],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "Between the death of Festus and the arrival of the next governor, the high priest Ananus has James stoned in Jerusalem.",
+   "evidence": "Recorded by Josephus (Antiquities 20.200). Not described in the New Testament."
+  },
+  {
+   "id": "e-later-travels",
+   "title": "Paul's later travels",
+   "year": 62.5,
+   "certainty": "disputed",
+   "refs": [
+    "1 Timothy 1:3",
+    "Titus 1:5",
+    "Titus 3:12",
+    "2 Timothy 4:13, 20",
+    "Romans 15:24"
+   ],
+   "places": [
+    "ephesus",
+    "miletus",
+    "troas",
+    "nicopolis"
+   ],
+   "summary": "The letters to Timothy and Titus suggest that Paul was released and travelled again to Crete, Ephesus, Macedonia and Nicopolis. He had hoped to reach Spain.",
+   "note": "This rests on Paul's later letters and early tradition (1 Clement 5 says he reached \"the limit of the west\"). Not all scholars accept a release."
+  },
+  {
+   "id": "e-fire",
+   "title": "The great fire of Rome; Nero's persecution",
+   "year": 64.55,
+   "certainty": "fixed",
+   "refs": [
+    "1 Peter 4:12-16"
+   ],
+   "places": [
+    "rome"
+   ],
+   "summary": "Much of Rome burns. Nero blames the Christians, and many are cruelly put to death.",
+   "date": "July AD 64",
+   "evidence": "Tacitus (Annals 15.44) describes the fire and Nero's persecution of \"those called Christians\"."
+  },
+  {
+   "id": "e-martyrs",
+   "title": "Peter and Paul martyred in Rome",
+   "year": 66,
+   "certainty": "disputed",
+   "refs": [
+    "2 Timothy 4:6-8",
+    "John 21:18-19",
+    "2 Peter 1:13-15"
+   ],
+   "places": [
+    "rome"
+   ],
+   "summary": "\"I have fought the good fight, I have finished the race, I have kept the faith.\" Early Christian writers say that Paul was beheaded and Peter crucified in Rome under Nero.",
+   "note": "Dates suggested range from AD 64 to 68."
+  },
+  {
+   "id": "e-ad70",
+   "title": "Jerusalem and the temple destroyed",
+   "year": 70.6,
+   "certainty": "fixed",
+   "refs": [
+    "Luke 19:41-44",
+    "Luke 21:5-24",
+    "Mark 13:1-2"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "After a four-year Jewish revolt, the Roman general Titus besieges and takes Jerusalem and burns the temple, as Jesus foretold: \"There will not be left here one stone upon another.\"",
+   "date": "August AD 70",
+   "evidence": "Described in detail by Josephus, who was there; the Arch of Titus in Rome shows the temple treasures carried in triumph."
+  }
+ ],
+ "letters": [
+  {
+   "id": "w-james",
+   "title": "James",
+   "year": 47,
+   "certainty": "approx",
+   "refs": [
+    "James 1:1"
+   ],
+   "places": [
+    "jerusalem"
+   ],
+   "summary": "James, the Lord's brother, writes to Jewish believers \"in the Dispersion\": practical wisdom, and faith that works.",
+   "link": {
+    "href": "books.html#james",
+    "label": "About James in the Book Explorer"
+   }
+  },
+  {
+   "id": "w-galatians",
+   "title": "Galatians",
+   "year": 48.2,
+   "certainty": "approx",
+   "refs": [
+    "Galatians 1:1-9"
+   ],
+   "places": [
+    "antioch-1"
+   ],
+   "summary": "Paul writes urgently to the Galatian churches he has just planted: we are justified by faith in Christ, not by works of the law.",
+   "link": {
+    "href": "books.html#galatians",
+    "label": "About Galatians in the Book Explorer"
+   }
+  },
+  {
+   "id": "w-1-thessalonians",
+   "title": "1 Thessalonians",
+   "year": 50.6,
+   "certainty": "approx",
+   "refs": [
+    "1 Thessalonians 3:1-6"
+   ],
+   "places": [
+    "corinth"
+   ],
+   "summary": "From Corinth, Paul writes to the young, persecuted church in Thessalonica, comforting them about believers who have died.",
+   "link": {
+    "href": "books.html#1-thessalonians",
+    "label": "About 1 Thessalonians in the Book Explorer"
+   }
+  },
+  {
+   "id": "w-2-thessalonians",
+   "title": "2 Thessalonians",
+   "year": 51,
+   "certainty": "approx",
+   "refs": [
+    "2 Thessalonians 2:1-2"
+   ],
+   "places": [
+    "corinth"
+   ],
+   "summary": "A second letter from Corinth, correcting the idea that the day of the Lord had already come.",
+   "link": {
+    "href": "books.html#2-thessalonians",
+    "label": "About 2 Thessalonians in the Book Explorer"
+   }
+  },
+  {
+   "id": "w-1-corinthians",
+   "title": "1 Corinthians",
+   "year": 55,
+   "certainty": "approx",
+   "refs": [
+    "1 Corinthians 16:8"
+   ],
+   "places": [
+    "ephesus"
+   ],
+   "summary": "From Ephesus, Paul answers questions from a divided church in Corinth and teaches on love and the resurrection.",
+   "link": {
+    "href": "books.html#1-corinthians",
+    "label": "About 1 Corinthians in the Book Explorer"
+   }
+  },
+  {
+   "id": "w-2-corinthians",
+   "title": "2 Corinthians",
+   "year": 55.8,
+   "certainty": "approx",
+   "refs": [
+    "2 Corinthians 2:12-13",
+    "2 Corinthians 7:5"
+   ],
+   "places": [
+    "philippi"
+   ],
+   "summary": "From Macedonia, Paul's most personal letter, defending his ministry: God's power is made perfect in weakness.",
+   "link": {
+    "href": "books.html#2-corinthians",
+    "label": "About 2 Corinthians in the Book Explorer"
+   }
+  },
+  {
+   "id": "w-romans",
+   "title": "Romans",
+   "year": 56.9,
+   "certainty": "approx",
+   "refs": [
+    "Romans 15:22-26",
+    "Romans 16:1, 23"
+   ],
+   "places": [
+    "corinth"
+   ],
+   "summary": "From Corinth, Paul sends his fullest explanation of the gospel to the church in Rome, which he hopes to visit on his way to Spain.",
+   "link": {
+    "href": "books.html#romans",
+    "label": "About Romans in the Book Explorer"
+   }
+  },
+  {
+   "id": "w-mark",
+   "title": "Mark",
+   "year": 58,
+   "certainty": "approx",
+   "refs": [
+    "Mark 1:1"
+   ],
+   "places": [
+    "rome"
+   ],
+   "summary": "Traditionally based on Peter's preaching, the shortest Gospel.",
+   "link": {
+    "href": "books.html#mark",
+    "label": "About Mark in the Book Explorer"
+   }
+  },
+  {
+   "id": "w-matthew",
+   "title": "Matthew",
+   "year": 59,
+   "certainty": "approx",
+   "refs": [
+    "Matthew 1:1"
+   ],
+   "places": [],
+   "summary": "Matthew writes the Gospel of the promised King for Jewish readers.",
+   "link": {
+    "href": "books.html#matthew",
+    "label": "About Matthew in the Book Explorer"
+   }
+  },
+  {
+   "id": "w-ephesians",
+   "title": "Ephesians",
+   "year": 60.8,
+   "certainty": "approx",
+   "refs": [
+    "Ephesians 3:1",
+    "Ephesians 6:21-22"
+   ],
+   "places": [
+    "rome"
+   ],
+   "summary": "From prison, probably in Rome, a letter celebrating one new people in Christ, carried by Tychicus.",
+   "link": {
+    "href": "books.html#ephesians",
+    "label": "About Ephesians in the Book Explorer"
+   }
+  },
+  {
+   "id": "w-colossians",
+   "title": "Colossians",
+   "year": 60.85,
+   "certainty": "approx",
+   "refs": [
+    "Colossians 4:7-9",
+    "Colossians 4:13-16"
+   ],
+   "places": [
+    "rome",
+    "colossae",
+    "laodicea"
+   ],
+   "summary": "From prison, Paul shows the supremacy and sufficiency of Christ. Tychicus carries it with Onesimus.",
+   "link": {
+    "href": "books.html#colossians",
+    "label": "About Colossians in the Book Explorer"
+   }
+  },
+  {
+   "id": "w-philemon",
+   "title": "Philemon",
+   "year": 60.9,
+   "certainty": "approx",
+   "refs": [
+    "Philemon 1, 10-16"
+   ],
+   "places": [
+    "rome"
+   ],
+   "summary": "A personal appeal to receive the runaway slave Onesimus back as a beloved brother.",
+   "link": {
+    "href": "books.html#philemon",
+    "label": "About Philemon in the Book Explorer"
+   }
+  },
+  {
+   "id": "w-luke",
+   "title": "Luke",
+   "year": 61,
+   "certainty": "approx",
+   "refs": [
+    "Luke 1:1-4"
+   ],
+   "places": [],
+   "summary": "Luke completes his orderly account of the life of Jesus for Theophilus.",
+   "link": {
+    "href": "books.html#luke",
+    "label": "About Luke in the Book Explorer"
+   }
+  },
+  {
+   "id": "w-philippians",
+   "title": "Philippians",
+   "year": 61.8,
+   "certainty": "approx",
+   "refs": [
+    "Philippians 1:12-14",
+    "Philippians 4:22"
+   ],
+   "places": [
+    "rome"
+   ],
+   "summary": "A letter of joy from prison to the church at Philippi.",
+   "link": {
+    "href": "books.html#philippians",
+    "label": "About Philippians in the Book Explorer"
+   }
+  },
+  {
+   "id": "w-acts",
+   "title": "Acts",
+   "year": 62.1,
+   "certainty": "approx",
+   "refs": [
+    "Acts 1:1-2"
+   ],
+   "places": [
+    "rome"
+   ],
+   "summary": "Luke's second volume, ending with Paul in Rome.",
+   "link": {
+    "href": "books.html#acts",
+    "label": "About Acts in the Book Explorer"
+   }
+  },
+  {
+   "id": "w-1-timothy",
+   "title": "1 Timothy",
+   "year": 63,
+   "certainty": "approx",
+   "refs": [
+    "1 Timothy 1:3"
+   ],
+   "places": [
+    "ephesus"
+   ],
+   "summary": "Paul instructs Timothy, leading the church in Ephesus.",
+   "link": {
+    "href": "books.html#1-timothy",
+    "label": "About 1 Timothy in the Book Explorer"
+   }
+  },
+  {
+   "id": "w-titus",
+   "title": "Titus",
+   "year": 63.4,
+   "certainty": "approx",
+   "refs": [
+    "Titus 1:5"
+   ],
+   "places": [],
+   "summary": "Paul instructs Titus to appoint elders in Crete.",
+   "link": {
+    "href": "books.html#titus",
+    "label": "About Titus in the Book Explorer"
+   }
+  },
+  {
+   "id": "w-1-peter",
+   "title": "1 Peter",
+   "year": 63.6,
+   "certainty": "approx",
+   "refs": [
+    "1 Peter 5:12-13"
+   ],
+   "places": [
+    "rome"
+   ],
+   "summary": "Peter writes from \"Babylon\" (probably Rome) to suffering believers in Asia Minor.",
+   "link": {
+    "href": "books.html#1-peter",
+    "label": "About 1 Peter in the Book Explorer"
+   }
+  },
+  {
+   "id": "w-hebrews",
+   "title": "Hebrews",
+   "year": 65,
+   "certainty": "approx",
+   "refs": [
+    "Hebrews 13:22-24"
+   ],
+   "places": [],
+   "summary": "An unnamed author urges Jewish believers to hold fast to Jesus, the great high priest.",
+   "link": {
+    "href": "books.html#hebrews",
+    "label": "About Hebrews in the Book Explorer"
+   }
+  },
+  {
+   "id": "w-2-timothy",
+   "title": "2 Timothy",
+   "year": 65.5,
+   "certainty": "approx",
+   "refs": [
+    "2 Timothy 4:6-21"
+   ],
+   "places": [
+    "rome"
+   ],
+   "summary": "Paul's last letter, from a Roman prison as he faces death.",
+   "link": {
+    "href": "books.html#2-timothy",
+    "label": "About 2 Timothy in the Book Explorer"
+   }
+  },
+  {
+   "id": "w-2-peter",
+   "title": "2 Peter",
+   "year": 65.7,
+   "certainty": "approx",
+   "refs": [
+    "2 Peter 1:13-15"
+   ],
+   "places": [
+    "rome"
+   ],
+   "summary": "Peter's last letter, written shortly before his death.",
+   "link": {
+    "href": "books.html#2-peter",
+    "label": "About 2 Peter in the Book Explorer"
+   }
+  },
+  {
+   "id": "w-jude",
+   "title": "Jude",
+   "year": 67,
+   "certainty": "approx",
+   "refs": [
+    "Jude 3"
+   ],
+   "places": [],
+   "summary": "Jude, the brother of James, urges believers to contend for the faith.",
+   "link": {
+    "href": "books.html#jude",
+    "label": "About Jude in the Book Explorer"
+   },
+   "note": "John's Gospel, letters and Revelation were written later, about AD 85-95."
+  }
+ ]
+}

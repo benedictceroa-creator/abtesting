@@ -65,7 +65,8 @@
   // Years may be fractional, counted from the Passover month (about April):
   // -1446 is spring 1446 BC, so the calendar year runs from a quarter-year earlier
   function bc(y) { return Math.ceil(-y - 0.25 - 1e-9); }
-  function yr(y) { return y < 0 ? bc(y) + ' BC' : 'AD ' + Math.floor(y); }
+  // There is no year 0: the instant 0 is where 1 BC ends and AD 1 begins
+  function yr(y) { return y < 0 ? bc(y) + ' BC' : 'AD ' + Math.max(1, Math.floor(y)); }
   function span(a, b, approx) {
     var c = approx ? 'c. ' : '';
     if (a < 0 && b < 0) return c + (bc(a) === bc(b) ? bc(a) : bc(a) + '–' + bc(b)) + ' BC';
@@ -168,7 +169,7 @@
       for (y = Math.floor(range[0]); y <= range[1]; y++) {
         for (var m = 0; m < 12; m += mstep) {
           var t = y + m / 12;
-          if (t >= range[0] && t <= range[1]) ticks.push({ y: t, label: m === 0 ? yr(t) : 'month ' + (m + 1) });
+          if (t >= range[0] && t <= range[1]) ticks.push({ y: t, label: m === 0 ? yr(t) : T.meta.monthNames ? T.meta.monthNames[m] : 'month ' + (m + 1) });
         }
       }
       return ticks;
@@ -543,6 +544,7 @@
     }
     if (d.evidence) nodes.push(h('div', { class: 'bs-evidence' }, [h('strong', { text: 'Evidence outside the Bible' }), d.evidence]));
     if (d.note) nodes.push(h('p', { class: 'bs-note', text: d.note }));
+    if (d.link) nodes.push(h('p', null, [h('a', { class: 'bs-link', href: d.link.href, text: d.link.label + ' \u2192' })]));
     if (it.type === 'empire') {
       var rulers = ITEMS.filter(function (r) { return r.type === 'ruler' && r.data.empire === it.id; });
       if (rulers.length) nodes.push(h('h3', { text: 'Rulers in this period' }), itemChips(rulers));
