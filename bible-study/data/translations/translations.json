@@ -1,0 +1,429 @@
+{
+ "approaches": {
+  "word": {
+   "label": "Word for word",
+   "aka": "Formal equivalence",
+   "summary": "Translates the original Hebrew, Aramaic and Greek as closely as possible, word by word, keeping the original structure where English allows.",
+   "pros": [
+    "Closest to the original wording",
+    "Best for detailed study and word studies",
+    "Keeps repeated words and images visible"
+   ],
+   "cons": [
+    "Can sound stiff or old-fashioned",
+    "Idioms may be unclear",
+    "Asks more of the reader"
+   ]
+  },
+  "thought": {
+   "label": "Thought for thought",
+   "aka": "Dynamic or functional equivalence",
+   "summary": "Translates the meaning of each phrase or sentence into natural modern English, so the reader understands what the original said.",
+   "pros": [
+    "Reads naturally",
+    "Clear meaning for today's readers",
+    "Good for longer reading"
+   ],
+   "cons": [
+    "Translators interpret more",
+    "Some wordplay and structure is lost",
+    "Less suited to word studies"
+   ]
+  },
+  "paraphrase": {
+   "label": "Paraphrased",
+   "aka": "Free rendering",
+   "summary": "Restates the Bible freely in contemporary language, often by one author, to capture its tone and impact rather than its exact words.",
+   "pros": [
+    "Very easy to read",
+    "Fresh and vivid",
+    "Helps familiar passages speak again"
+   ],
+   "cons": [
+    "Furthest from the original wording",
+    "Reflects one person's interpretation",
+    "Not ideal as your only Bible for study"
+   ]
+  }
+ },
+ "translations": [
+  {
+   "id": "interlinear",
+   "abbr": "Interlinear",
+   "name": "Interlinear Bible",
+   "pos": 4.4,
+   "row": "top",
+   "year": "Various",
+   "by": "Various publishers",
+   "reading": 1,
+   "approach": "word",
+   "about": "Not a translation for reading but a study tool: the Hebrew or Greek text with a literal English word printed under each original word, often with grammar codes.",
+   "goodFor": "Pastors, students and anyone wanting to see the original words behind a verse.",
+   "note": "Bible Hub and other sites offer free online interlinears."
+  },
+  {
+   "id": "nasb",
+   "abbr": "NASB",
+   "name": "New American Standard Bible",
+   "pos": 11.1,
+   "row": "bottom",
+   "year": "1971 (updated 1995, 2020)",
+   "by": "The Lockman Foundation",
+   "reading": 1,
+   "approach": "word",
+   "about": "Widely regarded as the most literal major English translation. It follows the wording and grammar of the Hebrew and Greek closely, which makes it precise for study but sometimes stiff to read aloud.",
+   "goodFor": "Close study of the text, word studies, and comparing with other translations.",
+   "gateway": "NASB",
+   "shop": "https://www.ashabooks.com/collections/nasb-bibles",
+   "basis": "Modern critical Hebrew and Greek texts"
+  },
+  {
+   "id": "amp",
+   "abbr": "AMP",
+   "name": "Amplified Bible",
+   "pos": 14.8,
+   "row": "top",
+   "year": "1965 (revised 2015)",
+   "by": "The Lockman Foundation and Zondervan",
+   "reading": 1,
+   "approach": "word",
+   "about": "Adds explanatory words in brackets and parentheses to bring out the range of meaning in key Hebrew and Greek words. Useful alongside another translation, but the extra words make it slow for continuous reading.",
+   "goodFor": "Understanding the shades of meaning in a verse; devotional study.",
+   "gateway": "AMP",
+   "shop": "https://www.ashabooks.com/collections/buy-amplified-bibles"
+  },
+  {
+   "id": "esv",
+   "abbr": "ESV",
+   "name": "English Standard Version",
+   "pos": 18.6,
+   "row": "bottom",
+   "year": "2001 (updated 2016)",
+   "by": "Crossway, with about 100 scholars",
+   "reading": 1,
+   "approach": "word",
+   "about": "An \"essentially literal\" revision of the RSV that aims for word-for-word accuracy in readable, dignified English. Popular for study Bibles and preaching.",
+   "goodFor": "Study, preaching, memorising and reading aloud in church.",
+   "gateway": "ESV",
+   "shop": "https://www.ashabooks.com/collections/esv-bibles",
+   "basis": "Modern critical Hebrew and Greek texts"
+  },
+  {
+   "id": "rsv",
+   "abbr": "RSV",
+   "name": "Revised Standard Version",
+   "pos": 22.5,
+   "row": "top",
+   "year": "1952 (NT 1946)",
+   "by": "National Council of Churches (USA)",
+   "reading": 1,
+   "approach": "word",
+   "about": "A revision of the King James tradition in more modern English, and the basis for both the ESV and the NRSV.",
+   "goodFor": "Readers who like the King James style in clearer language.",
+   "gateway": "RSV"
+  },
+  {
+   "id": "kjv",
+   "abbr": "KJV",
+   "name": "King James Version",
+   "pos": 26.2,
+   "row": "bottom",
+   "year": "1611 (standard text 1769)",
+   "by": "Church of England scholars, commissioned by King James I",
+   "reading": 1,
+   "approach": "word",
+   "about": "The most influential English Bible, loved for its majestic language and used for over 400 years. Its 17th-century English (\"thee\", \"thou\", \"-eth\") can be hard for today's readers.",
+   "goodFor": "Traditional worship, memorisation, and readers who love its beauty.",
+   "gateway": "KJV",
+   "shop": "https://www.ashabooks.com/collections/kjv-bibles",
+   "basis": "The Textus Receptus (Greek) and Masoretic Text (Hebrew)"
+  },
+  {
+   "id": "nkjv",
+   "abbr": "NKJV",
+   "name": "New King James Version",
+   "pos": 29.9,
+   "row": "top",
+   "year": "1982 (NT 1979)",
+   "by": "Thomas Nelson, with about 130 scholars",
+   "reading": 2,
+   "approach": "word",
+   "about": "Updates the KJV's language while keeping its style and the same underlying Greek text. A good bridge for those who love the KJV.",
+   "goodFor": "KJV readers who want modern English; study and church use.",
+   "gateway": "NKJV",
+   "shop": "https://www.ashabooks.com/collections/nkjv-bibles",
+   "basis": "The Textus Receptus (Greek), with notes on other manuscripts"
+  },
+  {
+   "id": "hcsb",
+   "abbr": "HCSB",
+   "name": "Holman Christian Standard Bible",
+   "pos": 37.0,
+   "row": "bottom",
+   "year": "2004 (NT 1999)",
+   "by": "Holman Bible Publishers",
+   "reading": 2,
+   "approach": "thought",
+   "about": "Aimed at \"optimal equivalence\": literal where possible, freer where clarity needs it. Replaced in 2017 by the Christian Standard Bible (CSB).",
+   "goodFor": "Readers who want a balance of accuracy and readability.",
+   "gateway": "HCSB",
+   "note": "Now replaced by the Christian Standard Bible (CSB), which follows the same approach."
+  },
+  {
+   "id": "nrsv",
+   "abbr": "NRSV",
+   "name": "New Revised Standard Version",
+   "pos": 42.8,
+   "row": "top",
+   "year": "1989 (updated 2021)",
+   "by": "National Council of Churches (USA)",
+   "reading": 1,
+   "approach": "thought",
+   "about": "A revision of the RSV widely used in universities and mainline churches. It uses gender-inclusive language for people where the original refers to men and women together.",
+   "goodFor": "Academic study and readers in mainline traditions.",
+   "gateway": "NRSVUE",
+   "shop": "https://www.ashabooks.com/collections/buy-nsrv-bibles",
+   "note": "Editions with the Apocrypha (deuterocanonical books) are common."
+  },
+  {
+   "id": "nab",
+   "abbr": "NAB",
+   "name": "New American Bible",
+   "pos": 46.5,
+   "row": "bottom",
+   "year": "1970 (revised edition 2011)",
+   "by": "Catholic scholars, for the U.S. Conference of Catholic Bishops",
+   "reading": 2,
+   "approach": "thought",
+   "about": "The translation used in Catholic churches in the United States, with the deuterocanonical books.",
+   "goodFor": "Catholic readers and liturgy.",
+   "gateway": "NABRE",
+   "note": "A Catholic translation. It includes the deuterocanonical books (the Apocrypha), which Protestant Bibles do not include as Scripture."
+  },
+  {
+   "id": "njb",
+   "abbr": "NJB",
+   "name": "New Jerusalem Bible",
+   "pos": 50.4,
+   "row": "top",
+   "year": "1985 (revised 2019)",
+   "by": "Catholic scholars, following the French Bible de Jérusalem",
+   "reading": 2,
+   "approach": "thought",
+   "about": "A Catholic translation known for its literary English and extensive notes.",
+   "goodFor": "Catholic readers; literary reading.",
+   "note": "A Catholic translation that includes the deuterocanonical books. Not available on Bible Gateway."
+  },
+  {
+   "id": "niv",
+   "abbr": "NIV",
+   "name": "New International Version",
+   "pos": 54.2,
+   "row": "bottom",
+   "year": "1978 (updated 1984, 2011)",
+   "by": "Committee on Bible Translation (Biblica)",
+   "reading": 2,
+   "approach": "thought",
+   "about": "The best-selling modern English translation, balancing accuracy and natural English. Translated by an international team of evangelical scholars.",
+   "goodFor": "Everyday reading, church use, and new believers.",
+   "gateway": "NIV",
+   "shop": "https://www.ashabooks.com/collections/niv-bibles",
+   "basis": "Modern critical Hebrew and Greek texts"
+  },
+  {
+   "id": "tniv",
+   "abbr": "TNIV",
+   "name": "Today's New International Version",
+   "pos": 57.9,
+   "row": "top",
+   "year": "2005 (NT 2002)",
+   "by": "Committee on Bible Translation",
+   "reading": 2,
+   "approach": "thought",
+   "about": "An update of the NIV with more gender-inclusive language. It was discontinued in 2011 when the NIV itself was updated.",
+   "goodFor": "Historical interest; most readers now use the NIV (2011).",
+   "note": "Discontinued in 2011 and no longer in print."
+  },
+  {
+   "id": "ncv",
+   "abbr": "NCV",
+   "name": "New Century Version",
+   "pos": 64.9,
+   "row": "bottom",
+   "year": "1991",
+   "by": "Thomas Nelson (World Bible Translation Center)",
+   "reading": 3,
+   "approach": "thought",
+   "about": "A simple, clear translation adapted from the International Children's Bible, using short sentences and everyday words.",
+   "goodFor": "Young readers and those new to the Bible.",
+   "gateway": "NCV"
+  },
+  {
+   "id": "nlt",
+   "abbr": "NLT",
+   "name": "New Living Translation",
+   "pos": 69.8,
+   "row": "top",
+   "year": "1996 (updated 2004, 2015)",
+   "by": "Tyndale House, with about 90 scholars",
+   "reading": 3,
+   "approach": "thought",
+   "about": "Began as a revision of The Living Bible but became a fresh translation from the Hebrew and Greek. Clear, warm, natural English.",
+   "goodFor": "Devotional and everyday reading, reading the whole Bible through, youth.",
+   "gateway": "NLT",
+   "shop": "https://www.ashabooks.com/collections/nlt-bibles",
+   "basis": "Modern critical Hebrew and Greek texts"
+  },
+  {
+   "id": "nirv",
+   "abbr": "NIrV",
+   "name": "New International Reader's Version",
+   "pos": 78.0,
+   "row": "bottom",
+   "year": "1996 (revised 1998, 2014)",
+   "by": "Biblica and Zondervan",
+   "reading": 3,
+   "approach": "thought",
+   "about": "A simplified NIV with shorter sentences and simpler words, for children and people learning English.",
+   "goodFor": "Children, early readers and those reading English as a second language.",
+   "gateway": "NIRV",
+   "shop": "https://www.ashabooks.com/collections/buy-nirv-bibles"
+  },
+  {
+   "id": "gnt",
+   "abbr": "GNT",
+   "name": "Good News Translation",
+   "pos": 81.9,
+   "row": "top",
+   "year": "1976 (NT 1966)",
+   "by": "American Bible Society",
+   "reading": 3,
+   "approach": "thought",
+   "about": "Also called the Good News Bible or Today's English Version. Written in plain, common English for people around the world, often with line drawings.",
+   "goodFor": "First-time readers and outreach.",
+   "gateway": "GNT"
+  },
+  {
+   "id": "cev",
+   "abbr": "CEV",
+   "name": "Contemporary English Version",
+   "pos": 85.6,
+   "row": "bottom",
+   "year": "1995",
+   "by": "American Bible Society",
+   "reading": 3,
+   "approach": "thought",
+   "about": "Written to be understood when read aloud, using natural, simple English and avoiding traditional church words.",
+   "goodFor": "Reading aloud, children and new believers.",
+   "gateway": "CEV"
+  },
+  {
+   "id": "tlb",
+   "abbr": "TLB",
+   "name": "The Living Bible",
+   "pos": 89.4,
+   "row": "top",
+   "year": "1971",
+   "by": "Kenneth N. Taylor",
+   "reading": 3,
+   "approach": "paraphrase",
+   "about": "A paraphrase written by Kenneth Taylor for his children, rewording the American Standard Version in everyday language. Hugely popular in the 1970s; later revised into the NLT.",
+   "goodFor": "Easy devotional reading alongside a translation.",
+   "gateway": "TLB",
+   "note": "A paraphrase by one person from an English Bible, not a translation from the Hebrew and Greek."
+  },
+  {
+   "id": "msg",
+   "abbr": "MSG",
+   "name": "The Message",
+   "pos": 95.7,
+   "row": "bottom",
+   "year": "2002 (NT 1993)",
+   "by": "Eugene H. Peterson",
+   "reading": 3,
+   "approach": "paraphrase",
+   "about": "A paraphrase in vivid, contemporary American English by pastor and scholar Eugene Peterson, aiming to capture the tone and impact of the original.",
+   "goodFor": "Fresh devotional reading alongside a more literal translation.",
+   "gateway": "MSG",
+   "shop": "https://www.ashabooks.com/collections/message-bibles",
+   "note": "Best read alongside a translation, not as your only Bible."
+  }
+ ],
+ "samples": [
+  {
+   "id": "interlinear",
+   "label": "Greek, word for word",
+   "text": "Οὕτως γὰρ ἠγάπησεν ὁ θεὸς τὸν κόσμον …",
+   "gloss": "Thus · for · loved · the · God · the · world …"
+  },
+  {
+   "id": "kjv",
+   "label": "KJV",
+   "text": "For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life."
+  },
+  {
+   "id": "esv",
+   "label": "ESV",
+   "text": "For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life."
+  },
+  {
+   "id": "niv",
+   "label": "NIV",
+   "text": "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life."
+  },
+  {
+   "id": "nlt",
+   "label": "NLT",
+   "text": "For this is how God loved the world: He gave his one and only Son, so that everyone who believes in him will not perish but have eternal life."
+  },
+  {
+   "id": "msg",
+   "label": "MSG",
+   "text": "This is how much God loved the world: He gave his Son, his one and only Son. And this is why: so that no one need be destroyed; by believing in him, anyone can have a whole and lasting life."
+  }
+ ],
+ "guide": [
+  {
+   "title": "For deep study",
+   "ids": [
+    "esv",
+    "nasb",
+    "nkjv"
+   ],
+   "text": "A word-for-word translation lets you see the structure and repeated words of the original. Many study Bibles use the ESV or NKJV."
+  },
+  {
+   "title": "For everyday reading",
+   "ids": [
+    "niv",
+    "nlt"
+   ],
+   "text": "A thought-for-thought translation reads naturally, making it easier to read whole books and keep going through the Bible."
+  },
+  {
+   "title": "For children and new readers",
+   "ids": [
+    "nirv",
+    "ncv",
+    "cev"
+   ],
+   "text": "Simple vocabulary and short sentences help young readers and those reading English as a second language."
+  },
+  {
+   "title": "For traditional worship",
+   "ids": [
+    "kjv",
+    "nkjv"
+   ],
+   "text": "The King James Version's language has shaped worship, hymns and memory verses for centuries; the NKJV keeps its feel in modern English."
+  },
+  {
+   "title": "For a fresh perspective",
+   "ids": [
+    "msg",
+    "amp"
+   ],
+   "text": "Read a paraphrase or an amplified version alongside your main Bible to see familiar passages in a new light."
+  }
+ ]
+}

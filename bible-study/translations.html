@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Types of Bible Translations: An Interactive Guide | Asha Books</title>
+  <meta name="description" content="Understand the difference between word-for-word, thought-for-thought and paraphrased Bibles. Explore 20 English translations from the NASB and ESV to the NIV, NLT and The Message, and compare any passage side by side.">
+  <!-- Prototype: keep out of search results until the content has passed theological review -->
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/hub/asha-books-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/hub/hub.css">
+  <link rel="stylesheet" href="assets/translations/translations.css">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></symbol>
+      <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M3 5.5C5.5 4 9 4 12 6c3-2 6.5-2 9-.5V19c-2.5-1.5-6-1.5-9 .5-3-2-6.5-2-9-.5z"/><path d="M12 6v13.5"/></symbol>
+      <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+      <symbol id="i-columns" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16M15 4v16"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="top">
+    <div class="wrap top-in">
+      <a class="brand" href="index.html" aria-label="Asha Books Bible Study Resources">
+        <img src="assets/hub/asha-books-logo.png" alt="Asha Books" width="511" height="168">
+        <span class="brand-tag">Bible Study</span>
+      </a>
+      <a class="pill pill-line" href="index.html"><svg class="ic"><use href="#i-back"/></svg>All resources</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- The spectrum, as in the Asha Books graphic -->
+    <section class="tg-hero">
+      <div class="wrap">
+        <p class="tg-kicker">Bible translation guide</p>
+        <h1>Types of Bible Translations</h1>
+        <p class="tg-lede">English Bibles differ mainly in how closely they follow the words of the original Hebrew and Greek. Tap any translation to find out more.</p>
+
+        <div class="tg-spec" id="tg-spec">
+          <div class="tg-bar" aria-hidden="true">
+            <span>Word for word</span><span>Thought for thought</span><span>Paraphrased</span>
+          </div>
+          <div class="tg-pins" id="tg-pins" role="listbox" aria-label="Bible translations, from most literal to most free"></div>
+        </div>
+        <p class="tg-hint" id="tg-hint">More literal <span></span> More readable</p>
+
+        <article class="tg-card" id="tg-card" aria-live="polite"></article>
+      </div>
+    </section>
+
+    <!-- Three approaches -->
+    <section class="section" aria-labelledby="ways-h">
+      <div class="wrap">
+        <p class="kicker">How translation works</p>
+        <h2 id="ways-h">Three ways to translate</h2>
+        <p class="sec-sub">Every translation has to balance being faithful to the original words with being clear to today's readers. Most translations sit somewhere between the two ends of the line.</p>
+        <div class="tg-ways" id="tg-ways"></div>
+      </div>
+    </section>
+
+    <!-- One verse along the spectrum -->
+    <section class="section section-mist" aria-labelledby="verse-h">
+      <div class="wrap tg-verse-wrap">
+        <div>
+          <p class="kicker">See the difference</p>
+          <h2 id="verse-h">One verse, from Greek to paraphrase</h2>
+          <p class="sec-sub">John 3:16 in the original Greek, then in five English Bibles, moving from the most literal to the most free. Notice how the wording loosens as you go down, while the message stays the same.</p>
+        </div>
+        <ol class="tg-ladder" id="tg-ladder"></ol>
+      </div>
+    </section>
+
+    <!-- Compare any passage -->
+    <section class="section" aria-labelledby="compare-h">
+      <div class="wrap">
+        <div class="tg-compare">
+          <div class="tg-compare-copy">
+            <p class="kicker">Try it yourself</p>
+            <h2 id="compare-h">Compare any passage</h2>
+            <p class="sec-sub">Choose a passage and up to five translations, and read them side by side on Bible Gateway.</p>
+          </div>
+          <form class="tg-form" id="tg-form">
+            <label class="tg-label" for="tg-ref">Passage</label>
+            <input id="tg-ref" class="tg-input" value="Psalm 23" autocomplete="off">
+            <div class="tg-quick" id="tg-quick"></div>
+            <p class="tg-label">Translations <span id="tg-count"></span></p>
+            <div class="tg-picks" id="tg-picks"></div>
+            <button class="btn btn-red" type="submit"><svg class="ic"><use href="#i-columns"/></svg>Compare side by side</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Which is right for you -->
+    <section class="section section-mist" aria-labelledby="guide-h">
+      <div class="wrap">
+        <p class="kicker">Choosing a Bible</p>
+        <h2 id="guide-h">Which translation is right for you?</h2>
+        <p class="sec-sub">There is no single &ldquo;best&rdquo; translation. Many people use two: a more literal Bible for study and a more readable one for daily reading.</p>
+        <div class="tg-guide" id="tg-guide"></div>
+        <div class="tg-more">
+          <a class="btn btn-dark" href="https://www.ashabooks.com/pages/find-your-perfect-bible" target="_blank" rel="noopener">Find your perfect Bible <svg class="ic"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-ghost" href="https://www.ashabooks.com/blogs/news/niv-vs-esv-vs-nkjv-vs-kjv-which-bible-translation-is-right-for-you" target="_blank" rel="noopener">Read: NIV vs ESV vs NKJV vs KJV</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="deeper">
+          <div>
+            <h2>Find your next Bible</h2>
+            <p>English Bibles in every translation, study and journaling editions, and Bibles in Indian languages, delivered across India.</p>
+          </div>
+          <div class="actions">
+            <a class="btn btn-white" href="https://www.ashabooks.com/collections/english-bibles" target="_blank" rel="noopener">Shop English Bibles <svg class="ic"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-outline-white" href="books.html">Explore the 66 books</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot foot-slim">
+    <div class="wrap foot-in">
+      <div class="foot-brand">
+        <img src="assets/hub/asha-books-logo-white.png" alt="Asha Books" width="511" height="168">
+        <a class="foot-link" href="index.html">More Bible study resources</a>
+      </div>
+      <div class="foot-notes">
+        <p><strong>Prototype.</strong> This content is awaiting review. Positions on the line are a general guide; translations don't fall at exact points.</p>
+        <p>Scripture quotations marked ESV are from the ESV&reg; Bible (The Holy Bible, English Standard Version&reg;), &copy; 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved.</p>
+        <p>Scripture quotations marked NIV are taken from the Holy Bible, New International Version&reg;, NIV&reg;. Copyright &copy; 1973, 1978, 1984, 2011 by Biblica, Inc.&trade; Used by permission. All rights reserved worldwide.</p>
+        <p>Scripture quotations marked NLT are taken from the Holy Bible, New Living Translation, copyright &copy; 1996, 2004, 2015 by Tyndale House Foundation. Used by permission of Tyndale House Publishers, Carol Stream, Illinois 60188. All rights reserved.</p>
+        <p>Scripture quotations marked MSG are taken from THE MESSAGE, copyright &copy; 1993, 2002, 2018 by Eugene H. Peterson. Used by permission of NavPress. All rights reserved. Represented by Tyndale House Publishers, Inc.</p>
+        <p>KJV quotations are in the public domain outside the United Kingdom.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/translations/translations.js"></script>
+</body>
+</html>
