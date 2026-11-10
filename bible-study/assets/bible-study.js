@@ -70,7 +70,7 @@
   function span(a, b, approx) {
     var c = approx ? 'c. ' : '';
     if (a < 0 && b < 0) return c + (bc(a) === bc(b) ? bc(a) : bc(a) + '–' + bc(b)) + ' BC';
-    return c + yr(a) + '–' + yr(b);
+    return c + (yr(a) === yr(b) ? yr(a) : yr(a) + '–' + yr(b));
   }
   function bibleUrl(ref) {
     return 'https://www.biblegateway.com/passage/?search=' + encodeURIComponent(ref) + '&version=' + encodeURIComponent(cfg.version);

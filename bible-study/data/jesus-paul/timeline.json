@@ -64,28 +64,28 @@
    {
     "label": "Jesus' ministry",
     "range": [
-     27.4,
-     30.6
+     29.4,
+     33.6
     ]
    },
    {
     "label": "Holy Week to Pentecost",
     "range": [
-     30.2,
-     30.47
+     33.2,
+     33.45
     ]
    },
    {
     "label": "The early church",
     "range": [
-     30,
-     47
+     33,
+     48
     ]
    },
    {
     "label": "Paul's journeys",
     "range": [
-     45.5,
+     46.5,
      58
     ]
    },
@@ -112,10 +112,10 @@
    "November",
    "December"
   ],
-  "chronology": "Jesus was born before Herod the Great died in 4 BC (Matthew 2:1, 19), probably about 5 BC, and was \"about thirty\" when he began his ministry (Luke 3:23). John's Gospel mentions three Passovers during his ministry (John 2:13; 6:4; 11:55), and \"46 years\" of temple building (John 2:20) points to AD 28 for the first. This page dates the crucifixion to Friday 7 April AD 30. For Paul, Acts and Galatians give the sequence, and two dates outside the Bible fix it: Gallio was proconsul in Corinth in AD 51-52 and Festus replaced Felix in about AD 59.",
-  "chronologyShort": "Crucifixion AD 30; Paul anchored on Gallio (AD 51-52).",
+  "chronology": "Jesus was born before Herod the Great died in 4 BC (Matthew 2:1, 19), probably about 5 BC. John the Baptist began preaching \"in the fifteenth year of the reign of Tiberius Caesar\" (Luke 3:1), that is AD 28-29, and Jesus was \"about thirty\" at his baptism (Luke 3:23). John's Gospel follows the ministry through several Passovers (John 2:13; 6:4; 11:55, and probably the feast of 5:1), so this page dates the crucifixion to Friday 3 April AD 33. For Paul, Acts and Galatians give the sequence, and two dates outside the Bible fix it: Gallio was proconsul in Corinth in AD 51-52 and Festus replaced Felix in about AD 59.",
+  "chronologyShort": "Crucifixion AD 33; Paul anchored on Gallio (AD 51-52).",
   "status": "DRAFT: awaiting theological review",
-  "alternative": "Many evangelical scholars date the crucifixion to Friday 3 April AD 33 instead, counting the \"fifteenth year of Tiberius\" (Luke 3:1) from AD 14 so that the ministry runs about AD 29-33. On that view the dates of Jesus' ministry and the first years of the church move about three years later. Paul's journeys and letters are dated the same way on either view.",
+  "alternative": "Many evangelical scholars date the crucifixion to Friday 7 April AD 30 instead, counting Tiberius' fifteenth year from AD 13, when he began to share power with Augustus, so that the ministry runs about AD 27-30. On that view the dates of Jesus' ministry and the first years of the church move about three years earlier. Paul's journeys and letters are dated the same way on either view.",
   "coLabel": "Saul before his conversion",
   "coPhrase": "born about",
   "introTitle": "Follow Jesus, the apostles and Paul"
@@ -131,7 +131,7 @@
    "id": "p-birth",
    "name": "Birth and hidden years",
    "start": -6,
-   "end": 27.6,
+   "end": 29.6,
    "certainty": "approx",
    "refs": [
     "Luke 1-2",
@@ -146,8 +146,8 @@
   {
    "id": "p-ministry",
    "name": "Jesus' public ministry",
-   "start": 27.6,
-   "end": 30.25,
+   "start": 29.6,
+   "end": 33.24,
    "certainty": "calculated",
    "refs": [
     "Mark 1:14-15",
@@ -159,14 +159,14 @@
     "capernaum",
     "jerusalem"
    ],
-   "summary": "About two and a half years of preaching the kingdom of God, healing, and teaching his disciples, mostly in Galilee, with visits to Jerusalem for the feasts.",
-   "basis": "From John's ministry and Jesus' baptism (Luke 3:1-23) through three Passovers in John (AD 28, 29, 30)."
+   "summary": "About three and a half years of preaching the kingdom of God, healing, and teaching his disciples, mostly in Galilee, with visits to Jerusalem for the feasts.",
+   "basis": "From John's ministry and Jesus' baptism (Luke 3:1-23) through the Passovers in John (AD 30, 31, 32 and 33)."
   },
   {
    "id": "p-passion",
    "name": "Death, resurrection and ascension",
-   "start": 30.25,
-   "end": 30.41,
+   "start": 33.24,
+   "end": 33.4,
    "certainty": "calculated",
    "refs": [
     "Matthew 21-28",
@@ -179,13 +179,13 @@
     "mount-of-olives"
    ],
    "summary": "Jesus enters Jerusalem, is crucified at Passover, rises on the third day and appears to his disciples for forty days before ascending to the Father.",
-   "basis": "Passover week of AD 30, then 40 days (Acts 1:3) and Pentecost 50 days after Passover (Acts 2:1)."
+   "basis": "Passover week of AD 33, then 40 days (Acts 1:3) and Pentecost 50 days after Passover (Acts 2:1)."
   },
   {
    "id": "p-church",
    "name": "The church in Jerusalem, Judea and Samaria",
-   "start": 30.41,
-   "end": 46.3,
+   "start": 33.4,
+   "end": 47.2,
    "certainty": "approx",
    "refs": [
     "Acts 1:8",
@@ -202,7 +202,7 @@
   {
    "id": "p-journeys",
    "name": "Paul's missionary journeys",
-   "start": 46.3,
+   "start": 47.2,
    "end": 57.4,
    "certainty": "approx",
    "refs": [
@@ -256,7 +256,7 @@
    "id": "jesus",
    "name": "Jesus",
    "start": -5,
-   "end": 30.377,
+   "end": 33.367,
    "certainty": "disputed",
    "refs": [
     "Matthew 1:18-25",
@@ -274,7 +274,7 @@
    ],
    "summary": "The eternal Son of God, born of the virgin Mary in Bethlehem and raised in Nazareth. He proclaimed the kingdom of God, healed the sick, forgave sins, died on the cross for sinners, rose bodily on the third day and ascended to the Father, from where he will come again.",
    "role": "The Son of God",
-   "basis": "Born before Herod's death in 4 BC; \"about thirty\" at his baptism (Luke 3:23); crucified at Passover AD 30 (or AD 33), ascended forty days later.",
+   "basis": "Born before Herod's death in 4 BC; \"about thirty\" at his baptism (Luke 3:23); crucified at Passover AD 33 (or AD 30), ascended forty days later.",
    "link": {
     "href": "family-tree.html#jesus",
     "label": "His family line in the Bible Family Tree"
@@ -284,7 +284,7 @@
    "id": "john-baptist",
    "name": "John the Baptist",
    "start": -6,
-   "end": 29.2,
+   "end": 32.2,
    "certainty": "approx",
    "refs": [
     "Luke 1:5-25, 57-80",
@@ -311,7 +311,7 @@
   {
    "id": "peter",
    "name": "Peter",
-   "start": 28,
+   "start": 30,
    "end": 66,
    "certainty": "approx",
    "refs": [
@@ -332,7 +332,7 @@
    ],
    "summary": "Simon, a fisherman of Bethsaida and Capernaum, renamed Peter (\"rock\"). He confessed Jesus as the Christ, denied him three times and was restored. He preached at Pentecost, opened the door to the Gentiles at Cornelius' house, and led the church in Jerusalem.",
    "role": "Apostle",
-   "basis": "From his call (about AD 28) to his death in Rome under Nero, about AD 64-67 (John 21:18-19; early church tradition).",
+   "basis": "From his call (about AD 30) to his death in Rome under Nero, about AD 64-67 (John 21:18-19; early church tradition).",
    "note": "Early Christian writers (1 Clement, Irenaeus, Eusebius) say Peter was martyred in Rome; the exact year is not known.",
    "link": {
     "href": "books.html#1-peter",
@@ -342,7 +342,7 @@
   {
    "id": "james-z",
    "name": "James son of Zebedee",
-   "start": 28,
+   "start": 30,
    "end": 44,
    "certainty": "calculated",
    "refs": [
@@ -361,7 +361,7 @@
   {
    "id": "john-z",
    "name": "John son of Zebedee",
-   "start": 28,
+   "start": 30,
    "end": 72,
    "certainty": "approx",
    "refs": [
@@ -389,7 +389,7 @@
   {
    "id": "james-l",
    "name": "James the Lord's brother",
-   "start": 30.3,
+   "start": 33.3,
    "end": 62,
    "certainty": "fixed",
    "refs": [
@@ -413,8 +413,8 @@
   {
    "id": "stephen",
    "name": "Stephen",
-   "start": 30.6,
-   "end": 32,
+   "start": 33.6,
+   "end": 34.3,
    "certainty": "approx",
    "refs": [
     "Acts 6-7"
@@ -428,7 +428,7 @@
   {
    "id": "philip-e",
    "name": "Philip the evangelist",
-   "start": 30.6,
+   "start": 33.6,
    "end": 57.5,
    "certainty": "approx",
    "refs": [
@@ -448,7 +448,7 @@
   {
    "id": "barnabas",
    "name": "Barnabas",
-   "start": 30.6,
+   "start": 33.6,
    "end": 55,
    "certainty": "approx",
    "refs": [
@@ -470,7 +470,7 @@
   {
    "id": "paul",
    "name": "Paul",
-   "start": 33,
+   "start": 34.8,
    "end": 66,
    "certainty": "approx",
    "refs": [
@@ -492,7 +492,7 @@
    "summary": "Saul of Tarsus, a Pharisee who persecuted the church until the risen Jesus met him on the road to Damascus. As the apostle to the Gentiles he planted churches across the Roman world and wrote thirteen New Testament letters. He was executed in Rome under Nero.",
    "role": "Apostle to the Gentiles",
    "coStart": 5,
-   "basis": "A \"young man\" at Stephen's death (Acts 7:58), so born about AD 5. Converted about AD 33; died about AD 64-67 (2 Timothy 4:6; early church tradition).",
+   "basis": "A \"young man\" at Stephen's death (Acts 7:58), so born about AD 5. Converted about AD 34; died about AD 64-67 (2 Timothy 4:6; early church tradition).",
    "note": "The striped part of the bar is his life before his conversion."
   },
   {
@@ -986,7 +986,7 @@
   {
    "id": "e-john-preaches",
    "title": "John the Baptist preaches in the wilderness",
-   "year": 27.6,
+   "year": 29.6,
    "certainty": "calculated",
    "refs": [
     "Luke 3:1-18",
@@ -998,12 +998,12 @@
     "bethany-2"
    ],
    "summary": "The word of God comes to John in the wilderness. He calls Israel to repent and be baptised for the forgiveness of sins: \"Prepare the way of the Lord.\"",
-   "basis": "\"In the fifteenth year of the reign of Tiberius Caesar\" (Luke 3:1), probably reckoned from AD 13, when he began to share power with Augustus; counted from AD 14 it would be AD 28-29."
+   "basis": "\"In the fifteenth year of the reign of Tiberius Caesar\" (Luke 3:1), counted from his accession in AD 14, is AD 28-29."
   },
   {
    "id": "e-baptism",
    "title": "Jesus baptised in the Jordan",
-   "year": 27.85,
+   "year": 29.85,
    "certainty": "approx",
    "refs": [
     "Matthew 3:13-17",
@@ -1021,7 +1021,7 @@
   {
    "id": "e-temptation",
    "title": "Tempted in the wilderness",
-   "year": 27.9,
+   "year": 29.9,
    "certainty": "approx",
    "refs": [
     "Matthew 4:1-11",
@@ -1035,7 +1035,7 @@
   {
    "id": "e-first-disciples",
    "title": "The first disciples",
-   "year": 27.98,
+   "year": 29.98,
    "certainty": "approx",
    "refs": [
     "John 1:35-51"
@@ -1049,7 +1049,7 @@
   {
    "id": "e-cana",
    "title": "Water into wine at Cana",
-   "year": 28.05,
+   "year": 30.05,
    "certainty": "approx",
    "refs": [
     "John 2:1-11"
@@ -1062,7 +1062,7 @@
   {
    "id": "e-temple-1",
    "title": "Clearing the temple; Nicodemus",
-   "year": 28.27,
+   "year": 30.27,
    "certainty": "calculated",
    "refs": [
     "John 2:13-3:21"
@@ -1072,13 +1072,13 @@
    ],
    "summary": "At Passover Jesus drives the traders from the temple: \"Destroy this temple, and in three days I will raise it up.\" By night Nicodemus comes to him and hears, \"You must be born again ... For God so loved the world, that he gave his only Son.\"",
    "date": "The first Passover of his ministry (John 2:13)",
-   "basis": "The temple had been \"46 years\" in building (John 2:20); Herod began it in 20/19 BC, giving AD 27/28.",
+   "basis": "The temple had been \"46 years\" in building (John 2:20). Counted from the completion of the sanctuary itself (about 18/17 BC), this gives AD 30; counted from the start of Herod's work (20/19 BC), it would be AD 27/28.",
    "note": "Matthew, Mark and Luke record a clearing of the temple in the last week; many think there were two, others that John places one event by theme."
   },
   {
    "id": "e-samaria",
    "title": "The woman at the well",
-   "year": 28.9,
+   "year": 30.9,
    "certainty": "approx",
    "refs": [
     "John 4:1-42"
@@ -1092,7 +1092,7 @@
   {
    "id": "e-nazareth",
    "title": "Rejected at Nazareth; home in Capernaum",
-   "year": 29.0,
+   "year": 31.0,
    "certainty": "approx",
    "refs": [
     "Luke 4:14-31",
@@ -1107,7 +1107,7 @@
   {
    "id": "e-fishers",
    "title": "\"Follow me, and I will make you fishers of men\"",
-   "year": 29.03,
+   "year": 31.03,
    "certainty": "approx",
    "refs": [
     "Mark 1:16-20",
@@ -1122,7 +1122,7 @@
   {
    "id": "e-healing",
    "title": "Healing in Capernaum",
-   "year": 29.08,
+   "year": 31.08,
    "certainty": "approx",
    "refs": [
     "Mark 1:21-2:12"
@@ -1135,7 +1135,7 @@
   {
    "id": "e-twelve-chosen",
    "title": "The twelve apostles chosen",
-   "year": 29.2,
+   "year": 31.2,
    "certainty": "approx",
    "refs": [
     "Mark 3:13-19",
@@ -1149,7 +1149,7 @@
   {
    "id": "e-sermon",
    "title": "The Sermon on the Mount",
-   "year": 29.22,
+   "year": 31.22,
    "certainty": "approx",
    "refs": [
     "Matthew 5-7",
@@ -1165,7 +1165,7 @@
   {
    "id": "e-john-killed",
    "title": "John the Baptist beheaded",
-   "year": 29.2,
+   "year": 32.2,
    "certainty": "approx",
    "refs": [
     "Mark 6:14-29",
@@ -1177,7 +1177,7 @@
   {
    "id": "e-5000",
    "title": "Feeding the five thousand; walking on the water",
-   "year": 29.25,
+   "year": 32.25,
    "certainty": "calculated",
    "refs": [
     "John 6:1-21",
@@ -1193,7 +1193,7 @@
   {
    "id": "e-women",
    "title": "The women who followed Jesus",
-   "year": 29.35,
+   "year": 31.35,
    "certainty": "approx",
    "refs": [
     "Luke 8:1-3",
@@ -1207,7 +1207,7 @@
   {
    "id": "e-woes",
    "title": "Woe to the unrepentant towns",
-   "year": 29.7,
+   "year": 32.7,
    "certainty": "approx",
    "refs": [
     "Matthew 11:20-24",
@@ -1223,7 +1223,7 @@
   {
    "id": "e-parables",
    "title": "Parables by the lake",
-   "year": 29.4,
+   "year": 31.4,
    "certainty": "approx",
    "refs": [
     "Matthew 13",
@@ -1237,7 +1237,7 @@
   {
    "id": "e-storm",
    "title": "Calming the storm; the man with a legion",
-   "year": 29.45,
+   "year": 31.45,
    "certainty": "approx",
    "refs": [
     "Mark 4:35-5:20"
@@ -1252,7 +1252,7 @@
   {
    "id": "e-nain",
    "title": "A widow's son raised at Nain",
-   "year": 29.3,
+   "year": 31.3,
    "certainty": "approx",
    "refs": [
     "Luke 7:11-17"
@@ -1265,7 +1265,7 @@
   {
    "id": "e-tyre",
    "title": "In the region of Tyre and Sidon",
-   "year": 29.5,
+   "year": 32.5,
    "certainty": "approx",
    "refs": [
     "Mark 7:24-37",
@@ -1280,7 +1280,7 @@
   {
    "id": "e-confession",
    "title": "Peter's confession at Caesarea Philippi",
-   "year": 29.6,
+   "year": 32.6,
    "certainty": "approx",
    "refs": [
     "Matthew 16:13-28",
@@ -1294,7 +1294,7 @@
   {
    "id": "e-transfiguration",
    "title": "The transfiguration",
-   "year": 29.62,
+   "year": 32.62,
    "certainty": "approx",
    "refs": [
     "Matthew 17:1-13",
@@ -1311,7 +1311,7 @@
   {
    "id": "e-booths",
    "title": "At the Feast of Booths",
-   "year": 29.75,
+   "year": 32.75,
    "certainty": "approx",
    "refs": [
     "John 7-9"
@@ -1324,7 +1324,7 @@
   {
    "id": "e-dedication",
    "title": "At the Feast of Dedication",
-   "year": 29.97,
+   "year": 32.97,
    "certainty": "calculated",
    "refs": [
     "John 10:22-42"
@@ -1338,7 +1338,7 @@
   {
    "id": "e-lazarus",
    "title": "Lazarus raised from the dead",
-   "year": 30.15,
+   "year": 33.15,
    "certainty": "approx",
    "refs": [
     "John 11:1-54"
@@ -1352,7 +1352,7 @@
   {
    "id": "e-jericho",
    "title": "Bartimaeus and Zacchaeus at Jericho",
-   "year": 30.24,
+   "year": 33.23,
    "certainty": "approx",
    "refs": [
     "Mark 10:46-52",
@@ -1366,7 +1366,7 @@
   {
    "id": "e-anointing",
    "title": "Mary anoints Jesus at Bethany",
-   "year": 30.249,
+   "year": 33.238,
    "certainty": "calculated",
    "refs": [
     "John 12:1-8",
@@ -1381,7 +1381,7 @@
   {
    "id": "e-entry",
    "title": "The triumphal entry",
-   "year": 30.252,
+   "year": 33.241,
    "certainty": "calculated",
    "refs": [
     "Matthew 21:1-11",
@@ -1394,12 +1394,12 @@
     "jerusalem"
    ],
    "summary": "Jesus rides into Jerusalem on a donkey, fulfilling Zechariah's prophecy, as crowds spread cloaks and palm branches: \"Hosanna to the Son of David!\"",
-   "date": "Sunday, 2 April"
+   "date": "Sunday, 29 March"
   },
   {
    "id": "e-temple-2",
    "title": "Clearing the temple",
-   "year": 30.255,
+   "year": 33.244,
    "certainty": "calculated",
    "refs": [
     "Mark 11:15-19",
@@ -1414,7 +1414,7 @@
   {
    "id": "e-olivet",
    "title": "Teaching in the temple and on the Mount of Olives",
-   "year": 30.258,
+   "year": 33.247,
    "certainty": "calculated",
    "refs": [
     "Matthew 21:23-25:46",
@@ -1430,7 +1430,7 @@
   {
    "id": "e-supper",
    "title": "The Last Supper",
-   "year": 30.263,
+   "year": 33.252,
    "certainty": "calculated",
    "refs": [
     "Luke 22:7-38",
@@ -1446,7 +1446,7 @@
   {
    "id": "e-gethsemane",
    "title": "Gethsemane and the arrest",
-   "year": 30.264,
+   "year": 33.253,
    "certainty": "calculated",
    "refs": [
     "Mark 14:32-52",
@@ -1461,7 +1461,7 @@
   {
    "id": "e-trials",
    "title": "Trials before the council and Pilate",
-   "year": 30.265,
+   "year": 33.254,
    "certainty": "calculated",
    "refs": [
     "Mark 14:53-15:15",
@@ -1477,7 +1477,7 @@
   {
    "id": "e-cross",
    "title": "The crucifixion",
-   "year": 30.266,
+   "year": 33.2545,
    "certainty": "disputed",
    "refs": [
     "Matthew 27:27-56",
@@ -1491,15 +1491,15 @@
     "golgotha"
    ],
    "summary": "Jesus is crucified at Golgotha between two criminals. He prays for those who crucify him, promises paradise to the repentant thief, and cries \"It is finished\" before giving up his spirit. The temple curtain is torn in two. He is buried in Joseph of Arimathea's new tomb.",
-   "date": "Friday 7 April AD 30, at Passover",
-   "basis": "A Friday (Mark 15:42) at Passover (John 19:14) while Pilate and Caiaphas held office (AD 26-36). Astronomy allows Passover on a Friday in AD 30 or AD 33.",
-   "note": "Many evangelical scholars prefer Friday 3 April AD 33. The traditional site of Golgotha and the tomb is the Church of the Holy Sepulchre.",
+   "date": "Friday 3 April AD 33, at Passover",
+   "basis": "A Friday (Mark 15:42) at Passover (John 19:14) while Pilate and Caiaphas held office (AD 26-36). Astronomy allows Passover on a Friday in AD 30 or AD 33; AD 33 fits a ministry beginning in Tiberius' fifteenth year (Luke 3:1).",
+   "note": "Many evangelical scholars prefer Friday 7 April AD 30. The traditional site of Golgotha and the tomb is the Church of the Holy Sepulchre.",
    "evidence": "The Roman historian Tacitus writes that \"Christus ... suffered the extreme penalty during the reign of Tiberius at the hands of one of our procurators, Pontius Pilatus\"."
   },
   {
    "id": "e-resurrection",
    "title": "\"He is not here, for he has risen\"",
-   "year": 30.271,
+   "year": 33.26,
    "certainty": "calculated",
    "refs": [
     "Matthew 28:1-10",
@@ -1518,7 +1518,7 @@
   {
    "id": "e-galilee",
    "title": "Appearances in Galilee; the Great Commission",
-   "year": 30.32,
+   "year": 33.31,
    "certainty": "approx",
    "refs": [
     "John 21",
@@ -1533,7 +1533,7 @@
   {
    "id": "e-ascension",
    "title": "The ascension",
-   "year": 30.377,
+   "year": 33.367,
    "certainty": "calculated",
    "refs": [
     "Acts 1:1-11",
@@ -1549,7 +1549,7 @@
   {
    "id": "e-pentecost",
    "title": "Pentecost: the Holy Spirit comes",
-   "year": 30.405,
+   "year": 33.395,
    "certainty": "calculated",
    "refs": [
     "Acts 2",
@@ -1564,7 +1564,7 @@
   {
    "id": "e-council-1",
    "title": "Peter and John before the council",
-   "year": 31,
+   "year": 33.6,
    "certainty": "approx",
    "refs": [
     "Acts 3-4"
@@ -1577,7 +1577,7 @@
   {
    "id": "e-stephen",
    "title": "Stephen martyred; the church scattered",
-   "year": 32,
+   "year": 34.3,
    "certainty": "approx",
    "refs": [
     "Acts 6:8-8:3"
@@ -1590,7 +1590,7 @@
   {
    "id": "e-philip",
    "title": "Philip in Samaria; the Ethiopian official",
-   "year": 32.4,
+   "year": 34.5,
    "certainty": "approx",
    "refs": [
     "Acts 8:4-40",
@@ -1606,7 +1606,7 @@
   {
    "id": "e-damascus",
    "title": "Saul meets the risen Jesus",
-   "year": 33,
+   "year": 34.8,
    "certainty": "approx",
    "refs": [
     "Acts 9:1-19",
@@ -1619,12 +1619,12 @@
     "damascus"
    ],
    "summary": "On the road to Damascus to arrest Christians, Saul is blinded by a light from heaven: \"Saul, Saul, why are you persecuting me?\" Ananias baptises him, and he immediately proclaims Jesus as the Son of God.",
-   "note": "Dates suggested for Paul's conversion range from AD 31 to 36."
+   "note": "Dates suggested for Paul's conversion range from AD 31 to 36; with the crucifixion in AD 33 it was probably AD 34 or 35."
   },
   {
    "id": "e-arabia",
    "title": "Saul in Arabia; escape from Damascus",
-   "year": 33.5,
+   "year": 35.2,
    "certainty": "approx",
    "refs": [
     "Galatians 1:17",
@@ -1640,7 +1640,7 @@
   {
    "id": "e-paul-jerusalem",
    "title": "Saul's first visit to Jerusalem",
-   "year": 36,
+   "year": 37,
    "certainty": "calculated",
    "refs": [
     "Galatians 1:18-24",
@@ -1652,12 +1652,12 @@
     "tarsus"
    ],
    "summary": "Barnabas introduces Saul to the apostles, and he spends fifteen days with Peter. When the Hellenists try to kill him, the believers send him home to Tarsus.",
-   "basis": "\"After three years\" (Galatians 1:18), counting from his conversion."
+   "basis": "\"After three years\" (Galatians 1:18), counting from his conversion, probably counting part-years as years."
   },
   {
    "id": "e-lydda",
    "title": "Peter at Lydda and Joppa",
-   "year": 37,
+   "year": 38,
    "certainty": "approx",
    "refs": [
     "Acts 9:32-43"
@@ -1671,7 +1671,7 @@
   {
    "id": "e-cornelius",
    "title": "Cornelius: the gospel for the Gentiles",
-   "year": 38,
+   "year": 39,
    "certainty": "approx",
    "refs": [
     "Acts 10-11:18"
@@ -1714,7 +1714,7 @@
   {
    "id": "e-famine",
    "title": "Famine relief for Jerusalem",
-   "year": 45.5,
+   "year": 46.8,
    "certainty": "approx",
    "refs": [
     "Acts 11:27-30",
@@ -1732,7 +1732,7 @@
   {
    "id": "e-sent",
    "title": "First journey: sent out from Antioch",
-   "year": 46.3,
+   "year": 47.2,
    "certainty": "approx",
    "refs": [
     "Acts 13:1-12"
@@ -1749,7 +1749,7 @@
   {
    "id": "e-galatia",
    "title": "Pisidian Antioch, Iconium, Lystra and Derbe",
-   "year": 46.7,
+   "year": 47.5,
    "certainty": "approx",
    "refs": [
     "Acts 13:13-14:20"
@@ -1766,7 +1766,7 @@
   {
    "id": "e-return-1",
    "title": "Back to Antioch",
-   "year": 47.8,
+   "year": 48.6,
    "certainty": "approx",
    "refs": [
     "Acts 14:21-28"
@@ -2164,7 +2164,7 @@
   {
    "id": "w-galatians",
    "title": "Galatians",
-   "year": 48.2,
+   "year": 48.7,
    "certainty": "approx",
    "refs": [
     "Galatians 1:1-9"

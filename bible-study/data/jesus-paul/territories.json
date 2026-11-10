@@ -1205,7 +1205,7 @@
     "capernaum"
    ]
   },
-  "passover_28": {
+  "first_passover": {
    "name": "First Passover, and home through Samaria",
    "via": [
     "capernaum",
@@ -1848,7 +1848,7 @@
   },
   {
    "id": "n-baptism",
-   "year": 27.85,
+   "year": 29.85,
    "tick": "Baptism",
    "title": "Baptism and the first disciples",
    "refs": [
@@ -1971,8 +1971,8 @@
    ]
   },
   {
-   "id": "n-passover28",
-   "year": 28.27,
+   "id": "n-first-passover",
+   "year": 30.27,
    "tick": "Passover",
    "title": "The first Passover and Samaria",
    "refs": [
@@ -2076,7 +2076,7 @@
      "style": "past"
     },
     {
-     "route": "passover_28",
+     "route": "first_passover",
      "style": "current"
     }
    ],
@@ -2093,7 +2093,7 @@
   },
   {
    "id": "n-galilee",
-   "year": 29.0,
+   "year": 31.0,
    "tick": "Galilee",
    "title": "The ministry in Galilee",
    "refs": [
@@ -2217,7 +2217,7 @@
   },
   {
    "id": "n-north",
-   "year": 29.5,
+   "year": 32.5,
    "tick": "North",
    "title": "Tyre, Sidon and Caesarea Philippi",
    "refs": [
@@ -2339,7 +2339,7 @@
   },
   {
    "id": "n-passion",
-   "year": 30.2,
+   "year": 33.2,
    "tick": "Jerusalem",
    "title": "The last journey to Jerusalem",
    "refs": [
@@ -2459,7 +2459,7 @@
   },
   {
    "id": "n-church",
-   "year": 32.4,
+   "year": 34.5,
    "tick": "Damascus",
    "title": "Judea, Samaria and Damascus",
    "refs": [
@@ -2604,7 +2604,7 @@
   },
   {
    "id": "n-j1",
-   "year": 46.3,
+   "year": 47.2,
    "tick": "1st",
    "title": "Paul's first journey",
    "refs": [
