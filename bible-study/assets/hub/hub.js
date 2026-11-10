@@ -36,24 +36,36 @@
   var day = Math.floor((Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) - Date.UTC(now.getFullYear(), 0, 0)) / 864e5);
   var v = VERSES[day % VERSES.length];
   var $ = function (id) { return document.getElementById(id); };
+  // On a Telugu page (assets/i18n/te.js loaded) the verse text is not quoted, since the
+  // BSI Telugu text is under copyright: the card shows the reference and links to it instead
+  var L = window.BS_LANG;
+  var t = function (s) { return (L && L.ui[s]) || s; };
 
-  $('votd-text').textContent = v.text;
-  $('votd-ref').textContent = v.ref;
-  $('votd-date').textContent = '· ' + now.toLocaleDateString('en-IN', { day: 'numeric', month: 'long' });
-  // "Read in context" opens the whole chapter
-  var chapter = v.ref.replace(/:.*$/, '');
-  $('votd-read').href = 'https://www.biblegateway.com/passage/?search=' + encodeURIComponent(chapter) + '&version=ESV';
-  if (v.link) { $('votd-map').href = v.link; $('votd-map').hidden = false; }
+  if (L) {
+    $('votd-text').textContent = L.refText(v.ref);
+    $('votd-date').textContent = '· ' + now.toLocaleDateString('te-IN', { day: 'numeric', month: 'long' });
+    $('votd-read').href = L.bibleUrl(v.ref);
+  } else {
+    $('votd-text').textContent = v.text;
+    $('votd-ref').textContent = v.ref;
+    $('votd-date').textContent = '· ' + now.toLocaleDateString('en-IN', { day: 'numeric', month: 'long' });
+    // "Read in context" opens the whole chapter
+    var chapter = v.ref.replace(/:.*$/, '');
+    $('votd-read').href = 'https://www.biblegateway.com/passage/?search=' + encodeURIComponent(chapter) + '&version=ESV';
+  }
+  // Telugu pages sit in te/: link to the Telugu timeline where there is one, else the English page
+  var link = v.link && L ? (L.pages.indexOf(v.link.split('#')[0]) !== -1 ? v.link : '../' + v.link) : v.link;
+  if (link) { $('votd-map').href = link; $('votd-map').hidden = false; }
 
   $('votd-share').addEventListener('click', function () {
     var btn = this, label = btn.querySelector('span');
-    var text = '“' + v.text + '” — ' + v.ref + ' (ESV)';
+    var text = L ? L.refText(v.ref) : '“' + v.text + '” — ' + v.ref + ' (ESV)';
     var url = location.href.split('#')[0];
     if (navigator.share) {
-      navigator.share({ title: 'Verse of the day', text: text, url: url }).catch(function () {});
+      navigator.share({ title: t('Verse of the day'), text: text, url: url }).catch(function () {});
       return;
     }
-    var done = function () { label.textContent = 'Copied'; setTimeout(function () { label.textContent = 'Share'; }, 1800); };
+    var done = function () { label.textContent = t('Copied'); setTimeout(function () { label.textContent = t('Share'); }, 1800); };
     if (navigator.clipboard) navigator.clipboard.writeText(text + '\n' + url).then(done, function () {});
   });
 

@@ -205,6 +205,28 @@ a:hover > .go .ic { transform: translateX(3px); }
   * { transition-duration: 0s !important; }
 }
 
+/* ---------- language switch ---------- */
+.top-actions { display: flex; align-items: center; gap: 8px; }
+.pill-lang { color: var(--ink-2); padding: 10px 12px; }
+.pill-lang:hover { color: var(--red-text); }
+/* a Telugu era card whose page is still English */
+.era-lang { display: inline-block; margin-left: 8px; padding: 3px 8px; border-radius: 999px; background: rgba(255, 255, 255, .18); font-size: 11.5px; letter-spacing: .02em; vertical-align: 1px; }
+
+/* ---------- Telugu ---------- */
+/* Montserrat and Inter have no Telugu letters, so Telugu text falls through to Noto Sans Telugu.
+   Telugu letters stack vowel signs above and below, so lines need more height and no negative tracking. */
+html[lang="te"] {
+  --display: "Montserrat", "Noto Sans Telugu", system-ui, sans-serif;
+  --body: "Inter", "Noto Sans Telugu", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+html[lang="te"] body { line-height: 1.75; }
+html[lang="te"] h1, html[lang="te"] h2, html[lang="te"] h3 { letter-spacing: 0; }
+html[lang="te"] .hero h1 { font-size: clamp(32px, 5vw, 56px); line-height: 1.3; }
+html[lang="te"] .section h2 { line-height: 1.35; }
+html[lang="te"] .era h3, html[lang="te"] .guide h3 { line-height: 1.4; }
+html[lang="te"] .votd blockquote p { line-height: 1.5; }
+html[lang="te"] .brand-tag { letter-spacing: .04em; }
+
 /* ---------- responsive ---------- */
 @media (max-width: 1020px) {
   .guides { grid-template-columns: repeat(2, 1fr); }

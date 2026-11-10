@@ -9,6 +9,10 @@
  *        data-shop-url="https://ashabooks.com"></div>
  *
  * Requires Leaflet 1.9.x to be loaded first.
+ *
+ * Other languages: load assets/i18n/<lang>.js first (screen text, book names,
+ * Bible links) and add data-translation="data/<lang>/<page>.json" (the page's
+ * translated words, made with scripts/telugu-overlay.py).
  */
 (function () {
   'use strict';
@@ -16,31 +20,40 @@
   var root = document.querySelector('[data-bible-study]');
   if (!root) return;
 
+  // Screen text in the page's language; English when no translation is loaded
+  var LANG = window.BS_LANG || {};
+  function t(s, vars) {
+    var out = (LANG.ui && LANG.ui[s]) || s;
+    if (vars) Object.keys(vars).forEach(function (k) { out = out.split('{' + k + '}').join(vars[k]); });
+    return out;
+  }
+
   var cfg = {
+    translationUrl: root.dataset.translation || '',
     timelineUrl: root.dataset.timeline || 'data/timeline.json',
     placesUrl: root.dataset.places || 'data/places.json',
     territoriesUrl: root.dataset.territories || 'data/territories.json',
     version: root.dataset.bibleVersion || 'ESV',
     shopUrl: root.dataset.shopUrl || '',
-    shopLabel: root.dataset.shopLabel || 'Go deeper: study Bibles and Bible atlases at Asha Books'
+    shopLabel: root.dataset.shopLabel || t('Go deeper: study Bibles and Bible atlases at Asha Books')
   };
 
   var LANES = [
-    { key: 'empires', label: 'Empires' },
-    { key: 'rulers', label: 'Rulers of the nations' },
-    { key: 'israel', label: 'Kings of Israel (north)' },
-    { key: 'judah', label: 'Kings of Judah (south)' },
-    { key: 'leaders', label: 'Leaders after the exile' },
-    { key: 'prophets', label: 'Prophets' },
-    { key: 'events', label: 'Key events' }
+    { key: 'empires', label: t('Empires') },
+    { key: 'rulers', label: t('Rulers of the nations') },
+    { key: 'israel', label: t('Kings of Israel (north)') },
+    { key: 'judah', label: t('Kings of Judah (south)') },
+    { key: 'leaders', label: t('Leaders after the exile') },
+    { key: 'prophets', label: t('Prophets') },
+    { key: 'events', label: t('Key events') }
   ];
   var LABEL_H = 22, ROW_H = 24, LANE_PAD = 6, PAD_X = 24, MIN_BAR = 6;
 
   var VERDICTS = {
-    right: 'Did what was right in the eyes of the LORD',
-    mixed: 'Did some things right in the eyes of the LORD, but not wholeheartedly',
-    evil: 'Did evil in the eyes of the LORD',
-    none: 'Scripture gives no formal verdict on this reign'
+    right: t('Did what was right in the eyes of the LORD'),
+    mixed: t('Did some things right in the eyes of the LORD, but not wholeheartedly'),
+    evil: t('Did evil in the eyes of the LORD'),
+    none: t('Scripture gives no formal verdict on this reign')
   };
 
   var T, TERR, PLACES = {}, ITEMS = [], BY_KEY = {};
@@ -66,17 +79,20 @@
   // -1446 is spring 1446 BC, so the calendar year runs from a quarter-year earlier
   function bc(y) { return Math.ceil(-y - 0.25 - 1e-9); }
   // There is no year 0: the instant 0 is where 1 BC ends and AD 1 begins
-  function yr(y) { return y < 0 ? bc(y) + ' BC' : 'AD ' + Math.max(1, Math.floor(y)); }
+  function yr(y) { return y < 0 ? t('{y} BC', { y: bc(y) }) : t('AD {y}', { y: Math.max(1, Math.floor(y)) }); }
   function span(a, b, approx) {
-    var c = approx ? 'c. ' : '';
-    if (a < 0 && b < 0) return c + (bc(a) === bc(b) ? bc(a) : bc(a) + '–' + bc(b)) + ' BC';
+    var c = approx ? t('c. ') : '';
+    if (a < 0 && b < 0) return c + t('{y} BC', { y: bc(a) === bc(b) ? bc(a) : bc(a) + '–' + bc(b) });
     return c + (yr(a) === yr(b) ? yr(a) : yr(a) + '–' + yr(b));
   }
+  // References stay in English in the data; a translation shows and links them in its own Bible
   function bibleUrl(ref) {
+    if (LANG.bibleUrl) return LANG.bibleUrl(ref);
     return 'https://www.biblegateway.com/passage/?search=' + encodeURIComponent(ref) + '&version=' + encodeURIComponent(cfg.version);
   }
+  function refText(ref) { return LANG.refText ? LANG.refText(ref) : ref; }
   function confClass(c) { return c >= 800 ? 'high' : c >= 500 ? 'mid' : 'low'; }
-  function confLabel(c) { return c >= 800 ? 'High' : c >= 500 ? 'Moderate' : 'Low'; }
+  function confLabel(c) { return c >= 800 ? t('High') : c >= 500 ? t('Moderate') : t('Low'); }
 
   var measureCtx;
   function textW(s) {
@@ -153,7 +169,7 @@
       canvas.appendChild(laneEl);
     });
 
-    els.now = h('button', { type: 'button', class: 'bs-now', title: 'Year shown on the kingdoms map', onclick: function () { select('map:' + TERR.snapshots[snapIdx].id); } },
+    els.now = h('button', { type: 'button', class: 'bs-now', title: t('Year shown on the kingdoms map'), onclick: function () { select('map:' + TERR.snapshots[snapIdx].id); } },
       [h('span', { class: 'bs-now-flag' })]);
     canvas.appendChild(els.now);
     updateNowMarker();
@@ -184,7 +200,7 @@
     var s = TERR.snapshots[snapIdx];
     els.now.hidden = !showTerr;
     els.now.style.left = x(s.year) + 'px';
-    els.now.firstChild.textContent = 'Map: ' + yr(s.year);
+    els.now.firstChild.textContent = t('Map: {y}', { y: yr(s.year) });
   }
 
   function renderItem(it) {
@@ -261,8 +277,8 @@
 
   // ---------- map ----------
   // Default map views; a page's territories.json can override them in meta.views
-  var CORE = [[29.6, 33.9], [34.0, 37.4]], CORE_LABEL = 'Israel & Judah';
-  var REGION = [[24.5, 29.5], [38.5, 49.0]], REGION_LABEL = 'Whole region';
+  var CORE = [[29.6, 33.9], [34.0, 37.4]], CORE_LABEL = t('Israel & Judah');
+  var REGION = [[24.5, 29.5], [38.5, 49.0]], REGION_LABEL = t('Whole region');
 
   function initMap() {
     map = L.map(els.map, { scrollWheelZoom: false, zoomSnap: 0.5, maxZoom: 11, minZoom: 3 });
@@ -323,7 +339,7 @@
       p.alternatives.forEach(function (a) {
         L.polyline([[p.lat, p.lon], [a.lat, a.lon]], { color: '#777', weight: 1.5, dashArray: '4 4' }).addTo(overlay);
         L.circleMarker([a.lat, a.lon], { radius: 5, color: '#555', weight: 1.5, fillColor: '#fff', fillOpacity: 1 })
-          .bindTooltip('Alternative: ' + a.site + ' (' + Math.round(a.confidence / 10) + '%)', { className: 'bs-maplabel' })
+          .bindTooltip(t('Alternative: {site} ({pct}%)', { site: a.site, pct: Math.round(a.confidence / 10) }), { className: 'bs-maplabel' })
           .addTo(overlay);
       });
     }
@@ -473,33 +489,33 @@
 
   // ---------- detail panel ----------
   function kindLabel(it) {
-    if (it.type === 'king') return (it.id === 'athaliah' ? 'Queen of ' : 'King of ') + (it.lane === 'israel' ? 'Israel' : 'Judah');
+    if (it.type === 'king') return t((it.id === 'athaliah' ? 'Queen of ' : 'King of ') + (it.lane === 'israel' ? 'Israel' : 'Judah'));
     if (it.data.role) return it.data.role;
     var lane = LANES.filter(function (l) { return l.key === it.lane; })[0];
     if (lane && lane.kind) return lane.kind;
-    return { prophet: 'Prophet', leader: 'After the exile', event: 'Event', ruler: 'Foreign ruler', empire: 'Empire' }[it.type];
+    return t({ prophet: 'Prophet', leader: 'After the exile', event: 'Event', ruler: 'Foreign ruler', empire: 'Empire' }[it.type]);
   }
   function dateLine(it) {
     var d = it.data, approx = d.certainty === 'approx';
     if (it.type === 'event') return span(it.start, it.end, approx) + (d.date ? ' · ' + d.date : '');
-    if (it.type === 'prophet') return 'Ministry ' + span(it.start, it.end, approx);
+    if (it.type === 'prophet') return t('Ministry {dates}', { dates: span(it.start, it.end, approx) });
     if (it.type === 'leader' || it.type === 'stage') {
-      return span(d.start != null ? d.start : it.start, d.end, approx) + (it.coStart ? ' (' + (T.meta.coPhrase || 'co-regent from') + ' ' + yr(it.coStart) + ')' : '');
+      return span(d.start != null ? d.start : it.start, d.end, approx) + (it.coStart ? ' (' + (T.meta.coPhrase || t('co-regent from')) + ' ' + yr(it.coStart) + ')' : '');
     }
     if (it.type === 'empire') return span(d.start, d.end, true);
-    var s = (d.datePrefix || 'Reigned') + ' ' + span(it.start, it.end, approx);
-    if (it.coStart) s += ' (co-regent from ' + yr(it.coStart) + ')';
+    var s = (d.datePrefix || t('Reigned')) + ' ' + span(it.start, it.end, approx);
+    if (it.coStart) s += ' (' + t('co-regent from') + ' ' + yr(it.coStart) + ')';
     return s;
   }
   function badge(c) {
     if (!c) return null;
-    var name = { fixed: 'Fixed', calculated: 'Calculated', approx: 'Approximate', disputed: 'Disputed' }[c];
+    var name = t({ fixed: 'Fixed', calculated: 'Calculated', approx: 'Approximate', disputed: 'Disputed' }[c]);
     return h('span', { class: 'bs-badge ' + c, title: T.certainty[c], tabindex: '0', text: name });
   }
   function refList(refs) {
     if (!refs || !refs.length) return null;
     return h('ul', { class: 'bs-refs' }, refs.map(function (r) {
-      return h('li', null, [h('a', { href: bibleUrl(r), target: '_blank', rel: 'noopener', text: r })]);
+      return h('li', null, [h('a', { href: bibleUrl(r), target: '_blank', rel: 'noopener', text: refText(r) })]);
     }));
   }
   function placeChips(ids) {
@@ -534,30 +550,30 @@
       h('p', null, [h('span', { class: 'bs-when', text: dateLine(it) }), badge(d.certainty || (it.type === 'king' ? 'calculated' : null))])
     ];
     if (d.summary) nodes.push(h('p', { text: d.summary }));
-    if (d.basis) nodes.push(h('p', { class: 'bs-note', text: 'Dating basis: ' + d.basis }));
+    if (d.basis) nodes.push(h('p', { class: 'bs-note', text: t('Dating basis: ') + d.basis }));
     if (it.type === 'king') {
       var v = d.verdict || 'none';
       nodes.push(h('p', { class: 'bs-verdict ' + v }, [
         h('strong', { text: VERDICTS[v] }),
-        d.verdictRef ? h('span', null, [' (', h('a', { href: bibleUrl(d.verdictRef), target: '_blank', rel: 'noopener', text: d.verdictRef }), ')']) : null
+        d.verdictRef ? h('span', null, [' (', h('a', { href: bibleUrl(d.verdictRef), target: '_blank', rel: 'noopener', text: refText(d.verdictRef) }), ')']) : null
       ]));
     }
-    if (d.evidence) nodes.push(h('div', { class: 'bs-evidence' }, [h('strong', { text: 'Evidence outside the Bible' }), d.evidence]));
+    if (d.evidence) nodes.push(h('div', { class: 'bs-evidence' }, [h('strong', { text: t('Evidence outside the Bible') }), d.evidence]));
     if (d.note) nodes.push(h('p', { class: 'bs-note', text: d.note }));
     if (d.link) nodes.push(h('p', null, [h('a', { class: 'bs-link', href: d.link.href, text: d.link.label + ' \u2192' })]));
     if (it.type === 'empire') {
       var rulers = ITEMS.filter(function (r) { return r.type === 'ruler' && r.data.empire === it.id; });
-      if (rulers.length) nodes.push(h('h3', { text: 'Rulers in this period' }), itemChips(rulers));
+      if (rulers.length) nodes.push(h('h3', { text: t('Rulers in this period') }), itemChips(rulers));
     }
-    if (d.refs && d.refs.length) nodes.push(h('h3', { text: 'Read the Scripture' }), refList(d.refs));
-    if (it.places.length) nodes.push(h('h3', { text: 'Places' }), placeChips(it.places));
+    if (d.refs && d.refs.length) nodes.push(h('h3', { text: t('Read the Scripture') }), refList(d.refs));
+    if (it.places.length) nodes.push(h('h3', { text: t('Places') }), placeChips(it.places));
     var during = contemporaries(it);
-    if (during.length) nodes.push(h('h3', { text: it.type === 'event' ? 'Who was alive at the time' : 'Contemporaries' }), itemChips(during));
+    if (during.length) nodes.push(h('h3', { text: t(it.type === 'event' ? 'Who was alive at the time' : 'Contemporaries') }), itemChips(during));
     if (showTerr) {
       var snap = TERR.snapshots[snapIdx];
-      nodes.push(h('p', { class: 'bs-source' }, [(TERR.meta.mapShows || 'Map shows the kingdoms in') + ' ', h('a', { href: '#map:' + snap.id, onclick: function (e) { e.preventDefault(); select('map:' + snap.id); }, text: yr(snap.year) + ': ' + snap.title }), '.']));
+      nodes.push(h('p', { class: 'bs-source' }, [(TERR.meta.mapShows || t('Map shows the kingdoms in')) + ' ', h('a', { href: '#map:' + snap.id, onclick: function (e) { e.preventDefault(); select('map:' + snap.id); }, text: yr(snap.year) + ': ' + snap.title }), '.']));
     }
-    if (it.type === 'king' || it.type === 'prophet' || (T.meta.lanes && it.type !== 'event')) nodes.push(h('p', { class: 'bs-source', text: 'Dates: ' + T.meta.chronologyShort }));
+    if (it.type === 'king' || it.type === 'prophet' || (T.meta.lanes && it.type !== 'event')) nodes.push(h('p', { class: 'bs-source', text: t('Dates: ') + T.meta.chronologyShort }));
     nodes.push(cta());
     setDetail(nodes);
   }
@@ -578,21 +594,21 @@
       .sort(function (a, b) { return a.start - b.start; });
     var pct = Math.round(p.confidence / 10);
     var nodes = [
-      h('div', { class: 'bs-kind place', text: 'Place' + (p.types.length ? ' · ' + p.types.filter(function (t) { return t !== 'special'; }).join(', ') : '') }),
+      h('div', { class: 'bs-kind place', text: t('Place') + (p.types.length ? ' · ' + p.types.filter(function (k) { return k !== 'special'; }).map(function (k) { return t(k); }).join(', ') : '') }),
       h('h2', { text: p.name }),
-      h('p', null, ['Identified with ', h('strong', { text: p.site })]),
+      h('p', null, [t('Identified with '), h('strong', { text: p.site })]),
       h('div', { class: 'bs-conf', title: pct + '%' }, [h('span', { style: 'width:' + pct + '%' })]),
-      h('p', { class: 'bs-note', style: 'border:0;padding:0;margin-top:0', text: confLabel(p.confidence) + ' confidence in this identification (' + pct + '%)' })
+      h('p', { class: 'bs-note', style: 'border:0;padding:0;margin-top:0', text: t('{level} confidence in this identification ({pct}%)', { level: confLabel(p.confidence), pct: pct }) })
     ];
     if (p.alternatives.length) {
-      nodes.push(h('h3', { text: 'Other proposed sites' }),
+      nodes.push(h('h3', { text: t('Other proposed sites') }),
         h('ul', { class: 'bs-alt' }, p.alternatives.map(function (a) {
           return h('li', { text: a.site + ' (' + Math.round(a.confidence / 10) + '%)' });
         })));
     }
-    if (related.length) nodes.push(h('h3', { text: 'On this timeline' }), itemChips(related));
+    if (related.length) nodes.push(h('h3', { text: t('On this timeline') }), itemChips(related));
     nodes.push(h('p', { class: 'bs-source' }, [
-      'Mentioned in ' + p.verseCount + ' verse' + (p.verseCount === 1 ? '' : 's') + '. Location data: ',
+      t(p.verseCount === 1 ? 'Mentioned in 1 verse. Location data: ' : 'Mentioned in {n} verses. Location data: ', { n: p.verseCount }),
       h('a', { href: p.source, target: '_blank', rel: 'noopener', text: 'OpenBible.info' }), ' (CC BY 4.0).'
     ]));
     nodes.push(cta());
@@ -616,13 +632,13 @@
         (it.coStart || it.start) - 3 <= s.year && it.end + 3 >= s.year;
     });
     setDetail([
-      h('div', { class: 'bs-kind event', text: (TERR.meta.mapKind || 'Map · the kingdoms in') + ' ' + yr(s.year) }),
+      h('div', { class: 'bs-kind event', text: (TERR.meta.mapKind || t('Map · the kingdoms in')) + ' ' + yr(s.year) }),
       h('h2', { text: s.title }),
       h('p', { text: s.summary }),
       s.note ? h('p', { class: 'bs-note', text: s.note }) : null,
-      h('h3', { text: 'Read the Scripture' }), refList(s.refs),
-      h('h3', { text: 'On this map' }), h('ul', { class: 'bs-regions' }, rows),
-      alive.length ? h('h3', { text: 'Who was alive at the time' }) : null,
+      h('h3', { text: t('Read the Scripture') }), refList(s.refs),
+      h('h3', { text: t('On this map') }), h('ul', { class: 'bs-regions' }, rows),
+      alive.length ? h('h3', { text: t('Who was alive at the time') }) : null,
       alive.length ? itemChips(alive) : null,
       h('p', { class: 'bs-source', text: TERR.meta.note }),
       cta()
@@ -633,23 +649,23 @@
     var c = T.certainty;
     setDetail([
       h('div', { class: 'bs-intro' }, [
-        h('div', { class: 'bs-kind event', text: 'How to use' }),
-        h('h2', { text: T.meta.introTitle || 'Explore the kings, prophets and places' }),
+        h('div', { class: 'bs-kind event', text: t('How to use') }),
+        h('h2', { text: T.meta.introTitle || t('Explore the kings, prophets and places') }),
         h('ul', null, [
-          h('li', { text: 'Tap anything on the timeline to read about it, see its Scripture passages and show its places on the map.' }),
-          T.meta.phases ? h('li', { text: 'Use the buttons above the timeline (' + T.meta.phases.map(function (p) { return p.label; }).join(', ') + ') to jump to each part of the story.' }) : null,
-          h('li', { text: 'Tap a place on the map to see everything on the timeline that happened there.' }),
-          h('li', { text: 'Use the slider under the map to watch the kingdoms and empires change over time. Choosing anything on the timeline moves the map to that time.' }),
-          h('li', { text: 'Use + and − to zoom the timeline; drag or scroll sideways to move through time.' })
+          h('li', { text: t('Tap anything on the timeline to read about it, see its Scripture passages and show its places on the map.') }),
+          T.meta.phases ? h('li', { text: t('Use the buttons above the timeline ({list}) to jump to each part of the story.', { list: T.meta.phases.map(function (p) { return p.label; }).join(', ') }) }) : null,
+          h('li', { text: t('Tap a place on the map to see everything on the timeline that happened there.') }),
+          h('li', { text: t('Use the slider under the map to watch the kingdoms and empires change over time. Choosing anything on the timeline moves the map to that time.') }),
+          h('li', { text: t('Use + and − to zoom the timeline; drag or scroll sideways to move through time.') })
         ]),
-        h('h3', { text: 'How sure are the dates?' }),
+        h('h3', { text: t('How sure are the dates?') }),
         T.meta.lanes ? h('p', { text: T.meta.chronology }) : null,
         T.meta.alternative ? h('p', { class: 'bs-note', text: T.meta.alternative }) : null,
         h('p', null, [badge('fixed'), ' ', c.fixed.split(': ')[1]]),
         h('p', null, [badge('calculated'), ' ', c.calculated.split(': ')[1]]),
         h('p', null, [badge('approx'), ' ', c.approx.split(': ')[1]]),
-        h('h3', { text: 'How sure are the places?' }),
-        h('p', null, [h('span', { class: 'bs-dot high' }), 'High  ', h('span', { class: 'bs-dot mid' }), 'Moderate  ', h('span', { class: 'bs-dot low' }), 'Low confidence in the modern location']),
+        h('h3', { text: t('How sure are the places?') }),
+        h('p', null, [h('span', { class: 'bs-dot high' }), t('High') + '  ', h('span', { class: 'bs-dot mid' }), t('Moderate') + '  ', h('span', { class: 'bs-dot low' }), t('Low confidence in the modern location')]),
         cta()
       ])
     ]);
@@ -659,10 +675,10 @@
   function buildShell() {
     root.innerHTML = '';
     els.app = h('div', { class: 'bs-app' });
-    els.tl = h('div', { class: 'bs-tl', role: 'region', 'aria-label': 'Timeline', tabindex: '0' });
+    els.tl = h('div', { class: 'bs-tl', role: 'region', 'aria-label': t('Timeline'), tabindex: '0' });
     els.canvas = h('div', { class: 'bs-tl-canvas' });
     els.tl.appendChild(els.canvas);
-    els.map = h('div', { class: 'bs-map', role: 'region', 'aria-label': 'Map of Bible places' });
+    els.map = h('div', { class: 'bs-map', role: 'region', 'aria-label': t('Map of Bible places') });
     els.detail = h('div', { class: 'bs-detail', 'aria-live': 'polite' });
 
     var verdictToggle = h('input', { type: 'checkbox' });
@@ -670,11 +686,11 @@
 
     els.app.appendChild(h('div', { class: 'bs-toolbar' }, [
       h('span', { class: 'bs-zoom' }, [
-        h('button', { type: 'button', class: 'bs-btn', 'aria-label': 'Zoom out', onclick: function () { zoom(1 / 1.6); }, text: '−' }),
-        h('button', { type: 'button', class: 'bs-btn', 'aria-label': 'Zoom in', onclick: function () { zoom(1.6); }, text: '+' }),
-        h('button', { type: 'button', class: 'bs-btn', onclick: function () { zoom(0); }, text: 'Fit' })
+        h('button', { type: 'button', class: 'bs-btn', 'aria-label': t('Zoom out'), onclick: function () { zoom(1 / 1.6); }, text: '−' }),
+        h('button', { type: 'button', class: 'bs-btn', 'aria-label': t('Zoom in'), onclick: function () { zoom(1.6); }, text: '+' }),
+        h('button', { type: 'button', class: 'bs-btn', onclick: function () { zoom(0); }, text: t('Fit') })
       ]),
-      T.kings ? h('label', { class: 'bs-toggle' }, [verdictToggle, 'Colour kings by the Bible\'s verdict']) : null,
+      T.kings ? h('label', { class: 'bs-toggle' }, [verdictToggle, t('Colour kings by the Bible\'s verdict')]) : null,
       T.meta.phases ? h('span', { class: 'bs-phases' }, els.phaseBtns = T.meta.phases.map(function (p) {
         var b = h('button', { type: 'button', class: 'bs-btn bs-phase', onclick: function () { showPhase(p); }, text: p.label });
         b._phase = p;
@@ -684,14 +700,14 @@
     ]));
     els.terrToggle = h('input', { type: 'checkbox', checked: 'checked' });
     els.terrToggle.addEventListener('change', function () { toggleTerritories(els.terrToggle.checked); });
-    els.snapRange = h('input', { type: 'range', min: '0', max: String(TERR.snapshots.length - 1), step: '1', value: '0', 'aria-label': 'Year shown on the kingdoms map' });
+    els.snapRange = h('input', { type: 'range', min: '0', max: String(TERR.snapshots.length - 1), step: '1', value: '0', 'aria-label': t('Year shown on the kingdoms map') });
     els.snapRange.addEventListener('input', function () { stepSnapshot(+els.snapRange.value - snapIdx); });
-    els.snapPrev = h('button', { type: 'button', class: 'bs-btn', 'aria-label': 'Earlier', onclick: function () { stepSnapshot(-1); }, text: '◀' });
-    els.snapNext = h('button', { type: 'button', class: 'bs-btn', 'aria-label': 'Later', onclick: function () { stepSnapshot(1); }, text: '▶' });
+    els.snapPrev = h('button', { type: 'button', class: 'bs-btn', 'aria-label': t('Earlier'), onclick: function () { stepSnapshot(-1); }, text: '◀' });
+    els.snapNext = h('button', { type: 'button', class: 'bs-btn', 'aria-label': t('Later'), onclick: function () { stepSnapshot(1); }, text: '▶' });
     els.snapTitle = h('button', { type: 'button', class: 'bs-snap-title', onclick: function () { select('map:' + TERR.snapshots[snapIdx].id); } });
     els.snapBar = h('div', { class: 'bs-snapbar' }, [
       h('div', { class: 'bs-snap-head' }, [
-        h('label', { class: 'bs-toggle' }, [els.terrToggle, TERR.meta.toggleLabel || 'Show kingdoms']),
+        h('label', { class: 'bs-toggle' }, [els.terrToggle, TERR.meta.toggleLabel || t('Show kingdoms')]),
         els.snapTitle
       ]),
       h('div', { class: 'bs-snap-ctrl' }, [els.snapPrev, els.snapRange, els.snapNext]),
@@ -699,10 +715,10 @@
         return h('button', { type: 'button', style: 'left:' + (i / (TERR.snapshots.length - 1) * 100) + '%', onclick: function () { stepSnapshot(i - snapIdx); }, text: s.tick || String(bc(s.year)) });
       })),
       h('div', { class: 'bs-snap-key' }, [
-        h('span', null, [h('i', { class: 'bs-swatch is-kingdom' }), 'Independent']),
-        h('span', null, [h('i', { class: 'bs-swatch is-subject' }), 'Vassal / under another power']),
-        h('span', null, [h('i', { class: 'bs-swatch is-province' }), 'Province of an empire']),
-        h('span', null, ['Borders are approximate'])
+        h('span', null, [h('i', { class: 'bs-swatch is-kingdom' }), t('Independent')]),
+        h('span', null, [h('i', { class: 'bs-swatch is-subject' }), t('Vassal / under another power')]),
+        h('span', null, [h('i', { class: 'bs-swatch is-province' }), t('Province of an empire')]),
+        h('span', null, [t('Borders are approximate')])
       ].concat(Object.keys(TERR.routeStyles || {}).map(function (k) {
         var st = TERR.routeStyles[k];
         return h('span', null, [h('i', { class: 'bs-routekey', style: 'border-top:' + Math.max(2, st.weight - 0.5) + 'px ' + (st.dashArray ? 'dashed' : 'solid') + ' ' + st.color }), st.label]);
@@ -717,7 +733,7 @@
         h('div', { class: 'bs-map-actions' }, [
           h('button', { type: 'button', class: 'bs-btn', onclick: function () { map.flyToBounds(CORE, { duration: 0.6 }); }, text: CORE_LABEL }),
           h('button', { type: 'button', class: 'bs-btn', onclick: function () { map.flyToBounds(REGION, { duration: 0.6 }); }, text: REGION_LABEL }),
-          h('button', { type: 'button', class: 'bs-btn', onclick: clearSelection, text: 'Clear' })
+          h('button', { type: 'button', class: 'bs-btn', onclick: clearSelection, text: t('Clear') })
         ])
       ]),
       els.detail
@@ -743,16 +759,16 @@
 
   function updateLegend(verdict) {
     var keys = verdict
-      ? [['var(--bs-right)', 'Did right'], ['var(--bs-mixed)', 'Mixed'], ['var(--bs-evil)', 'Did evil'], ['var(--bs-none)', 'No verdict']]
+      ? [['var(--bs-right)', t('Did right')], ['var(--bs-mixed)', t('Mixed')], ['var(--bs-evil)', t('Did evil')], ['var(--bs-none)', t('No verdict')]]
       : T.meta.lanes
         ? T.meta.lanes.filter(function (l) { return l.color; }).map(function (l) { return [l.color, l.label]; })
-        : [['var(--bs-israel)', 'Israel'], ['var(--bs-judah)', 'Judah'], ['var(--bs-prophet)', 'Prophets']];
+        : [['var(--bs-israel)', t('Israel')], ['var(--bs-judah)', t('Judah')], ['var(--bs-prophet)', t('Prophets')]];
     els.legend.innerHTML = '';
     keys.forEach(function (k) {
       els.legend.appendChild(h('span', null, [h('i', { style: 'background:' + k[0] }), k[1]]));
     });
     if (ITEMS.some(function (it) { return it.coStart; })) {
-      els.legend.appendChild(h('span', null, [h('i', { style: 'background:repeating-linear-gradient(135deg,#aaa 0 3px,#ddd 3px 6px)' }), T.meta.coLabel || 'Co-regency']));
+      els.legend.appendChild(h('span', null, [h('i', { style: 'background:repeating-linear-gradient(135deg,#aaa 0 3px,#ddd 3px 6px)' }), T.meta.coLabel || t('Co-regency')]));
     }
   }
 
@@ -787,13 +803,42 @@
     });
   }
 
-  Promise.all([
-    fetch(cfg.timelineUrl).then(function (r) { return r.json(); }),
-    fetch(cfg.placesUrl).then(function (r) { return r.json(); }),
-    fetch(cfg.territoriesUrl).then(function (r) { return r.json(); })
-  ]).then(function (res) { init(res[0], res[1], res[2]); })
+  // ---------- translation ----------
+  // Lays the translated words over the English data, matched by id, so dates,
+  // map shapes and references are only kept once (see scripts/telugu-overlay.py)
+  function translate(timeline, places, territories, tr) {
+    var tl = tr.timeline || {}, entries = tl.entries || {}, te = tr.territories || {};
+    merge(timeline.meta, tl.meta);
+    merge(timeline.certainty, tl.certainty);
+    Object.keys(timeline).forEach(function (k) {
+      if (Array.isArray(timeline[k])) timeline[k].forEach(function (d) { merge(d, entries[d.id]); });
+    });
+    places.forEach(function (p) { merge(p, (tr.places || {})[p.id]); });
+    ['meta', 'statuses', 'routes', 'routeStyles'].forEach(function (k) { merge(territories[k], te[k]); });
+    territories.snapshots.forEach(function (s) {
+      merge(s, (te.snapshots || {})[s.id]);
+      s.regions.forEach(function (r) { r.name = (te.regionNames || {})[r.name] || r.name; });
+    });
+  }
+  // Copies `over` into `base`; arrays of objects are matched item by item, other values replaced
+  function merge(base, over) {
+    if (!base || !over) return;
+    Object.keys(over).forEach(function (k) {
+      var o = over[k], b = base[k];
+      if (o && b && typeof o === 'object' && typeof b === 'object' && !(Array.isArray(o) && typeof o[0] !== 'object')) merge(b, o);
+      else base[k] = o;
+    });
+  }
+
+  var files = [cfg.timelineUrl, cfg.placesUrl, cfg.territoriesUrl];
+  if (cfg.translationUrl) files.push(cfg.translationUrl);
+  Promise.all(files.map(function (url) { return fetch(url).then(function (r) { return r.json(); }); }))
+    .then(function (res) {
+      if (res[3]) translate(res[0], res[1], res[2], res[3]);
+      init(res[0], res[1], res[2]);
+    })
     .catch(function (err) {
-      root.textContent = 'Sorry, the Bible timeline could not be loaded.';
+      root.textContent = t('Sorry, the Bible timeline could not be loaded.');
       console.error(err);
     });
 })();
