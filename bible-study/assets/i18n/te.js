@@ -217,6 +217,7 @@
     'Zoom in': 'పెద్దదిగా',
     'Fit': 'మొత్తం',
     'Sorry, the Bible timeline could not be loaded.': 'క్షమించండి, బైబిలు కాలరేఖ లోడ్ కాలేదు.',
+    'month {n}': '{n}వ నెల',
     // hub: verse of the day
     'Verse of the day': 'నేటి వాక్యము',
     'Share': 'పంచుకోండి',
@@ -224,7 +225,7 @@
   };
 
   // Pages that have a Telugu version in te/ (the rest link to the English page)
-  var PAGES = ['index.html', 'jesus-and-paul.html'];
+  var PAGES = ['index.html', 'patriarchs.html', 'exodus.html', 'judges.html', 'kings.html', 'jesus-and-paul.html'];
 
   window.BS_LANG = { code: 'te', ui: UI, books: BOOKS, refText: refText, bibleUrl: bibleUrl, pages: PAGES };
 })();

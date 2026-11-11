@@ -184,8 +184,8 @@
       var mstep = [1, 2, 3, 6].filter(function (m) { return m * scale / 12 >= 64; })[0] || 6;
       for (y = Math.floor(range[0]); y <= range[1]; y++) {
         for (var m = 0; m < 12; m += mstep) {
-          var t = y + m / 12;
-          if (t >= range[0] && t <= range[1]) ticks.push({ y: t, label: m === 0 ? yr(t) : T.meta.monthNames ? T.meta.monthNames[m] : 'month ' + (m + 1) });
+          var at = y + m / 12;
+          if (at >= range[0] && at <= range[1]) ticks.push({ y: at, label: m === 0 ? yr(at) : T.meta.monthNames ? T.meta.monthNames[m] : t('month {n}', { n: m + 1 }) });
         }
       }
       return ticks;
