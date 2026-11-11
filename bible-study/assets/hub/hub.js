@@ -36,13 +36,13 @@
   var day = Math.floor((Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) - Date.UTC(now.getFullYear(), 0, 0)) / 864e5);
   var v = VERSES[day % VERSES.length];
   var $ = function (id) { return document.getElementById(id); };
-  // On a Telugu page (assets/i18n/te.js loaded) the verse text is not quoted, since the
-  // BSI Telugu text is under copyright: the card shows the reference and links to it instead
+  // On a Telugu page (assets/i18n/te.js loaded) the verse is shown in the BSI Telugu text from te.js
   var L = window.BS_LANG;
   var t = function (s) { return (L && L.ui[s]) || s; };
 
   if (L) {
-    $('votd-text').textContent = L.refText(v.ref);
+    $('votd-text').textContent = L.verses[v.ref] || L.refText(v.ref);
+    if (L.verses[v.ref]) $('votd-ref').textContent = L.refText(v.ref);
     $('votd-date').textContent = '· ' + now.toLocaleDateString('te-IN', { day: 'numeric', month: 'long' });
     $('votd-read').href = L.bibleUrl(v.ref);
   } else {
@@ -59,7 +59,7 @@
 
   $('votd-share').addEventListener('click', function () {
     var btn = this, label = btn.querySelector('span');
-    var text = L ? L.refText(v.ref) : '“' + v.text + '” — ' + v.ref + ' (ESV)';
+    var text = L ? (L.verses[v.ref] ? '“' + L.verses[v.ref] + '” — ' : '') + L.refText(v.ref) : '“' + v.text + '” — ' + v.ref + ' (ESV)';
     var url = location.href.split('#')[0];
     if (navigator.share) {
       navigator.share({ title: t('Verse of the day'), text: text, url: url }).catch(function () {});
