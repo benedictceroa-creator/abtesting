@@ -1,0 +1,71 @@
+/* Kids' activity sheets page. Builds on hub.css (tokens, header, buttons, sections, footer). */
+
+/* hero: copy on the left, a fanned stack of sheets on the right */
+.kids-hero h1 { font-size: clamp(36px, 5.4vw, 62px); }
+.kids-hero .btn .ic { transition: none; }
+.kids-hero .btn:hover .ic { transform: none; }
+.pack-size { margin-top: 12px; font-size: 13.5px; color: var(--muted); }
+.facts { list-style: none; padding: 0; margin: 26px 0 0; display: flex; flex-wrap: wrap; gap: 10px 22px; color: var(--ink-2); font-size: 15px; font-weight: 500; }
+.facts li { display: flex; align-items: center; gap: 8px; }
+.facts .ic { width: 18px; height: 18px; color: var(--teal); stroke-width: 2.4; }
+
+.paper-stack { position: relative; height: clamp(340px, 38vw, 470px); }
+.paper-stack img { position: absolute; top: 50%; left: 50%; width: 58%; height: auto; aspect-ratio: 476 / 673; border-radius: 6px; background: #fff; box-shadow: var(--shadow-lg); }
+.paper-stack img:nth-child(1) { transform: translate(-92%, -50%) rotate(-8deg); }
+.paper-stack img:nth-child(2) { transform: translate(-8%, -52%) rotate(7deg); }
+.paper-stack img:nth-child(3) { transform: translate(-50%, -46%) rotate(-1deg); z-index: 1; }
+
+/* sheet cards */
+.sheets { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px 24px; }
+.sheet-card { display: flex; flex-direction: column; gap: 16px; scroll-margin-top: 90px; }
+.sheet-thumb { display: block; padding: 18px; border-radius: var(--radius); background: var(--mist); transition: background-color .2s; }
+.sheet-thumb img { width: 100%; height: auto; border-radius: 4px; box-shadow: var(--shadow); transition: transform .25s, box-shadow .25s; }
+.sheet-thumb:hover { background: #EFEBE6; }
+.sheet-thumb:hover img { transform: translateY(-3px) rotate(-.6deg); box-shadow: var(--shadow-lg); }
+.sheet-card:target .sheet-thumb { background: #FDECEF; box-shadow: inset 0 0 0 2px var(--red); }
+.sheet-info { display: flex; flex-direction: column; gap: 6px; padding: 0 4px; }
+.sheet-meta { display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: var(--muted); font-weight: 500; }
+.tag { font: 700 12px/1 var(--body); color: var(--red-text); background: #FDECEF; padding: 6px 10px; border-radius: 999px; }
+.sheet-info h3 { font-size: 21px; font-weight: 800; line-height: 1.2; margin-top: 4px; }
+.sheet-ref { color: var(--ink-2); font-size: 15px; }
+.sheet-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 10px; }
+.btn-sm { padding: 11px 18px; font-size: 14.5px; }
+.btn-sm .ic { width: 17px; height: 17px; }
+.btn-sm:hover .ic { transform: none; }
+.share-wa { display: inline-flex; align-items: center; gap: 7px; padding: 10px 15px; border-radius: 999px; border: 1.5px solid var(--line); color: #128C4B; font: 600 14px/1 var(--body); text-decoration: none; transition: border-color .15s, background-color .15s; }
+.share-wa:hover { border-color: #25D366; background: #F0FBF4; }
+.share-wa .ic { width: 17px; height: 17px; }
+.sheet-size { font-size: 12.5px; color: var(--muted); }
+
+/* products */
+.products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.product { display: flex; flex-direction: column; gap: 6px; padding: 18px 18px 22px; border-radius: var(--radius); background: #fff; text-decoration: none; transition: transform .2s, box-shadow .2s; }
+.product:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.product-img { position: relative; aspect-ratio: 4 / 3; border-radius: 14px; background: var(--mist); margin-bottom: 10px; overflow: hidden; }
+/* shop photos sit on white: multiply lets the white take the card's warm grey */
+.product-img img { position: absolute; inset: 7%; width: 86%; height: 86%; object-fit: contain; mix-blend-mode: multiply; }
+.product h3 { font-size: 18px; font-weight: 800; line-height: 1.25; }
+.product p { color: var(--muted); font-size: 14.5px; flex: 1; }
+.shop-more { margin-top: 28px; }
+.btn-on-mist { background: #fff; }
+.btn-on-mist:hover { background: #fff; box-shadow: var(--shadow); }
+
+/* tips */
+.tips { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.tips li { display: flex; gap: 16px; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); color: var(--ink-2); font-size: 15.5px; }
+.tips strong { display: block; color: var(--ink); font: 700 17px/1.3 var(--display); margin-bottom: 4px; }
+.tip-n { flex: none; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: var(--ink); color: #fff; font: 800 15px/1 var(--display); }
+
+@media (max-width: 1020px) {
+  .sheets { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {
+  .paper-stack { height: 340px; max-width: 520px; width: 100%; margin: 8px auto 0; }
+  .paper-stack img { width: 46%; }
+}
+@media (max-width: 600px) {
+  .sheets, .products, .tips { grid-template-columns: 1fr; }
+  .sheets { gap: 36px; }
+  .paper-stack { height: 270px; }
+  .product-img { aspect-ratio: 16 / 10; }
+}
