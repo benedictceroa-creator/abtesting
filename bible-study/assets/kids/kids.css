@@ -15,6 +15,13 @@
 .paper-stack img:nth-child(2) { transform: translate(-8%, -52%) rotate(7deg); }
 .paper-stack img:nth-child(3) { transform: translate(-50%, -46%) rotate(-1deg); z-index: 1; }
 
+/* each pack's heading carries its own whole-pack and answer-key downloads */
+.pack-head { flex-wrap: wrap; }
+.pack-dl { flex: none; }
+.pack-dl .actions { margin-top: 0; }
+.pack-dl .btn .ic { transition: none; }
+.pack-dl .btn:hover .ic { transform: none; }
+
 /* sheet cards */
 .sheets { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px 24px; }
 .sheet-card { display: flex; flex-direction: column; gap: 16px; scroll-margin-top: 90px; }
