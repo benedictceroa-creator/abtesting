@@ -10,6 +10,9 @@
 //     • Execute as: Me
 //     • Who has access: Anyone
 //  4. Copy the deployment URL and paste it into app.js as SCRIPT_URL
+//  5. Project Settings (gear icon) → Script Properties → Add property
+//     • Property: PRINCIPAL_PASSWORD   • Value: the principal's password
+//     (The principal dashboard stays locked until this is set.)
 // ══════════════════════════════════════════════════════════════════
 
 // ── Spreadsheet ID ──────────────────────────────────────────────
@@ -25,6 +28,15 @@ const SNAPSHOTS_SHEET   = 'Plans';        // created automatically on first save
 // ── Open the spreadsheet ─────────────────────────────────────────
 function getSpreadsheet() {
   return SpreadsheetApp.openById(SPREADSHEET_ID);
+}
+
+// ── Principal password ───────────────────────────────────────────
+// Stored in Apps Script → Project Settings → Script Properties
+// as PRINCIPAL_PASSWORD. Never put the password in this file.
+function isPrincipal(key) {
+  const expected = PropertiesService.getScriptProperties().getProperty('PRINCIPAL_PASSWORD');
+  if (!expected || !key) return false; // locked until the property is set
+  return String(key) === expected;
 }
 
 // ── Setup test — run this ONCE manually in the Apps Script editor ─
@@ -49,8 +61,15 @@ function doGet(e) {
     if (action === 'add')         return handleAdd(e.parameter);
     if (action === 'savePlan')    return handleSavePlan(e.parameter);
     if (action === 'saveReview')  return handleSaveReview(e.parameter);
-    if (action === 'getReviews')  return handleGetReviews(e.parameter);
-    if (action === 'getAllPlans')       return handleGetAllPlans(e.parameter);
+    // Principal-only actions — require the password stored in Script Properties
+    if (action === 'checkPrincipal' || action === 'getReviews' || action === 'getAllPlans') {
+      if (!isPrincipal(e.parameter.key)) {
+        return jsonResponse({ status: 'unauthorized', message: 'Incorrect password' });
+      }
+      if (action === 'checkPrincipal') return jsonResponse({ status: 'ok' });
+      if (action === 'getReviews')     return handleGetReviews(e.parameter);
+      if (action === 'getAllPlans')    return handleGetAllPlans(e.parameter);
+    }
     if (action === 'getSubjectsGrades') return handleGetSubjectsGrades();
     return jsonResponse({ status: 'error', message: 'Unknown GET action: ' + action });
   } catch (err) {

@@ -1,6 +1,9 @@
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyZ0ICGEOPv1N2kmXF2x5kQbyEvUOVBko2dNBgezGkr3KrYW4DEPD2Hkz0gjJTC4jowHw/exec';
 
-const PRINCIPAL_PASSWORD = 'JohnsAcademy@Principal2025';
+// The password is checked by Apps Script (Script Properties → PRINCIPAL_PASSWORD).
+// It is kept in sessionStorage only for this browser tab and sent with each request.
+const AUTH_KEY = 'principal_key';
+function getKey() { return sessionStorage.getItem(AUTH_KEY) || ''; }
 
 // ── State ────────────────────────────────────────────────────────
 let currentTab    = 'reviews';
@@ -36,27 +39,41 @@ function switchTab(tab) {
 }
 
 // ── Login ────────────────────────────────────────────────────────
-document.getElementById('login-form').addEventListener('submit', function (e) {
+document.getElementById('login-form').addEventListener('submit', async function (e) {
   e.preventDefault();
-  const pwd = document.getElementById('password').value;
-  if (pwd === PRINCIPAL_PASSWORD) {
-    document.getElementById('login-error').classList.add('hidden');
-    sessionStorage.setItem('principal_auth', 'true');
-    showView('view-dashboard');
-    switchTab('reviews');
-  } else {
-    document.getElementById('login-error').classList.remove('hidden');
-    document.getElementById('password').value = '';
+  const pwd       = document.getElementById('password').value;
+  const submitBtn = this.querySelector('button[type="submit"], button');
+  if (submitBtn) submitBtn.disabled = true;
+
+  try {
+    const url  = `${SCRIPT_URL}?action=checkPrincipal&key=${encodeURIComponent(pwd)}`;
+    const data = await fetch(url).then(r => r.json());
+    if (data.status === 'ok') {
+      document.getElementById('login-error').classList.add('hidden');
+      sessionStorage.setItem(AUTH_KEY, pwd);
+      showView('view-dashboard');
+      switchTab('reviews');
+    } else {
+      document.getElementById('login-error').classList.remove('hidden');
+      document.getElementById('password').value = '';
+    }
+  } catch (err) {
+    alert('Could not reach the server. Please check your connection and try again.');
+    console.error(err);
+  } finally {
+    if (submitBtn) submitBtn.disabled = false;
   }
 });
 
-document.getElementById('logout-btn').addEventListener('click', function () {
-  sessionStorage.removeItem('principal_auth');
+function logout() {
+  sessionStorage.removeItem(AUTH_KEY);
   document.getElementById('password').value = '';
   reviewPlans  = [];
   currentPlans = [];
   showView('view-login');
-});
+}
+
+document.getElementById('logout-btn').addEventListener('click', logout);
 
 // ── Load ─────────────────────────────────────────────────────────
 document.getElementById('load-btn').addEventListener('click', loadPlans);
@@ -73,11 +90,16 @@ async function loadPlans() {
 
   try {
     // Load both tabs at once so switching tabs always shows fresh data
-    const q = `&school=${encodeURIComponent(school)}`;
+    const q = `&school=${encodeURIComponent(school)}&key=${encodeURIComponent(getKey())}`;
     const [reviewsData, allData] = await Promise.all([
       fetch(`${SCRIPT_URL}?action=getReviews${q}`).then(r => r.json()),
       fetch(`${SCRIPT_URL}?action=getAllPlans${q}`).then(r => r.json()),
     ]);
+    if (reviewsData.status === 'unauthorized' || allData.status === 'unauthorized') {
+      alert('Your session has expired or the password was changed. Please log in again.');
+      logout();
+      return;
+    }
     if (reviewsData.status !== 'ok') throw new Error(reviewsData.message);
     if (allData.status !== 'ok') throw new Error(allData.message);
 
@@ -322,7 +344,8 @@ function formatWeekDate(raw) {
 }
 
 // ── Init ─────────────────────────────────────────────────────────
-if (sessionStorage.getItem('principal_auth') === 'true') {
+sessionStorage.removeItem('principal_auth'); // old client-side flag, no longer used
+if (getKey()) {
   showView('view-dashboard');
   switchTab('reviews');
 } else {
