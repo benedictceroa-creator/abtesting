@@ -72,21 +72,23 @@ async function loadPlans() {
   document.getElementById('tab-current').classList.add('hidden');
 
   try {
-    if (currentTab === 'reviews') {
-      const url  = `${SCRIPT_URL}?action=getReviews&school=${encodeURIComponent(school)}`;
-      const data = await fetch(url).then(r => r.json());
-      if (data.status !== 'ok') throw new Error(data.message);
-      reviewPlans = data.plans;
-      populateWeekFilter(reviewPlans);
-      renderReviews();
-    } else {
-      const url  = `${SCRIPT_URL}?action=getAllPlans&school=${encodeURIComponent(school)}`;
-      const data = await fetch(url).then(r => r.json());
-      if (data.status !== 'ok') throw new Error(data.message);
-      currentPlans = data.plans;
-      populateWeekFilter(currentPlans);
-      renderCurrentPlans();
-    }
+    // Load both tabs at once so switching tabs always shows fresh data
+    const q = `&school=${encodeURIComponent(school)}`;
+    const [reviewsData, allData] = await Promise.all([
+      fetch(`${SCRIPT_URL}?action=getReviews${q}`).then(r => r.json()),
+      fetch(`${SCRIPT_URL}?action=getAllPlans${q}`).then(r => r.json()),
+    ]);
+    if (reviewsData.status !== 'ok') throw new Error(reviewsData.message);
+    if (allData.status !== 'ok') throw new Error(allData.message);
+
+    reviewPlans  = reviewsData.plans;
+    // Once a teacher submits the completion review, the plan moves to
+    // "Completed Reviews" — so Current only shows plans still pending review.
+    currentPlans = allData.plans.filter(p => !p.reviewedAt);
+
+    populateWeekFilter(currentTab === 'reviews' ? reviewPlans : currentPlans);
+    if (currentTab === 'reviews') renderReviews();
+    else renderCurrentPlans();
   } catch (err) {
     alert('Could not load plans: ' + err.message);
     console.error(err);
@@ -222,9 +224,7 @@ function renderCurrentPlans() {
 
   plans.forEach((plan, idx) => {
     const daysPlanned = (plan.days || []).filter(d => !d.isHoliday).length;
-    const reviewed    = plan.reviewedAt
-      ? `<span class="pill green">Reviewed</span>`
-      : `<span class="pill grey">Pending</span>`;
+    const reviewed    = `<span class="pill grey">Awaiting review</span>`;
 
     const tr = document.createElement('tr');
     tr.className   = 'plan-row';
