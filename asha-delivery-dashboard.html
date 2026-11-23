@@ -160,6 +160,23 @@
     .btn-sync:hover { opacity:0.88; }
     .btn-sync:disabled { opacity:0.5; cursor:default; }
 
+    /* ── View tabs ── */
+    .view-tabs { display:flex; gap:0.35rem; margin-bottom:1.25rem; border-bottom:2px solid #e2e8f0; }
+    .view-tab { padding:0.6rem 1.1rem; font-size:0.85rem; font-weight:700; color:#64748b; background:none; border:none; border-bottom:3px solid transparent; margin-bottom:-2px; cursor:pointer; display:flex; align-items:center; gap:0.45rem; }
+    .view-tab:hover { color:#334155; }
+    .view-tab.active { color:#C82035; border-bottom-color:#C82035; }
+    .view-count { background:#f1f5f9; color:#64748b; font-size:0.68rem; padding:0.1rem 0.5rem; border-radius:999px; }
+    .view-tab.active .view-count { background:#ffe4e6; color:#9b1c2e; }
+    .view-count.warn { background:#fee2e2; color:#dc2626; }
+
+    /* ── Open orders ── */
+    .age-pill { display:inline-flex; align-items:center; gap:0.3rem; min-width:3.4rem; justify-content:center; padding:0.2rem 0.6rem; border-radius:999px; font-weight:800; font-size:0.75rem; font-variant-numeric:tabular-nums; color:#fff; }
+    .age-warn { font-size:0.65rem; font-weight:700; color:#dc2626; margin-left:0.4rem; }
+    tr.row-warn { background:#fff5f5; }
+    tr.row-warn:hover { background:#fee2e2; }
+    .age-scale { display:flex; align-items:center; gap:0.5rem; font-size:0.7rem; color:#64748b; }
+    .age-scale-bar { width:120px; height:8px; border-radius:4px; }
+
     @media (max-width: 720px) {
       .main { padding: 1rem; }
       .charts { grid-template-columns: 1fr; }
@@ -225,6 +242,74 @@
   </div>
 
   <div class="file-chips" id="fileChips"></div>
+
+  <!-- View tabs -->
+  <div class="view-tabs">
+    <button class="view-tab active" id="vtAll" onclick="switchView('all')">📊 Delivery Performance</button>
+    <button class="view-tab" id="vtOpen" onclick="switchView('open')">⏳ Open Orders <span class="view-count" id="openCountBadge">0</span></button>
+  </div>
+
+  <div id="viewOpen" style="display:none;">
+    <div class="kpis">
+      <div class="kpi c-total">
+        <div class="kpi-lbl">Open Orders</div>
+        <div class="kpi-val" id="oCount">—</div>
+        <div class="kpi-sub">Not yet delivered</div>
+      </div>
+      <div class="kpi c-blue">
+        <div class="kpi-lbl">Not Yet Dispatched</div>
+        <div class="kpi-val" id="oUndispatched">—</div>
+        <div class="kpi-sub">No dispatch date</div>
+      </div>
+      <div class="kpi c-amber">
+        <div class="kpi-lbl">Avg Days Since Order</div>
+        <div class="kpi-val" id="oAvg">—<span class="unit"> days</span></div>
+        <div class="kpi-sub">Across open orders</div>
+      </div>
+      <div class="kpi" style="border-color:#dc2626;">
+        <div class="kpi-lbl">⚠ Over 8 Days</div>
+        <div class="kpi-val" id="oWarn" style="color:#dc2626;">—</div>
+        <div class="kpi-sub">Need follow-up</div>
+      </div>
+    </div>
+
+    <div class="table-card">
+      <div class="table-head-bar">
+        <div style="display:flex;align-items:center;gap:1rem;">
+          <span class="t-title">Open Orders</span>
+          <span class="t-count" id="oTCount">—</span>
+        </div>
+        <div class="age-scale">
+          <span>0 days</span>
+          <span class="age-scale-bar" id="ageScaleBar"></span>
+          <span>8 days</span>
+          <span class="age-warn" style="margin-left:0.25rem;">⚠ over 8</span>
+        </div>
+      </div>
+      <div class="table-scroll">
+        <table id="openTable">
+          <thead>
+            <tr>
+              <th data-col="orderId">Order ID</th>
+              <th data-col="orderedDate">Order Date</th>
+              <th data-col="dispatchDate">Dispatch Date</th>
+              <th data-col="daysSinceOrder">Days Since Order</th>
+              <th data-col="destination">Destination</th>
+              <th data-col="state">State</th>
+              <th data-col="carrier">Carrier</th>
+              <th data-col="status">Status</th>
+              <th data-col="delayReason">Delay Reason</th>
+            </tr>
+          </thead>
+          <tbody id="oBody">
+            <tr><td colspan="9"><div class="empty"><div class="empty-ico">⏳</div><div class="empty-txt">Sync or upload data to see open orders</div></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="viewAll">
 
   <!-- Filters -->
   <div class="filters">
@@ -318,7 +403,7 @@
       </div>
     </div>
     <div class="table-scroll">
-      <table>
+      <table id="allTable">
         <thead>
           <tr>
             <th data-col="orderId">Order ID</th>
@@ -344,6 +429,8 @@
       <div class="pager-btns" id="pagerBtns"></div>
     </div>
   </div>
+
+  </div><!-- #viewAll -->
 
 </div>
 
@@ -510,6 +597,16 @@ function parseDate(v) {
   if (!v) return null;
   const s = String(v).trim();
   if (!s || s === '-') return null;
+
+  // "02 Jul 26" / "2-Jul-2026" — format sent by the Apps Script backend
+  const mn = s.match(/^(\d{1,2})[\s\-\/]+([A-Za-z]{3})[A-Za-z]*[\s\-\/,]+(\d{2,4})$/);
+  if (mn) {
+    const mi = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'].indexOf(mn[2].toLowerCase());
+    if (mi < 0) return null;
+    const yr = mn[3].length === 2 ? 2000 + parseInt(mn[3], 10) : parseInt(mn[3], 10);
+    const d = new Date(yr, mi, parseInt(mn[1], 10));
+    return isNaN(d.getTime()) ? null : d;
+  }
 
   // Split on any of: - / .
   const parts = s.split(/[-\/\.]/);
@@ -826,6 +923,7 @@ function applyFilters() {
   updateKPIs();
   updateCharts();
   renderTable();
+  renderOpenOrders();   // open-orders view always shows ALL open orders (ignores filters above)
 }
 
 // ─────────────────────────────────────────────────────────
@@ -1230,7 +1328,7 @@ function totalClass(d) {
 }
 
 function statusBadge(s) {
-  const map = { Delivered:'bd', 'In Transit':'bt', Returned:'bk', 'Tracking Issue':'br', Unknown:'bu' };
+  const map = { Delivered:'bd', 'In Transit':'bt', Pending:'bu', Returned:'bk', 'Tracking Issue':'br', Unknown:'bu' };
   return `<span class="badge ${map[s]||'bu'}">${s}</span>`;
 }
 
@@ -1305,15 +1403,131 @@ function goPage(p) { page = p; renderTable(); }
 // SORT
 // ─────────────────────────────────────────────────────────
 
-document.querySelectorAll('thead th[data-col]').forEach(th => {
+document.querySelectorAll('#allTable thead th[data-col]').forEach(th => {
   th.addEventListener('click', () => {
     const col = th.dataset.col;
     if (sortCol === col) { sortAsc = !sortAsc; th.classList.toggle('desc', !sortAsc); }
-    else { sortCol = col; sortAsc = true; document.querySelectorAll('thead th').forEach(t=>{t.classList.remove('th-sorted','desc')}); }
+    else { sortCol = col; sortAsc = true; document.querySelectorAll('#allTable thead th').forEach(t=>{t.classList.remove('th-sorted','desc')}); }
     th.classList.add('th-sorted');
     renderTable();
   });
 });
+
+// ─────────────────────────────────────────────────────────
+// OPEN ORDERS VIEW
+// ─────────────────────────────────────────────────────────
+
+const AGE_WARN_DAYS = 8;          // colour reaches full red here; anything above shows ⚠
+let openSortCol = 'daysSinceOrder';
+let openSortAsc = false;          // oldest first
+
+function switchView(v) {
+  document.getElementById('viewAll').style.display  = v === 'all'  ? '' : 'none';
+  document.getElementById('viewOpen').style.display = v === 'open' ? '' : 'none';
+  document.getElementById('vtAll').classList.toggle('active',  v === 'all');
+  document.getElementById('vtOpen').classList.toggle('active', v === 'open');
+  try { localStorage.setItem('asha_view', v); } catch (e) {}
+  if (v === 'all' && _leafletMap) setTimeout(() => _leafletMap.invalidateSize(), 0);
+  if (v === 'open') renderOpenOrders();
+}
+
+/** Open = no delivery date and not marked Delivered / Returned */
+function isOpenOrder(o) {
+  if (o.deliveryDate) return false;
+  const s = String(o.status || '').toLowerCase();
+  return !(s.includes('deliver') || s.includes('return'));
+}
+
+function daysSince(d) {
+  if (!d) return null;
+  const today = new Date(); today.setHours(0,0,0,0);
+  const start = new Date(d); start.setHours(0,0,0,0);
+  return Math.max(0, Math.round((today - start) / 86400000));
+}
+
+/** Green (0 days) → amber → red (8 days) */
+function ageColor(days) {
+  if (days === null) return '#94a3b8';
+  const t = Math.min(days, AGE_WARN_DAYS) / AGE_WARN_DAYS;
+  const hue = 130 * (1 - t);                 // 130 = green, 0 = red
+  return `hsl(${hue.toFixed(0)}, 72%, ${(40 + 4 * Math.sin(Math.PI * t)).toFixed(0)}%)`;
+}
+
+function getOpenOrders() {
+  return allOrders.filter(isOpenOrder).map(o => ({ ...o, daysSinceOrder: daysSince(o.orderedDate) }));
+}
+
+function updateOpenBadge(open) {
+  const badge = document.getElementById('openCountBadge');
+  const warn  = open.filter(o => o.daysSinceOrder !== null && o.daysSinceOrder > AGE_WARN_DAYS).length;
+  badge.textContent = warn ? `${open.length} · ⚠ ${warn}` : open.length;
+  badge.classList.toggle('warn', warn > 0);
+}
+
+function renderOpenOrders() {
+  const open = getOpenOrders();
+  updateOpenBadge(open);
+
+  const ages = open.map(o => o.daysSinceOrder).filter(d => d !== null);
+  const warn = ages.filter(d => d > AGE_WARN_DAYS).length;
+  document.getElementById('oCount').textContent        = open.length;
+  document.getElementById('oUndispatched').textContent = open.filter(o => !o.dispatchDate).length;
+  document.getElementById('oWarn').textContent         = warn;
+  setKPI('oAvg', avg(ages));
+  document.getElementById('oTCount').textContent = `${open.length} order${open.length !== 1 ? 's' : ''}`;
+
+  open.sort((a, b) => {
+    const av = a[openSortCol], bv = b[openSortCol];
+    if (av === null || av === undefined || av === '') return 1;
+    if (bv === null || bv === undefined || bv === '') return -1;
+    const dir = openSortAsc ? 1 : -1;
+    if (av instanceof Date || typeof av === 'number') return dir * (av - bv);
+    return dir * String(av).localeCompare(String(bv), undefined, { numeric: true });
+  });
+
+  document.querySelectorAll('#openTable thead th[data-col]').forEach(th => {
+    th.classList.toggle('th-sorted', th.dataset.col === openSortCol);
+    th.classList.toggle('desc', th.dataset.col === openSortCol && !openSortAsc);
+  });
+
+  const tbody = document.getElementById('oBody');
+  if (!open.length) {
+    tbody.innerHTML = `<tr><td colspan="9"><div class="empty"><div class="empty-ico">✅</div><div class="empty-txt">${allOrders.length ? 'No open orders — everything has been delivered' : 'Sync or upload data to see open orders'}</div></div></td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = open.map(o => {
+    const d = o.daysSinceOrder;
+    const isWarn = d !== null && d > AGE_WARN_DAYS;
+    const age = d === null
+      ? '<span class="c-n">—</span>'
+      : `<span class="age-pill" style="background:${ageColor(d)};">${d}d</span>${isWarn ? '<span class="age-warn">⚠ Overdue</span>' : ''}`;
+    return `
+      <tr class="${isWarn ? 'row-warn' : ''}">
+        <td><strong>${o.orderId || '—'}</strong></td>
+        <td>${fmtDate(o.orderedDate)}</td>
+        <td>${o.dispatchDate ? fmtDate(o.dispatchDate) : '<span class="c-n">Not dispatched</span>'}</td>
+        <td>${age}</td>
+        <td>${o.destination || '—'}</td>
+        <td><strong>${o.state || '—'}</strong></td>
+        <td>${o.carrier && o.carrier !== 'Unknown' ? o.carrier : '<span class="c-n">—</span>'}</td>
+        <td>${statusBadge(o.status || 'Pending')}</td>
+        <td style="max-width:200px;white-space:normal;color:#94a3b8;font-size:0.72rem;">${o.delayReason || ''}</td>
+      </tr>`;
+  }).join('');
+}
+
+document.querySelectorAll('#openTable thead th[data-col]').forEach(th => {
+  th.addEventListener('click', () => {
+    const col = th.dataset.col;
+    if (openSortCol === col) openSortAsc = !openSortAsc;
+    else { openSortCol = col; openSortAsc = col !== 'daysSinceOrder'; }
+    renderOpenOrders();
+  });
+});
+
+document.getElementById('ageScaleBar').style.background =
+  `linear-gradient(90deg, ${[0,2,4,6,8].map(ageColor).join(', ')})`;
 
 // ─────────────────────────────────────────────────────────
 // UPLOAD EVENTS
@@ -1359,6 +1573,9 @@ document.getElementById('btnDelays').addEventListener('click', () => {
   const savedTab = localStorage.getItem('asha_ds_tab') || 'sheet';
   if (savedUrl) document.getElementById('sheetUrl').value = savedUrl;
   switchTab(savedTab);
+  let savedView = 'all';
+  try { savedView = localStorage.getItem('asha_view') || 'all'; } catch (e) {}
+  switchView(savedView === 'open' ? 'open' : 'all');
   if (localStorage.getItem('asha_auto_refresh') === '1') {
     document.getElementById('autoRefresh').checked = true;
     _autoRefreshTimer = setInterval(syncFromSheet, 5 * 60 * 1000);
