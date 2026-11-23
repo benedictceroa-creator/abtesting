@@ -284,6 +284,7 @@
           <span class="age-scale-bar" id="ageScaleBar"></span>
           <span>8 days</span>
           <span class="age-warn" style="margin-left:0.25rem;">⚠ over 8</span>
+          <button class="btn-sync" id="btnOpenPdf" onclick="downloadOpenOrdersPdf()" style="margin-left:0.5rem;">⬇ Download PDF</button>
         </div>
       </div>
       <div class="table-scroll">
@@ -1464,6 +1465,17 @@ function updateOpenBadge(open) {
   badge.classList.toggle('warn', warn > 0);
 }
 
+function sortOpenOrders(open) {
+  return open.sort((a, b) => {
+    const av = a[openSortCol], bv = b[openSortCol];
+    if (av === null || av === undefined || av === '') return 1;
+    if (bv === null || bv === undefined || bv === '') return -1;
+    const dir = openSortAsc ? 1 : -1;
+    if (av instanceof Date || typeof av === 'number') return dir * (av - bv);
+    return dir * String(av).localeCompare(String(bv), undefined, { numeric: true });
+  });
+}
+
 function renderOpenOrders() {
   const open = getOpenOrders();
   updateOpenBadge(open);
@@ -1476,14 +1488,7 @@ function renderOpenOrders() {
   setKPI('oAvg', avg(ages));
   document.getElementById('oTCount').textContent = `${open.length} order${open.length !== 1 ? 's' : ''}`;
 
-  open.sort((a, b) => {
-    const av = a[openSortCol], bv = b[openSortCol];
-    if (av === null || av === undefined || av === '') return 1;
-    if (bv === null || bv === undefined || bv === '') return -1;
-    const dir = openSortAsc ? 1 : -1;
-    if (av instanceof Date || typeof av === 'number') return dir * (av - bv);
-    return dir * String(av).localeCompare(String(bv), undefined, { numeric: true });
-  });
+  sortOpenOrders(open);
 
   document.querySelectorAll('#openTable thead th[data-col]').forEach(th => {
     th.classList.toggle('th-sorted', th.dataset.col === openSortCol);
@@ -1525,6 +1530,122 @@ document.querySelectorAll('#openTable thead th[data-col]').forEach(th => {
     renderOpenOrders();
   });
 });
+
+// ── Open orders PDF ──────────────────────────────────────
+// jsPDF is loaded only when the button is pressed. Standard PDF fonts have
+// no emoji/⚠, so the warning is written as "OVERDUE".
+const JSPDF_URL     = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+const AUTOTABLE_URL = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js';
+
+function loadScript(src) {
+  return new Promise((resolve, reject) => {
+    const s = document.createElement('script');
+    s.src = src;
+    s.onload = resolve;
+    s.onerror = () => reject(new Error('Could not load the PDF maker — check the internet connection and try again.'));
+    document.head.appendChild(s);
+  });
+}
+
+/** Same colour as ageColor(), as [r,g,b] for jsPDF */
+function ageRgb(days) {
+  if (days === null) return [148, 163, 184];
+  const t = Math.min(days, AGE_WARN_DAYS) / AGE_WARN_DAYS;
+  const h = 130 * (1 - t), s = 0.72, l = (40 + 4 * Math.sin(Math.PI * t)) / 100;
+  const k = n => (n + h / 30) % 12;
+  const a = s * Math.min(l, 1 - l);
+  const f = n => Math.round(255 * (l - a * Math.max(-1, Math.min(k(n) - 3, 9 - k(n), 1))));
+  return [f(0), f(8), f(4)];
+}
+
+async function downloadOpenOrdersPdf() {
+  const btn = document.getElementById('btnOpenPdf');
+  const open = sortOpenOrders(getOpenOrders());
+  if (!open.length) { alert('There are no open orders to export.'); return; }
+
+  btn.disabled = true;
+  btn.textContent = 'Making PDF…';
+  try {
+    if (!window.jspdf) await loadScript(JSPDF_URL);
+    if (!window.jspdf.jsPDF.API.autoTable) await loadScript(AUTOTABLE_URL);
+
+    const doc   = new window.jspdf.jsPDF({ unit: 'mm', format: 'a4', orientation: 'landscape' });
+    const pageW = doc.internal.pageSize.getWidth();
+    const BRAND = [200, 32, 53];
+    const now   = new Date();
+    const stamp = now.toLocaleString('en-IN', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+
+    const ages  = open.map(o => o.daysSinceOrder).filter(d => d !== null);
+    const warn  = ages.filter(d => d > AGE_WARN_DAYS).length;
+    const avgA  = avg(ages);
+
+    // Header
+    doc.setFillColor(26, 26, 26);
+    doc.rect(0, 0, pageW, 18, 'F');
+    doc.setFillColor(...BRAND);
+    doc.rect(0, 18, pageW, 1.2, 'F');
+    doc.setTextColor(255);
+    doc.setFont('helvetica', 'bold'); doc.setFontSize(14);
+    doc.text('Asha Books · Open Orders', 12, 11.5);
+    doc.setFont('helvetica', 'normal'); doc.setFontSize(9);
+    doc.text(`Generated ${stamp}`, pageW - 12, 11.5, { align: 'right' });
+
+    // Summary
+    doc.setTextColor(30, 41, 59); doc.setFontSize(10);
+    const summary = [
+      `Open orders: ${open.length}`,
+      `Not yet dispatched: ${open.filter(o => !o.dispatchDate).length}`,
+      `Avg days since order: ${avgA === null ? '-' : avgA.toFixed(1)}`,
+      `Over ${AGE_WARN_DAYS} days: ${warn}`,
+    ].join('     ');
+    doc.text(summary, 12, 27);
+
+    doc.autoTable({
+      startY: 31,
+      margin: { left: 12, right: 12 },
+      head: [['Order ID', 'Order Date', 'Dispatch Date', 'Days Since Order', 'Destination', 'State', 'Carrier', 'Status', 'Delay Reason']],
+      body: open.map(o => [
+        o.orderId || '-',
+        o.orderedDate ? fmtDate(o.orderedDate) : '-',
+        o.dispatchDate ? fmtDate(o.dispatchDate) : 'Not dispatched',
+        o.daysSinceOrder === null ? '-' : `${o.daysSinceOrder}d${o.daysSinceOrder > AGE_WARN_DAYS ? '  OVERDUE' : ''}`,
+        o.destination || '-',
+        o.state || '-',
+        o.carrier && o.carrier !== 'Unknown' ? o.carrier : '-',
+        o.status || 'Pending',
+        o.delayReason || '',
+      ]),
+      styles: { font: 'helvetica', fontSize: 8.5, textColor: [51, 65, 85], lineColor: [226, 232, 240], lineWidth: 0.1, cellPadding: 1.8 },
+      headStyles: { fillColor: BRAND, textColor: 255, fontStyle: 'bold' },
+      columnStyles: { 0: { fontStyle: 'bold' }, 3: { halign: 'center', fontStyle: 'bold' }, 8: { cellWidth: 55 } },
+      didParseCell(data) {
+        if (data.section !== 'body') return;
+        const o = open[data.row.index];
+        const d = o.daysSinceOrder;
+        if (d !== null && d > AGE_WARN_DAYS) data.cell.styles.fillColor = [255, 245, 245];
+        if (data.column.index === 3 && d !== null) {
+          data.cell.styles.fillColor = ageRgb(d);
+          data.cell.styles.textColor = 255;
+        }
+        if (data.column.index === 2 && !o.dispatchDate) data.cell.styles.textColor = [148, 163, 184];
+      },
+      didDrawPage() {
+        const pageH = doc.internal.pageSize.getHeight();
+        doc.setFontSize(7.5); doc.setTextColor(148, 163, 184);
+        doc.text(`Days since order coloured green (0 days) to red (${AGE_WARN_DAYS} days); OVERDUE = more than ${AGE_WARN_DAYS} days.`, 12, pageH - 6);
+        doc.text(`Page ${doc.internal.getNumberOfPages()}`, pageW - 12, pageH - 6, { align: 'right' });
+      },
+    });
+
+    doc.save(`Asha Books open orders ${fmtDateISO(now)}.pdf`);
+  } catch (err) {
+    console.error('PDF error:', err);
+    alert(err.message || 'Could not make the PDF.');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '⬇ Download PDF';
+  }
+}
 
 document.getElementById('ageScaleBar').style.background =
   `linear-gradient(90deg, ${[0,2,4,6,8].map(ageColor).join(', ')})`;
