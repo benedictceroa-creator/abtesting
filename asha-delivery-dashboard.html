@@ -1432,11 +1432,9 @@ function switchView(v) {
   if (v === 'open') renderOpenOrders();
 }
 
-/** Open = no delivery date and not marked Delivered / Returned */
+/** Open = Status column says "Pending" (Closed / Delivered / anything else is excluded) */
 function isOpenOrder(o) {
-  if (o.deliveryDate) return false;
-  const s = String(o.status || '').toLowerCase();
-  return !(s.includes('deliver') || s.includes('return'));
+  return String(o.status || '').trim().toLowerCase() === 'pending';
 }
 
 function daysSince(d) {
