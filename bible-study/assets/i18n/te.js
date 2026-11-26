@@ -322,7 +322,7 @@
   };
 
   // Pages that have a Telugu version in te/ (the rest link to the English page)
-  var PAGES = ['index.html', 'patriarchs.html', 'exodus.html', 'judges.html', 'kings.html', 'jesus-and-paul.html', 'family-tree.html', 'books.html'];
+  var PAGES = ['index.html', 'patriarchs.html', 'exodus.html', 'judges.html', 'kings.html', 'jesus-and-paul.html', 'family-tree.html', 'books.html', 'gospels.html'];
 
   window.BS_LANG = { code: 'te', ui: UI, books: BOOKS, refText: refText, bibleUrl: bibleUrl, pages: PAGES, verses: VERSES };
 })();

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Four Gospels Compared: Matthew, Mark, Luke and John | Asha Books</title>
+  <meta name="description" content="Compare Matthew, Mark, Luke and John side by side: who wrote each Gospel and why, how their styles differ, and over 100 events from Jesus' life showing which Gospels record them.">
+  <!-- Prototype: keep out of search results until the content has passed theological review -->
+  <meta name="robots" content="noindex">
+  <link rel="alternate" hreflang="te" href="te/gospels.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/hub/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/hub/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/hub/hub.css">
+  <link rel="stylesheet" href="assets/books/books.css">
+  <link rel="stylesheet" href="assets/gospels/gospels.css">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M3 5.5C5.5 4 9 4 12 6c3-2 6.5-2 9-.5V19c-2.5-1.5-6-1.5-9 .5-3-2-6.5-2-9-.5z"/><path d="M12 6v13.5"/></symbol>
+      <symbol id="i-map" viewBox="0 0 24 24"><path d="M9 4 3 6.5v13.5l6-2.5 6 2.5 6-2.5V4l-6 2.5z"/><path d="M9 4v13.5M15 6.5V20"/></symbol>
+      <symbol id="i-tree" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="4" rx="1"/><rect x="3" y="17" width="6" height="4" rx="1"/><rect x="15" y="17" width="6" height="4" rx="1"/><path d="M12 7v5M6 17v-5h12v5"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+      <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></symbol>
+      <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+      <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="top">
+    <div class="wrap top-in">
+      <a class="brand" href="index.html" aria-label="Asha Books Bible Study Resources">
+        <img src="assets/hub/asha-books-logo.png" alt="Asha Books" width="511" height="168">
+        <span class="brand-tag">Bible Study</span>
+      </a>
+      <div class="top-actions">
+        <a class="pill pill-lang" href="te/gospels.html" lang="te" hreflang="te">తెలుగు</a>
+        <a class="pill pill-line" href="index.html"><svg class="ic"><use href="#i-back"/></svg>All resources</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. The four portraits -->
+    <section class="bx-head gx-head">
+      <div class="wrap">
+        <p class="kicker">Gospel comparison</p>
+        <h1>Four Gospels, one Jesus</h1>
+        <p class="sec-sub">Matthew, Mark, Luke and John each tell the good news of Jesus, but each writes for different readers and shows a different side of who he is. Pick a Gospel to meet its writer, or compare the events of Jesus' life side by side below.</p>
+        <div class="gx-portraits" id="gx-portraits"></div>
+        <nav class="gx-jump" aria-label="On this page">
+          <a href="#glance">At a glance</a>
+          <a href="#words">First and last words</a>
+          <a href="#shared">Shared and unique</a>
+          <a href="#events">Events side by side</a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- 2. Comparison table -->
+    <section class="gx-sec" id="glance" aria-labelledby="glance-h">
+      <div class="wrap">
+        <p class="kicker">At a glance</p>
+        <h2 id="glance-h">How the four Gospels compare</h2>
+        <p class="sec-sub">Same Lord, same story, four witnesses. Scroll sideways on a small screen.</p>
+        <div class="gx-table-wrap" tabindex="0" role="region" aria-label="Comparison table">
+          <table class="gx-table" id="gx-table"></table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. First and last words -->
+    <section class="gx-sec section-mist" id="words" aria-labelledby="words-h">
+      <div class="wrap">
+        <div class="gx-sec-row">
+          <div>
+            <p class="kicker">First and last words</p>
+            <h2 id="words-h">Where each Gospel begins and ends</h2>
+            <p class="sec-sub">Each writer's opening line tells you what he wants you to see first.</p>
+          </div>
+          <div class="bx-seg" role="tablist" aria-label="Show" id="gx-words-seg">
+            <button type="button" role="tab" data-w="first" aria-selected="true">First words</button>
+            <button type="button" role="tab" data-w="last" aria-selected="false">Last words</button>
+          </div>
+        </div>
+        <div class="gx-words" id="gx-words"></div>
+      </div>
+    </section>
+
+    <!-- 4. Shared and unique -->
+    <section class="gx-sec" id="shared" aria-labelledby="shared-h">
+      <div class="wrap gx-shared">
+        <div class="gx-shared-copy">
+          <p class="kicker">Shared and unique</p>
+          <h2 id="shared-h">Three that look alike, and one that stands apart</h2>
+          <p>Matthew, Mark and Luke are called the <strong>Synoptic Gospels</strong>, from a Greek word meaning “seen together”. They tell much of the same story, often in very similar words, in a similar order, and mostly in Galilee.</p>
+          <p>John wrote later and chose differently. Almost everything in his Gospel is found nowhere else: long conversations, the seven signs, and Jesus' visits to Jerusalem for the feasts.</p>
+          <div class="gx-callout">
+            <p class="gx-callout-k"><svg class="ic"><use href="#i-info"/></svg>Which was written first?</p>
+            <p>The early church generally listed Matthew first. Many evangelical scholars today think Mark was written first and that Matthew and Luke drew on it as well as on their own sources. Either way, Luke tells us he carefully used eyewitness accounts (Luke 1:1-4), and Bible-believing scholars agree that all four are trustworthy.</p>
+          </div>
+        </div>
+        <figure class="gx-chart" aria-labelledby="gx-chart-cap">
+          <figcaption id="gx-chart-cap">
+            <strong>Length and unique material</strong>
+            <span>Bar length shows the number of verses. The solid part is material found in no other Gospel.</span>
+          </figcaption>
+          <div id="gx-bars"></div>
+          <div class="gx-chart-key"><span class="k-solid">Unique to this Gospel</span><span class="k-light">Shared with at least one other</span></div>
+          <p class="gx-src" id="gx-src"></p>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 5. Events matrix -->
+    <section class="gx-sec gx-events" id="events" aria-labelledby="events-h">
+      <div class="wrap">
+        <p class="kicker">Events side by side</p>
+        <div class="gx-sec-row">
+          <div>
+            <h2 id="events-h">The life of Jesus in four columns</h2>
+            <p class="sec-sub">Every row is an event; every column is a Gospel. Tap an event to see how each writer tells it.</p>
+          </div>
+          <div class="bx-search" role="search">
+            <svg class="ic"><use href="#i-search"/></svg>
+            <input id="gx-q" type="search" placeholder="Find an event or verse" autocomplete="off" aria-label="Find an event or verse">
+          </div>
+        </div>
+        <div class="gx-stats" id="gx-stats"></div>
+        <div class="gx-filters">
+          <div class="bx-chips" id="gx-filter" role="group" aria-label="Filter events"></div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="gx-matrix" id="gx-matrix" aria-label="Events recorded in each Gospel"></div>
+        <p class="bx-empty" id="gx-empty" hidden>No event matches. Try another word or filter.</p>
+        <p class="gx-order" id="gx-order"></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="deeper">
+          <div>
+            <h2>Read the Gospels side by side</h2>
+            <p>A study Bible gives you cross-references to the parallel passages right beside the text. Delivered across India.</p>
+          </div>
+          <div class="actions">
+            <a class="btn btn-white" href="https://www.ashabooks.com/collections/buy-study-bibles" target="_blank" rel="noopener">Shop study Bibles <svg class="ic"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-outline-white" href="books.html">Bible book explorer</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="bx-scrim" id="bx-scrim" hidden></div>
+  <aside class="bx-drawer gx-drawer" id="bx-drawer" role="dialog" aria-modal="true" aria-labelledby="bx-d-title" hidden>
+    <div class="bx-drawer-in" id="bx-d"></div>
+  </aside>
+
+  <footer class="foot foot-slim">
+    <div class="wrap foot-in">
+      <div class="foot-brand">
+        <img src="assets/hub/asha-books-logo-white.png" alt="Asha Books" width="511" height="168">
+        <a class="foot-link" href="index.html">More Bible study resources</a>
+      </div>
+      <div class="foot-notes">
+        <p><strong>Prototype.</strong> This content is awaiting theological review.</p>
+        <p>Authors and dates follow the traditional view held by most evangelical scholars. Where Bible-believing scholars differ, we say so.</p>
+        <p>Scripture quotations are from the ESV&reg; Bible (The Holy Bible, English Standard Version&reg;), &copy; 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/gospels/gospels.js"></script>
+</body>
+</html>

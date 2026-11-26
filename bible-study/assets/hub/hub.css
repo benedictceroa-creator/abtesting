@@ -167,6 +167,7 @@ a.tool:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border
 .t-plum { background: var(--plum); }
 .t-grad { background: linear-gradient(135deg, #F2A272, #E07ED6); }
 .t-sun { background: #E8912D; }
+.t-gospels { background: linear-gradient(90deg, #6E5A8C 0 25%, #B8502A 25% 50%, #2F7F86 50% 75%, #2B5A9E 75%); }
 .go { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 15px; color: var(--red-text); margin-top: 6px; }
 .go .ic { width: 16px; height: 16px; transition: transform .15s; }
 a:hover > .go .ic { transform: translateX(3px); }
